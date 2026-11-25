@@ -99,6 +99,7 @@
 "Arbeitet" = "작업 중";
 "Arbeitsbereich entfernen" = "작업 공간 제거";
 "Arbeitsbereich nicht vertraut" = "신뢰하지 않는 작업 공간";
+"Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "신뢰하지 않는 작업 공간: 프로젝트의 설정, 스킬, 훅, MCP 서버를 불러오지 않았습니다.";
 "Arbeitsbereich per Klick auf den Namen umbenennen" = "이름을 클릭하여 작업 공간 이름 변경";
 "Arbeitsbereich umbenennen" = "작업 공간 이름 변경";
 "Arbeitsbereich vertrauen" = "작업 공간 신뢰";

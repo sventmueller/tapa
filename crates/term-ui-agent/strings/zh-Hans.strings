@@ -528,3 +528,4 @@
 "Gerade läuft nichts." = "当前没有正在运行的内容。";
 "Wartet auf dich" = "正在等你";
 "Zeigen" = "显示";
+"Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "工作区未受信任：未载入项目的设置、技能、钩子和 MCP 服务器。";

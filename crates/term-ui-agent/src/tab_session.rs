@@ -143,6 +143,9 @@ impl AgentTab {
                 if let Some(controller) = self.controller() {
                     crate::host::host().turn_ended(controller.id(), &self.cwd);
                 }
+                if self.restart_after_turn() {
+                    return;
+                }
                 self.send_queued();
             }
             Status::RequiresAction if elsewhere => {

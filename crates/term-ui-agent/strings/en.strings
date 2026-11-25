@@ -528,3 +528,4 @@
 "Gerade läuft nichts." = "Nothing is running.";
 "Wartet auf dich" = "Waiting for you";
 "Zeigen" = "Show";
+"Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "Workspace not trusted: the project's settings, skills, hooks and MCP servers are not loaded.";

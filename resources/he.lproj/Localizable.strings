@@ -99,6 +99,7 @@
 "Arbeitet" = "עובד";
 "Arbeitsbereich entfernen" = "הסרת סביבת העבודה";
 "Arbeitsbereich nicht vertraut" = "סביבת העבודה אינה מהימנה";
+"Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "סביבת העבודה אינה מהימנה: ההגדרות, המיומנויות, ה-hooks ושרתי ה-MCP של הפרויקט לא נטענו.";
 "Arbeitsbereich per Klick auf den Namen umbenennen" = "שינוי שם סביבת עבודה בלחיצה על שמה";
 "Arbeitsbereich umbenennen" = "שנה שם לסביבת עבודה";
 "Arbeitsbereich vertrauen" = "מתן אמון בסביבת העבודה";

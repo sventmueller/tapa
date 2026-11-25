@@ -99,6 +99,7 @@
 "Arbeitet" = "Working";
 "Arbeitsbereich entfernen" = "Remove Workspace";
 "Arbeitsbereich nicht vertraut" = "Workspace Not Trusted";
+"Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "Workspace not trusted: the project's settings, skills, hooks and MCP servers are not loaded.";
 "Arbeitsbereich per Klick auf den Namen umbenennen" = "Rename a workspace by clicking its name";
 "Arbeitsbereich umbenennen" = "Rename Workspace";
 "Arbeitsbereich vertrauen" = "Trust Workspace";

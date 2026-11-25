@@ -227,10 +227,12 @@ impl Workspace {
         self.trusted.get()
     }
 
-    /// Trusts it or takes the trust back; its Git panel finds the repository again under the new policy (E16, E21).
+    /// Trusts it or takes the trust back; its Git panel finds the repository again and its agents start again under the
+    /// new policy (E16, E21).
     pub(crate) fn set_trusted(&self, trusted: bool) {
         if self.trusted.replace(trusted) != trusted {
             term_ui_git::trust_changed(&self.handle());
+            term_ui_agent::trust_changed(&self.handle());
         }
     }
 

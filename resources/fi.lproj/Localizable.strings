@@ -99,6 +99,7 @@
 "Arbeitet" = "Työskentelee";
 "Arbeitsbereich entfernen" = "Poista työtila";
 "Arbeitsbereich nicht vertraut" = "Työtilaan ei luoteta";
+"Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "Työtilaan ei luoteta: projektin asetuksia, taitoja, hookeja ja MCP-palvelimia ei ole ladattu.";
 "Arbeitsbereich per Klick auf den Namen umbenennen" = "Nimeä työtila uudelleen osoittamalla sen nimeä";
 "Arbeitsbereich umbenennen" = "Nimeä työtila uudelleen";
 "Arbeitsbereich vertrauen" = "Luota työtilaan";

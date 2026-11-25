@@ -239,12 +239,13 @@ fn status(name: &str) {
         .hosted_with_key(workspace.id, &tab.tab_key())
         .map(|hosted| hosted.entry().status);
     println!(
-        "agentstatus {name}: agent {:?}, tab {shown:?}, sidebar {:?}, live {}, parked {}, trusted {}, app active {}",
+        "agentstatus {name}: agent {:?}, tab {shown:?}, sidebar {:?}, live {}, parked {}, trusted {}, note {}, app active {}",
         tab.agent_status(),
         workspace.entry().mark(),
         tab.is_live(),
         tab.is_parked_for_selftest(),
         workspace.is_trusted(),
+        tab.trust_note_shown(),
         objc2_app_kit::NSApplication::sharedApplication(app().mtm).isActive()
     );
 }

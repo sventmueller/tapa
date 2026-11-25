@@ -99,6 +99,7 @@
 "Arbeitet" = "Arbetar";
 "Arbeitsbereich entfernen" = "Ta bort arbetsyta";
 "Arbeitsbereich nicht vertraut" = "Arbetsytan är inte betrodd";
+"Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "Arbetsytan är inte betrodd: projektets inställningar, skills, hooks och MCP-servrar är inte inlästa.";
 "Arbeitsbereich per Klick auf den Namen umbenennen" = "Byt namn på arbetsyta genom att klicka på namnet";
 "Arbeitsbereich umbenennen" = "Byt namn på arbetsyta";
 "Arbeitsbereich vertrauen" = "Lita på arbetsytan";

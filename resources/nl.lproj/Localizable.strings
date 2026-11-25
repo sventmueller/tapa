@@ -99,6 +99,7 @@
 "Arbeitet" = "Bezig";
 "Arbeitsbereich entfernen" = "Werkruimte verwijderen";
 "Arbeitsbereich nicht vertraut" = "Werkruimte niet vertrouwd";
+"Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "Werkruimte niet vertrouwd: de instellingen, skills, hooks en MCP-servers van het project zijn niet geladen.";
 "Arbeitsbereich per Klick auf den Namen umbenennen" = "Wijzig de naam van een werkruimte door op de naam te klikken";
 "Arbeitsbereich umbenennen" = "Wijzig naam van werkruimte";
 "Arbeitsbereich vertrauen" = "Werkruimte vertrouwen";

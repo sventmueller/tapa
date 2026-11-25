@@ -528,3 +528,4 @@
 "Gerade läuft nichts." = "実行中のものはありません。";
 "Wartet auf dich" = "応答待ち";
 "Zeigen" = "表示";
+"Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "信頼されていないワークスペース：プロジェクトの設定、スキル、フック、MCP サーバは読み込まれていません。";

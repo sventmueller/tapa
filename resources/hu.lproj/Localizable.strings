@@ -99,6 +99,7 @@
 "Arbeitet" = "Dolgozik";
 "Arbeitsbereich entfernen" = "Munkaterület eltávolítása";
 "Arbeitsbereich nicht vertraut" = "A munkaterület nem megbízható";
+"Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "A munkaterület nem megbízható: a projekt beállításai, skilljei, hookjai és MCP-kiszolgálói nincsenek betöltve.";
 "Arbeitsbereich per Klick auf den Namen umbenennen" = "Munkaterület átnevezése a nevére kattintva";
 "Arbeitsbereich umbenennen" = "Munkaterület átnevezése";
 "Arbeitsbereich vertrauen" = "Munkaterület megbízhatónak jelölése";

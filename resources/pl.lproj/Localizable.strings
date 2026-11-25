@@ -99,6 +99,7 @@
 "Arbeitet" = "Pracuje";
 "Arbeitsbereich entfernen" = "Usuń obszar roboczy";
 "Arbeitsbereich nicht vertraut" = "Obszar roboczy niezaufany";
+"Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "Obszar roboczy niezaufany: ustawienia, umiejętności, hooki i serwery MCP projektu nie są wczytane.";
 "Arbeitsbereich per Klick auf den Namen umbenennen" = "Zmieniaj nazwę obszaru roboczego kliknięciem w nazwę";
 "Arbeitsbereich umbenennen" = "Zmień nazwę obszaru roboczego";
 "Arbeitsbereich vertrauen" = "Zaufaj obszarowi roboczemu";

@@ -383,8 +383,8 @@ impl AgentTab {
         out
     }
 
-    /// Clicks the button titled `title` of the overlay that says what keeps the session from running; whether it
-    /// showed one.
+    /// Clicks the button titled `title` of the overlay that says what keeps the session from running, or of the note
+    /// about an untrusted workspace; whether one showed it.
     pub fn press_problem(&self, title: &str) -> bool {
         fn find(view: &NSView, title: &str) -> Option<Retained<objc2_app_kit::NSButton>> {
             if let Some(button) = view.downcast_ref::<objc2_app_kit::NSButton>()
@@ -394,7 +394,9 @@ impl AgentTab {
             }
             view.subviews().iter().find_map(|child| find(&child, title))
         }
-        let button = find(&self.problem_holder, title).filter(|_| !self.problem_holder.isHidden());
+        let button = find(&self.problem_holder, title)
+            .filter(|_| !self.problem_holder.isHidden())
+            .or_else(|| find(&self.trust_note, title).filter(|_| !self.trust_note.isHidden()));
         if let Some(button) = &button {
             // SAFETY: A click without a sender, on the main thread, sends the button's action as a real click does.
             unsafe { button.performClick(None) };

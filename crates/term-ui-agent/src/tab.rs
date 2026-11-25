@@ -134,6 +134,10 @@ pub struct AgentTab {
     pub(super) composer: Composer,
     pub(super) status: StatusLine,
     pub(super) problem_holder: Retained<NSView>,
+    /// The note above the composer while the workspace is not trusted.
+    pub(super) trust_note: Retained<NSStackView>,
+    /// A change of trust waits for the running turn to end before the session starts again.
+    pub(super) restart_for_trust: std::cell::Cell<bool>,
     pub(super) queue_view: Retained<NSStackView>,
     pub(super) suggestions: Suggestions,
     pub(super) state: RefCell<State>,
@@ -232,6 +236,7 @@ impl AgentTab {
             &status.dictation,
         );
         let problem_holder = NSView::new(mtm);
+        let trust_note = super::tab_trust::note(mtm, &target);
         let queue_view = ui::column(mtm, 4.0, &[]);
         let suggestions = Suggestions::new(mtm, &target);
         // ACP agents take the user's last picks once their session runs.
@@ -255,6 +260,8 @@ impl AgentTab {
             composer,
             status,
             problem_holder,
+            trust_note,
+            restart_for_trust: std::cell::Cell::new(false),
             queue_view,
             suggestions,
             agent,
@@ -297,6 +304,7 @@ impl AgentTab {
             &[
                 &self.queue_view,
                 &self.suggestions.view,
+                &self.trust_note,
                 &self.composer.card,
                 &self.status.view,
             ],
@@ -606,6 +614,7 @@ impl AgentTab {
             crate::common::util::pin_edges(&view, &self.problem_holder);
         }
         self.problem_holder.setHidden(problem.is_none());
+        self.show_trust_note(problem.as_ref());
         let blocked = matches!(problem, Some(Problem::Untrusted(_) | Problem::NotFound));
         self.composer.card.setHidden(blocked);
         self.refresh_tab_mark();

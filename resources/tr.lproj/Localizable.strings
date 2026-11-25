@@ -99,6 +99,7 @@
 "Arbeitet" = "Çalışıyor";
 "Arbeitsbereich entfernen" = "Çalışma Alanını Kaldır";
 "Arbeitsbereich nicht vertraut" = "Çalışma alanı güvenilir değil";
+"Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "Çalışma alanı güvenilir değil: projenin ayarları, becerileri, hook'ları ve MCP sunucuları yüklenmedi.";
 "Arbeitsbereich per Klick auf den Namen umbenennen" = "Çalışma alanının adını adına tıklayarak değiştir";
 "Arbeitsbereich umbenennen" = "Çalışma Alanının Adını Değiştir";
 "Arbeitsbereich vertrauen" = "Çalışma alanına güven";

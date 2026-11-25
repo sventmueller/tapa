@@ -64,6 +64,7 @@ mod tab_parking;
 #[cfg(feature = "selftest")]
 mod tab_probe;
 mod tab_session;
+mod tab_trust;
 mod target;
 mod task_output;
 mod text;
@@ -246,6 +247,17 @@ pub fn resume_in(base: &std::path::Path) {
             tab.wake_deferred();
         }
     }
+}
+
+/// The trust of `workspace` changed: its agent tabs show it and start their sessions again with the configuration it
+/// now allows (E21).
+pub fn trust_changed(workspace: &Workspace) {
+    let workspace = *workspace;
+    crate::common::util::main_soon(move || {
+        for tab in of_workspace(&workspace) {
+            tab.trust_moved();
+        }
+    });
 }
 
 /// Claude's own program on the login shell's PATH in `env` or where its installer puts it (E21).

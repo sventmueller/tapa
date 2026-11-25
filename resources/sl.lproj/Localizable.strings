@@ -99,6 +99,7 @@
 "Arbeitet" = "Dela";
 "Arbeitsbereich entfernen" = "Odstrani delovni prostor";
 "Arbeitsbereich nicht vertraut" = "Delovni prostor ni zaupanja vreden";
+"Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "Delovni prostor ni zaupanja vreden: nastavitve, skills, hooki in strežniki MCP projekta niso naloženi.";
 "Arbeitsbereich per Klick auf den Namen umbenennen" = "Preimenuj delovni prostor s klikom na ime";
 "Arbeitsbereich umbenennen" = "Preimenuj delovni prostor";
 "Arbeitsbereich vertrauen" = "Zaupaj delovnemu prostoru";

@@ -260,8 +260,8 @@ Every shortcut can be changed in **Settings › Shortcuts** or in the `[keys]` s
 
 A project folder can make programs run as soon as something starts in it: git hooks and repository settings such as `core.fsmonitor`, agent hooks, project MCP servers and project settings of agents. So a new workspace is not trusted.
 
-- **Not trusted:** agents start without the project's hooks, MCP servers and configuration (Claude with `--setting-sources=user --strict-mcp-config`, Codex with the folder marked as untrusted, OpenCode without the project's configuration). Git runs neutralised: no hooks, filters, diff drivers, fsmonitor, `sshCommand` or pager, and only global credential helpers. HTML files open without JavaScript. The Git panel and the agent tab say so and offer to trust the workspace.
-- **Trusted:** **Shell › Trust Workspace** loads all of that as the folder intends. **Revoke Trust** takes it back. Trust is kept per workspace.
+- **Not trusted:** agents start without the project's hooks, MCP servers and configuration (Claude with `--setting-sources=user --strict-mcp-config`, Codex with the folder marked as untrusted, OpenCode without the project's configuration). Git runs neutralised: no hooks, filters, diff drivers, fsmonitor, `sshCommand` or pager, and only global credential helpers. HTML files open without JavaScript. The Git panel says so, and agent tabs show a note above their input field; both offer to trust the workspace.
+- **Trusted:** **Shell › Trust Workspace** loads all of that as the folder intends. **Revoke Trust** takes it back. Either way the workspace's open agent sessions start again and continue their conversation, one in the middle of a turn once that turn has ended. Trust is kept per workspace.
 
 Whatever its trust, Tapa never runs a program from a project folder by itself: suggestions start programs only from your `PATH` outside the project, and the sidebar reads the Git state from the `.git` files. A workspace in your home folder, such as "Terminal", is no project: programs under `~` such as `~/.local/bin/claude` count as your own there.
 

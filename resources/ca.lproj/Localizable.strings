@@ -99,6 +99,7 @@
 "Arbeitet" = "Treballant";
 "Arbeitsbereich entfernen" = "Eliminar l’espai de treball";
 "Arbeitsbereich nicht vertraut" = "Espai de treball no de confiança";
+"Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "Espai de treball no de confiança: no s'han carregat la configuració, les habilitats, els hooks ni els servidors MCP del projecte.";
 "Arbeitsbereich per Klick auf den Namen umbenennen" = "Canviar el nom d’un espai de treball fent clic al nom";
 "Arbeitsbereich umbenennen" = "Canviar el nom de l’espai de treball";
 "Arbeitsbereich vertrauen" = "Confiar en l’espai de treball";

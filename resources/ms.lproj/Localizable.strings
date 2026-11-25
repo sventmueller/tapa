@@ -99,6 +99,7 @@
 "Arbeitet" = "Sedang Bekerja";
 "Arbeitsbereich entfernen" = "Alih Keluar Ruang Kerja";
 "Arbeitsbereich nicht vertraut" = "Ruang kerja tidak dipercayai";
+"Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "Ruang kerja tidak dipercayai: seting, skill, hook dan pelayan MCP projek tidak dimuatkan.";
 "Arbeitsbereich per Klick auf den Namen umbenennen" = "Namakan semula ruang kerja dengan mengklik namanya";
 "Arbeitsbereich umbenennen" = "Namakan Semula Ruang Kerja";
 "Arbeitsbereich vertrauen" = "Percayai Ruang Kerja";

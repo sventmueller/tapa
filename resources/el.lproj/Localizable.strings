@@ -99,6 +99,7 @@
 "Arbeitet" = "Εργάζεται";
 "Arbeitsbereich entfernen" = "Αφαίρεση χώρου εργασίας";
 "Arbeitsbereich nicht vertraut" = "Μη αξιόπιστος χώρος εργασίας";
+"Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "Μη αξιόπιστος χώρος εργασίας: οι ρυθμίσεις, οι δεξιότητες, τα hooks και οι διακομιστές MCP του έργου δεν έχουν φορτωθεί.";
 "Arbeitsbereich per Klick auf den Namen umbenennen" = "Μετονομασία χώρου εργασίας με κλικ στο όνομά του";
 "Arbeitsbereich umbenennen" = "Μετονομασία χώρου εργασίας";
 "Arbeitsbereich vertrauen" = "Εμπιστοσύνη στον χώρο εργασίας";

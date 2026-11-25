@@ -528,3 +528,4 @@
 "Gerade läuft nichts." = "Şu anda çalışan bir şey yok.";
 "Wartet auf dich" = "Sizi bekliyor";
 "Zeigen" = "Göster";
+"Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "Çalışma alanı güvenilir değil: projenin ayarları, becerileri, hook'ları ve MCP sunucuları yüklenmedi.";

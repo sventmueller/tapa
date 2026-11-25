@@ -99,6 +99,7 @@
 "Arbeitet" = "Trabajando";
 "Arbeitsbereich entfernen" = "Eliminar espacio de trabajo";
 "Arbeitsbereich nicht vertraut" = "Espacio de trabajo no fiable";
+"Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "Espacio de trabajo no fiable: no se han cargado los ajustes, skills, hooks ni servidores MCP del proyecto.";
 "Arbeitsbereich per Klick auf den Namen umbenennen" = "Renombrar un espacio de trabajo haciendo clic en su nombre";
 "Arbeitsbereich umbenennen" = "Renombrar espacio de trabajo";
 "Arbeitsbereich vertrauen" = "Confiar en el espacio de trabajo";

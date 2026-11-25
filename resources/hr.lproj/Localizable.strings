@@ -99,6 +99,7 @@
 "Arbeitet" = "Radi";
 "Arbeitsbereich entfernen" = "Ukloni radni prostor";
 "Arbeitsbereich nicht vertraut" = "Radni prostor nije pouzdan";
+"Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "Radni prostor nije pouzdan: postavke, vještine, hookovi i MCP poslužitelji projekta nisu učitani.";
 "Arbeitsbereich per Klick auf den Namen umbenennen" = "Preimenuj radni prostor klikom na njegov naziv";
 "Arbeitsbereich umbenennen" = "Preimenuj radni prostor";
 "Arbeitsbereich vertrauen" = "Vjeruj radnom prostoru";

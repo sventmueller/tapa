@@ -99,6 +99,7 @@
 "Arbeitet" = "กำลังทำงาน";
 "Arbeitsbereich entfernen" = "เอาพื้นที่ทำงานออก";
 "Arbeitsbereich nicht vertraut" = "พื้นที่ทำงานที่ไม่น่าเชื่อถือ";
+"Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "พื้นที่ทำงานที่ไม่น่าเชื่อถือ: ยังไม่ได้โหลดการตั้งค่า Skills, hooks และเซิร์ฟเวอร์ MCP ของโปรเจกต์";
 "Arbeitsbereich per Klick auf den Namen umbenennen" = "เปลี่ยนชื่อพื้นที่ทำงานโดยคลิกที่ชื่อ";
 "Arbeitsbereich umbenennen" = "เปลี่ยนชื่อพื้นที่ทำงาน";
 "Arbeitsbereich vertrauen" = "เชื่อถือพื้นที่ทำงาน";

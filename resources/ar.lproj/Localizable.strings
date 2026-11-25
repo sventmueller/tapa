@@ -99,6 +99,7 @@
 "Arbeitet" = "قيد العمل";
 "Arbeitsbereich entfernen" = "إزالة مساحة العمل";
 "Arbeitsbereich nicht vertraut" = "مساحة عمل غير موثوق بها";
+"Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "مساحة العمل غير موثوق بها: لم يتم تحميل إعدادات المشروع ومهاراته وخطافاته وخوادم MCP الخاصة به.";
 "Arbeitsbereich per Klick auf den Namen umbenennen" = "إعادة تسمية مساحة العمل بالنقر على اسمها";
 "Arbeitsbereich umbenennen" = "إعادة تسمية مساحة العمل";
 "Arbeitsbereich vertrauen" = "الوثوق بمساحة العمل";

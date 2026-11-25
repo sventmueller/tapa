@@ -623,10 +623,10 @@ impl AgentTab {
         }
     }
 
-    /// Trusts the tab's workspace and starts the session again, now with the project's configuration (E21).
+    /// Trusts the tab's workspace; its agent tabs then start their sessions again with the project's configuration
+    /// (E21).
     pub(crate) fn trust_workspace(&self) {
         crate::host::host().trust(self.controller.id());
-        self.start();
     }
 
     /// Starts the session again after it could not start or ended.

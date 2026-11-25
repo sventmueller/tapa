@@ -99,6 +99,7 @@
 "Arbeitet" = "काम कर रहा है";
 "Arbeitsbereich entfernen" = "वर्कस्पेस हटाएँ";
 "Arbeitsbereich nicht vertraut" = "वर्कस्पेस विश्वसनीय नहीं है";
+"Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "वर्कस्पेस विश्वसनीय नहीं है: प्रोजेक्ट की सेटिंग्ज़, स्किल, हुक और MCP सर्वर लोड नहीं हुए हैं।";
 "Arbeitsbereich per Klick auf den Namen umbenennen" = "नाम पर क्लिक करके वर्कस्पेस का नाम बदलें";
 "Arbeitsbereich umbenennen" = "वर्कस्पेस का नाम बदलें";
 "Arbeitsbereich vertrauen" = "वर्कस्पेस पर भरोसा करें";

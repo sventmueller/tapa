@@ -99,6 +99,7 @@
 "Arbeitet" = "Работает";
 "Arbeitsbereich entfernen" = "Удалить рабочую область";
 "Arbeitsbereich nicht vertraut" = "Рабочая область не является доверенной";
+"Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "Рабочая область не является доверенной: настройки, навыки, хуки и серверы MCP проекта не загружены.";
 "Arbeitsbereich per Klick auf den Namen umbenennen" = "Переименовывать рабочую область нажатием на её название";
 "Arbeitsbereich umbenennen" = "Переименовать рабочую область";
 "Arbeitsbereich vertrauen" = "Доверять рабочей области";

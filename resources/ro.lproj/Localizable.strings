@@ -99,6 +99,7 @@
 "Arbeitet" = "Lucrează";
 "Arbeitsbereich entfernen" = "Eliminați spațiul de lucru";
 "Arbeitsbereich nicht vertraut" = "Spațiu de lucru neconsiderat de încredere";
+"Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "Spațiu de lucru neconsiderat de încredere: configurările, skillurile, hookurile și serverele MCP ale proiectului nu sunt încărcate.";
 "Arbeitsbereich per Klick auf den Namen umbenennen" = "Redenumiți un spațiu de lucru făcând clic pe nume";
 "Arbeitsbereich umbenennen" = "Redenumiți spațiul de lucru";
 "Arbeitsbereich vertrauen" = "Considerați spațiul de lucru de încredere";

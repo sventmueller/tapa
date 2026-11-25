@@ -99,6 +99,7 @@
 "Arbeitet" = "Arbeider";
 "Arbeitsbereich entfernen" = "Fjern arbeidsområde";
 "Arbeitsbereich nicht vertraut" = "Arbeidsområdet er ikke klarert";
+"Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "Arbeidsområdet er ikke klarert: prosjektets innstillinger, skills, hooks og MCP-servere er ikke lastet inn.";
 "Arbeitsbereich per Klick auf den Namen umbenennen" = "Gi nytt navn til et arbeidsområde ved å klikke på navnet";
 "Arbeitsbereich umbenennen" = "Gi nytt navn til arbeidsområde";
 "Arbeitsbereich vertrauen" = "Stol på arbeidsområdet";

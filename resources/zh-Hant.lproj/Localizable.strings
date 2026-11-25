@@ -99,6 +99,7 @@
 "Arbeitet" = "工作中";
 "Arbeitsbereich entfernen" = "移除工作區";
 "Arbeitsbereich nicht vertraut" = "工作區未受信任";
+"Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "工作區未受信任：未載入專案的設定、技能、hooks 和 MCP 伺服器。";
 "Arbeitsbereich per Klick auf den Namen umbenennen" = "按一下名稱以重新命名工作區";
 "Arbeitsbereich umbenennen" = "重新命名工作區";
 "Arbeitsbereich vertrauen" = "信任工作區";

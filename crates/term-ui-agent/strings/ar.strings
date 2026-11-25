@@ -528,3 +528,4 @@
 "Gerade läuft nichts." = "لا يوجد شيء قيد التشغيل حاليًا.";
 "Wartet auf dich" = "بانتظارك";
 "Zeigen" = "إظهار";
+"Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "مساحة العمل غير موثوق بها: لم يتم تحميل إعدادات المشروع ومهاراته وخطافاته وخوادم MCP الخاصة به.";

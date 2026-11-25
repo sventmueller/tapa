@@ -99,6 +99,7 @@
 "Arbeitet" = "Al lavoro";
 "Arbeitsbereich entfernen" = "Rimuovi spazio di lavoro";
 "Arbeitsbereich nicht vertraut" = "Spazio di lavoro non attendibile";
+"Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "Spazio di lavoro non attendibile: impostazioni, skill, hook e server MCP del progetto non sono caricati.";
 "Arbeitsbereich per Klick auf den Namen umbenennen" = "Rinomina uno spazio di lavoro facendo clic sul nome";
 "Arbeitsbereich umbenennen" = "Rinomina spazio di lavoro";
 "Arbeitsbereich vertrauen" = "Considera attendibile lo spazio di lavoro";

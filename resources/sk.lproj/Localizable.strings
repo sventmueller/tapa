@@ -99,6 +99,7 @@
 "Arbeitet" = "Pracuje";
 "Arbeitsbereich entfernen" = "Odstrániť pracovný priestor";
 "Arbeitsbereich nicht vertraut" = "Pracovný priestor nie je dôveryhodný";
+"Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "Pracovný priestor nie je dôveryhodný: nastavenia, skills, hooky a servery MCP projektu nie sú načítané.";
 "Arbeitsbereich per Klick auf den Namen umbenennen" = "Premenovať pracovný priestor kliknutím na jeho názov";
 "Arbeitsbereich umbenennen" = "Premenovať pracovný priestor";
 "Arbeitsbereich vertrauen" = "Dôverovať pracovnému priestoru";

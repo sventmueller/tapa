@@ -99,6 +99,7 @@
 "Arbeitet" = "作業中";
 "Arbeitsbereich entfernen" = "ワークスペースを削除";
 "Arbeitsbereich nicht vertraut" = "信頼されていないワークスペース";
+"Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "信頼されていないワークスペース：プロジェクトの設定、スキル、フック、MCP サーバは読み込まれていません。";
 "Arbeitsbereich per Klick auf den Namen umbenennen" = "名前をクリックしてワークスペース名を変更";
 "Arbeitsbereich umbenennen" = "ワークスペース名を変更";
 "Arbeitsbereich vertrauen" = "ワークスペースを信頼";
