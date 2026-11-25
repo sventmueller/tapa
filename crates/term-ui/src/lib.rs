@@ -20,6 +20,7 @@ pub mod keys;
 pub mod kit;
 mod link_policy;
 pub mod links;
+mod metal;
 pub mod model;
 mod mouse;
 pub mod palette;

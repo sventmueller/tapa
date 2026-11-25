@@ -27,8 +27,10 @@ pub(crate) use last::store as store_last_window;
 pub(crate) use session::{start_folder, toggle_field};
 
 use std::cell::{Cell, RefCell};
+use std::collections::HashMap;
 use std::path::PathBuf;
 use std::rc::Rc;
+use term_ui::workspace_host::{TabId, WorkspaceId};
 
 use objc2::MainThreadMarker;
 use objc2::rc::Retained;
@@ -36,6 +38,7 @@ use objc2_app_kit::{NSLayoutConstraint, NSView, NSWindow};
 use objc2_foundation::NSArray;
 use term_session::Program;
 use term_ui::Change;
+use term_ui::kit::WindowId;
 
 use crate::state::app;
 use crate::tab::{Tab, TabContent};
@@ -51,7 +54,7 @@ struct Quick {
 
 /// A window with its workspaces, shown as the tab windows of the one in front.
 pub(crate) struct Window {
-    id: u64,
+    id: WindowId,
     mtm: MainThreadMarker,
     workspaces: RefCell<Ordered<Workspace>>,
     /// The window of every tab of every workspace, on screen or kept off it while another workspace shows.
@@ -88,8 +91,8 @@ impl Window {
             folder.unwrap_or_else(|| session::start_folder(&config, None, config.window.inherit_directory.window));
         let tab = window.make_tab(folder, program);
         scratch.tabs.borrow_mut().push(tab.clone());
-        scratch.tabs.borrow_mut().select(tab.id);
-        window.workspaces.borrow_mut().select(scratch.id);
+        scratch.tabs.borrow_mut().select(TabId::new(tab.id));
+        window.workspaces.borrow_mut().select(WorkspaceId::new(scratch.id));
         window.attach(&tab, scratch.id, None, None, Some(last::look(&config)));
         window.show_workspace(scratch.id, None);
         window.start_sessions(&tab);
@@ -120,7 +123,7 @@ impl Window {
     fn empty() -> Rc<Window> {
         let app = app();
         let window = Rc::new(Window {
-            id: app.next_id(),
+            id: WindowId::new(app.next_id()),
             mtm: app.mtm,
             workspaces: RefCell::new(Ordered::new()),
             frames: RefCell::new(Vec::new()),
@@ -137,7 +140,7 @@ impl Window {
 
     /// The window's id.
     pub(crate) fn id(&self) -> u64 {
-        self.id
+        self.id.get()
     }
 
     /// Whether `ns_window` is this window's: one of its tabs' windows or the quick terminal's panel.
@@ -215,12 +218,12 @@ impl Window {
     fn workspace_of_tab(&self, id: u64) -> Option<Rc<Workspace>> {
         self.workspaces()
             .into_iter()
-            .find(|workspace| workspace.tabs.borrow().get(id).is_some())
+            .find(|workspace| workspace.tabs.borrow().get(TabId::new(id)).is_some())
     }
 
     /// The tab `id`, in whichever workspace.
     fn tab(&self, id: u64) -> Option<Rc<Tab>> {
-        self.workspace_of_tab(id)?.tabs.borrow().get(id)
+        self.workspace_of_tab(id)?.tabs.borrow().get(TabId::new(id))
     }
 
     /// The session view of the active pane of the tab in front.
@@ -235,7 +238,7 @@ impl Window {
     }
 
     fn make_tab(&self, folder: PathBuf, program: Option<Program>) -> Rc<Tab> {
-        let (view, root) = session::make(self.mtm, self.id, folder.clone(), program);
+        let (view, root) = session::make(self.mtm, self.id(), folder.clone(), program);
         Rc::new(Tab::new(app().next_id(), &view, root, folder))
     }
 
@@ -304,14 +307,14 @@ impl Window {
     #[cfg(feature = "selftest")]
     pub(crate) fn plus_menu_entries(&self) -> Vec<String> {
         self.selected_tab_id()
-            .map_or_else(Vec::new, |tab| plus_menu::entries(self.id, tab))
+            .map_or_else(Vec::new, |tab| plus_menu::entries(self.id(), tab))
     }
 
     /// Chooses the entry titled `title` of the menu of the `+` in the tab bar of the window in front, for the self-test.
     #[cfg(feature = "selftest")]
     pub(crate) fn choose_plus_entry(&self, title: &str) -> bool {
         self.selected_tab_id()
-            .is_some_and(|tab| plus_menu::choose(self.id, tab, title))
+            .is_some_and(|tab| plus_menu::choose(self.id(), tab, title))
     }
 
     /// Follows the settings: the sidebars show or hide where their setting changed, and the tab titles take the
@@ -323,6 +326,9 @@ impl Window {
         let wanted = app().config().window.sidebar;
         if self.sidebar_setting.replace(wanted) != wanted && self.sidebar_shown() != wanted {
             self.flip_sidebar();
+        }
+        for frame in self.frames.borrow().iter() {
+            frame.invalidate_tab_title();
         }
         self.refresh();
     }
@@ -415,31 +421,36 @@ impl Window {
             }
             return;
         }
-        self.sync_order();
         let rows: Vec<term_ui_sidebar::Workspace> =
             self.workspaces().iter().map(|workspace| workspace.entry()).collect();
+        // Entries already queried the foreground process of each pane. Reuse them for window and toolbar titles.
+        let entries: HashMap<_, _> = rows
+            .iter()
+            .flat_map(|row| row.tabs.iter().map(move |entry| (entry.id, (row, entry))))
+            .collect();
         let frames = self.frames.borrow().clone();
+        let selected = self.selected_tab_id();
+        let home = term_base::home();
         for frame in frames {
-            let Some(workspace) = self.workspaces.borrow().get(frame.workspace) else {
+            let Some(&(row, entry)) = entries.get(&frame.tab) else {
                 continue;
             };
-            let Some(tab) = workspace.tabs.borrow().get(frame.tab) else {
+            let Some(workspace) = self.workspaces.borrow().get(WorkspaceId::new(frame.workspace)) else {
                 continue;
             };
-            frame.ns.setTitle(&term_ui::kit::ns(&tab.title()));
-            frame.ns.tab().setTitle(Some(&term_ui::kit::ns(&tab.title())));
-            frame.ns.tab().setAttributedTitle(Some(&tabs::tab_title(&tab)));
-            frame.ns.setSubtitle(&term_ui::kit::ns(&tab.subtitle()));
-            let entry = tab.entry();
+            let Some(tab) = workspace.tabs.borrow().get(TabId::new(frame.tab)) else {
+                continue;
+            };
+            frame.update_tab_title(&tab, entry, &home);
             frame.show_mark(entry.mark());
-            let home = term_base::home();
             let heading = term_ui_sidebar::model::tilde(&entry.folder.to_string_lossy(), &home);
             let branch = entry
                 .branch
-                .or_else(|| (entry.folder == workspace.base).then(|| workspace.branch()).flatten())
+                .as_deref()
+                .or_else(|| (entry.folder == row.base).then_some(row.branch.as_deref()).flatten())
                 .unwrap_or_default();
-            title::show(&frame.ns, &heading, &branch);
-            if !frame.is_shown() {
+            title::show(&frame.ns, &heading, branch);
+            if !term_ui::kit::window_in_front(&frame.ns) && selected != Some(frame.tab) {
                 continue;
             }
             frame.sidebar.show(rows.clone(), Some(workspace.id));

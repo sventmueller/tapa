@@ -345,6 +345,7 @@ impl Sidebar {
 
     /// Shows `entries` with the workspace `selected` picked.
     pub fn show(&self, entries: Vec<Workspace>, selected: Option<u64>) {
+        let selection_changed = self.ivars().selected.get() != selected;
         let (same_ids, changed) = {
             let old = self.ivars().entries.borrow();
             let same_ids = old.len() == entries.len() && old.iter().zip(&entries).all(|(a, b)| a.id == b.id);
@@ -353,6 +354,9 @@ impl Sidebar {
                 .collect();
             (same_ids, changed)
         };
+        if same_ids && changed.is_empty() && !selection_changed {
+            return;
+        }
         let digits = entries
             .iter()
             .map(|entry| entry.changes)
@@ -364,7 +368,9 @@ impl Sidebar {
         let Some(table) = self.ivars().table.borrow().clone() else {
             return;
         };
-        table.sizeLastColumnToFit();
+        if !same_ids || !same_digits {
+            table.sizeLastColumnToFit();
+        }
         if !same_ids || !same_digits {
             table.reloadData();
         } else if !changed.is_empty() {
@@ -379,7 +385,9 @@ impl Sidebar {
         }
         self.ivars().selected.set(selected);
         let row = selected.and_then(|id| self.row_of(id));
-        if let Some(row) = row {
+        if (selection_changed || !same_ids || !same_digits)
+            && let Some(row) = row
+        {
             let _quiet = kit::FlagGuard::raise(&self.ivars().quiet);
             table.selectRowIndexes_byExtendingSelection(&NSIndexSet::indexSetWithIndex(row), false);
             table.scrollRowToVisible(isize::try_from(row).unwrap_or(0));

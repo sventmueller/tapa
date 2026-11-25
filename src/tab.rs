@@ -146,10 +146,10 @@ impl Tab {
 
     /// The window's subtitle for the tab: for a terminal the command that runs in the active pane, else its folder
     /// when the title does not already name it.
-    pub(crate) fn subtitle(&self) -> String {
+    pub(crate) fn subtitle(&self, entry: &Entry, home: &std::path::Path) -> String {
         match &self.body {
             Body::Terminal(terminal) => terminal.subtitle(),
-            Body::Hosted(hosted) => hosted.entry(self.id).detail(&term_base::home()),
+            Body::Hosted(_) => entry.detail(home),
         }
     }
 

@@ -652,3 +652,73 @@ fn the_reader_thread_builds_frames_for_the_renderer_and_the_next_once_one_is_tak
     assert!(harness.session.latest().is_some());
     let _ = &mut harness;
 }
+
+#[test]
+fn replacing_a_renderer_keeps_the_terminal_and_invalidates_the_old_frame_source() {
+    let dir = temporary("replace-renderer");
+    let mut harness = interactive_sh(&dir);
+    let old_sink = std::sync::Arc::new(Counting::default());
+    let old = harness.session.render_to(old_sink.clone());
+    assert!(old.latest().is_some());
+
+    harness.session.detach_renderer();
+    assert!(harness.session.latest().is_none());
+    harness.session.write("printf 'detached %s\\n' output\n");
+    assert!(harness.wait_until(|h| h.screen_line("detached output")));
+    assert!(harness.session.latest().is_none());
+
+    let new = harness
+        .session
+        .render_to_when_ready(std::sync::Arc::new(Counting::default()));
+    assert!(harness.wait_until(|_| new.latest().is_some()));
+    assert!(old.latest().is_none());
+    assert!(old.take().is_none());
+    let frame = new.take().expect("the old source cannot take the new frame");
+    let text: String = frame.rows.iter().flatten().map(|cell| cell.ch).collect();
+    assert!(text.contains("detached output"), "{text:?}");
+}
+
+#[test]
+fn attaching_to_an_exited_terminal_announces_its_last_frame_to_the_view() {
+    let dir = temporary("redraw-after-exit");
+    let mut harness = Harness::start(command("/usr/bin/printf", &["last frame"], &dir), &dir);
+    assert!(harness.wait_until(|h| h.saw(&Event::Exited(Ending::Code(0)))));
+    harness.events.clear();
+
+    let source = harness
+        .session
+        .render_to_when_ready(std::sync::Arc::new(Counting::default()));
+    let frame = source.take().expect("the reader has already stopped");
+    let text: String = frame.rows.iter().flatten().map(|cell| cell.ch).collect();
+    assert!(text.contains("last frame"), "{text:?}");
+    assert!(harness.wait_until(|h| h.saw(&Event::Redraw)));
+}
+
+#[test]
+fn queued_resize_reaches_the_grid_and_pty_at_the_latest_size() {
+    let dir = temporary("queued-resize");
+    let mut harness = interactive_sh(&dir);
+    for columns in [96, 112, 127] {
+        assert!(harness.session.request_resize(Size {
+            columns,
+            lines: 32,
+            ..Size::default()
+        }));
+    }
+    assert!(harness.wait_until(|h| h.session.snapshot().columns == 127));
+    harness.session.write("stty size\n");
+    assert!(harness.wait_until(|h| h.screen_line("32 127")));
+}
+
+#[test]
+fn restore_reads_the_bounded_tail_before_the_cursor() {
+    let dir = temporary("restore-tail");
+    let mut harness = Harness::start(
+        command("/usr/bin/printf", &["one\r\ntwo\r\nthree\r\n\r\nprompt"], &dir),
+        &dir,
+    );
+    assert!(harness.wait_until(|h| !h.session.is_running()));
+    assert_eq!(harness.session.restore_rows(2, 1024), ["two", "three"]);
+    assert_eq!(harness.session.restore_rows(100, 6), ["three"]);
+    assert!(harness.session.restore_rows(100, 5).is_empty());
+}

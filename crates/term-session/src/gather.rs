@@ -18,7 +18,7 @@ const CAPACITY: usize = 64 * 1024;
 
 /// Buffers in the ring; when the parser is that far behind, the stage stops reading and the kernel queue holds the
 /// program back.
-const BUFFERS: usize = 4;
+pub(crate) const BUFFERS: usize = 4;
 
 /// A batch this large belongs to a stream that keeps the kernel queue full, which hands over at most about 1 KiB a
 /// read on macOS, so a dry read is bridged; a smaller one is interactive output and goes at once.

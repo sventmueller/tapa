@@ -3,6 +3,7 @@
 //! sessions run on while it is hidden.
 
 use std::rc::Rc;
+use term_ui::workspace_host::{TabId, WorkspaceId};
 
 use block2::RcBlock;
 use objc2::rc::Retained;
@@ -53,8 +54,8 @@ impl Window {
         let workspace = window.add_workspace(folder.clone(), None);
         let tab = window.make_tab(folder, None);
         workspace.tabs.borrow_mut().push(tab.clone());
-        workspace.tabs.borrow_mut().select(tab.id);
-        window.workspaces.borrow_mut().select(workspace.id);
+        workspace.select_tab(TabId::new(tab.id));
+        window.workspaces.borrow_mut().select(WorkspaceId::new(workspace.id));
         window.enter_quick_mode();
         if let Some(panel) = window.front_ns_window() {
             panel.setFrame_display(place(window.mtm).0, false);
@@ -107,7 +108,7 @@ impl Window {
         );
         panel.setHidesOnDeactivate(false);
         panel.setHasShadow(true);
-        let delegate = Delegate::new(mtm, self.id, None);
+        let delegate = Delegate::new(mtm, self.id(), None);
         panel.setDelegate(Some(ProtocolObject::from_ref(&*delegate)));
         let body = NSView::new(mtm);
         panel.setContentView(Some(&body));
@@ -140,7 +141,7 @@ impl Window {
             return;
         }
         let (_, hidden) = place_on(self.mtm, panel.screen());
-        let id = self.id;
+        let id = self.id();
         let slide = crate::quick::next_slide();
         let done = RcBlock::new(move || {
             term_base::guarded((), || {
@@ -170,7 +171,7 @@ impl Window {
         if !self.is_quick() || !app().config().quick_terminal.autohide {
             return;
         }
-        let id = self.id;
+        let id = self.id();
         term_base::main_soon(move || {
             let Some(window) = try_app().and_then(|app| app.window(id)) else {
                 return;

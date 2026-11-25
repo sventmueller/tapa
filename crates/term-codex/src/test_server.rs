@@ -319,6 +319,7 @@ impl<W: Write> Server<W> {
             return;
         }
         match (message.get("id"), message["method"].as_str()) {
+            (Some(_), Some("test/no-reply")) => {}
             (Some(id), Some(method)) => self.request(&id.clone(), method, &message["params"]),
             (None, Some("initialized")) => self.ready = self.initialized,
             (Some(id), None) => {

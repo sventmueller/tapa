@@ -3,11 +3,9 @@
 use crate::kit::WindowId;
 use std::cell::{Cell, RefCell};
 use std::path::PathBuf;
-use std::ptr::NonNull;
 use std::rc::Rc;
 use std::sync::Arc;
 
-use block2::RcBlock;
 use objc2::rc::{Retained, Weak};
 use objc2::runtime::{AnyObject, ProtocolObject, Sel};
 use objc2::{AnyThread, DefinedClass, MainThreadMarker, MainThreadOnly, Message, define_class, msg_send, sel};
@@ -17,12 +15,11 @@ use objc2_app_kit::{
     NSBitmapImageRep, NSColor, NSDragOperation, NSDraggingInfo, NSEvent, NSLayoutConstraintOrientation, NSMenu,
     NSMenuItem, NSMenuItemValidation, NSPasteboard, NSPasteboardTypeFileURL, NSPasteboardTypeString, NSStackView,
     NSStackViewDistribution, NSTextInputClient, NSTrackingArea, NSTrackingAreaOptions, NSUserInterfaceLayoutDirection,
-    NSUserInterfaceLayoutOrientation, NSView, NSViewLayerContentsRedrawPolicy, NSWindowDidBecomeKeyNotification,
-    NSWindowDidChangeOcclusionStateNotification, NSWindowDidResignKeyNotification,
+    NSUserInterfaceLayoutOrientation, NSView, NSViewLayerContentsRedrawPolicy,
 };
 use objc2_foundation::{
-    NSArray, NSAttributedString, NSNotification, NSNotificationCenter, NSObjectProtocol, NSPoint, NSRange,
-    NSRangePointer, NSRect, NSSize, NSString, NSTimer, NSUInteger,
+    NSArray, NSAttributedString, NSObjectProtocol, NSPoint, NSRange, NSRangePointer, NSRect, NSSize, NSString, NSTimer,
+    NSUInteger,
 };
 use objc2_quartz_core::CADisplayLink;
 use term_session::{Program, Session, Size, Snapshot};
@@ -30,7 +27,10 @@ use term_session::{Program, Session, Size, Snapshot};
 use super::banner::Banner;
 use super::input::KeyState;
 use super::mouse::MouseState;
-use crate::kit::{FlagGuard, guarded, item, live, main_after, ns, pin_sides, separator, set_target};
+use crate::kit::{
+    FlagGuard, Observation, guarded, item, live, main_after, ns, observe_window_visibility, pin_sides, separator,
+    set_target,
+};
 use crate::model::{self, Command, State};
 use term_render::constant;
 use term_render::palette::{self, Theme};
@@ -59,14 +59,11 @@ pub struct Ivars {
     pub(super) keys: KeyState,
     pub(super) mouse: MouseState,
     banners: RefCell<Option<Banners>>,
-    /// Drawing on the GPU on the render thread (E5); none where the view draws with Core Graphics.
-    pub(super) renderer: Option<Renderer>,
-    /// The Metal layer the renderer draws into.
-    layer: Option<Retained<objc2_quartz_core::CAMetalLayer>>,
+    pub(super) metal: crate::metal::Metal,
     pub(super) blink: RefCell<Option<Retained<NSTimer>>>,
     /// Takes the snapshots of output that came within a frame of the last, paused while none waits.
     pub(super) frames: RefCell<Option<Retained<CADisplayLink>>>,
-    observers: RefCell<Vec<Retained<ProtocolObject<dyn NSObjectProtocol>>>>,
+    observers: RefCell<Vec<Observation>>,
     /// The grid's size in the middle of the view while the window is resized (F218), and which showing it is.
     pub(super) size_label: RefCell<Option<Retained<objc2_app_kit::NSTextField>>>,
     pub(super) size_shown: Cell<u64>,
@@ -88,7 +85,7 @@ impl Drop for Ivars {
         if let Some(link) = self.frames.get_mut().take() {
             link.invalidate();
         }
-        remove_observers(self.observers.get_mut());
+        self.observers.get_mut().clear();
         self.mouse.stop_autoscroll();
         super::forget(self.id);
     }
@@ -97,17 +94,6 @@ impl Drop for Ivars {
 pub(super) struct Banners {
     pub(super) notice: Banner,
     pub(super) find: crate::find::FindBar,
-}
-
-/// What a window notification the view observes calls.
-type Handler = fn(&TerminalView);
-
-fn remove_observers(observers: &mut Vec<Retained<ProtocolObject<dyn NSObjectProtocol>>>) {
-    let center = NSNotificationCenter::defaultCenter();
-    for token in observers.drain(..) {
-        // SAFETY: The token came from this center's block-based `addObserverForName`.
-        unsafe { center.removeObserver(token.as_ref()) };
-    }
 }
 
 define_class!(
@@ -204,7 +190,7 @@ define_class!(
 
         #[unsafe(method(wantsUpdateLayer))]
         fn wants_update_layer(&self) -> bool {
-            self.ivars().renderer.is_some() && !self.ivars().state.picturing.get()
+            self.ivars().metal.supported && !self.ivars().state.picturing.get()
         }
 
         #[unsafe(method(cacheDisplayInRect:toBitmapImageRep:))]
@@ -251,6 +237,11 @@ define_class!(
         #[unsafe(method(viewDidUnhide))]
         fn did_unhide(&self) {
             guarded((), || self.unhidden());
+        }
+
+        #[unsafe(method(viewDidHide))]
+        fn did_hide(&self) {
+            guarded((), || self.update_surface_visibility());
         }
 
         #[unsafe(method(acceptsFirstResponder))]
@@ -538,8 +529,7 @@ impl TerminalView {
             keys: KeyState::default(),
             mouse: MouseState::default(),
             banners: RefCell::new(None),
-            renderer: None,
-            layer: term_render::gpu::layer(),
+            metal: crate::metal::Metal::new(),
             blink: RefCell::new(None),
             frames: RefCell::new(None),
             observers: RefCell::new(vec![]),
@@ -550,17 +540,12 @@ impl TerminalView {
             suggestion: RefCell::new(None),
             copy: RefCell::new(None),
         };
-        let mut ivars = ivars;
-        ivars.renderer = ivars.layer.as_deref().map(Renderer::new);
         let this = Self::alloc(mtm).set_ivars(ivars);
         // SAFETY: NSView's designated initializer, called once on the newly allocated object.
         let this: Retained<Self> = unsafe { msg_send![super(this), initWithFrame: NSRect::ZERO] };
         this.setWantsLayer(true);
-        if let (Some(metal), Some(layer)) = (&this.ivars().layer, this.layer()) {
+        if this.ivars().metal.supported {
             this.setLayerContentsRedrawPolicy(NSViewLayerContentsRedrawPolicy::Never);
-            // The view's own layer stays AppKit's; the Metal layer lies inside it and the render thread draws it.
-            metal.setContentsGravity(constant!(objc2_quartz_core::kCAGravityTopLeft));
-            layer.addSublayer(metal);
         }
         // Programs lay out their output for a left-to-right grid, whatever the interface language.
         this.setUserInterfaceLayoutDirection(NSUserInterfaceLayoutDirection::LeftToRight);
@@ -583,9 +568,6 @@ impl TerminalView {
             )
         };
         this.addTrackingArea(&area);
-        if let Some(renderer) = &this.ivars().renderer {
-            renderer.attach(&this);
-        }
         this.update_theme();
         super::register(&this);
         let root = this.assemble(mtm);
@@ -610,18 +592,12 @@ impl TerminalView {
     /// The times from a key to the frame that showed after it, in microseconds, since this was asked last; empty
     /// where the view draws with Core Graphics.
     pub fn take_latencies(&self) -> Vec<u32> {
-        self.ivars()
-            .renderer
-            .as_ref()
-            .map(Renderer::take_latencies)
-            .unwrap_or_default()
+        self.with_renderer(Renderer::take_latencies).unwrap_or_default()
     }
 
     /// Counts the next frame towards the latencies as if a key had just been pressed, for the bench.
     pub fn mark_key(&self) {
-        if let Some(renderer) = &self.ivars().renderer {
-            renderer.key_pressed();
-        }
+        self.with_renderer(Renderer::key_pressed);
     }
 
     /// Opens the find bar (F104), or puts the keyboard back into it.
@@ -760,20 +736,21 @@ impl TerminalView {
         match fonts.as_ref() {
             Some(current) if (current.metrics.scale - scale).abs() < f64::EPSILON => current.clone(),
             _ => {
-                let font = super::host().config().face();
-                let typography = Typography::of(&font);
-                let size = self.ivars().font_size.get();
-                let made = Rc::new(Fonts::styled(&font.family, size, scale, &typography));
-                if let Some(renderer) = &self.ivars().renderer {
-                    renderer.set_face(Face {
-                        family: font.family,
-                        size,
-                        typography,
-                    });
-                }
+                let face = self.render_face();
+                let made = Rc::new(Fonts::styled(&face.family, face.size, scale, &face.typography));
+                self.with_renderer(|renderer| renderer.set_face(face));
                 *fonts = Some(made.clone());
                 made
             }
+        }
+    }
+
+    pub(super) fn render_face(&self) -> Face {
+        let font = super::host().config().face();
+        Face {
+            typography: Typography::of(&font),
+            family: font.family,
+            size: self.ivars().font_size.get(),
         }
     }
 
@@ -834,7 +811,11 @@ impl TerminalView {
         }
         // A window out of sight changes size as it leaves or joins a tab group, as on every switch of workspaces; its
         // program hears only of the size it shows at.
-        if state.size.get().is_some() && self.window().is_some_and(|window| !window.isVisible()) {
+        if state.size.get().is_some()
+            && self
+                .window()
+                .is_some_and(|window| !crate::kit::window_in_front(&window))
+        {
             state.size_waits.set(true);
             return;
         }
@@ -854,45 +835,35 @@ impl TerminalView {
             model::Frame::Pending | model::Frame::Stale => return,
         }
         let had = state.size.replace(Some(size));
-        self.with_session(|session| session.resize(size));
-        self.refresh(true);
+        if !self
+            .with_session(|session| session.request_resize(size))
+            .unwrap_or(false)
+        {
+            self.with_session(|session| session.resize(size));
+            self.refresh(true);
+        }
         if had.is_some() && live::dragging(self) {
             self.show_grid_size(size);
         }
     }
 
     fn moved_to_window(&self) {
-        remove_observers(&mut self.ivars().observers.borrow_mut());
+        self.ivars().observers.borrow_mut().clear();
         let Some(window) = self.window() else {
             if let Some(timer) = self.ivars().blink.borrow_mut().take() {
                 timer.invalidate();
             }
             self.pause_frames();
+            self.update_surface_visibility();
             return;
         };
-        let center = NSNotificationCenter::defaultCenter();
-        let handlers: [(&NSString, Handler); 3] = [
-            (constant!(NSWindowDidBecomeKeyNotification), TerminalView::focus_changed),
-            (constant!(NSWindowDidResignKeyNotification), TerminalView::focus_changed),
-            (
-                constant!(NSWindowDidChangeOcclusionStateNotification),
-                TerminalView::occlusion_changed,
-            ),
-        ];
-        for (name, handler) in handlers {
-            let view = Weak::from(self);
-            let block = RcBlock::new(move |_: NonNull<NSNotification>| {
-                guarded((), || {
-                    if let Some(view) = view.load() {
-                        handler(&view);
-                    }
-                });
-            });
-            // SAFETY: The block holds the view weakly and runs on the main thread, where windows post these.
-            let token =
-                unsafe { center.addObserverForName_object_queue_usingBlock(Some(name), Some(&window), None, &block) };
-            self.ivars().observers.borrow_mut().push(token);
-        }
+        let view = Weak::from(self);
+        *self.ivars().observers.borrow_mut() = observe_window_visibility(&window, move || {
+            if let Some(view) = view.load() {
+                view.focus_changed();
+                view.occlusion_changed();
+            }
+        });
         self.update_theme();
         self.layout_grid();
         self.focus_changed();
@@ -900,7 +871,8 @@ impl TerminalView {
     }
 
     fn unhidden(&self) {
-        if self.ivars().state.stale.get() {
+        self.update_surface_visibility();
+        if !self.ivars().metal.supported && self.ivars().state.stale.get() {
             self.refresh(true);
         }
         let Some(window) = self.window() else { return };
@@ -938,9 +910,9 @@ impl TerminalView {
             return;
         }
         self.with_session(|session| session.set_palette(theme.palette.clone()));
-        if let Some(renderer) = &self.ivars().renderer {
+        self.with_renderer(|renderer| {
             renderer.set_theme(theme.clone());
-        }
+        });
         *self.ivars().theme.borrow_mut() = theme;
         self.style_field();
         self.refresh(true);

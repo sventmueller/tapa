@@ -7,6 +7,7 @@
 mod dialogs;
 mod error;
 mod reply;
+mod submission;
 
 use std::collections::HashMap;
 use std::io::{BufReader, Read, Write};
@@ -110,11 +111,6 @@ pub enum SessionError {
 /// How many lines may wait for the CLI to read them; more mean it hangs, and the app says so instead of piling up.
 const WRITE_QUEUE: usize = 256;
 
-enum Outgoing {
-    Line(String),
-    Close,
-}
-
 type After = Box<dyn FnOnce(&Value, &mut State) -> Vec<Update> + Send>;
 type Sink = Box<dyn Fn(Event) + Send + Sync>;
 
@@ -142,7 +138,7 @@ struct State {
 struct Shared {
     supervisor: Supervisor,
     process: ProcessId,
-    writer: Mutex<Option<SyncSender<Outgoing>>>,
+    writer: Mutex<Option<SyncSender<String>>>,
     state: Mutex<State>,
     pending: Mutex<HashMap<String, Pending>>,
     sink: Sink,
@@ -186,23 +182,12 @@ impl Session {
             return Err(SessionError::Start("the pipes are missing".into()));
         };
         let (tx, rx) = sync_channel(WRITE_QUEUE);
-        let close = tx.clone();
         let stderr_tail = Arc::new(Mutex::new(Tail::new(STDERR_LIMIT)));
         let shared = Arc::new(Shared {
             supervisor: supervisor.clone(),
             process: spawned.id,
             writer: Mutex::new(Some(tx)),
-            state: Mutex::new(State {
-                mapper: mapper_for(launch),
-                thread: Arc::new(thread),
-                asks: HashMap::new(),
-                capabilities: Capabilities::default(),
-                context_refused: false,
-                remote: RemoteControl::Unavailable,
-                remote_epoch: None,
-                remote_url: None,
-                remote_asked: 0,
-            }),
+            state: Mutex::new(State::new(launch, thread)),
             pending: Mutex::new(HashMap::new()),
             sink: Box::new(sink),
             next: AtomicU64::new(1),
@@ -217,9 +202,8 @@ impl Session {
         let weak = Arc::downgrade(&shared);
         supervisor.on_stop(spawned.id, move || {
             if let Some(shared) = weak.upgrade() {
-                shared.end_expected.store(true, Ordering::SeqCst);
+                shared.close_writer();
             }
-            let _ = close.try_send(Outgoing::Close);
         });
         let started = spawn_threads(&shared, stdin, rx, stdout, stderr, stderr_tail);
         if let Err(e) = started {
@@ -279,24 +263,11 @@ impl Session {
             return Err(SessionError::Closed);
         }
         let uuid = input::uuid();
-        let frame = input::user_frame(&message, &uuid);
-        let changes = {
-            let mut state = self.shared.lock_state();
-            let mut updates: Vec<Update> = message
-                .waiting_key()
-                .map(|key| Update::Remove { key })
-                .into_iter()
-                .collect();
-            if state.thread.title().is_empty() {
-                let title = term_thread::title_from(&message.text);
-                if !title.is_empty() {
-                    updates.push(Update::Title(title));
-                }
-            }
-            updates.extend(state.mapper.user_message(message, &uuid, SystemTime::now()));
-            Arc::make_mut(&mut state.thread).apply_all(updates)
-        };
-        self.shared.write(&frame)?;
+        let line = input::user_frame(&message, &uuid).to_string();
+        let changes = self
+            .shared
+            .lock_state()
+            .submit(message, &uuid, || self.shared.write_line(line))?;
         self.shared.emit_changes(changes);
         Ok(uuid)
     }
@@ -340,19 +311,17 @@ impl Session {
         request_id: &str,
         f: impl FnOnce(&PermissionAsk) -> (Value, Decision),
     ) -> Result<(), SessionError> {
-        let (frame, changes) = {
+        let changes = {
             let mut state = self.shared.lock_state();
-            let Some(ask) = state.asks.remove(request_id) else {
+            let Some(ask) = state.asks.get(request_id) else {
                 return Err(SessionError::UnknownRequest(request_id.to_string()));
             };
-            let (payload, decision) = f(&ask);
+            let (payload, decision) = f(ask);
+            self.shared.write(&control::success_frame(request_id, payload))?;
+            state.asks.remove(request_id);
             let updates = state.mapper.decided(request_id, decision);
-            (
-                control::success_frame(request_id, payload),
-                Arc::make_mut(&mut state.thread).apply_all(updates),
-            )
+            Arc::make_mut(&mut state.thread).apply_all(updates)
         };
-        self.shared.write(&frame)?;
         self.shared.emit_changes(changes);
         Ok(())
     }
@@ -527,10 +496,7 @@ impl Session {
 
     /// Closes the CLI's input; it finishes what it has and ends.
     pub fn close_input(&self) {
-        self.shared.end_expected.store(true, Ordering::SeqCst);
-        if let Some(writer) = self.shared.lock_writer().take() {
-            let _ = writer.try_send(Outgoing::Close);
-        }
+        self.shared.close_writer();
     }
 
     /// Ends the process in the background: input closed, then SIGTERM and SIGKILL to its group after `grace` each.
@@ -543,7 +509,7 @@ impl Session {
 fn spawn_threads(
     shared: &Arc<Shared>,
     stdin: ChildStdin,
-    rx: Receiver<Outgoing>,
+    rx: Receiver<String>,
     stdout: ChildStdout,
     stderr: impl Read + Send + 'static,
     stderr_tail: Arc<Mutex<Tail>>,
@@ -566,8 +532,8 @@ fn spawn_threads(
     Ok(())
 }
 
-fn write_lines(mut stdin: ChildStdin, rx: &Receiver<Outgoing>) {
-    while let Ok(Outgoing::Line(line)) = rx.recv() {
+fn write_lines(mut stdin: ChildStdin, rx: &Receiver<String>) {
+    while let Ok(line) = rx.recv() {
         let written = stdin
             .write_all(line.as_bytes())
             .and_then(|()| stdin.write_all(b"\n"))
@@ -728,14 +694,22 @@ impl Shared {
         self.pending.lock_ignoring_poison()
     }
 
-    fn lock_writer(&self) -> MutexGuard<'_, Option<SyncSender<Outgoing>>> {
+    fn lock_writer(&self) -> MutexGuard<'_, Option<SyncSender<String>>> {
         self.writer.lock_ignoring_poison()
     }
 
     fn write(&self, frame: &Value) -> Result<(), SessionError> {
-        let line = frame.to_string();
+        self.write_line(frame.to_string())
+    }
+
+    fn close_writer(&self) {
+        self.end_expected.store(true, Ordering::SeqCst);
+        self.lock_writer().take();
+    }
+
+    fn write_line(&self, line: String) -> Result<(), SessionError> {
         match self.lock_writer().as_ref() {
-            Some(writer) => writer.try_send(Outgoing::Line(line)).map_err(|error| match error {
+            Some(writer) => writer.try_send(line).map_err(|error| match error {
                 TrySendError::Full(_) => SessionError::Congested,
                 TrySendError::Disconnected(_) => SessionError::Closed,
             }),
@@ -935,9 +909,7 @@ impl Shared {
 
     fn finish(&self) {
         self.closed.store(true, Ordering::SeqCst);
-        if let Some(writer) = self.lock_writer().take() {
-            let _ = writer.try_send(Outgoing::Close);
-        }
+        self.lock_writer().take();
         let pending: Vec<Pending> = self.lock_pending().drain().map(|(_, pending)| pending).collect();
         for pending in pending {
             pending.reply.answer(Err(ControlError::Closed));

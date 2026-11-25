@@ -9,8 +9,8 @@ use std::path::PathBuf;
 use objc2::ClassType;
 use objc2::runtime::AnyObject;
 use objc2_app_kit::{
-    NSPasteboard, NSPasteboardTypeHTML, NSPasteboardTypePNG, NSPasteboardTypeRTF, NSPasteboardTypeString,
-    NSPasteboardTypeTIFF, NSPasteboardURLReadingFileURLsOnlyKey,
+    NSPasteboard, NSPasteboardTypeFileURL, NSPasteboardTypeHTML, NSPasteboardTypePNG, NSPasteboardTypeRTF,
+    NSPasteboardTypeString, NSPasteboardTypeTIFF, NSPasteboardURLReadingFileURLsOnlyKey,
 };
 use objc2_foundation::{NSArray, NSData, NSDictionary, NSNumber, NSURL};
 use splat_i18n::tf;
@@ -63,12 +63,14 @@ pub(crate) fn png(pasteboard: &NSPasteboard) -> Option<Vec<u8>> {
 
 /// Whether `pasteboard` holds something the terminal takes.
 pub(crate) fn accepts(pasteboard: &NSPasteboard) -> bool {
-    text(pasteboard).is_some()
-        || !files(pasteboard).is_empty()
-        || pasteboard.dataForType(constant!(NSPasteboardTypePNG)).is_some()
-        || pasteboard
-            .availableTypeFromArray(&NSArray::from_slice(&[constant!(NSPasteboardTypeTIFF)]))
-            .is_some()
+    pasteboard
+        .availableTypeFromArray(&NSArray::from_slice(&[
+            constant!(NSPasteboardTypeString),
+            constant!(NSPasteboardTypeFileURL),
+            constant!(NSPasteboardTypePNG),
+            constant!(NSPasteboardTypeTIFF),
+        ]))
+        .is_some()
 }
 
 impl TerminalView {

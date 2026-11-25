@@ -87,7 +87,11 @@ pub(super) fn run(step: &str) -> bool {
         || "none".to_string(),
         |hit| hit.class().name().to_string_lossy().into_owned(),
     );
-    println!("drag {spec}: hit {class}");
+    let selected = view
+        .with_session(term_session::Session::selected_text)
+        .flatten()
+        .map_or(0, |text| text.len());
+    println!("drag {spec}: hit {class}, selected {selected} bytes");
     true
 }
 

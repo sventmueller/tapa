@@ -63,8 +63,12 @@ impl TerminalView {
     /// Output arrived; a new snapshot follows at once or with the display's next frame, unless the view is out of
     /// sight.
     pub(super) fn redraw_requested(&self) {
-        if self.ivars().renderer.is_some() {
+        if self.has_renderer() {
             return self.frame_published();
+        }
+        if self.ivars().metal.supported {
+            self.ivars().state.stale.set(true);
+            return;
         }
         let state = &self.ivars().state;
         let hidden = self.isHiddenOrHasHiddenAncestor() || !self.on_display();
@@ -120,6 +124,10 @@ impl TerminalView {
     /// Takes the snapshot that output out of sight left waiting, before the view draws a picture of itself.
     pub(super) fn catch_up(&self) {
         let state = &self.ivars().state;
+        if self.ivars().metal.supported && !self.has_renderer() {
+            *self.ivars().screen.borrow_mut() = self.with_session(Session::snapshot).map(std::sync::Arc::new);
+            return;
+        }
         if state.stale.get() || state.frame_pending.get() {
             self.refresh(true);
         }
@@ -130,10 +138,19 @@ impl TerminalView {
         self.refresh(true);
     }
 
+    /// Publishes mouse-driven viewport changes without building a snapshot in the event handler.
+    pub(crate) fn refresh_interactive(&self) {
+        if !self.with_session(Session::request_frame).unwrap_or(false) {
+            self.refresh(true);
+        }
+    }
+
     /// The reader thread published a frame, which the render thread draws on its own (E5): the view keeps it for
     /// what it reads of the screen, such as links and VoiceOver, and follows the cursor's blinking.
     fn frame_published(&self) {
-        self.take_latest_frame();
+        if self.take_latest_frame() && self.ivars().state.exited.get() {
+            self.repaint();
+        }
         self.field_follow_screen();
         // Re-armed a display frame later rather than at once, so the reader thread wakes the main thread at most that
         // often while output streams; the frame is taken again then, so the last one is never missed.
@@ -144,6 +161,9 @@ impl TerminalView {
                     view.ivars().rearm_pending.set(false);
                     view.with_session(Session::rearm);
                     if view.take_latest_frame() {
+                        if view.ivars().state.exited.get() {
+                            view.repaint();
+                        }
                         view.update_blink();
                         view.announce();
                         view.update_scrollbar();
@@ -171,15 +191,18 @@ impl TerminalView {
         let mut screen = self.ivars().screen.borrow_mut();
         let new = screen.as_ref().is_none_or(|old| !std::sync::Arc::ptr_eq(old, &frame));
         *screen = Some(frame);
+        self.ivars().state.stale.set(false);
         new
     }
 
     /// Draws again what lies over the frame, after the focus, the cursor's blinking, composed text, the bell or the
     /// program's end changed it.
     pub(super) fn repaint(&self) {
-        match &self.ivars().renderer {
-            Some(renderer) => renderer.set_overlay(self.overlay_state()),
-            None => self.setNeedsDisplay(true),
+        if self.has_renderer() {
+            let overlay = self.overlay_state();
+            self.with_renderer(|renderer| renderer.set_overlay(overlay));
+        } else if !self.ivars().metal.supported {
+            self.setNeedsDisplay(true);
         }
     }
 
@@ -202,10 +225,14 @@ impl TerminalView {
     /// Takes a snapshot of the screen and marks the lines that changed for drawing; `all` marks every line. With the
     /// render thread, the reader thread's frame is built anew instead, as the owner scrolled, selected or resized.
     pub(super) fn refresh(&self, all: bool) {
-        if self.ivars().renderer.is_some() {
+        if self.has_renderer() {
             self.with_session(Session::republish);
             self.frame_published();
             self.repaint();
+            return;
+        }
+        if self.ivars().metal.supported {
+            self.ivars().state.stale.set(true);
             return;
         }
         self.field_follow_screen();
@@ -289,18 +316,19 @@ impl TerminalView {
 
     /// The render thread's layer follows a change of size or scale, which Core Graphics drawing gets from AppKit.
     pub(super) fn redraw_layer(&self) {
-        if let Some(renderer) = &self.ivars().renderer {
-            let scale = self.window().map_or(2.0, |window| window.backingScaleFactor());
-            renderer.set_geometry(term_render::thread::Geometry {
+        if self.has_renderer() {
+            let geometry = term_render::thread::Geometry {
                 frame: self.bounds(),
-                scale,
-            });
+                scale: self.window().map_or(2.0, |window| window.backingScaleFactor()),
+            };
+            self.with_renderer(|renderer| renderer.set_geometry(geometry));
             let _ = self.fonts();
         }
     }
 
     /// Draws what arrived while the window was hidden behind others, once some of it shows again.
     pub(super) fn occlusion_changed(&self) {
+        self.update_surface_visibility();
         let state = &self.ivars().state;
         if !self.on_display() {
             return;
@@ -308,7 +336,7 @@ impl TerminalView {
         if state.size_waits.get() {
             self.layout_grid();
         }
-        if self.ivars().renderer.is_some() {
+        if self.ivars().metal.supported {
             self.repaint();
         } else if state.stale.get() && !self.isHiddenOrHasHiddenAncestor() {
             self.refresh(true);
@@ -364,7 +392,7 @@ impl TerminalView {
     }
 
     pub(super) fn invalidate_cursor(&self) {
-        if self.ivars().renderer.is_some() {
+        if self.ivars().metal.supported {
             return self.repaint();
         }
         let line = self

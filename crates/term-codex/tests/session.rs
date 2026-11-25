@@ -515,6 +515,20 @@ fn management_calls_answer_in_their_types() {
 }
 
 #[test]
+fn pending_requests_are_bounded_and_shutdown_releases_waiters() {
+    let run = ready("basic", "request-limit");
+    let first = run.session.request("test/no-reply", Value::Null);
+    for _ in 0..256 {
+        drop(run.session.request("test/no-reply", Value::Null));
+    }
+    let refused = run.session.request("test/no-reply", Value::Null);
+    assert!(matches!(refused.wait(), Err(SessionError::Congested)));
+    run.session.stop(Duration::from_millis(100));
+    wait("the session closes", || run.session.is_ended());
+    assert!(matches!(first.wait(), Err(SessionError::Closed)));
+}
+
+#[test]
 fn stopping_ends_the_session_quietly() {
     let run = ready("basic", "stop");
     run.session.stop(Duration::from_millis(200));

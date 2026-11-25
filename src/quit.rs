@@ -108,7 +108,7 @@ pub(crate) fn should_terminate(mtm: MainThreadMarker) -> objc2_app_kit::NSApplic
 /// What the app does as it goes: stores its windows, drops the editors' copies of text now saved or given up, and
 /// ends every shell and agent.
 fn leave() {
-    crate::restore::save();
+    crate::restore::save_at_quit();
     LEFT.store(true, std::sync::atomic::Ordering::Relaxed);
     term_ui_editor::quit().finish(COPIES_LIMIT);
     end_all();

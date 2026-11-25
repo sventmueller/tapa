@@ -1,7 +1,7 @@
 //! The window of one tab (E20, F39): a native window in its workspace's tab group, with its own toolbar and a
 //! full-height sidebar of all the window's workspaces, as each Finder tab has its own sidebar.
 
-use std::cell::Cell;
+use std::cell::{Cell, RefCell};
 use std::rc::Rc;
 
 use objc2::rc::Retained;
@@ -38,10 +38,10 @@ thread_local! {
 /// key: AppKit works each out as a window joins, which lays out the window's whole view tree, also for tabs out of
 /// sight.
 pub(super) fn building<T>(build: impl FnOnce() -> T) -> T {
-    let before = BUILDING.replace(true);
-    let out = build();
-    BUILDING.set(before);
-    out
+    BUILDING.with(|building| {
+        let _building = term_ui::kit::FlagGuard::raise(building);
+        build()
+    })
 }
 
 define_class!(
@@ -129,6 +129,8 @@ pub(crate) struct TabWindow {
     _divider: term_ui::kit::Observation,
     /// The dot at the trailing end of the window's tab while its agent works or waits, as in Dango.
     status: Retained<NSImageView>,
+    tab_title: RefCell<Option<String>>,
+    tab_mark: Cell<Option<Mark>>,
     /// The watches that keep the sidebar below the toolbar in full screen.
     _full_screen: Vec<term_ui::kit::Observation>,
 }
@@ -144,14 +146,14 @@ impl TabWindow {
         look: Look,
     ) -> Rc<TabWindow> {
         let mtm = window.mtm;
-        let ns_window = make_ns_window(mtm, window.id, tab);
+        let ns_window = make_ns_window(mtm, window.id(), tab);
         // SAFETY: The app keeps its own reference, so closing must not release the window under it.
         unsafe { ns_window.setReleasedWhenClosed(false) };
         ns_window.setTabbingIdentifier(&ns(&format!("term.workspace.{workspace}")));
-        let toolbar = Toolbar::attach(mtm, &ns_window, window.id, (tab, workspace));
-        let delegate = Delegate::new(mtm, window.id, Some(tab));
+        let toolbar = Toolbar::attach(mtm, &ns_window, window.id(), (tab, workspace));
+        let delegate = Delegate::new(mtm, window.id(), Some(tab));
         ns_window.setDelegate(Some(ProtocolObject::from_ref(&*delegate)));
-        let (sidebar, sidebar_view) = make_sidebar(mtm, window.id, tab);
+        let (sidebar, sidebar_view) = make_sidebar(mtm, window.id(), tab);
         let sidebar_controller = NSViewController::new(mtm);
         sidebar_controller.setView(&sidebar_view);
         let sidebar_item = NSSplitViewItem::sidebarWithViewController(&sidebar_controller);
@@ -176,7 +178,7 @@ impl TabWindow {
             Some(frame) => ns_window.setFrame_display(frame, false),
             None => place_new(&ns_window, initial),
         }
-        let divider = watch_divider(mtm, &split, window.id, tab);
+        let divider = watch_divider(mtm, &split, window.id(), tab);
         let full_screen = super::full_screen::follow(&ns_window, &sidebar_view, &body);
         let this = Rc::new(TabWindow {
             tab,
@@ -191,14 +193,46 @@ impl TabWindow {
             width: Cell::new(look.width),
             _divider: divider,
             status: status_dot(mtm),
+            tab_title: RefCell::new(None),
+            tab_mark: Cell::new(None),
             _full_screen: full_screen,
         });
         this.apply(look);
         this
     }
 
+    /// Rebuilds the attributed title only when its content or icon changed.
+    pub(super) fn update_tab_title(
+        &self,
+        tab: &crate::tab::Tab,
+        entry: &term_ui_sidebar::model::Entry,
+        home: &std::path::Path,
+    ) {
+        let title = entry.heading(home);
+        if self.tab_title.borrow().as_ref() != Some(&title) {
+            *self.tab_title.borrow_mut() = Some(title.clone());
+            let text = ns(&title);
+            self.ns.setTitle(&text);
+            self.ns.tab().setTitle(Some(&text));
+            self.ns
+                .tab()
+                .setAttributedTitle(Some(&super::tabs::tab_title(tab, &title)));
+        }
+        let subtitle = ns(&tab.subtitle(entry, home));
+        if self.ns.subtitle() != subtitle {
+            self.ns.setSubtitle(&subtitle);
+        }
+    }
+
+    pub(super) fn invalidate_tab_title(&self) {
+        self.tab_title.borrow_mut().take();
+    }
+
     /// Shows `mark`'s dot on the window's tab, or none.
     pub(crate) fn show_mark(&self, mark: Option<Mark>) {
+        if self.tab_mark.replace(mark) == mark {
+            return;
+        }
         let tab = self.ns.tab();
         if let Some(mark) = mark {
             self.status

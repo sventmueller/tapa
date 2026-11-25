@@ -23,7 +23,7 @@ use crate::event::{Clipboard, Event};
 use crate::fair::FairMutex;
 use crate::gather::{Batch, Gather};
 use crate::pty::Pty;
-use crate::session::Shared;
+use crate::session::{Shared, ViewUpdate};
 use term_vt::Scanner;
 
 /// The keys the poller reports the PTY and the program's end under.
@@ -129,6 +129,8 @@ impl Reader {
                 }
                 break None;
             }
+            let update = std::mem::take(&mut *self.shared.view_update.lock_ignoring_poison());
+            self.apply_view_update(update);
             if deadline.is_some_and(|deadline| Instant::now() >= deadline) {
                 self.end_synchronized_update();
             }
@@ -168,9 +170,21 @@ impl Reader {
         status
     }
 
-    /// Parses every batch the gather stage has ready.
+    fn apply_view_update(&self, update: ViewUpdate) {
+        if let Some(size) = update.resize {
+            self.shared.resize(size, self.pty.file());
+        }
+        if update.frame {
+            self.shared.wake();
+        }
+    }
+
+    /// Parses a burst before servicing the next owner update, even while the PTY keeps refilling the ring.
     fn take_batches(&mut self) {
-        while let Some(batch) = self.gather.as_ref().and_then(Gather::try_next) {
+        for _ in 0..crate::gather::BUFFERS {
+            let Some(batch) = self.gather.as_ref().and_then(Gather::try_next) else {
+                return;
+            };
             match batch {
                 Batch::Bytes { bytes, settled } => {
                     self.consume(&bytes, settled);
@@ -210,7 +224,16 @@ impl Reader {
         if let Some(gather) = self.gather.take() {
             gather.stop();
         }
-        self.shared.running.store(false, std::sync::atomic::Ordering::Release);
+        loop {
+            let mut pending = self.shared.view_update.lock_ignoring_poison();
+            if !pending.frame {
+                self.shared.running.store(false, std::sync::atomic::Ordering::Release);
+                break;
+            }
+            let update = std::mem::take(&mut *pending);
+            drop(pending);
+            self.apply_view_update(update);
+        }
         self.shared.wake();
         self.shared.emit(Event::Exited(ending));
         // Dropping the PTY hangs up and waits for the program, which has ended already unless reading failed.

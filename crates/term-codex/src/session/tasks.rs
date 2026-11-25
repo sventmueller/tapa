@@ -164,7 +164,7 @@ impl Session {
             Stop::Agent { thread, turn } => {
                 let after: After = Box::new(|result, shared| {
                     if let Err(error) = result {
-                        shared.fail(SessionError::Server(error.clone()));
+                        shared.fail(error.clone());
                     }
                 });
                 drop(self.shared.call(
@@ -181,7 +181,7 @@ impl Session {
                         let updates = shared.state().mapper.process_stopped(&task, now());
                         shared.apply(updates);
                     }
-                    Err(error) => shared.fail(SessionError::Server(error.clone())),
+                    Err(error) => shared.fail(error.clone()),
                     _ => {}
                 });
                 drop(self.shared.call(

@@ -25,6 +25,7 @@ pub(crate) struct Frames {
     latest: Option<Arc<Snapshot>>,
     taken: bool,
     sink: Option<Arc<dyn FrameSink>>,
+    generation: u64,
 }
 
 /// What the session shares with its frames' renderer.
@@ -42,8 +43,13 @@ impl Publisher {
         self.frames.lock_ignoring_poison().sink.is_some()
     }
 
-    pub(crate) fn set_sink(&self, sink: Option<Arc<dyn FrameSink>>) {
-        self.frames.lock_ignoring_poison().sink = sink;
+    pub(crate) fn set_sink(&self, sink: Option<Arc<dyn FrameSink>>) -> u64 {
+        let mut frames = self.frames.lock_ignoring_poison();
+        frames.generation += 1;
+        frames.latest = None;
+        frames.taken = false;
+        frames.sink = sink;
+        frames.generation
     }
 
     /// The latest frame, built or not taken yet.
@@ -65,10 +71,20 @@ impl Publisher {
 
     /// Builds a frame from the screen as it is now and tells the sink.
     pub(crate) fn publish(&self, shared: &Shared) {
-        self.dirty.store(false, Ordering::Release);
+        let generation = {
+            let frames = self.frames.lock_ignoring_poison();
+            if frames.sink.is_none() {
+                return;
+            }
+            self.dirty.store(false, Ordering::Release);
+            frames.generation
+        };
         let snapshot = Arc::new(shared.build_snapshot());
         let sink = {
             let mut frames = self.frames.lock_ignoring_poison();
+            if frames.generation != generation {
+                return;
+            }
             frames.latest = Some(snapshot);
             frames.taken = false;
             frames.sink.clone()
@@ -89,6 +105,7 @@ impl Publisher {
 pub struct FrameSource {
     pub(crate) shared: Arc<Shared>,
     pub(crate) poller: Arc<Poller>,
+    pub(crate) generation: u64,
 }
 
 impl FrameSource {
@@ -97,6 +114,9 @@ impl FrameSource {
         let publisher = &self.shared.publisher;
         let frame = {
             let mut frames = publisher.frames.lock_ignoring_poison();
+            if frames.generation != self.generation {
+                return None;
+            }
             if frames.taken {
                 None
             } else {
@@ -113,7 +133,12 @@ impl FrameSource {
 
     /// The latest frame, taken or not, for drawing again what did not change.
     pub fn latest(&self) -> Option<Arc<Snapshot>> {
-        self.shared.publisher.latest()
+        let frames = self.shared.publisher.frames.lock_ignoring_poison();
+        if frames.generation == self.generation {
+            frames.latest.clone()
+        } else {
+            None
+        }
     }
 }
 

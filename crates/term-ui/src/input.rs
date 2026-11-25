@@ -184,9 +184,7 @@ impl TerminalView {
         if self.copy_mode_key(event) {
             return true;
         }
-        if let Some(renderer) = &self.ivars().renderer {
-            renderer.key_pressed();
-        }
+        self.mark_key();
         let mut typed = self.ivars().keys.typed.borrow_mut();
         if typed.is_none() {
             *typed = term_base::signpost::begin(term_base::signpost::name!("term-key"));

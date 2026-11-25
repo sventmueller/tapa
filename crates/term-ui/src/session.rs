@@ -45,14 +45,13 @@ impl TerminalView {
         match Session::spawn(&super::host().spawner(), env, options, super::listener(self.id())) {
             Ok(session) => {
                 session.focus(self.ivars().state.focused.get());
-                if let Some(renderer) = &self.ivars().renderer {
-                    renderer.set_theme(self.ivars().theme.borrow().clone());
-                    let _ = self.fonts();
-                    renderer.set_source(session.render_to(renderer.sink()));
-                }
                 *self.ivars().session.borrow_mut() = Some(session);
                 self.layout_grid();
-                self.refresh(true);
+                if self.has_renderer() {
+                    self.connect_renderer();
+                } else {
+                    self.refresh(true);
+                }
             }
             Err(error) => {
                 term_base::diag::report("starting a terminal", &error);

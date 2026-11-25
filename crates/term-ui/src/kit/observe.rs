@@ -5,7 +5,12 @@ use dispatch2::MainThreadBound;
 use objc2::MainThreadMarker;
 use objc2::rc::Retained;
 use objc2::runtime::{AnyObject, ProtocolObject};
+use objc2_app_kit::{
+    NSWindow, NSWindowDidBecomeKeyNotification, NSWindowDidChangeOcclusionStateNotification,
+    NSWindowDidDeminiaturizeNotification, NSWindowDidMiniaturizeNotification, NSWindowDidResignKeyNotification,
+};
 use objc2_foundation::{NSNotification, NSNotificationCenter, NSNotificationName, NSObjectProtocol};
+use term_render::constant;
 
 use super::guarded;
 
@@ -57,4 +62,21 @@ pub fn observe(
         )
     };
     Observation { token }
+}
+
+/// Watches the window events that can change which native tab is visible or has the keyboard.
+pub fn observe_window_visibility(window: &NSWindow, f: impl Fn() + Clone + 'static) -> Vec<Observation> {
+    [
+        constant!(NSWindowDidBecomeKeyNotification),
+        constant!(NSWindowDidResignKeyNotification),
+        constant!(NSWindowDidChangeOcclusionStateNotification),
+        constant!(NSWindowDidMiniaturizeNotification),
+        constant!(NSWindowDidDeminiaturizeNotification),
+    ]
+    .into_iter()
+    .map(|name| {
+        let f = f.clone();
+        observe(MainThreadMarker::from(window), name, Some(window), move |_| f())
+    })
+    .collect()
 }

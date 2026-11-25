@@ -4,6 +4,7 @@
 
 use std::path::PathBuf;
 use std::rc::Rc;
+use term_ui::workspace_host::{TabId, TabKind, WorkspaceId};
 
 use objc2::AnyThread;
 use objc2::rc::Retained;
@@ -16,7 +17,6 @@ use super::{Window, session};
 use crate::state::app;
 use crate::tab::Tab;
 use term_ui::kit::ui_size;
-use term_ui::workspace_host::TabKind;
 
 impl Window {
     /// Opens a tab after the one in front, in the selected workspace's base folder (E20).
@@ -28,8 +28,8 @@ impl Window {
     /// Makes tab `id` and its workspace the selected ones, so that what opens next opens beside it.
     pub(crate) fn select_beside(&self, id: u64) -> Option<Rc<crate::workspace::Workspace>> {
         let workspace = self.workspace_of_tab(id)?;
-        workspace.tabs.borrow_mut().select(id);
-        self.workspaces.borrow_mut().select(workspace.id);
+        workspace.select_tab(TabId::new(id));
+        self.workspaces.borrow_mut().select(WorkspaceId::new(workspace.id));
         Some(workspace)
     }
 
@@ -48,7 +48,10 @@ impl Window {
             .filter(|folder| folder.is_dir())
             .unwrap_or_else(|| session::start_folder(&config, None, false));
         let tab = self.make_tab(folder, None);
-        let anchor = workspace.tabs.borrow().selected_id();
+        let anchor = workspace.tabs.borrow().selected_id().map(TabId::get);
+        if let Some(anchor) = anchor.and_then(|id| self.frame_of(id)) {
+            self.sync_group_order(&anchor);
+        }
         workspace.tabs.borrow_mut().insert_after_selected(tab.clone());
         self.attach(&tab, workspace.id, anchor, None, None);
         self.select(tab.id);
@@ -65,10 +68,10 @@ impl Window {
         let Some(frame) = self.frame_of(id) else {
             return;
         };
-        workspace.tabs.borrow_mut().select(id);
+        workspace.select_tab(TabId::new(id));
         if frame.is_shown() {
             frame.ns.makeKeyAndOrderFront(None);
-            self.tab_became_key(id);
+            self.ensure_tab_key(id);
         } else {
             let replacing = self.frame_of(self.last_key.get().unwrap_or(id));
             self.show_workspace(workspace.id, replacing);
@@ -114,6 +117,7 @@ impl Window {
         if let Some(selected) = selected {
             group.setSelectedWindow(Some(&selected));
         }
+        self.sync_group_order(&frame);
         self.refresh();
     }
 
@@ -128,7 +132,7 @@ impl Window {
         let config = app().config();
         let current = tab.focused_view().map(|view| view.cwd());
         let folder = session::start_folder(&config, current, config.window.inherit_directory.split);
-        let (view, root) = session::make(self.mtm, self.id, folder.clone(), None);
+        let (view, root) = session::make(self.mtm, self.id(), folder.clone(), None);
         tab.add_session(view.id(), folder);
         terminal.panes.split(side, view.id(), root);
         self.start_sessions(&tab);
@@ -175,10 +179,10 @@ const ICON_POINTS: f64 = 11.0;
 
 /// What the tab bar shows for `tab`, as Dango titles its tabs: a file's icon, else the symbol
 /// of what the tab shows, an agent's in its colour, before the title; all at the interface size.
-pub(super) fn tab_title(tab: &Tab) -> Retained<NSAttributedString> {
+pub(super) fn tab_title(tab: &Tab, title: &str) -> Retained<NSAttributedString> {
     let text = NSMutableAttributedString::new();
     let font = ui_size::system(objc2_app_kit::NSFont::systemFontSize());
-    if let Some(image) = tab_icon(tab) {
+    if let Some(image) = tab_icon(tab, title) {
         let size = image.size();
         let height = ui_size::scaled(ICON_HEIGHT).min(size.height.max(1.0));
         let width = size.width * height / size.height.max(1.0);
@@ -191,7 +195,7 @@ pub(super) fn tab_title(tab: &Tab) -> Retained<NSAttributedString> {
         text.appendAttributedString(&NSAttributedString::attributedStringWithAttachment(&attachment));
         text.appendAttributedString(&attributed("\u{2002}", &font));
     }
-    text.appendAttributedString(&attributed(&tab.title(), &font));
+    text.appendAttributedString(&attributed(title, &font));
     Retained::into_super(text)
 }
 
@@ -206,12 +210,12 @@ fn attributed(text: &str, font: &objc2_app_kit::NSFont) -> Retained<NSAttributed
 }
 
 /// The picture before the title of `tab`.
-fn tab_icon(tab: &Tab) -> Option<Retained<objc2_app_kit::NSImage>> {
+fn tab_icon(tab: &Tab, title: &str) -> Option<Retained<objc2_app_kit::NSImage>> {
     use objc2_app_kit::{NSColor, NSImageSymbolConfiguration};
     let kind = tab.as_hosted().map_or(TabKind::Terminal, |hosted| hosted.kind());
     // A file's tab is named after the file from its start, before its path is known.
     if kind == TabKind::File
-        && let Some(image) = term_ui_icons::icon_image(&term_ui_icons::icon_of(&tab.title()), ui_size::scaled(1.0))
+        && let Some(image) = term_ui_icons::icon_image(&term_ui_icons::icon_of(title), ui_size::scaled(1.0))
     {
         return Some(image);
     }

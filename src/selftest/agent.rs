@@ -5,7 +5,8 @@
 //! waits, `agenttext:<name>` prints the timeline, `agentdialog:<name>` the texts of the open overlay,
 //! `agentdialogsearch:<text>` types into its search field, `agentdialogpress:<title>` presses its button so titled, `agentstatus:<name>` the tab's status with the sidebar's,
 //! `agentargs:<name>` the arguments the `claude` stand-in started with, `agentsleep:<name>` parks the agent tab's
-//! process as a hidden idle tab does, and `processes:<name>` prints what the supervisor runs.
+//! process as a hidden idle tab does, `agentrows:<name>` counts the workspace's timeline rows and retained table
+//! rows, and `processes:<name>` prints what the supervisor runs.
 
 use std::path::PathBuf;
 use std::rc::Rc;
@@ -64,6 +65,7 @@ pub(crate) fn run(step: &str) -> bool {
         }
         "agentanswer" => answer(argument),
         "agenttext" => text(argument),
+        "agentrows" => rows(argument),
         "agentdialog" => {
             let texts = front_agent().and_then(|tab| tab.dialog_texts());
             println!("agentdialog {argument}: {texts:?}");
@@ -176,6 +178,18 @@ fn text(name: &str) {
     let seen = tab.inspect();
     println!("agenttext {name} title {:?}: {:?}", seen.title, seen.visible);
     println!("agenttext {name} cards: {:?}", tab.timeline().visible_summaries());
+}
+
+fn rows(name: &str) {
+    let Some(workspace) = app().front().and_then(|window| window.selected_workspace()) else {
+        return;
+    };
+    let mut rows: Vec<_> = term_ui_agent::of_workspace(&Handle::new(WorkspaceId::new(workspace.id)))
+        .iter()
+        .map(|tab| (tab.timeline().count(), tab.timeline().rows_in_table()))
+        .collect();
+    rows.sort_unstable();
+    println!("agentrows {name}: {rows:?}");
 }
 
 /// Prints the status of the agent tab in front, as its tab and the workspace's row in the sidebar show it.

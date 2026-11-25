@@ -8,7 +8,6 @@ use serde::de::DeserializeOwned;
 use serde_json::Value;
 
 use super::{SessionError, Shared};
-use crate::wire::RpcError;
 
 /// How a result of the wire turns into what the caller gets.
 pub(crate) type Read<T> = fn(Value) -> Result<T, SessionError>;
@@ -31,7 +30,8 @@ pub(crate) fn raw(value: Value) -> Result<Value, SessionError> {
 /// The answer to a request, once it comes; dropping it leaves the request running.
 #[must_use = "a reply does nothing unless it is waited for or handed a callback"]
 pub struct Reply<T> {
-    pub(super) rx: Receiver<Result<Value, RpcError>>,
+    pub(super) rx: Receiver<Result<Value, SessionError>>,
+    pub(super) refused: Option<SessionError>,
     pub(super) id: i64,
     pub(super) deadline: Instant,
     pub(super) shared: Weak<Shared>,
@@ -39,15 +39,20 @@ pub struct Reply<T> {
 }
 
 impl<T: Send + 'static> Reply<T> {
+    pub(super) fn submitted(&self) -> Result<(), SessionError> {
+        self.refused.clone().map_or(Ok(()), Err)
+    }
+
     /// Waits for the answer, at most until the request's timeout.
     pub fn wait(self) -> Result<T, SessionError> {
+        self.submitted()?;
         let left = self.deadline.saturating_duration_since(Instant::now());
         match self.rx.recv_timeout(left) {
             Ok(Ok(result)) => (self.read)(result),
-            Ok(Err(error)) => Err(SessionError::Server(error)),
+            Ok(Err(error)) => Err(error),
             Err(RecvTimeoutError::Timeout) => {
                 if let Some(shared) = self.shared.upgrade() {
-                    shared.forget(self.id);
+                    shared.answered(self.id, Err(SessionError::Timeout));
                 }
                 Err(SessionError::Timeout)
             }

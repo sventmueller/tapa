@@ -25,6 +25,7 @@ use crate::state::app;
 mod accessibility;
 mod agent;
 mod agent_install;
+mod agent_perf;
 mod browser;
 mod dictation;
 mod files;
@@ -76,19 +77,7 @@ fn next(steps: Vec<String>, at: usize) {
         .map(|name| (name, false))
         .or_else(|| step.strip_prefix("lines:").map(|name| (name, true)))
     {
-        if let Some(view) = app().front().and_then(|window| window.focused_view()) {
-            let lines = view
-                .with_session(term_session::Session::visible_text)
-                .unwrap_or_default();
-            if all && let Some(dir) = std::env::var_os("TAPA_SELFTEST_DIR") {
-                let _ = std::fs::write(PathBuf::from(dir).join(format!("{name}.txt")), lines.join("\n"));
-            }
-            let lines: Vec<&String> = lines.iter().filter(|line| all || !line.is_empty()).collect();
-            println!(
-                "text {name} (field {}): {lines:?}",
-                if view.field_shown() { "shown" } else { "away" }
-            );
-        }
+        report_text(name, all);
     } else if let Some(ms) = step.strip_prefix("stall:") {
         let span = Duration::from_millis(ms.parse().unwrap_or(5000));
         return stall(
@@ -100,6 +89,8 @@ fn next(steps: Vec<String>, at: usize) {
         );
     } else if let Some(path) = step.strip_prefix("until:") {
         return until(steps, at, PathBuf::from(path));
+    } else if let Some(count) = step.strip_prefix("agentperf:") {
+        return agent_perf::run(count.parse().unwrap_or(1000), move || next(steps, at + 1));
     } else if let Some(count) = step.strip_prefix("latency:") {
         return latency(steps, at, count.parse().unwrap_or(100), 0);
     } else if let Some(text) = step.strip_prefix("fieldtype:") {
@@ -149,8 +140,8 @@ fn next(steps: Vec<String>, at: usize) {
         }
     } else if modal::run(&step) {
         pause = modal::TIME;
-    } else if let Some(count) = switching::run(&step) {
-        pause = switching::time(count);
+    } else if step.starts_with("switchtime:") || step.starts_with("selecttab:") {
+        return switching::run(&step, move || term_base::main_after(PAUSE, move || next(steps, at + 1)));
     } else if perform(&step) {
         if step.starts_with("worktree:") {
             pause = files::WORKTREE_TIME;
@@ -159,6 +150,22 @@ fn next(steps: Vec<String>, at: usize) {
         eprintln!("selftest: unknown step {step}");
     }
     term_base::main_after(pause, move || next(steps, at + 1));
+}
+
+fn report_text(name: &str, all: bool) {
+    if let Some(view) = app().front().and_then(|window| window.focused_view()) {
+        let lines = view
+            .with_session(term_session::Session::visible_text)
+            .unwrap_or_default();
+        if all && let Some(dir) = std::env::var_os("TAPA_SELFTEST_DIR") {
+            let _ = std::fs::write(PathBuf::from(dir).join(format!("{name}.txt")), lines.join("\n"));
+        }
+        let lines: Vec<&String> = lines.iter().filter(|line| all || !line.is_empty()).collect();
+        println!(
+            "text {name} (field {}): {lines:?}",
+            if view.field_shown() { "shown" } else { "away" }
+        );
+    }
 }
 
 /// Runs `step` if it is one of the modules' steps or a key binding's action; whether it was.

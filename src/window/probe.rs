@@ -1,6 +1,7 @@
 //! What the self-test reads of a window's native tab groups and sets on them.
 
 use std::rc::Rc;
+use term_ui::workspace_host::WorkspaceId;
 
 use super::Window;
 use super::frame::Look;
@@ -45,7 +46,7 @@ impl Window {
                 let shown_rows = frame
                     .sidebar
                     .selected()
-                    .and_then(|id| self.workspaces.borrow().get(id))
+                    .and_then(|id| self.workspaces.borrow().get(WorkspaceId::new(id)))
                     .map(|selected| selected.name());
                 lines.push(format!(
                     "{} {} at {:.0},{:.0} {:.0}x{:.0} sidebar {} {} selects {:?}: {:?}",

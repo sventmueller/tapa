@@ -12,6 +12,9 @@ const IN_FLIGHT: usize = 2;
 /// The largest file read ahead.
 const LIMIT: u64 = 1 << 20;
 
+static READ_AHEAD: term_base::lane::Lane =
+    term_base::lane::Lane::with_start("term-file-prewarm", 1, 2, term_base::priority::background);
+
 /// The reads ahead of the folder tree.
 #[derive(Default)]
 pub(crate) struct Prewarm {
@@ -37,7 +40,7 @@ impl Prewarm {
         let done = Done(self.in_flight.clone());
         let path = path.to_path_buf();
         // A refused job drops `done` with it.
-        let _ = term_base::lane::DISK.try_run(move || {
+        let _ = READ_AHEAD.try_run(move || {
             let _done = done;
             let _ = read(&path);
         });

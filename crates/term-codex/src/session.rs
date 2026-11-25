@@ -9,15 +9,16 @@ mod manage;
 mod open;
 mod reply;
 mod tasks;
+mod transport;
 
 use std::collections::HashMap;
 use std::io::{BufReader, Write};
 use std::path::PathBuf;
 use std::process::{ChildStdin, ChildStdout};
 use std::sync::atomic::{AtomicBool, AtomicI64, AtomicU64, Ordering};
-use std::sync::mpsc::{Receiver, Sender, channel};
+use std::sync::mpsc::{Receiver, SyncSender, sync_channel};
 use std::sync::{Arc, Mutex, MutexGuard};
-use std::time::{Duration, Instant, SystemTime, UNIX_EPOCH};
+use std::time::{Duration, SystemTime, UNIX_EPOCH};
 
 use serde_json::{Value, json};
 use term_process::framing::{self, Line};
@@ -32,6 +33,7 @@ use crate::protocol::{method, text};
 use crate::requests::Offer;
 use crate::version::Version;
 use crate::wire::{Id, Message, RpcError};
+use transport::{After, Pending, WRITE_QUEUE};
 
 pub(crate) use open::initialize_params;
 pub use reply::Reply;
@@ -48,9 +50,6 @@ const LAST_WORDS: Duration = Duration::from_millis(500);
 
 /// The longest message read from the server.
 const MAX_MESSAGE: usize = 256 * 1024 * 1024;
-
-/// How long a request may wait for its answer.
-const REQUEST_TIMEOUT: Duration = Duration::from_secs(120);
 
 /// What a session tells the UI, on one of the session's threads.
 #[derive(Debug, Clone, PartialEq)]
@@ -113,6 +112,8 @@ pub enum SessionError {
     UnknownOption(String),
     /// A turn is being started; a message can follow once it runs.
     Busy,
+    /// Too many requests or writes are waiting for the server.
+    Congested,
     /// No answer came in time.
     Timeout,
     /// The session has ended or has not opened its thread yet.
@@ -137,6 +138,7 @@ impl std::fmt::Display for SessionError {
             SessionError::UnknownRequest(id) => write!(f, "no request {id} waits for this answer"),
             SessionError::UnknownOption(id) => write!(f, "codex has no setting {id}"),
             SessionError::Busy => f.write_str("a turn is starting"),
+            SessionError::Congested => f.write_str("the Codex request queue is full"),
             SessionError::Timeout => f.write_str("codex did not answer in time"),
             SessionError::Closed => f.write_str("the session has ended"),
         }
@@ -155,13 +157,6 @@ pub enum Choice {
 }
 
 type Sink = Box<dyn Fn(Event) + Send + Sync>;
-type After = Box<dyn FnOnce(&Result<Value, RpcError>, &Arc<Shared>) + Send>;
-
-struct Pending {
-    reply: Sender<Result<Value, RpcError>>,
-    after: Option<After>,
-}
-
 struct Ask {
     id: Id,
     offer: Offer,
@@ -222,7 +217,7 @@ struct Shared {
     process: ProcessId,
     launch: Launch,
     /// What goes to the server's input, already framed.
-    writer: Mutex<Option<Sender<Vec<u8>>>>,
+    writer: Mutex<Option<SyncSender<Vec<u8>>>>,
     state: Mutex<State>,
     pending: Mutex<HashMap<i64, Pending>>,
     sink: Sink,
@@ -271,54 +266,6 @@ impl Shared {
         }
     }
 
-    fn write(&self, message: &Message) -> Result<(), SessionError> {
-        let mut line = message.encode().into_bytes();
-        line.push(b'\n');
-        let writer = self.writer.lock().unwrap_or_else(|e| e.into_inner());
-        let writer = writer.as_ref().ok_or(SessionError::Closed)?;
-        writer.send(line).map_err(|_| SessionError::Closed)
-    }
-
-    fn notify(&self, method: &str, params: Value) -> Result<(), SessionError> {
-        self.write(&Message::Notification {
-            method: method.into(),
-            params,
-        })
-    }
-
-    /// Sends the request `method`; `after` sees the answer on the reader thread before the reply does.
-    fn call<T>(self: &Arc<Self>, method: &str, params: Value, after: Option<After>, read: reply::Read<T>) -> Reply<T> {
-        let id = self.next_id.fetch_add(1, Ordering::SeqCst);
-        let (tx, rx) = channel();
-        if !self.ended.load(Ordering::SeqCst) {
-            self.pending().insert(id, Pending { reply: tx, after });
-            let message = Message::Request {
-                id: Id::Number(id),
-                method: method.into(),
-                params,
-            };
-            if self.write(&message).is_err() {
-                self.pending().remove(&id);
-            }
-        }
-        Reply {
-            rx,
-            id,
-            deadline: Instant::now() + REQUEST_TIMEOUT,
-            shared: Arc::downgrade(self),
-            read,
-        }
-    }
-
-    /// Drops the request `id`, whose answer nobody waits for any more.
-    fn forget(&self, id: i64) {
-        self.pending().remove(&id);
-    }
-
-    fn respond(&self, id: Id, result: Value) -> Result<(), SessionError> {
-        self.write(&Message::Response { id, result })
-    }
-
     /// Reads the server's output until it ends.
     fn read(self: Arc<Self>, stdout: ChildStdout) {
         let mut reader = BufReader::with_capacity(READ_BUFFER, stdout);
@@ -349,21 +296,11 @@ impl Shared {
             Message::Error {
                 id: Some(Id::Number(id)),
                 error,
-            } => self.answered(id, Err(error)),
+            } => self.answered(id, Err(SessionError::Server(error))),
             Message::Notification { method, params } => self.on_notification(&method, &params),
             Message::Request { id, method, params } => self.on_request(id, &method, &params),
             Message::Response { .. } | Message::Error { .. } => {}
         }
-    }
-
-    fn answered(self: &Arc<Self>, id: i64, result: Result<Value, RpcError>) {
-        let Some(pending) = self.pending().remove(&id) else {
-            return;
-        };
-        if let Some(after) = pending.after {
-            after(&result, self);
-        }
-        let _ = pending.reply.send(result);
     }
 
     fn on_notification(self: &Arc<Self>, method: &str, params: &Value) {
@@ -514,6 +451,11 @@ impl Shared {
         }
         *self.writer.lock().unwrap_or_else(|e| e.into_inner()) = None;
         self.pending().clear();
+        {
+            let mut state = self.state();
+            state.starting = false;
+            state.interrupt = false;
+        }
         let withdrawn: Vec<Update> = self
             .state()
             .asks
@@ -601,7 +543,7 @@ impl Session {
             return Err(SessionError::Start("the pipes are missing".into()));
         };
         let origin = u64::try_from(now().duration_since(UNIX_EPOCH).unwrap_or_default().as_nanos()).unwrap_or_default();
-        let (tx, rx) = channel();
+        let (tx, rx) = sync_channel(WRITE_QUEUE);
         let stderr_tail = Arc::new(Mutex::new(Tail::new(STDERR_LIMIT)));
         let shared = Arc::new(Shared {
             supervisor: supervisor.clone(),
@@ -743,6 +685,9 @@ impl Session {
         let input = self.input(&message);
         let (params, overrides, updates) = {
             let mut state = self.shared.state();
+            if state.starting || state.mapper.turn().is_some() {
+                return Err(SessionError::Busy);
+            }
             let mut updates = Vec::new();
             if state.thread.title().is_empty() {
                 let title = term_thread::title_from(&message.text);
@@ -779,8 +724,14 @@ impl Session {
                         // A stop asked for while this turn was starting has nothing left to stop.
                         state.interrupt = false;
                         state.overrides.restore(overrides);
-                        let kind = error.data.as_ref().map_or(ErrorKind::Api, crate::mapping::error_kind);
-                        let mut updates = state.mapper.error(kind, error.message.clone(), now());
+                        let (kind, message) = match error {
+                            SessionError::Server(error) => (
+                                error.data.as_ref().map_or(ErrorKind::Api, crate::mapping::error_kind),
+                                error.message.clone(),
+                            ),
+                            error => (ErrorKind::Process, error.to_string()),
+                        };
+                        let mut updates = state.mapper.error(kind, message, now());
                         updates.extend(state.mapper.abandon(now()));
                         updates
                     }
@@ -788,8 +739,9 @@ impl Session {
             };
             shared.apply(updates);
         });
-        drop(self.shared.call(method::TURN_START, params, Some(after), reply::unit));
-        Ok(())
+        self.shared
+            .call(method::TURN_START, params, Some(after), reply::unit)
+            .submitted()
     }
 
     /// The `input` items of `message`, built without the state's lock, as they read files and encode images.
@@ -812,15 +764,13 @@ impl Session {
         self.shared.apply(updates);
         let after: After = Box::new(|result, shared| {
             if let Err(error) = result {
-                let updates = shared
-                    .state()
-                    .mapper
-                    .error(ErrorKind::Turn, error.message.clone(), now());
+                let updates = shared.state().mapper.error(ErrorKind::Turn, error.to_string(), now());
                 shared.apply(updates);
             }
         });
-        drop(self.shared.call(method::TURN_STEER, params, Some(after), reply::unit));
-        Ok(())
+        self.shared
+            .call(method::TURN_STEER, params, Some(after), reply::unit)
+            .submitted()
     }
 
     /// Asks Codex to stop the turn; open requests are answered as dismissed and withdrawn.

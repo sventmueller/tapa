@@ -3,6 +3,7 @@
 
 use std::path::PathBuf;
 use std::rc::Rc;
+use term_ui::workspace_host::WorkspaceId;
 
 use block2::RcBlock;
 use objc2_app_kit::{NSModalResponse, NSModalResponseOK, NSOpenPanel};
@@ -46,7 +47,7 @@ impl Window {
             .map_or_else(default_base, |workspace| workspace.base.clone());
         panel.setDirectoryURL(Some(&NSURL::fileURLWithPath(&ns(&start.to_string_lossy()))));
         let chosen = panel.clone();
-        let id = self.id;
+        let id = self.id();
         let handler = RcBlock::new(move |response: NSModalResponse| {
             guarded((), || {
                 if response != NSModalResponseOK {
@@ -88,7 +89,7 @@ impl Window {
 
     /// Selects the workspace `step` places from the selected one, wrapping around.
     pub(crate) fn step_workspace(self: &Rc<Self>, step: isize) {
-        let next = self.workspaces.borrow().step(step);
+        let next = self.workspaces.borrow().step(step).map(WorkspaceId::get);
         if let Some(id) = next {
             self.select_workspace(id);
         }
@@ -106,7 +107,7 @@ impl Window {
 
     /// Names workspace `id` `name`; an empty name gives it its folder's again.
     pub(crate) fn set_workspace_name(&self, id: u64, name: &str) {
-        if let Some(workspace) = self.workspaces.borrow().get(id) {
+        if let Some(workspace) = self.workspaces.borrow().get(WorkspaceId::new(id)) {
             workspace.rename(name);
         }
         self.refresh();
@@ -122,10 +123,13 @@ impl Window {
                 .iter()
                 .take_while(|workspace| workspace.scratch)
                 .count();
-            if workspaces.get(id).is_none_or(|workspace| workspace.scratch) {
+            if workspaces
+                .get(WorkspaceId::new(id))
+                .is_none_or(|workspace| workspace.scratch)
+            {
                 return;
             }
-            workspaces.move_to(id, index.max(fixed));
+            workspaces.move_to(WorkspaceId::new(id), index.max(fixed));
         }
         self.refresh();
         crate::restore::save();
@@ -164,7 +168,7 @@ impl Window {
             RowAction::Rename => self.rename_workspace(Some(id)),
             RowAction::Close => self.close_workspace(id),
             RowAction::ToggleTrust => {
-                if let Some(workspace) = self.workspaces.borrow().get(id) {
+                if let Some(workspace) = self.workspaces.borrow().get(WorkspaceId::new(id)) {
                     workspace.set_trusted(!workspace.is_trusted());
                 }
                 self.refresh();

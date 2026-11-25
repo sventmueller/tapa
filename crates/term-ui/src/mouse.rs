@@ -41,13 +41,18 @@ pub(crate) struct MouseState {
     beyond: Cell<Option<(f64, usize, CellSide)>>,
     /// The cell under the pointer while ⌘ is held, and whether a link or file is there.
     hover: Cell<Option<(Point, bool)>>,
-    /// While ⌘ is held, the file each path under the pointer named, by that path; none while it is looked for or when
-    /// there is no file.
-    files: RefCell<HashMap<PathBuf, Option<PathBuf>>>,
+    /// The resolved files, missing paths and lookups in progress while ⌘ is held.
+    files: RefCell<HashMap<PathBuf, FileLookup>>,
     /// Where the pointer was last seen, in the window's coordinates.
     pointer: Cell<Option<NSPoint>>,
     /// The pointing hand shows rather than the I-beam.
     hand: Cell<bool>,
+}
+
+enum FileLookup {
+    Pending,
+    Missing,
+    Found(PathBuf),
 }
 
 impl MouseState {
@@ -66,6 +71,7 @@ struct Drag {
     kind: SelectionKind,
     /// The selection exists; a plain click starts one only once the mouse moves.
     started: bool,
+    last: Option<(Point, CellSide)>,
 }
 
 /// Where an event happened on the grid.
@@ -92,6 +98,9 @@ fn whole_lines(lines: f64) -> i32 {
     let count = i32::try_from(clamp_to(lines.abs().trunc(), 10_000)).unwrap_or(0);
     if lines < 0.0 { -count } else { count }
 }
+
+static LINK_OPEN: term_base::lane::Lane =
+    term_base::lane::Lane::with_start("term-link-open", 2, 32, term_base::priority::user_initiated);
 
 impl TerminalView {
     fn spot(&self, event: &NSEvent) -> Option<Spot> {
@@ -159,6 +168,7 @@ impl TerminalView {
     }
 
     pub(super) fn mouse_down(&self, event: &NSEvent) {
+        let _interval = term_base::signpost::begin(term_base::signpost::name!("terminal mouse down"));
         if let Some(window) = self.window() {
             window.makeFirstResponder(Some(self));
         }
@@ -182,6 +192,7 @@ impl TerminalView {
             side: spot.side,
             kind,
             started: true,
+            last: None,
         };
         let drag = match event.clickCount() {
             2 => selecting(SelectionKind::Word),
@@ -211,10 +222,11 @@ impl TerminalView {
             self.with_session(|session| session.select(drag.kind, spot.point, spot.side));
         }
         mouse.drag.set(Some(drag));
-        self.refresh(true);
+        self.refresh_interactive();
     }
 
     pub(super) fn mouse_dragged(&self, event: &NSEvent) {
+        let _interval = term_base::signpost::begin(term_base::signpost::name!("terminal selection drag"));
         let Some(spot) = self.spot(event) else { return };
         let mouse = &self.ivars().mouse;
         if let Some(button) = mouse.reported.get() {
@@ -224,6 +236,16 @@ impl TerminalView {
             return;
         }
         let Some(mut drag) = mouse.drag.get() else { return };
+        mouse.beyond.set(Some((spot.beyond, spot.point.column, spot.side)));
+        if spot.beyond == 0.0 {
+            mouse.stop_autoscroll();
+        } else {
+            self.start_autoscroll();
+        }
+        let end = (spot.point, spot.side);
+        if drag.last == Some(end) {
+            return;
+        }
         self.with_session(|session| {
             if !drag.started {
                 session.select(drag.kind, drag.origin, drag.side);
@@ -231,15 +253,9 @@ impl TerminalView {
             }
             session.extend_selection(spot.point, spot.side);
         });
+        drag.last = Some(end);
         mouse.drag.set(Some(drag));
-        mouse.beyond.set(Some((spot.beyond, spot.point.column, spot.side)));
-        if spot.beyond == 0.0 {
-            mouse.stop_autoscroll();
-        } else {
-            self.start_autoscroll();
-        }
-        // The session builds frames on output only; a selection that changed needs one built now.
-        self.refresh(false);
+        self.refresh_interactive();
     }
 
     fn start_autoscroll(&self) {
@@ -281,7 +297,7 @@ impl TerminalView {
             session.scroll(Scroll::Lines(lines));
             session.extend_selection(Point { line, column }, side);
         });
-        self.refresh(true);
+        self.refresh_interactive();
     }
 
     pub(super) fn mouse_up(&self, event: &NSEvent) {
@@ -359,6 +375,7 @@ impl TerminalView {
 
     /// The wheel and trackpad: the history, or the program when it takes the mouse or shows the alternate screen.
     pub(super) fn scroll_wheel(&self, event: &NSEvent) {
+        let _interval = term_base::signpost::begin(term_base::signpost::name!("terminal scroll wheel"));
         let delta = event.scrollingDeltaY();
         let lines = if event.hasPreciseScrollingDeltas() {
             delta / self.metrics().cell_height
@@ -381,7 +398,7 @@ impl TerminalView {
                 session.wheel(whole, spot.point, modifiers(flags));
             }
         });
-        self.refresh(false);
+        self.refresh_interactive();
     }
 
     /// The pointing hand while ⌘ is held over a link or a file ⌘-click opens, else the I-beam.
@@ -437,7 +454,7 @@ impl TerminalView {
         let Some(file) = word else { return false };
         let named = self.named(&file.path);
         if let Some(found) = self.ivars().mouse.files.borrow().get(&named) {
-            return found.is_some();
+            return matches!(found, FileLookup::Found(_));
         }
         self.look_up(named);
         false
@@ -445,26 +462,35 @@ impl TerminalView {
 
     /// Looks for the file at `named` on the disk lane; the pointer turns into a hand once it is found.
     fn look_up(&self, named: PathBuf) {
-        self.ivars().mouse.files.borrow_mut().insert(named.clone(), None);
+        self.ivars()
+            .mouse
+            .files
+            .borrow_mut()
+            .insert(named.clone(), FileLookup::Pending);
         let id = self.id();
         let path = named.clone();
+        let result_path = named.clone();
         let queued = term_base::lane::DISK.ask(
             move || existing_file(&path),
-            move |found| {
-                let Some(found) = found.flatten() else { return };
+            move |result| {
+                let Some(found) = result else { return };
                 main_soon(move || {
                     let Some(view) = super::find(id) else { return };
                     let mouse = &view.ivars().mouse;
-                    if !mouse.files.borrow().contains_key(&named) {
-                        return;
+                    {
+                        let mut files = mouse.files.borrow_mut();
+                        let Some(entry @ FileLookup::Pending) = files.get_mut(&result_path) else {
+                            return;
+                        };
+                        *entry = found.map_or(FileLookup::Missing, FileLookup::Found);
                     }
-                    mouse.files.borrow_mut().insert(named, Some(found));
                     mouse.hover.set(None);
                     view.update_pointer(NSEvent::modifierFlags_class(), None);
                 });
             },
         );
         if queued.is_err() {
+            self.ivars().mouse.files.borrow_mut().remove(&named);
             term_base::diag::report("looking for a file under the pointer", "the disk lane is full");
         }
     }
@@ -481,22 +507,36 @@ impl TerminalView {
             return true;
         }
         let Some(file) = word else { return false };
-        let Some(path) = self.file_at(&file.path) else {
-            return false;
-        };
         let (line, column) = (file.line.unwrap_or(1), file.column.unwrap_or(1));
-        super::host().opened(self.window_id(), super::Opened::File { path, line, column });
-        true
-    }
-
-    /// The file `word` names, relative to the shell's working directory, as the path editor tabs know it by; what the
-    /// pointer found while ⌘ was held, else looked for now.
-    fn file_at(&self, word: &str) -> Option<PathBuf> {
-        let named = self.named(word);
-        if let Some(Some(found)) = self.ivars().mouse.files.borrow().get(&named) {
-            return Some(found.clone());
+        let named = self.named(&file.path);
+        let window = self.window_id();
+        let cached = {
+            let files = self.ivars().mouse.files.borrow();
+            match files.get(&named) {
+                Some(FileLookup::Found(path)) => Some(path.clone()),
+                Some(FileLookup::Missing) => return false,
+                _ => None,
+            }
+        };
+        if let Some(path) = cached {
+            super::host().opened(window, super::Opened::File { path, line, column });
+            return true;
         }
-        existing_file(&named)
+        let id = self.id();
+        LINK_OPEN
+            .ask(
+                move || existing_file(&named),
+                move |path| {
+                    if let Some(path) = path.flatten() {
+                        main_soon(move || {
+                            if super::find(id).is_some_and(|view| view.window_id() == window) {
+                                super::host().opened(window, super::Opened::File { path, line, column });
+                            }
+                        });
+                    }
+                },
+            )
+            .is_ok()
     }
 
     /// The path `word` names, relative to the shell's working directory.

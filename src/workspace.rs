@@ -5,18 +5,22 @@ use std::cell::{Cell, RefCell};
 use std::path::PathBuf;
 use std::rc::Rc;
 
+use term_ui::workspace_host::{TabId, WorkspaceId};
+
 use crate::tab::{Tab, TabContent};
 
 /// What an ordered list finds its items by.
 pub(crate) trait Keyed {
     /// The item's id, unique in the app.
-    fn key(&self) -> u64;
+    type Id: Copy + Eq;
+
+    fn key(&self) -> Self::Id;
 }
 
 /// Items in the order the user sees them, at most one of them selected.
-pub(crate) struct Ordered<T> {
+pub(crate) struct Ordered<T: Keyed> {
     items: Vec<Rc<T>>,
-    selected: Option<u64>,
+    selected: Option<T::Id>,
 }
 
 impl<T: Keyed> Ordered<T> {
@@ -35,15 +39,15 @@ impl<T: Keyed> Ordered<T> {
         self.items.is_empty()
     }
 
-    pub(crate) fn get(&self, id: u64) -> Option<Rc<T>> {
+    pub(crate) fn get(&self, id: T::Id) -> Option<Rc<T>> {
         self.items.iter().find(|item| item.key() == id).cloned()
     }
 
-    pub(crate) fn position(&self, id: u64) -> Option<usize> {
+    pub(crate) fn position(&self, id: T::Id) -> Option<usize> {
         self.items.iter().position(|item| item.key() == id)
     }
 
-    pub(crate) fn selected_id(&self) -> Option<u64> {
+    pub(crate) fn selected_id(&self) -> Option<T::Id> {
         self.selected
     }
 
@@ -52,7 +56,7 @@ impl<T: Keyed> Ordered<T> {
     }
 
     /// Selects item `id`; whether that changed the selection.
-    pub(crate) fn select(&mut self, id: u64) -> bool {
+    pub(crate) fn select(&mut self, id: T::Id) -> bool {
         if self.position(id).is_none() {
             return false;
         }
@@ -74,7 +78,7 @@ impl<T: Keyed> Ordered<T> {
     }
 
     /// Takes item `id` out; when it was selected, the one that took its place is, else the one before it.
-    pub(crate) fn remove(&mut self, id: u64) -> Option<Rc<T>> {
+    pub(crate) fn remove(&mut self, id: T::Id) -> Option<Rc<T>> {
         let at = self.position(id)?;
         let item = self.items.remove(at);
         if self.selected == Some(id) {
@@ -87,7 +91,7 @@ impl<T: Keyed> Ordered<T> {
     }
 
     /// Moves item `id` to `index`, or to the end past it.
-    pub(crate) fn move_to(&mut self, id: u64, index: usize) {
+    pub(crate) fn move_to(&mut self, id: T::Id, index: usize) {
         if let Some(at) = self.position(id) {
             let item = self.items.remove(at);
             self.items.insert(index.min(self.items.len()), item);
@@ -96,7 +100,7 @@ impl<T: Keyed> Ordered<T> {
 
     /// Puts the items `ids` into that order at the places they hold among the others, as the user dragged them in a
     /// window's tab bar; unknown ids leave the order as it is.
-    pub(crate) fn arrange(&mut self, ids: &[u64]) {
+    pub(crate) fn arrange(&mut self, ids: &[T::Id]) {
         let mut places: Vec<usize> = ids.iter().filter_map(|id| self.position(*id)).collect();
         if places.len() != ids.len() {
             return;
@@ -109,7 +113,7 @@ impl<T: Keyed> Ordered<T> {
     }
 
     /// The id of the item `step` places from the selected one, going round at either end.
-    pub(crate) fn step(&self, step: isize) -> Option<u64> {
+    pub(crate) fn step(&self, step: isize) -> Option<T::Id> {
         let at = isize::try_from(self.position(self.selected?)?).ok()?;
         let count = isize::try_from(self.items.len()).ok()?;
         let next = usize::try_from((at + step).rem_euclid(count)).ok()?;
@@ -137,14 +141,18 @@ pub(crate) struct Workspace {
 }
 
 impl Keyed for Workspace {
-    fn key(&self) -> u64 {
-        self.id
+    type Id = WorkspaceId;
+
+    fn key(&self) -> Self::Id {
+        WorkspaceId::new(self.id)
     }
 }
 
 impl Keyed for Tab {
-    fn key(&self) -> u64 {
-        self.id
+    type Id = TabId;
+
+    fn key(&self) -> Self::Id {
+        TabId::new(self.id)
     }
 }
 
@@ -217,11 +225,6 @@ impl Workspace {
         self.changes.replace(count) != count
     }
 
-    /// The base folder's branch, as read last.
-    pub(crate) fn branch(&self) -> Option<String> {
-        self.branch.borrow().clone()
-    }
-
     /// Reads the base folder's branch again, as a command may have switched it.
     pub(crate) fn refresh_branch(&self) {
         *self.branch.borrow_mut() = term_ui_sidebar::git::branch(&self.base);
@@ -233,6 +236,11 @@ impl Workspace {
     }
 
     /// The tab in front.
+    pub(crate) fn select_tab(&self, id: TabId) {
+        self.tabs.borrow_mut().select(id);
+    }
+
+    /// The selected tab.
     pub(crate) fn selected_tab(&self) -> Option<Rc<Tab>> {
         self.tabs.borrow().selected()
     }
@@ -270,6 +278,8 @@ mod tests {
     struct Item(u64);
 
     impl Keyed for Item {
+        type Id = u64;
+
         fn key(&self) -> u64 {
             self.0
         }

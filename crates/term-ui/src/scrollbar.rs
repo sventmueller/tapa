@@ -106,22 +106,22 @@ impl ScrollBar {
         };
         let part = self.hitPart();
         let value = self.doubleValue();
-        view.with_session(|session| {
+        let moved = view.with_session(|session| {
             if part == NSScrollerPart::DecrementPage {
-                return session.scroll(Scroll::PageUp);
+                return session.scroll_changed(Scroll::PageUp);
             }
             if part == NSScrollerPart::IncrementPage {
-                return session.scroll(Scroll::PageDown);
+                return session.scroll_changed(Scroll::PageDown);
             }
             let rows = session.rows_view();
             let history = rows.rows.saturating_sub(rows.lines);
             let target = top_for(value, history);
             let lines = i64::try_from(rows.top).unwrap_or(0) - i64::try_from(target).unwrap_or(0);
-            if lines != 0 {
-                session.scroll(Scroll::Lines(i32::try_from(lines).unwrap_or(0)));
-            }
+            lines != 0 && session.scroll_changed(Scroll::Lines(i32::try_from(lines).unwrap_or(0)))
         });
-        view.refresh_now();
+        if moved == Some(true) {
+            view.refresh_interactive();
+        }
     }
 
     fn draw_marks(&self) {

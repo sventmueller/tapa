@@ -1,11 +1,11 @@
-//! The self-test's step `editorwheel:<points>`: a trackpad swipe over the editor in front, as AppKit gets one from the
+//! The self-test steps `editorwheel:<points>` and `terminalwheel:<points>` post a trackpad swipe as AppKit gets it from the
 //! trackpad: scroll events with the phases of the gesture, then momentum that slows down; `points` towards the end of
 //! the text, or towards its beginning when negative, where a swipe past the first line pulls the text down and lets it
 //! spring back. The events go into the app's own queue, not the system's, so the step works behind other apps.
 
 use objc2::MainThreadOnly;
 use objc2::rc::Retained;
-use objc2_app_kit::{NSApplication, NSEvent, NSScrollView};
+use objc2_app_kit::{NSApplication, NSEvent, NSView};
 use objc2_core_foundation::CGPoint;
 use objc2_core_graphics::{CGEvent, CGEventField, CGScrollEventUnit};
 use objc2_foundation::NSPoint;
@@ -24,21 +24,29 @@ const STEP: f64 = 40.0;
 /// How much of its speed the momentum keeps from one event to the next.
 const DECAY: f64 = 0.85;
 
-/// Runs `step` if it is `editorwheel:`; whether it was.
+/// Posts a trackpad gesture to the foreground editor or terminal.
 pub(super) fn run(step: &str) -> bool {
-    let Some(points) = step.strip_prefix("editorwheel:") else {
+    let Some((name, points)) = step.split_once(':') else {
         return false;
     };
+    let view = match name {
+        "editorwheel" => super::files::front_editor_scroll().map(Retained::into_super),
+        "terminalwheel" => crate::state::app()
+            .front()
+            .and_then(|window| window.focused_view())
+            .map(Retained::into_super),
+        _ => return false,
+    };
     let Ok(points) = points.parse::<f64>() else {
-        println!("editorwheel {points}: not a number");
+        println!("{name} {points}: not a number");
         return true;
     };
-    let Some(scroll) = super::files::front_editor_scroll() else {
-        println!("editorwheel {points}: no editor in front");
+    let Some(view) = view else {
+        println!("{name} {points}: no matching view in front");
         return true;
     };
-    let Some(at) = place(&scroll) else {
-        println!("editorwheel {points}: the editor has no window");
+    let Some(at) = place(&view) else {
+        println!("{name} {points}: the view has no window");
         return true;
     };
     let sign = -points.signum();
@@ -57,13 +65,13 @@ pub(super) fn run(step: &str) -> bool {
         events.push((sign * speed, 0, MOMENTUM_CONTINUE));
     }
     events.push((0.0, 0, MOMENTUM_END));
-    let shared = NSApplication::sharedApplication(scroll.mtm());
+    let shared = NSApplication::sharedApplication(view.mtm());
     for (delta, phase, momentum) in events {
         if let Some(event) = event(&at, delta, phase, momentum) {
             shared.postEvent_atStart(&event, false);
         }
     }
-    println!("editorwheel {points}: queued");
+    println!("{name} {points}: queued");
     true
 }
 
@@ -81,14 +89,14 @@ struct Place {
     window: i64,
 }
 
-fn place(scroll: &NSScrollView) -> Option<Place> {
-    let window = scroll.window()?;
-    let bounds = scroll.bounds();
+fn place(view: &NSView) -> Option<Place> {
+    let window = view.window()?;
+    let bounds = view.bounds();
     let middle = NSPoint::new(
         bounds.origin.x + bounds.size.width / 2.0,
         bounds.origin.y + bounds.size.height / 2.0,
     );
-    let in_window = scroll.convertPoint_toView(middle, None);
+    let in_window = view.convertPoint_toView(middle, None);
     Some(Place {
         point: CGPoint::new(in_window.x, window.frame().size.height - in_window.y),
         window: i64::try_from(window.windowNumber()).ok()?,

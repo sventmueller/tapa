@@ -4,10 +4,9 @@
 //! until the app is asked for one again. Only the user removes a workspace, never the Terminal.
 
 use std::rc::Rc;
+use term_ui::workspace_host::{TabId, TabKind, WorkspaceId};
 
 use splat_i18n::{t, tf};
-
-use term_ui::workspace_host::{TabId, TabKind};
 
 use super::Window;
 use crate::state::app;
@@ -50,7 +49,7 @@ impl Window {
     pub(crate) fn close_tab(self: &Rc<Self>, id: u64) {
         let Some(tab) = self
             .workspace_of_tab(id)
-            .and_then(|workspace| workspace.tabs.borrow().get(id))
+            .and_then(|workspace| workspace.tabs.borrow().get(TabId::new(id)))
         else {
             return;
         };
@@ -65,7 +64,12 @@ impl Window {
     /// Removes workspace `id` with its tabs, asking first when programs run in them; the next workspace takes its
     /// place on screen. The Terminal stays.
     pub(crate) fn close_workspace(self: &Rc<Self>, id: u64) {
-        let Some(workspace) = self.workspaces.borrow().get(id).filter(|workspace| !workspace.scratch) else {
+        let Some(workspace) = self
+            .workspaces
+            .borrow()
+            .get(WorkspaceId::new(id))
+            .filter(|workspace| !workspace.scratch)
+        else {
             return;
         };
         if !self.editors_may_close(&workspace.tabs(), Retry::Workspace(id)) {
@@ -75,7 +79,7 @@ impl Window {
             return;
         }
         let shown = self.shown_frame_of(id);
-        self.workspaces.borrow_mut().remove(id);
+        self.workspaces.borrow_mut().remove(WorkspaceId::new(id));
         self.next_in_place(shown);
         for tab in workspace.tabs() {
             end(id, &tab);
@@ -100,7 +104,7 @@ impl Window {
             .windows
             .borrow()
             .iter()
-            .any(|window| window.id != self.id && !window.is_quick() && !window.is_asleep());
+            .any(|window| window.id() != self.id() && !window.is_quick() && !window.is_asleep());
         if !others {
             #[cfg(feature = "selftest")]
             if term_base::unattended::is() {
@@ -146,7 +150,7 @@ impl Window {
             let Some(workspace) = self.workspace_of_tab(tab.id) else {
                 continue;
             };
-            let window = self.id;
+            let window = self.id();
             let again: term_ui_editor::Again = Rc::new(move |saved| {
                 if saved {
                     term_base::main_soon(move || {
@@ -220,7 +224,7 @@ impl Window {
         }
         let in_place = self.frame_of(tab.id).filter(|frame| frame.is_shown());
         end(workspace.id, tab);
-        workspace.tabs.borrow_mut().remove(tab.id);
+        workspace.tabs.borrow_mut().remove(TabId::new(tab.id));
         if workspace.tabs.borrow().is_empty() {
             self.next_with_tabs(in_place);
         }
@@ -257,7 +261,7 @@ impl Window {
 
     /// The workspace selected now, after the one `replaced` showed closed, comes to the front at `replaced`'s place.
     fn next_in_place(self: &Rc<Self>, replaced: Option<Rc<super::frame::TabWindow>>) {
-        let Some(next) = self.workspaces.borrow().selected_id() else {
+        let Some(next) = self.workspaces.borrow().selected_id().map(WorkspaceId::get) else {
             return;
         };
         if replaced.is_some() {
@@ -282,7 +286,7 @@ impl Window {
             quick.panel.close();
         }
         *self.workspaces.borrow_mut() = crate::workspace::Ordered::new();
-        app().forget_window(self.id);
+        app().forget_window(self.id());
     }
 
     /// The user closed the quick terminal's panel, which `windowShouldClose:` agreed to.

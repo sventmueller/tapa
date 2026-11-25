@@ -8,8 +8,10 @@
 use std::cell::RefCell;
 use std::collections::HashMap;
 use std::path::{Path, PathBuf};
+use std::sync::{Condvar, Mutex};
 
 use serde::{Deserialize, Serialize};
+use term_base::{IgnoringPoison, LockIgnoringPoison};
 use term_panes::layout::Layout;
 
 use crate::state::{app, try_app};
@@ -183,25 +185,14 @@ impl Budget {
         Budget(MAX_TOTAL_BYTES)
     }
 
-    /// The last `lines` of `rows` up to the row before the cursor, without the empty ones at the end, within the
-    /// limits per session and of what is left; what they take is spent.
-    pub(crate) fn take(&mut self, mut rows: Vec<String>, cursor_row: usize, lines: usize) -> Vec<String> {
-        rows.truncate(cursor_row);
-        while rows.last().is_some_and(|row| row.trim().is_empty()) {
-            rows.pop();
-        }
-        let skip = rows.len().saturating_sub(lines);
-        let mut kept: Vec<String> = rows.split_off(skip);
-        let limit = MAX_SESSION_BYTES.min(self.0);
-        let mut bytes: usize = kept.iter().map(|row| row.len() + 1).sum();
-        let mut first = 0;
-        while bytes > limit && first < kept.len() {
-            bytes -= kept[first].len() + 1;
-            first += 1;
-        }
-        kept.drain(..first);
-        self.0 -= bytes;
-        kept
+    /// The remaining allowance for one session.
+    pub(crate) fn available(&self) -> usize {
+        self.0.min(MAX_SESSION_BYTES)
+    }
+
+    /// Accounts for the bounded tail copied for one session.
+    pub(crate) fn spent(&mut self, rows: &[String]) {
+        self.0 -= rows.iter().map(|row| row.len() + 1).sum::<usize>();
     }
 }
 
@@ -267,9 +258,8 @@ pub(crate) fn save() {
     crate::window::store_last_window();
     let config = app.config();
     let folder = folder();
-    let path = folder.join(FILE);
     if !config.restore.enabled {
-        let _ = std::fs::remove_file(&path);
+        queue_save(Save { folder, saved: None });
         return;
     }
     let lines = config.restore.lines();
@@ -285,8 +275,73 @@ pub(crate) fn save() {
         version: VERSION,
         windows,
     };
-    if let Err(error) = write(&folder, &path, &saved) {
-        term_base::diag::report("storing the windows", &error);
+    queue_save(Save {
+        folder,
+        saved: Some(saved),
+    });
+}
+
+/// The final snapshot supersedes queued ones and must reach disk before the app can exit.
+pub(crate) fn save_at_quit() {
+    save();
+    let state = SAVE.0.lock_ignoring_poison();
+    drop(SAVE.1.wait_while(state, |state| state.running).ignoring_poison());
+}
+
+struct Save {
+    folder: PathBuf,
+    saved: Option<Saved>,
+}
+
+struct Saves {
+    pending: Option<Save>,
+    running: bool,
+}
+
+static SAVE: (Mutex<Saves>, Condvar) = (
+    Mutex::new(Saves {
+        pending: None,
+        running: false,
+    }),
+    Condvar::new(),
+);
+
+fn queue_save(save: Save) {
+    let start = {
+        let mut state = SAVE.0.lock_ignoring_poison();
+        state.pending = Some(save);
+        !std::mem::replace(&mut state.running, true)
+    };
+    if start
+        && let Err(unstarted) = term_base::thread::detach("tapa-restore", || {
+            term_base::priority::utility();
+            save_pending();
+        })
+    {
+        term_base::diag::report("starting the restore writer", &unstarted.error);
+        save_pending();
+    }
+}
+
+fn save_pending() {
+    loop {
+        let job = {
+            let mut state = SAVE.0.lock_ignoring_poison();
+            let Some(job) = state.pending.take() else {
+                state.running = false;
+                SAVE.1.notify_all();
+                return;
+            };
+            job
+        };
+        let path = job.folder.join(FILE);
+        if let Some(saved) = job.saved {
+            if let Err(error) = write(&job.folder, &path, &saved) {
+                term_base::diag::report("storing the windows", &error);
+            }
+        } else {
+            let _ = std::fs::remove_file(&path);
+        }
     }
 }
 
@@ -540,23 +595,10 @@ mod tests {
     }
 
     #[test]
-    fn the_history_kept_ends_before_the_prompt_and_stays_within_its_limits() {
-        let rows: Vec<String> = ["one", "two", "three", "", "", "prompt $"]
-            .iter()
-            .map(|row| (*row).to_string())
-            .collect();
-        let mut budget = Budget::new();
-        assert_eq!(budget.take(rows.clone(), 5, 100), ["one", "two", "three"]);
-        assert_eq!(budget.take(rows, 5, 2), ["two", "three"]);
-        let long = vec!["x".repeat(400 * 1024), "y".repeat(200 * 1024)];
-        assert_eq!(budget.take(long, 2, 100).len(), 1, "per session at most 512 KiB");
-    }
-
-    #[test]
-    fn the_total_budget_runs_out() {
+    fn the_total_budget_runs_out_and_each_session_is_capped() {
+        assert_eq!(Budget::new().available(), MAX_SESSION_BYTES);
         let mut budget = Budget(10);
-        let rows = vec!["12345".to_string(), "67890".to_string(), "abc".to_string()];
-        assert_eq!(budget.take(rows.clone(), 3, 100), ["67890", "abc"]);
-        assert!(budget.take(rows, 3, 100).is_empty());
+        budget.spent(&["67890".to_string(), "abc".to_string()]);
+        assert_eq!(budget.available(), 0);
     }
 }

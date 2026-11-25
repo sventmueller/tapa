@@ -20,26 +20,25 @@ pub use appkit::{
     set_label, set_target, set_title_element, submenu, symbol, symbol_at, symbol_button, tagged, tinted,
 };
 pub use layout::{activate, auto_layout, center_in, center_y, fixed_size, pin_edges, pin_inset, pin_sides};
-pub use observe::{Observation, observe};
+pub use observe::{Observation, observe, observe_window_visibility};
 pub use term_base::{guarded, main_after, main_soon};
 
 use std::cell::Cell;
 
-/// A flag that is up while the guard lives and down once it drops, also when a panic unwinds past it.
-#[must_use = "the flag goes down as soon as the guard drops"]
-pub struct FlagGuard<'a>(&'a Cell<bool>);
+/// Raises a flag and restores its previous value on drop, including during unwinding.
+#[must_use = "the flag is restored as soon as the guard drops"]
+pub struct FlagGuard<'a>(&'a Cell<bool>, bool);
 
 impl<'a> FlagGuard<'a> {
     /// Raises `flag` until the guard drops.
     pub fn raise(flag: &'a Cell<bool>) -> Self {
-        flag.set(true);
-        Self(flag)
+        Self(flag, flag.replace(true))
     }
 }
 
 impl Drop for FlagGuard<'_> {
     fn drop(&mut self) {
-        self.0.set(false);
+        self.0.set(self.1);
     }
 }
 
@@ -75,4 +74,13 @@ impl WindowId {
     pub const fn get(self) -> u64 {
         self.0
     }
+}
+/// Whether this window can show its contents. AppKit counts the tabs behind the selected tab as visible.
+pub fn window_in_front(window: &objc2_app_kit::NSWindow) -> bool {
+    window.isVisible()
+        && !window.isMiniaturized()
+        && window
+            .tabGroup()
+            .and_then(|group| group.selectedWindow())
+            .is_none_or(|selected| std::ptr::eq(&*selected, window))
 }

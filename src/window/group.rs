@@ -2,11 +2,12 @@
 //! picking another workspace swaps the group on screen for that workspace's at the same place, Merge All Windows
 //! gathers the windows of one workspace, and the order of a tab bar is the order of the workspace's tabs.
 
+use std::collections::{HashMap, HashSet};
 use std::rc::Rc;
+use term_ui::workspace_host::{TabId, TabKind, WorkspaceId};
 
 use objc2_app_kit::{NSWindow, NSWindowAnimationBehavior, NSWindowOrderingMode, NSWindowTabbingMode};
 use objc2_foundation::NSRect;
-use term_ui::workspace_host::TabKind;
 
 use super::Window;
 use super::frame::{Look, TabWindow};
@@ -48,7 +49,7 @@ impl Window {
     /// front; else the workspace's windows off screen come back as one tab group in place of `replacing`'s group,
     /// which leaves the screen. A workspace without tabs gets a terminal first.
     pub(super) fn show_workspace(self: &Rc<Self>, id: u64, replacing: Option<Rc<TabWindow>>) {
-        let Some(workspace) = self.workspaces.borrow().get(id) else {
+        let Some(workspace) = self.workspaces.borrow().get(WorkspaceId::new(id)) else {
             return;
         };
         let replacing = replacing.filter(|frame| frame.workspace != id && frame.is_shown());
@@ -63,22 +64,22 @@ impl Window {
         let Some(front) = workspace.selected_tab().or_else(|| workspace.tabs().first().cloned()) else {
             return;
         };
-        workspace.tabs.borrow_mut().select(front.id);
-        self.workspaces.borrow_mut().select(id);
+        workspace.select_tab(TabId::new(front.id));
+        self.workspaces.borrow_mut().select(WorkspaceId::new(id));
         let Some(front_frame) = self.frame_of(front.id) else {
             return;
         };
         let swapping = !front_frame.is_shown();
-        if swapping {
-            self.arranging.set(true);
-            super::frame::building(|| self.bring_back(&workspace.tabs(), Some(front.id), replacing.as_deref()));
-            self.arranging.set(false);
-        }
-        front_frame.ns.makeKeyAndOrderFront(None);
-        if let Some(replacing) = replacing.filter(|_| swapping) {
-            self.arranging.set(true);
-            self.take_away(&replacing);
-            self.arranging.set(false);
+        {
+            let _arranging = term_ui::kit::FlagGuard::raise(&self.arranging);
+            if swapping {
+                super::frame::building(|| self.bring_back(&workspace.tabs(), Some(front.id), replacing.as_deref()));
+            }
+            front_frame.ns.makeKeyAndOrderFront(None);
+            if let Some(replacing) = replacing.filter(|_| swapping) {
+                self.sync_group_order(&replacing);
+                self.take_away(&replacing);
+            }
         }
         self.tab_became_key(front.id);
         if let Some(tab) = started {
@@ -98,7 +99,9 @@ impl Window {
         let place = replacing.map(|replacing| (replacing.ns.frame(), replacing.look()));
         for frame in &hidden {
             if let Some((rect, look)) = place {
-                frame.ns.setFrame_display(rect, false);
+                if frame.ns.frame() != rect {
+                    frame.ns.setFrame_display(rect, false);
+                }
                 frame.apply(look);
             }
             frame.ns.setExcludedFromWindowsMenu(false);
@@ -137,7 +140,6 @@ impl Window {
                 None => shown.ns.orderFront(None),
             }
             shown.ns.setTabbingMode(mode);
-            shown.ns.displayIfNeeded();
         });
         for (frame, animation) in hidden.iter().zip(animations) {
             frame.ns.setAnimationBehavior(animation);
@@ -165,7 +167,8 @@ impl Window {
     /// All Windows does; the other workspaces' windows keep theirs.
     pub(crate) fn merge_all(&self, tab: u64) {
         let Some(target) = self.frame_of(tab) else { return };
-        let Some(workspace) = self.workspaces.borrow().get(target.workspace) else {
+        self.sync_order();
+        let Some(workspace) = self.workspaces.borrow().get(WorkspaceId::new(target.workspace)) else {
             return;
         };
         let look = target.look();
@@ -190,7 +193,15 @@ impl Window {
             last = Some(frame);
         }
         target.ns.makeKeyAndOrderFront(None);
+        self.sync_group_order(&target);
         self.refresh();
+    }
+
+    /// AppKit may already have notified us synchronously while bringing the window forward.
+    pub(super) fn ensure_tab_key(&self, tab: u64) {
+        if self.last_key.get() != Some(tab) || self.selected_tab_id() != Some(tab) {
+            self.tab_became_key(tab);
+        }
     }
 
     /// Tab `tab`'s window took the keyboard: its tab and workspace are in front, its sidebar shows as the one of its
@@ -202,15 +213,18 @@ impl Window {
         let Some(workspace) = self.workspace_of_tab(tab) else {
             return;
         };
-        self.workspaces.borrow_mut().select(workspace.id);
-        workspace.tabs.borrow_mut().select(tab);
+        if let Some(frame) = self.frame_of(tab) {
+            self.sync_group_order(&frame);
+        }
+        self.workspaces.borrow_mut().select(WorkspaceId::new(workspace.id));
+        workspace.select_tab(TabId::new(tab));
         let before = self.last_key.replace(Some(tab)).filter(|before| *before != tab);
         if let (Some(before), Some(own)) = (before.and_then(|id| self.frame_of(id)), self.frame_of(tab))
             && own.groups_with(&before.ns)
         {
             own.apply(before.look());
         }
-        if let Some(tab) = workspace.tabs.borrow().get(tab) {
+        if let Some(tab) = workspace.tabs.borrow().get(TabId::new(tab)) {
             tab.seen();
             if tab.as_hosted().is_some_and(|hosted| hosted.kind() == TabKind::Agent) {
                 crate::agent::shown(workspace.id);
@@ -254,24 +268,45 @@ impl Window {
     /// Takes the order of every tab bar into the workspaces' tabs, as the user may have dragged tabs around.
     pub(super) fn sync_order(&self) {
         let frames = self.frames.borrow().clone();
-        let mut seen: Vec<u64> = Vec::new();
+        let by_window: HashMap<_, _> = frames
+            .iter()
+            .map(|frame| (std::ptr::from_ref(&*frame.ns), frame.tab))
+            .collect();
+        let mut seen = HashSet::new();
         for frame in &frames {
             if seen.contains(&frame.tab) {
                 continue;
             }
-            let group = frame.group();
-            if group.len() < 2 {
-                continue;
-            }
-            let ids: Vec<u64> = group
-                .iter()
-                .filter_map(|window| frames.iter().find(|own| std::ptr::eq(&*own.ns, &**window)))
-                .map(|own| own.tab)
-                .collect();
-            seen.extend(&ids);
-            if let Some(workspace) = self.workspaces.borrow().get(frame.workspace) {
-                workspace.tabs.borrow_mut().arrange(&ids);
-            }
+            let ids = Self::native_order(frame, &by_window);
+            seen.extend(ids.iter().map(|id| id.get()));
+            self.record_group_order(frame, &ids);
+        }
+    }
+
+    pub(super) fn sync_group_order(&self, frame: &TabWindow) {
+        let by_window = self
+            .frames
+            .borrow()
+            .iter()
+            .map(|frame| (std::ptr::from_ref(&*frame.ns), frame.tab))
+            .collect();
+        self.record_group_order(frame, &Self::native_order(frame, &by_window));
+    }
+
+    fn native_order(frame: &TabWindow, by_window: &HashMap<*const NSWindow, u64>) -> Vec<TabId> {
+        frame
+            .group()
+            .iter()
+            .filter_map(|window| by_window.get(&std::ptr::from_ref(&**window)).copied())
+            .map(TabId::new)
+            .collect()
+    }
+
+    fn record_group_order(&self, frame: &TabWindow, ids: &[TabId]) {
+        if ids.len() > 1
+            && let Some(workspace) = self.workspaces.borrow().get(WorkspaceId::new(frame.workspace))
+        {
+            workspace.tabs.borrow_mut().arrange(ids);
         }
     }
 
@@ -293,7 +328,7 @@ impl Window {
     }
 }
 
-/// Runs `change` to tab groups without animations, committed and flushed at once.
+/// Runs `change` to tab groups without animations. The run loop presents the final group.
 fn still(change: impl FnOnce()) {
     objc2_quartz_core::CATransaction::begin();
     objc2_quartz_core::CATransaction::setDisableActions(true);
@@ -304,5 +339,4 @@ fn still(change: impl FnOnce()) {
     change();
     objc2_app_kit::NSAnimationContext::endGrouping();
     objc2_quartz_core::CATransaction::commit();
-    objc2_quartz_core::CATransaction::flush();
 }

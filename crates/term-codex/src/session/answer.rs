@@ -9,67 +9,74 @@ use crate::launch::{ApprovalPolicy, SandboxMode};
 use crate::requests::{self, AskKind};
 
 impl Session {
-    fn take_ask(&self, request: &str, fits: impl Fn(&AskKind) -> bool) -> Result<Ask, SessionError> {
-        let mut state = self.shared.state();
-        if !state.asks.get(request).is_some_and(|ask| fits(&ask.offer.kind)) {
-            return Err(SessionError::UnknownRequest(request.to_string()));
-        }
-        state.asks.remove(request).ok_or(SessionError::Closed)
-    }
-
-    fn reply_to(&self, ask: Ask, result: Value, decision: Decision) -> Result<(), SessionError> {
-        self.shared.respond(ask.id, result)?;
-        let (still_asking, running) = {
-            let state = self.shared.state();
-            (!state.asks.is_empty(), state.mapper.turn().is_some() || state.starting)
+    fn reply_to(
+        &self,
+        request: &str,
+        answer: impl FnOnce(&Ask) -> Result<(Value, Decision), SessionError>,
+    ) -> Result<(), SessionError> {
+        let updates = {
+            let mut state = self.shared.state();
+            let Some(ask) = state.asks.get(request) else {
+                return Err(SessionError::UnknownRequest(request.to_string()));
+            };
+            let (result, decision) = answer(ask)?;
+            self.shared.respond(ask.id.clone(), result)?;
+            let still_asking = state.asks.len() > 1;
+            let mut updates = requests::decided(&ask.offer, decision, still_asking);
+            state.asks.remove(request);
+            if !still_asking && state.mapper.turn().is_none() && !state.starting {
+                updates.push(Update::Status(Status::Idle));
+            }
+            updates
         };
-        let mut updates = requests::decided(&ask.offer, decision, still_asking);
-        if !still_asking && !running {
-            updates.push(Update::Status(Status::Idle));
-        }
         self.shared.apply(updates);
         Ok(())
     }
 
     /// Answers the permission request `request` with `choice`; for a question, only `Dismiss` fits.
     pub fn answer(&self, request: &str, choice: Choice) -> Result<(), SessionError> {
-        let ask = self.take_ask(request, |kind| {
-            !matches!(kind, AskKind::Questions(_)) || choice == Choice::Dismiss
-        })?;
-        let pick = match choice {
-            Choice::Option(n) => match ask.offer.picks.get(n) {
-                Some(pick) => Some(pick.clone()),
-                None => {
-                    self.shared.state().asks.insert(request.to_string(), ask);
-                    return Err(SessionError::UnknownOption(n.to_string()));
-                }
-            },
-            Choice::Dismiss => None,
-        };
-        let result = requests::response(&ask.offer.kind, pick.as_ref());
-        let decision = pick.map_or(Decision::Denied { message: None }, |p| p.decision());
-        self.reply_to(ask, result, decision)
+        self.reply_to(request, |ask| {
+            if matches!(ask.offer.kind, AskKind::Questions(_)) && choice != Choice::Dismiss {
+                return Err(SessionError::UnknownRequest(request.to_string()));
+            }
+            let pick = match choice {
+                Choice::Option(n) => Some(
+                    ask.offer
+                        .picks
+                        .get(n)
+                        .ok_or_else(|| SessionError::UnknownOption(n.to_string()))?,
+                ),
+                Choice::Dismiss => None,
+            };
+            let result = requests::response(&ask.offer.kind, pick);
+            let decision = pick.map_or(Decision::Denied { message: None }, |p| p.decision());
+            Ok((result, decision))
+        })
     }
 
     /// Answers the questions of `request`, matched to them by their text.
     pub fn answer_questions(&self, request: &str, answers: Vec<Answer>) -> Result<(), SessionError> {
-        let ask = self.take_ask(request, |kind| matches!(kind, AskKind::Questions(_)))?;
-        let AskKind::Questions(ids) = &ask.offer.kind else {
-            return Err(SessionError::UnknownRequest(request.to_string()));
-        };
-        let result = requests::answers(ids, &answers);
-        self.reply_to(ask, result, Decision::Answered(answers))
+        self.reply_to(request, |ask| {
+            let AskKind::Questions(ids) = &ask.offer.kind else {
+                return Err(SessionError::UnknownRequest(request.to_string()));
+            };
+            Ok((requests::answers(ids, &answers), Decision::Answered(answers)))
+        })
     }
 
     /// Accepts the form an MCP server asked for in `request` with `content`, an object of the form's fields.
     pub fn answer_form(&self, request: &str, content: Value) -> Result<(), SessionError> {
-        let ask = self.take_ask(request, |kind| *kind == AskKind::Elicitation)?;
-        let result = json!({"action": "accept", "content": content});
-        let decision = Decision::Allowed {
-            always: false,
-            edited: false,
-        };
-        self.reply_to(ask, result, decision)
+        self.reply_to(request, |ask| {
+            if ask.offer.kind != AskKind::Elicitation {
+                return Err(SessionError::UnknownRequest(request.to_string()));
+            }
+            let result = json!({"action": "accept", "content": content});
+            let decision = Decision::Allowed {
+                always: false,
+                edited: false,
+            };
+            Ok((result, decision))
+        })
     }
 
     fn change(&self, update: impl FnOnce(&mut super::State) -> Vec<Update>) -> Result<(), SessionError> {

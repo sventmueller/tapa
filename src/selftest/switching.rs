@@ -13,18 +13,15 @@ use crate::state::app;
 /// How long the steps wait between two switches.
 const APART: Duration = Duration::from_millis(150);
 
-/// How long a `switchtime:` step of `count` switches takes.
-pub(super) fn time(count: u32) -> Duration {
-    APART * (count + 2)
-}
-
-/// Runs `step` if it is `switchtime:`; the number of switches, which sets the step's pause.
-pub(super) fn run(step: &str) -> Option<u32> {
+/// Runs the selection or the full series of switches before starting the next step.
+pub(super) fn run(step: &str, done: impl FnOnce() + Send + 'static) {
     if let Some(index) = step.strip_prefix("selecttab:") {
         select_tab(index.parse().unwrap_or(0));
-        return Some(0);
+        return done();
     }
-    let spec = step.strip_prefix("switchtime:")?;
+    let Some(spec) = step.strip_prefix("switchtime:") else {
+        return done();
+    };
     let (what, count) = spec.split_once('.').unwrap_or((spec, "8"));
     let count = count.parse().unwrap_or(8);
     let action = match what {
@@ -32,17 +29,17 @@ pub(super) fn run(step: &str) -> Option<u32> {
         "workspace" => Action::NextWorkspace,
         other => {
             eprintln!("selftest: switchtime:{other} is not tab or workspace");
-            return Some(0);
+            return done();
         }
     };
-    switch(action, what.to_string(), count, Vec::new());
-    Some(count)
+    switch(action, what.to_string(), count, Vec::new(), done);
 }
 
 /// One switch, then the next after `APART`; prints the samples, each the held and the late milliseconds, at the end.
-fn switch(action: Action, what: String, left: u32, mut samples: Vec<(f64, f64)>) {
+fn switch(action: Action, what: String, left: u32, mut samples: Vec<(f64, f64)>, done: impl FnOnce() + Send + 'static) {
     if left == 0 {
-        return report(&what, &samples);
+        report(&what, &samples);
+        return done();
     }
     let start = Instant::now();
     crate::menu::perform(action);
@@ -53,7 +50,7 @@ fn switch(action: Action, what: String, left: u32, mut samples: Vec<(f64, f64)>)
     let asked = Instant::now();
     term_base::main_after(Duration::ZERO, move || {
         samples.push((ms(held), ms(asked.elapsed())));
-        term_base::main_after(APART, move || switch(action, what, left - 1, samples));
+        term_base::main_after(APART, move || switch(action, what, left - 1, samples, done));
     });
 }
 

@@ -92,6 +92,7 @@ struct Inputs {
     overlay: OverlayState,
     /// Something above changed, so the next display frame draws even without a new frame of the session.
     dirty: bool,
+    hidden: bool,
     closed: bool,
 }
 
@@ -206,6 +207,11 @@ impl Renderer {
         self.change(|_| {});
     }
 
+    /// Stops taking drawables for a hidden view while keeping its surface warm.
+    pub fn set_visible(&self, visible: bool) {
+        self.change(|inputs| inputs.hidden = !visible);
+    }
+
     /// A key was pressed: the frame that next shows counts the time since for the bench (section 3 of the plan).
     pub fn key_pressed(&self) {
         let at = u64::try_from(epoch().elapsed().as_nanos()).unwrap_or(u64::MAX).max(1);
@@ -311,6 +317,7 @@ struct Surface {
     frame: Option<Arc<Snapshot>>,
     /// The frame of the picture committed last.
     shown: Option<Arc<Snapshot>>,
+    needs_draw: bool,
     idle: u32,
     lines: crate::lines::Lines,
     ring: crate::gpu::Ring,
@@ -346,6 +353,7 @@ fn serve_wakes() {
                     source: None,
                     frame: None,
                     shown: None,
+                    needs_draw: false,
                     idle: 0,
                     lines: crate::lines::Lines::default(),
                     ring: crate::gpu::Ring::default(),
@@ -377,6 +385,16 @@ impl Surface {
     /// between two frames is committed at once and shows with the next (B1); a busy one waits for its link. Whether
     /// the surface lives on.
     fn wake_now(&mut self) -> bool {
+        {
+            let inputs = self.shared.inputs.lock_ignoring_poison();
+            if inputs.closed {
+                return false;
+            }
+            if inputs.hidden {
+                self.link.setPaused(true);
+                return true;
+            }
+        }
         self.shared.awake.store(true, Ordering::Release);
         let resting = self.link.isPaused() || self.idle > 0;
         if self.link.isPaused() {
@@ -400,6 +418,10 @@ impl Surface {
             let mut inputs = self.shared.inputs.lock_ignoring_poison();
             if inputs.closed {
                 return false;
+            }
+            if inputs.hidden {
+                self.link.setPaused(true);
+                return true;
             }
             if let Some(source) = inputs.source.take() {
                 self.frame = source.latest();
@@ -430,26 +452,32 @@ impl Surface {
             self.frame = Some(frame);
         }
         // Output that changes nothing, such as moving the cursor to where it is, makes a frame equal to the picture.
-        let new_frame = arrived && self.shown != self.frame;
-        if arrived && !dirty && !new_frame {
+        let new_frame = (arrived || dirty || self.needs_draw) && self.shown != self.frame;
+        self.needs_draw |= dirty || new_frame;
+        if arrived && !self.needs_draw {
             // The link keeps its beat, at which the next frame is taken.
             self.idle = 0;
-            self.note_latency();
             return true;
         }
-        if !dirty && !new_frame {
+        if !self.needs_draw {
             self.idle += 1;
             if self.idle >= IDLE_FRAMES {
                 self.link.setPaused(true);
             }
             return true;
         }
-        self.idle = 0;
-        if let Some(drawable) = next() {
-            self.draw(&drawable);
+        if self.geometry.is_none() || self.theme.is_none() {
+            self.link.setPaused(true);
+            return true;
         }
-        if new_frame {
-            self.note_latency();
+        self.idle = 0;
+        if let Some(drawable) = next()
+            && self.draw(&drawable)
+        {
+            self.needs_draw = false;
+            if new_frame {
+                self.note_latency();
+            }
         }
         true
     }
@@ -467,12 +495,12 @@ impl Surface {
         }
     }
 
-    fn draw(&mut self, drawable: &ProtocolObject<dyn CAMetalDrawable>) {
+    fn draw(&mut self, drawable: &ProtocolObject<dyn CAMetalDrawable>) -> bool {
         let _interval = term_base::signpost::begin(term_base::signpost::name!("terminal frame"));
         let (Some(theme), Some(geometry)) = (self.theme.clone(), self.geometry) else {
-            return;
+            return false;
         };
-        let Some(gpu) = crate::gpu::shared() else { return };
+        let Some(gpu) = crate::gpu::shared() else { return false };
         let face = self.face.clone().unwrap_or(Face {
             family: String::new(),
             size: 13.0,
@@ -486,7 +514,7 @@ impl Surface {
             Some(sprites) => sprites,
             None => match Sprites::new(gpu.device()) {
                 Some(sprites) => self.sprites.insert(sprites),
-                None => return,
+                None => return false,
             },
         };
         let bounds = CGRect::new(objc2_core_foundation::CGPoint::ZERO, geometry.frame.size);
@@ -522,13 +550,14 @@ impl Surface {
             theme.palette.background,
             &mut self.ring,
         ) else {
-            return;
+            return false;
         };
         let drawable: &ProtocolObject<dyn MTLDrawable> = ProtocolObject::from_ref(drawable);
         buffer.presentDrawable(drawable);
         buffer.commit();
         sprites.uploaded();
         self.shown.clone_from(&self.frame);
+        true
     }
 }
 

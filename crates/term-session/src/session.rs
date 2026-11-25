@@ -200,12 +200,19 @@ pub enum CellSide {
 type Listener = Box<dyn Fn(Event) + Send + Sync>;
 pub(crate) type ClipboardReply = Arc<dyn Fn(&str) -> String + Send + Sync>;
 
+#[derive(Default)]
+pub(crate) struct ViewUpdate {
+    pub(crate) resize: Option<Size>,
+    pub(crate) frame: bool,
+}
+
 /// What the session and its reader thread share.
 pub(crate) struct Shared {
     /// The screen, behind the lock the reader thread and the owner share.
     pub(crate) own: FairMutex<crate::own::Own>,
     pub(crate) palette: Mutex<Palette>,
     pub(crate) size: Mutex<Size>,
+    pub(crate) view_update: Mutex<ViewUpdate>,
     pub(crate) clipboard_reply: Mutex<Option<ClipboardReply>>,
     redraw_pending: AtomicBool,
     full_redraw: AtomicBool,
@@ -216,6 +223,15 @@ pub(crate) struct Shared {
 }
 
 impl Shared {
+    pub(crate) fn resize(&self, size: Size, master: &File) {
+        let mut own = self.own.lock();
+        own.terminal.resize(size.grid());
+        *self.size.lock_ignoring_poison() = size;
+        self.full_redraw.store(true, Ordering::Release);
+        drop(own);
+        let _ = sys::set_window_size(master, &size.winsize());
+    }
+
     /// A snapshot of the screen as it is now, with the colours in force.
     pub(crate) fn build_snapshot(&self) -> Snapshot {
         let palette = self.palette.lock_ignoring_poison().clone();
@@ -331,6 +347,7 @@ impl Session {
             own: FairMutex::new(crate::own::Own::new(terminal)),
             palette: Mutex::new(options.palette.clone()),
             size: Mutex::new(options.size),
+            view_update: Mutex::default(),
             clipboard_reply: Mutex::new(None),
             redraw_pending: AtomicBool::new(false),
             full_redraw: AtomicBool::new(true),
@@ -434,22 +451,69 @@ impl Session {
 
     /// Changes the size; the program hears of it through SIGWINCH.
     pub fn resize(&self, size: Size) {
-        *self.shared.size.lock_ignoring_poison() = size;
-        self.shared.own.lock().terminal.resize(size.grid());
-        let _ = sys::set_window_size(&self.master, &size.winsize());
-        self.shared.full_redraw.store(true, Ordering::Release);
+        self.shared.resize(size, &self.master);
+    }
+
+    /// Asks the reader to use the latest requested grid size, so a live resize need not wait for reflow.
+    /// Returns false once the reader has stopped.
+    pub fn request_resize(&self, size: Size) -> bool {
+        self.request_view_update(Some(size))
+    }
+
+    /// Asks the reader to publish the changed viewport, coalescing requests until the reader wakes.
+    /// Returns false once the reader has stopped.
+    pub fn request_frame(&self) -> bool {
+        self.request_view_update(None)
+    }
+
+    fn request_view_update(&self, size: Option<Size>) -> bool {
+        let mut pending = self.shared.view_update.lock_ignoring_poison();
+        if !self.is_running() {
+            return false;
+        }
+        let wake = !pending.frame;
+        if size.is_some() {
+            pending.resize = size;
+        }
+        pending.frame = true;
+        drop(pending);
+        if wake {
+            let _ = self.poller.notify();
+        }
+        true
     }
 
     /// Has the renderer on another thread draw the session's frames (E5): `sink` hears on the reader thread when a
     /// new one waits in the returned source. The reader thread builds a first frame at once.
     pub fn render_to(&self, sink: Arc<dyn crate::frames::FrameSink>) -> crate::frames::FrameSource {
-        self.shared.publisher.set_sink(Some(sink));
-        self.shared.full_redraw.store(true, Ordering::Release);
+        let source = self.attach_renderer(sink);
         self.shared.publisher.publish(&self.shared);
+        source
+    }
+
+    /// Attaches a renderer and asks the reader for its first frame, or publishes it here if the reader has stopped.
+    pub fn render_to_when_ready(&self, sink: Arc<dyn crate::frames::FrameSink>) -> crate::frames::FrameSource {
+        let source = self.attach_renderer(sink);
+        self.rearm();
+        if !self.request_frame() {
+            self.shared.wake();
+        }
+        source
+    }
+
+    fn attach_renderer(&self, sink: Arc<dyn crate::frames::FrameSink>) -> crate::frames::FrameSource {
+        let generation = self.shared.publisher.set_sink(Some(sink));
+        self.shared.full_redraw.store(true, Ordering::Release);
         crate::frames::FrameSource {
             shared: Arc::clone(&self.shared),
             poller: Arc::clone(&self.poller),
+            generation,
         }
+    }
+
+    /// Stops publishing frames and drops the latest snapshot while the terminal stays alive.
+    pub fn detach_renderer(&self) {
+        self.shared.publisher.set_sink(None);
     }
 
     /// The latest frame the reader thread built, for what the owner reads of the screen between frames; with no
@@ -499,8 +563,19 @@ impl Session {
 
     /// Scrolls through the history.
     pub fn scroll(&self, scroll: Scroll) {
-        self.shared.own.lock().scroll(scroll);
-        self.shared.full_redraw.store(true, Ordering::Release);
+        self.scroll_changed(scroll);
+    }
+
+    /// Scrolls through the history and returns whether the viewport moved.
+    pub fn scroll_changed(&self, scroll: Scroll) -> bool {
+        let mut own = self.shared.own.lock();
+        let before = own.terminal.grid().display_offset;
+        own.scroll(scroll);
+        let changed = before != own.terminal.grid().display_offset;
+        if changed {
+            self.shared.full_redraw.store(true, Ordering::Release);
+        }
+        changed
     }
 
     fn scroll_to_bottom(&self) {
@@ -648,6 +723,7 @@ impl Session {
 
 impl Drop for Session {
     fn drop(&mut self) {
+        self.detach_renderer();
         self.close();
     }
 }

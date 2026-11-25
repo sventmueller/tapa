@@ -5,7 +5,7 @@
 use std::collections::HashMap;
 use std::sync::atomic::Ordering;
 
-use term_vt::cell::CellFlags as VtFlags;
+use term_vt::cell::{CellFlags as VtFlags, Row};
 use term_vt::selection::{Anchor, Kind, Side};
 
 use super::{SelectionKind, Session};
@@ -71,6 +71,41 @@ fn row_text(cells: impl Iterator<Item = (usize, char, bool, String)>) -> (String
     (text, (!plain).then_some(places))
 }
 
+fn grid_row_text(row: &Row) -> (String, Option<Vec<usize>>) {
+    row_text(row.cells.iter().enumerate().map(|(column, cell)| {
+        let spacer = cell
+            .flags
+            .intersects(VtFlags(VtFlags::WIDE_SPACER.0 | VtFlags::LEADING_WIDE_SPACER.0));
+        let extra = row
+            .extra(column)
+            .map(|extra| extra.zero_width.clone())
+            .unwrap_or_default();
+        (column, cell.c, spacer, extra)
+    }))
+}
+
+fn restore_tail<'a>(
+    mut back: impl Iterator<Item = std::borrow::Cow<'a, Row>>,
+    lines: usize,
+    mut bytes: usize,
+) -> Vec<String> {
+    let mut rows = Vec::new();
+    while rows.len() < lines && bytes > 0 {
+        let Some(row) = back.next() else { break };
+        let text = grid_row_text(&row).0;
+        if rows.is_empty() && text.trim().is_empty() {
+            continue;
+        }
+        let Some(left) = bytes.checked_sub(text.len() + 1) else {
+            break;
+        };
+        bytes = left;
+        rows.push(text);
+    }
+    rows.reverse();
+    rows
+}
+
 /// The display offset that shows the row at `index` with the least scrolling, from `offset` now.
 pub(crate) fn offset_showing(index: usize, history: usize, lines: usize, offset: usize) -> usize {
     let top = history.saturating_sub(offset);
@@ -100,14 +135,7 @@ impl Session {
             let history = grid.history.len();
             for index in 0..history + grid.lines() {
                 let Some(row) = grid.row_in_all(index) else { break };
-                let cells = row.cells.iter().enumerate().map(|(column, cell)| {
-                    let spacer = cell
-                        .flags
-                        .intersects(VtFlags(VtFlags::WIDE_SPACER.0 | VtFlags::LEADING_WIDE_SPACER.0));
-                    let zero_width = row.extra(column).map(|extra| extra.zero_width.clone());
-                    (column, cell.c, spacer, zero_width.unwrap_or_default())
-                });
-                push(index, row_text(cells));
+                push(index, grid_row_text(&row));
             }
             out.first = grid.dropped;
             out.history = history;
@@ -115,6 +143,18 @@ impl Session {
             out.cursor = (history + cursor.line, cursor.column);
         }
         out
+    }
+
+    /// The tail before the cursor for restoring a session, with the oldest retained row first.
+    pub fn restore_rows(&self, lines: usize, bytes: usize) -> Vec<String> {
+        let own = self.shared.own.lock();
+        let grid = own.terminal.grid();
+        let cursor = grid.history.len() + own.terminal.cursor().line;
+        restore_tail(
+            (0..cursor).rev().map_while(|index| grid.row_in_all(index)),
+            lines,
+            bytes,
+        )
     }
 
     /// Which rows the view shows now.

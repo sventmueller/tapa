@@ -3,6 +3,7 @@
 
 use std::cell::RefCell;
 use std::rc::Rc;
+use term_ui::workspace_host::{TabId, WorkspaceId};
 
 use objc2_foundation::{NSPoint, NSRect, NSSize};
 use term_panes::layout::{Layout, Node, WindowTab};
@@ -53,7 +54,7 @@ impl Window {
     /// The tab groups on screen of `workspace` but the one with its tab in front, by the places of their tabs among
     /// `saved`, the ids of the tabs stored in their order.
     fn separate_groups(&self, workspace: &Workspace, saved: &[u64]) -> Vec<SavedGroup> {
-        let front = workspace.tabs.borrow().selected_id();
+        let front = workspace.tabs.borrow().selected_id().map(TabId::get);
         let mut groups: Vec<SavedGroup> = Vec::new();
         let mut seen: Vec<u64> = Vec::new();
         for tab in workspace.tabs() {
@@ -128,14 +129,14 @@ impl Window {
             }
         }
         let hosted = |id: u64| with_agents.iter().any(|(workspace, _)| workspace.id == id);
-        if let Some(front) = window.workspaces.borrow().get(selected)
+        if let Some(front) = window.workspaces.borrow().get(WorkspaceId::new(selected))
             && front.tabs.borrow().is_empty()
             && !hosted(front.id)
         {
             // The window in front opens where it was, also for a workspace whose tabs were all closed.
             let tab = window.make_tab(front.base.clone(), None);
             front.tabs.borrow_mut().push(tab.clone());
-            front.tabs.borrow_mut().select(tab.id);
+            front.tabs.borrow_mut().select(TabId::new(tab.id));
             window.attach(&tab, front.id, None, place.get(), Some(look));
         }
         for tab in window.tabs() {
@@ -150,7 +151,7 @@ impl Window {
             }
         }
         window.restoring.set(false);
-        window.workspaces.borrow_mut().select(selected);
+        window.workspaces.borrow_mut().select(WorkspaceId::new(selected));
         window.show_workspace(selected, None);
         window.focus_active();
         window
@@ -167,7 +168,7 @@ impl Window {
         let workspace = self.add_workspace(stored.base.clone(), stored.name.clone());
         workspace.set_trusted(stored.trusted);
         *workspace.panels.borrow_mut() = stored.panels;
-        self.workspaces.borrow_mut().select(workspace.id);
+        self.workspaces.borrow_mut().select(WorkspaceId::new(workspace.id));
         for (at, tab) in stored.layout.tabs.iter().enumerate() {
             let Some(tab) = self.reopen_tab(&tab.root) else {
                 continue;
@@ -176,7 +177,7 @@ impl Window {
                 let mut tabs = workspace.tabs.borrow_mut();
                 tabs.push(tab.clone());
                 if stored.layout.selected == Some(at) || tabs.selected_id().is_none() {
-                    tabs.select(tab.id);
+                    tabs.select(TabId::new(tab.id));
                 }
             }
             let frame = self.attach(&tab, workspace.id, None, place.get(), Some(look));
@@ -191,7 +192,7 @@ impl Window {
     /// loading each page once its tab first shows and reading the files; a workspace left without a tab, as nothing
     /// came back, gets a terminal.
     fn reopen_hosted(self: &Rc<Self>, workspace: &Rc<Workspace>, stored: &SavedWorkspace) {
-        let front = workspace.tabs.borrow().selected_id();
+        let front = workspace.tabs.borrow().selected_id().map(TabId::get);
         let mut selected = front;
         let mut kept: Vec<(usize, bool, Hosted)> = stored
             .agents
@@ -212,7 +213,7 @@ impl Window {
             .collect();
         kept.sort_by_key(|(at, _, _)| *at);
         for (at, was_selected, hosted) in kept {
-            self.workspaces.borrow_mut().select(workspace.id);
+            self.workspaces.borrow_mut().select(WorkspaceId::new(workspace.id));
             let reopened = match hosted {
                 Hosted::Agent(session) => crate::agent::reopen(workspace.id, session),
                 Hosted::Browser(url) => crate::browser::reopen(workspace.id, url),
@@ -221,7 +222,7 @@ impl Window {
             let Some(id) = reopened else {
                 continue;
             };
-            workspace.tabs.borrow_mut().move_to(id, at);
+            workspace.tabs.borrow_mut().move_to(TabId::new(id), at);
             if was_selected || selected.is_none() {
                 selected = Some(id);
             }
@@ -234,7 +235,7 @@ impl Window {
             self.start_sessions(&tab);
         }
         if let Some(id) = selected {
-            workspace.tabs.borrow_mut().select(id);
+            workspace.select_tab(TabId::new(id));
         }
     }
 
@@ -265,7 +266,7 @@ impl Window {
                 let config = app().config();
                 session::start_folder(&config, None, false)
             };
-            let (view, view_root) = session::make(self.mtm, self.id, folder, None);
+            let (view, view_root) = session::make(self.mtm, self.id(), folder, None);
             put_rows(view.id(), saved.rows.clone());
             if let Some(on) = saved.field {
                 view.set_field_enabled(on);
@@ -305,7 +306,7 @@ fn snapshot_workspace(
     let mut browsers = Vec::new();
     let mut files = Vec::new();
     let mut selected = None;
-    let front = workspace.tabs.borrow().selected_id();
+    let front = workspace.tabs.borrow().selected_id().map(TabId::get);
     for tab in workspace.tabs() {
         if let Some(session) = tab.as_hosted().and_then(|hosted| crate::agent::kept(&hosted.key()?)) {
             agents.push(SavedAgent {
@@ -369,9 +370,10 @@ fn snapshot_tab(tab: &Tab, lines: usize, budget: &RefCell<&mut Budget>) -> Optio
             .or_else(|| found.as_ref().map(|view| view.cwd()))?;
         let rows = match (&found, lines) {
             (Some(found), 1..) => found
-                .with_session(term_session::Session::rows_text)
-                .map(|text| {
-                    let mut rows = budget.borrow_mut().take(text.rows, text.cursor.0, lines);
+                .with_session(|session| {
+                    let mut budget = budget.borrow_mut();
+                    let mut rows = session.restore_rows(lines, budget.available());
+                    budget.spent(&rows);
                     term_base::redact::redact_lines(&mut rows);
                     rows
                 })

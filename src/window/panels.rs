@@ -3,6 +3,7 @@
 //! into the sidebar of the tab window the user works in.
 
 use std::rc::Rc;
+use term_ui::workspace_host::WorkspaceId;
 
 use term_ui_sidebar::{Panel, PanelView};
 
@@ -15,7 +16,7 @@ impl Window {
         let open = self
             .workspaces
             .borrow()
-            .get(id)
+            .get(WorkspaceId::new(id))
             .is_some_and(|workspace| workspace.panels.borrow().is_open(panel));
         self.set_panel_open(id, panel, !open);
     }
@@ -33,7 +34,7 @@ impl Window {
     /// Shows `panel` of workspace `id` in place of the list, which selects the workspace, or the list again and lets
     /// go of what the panel holds.
     pub(crate) fn set_panel_open(self: &Rc<Self>, id: u64, panel: Panel, open: bool) {
-        let Some(workspace) = self.workspaces.borrow().get(id) else {
+        let Some(workspace) = self.workspaces.borrow().get(WorkspaceId::new(id)) else {
             return;
         };
         if workspace.panels.borrow().is_open(panel) == open {
@@ -58,7 +59,7 @@ impl Window {
         let changed = self
             .workspaces
             .borrow()
-            .get(id)
+            .get(WorkspaceId::new(id))
             .is_some_and(|workspace| workspace.set_changes(count));
         if changed {
             self.refresh();
@@ -74,7 +75,7 @@ impl Window {
             let shown = self
                 .workspaces
                 .borrow()
-                .get(frame.workspace)
+                .get(WorkspaceId::new(frame.workspace))
                 .and_then(|workspace| workspace.panels.borrow().shown());
             let is_target = target.as_ref().is_some_and(|target| target.tab == frame.tab);
             let view = shown.and_then(|_| self.panel_view(frame.workspace, is_target));
@@ -84,7 +85,7 @@ impl Window {
 
     /// Workspace `id`'s panel that shows, with its title; its view and buttons only `with_content`.
     fn panel_view(&self, id: u64, with_content: bool) -> Option<PanelView> {
-        let workspace = self.workspaces.borrow().get(id)?;
+        let workspace = self.workspaces.borrow().get(WorkspaceId::new(id))?;
         let panel = workspace.panels.borrow().shown()?;
         let handle = workspace.handle();
         let content = if with_content {
