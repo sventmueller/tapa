@@ -41,6 +41,7 @@
 "Agenten werden gesucht …" = "Agents zoeken…";
 "Aktion suchen" = "Zoek acties";
 "Aktive Sitzung oder Benutzerordner" = "Actieve sessie of thuismap";
+"Aktivität" = "Activiteit";
 "Aktualisieren" = "Ververs";
 "Alle Fenster zusammenführen" = "Voeg alle vensters samen";
 "Alle Konflikte gelöst. Fertig schließt das Anwenden ab." = "Alle conflicten opgelost. Klaar rondt het toepassen af.";
@@ -169,6 +170,7 @@
 "Bereich schließen" = "Sluit paneel";
 "Bereiche" = "Panelen";
 "Bereiche angleichen" = "Maak panelen even groot";
+"Bereit" = "Klaar";
 "Bereit · Version {}" = "Gereed · versie {}";
 "Bereit · {}" = "Gereed · {}";
 "Bericht senden?" = "Rapport versturen?";
@@ -527,6 +529,7 @@
 "Geerbt von „{}“" = "Geërfd van “{}”";
 "Geerbt: {}" = "Geërfd: {}";
 "Gehe zu Zeile" = "Ga naar regel";
+"Gerade läuft nichts." = "Er draait nu niets.";
 "Gesendet. Nummer des Berichts: {}" = "Verstuurd. Rapportnummer: {}";
 "Gespeicherte Regeln von Claude" = "Opgeslagen regels van Claude";
 "Gestoppt" = "Gestopt";
@@ -1177,6 +1180,7 @@
 "Worktrees" = "Worktrees";
 "Wähle im Feld eine Anmeldung aus Passwörter; die App trägt sie in das Formular der Seite ein und behält sie nicht." = "Kies in het veld inloggegevens uit Wachtwoorden; de app vult ze in het formulier van de pagina in en bewaart ze niet.";
 "Zeichensatz laut .editorconfig: {}" = "Tekenset volgens .editorconfig: {}";
+"Zeigen" = "Toon";
 "Zeigt, womit die Sitzung läuft" = "Toont waarmee de sessie draait";
 "Zeile des Cursors hervorheben" = "Markeer de regel van de cursor";
 "Zeilen" = "rijen";

@@ -24,6 +24,7 @@ mod acp;
 mod acp_install;
 mod acp_words;
 mod actions;
+mod activity;
 mod agent_panel;
 mod attrs;
 mod cards;
@@ -129,6 +130,7 @@ impl AgentKey {
 /// The state of the agent tabs in the running app, which the app keeps and hands out through `Host::state`.
 #[derive(Default)]
 pub struct State {
+    activity: activity::Activities,
     agent_panels: agent_panel::AgentPanels,
     agent_tabs: AgentTabs,
     enlarged_picture: enlarge::EnlargedPicture,

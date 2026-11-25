@@ -41,6 +41,7 @@
 "Agenten werden gesucht …" = "एजेंट खोजे जा रहे हैं…";
 "Aktion suchen" = "क्रियाएँ खोजें";
 "Aktive Sitzung oder Benutzerordner" = "सक्रिय सत्र या होम फ़ोल्डर";
+"Aktivität" = "ऐक्टिविटी";
 "Aktualisieren" = "रिफ़्रेश करें";
 "Alle Fenster zusammenführen" = "सभी विंडो मिलाएँ";
 "Alle Konflikte gelöst. Fertig schließt das Anwenden ab." = "सभी कॉन्फ़्लिक्ट हल हो गए। “पूरा हुआ” स्टैश को लागू करना पूरा करता है।";
@@ -169,6 +170,7 @@
 "Bereich schließen" = "पेन बंद करें";
 "Bereiche" = "पेन";
 "Bereiche angleichen" = "पेन बराबर करें";
+"Bereit" = "तैयार";
 "Bereit · Version {}" = "तैयार · संस्करण {}";
 "Bereit · {}" = "तैयार · {}";
 "Bericht senden?" = "रिपोर्ट भेजें?";
@@ -527,6 +529,7 @@
 "Geerbt von „{}“" = "“{}” से इनहेरिट किया गया";
 "Geerbt: {}" = "इनहेरिट किया गया: {}";
 "Gehe zu Zeile" = "पंक्ति पर जाएँ";
+"Gerade läuft nichts." = "अभी कुछ नहीं चल रहा।";
 "Gesendet. Nummer des Berichts: {}" = "भेज दिया गया। रिपोर्ट नंबर : {}";
 "Gespeicherte Regeln von Claude" = "Claude के सहेजे गए नियम";
 "Gestoppt" = "रोका गया";
@@ -1177,6 +1180,7 @@
 "Worktrees" = "वर्कट्री";
 "Wähle im Feld eine Anmeldung aus Passwörter; die App trägt sie in das Formular der Seite ein und behält sie nicht." = "फ़ील्ड में “पासवर्ड” से कोई साइन इन चुनें; ऐप उसे पेज के फ़ॉर्म में भरता है और अपने पास नहीं रखता।";
 "Zeichensatz laut .editorconfig: {}" = ".editorconfig के अनुसार कैरेक्टर सेट : {}";
+"Zeigen" = "दिखाएँ";
 "Zeigt, womit die Sitzung läuft" = "दिखाता है कि सेशन किसके साथ चल रहा है";
 "Zeile des Cursors hervorheben" = "कर्सर की पंक्ति हाइलाइट करें";
 "Zeilen" = "पंक्तियाँ";

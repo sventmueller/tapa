@@ -41,6 +41,7 @@
 "Agenten werden gesucht …" = "S’estan cercant agents…";
 "Aktion suchen" = "Buscar accions";
 "Aktive Sitzung oder Benutzerordner" = "Sessió activa o carpeta d’inici";
+"Aktivität" = "Activitat";
 "Aktualisieren" = "Actualitza";
 "Alle Fenster zusammenführen" = "Fusiona totes les finestres";
 "Alle Konflikte gelöst. Fertig schließt das Anwenden ab." = "S’han resolt tots els conflictes. “Fet” acaba d’aplicar l’stash.";
@@ -169,6 +170,7 @@
 "Bereich schließen" = "Tancar el panell";
 "Bereiche" = "Panells";
 "Bereiche angleichen" = "Igualar els panells";
+"Bereit" = "A punt";
 "Bereit · Version {}" = "A punt · versió {}";
 "Bereit · {}" = "A punt · {}";
 "Bericht senden?" = "Vols enviar l’informe?";
@@ -527,6 +529,7 @@
 "Geerbt von „{}“" = "Heretat de «{}»";
 "Geerbt: {}" = "Heretat: {}";
 "Gehe zu Zeile" = "Ves a la línia";
+"Gerade läuft nichts." = "Ara no s’executa res.";
 "Gesendet. Nummer des Berichts: {}" = "Enviat. Número de l’informe: {}";
 "Gespeicherte Regeln von Claude" = "Regles desades de Claude";
 "Gestoppt" = "Aturat";
@@ -1177,6 +1180,7 @@
 "Worktrees" = "Worktrees";
 "Wähle im Feld eine Anmeldung aus Passwörter; die App trägt sie in das Formular der Seite ein und behält sie nicht." = "Tria al camp un inici de sessió de Contrasenyes; l’app l’emplena al formulari de la pàgina i no el conserva.";
 "Zeichensatz laut .editorconfig: {}" = "Joc de caràcters segons .editorconfig: {}";
+"Zeigen" = "Mostra";
 "Zeigt, womit die Sitzung läuft" = "Mostra amb què funciona la sessió";
 "Zeile des Cursors hervorheben" = "Ressaltar la línia del cursor";
 "Zeilen" = "files";

@@ -521,3 +521,10 @@
 "Fortsetzen" = "ดำเนินการต่อ";
 "Sitzung fortsetzen" = "ดำเนินเซสชันต่อ";
 "Setzt eine frühere Sitzung dieses Ordners fort" = "ดำเนินเซสชันก่อนหน้าของโฟลเดอร์นี้ต่อ";
+"Aktivität" = "กิจกรรม";
+"Arbeitet" = "กำลังทำงาน";
+"Bereit" = "พร้อม";
+"Fertig" = "เสร็จสิ้น";
+"Gerade läuft nichts." = "ไม่มีสิ่งใดทำงานอยู่";
+"Wartet auf dich" = "กำลังรอคุณ";
+"Zeigen" = "แสดง";

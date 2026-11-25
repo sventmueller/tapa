@@ -41,6 +41,7 @@
 "Agenten werden gesucht …" = "Αναζήτηση πρακτόρων…";
 "Aktion suchen" = "Αναζήτηση ενεργειών";
 "Aktive Sitzung oder Benutzerordner" = "Ενεργή συνεδρία ή φάκελος χρήστη";
+"Aktivität" = "Δραστηριότητα";
 "Aktualisieren" = "Ανανέωση";
 "Alle Fenster zusammenführen" = "Συγχώνευση όλων των παραθύρων";
 "Alle Konflikte gelöst. Fertig schließt das Anwenden ab." = "Όλες οι διενέξεις επιλύθηκαν. Με το «Ολοκληρώθηκε» ολοκληρώνεται η εφαρμογή του stash.";
@@ -169,6 +170,7 @@
 "Bereich schließen" = "Κλείσιμο τμήματος";
 "Bereiche" = "Τμήματα";
 "Bereiche angleichen" = "Εξίσωση τμημάτων";
+"Bereit" = "Έτοιμο";
 "Bereit · Version {}" = "Έτοιμο · έκδοση {}";
 "Bereit · {}" = "Έτοιμο · {}";
 "Bericht senden?" = "Αποστολή της αναφοράς;";
@@ -527,6 +529,7 @@
 "Geerbt von „{}“" = "Κληρονομείται από το προφίλ «{}»";
 "Geerbt: {}" = "Κληρονομείται: {}";
 "Gehe zu Zeile" = "Μετάβαση σε γραμμή";
+"Gerade läuft nichts." = "Δεν εκτελείται τίποτα αυτήν τη στιγμή.";
 "Gesendet. Nummer des Berichts: {}" = "Στάλθηκε. Αριθμός αναφοράς: {}";
 "Gespeicherte Regeln von Claude" = "Αποθηκευμένοι κανόνες του Claude";
 "Gestoppt" = "Σταμάτησε";
@@ -1177,6 +1180,7 @@
 "Worktrees" = "Δέντρα εργασίας";
 "Wähle im Feld eine Anmeldung aus Passwörter; die App trägt sie in das Formular der Seite ein und behält sie nicht." = "Επιλέξτε στο πεδίο στοιχεία σύνδεσης από τα Συνθηματικά· η εφαρμογή τα συμπληρώνει στη φόρμα της σελίδας και δεν τα κρατά.";
 "Zeichensatz laut .editorconfig: {}" = "Σύνολο χαρακτήρων κατά το .editorconfig: {}";
+"Zeigen" = "Εμφάνιση";
 "Zeigt, womit die Sitzung läuft" = "Δείχνει με τι εκτελείται η συνεδρία";
 "Zeile des Cursors hervorheben" = "Επισήμανση της γραμμής του δρομέα";
 "Zeilen" = "γραμμές";

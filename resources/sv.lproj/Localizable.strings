@@ -41,6 +41,7 @@
 "Agenten werden gesucht …" = "Söker efter agenter…";
 "Aktion suchen" = "Sök åtgärder";
 "Aktive Sitzung oder Benutzerordner" = "Aktiv session eller hemmapp";
+"Aktivität" = "Aktivitet";
 "Aktualisieren" = "Uppdatera";
 "Alle Fenster zusammenführen" = "Slå ihop alla fönster";
 "Alle Konflikte gelöst. Fertig schließt das Anwenden ab." = "Alla konflikter är lösta. ”Klar” slutför tillämpningen av stashen.";
@@ -169,6 +170,7 @@
 "Bereich schließen" = "Stäng panel";
 "Bereiche" = "Paneler";
 "Bereiche angleichen" = "Utjämna paneler";
+"Bereit" = "Redo";
 "Bereit · Version {}" = "Redo · version {}";
 "Bereit · {}" = "Redo · {}";
 "Bericht senden?" = "Vill du skicka rapporten?";
@@ -527,6 +529,7 @@
 "Geerbt von „{}“" = "Ärvt från ”{}”";
 "Geerbt: {}" = "Ärvt: {}";
 "Gehe zu Zeile" = "Gå till rad";
+"Gerade läuft nichts." = "Inget körs just nu.";
 "Gesendet. Nummer des Berichts: {}" = "Skickat. Rapportnummer: {}";
 "Gespeicherte Regeln von Claude" = "Claudes sparade regler";
 "Gestoppt" = "Stoppad";
@@ -1177,6 +1180,7 @@
 "Worktrees" = "Arbetsträd";
 "Wähle im Feld eine Anmeldung aus Passwörter; die App trägt sie in das Formular der Seite ein und behält sie nicht." = "Välj inloggningsuppgifter från Lösenord-appen i fältet; de fylls i i sidans formulär och appen behåller dem inte.";
 "Zeichensatz laut .editorconfig: {}" = "Teckenuppsättning enligt .editorconfig: {}";
+"Zeigen" = "Visa";
 "Zeigt, womit die Sitzung läuft" = "Visar vad sessionen körs med";
 "Zeile des Cursors hervorheben" = "Markera markörens rad";
 "Zeilen" = "rader";

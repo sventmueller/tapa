@@ -41,6 +41,7 @@
 "Agenten werden gesucht …" = "에이전트 검색 중…";
 "Aktion suchen" = "동작 검색";
 "Aktive Sitzung oder Benutzerordner" = "활성 세션 또는 홈 폴더";
+"Aktivität" = "활동";
 "Aktualisieren" = "새로 고침";
 "Alle Fenster zusammenführen" = "모든 윈도우 통합";
 "Alle Konflikte gelöst. Fertig schließt das Anwenden ab." = "모든 충돌이 해결되었습니다. ‘완료’를 누르면 스태시 적용이 끝납니다.";
@@ -169,6 +170,7 @@
 "Bereich schließen" = "패널 닫기";
 "Bereiche" = "패널";
 "Bereiche angleichen" = "패널 크기 균등하게 맞추기";
+"Bereit" = "준비됨";
 "Bereit · Version {}" = "준비됨 · 버전 {}";
 "Bereit · {}" = "준비됨 · {}";
 "Bericht senden?" = "보고서를 보내겠습니까?";
@@ -527,6 +529,7 @@
 "Geerbt von „{}“" = "“{}”에서 상속됨";
 "Geerbt: {}" = "상속됨: {}";
 "Gehe zu Zeile" = "행으로 이동";
+"Gerade läuft nichts." = "실행 중인 항목이 없습니다.";
 "Gesendet. Nummer des Berichts: {}" = "보냈습니다. 보고서 번호: {}";
 "Gespeicherte Regeln von Claude" = "Claude의 저장된 규칙";
 "Gestoppt" = "중단됨";
@@ -1177,6 +1180,7 @@
 "Worktrees" = "작업 트리";
 "Wähle im Feld eine Anmeldung aus Passwörter; die App trägt sie in das Formular der Seite ein und behält sie nicht." = "필드에서 ‘암호’ 앱의 로그인 정보를 선택하십시오. 앱은 이 정보를 페이지의 양식에 채우며 보관하지 않습니다.";
 "Zeichensatz laut .editorconfig: {}" = ".editorconfig에 따른 문자 집합: {}";
+"Zeigen" = "보기";
 "Zeigt, womit die Sitzung läuft" = "세션의 실행 환경 표시";
 "Zeile des Cursors hervorheben" = "커서가 있는 줄 강조";
 "Zeilen" = "행";

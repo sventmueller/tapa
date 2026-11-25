@@ -41,6 +41,7 @@
 "Agenten werden gesucht …" = "جارٍ البحث عن وكلاء…";
 "Aktion suchen" = "البحث عن إجراء";
 "Aktive Sitzung oder Benutzerordner" = "الجلسة النشطة أو مجلد المستخدم";
+"Aktivität" = "النشاط";
 "Aktualisieren" = "تحديث";
 "Alle Fenster zusammenführen" = "دمج كافة النوافذ";
 "Alle Konflikte gelöst. Fertig schließt das Anwenden ab." = "تم حل جميع التعارضات. يُكمل “تم” تطبيق Stash.";
@@ -169,6 +170,7 @@
 "Bereich schließen" = "إغلاق الجزء";
 "Bereiche" = "الأجزاء";
 "Bereiche angleichen" = "مساواة الأجزاء";
+"Bereit" = "جاهز";
 "Bereit · Version {}" = "جاهز · الإصدار {}";
 "Bereit · {}" = "جاهز · {}";
 "Bericht senden?" = "هل تريد إرسال التقرير؟";
@@ -527,6 +529,7 @@
 "Geerbt von „{}“" = "موروث من «{}»";
 "Geerbt: {}" = "موروث: {}";
 "Gehe zu Zeile" = "الانتقال إلى سطر";
+"Gerade läuft nichts." = "لا يوجد شيء قيد التشغيل حاليًا.";
 "Gesendet. Nummer des Berichts: {}" = "تم الإرسال. رقم التقرير: {}";
 "Gespeicherte Regeln von Claude" = "قواعد Claude المحفوظة";
 "Gestoppt" = "متوقف";
@@ -1177,6 +1180,7 @@
 "Worktrees" = "أشجار العمل";
 "Wähle im Feld eine Anmeldung aus Passwörter; die App trägt sie in das Formular der Seite ein und behält sie nicht." = "اختر في الحقل بيانات تسجيل دخول من تطبيق كلمات السر؛ يعبّئها التطبيق في نموذج الصفحة ولا يحتفظ بها.";
 "Zeichensatz laut .editorconfig: {}" = "مجموعة الأحرف حسب ‎.editorconfig: {}";
+"Zeigen" = "إظهار";
 "Zeigt, womit die Sitzung läuft" = "يعرض ما تعمل به الجلسة";
 "Zeile des Cursors hervorheben" = "تمييز سطر المؤشر";
 "Zeilen" = "صف";

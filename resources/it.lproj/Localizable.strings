@@ -41,6 +41,7 @@
 "Agenten werden gesucht …" = "Ricerca degli agenti…";
 "Aktion suchen" = "Cerca azioni";
 "Aktive Sitzung oder Benutzerordner" = "Sessione attiva o cartella Inizio";
+"Aktivität" = "Attività";
 "Aktualisieren" = "Aggiorna";
 "Alle Fenster zusammenführen" = "Unisci tutte le finestre";
 "Alle Konflikte gelöst. Fertig schließt das Anwenden ab." = "Tutti i conflitti sono risolti. “Fatto” completa l’applicazione dello stash.";
@@ -169,6 +170,7 @@
 "Bereich schließen" = "Chiudi riquadro";
 "Bereiche" = "Riquadri";
 "Bereiche angleichen" = "Uniforma riquadri";
+"Bereit" = "Pronto";
 "Bereit · Version {}" = "Pronto · versione {}";
 "Bereit · {}" = "Pronto · {}";
 "Bericht senden?" = "Inviare il rapporto?";
@@ -527,6 +529,7 @@
 "Geerbt von „{}“" = "Ereditato da «{}»";
 "Geerbt: {}" = "Ereditato: {}";
 "Gehe zu Zeile" = "Vai alla riga";
+"Gerade läuft nichts." = "Al momento non è in esecuzione nulla.";
 "Gesendet. Nummer des Berichts: {}" = "Inviato. Numero del rapporto: {}";
 "Gespeicherte Regeln von Claude" = "Regole salvate di Claude";
 "Gestoppt" = "Fermato";
@@ -1177,6 +1180,7 @@
 "Worktrees" = "Worktree";
 "Wähle im Feld eine Anmeldung aus Passwörter; die App trägt sie in das Formular der Seite ein und behält sie nicht." = "Scegli nel campo dei dati di accesso dall’app Password; vengono inseriti nel modulo della pagina e l’app non li conserva.";
 "Zeichensatz laut .editorconfig: {}" = "Set di caratteri secondo .editorconfig: {}";
+"Zeigen" = "Mostra";
 "Zeigt, womit die Sitzung läuft" = "Mostra con cosa viene eseguita la sessione";
 "Zeile des Cursors hervorheben" = "Evidenzia la riga del cursore";
 "Zeilen" = "righe";

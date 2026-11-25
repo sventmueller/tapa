@@ -4,6 +4,9 @@
 //! keyboard into the composer or out of it as ⌘Esc does, `agentanswer:allow|deny|always` answers the approval that
 //! waits, `agenttext:<name>` prints the timeline, `agentdialog:<name>` the texts of the open overlay,
 //! `agentdialogsearch:<text>` types into its search field, `agentdialogpress:<title>` presses its button so titled, `agentstatus:<name>` the tab's status with the sidebar's,
+//! `agentwork:<subagents|background|all>` opens the activity view of that part as the head's button or `/tasks` does and
+//! prints its lines, `agentworklines:<name>` prints them again and draws the popover into `<name>.png`,
+//! `agentworkpress:<title>` clicks its first button so titled,
 //! `agentargs:<name>` the arguments the `claude` stand-in started with, `agentsleep:<name>` parks the agent tab's
 //! process as a hidden idle tab does, `agentrows:<name>` counts the workspace's timeline rows and retained table
 //! rows, and `processes:<name>` prints what the supervisor runs.
@@ -79,12 +82,43 @@ pub(crate) fn run(step: &str) -> bool {
             println!("agentdialogpress {argument}: {pressed}");
         }
         "agentstatus" => status(argument),
+        "agentwork" => work(argument),
+        "agentworklines" => work_lines(argument),
+        "agentworkpress" => println!("agentworkpress {argument}: {}", term_ui_agent::press_activity(argument)),
         "agentargs" => println!("agentargs {argument}: {:?}", stand_in::claude_args()),
         "agentsleep" => sleep(argument),
         "processes" => processes(argument),
         _ => return false,
     }
     true
+}
+
+/// Opens the activity view of `part` of the front agent tab: the subagents' and the background's through the head's
+/// buttons, all of it as `/tasks` does.
+fn work(part: &str) {
+    let Some(tab) = front_agent() else {
+        return println!("agentwork {part}: no agent tab");
+    };
+    match part {
+        "subagents" => tab.press_work(term_ui_agent::work::Part::Subagents),
+        "background" => tab.press_work(term_ui_agent::work::Part::Background),
+        "all" => tab.show_work(term_ui_agent::work::Part::All, None),
+        other => return println!("agentwork {other}: no such part"),
+    }
+    println!("agentwork {part}: {:?}", term_ui_agent::activity_lines());
+}
+
+/// Prints the lines of the open activity view and draws it into `<name>.png`.
+fn work_lines(name: &str) {
+    println!(
+        "agentworklines {name}: {:?} (updated in place {} times)",
+        term_ui_agent::activity_lines(),
+        term_ui_agent::activity_updated_in_place()
+    );
+    if let Some(view) = term_ui_agent::activity_view() {
+        let dir = std::env::var_os("TAPA_SELFTEST_DIR").map_or_else(|| PathBuf::from("target/selftest"), PathBuf::from);
+        super::steps::view_picture(&view, &dir.join(format!("{name}.png")));
+    }
 }
 
 /// Opens the agents' workspace in the window in front and an agent tab of `kind` in it.

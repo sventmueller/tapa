@@ -521,3 +521,10 @@
 "Fortsetzen" = "続行";
 "Sitzung fortsetzen" = "セッションを再開";
 "Setzt eine frühere Sitzung dieses Ordners fort" = "このフォルダの以前のセッションを再開します";
+"Aktivität" = "アクティビティ";
+"Arbeitet" = "作業中";
+"Bereit" = "準備完了";
+"Fertig" = "完了";
+"Gerade läuft nichts." = "実行中のものはありません。";
+"Wartet auf dich" = "応答待ち";
+"Zeigen" = "表示";

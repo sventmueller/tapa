@@ -41,6 +41,7 @@
 "Agenten werden gesucht …" = "Ajanlar aranıyor…";
 "Aktion suchen" = "Eylem ara";
 "Aktive Sitzung oder Benutzerordner" = "Etkin oturum veya ana klasör";
+"Aktivität" = "Etkinlik";
 "Aktualisieren" = "Yenile";
 "Alle Fenster zusammenführen" = "Tüm Pencereleri Birleştir";
 "Alle Konflikte gelöst. Fertig schließt das Anwenden ab." = "Tüm çakışmalar çözüldü. “Bitti” stash’i uygulamayı tamamlar.";
@@ -169,6 +170,7 @@
 "Bereich schließen" = "Bölmeyi Kapat";
 "Bereiche" = "Bölmeler";
 "Bereiche angleichen" = "Bölmeleri Eşitle";
+"Bereit" = "Hazır";
 "Bereit · Version {}" = "Hazır · sürüm {}";
 "Bereit · {}" = "Hazır · {}";
 "Bericht senden?" = "Rapor gönderilsin mi?";
@@ -527,6 +529,7 @@
 "Geerbt von „{}“" = "“{}” profilinden devralındı";
 "Geerbt: {}" = "Devralındı: {}";
 "Gehe zu Zeile" = "Satıra Git";
+"Gerade läuft nichts." = "Şu anda çalışan bir şey yok.";
 "Gesendet. Nummer des Berichts: {}" = "Gönderildi. Rapor numarası: {}";
 "Gespeicherte Regeln von Claude" = "Claude’un kayıtlı kuralları";
 "Gestoppt" = "Durduruldu";
@@ -1177,6 +1180,7 @@
 "Worktrees" = "Çalışma Ağaçları";
 "Wähle im Feld eine Anmeldung aus Passwörter; die App trägt sie in das Formular der Seite ein und behält sie nicht." = "Alanda Parolalar uygulamasından giriş bilgilerini seçin; bilgiler sayfanın formuna doldurulur ve uygulama bunları saklamaz.";
 "Zeichensatz laut .editorconfig: {}" = ".editorconfig’e göre karakter kümesi: {}";
+"Zeigen" = "Göster";
 "Zeigt, womit die Sitzung läuft" = "Oturumun neyle çalıştığını gösterir";
 "Zeile des Cursors hervorheben" = "İmlecin bulunduğu satırı vurgula";
 "Zeilen" = "satır";

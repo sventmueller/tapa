@@ -521,3 +521,10 @@
 "Fortsetzen" = "Continue";
 "Sitzung fortsetzen" = "Resume Session";
 "Setzt eine frühere Sitzung dieses Ordners fort" = "Continues a past session of this folder";
+"Aktivität" = "Activity";
+"Arbeitet" = "Working";
+"Bereit" = "Ready";
+"Fertig" = "Done";
+"Gerade läuft nichts." = "Nothing is running.";
+"Wartet auf dich" = "Waiting for you";
+"Zeigen" = "Show";

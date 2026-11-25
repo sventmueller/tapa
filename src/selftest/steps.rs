@@ -173,8 +173,8 @@ fn suggestions(step: &str) -> bool {
     true
 }
 
-/// Draws the terminal view `view` into a PNG at `path`, as its own drawing paints it.
-fn view_picture(view: &objc2_app_kit::NSView, path: &std::path::Path) {
+/// Draws `view` into a PNG at `path`, as its own drawing paints it.
+pub(super) fn view_picture(view: &objc2_app_kit::NSView, path: &std::path::Path) {
     use objc2_app_kit::NSBitmapImageFileType;
     let bounds = view.bounds();
     let Some(bitmap) = view.bitmapImageRepForCachingDisplayInRect(bounds) else {

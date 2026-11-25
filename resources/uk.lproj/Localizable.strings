@@ -41,6 +41,7 @@
 "Agenten werden gesucht …" = "Пошук агентів…";
 "Aktion suchen" = "Пошук дій";
 "Aktive Sitzung oder Benutzerordner" = "Активний сеанс або домашня папка";
+"Aktivität" = "Активність";
 "Aktualisieren" = "Оновити";
 "Alle Fenster zusammenführen" = "Обʼєднати всі вікна";
 "Alle Konflikte gelöst. Fertig schließt das Anwenden ab." = "Усі конфлікти розвʼязано. «Завершено» завершує застосування stash.";
@@ -169,6 +170,7 @@
 "Bereich schließen" = "Закрити панель";
 "Bereiche" = "Панелі";
 "Bereiche angleichen" = "Вирівняти панелі";
+"Bereit" = "Готовий";
 "Bereit · Version {}" = "Готово · версія {}";
 "Bereit · {}" = "Готово · {}";
 "Bericht senden?" = "Надіслати звіт?";
@@ -527,6 +529,7 @@
 "Geerbt von „{}“" = "Успадковано від профілю «{}»";
 "Geerbt: {}" = "Успадковано: {}";
 "Gehe zu Zeile" = "Перейти до рядка";
+"Gerade läuft nichts." = "Зараз нічого не виконується.";
 "Gesendet. Nummer des Berichts: {}" = "Надіслано. Номер звіту: {}";
 "Gespeicherte Regeln von Claude" = "Збережені правила Claude";
 "Gestoppt" = "Зупинено";
@@ -1177,6 +1180,7 @@
 "Worktrees" = "Робочі дерева";
 "Wähle im Feld eine Anmeldung aus Passwörter; die App trägt sie in das Formular der Seite ein und behält sie nicht." = "Виберіть у полі дані для входу з програми «Паролі»; програма вводить їх у форму сторінки й не зберігає.";
 "Zeichensatz laut .editorconfig: {}" = "Кодування за .editorconfig: {}";
+"Zeigen" = "Показати";
 "Zeigt, womit die Sitzung läuft" = "Показує, з чим працює сеанс";
 "Zeile des Cursors hervorheben" = "Виділяти рядок курсора";
 "Zeilen" = "рядків";

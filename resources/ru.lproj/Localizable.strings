@@ -41,6 +41,7 @@
 "Agenten werden gesucht …" = "Поиск агентов…";
 "Aktion suchen" = "Поиск действий";
 "Aktive Sitzung oder Benutzerordner" = "Активный сеанс или папка пользователя";
+"Aktivität" = "Активность";
 "Aktualisieren" = "Обновить";
 "Alle Fenster zusammenführen" = "Объединить все окна";
 "Alle Konflikte gelöst. Fertig schließt das Anwenden ab." = "Все конфликты разрешены. «Готово» завершит применение stash.";
@@ -169,6 +170,7 @@
 "Bereich schließen" = "Закрыть панель";
 "Bereiche" = "Панели";
 "Bereiche angleichen" = "Выровнять панели";
+"Bereit" = "Готов";
 "Bereit · Version {}" = "Готов · версия {}";
 "Bereit · {}" = "Готов · {}";
 "Bericht senden?" = "Отправить отчет?";
@@ -527,6 +529,7 @@
 "Geerbt von „{}“" = "Унаследовано от профиля «{}»";
 "Geerbt: {}" = "Унаследовано: {}";
 "Gehe zu Zeile" = "Перейти к строке";
+"Gerade läuft nichts." = "Сейчас ничего не выполняется.";
 "Gesendet. Nummer des Berichts: {}" = "Отправлено. Номер отчета: {}";
 "Gespeicherte Regeln von Claude" = "Сохранённые правила Claude";
 "Gestoppt" = "Остановлено";
@@ -1177,6 +1180,7 @@
 "Worktrees" = "Рабочие деревья";
 "Wähle im Feld eine Anmeldung aus Passwörter; die App trägt sie in das Formular der Seite ein und behält sie nicht." = "Выберите в поле данные для входа из приложения «Пароли»; приложение вводит их в форму страницы и не хранит их.";
 "Zeichensatz laut .editorconfig: {}" = "Кодировка по .editorconfig: {}";
+"Zeigen" = "Показать";
 "Zeigt, womit die Sitzung läuft" = "Показывает, с чем работает сеанс";
 "Zeile des Cursors hervorheben" = "Выделять строку курсора";
 "Zeilen" = "строк";

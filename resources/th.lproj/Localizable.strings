@@ -41,6 +41,7 @@
 "Agenten werden gesucht …" = "กำลังค้นหาเอเจนต์…";
 "Aktion suchen" = "ค้นหาการทำงาน";
 "Aktive Sitzung oder Benutzerordner" = "เซสชันที่ใช้งานอยู่หรือโฟลเดอร์บ้าน";
+"Aktivität" = "กิจกรรม";
 "Aktualisieren" = "รีเฟรช";
 "Alle Fenster zusammenführen" = "ผสานหน้าต่างทั้งหมด";
 "Alle Konflikte gelöst. Fertig schließt das Anwenden ab." = "แก้ไขความขัดแย้งทั้งหมดแล้ว “เสร็จแล้ว” จะทำให้การนำ Stash ไปใช้เสร็จสิ้น";
@@ -169,6 +170,7 @@
 "Bereich schließen" = "ปิดบาน";
 "Bereiche" = "บาน";
 "Bereiche angleichen" = "ปรับบานให้เท่ากัน";
+"Bereit" = "พร้อม";
 "Bereit · Version {}" = "พร้อม · เวอร์ชั่น {}";
 "Bereit · {}" = "พร้อม · {}";
 "Bericht senden?" = "ส่งรายงานหรือไม่";
@@ -527,6 +529,7 @@
 "Geerbt von „{}“" = "สืบทอดจาก “{}”";
 "Geerbt: {}" = "สืบทอด: {}";
 "Gehe zu Zeile" = "ไปที่บรรทัด";
+"Gerade läuft nichts." = "ไม่มีสิ่งใดทำงานอยู่";
 "Gesendet. Nummer des Berichts: {}" = "ส่งแล้ว หมายเลขรายงาน: {}";
 "Gespeicherte Regeln von Claude" = "กฎที่บันทึกไว้ของ Claude";
 "Gestoppt" = "หยุดแล้ว";
@@ -1177,6 +1180,7 @@
 "Worktrees" = "เวิร์กทรี";
 "Wähle im Feld eine Anmeldung aus Passwörter; die App trägt sie in das Formular der Seite ein und behält sie nicht." = "เลือกข้อมูลการลงชื่อเข้าจากแอป “รหัสผ่าน” ในช่อง แอปจะป้อนข้อมูลลงในฟอร์มของหน้าเว็บและไม่เก็บไว้";
 "Zeichensatz laut .editorconfig: {}" = "ชุดอักขระตาม .editorconfig: {}";
+"Zeigen" = "แสดง";
 "Zeigt, womit die Sitzung läuft" = "แสดงสิ่งที่เซสชันใช้ทำงาน";
 "Zeile des Cursors hervorheben" = "เน้นบรรทัดของเคอร์เซอร์";
 "Zeilen" = "แถว";

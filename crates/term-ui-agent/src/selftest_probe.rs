@@ -6,6 +6,8 @@
 )]
 use super::*;
 
+pub use super::activity::{activity_lines, activity_updated_in_place, activity_view, press_activity};
+
 pub use super::acp::{set_test_installs, set_test_launch, set_test_register};
 pub use super::codex::set_test_codex;
 pub use super::opencode::set_test_opencode;

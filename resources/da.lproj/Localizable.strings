@@ -41,6 +41,7 @@
 "Agenten werden gesucht …" = "Søger efter agenter…";
 "Aktion suchen" = "Søg efter handlinger";
 "Aktive Sitzung oder Benutzerordner" = "Aktiv session eller hjemmemappe";
+"Aktivität" = "Aktivitet";
 "Aktualisieren" = "Opdater";
 "Alle Fenster zusammenführen" = "Kombiner alle vinduer";
 "Alle Konflikte gelöst. Fertig schließt das Anwenden ab." = "Alle konflikter er løst. “Færdig” afslutter anvendelsen af stashen.";
@@ -169,6 +170,7 @@
 "Bereich schließen" = "Luk rude";
 "Bereiche" = "Ruder";
 "Bereiche angleichen" = "Udlign ruder";
+"Bereit" = "Klar";
 "Bereit · Version {}" = "Klar · version {}";
 "Bereit · {}" = "Klar · {}";
 "Bericht senden?" = "Send rapporten?";
@@ -527,6 +529,7 @@
 "Geerbt von „{}“" = "Arvet fra “{}”";
 "Geerbt: {}" = "Arvet: {}";
 "Gehe zu Zeile" = "Gå til linje";
+"Gerade läuft nichts." = "Intet kører lige nu.";
 "Gesendet. Nummer des Berichts: {}" = "Sendt. Rapportens nummer: {}";
 "Gespeicherte Regeln von Claude" = "Claudes gemte regler";
 "Gestoppt" = "Stoppet";
@@ -1177,6 +1180,7 @@
 "Worktrees" = "Arbejdstræer";
 "Wähle im Feld eine Anmeldung aus Passwörter; die App trägt sie in das Formular der Seite ein und behält sie nicht." = "Vælg et login fra Adgangskoder i feltet; appen udfylder det i sidens formular og gemmer det ikke.";
 "Zeichensatz laut .editorconfig: {}" = "Tegnsæt ifølge .editorconfig: {}";
+"Zeigen" = "Vis";
 "Zeigt, womit die Sitzung läuft" = "Viser, hvad sessionen kører med";
 "Zeile des Cursors hervorheben" = "Fremhæv markørens linje";
 "Zeilen" = "rækker";

@@ -521,3 +521,10 @@
 "Fortsetzen" = "계속";
 "Sitzung fortsetzen" = "세션 재개";
 "Setzt eine frühere Sitzung dieses Ordners fort" = "이 폴더의 이전 세션을 이어서 진행합니다";
+"Aktivität" = "활동";
+"Arbeitet" = "작업 중";
+"Bereit" = "준비됨";
+"Fertig" = "완료";
+"Gerade läuft nichts." = "실행 중인 항목이 없습니다.";
+"Wartet auf dich" = "사용자를 기다리는 중";
+"Zeigen" = "보기";

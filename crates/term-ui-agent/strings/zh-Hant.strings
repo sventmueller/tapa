@@ -521,3 +521,10 @@
 "Fortsetzen" = "繼續";
 "Sitzung fortsetzen" = "恢復工作階段";
 "Setzt eine frühere Sitzung dieses Ordners fort" = "恢復此檔案夾過去的工作階段";
+"Aktivität" = "活動";
+"Arbeitet" = "工作中";
+"Bereit" = "就緒";
+"Fertig" = "完成";
+"Gerade läuft nichts." = "目前沒有正在執行的項目。";
+"Wartet auf dich" = "等待你的回應";
+"Zeigen" = "顯示";

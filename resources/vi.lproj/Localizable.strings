@@ -41,6 +41,7 @@
 "Agenten werden gesucht …" = "Đang tìm tác nhân…";
 "Aktion suchen" = "Tìm tác vụ";
 "Aktive Sitzung oder Benutzerordner" = "Phiên đang hoạt động hoặc thư mục người dùng";
+"Aktivität" = "Hoạt động";
 "Aktualisieren" = "Làm mới";
 "Alle Fenster zusammenführen" = "Nhập Tất cả Cửa sổ";
 "Alle Konflikte gelöst. Fertig schließt das Anwenden ab." = "Đã giải quyết tất cả xung đột. Chọn Xong để hoàn tất việc áp dụng stash.";
@@ -169,6 +170,7 @@
 "Bereich schließen" = "Đóng khung";
 "Bereiche" = "Khung";
 "Bereiche angleichen" = "Cân bằng các khung";
+"Bereit" = "Sẵn sàng";
 "Bereit · Version {}" = "Sẵn sàng · phiên bản {}";
 "Bereit · {}" = "Sẵn sàng · {}";
 "Bericht senden?" = "Gửi báo cáo?";
@@ -527,6 +529,7 @@
 "Geerbt von „{}“" = "Kế thừa từ “{}”";
 "Geerbt: {}" = "Kế thừa: {}";
 "Gehe zu Zeile" = "Đi tới dòng";
+"Gerade läuft nichts." = "Hiện không có gì đang chạy.";
 "Gesendet. Nummer des Berichts: {}" = "Đã gửi. Số báo cáo: {}";
 "Gespeicherte Regeln von Claude" = "Quy tắc đã lưu của Claude";
 "Gestoppt" = "Đã dừng";
@@ -1177,6 +1180,7 @@
 "Worktrees" = "Worktree";
 "Wähle im Feld eine Anmeldung aus Passwörter; die App trägt sie in das Formular der Seite ein und behält sie nicht." = "Chọn thông tin đăng nhập từ ứng dụng Mật khẩu trong trường; ứng dụng điền thông tin đó vào biểu mẫu của trang và không giữ lại.";
 "Zeichensatz laut .editorconfig: {}" = "Bộ ký tự theo .editorconfig: {}";
+"Zeigen" = "Hiển thị";
 "Zeigt, womit die Sitzung läuft" = "Hiển thị những gì phiên đang chạy cùng";
 "Zeile des Cursors hervorheben" = "Tô sáng dòng có con trỏ";
 "Zeilen" = "hàng";

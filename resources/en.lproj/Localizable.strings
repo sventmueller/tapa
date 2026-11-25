@@ -41,6 +41,7 @@
 "Agenten werden gesucht …" = "Looking for agents…";
 "Aktion suchen" = "Search actions";
 "Aktive Sitzung oder Benutzerordner" = "Active session or home folder";
+"Aktivität" = "Activity";
 "Aktualisieren" = "Refresh";
 "Alle Fenster zusammenführen" = "Merge All Windows";
 "Alle Konflikte gelöst. Fertig schließt das Anwenden ab." = "All conflicts resolved. Done finishes applying the stash.";
@@ -169,6 +170,7 @@
 "Bereich schließen" = "Close Pane";
 "Bereiche" = "Panes";
 "Bereiche angleichen" = "Equalize Panes";
+"Bereit" = "Ready";
 "Bereit · Version {}" = "Ready · version {}";
 "Bereit · {}" = "Ready · {}";
 "Bericht senden?" = "Send the report?";
@@ -527,6 +529,7 @@
 "Geerbt von „{}“" = "Inherited from “{}”";
 "Geerbt: {}" = "Inherited: {}";
 "Gehe zu Zeile" = "Go to Line";
+"Gerade läuft nichts." = "Nothing is running.";
 "Gesendet. Nummer des Berichts: {}" = "Sent. Report number: {}";
 "Gespeicherte Regeln von Claude" = "Claude’s saved rules";
 "Gestoppt" = "Stopped";
@@ -1177,6 +1180,7 @@
 "Worktrees" = "Worktrees";
 "Wähle im Feld eine Anmeldung aus Passwörter; die App trägt sie in das Formular der Seite ein und behält sie nicht." = "Choose a sign-in from Passwords in the field; the app fills it into the page’s form and doesn’t keep it.";
 "Zeichensatz laut .editorconfig: {}" = "Charset per .editorconfig: {}";
+"Zeigen" = "Show";
 "Zeigt, womit die Sitzung läuft" = "Shows what the session runs with";
 "Zeile des Cursors hervorheben" = "Highlight the cursor’s line";
 "Zeilen" = "rows";

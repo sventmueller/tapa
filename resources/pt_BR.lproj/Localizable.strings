@@ -41,6 +41,7 @@
 "Agenten werden gesucht …" = "Procurando agentes…";
 "Aktion suchen" = "Buscar ações";
 "Aktive Sitzung oder Benutzerordner" = "Sessão ativa ou pasta pessoal";
+"Aktivität" = "Atividade";
 "Aktualisieren" = "Atualizar";
 "Alle Fenster zusammenführen" = "Combinar Todas as Janelas";
 "Alle Konflikte gelöst. Fertig schließt das Anwenden ab." = "Todos os conflitos resolvidos. Concluído termina a aplicação do stash.";
@@ -169,6 +170,7 @@
 "Bereich schließen" = "Fechar Painel";
 "Bereiche" = "Painéis";
 "Bereiche angleichen" = "Igualar Painéis";
+"Bereit" = "Pronto";
 "Bereit · Version {}" = "Pronto · versão {}";
 "Bereit · {}" = "Pronto · {}";
 "Bericht senden?" = "Enviar o relatório?";
@@ -527,6 +529,7 @@
 "Geerbt von „{}“" = "Herdado de “{}”";
 "Geerbt: {}" = "Herdado: {}";
 "Gehe zu Zeile" = "Ir para Linha";
+"Gerade läuft nichts." = "Nada em execução.";
 "Gesendet. Nummer des Berichts: {}" = "Enviado. Número do relatório: {}";
 "Gespeicherte Regeln von Claude" = "Regras salvas do Claude";
 "Gestoppt" = "Parado";
@@ -1177,6 +1180,7 @@
 "Worktrees" = "Worktrees";
 "Wähle im Feld eine Anmeldung aus Passwörter; die App trägt sie in das Formular der Seite ein und behält sie nicht." = "Escolha no campo os dados de início de sessão do app Senhas; o app os preenche no formulário da página e não os mantém.";
 "Zeichensatz laut .editorconfig: {}" = "Conjunto de caracteres conforme o .editorconfig: {}";
+"Zeigen" = "Mostrar";
 "Zeigt, womit die Sitzung läuft" = "Mostra com o que a sessão está sendo executada";
 "Zeile des Cursors hervorheben" = "Realçar a linha do cursor";
 "Zeilen" = "linhas";

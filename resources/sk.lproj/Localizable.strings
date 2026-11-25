@@ -41,6 +41,7 @@
 "Agenten werden gesucht …" = "Hľadajú sa agenti…";
 "Aktion suchen" = "Hľadať akcie";
 "Aktive Sitzung oder Benutzerordner" = "Aktívna relácia alebo domovský priečinok";
+"Aktivität" = "Aktivita";
 "Aktualisieren" = "Obnoviť";
 "Alle Fenster zusammenführen" = "Zlúčiť všetky okná";
 "Alle Konflikte gelöst. Fertig schließt das Anwenden ab." = "Všetky konflikty sú vyriešené. Tlačidlom Hotovo dokončíte použitie stashu.";
@@ -169,6 +170,7 @@
 "Bereich schließen" = "Zavrieť podokno";
 "Bereiche" = "Podokná";
 "Bereiche angleichen" = "Vyrovnať podokná";
+"Bereit" = "Pripravené";
 "Bereit · Version {}" = "Pripravené · verzia {}";
 "Bereit · {}" = "Pripravené · {}";
 "Bericht senden?" = "Odoslať hlásenie?";
@@ -527,6 +529,7 @@
 "Geerbt von „{}“" = "Zdedené z profilu „{}“";
 "Geerbt: {}" = "Zdedené: {}";
 "Gehe zu Zeile" = "Prejsť na riadok";
+"Gerade läuft nichts." = "Momentálne nič nebeží.";
 "Gesendet. Nummer des Berichts: {}" = "Odoslané. Číslo hlásenia: {}";
 "Gespeicherte Regeln von Claude" = "Uložené pravidlá Clauda";
 "Gestoppt" = "Zastavené";
@@ -1177,6 +1180,7 @@
 "Worktrees" = "Pracovné stromy";
 "Wähle im Feld eine Anmeldung aus Passwörter; die App trägt sie in das Formular der Seite ein und behält sie nicht." = "Vyberte v poli prihlasovacie údaje z aplikácie Heslá; vyplnia sa do formulára stránky a aplikácia si ich neponechá.";
 "Zeichensatz laut .editorconfig: {}" = "Znaková sada podľa .editorconfig: {}";
+"Zeigen" = "Zobraziť";
 "Zeigt, womit die Sitzung läuft" = "Zobrazí, s čím relácia beží";
 "Zeile des Cursors hervorheben" = "Zvýrazniť riadok kurzora";
 "Zeilen" = "riadkov";

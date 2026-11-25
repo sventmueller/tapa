@@ -41,6 +41,7 @@
 "Agenten werden gesucht …" = "Wyszukiwanie agentów…";
 "Aktion suchen" = "Szukaj akcji";
 "Aktive Sitzung oder Benutzerordner" = "Aktywna sesja lub folder domowy";
+"Aktivität" = "Aktywność";
 "Aktualisieren" = "Odśwież";
 "Alle Fenster zusammenführen" = "Złącz wszystkie okna";
 "Alle Konflikte gelöst. Fertig schließt das Anwenden ab." = "Wszystkie konflikty rozwiązane. Gotowe kończy stosowanie stashu.";
@@ -169,6 +170,7 @@
 "Bereich schließen" = "Zamknij panel";
 "Bereiche" = "Panele";
 "Bereiche angleichen" = "Wyrównaj panele";
+"Bereit" = "Gotowy";
 "Bereit · Version {}" = "Gotowy · wersja {}";
 "Bereit · {}" = "Gotowe · {}";
 "Bericht senden?" = "Wysłać zgłoszenie?";
@@ -527,6 +529,7 @@
 "Geerbt von „{}“" = "Odziedziczone z profilu „{}”";
 "Geerbt: {}" = "Odziedziczone: {}";
 "Gehe zu Zeile" = "Przejdź do wiersza";
+"Gerade läuft nichts." = "Nic teraz nie działa.";
 "Gesendet. Nummer des Berichts: {}" = "Wysłano. Numer zgłoszenia: {}";
 "Gespeicherte Regeln von Claude" = "Zapisane reguły Claude’a";
 "Gestoppt" = "Zatrzymano";
@@ -1177,6 +1180,7 @@
 "Worktrees" = "Drzewa robocze";
 "Wähle im Feld eine Anmeldung aus Passwörter; die App trägt sie in das Formular der Seite ein und behält sie nicht." = "Wybierz w polu dane logowania z aplikacji Hasła; aplikacja wpisze je w formularz strony i ich nie zachowa.";
 "Zeichensatz laut .editorconfig: {}" = "Zestaw znaków według .editorconfig: {}";
+"Zeigen" = "Pokaż";
 "Zeigt, womit die Sitzung läuft" = "Pokazuje, z czym działa sesja";
 "Zeile des Cursors hervorheben" = "Wyróżniaj wiersz kursora";
 "Zeilen" = "wierszy";

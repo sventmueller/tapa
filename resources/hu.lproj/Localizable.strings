@@ -41,6 +41,7 @@
 "Agenten werden gesucht …" = "Ügynökök keresése…";
 "Aktion suchen" = "Műveletek keresése";
 "Aktive Sitzung oder Benutzerordner" = "Aktív munkamenet vagy saját mappa";
+"Aktivität" = "Tevékenység";
 "Aktualisieren" = "Frissítés";
 "Alle Fenster zusammenführen" = "Összes ablak egyesítése";
 "Alle Konflikte gelöst. Fertig schließt das Anwenden ab." = "Minden ütközés feloldva. A „Kész” befejezi a stash alkalmazását.";
@@ -169,6 +170,7 @@
 "Bereich schließen" = "Panel bezárása";
 "Bereiche" = "Panelek";
 "Bereiche angleichen" = "Panelek kiegyenlítése";
+"Bereit" = "Kész";
 "Bereit · Version {}" = "Kész · verzió: {}";
 "Bereit · {}" = "Kész · {}";
 "Bericht senden?" = "Elküldi a jelentést?";
@@ -527,6 +529,7 @@
 "Geerbt von „{}“" = "Örökölve a(z) „{}” profilból";
 "Geerbt: {}" = "Örökölt: {}";
 "Gehe zu Zeile" = "Ugrás sorra";
+"Gerade läuft nichts." = "Jelenleg semmi sem fut.";
 "Gesendet. Nummer des Berichts: {}" = "Elküldve. A jelentés száma: {}";
 "Gespeicherte Regeln von Claude" = "Claude mentett szabályai";
 "Gestoppt" = "Leállítva";
@@ -1177,6 +1180,7 @@
 "Worktrees" = "Munkafák";
 "Wähle im Feld eine Anmeldung aus Passwörter; die App trägt sie in das Formular der Seite ein und behält sie nicht." = "Válasszon ki a mezőben egy bejelentkezést a Jelszavak appból; az app beírja az oldal űrlapjába, és nem tárolja.";
 "Zeichensatz laut .editorconfig: {}" = "Karakterkészlet az .editorconfig szerint: {}";
+"Zeigen" = "Megjelenítés";
 "Zeigt, womit die Sitzung läuft" = "Megmutatja, mivel fut a munkamenet";
 "Zeile des Cursors hervorheben" = "A kurzor sorának kiemelése";
 "Zeilen" = "sor";

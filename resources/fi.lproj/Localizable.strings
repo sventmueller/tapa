@@ -41,6 +41,7 @@
 "Agenten werden gesucht …" = "Etsitään agentteja…";
 "Aktion suchen" = "Etsi toimintoja";
 "Aktive Sitzung oder Benutzerordner" = "Aktiivinen istunto tai kotikansio";
+"Aktivität" = "Toiminta";
 "Aktualisieren" = "Päivitä";
 "Alle Fenster zusammenführen" = "Yhdistä kaikki ikkunat";
 "Alle Konflikte gelöst. Fertig schließt das Anwenden ab." = "Kaikki ristiriidat on ratkaistu. ”Valmis” viimeistelee stashin käyttämisen.";
@@ -169,6 +170,7 @@
 "Bereich schließen" = "Sulje paneeli";
 "Bereiche" = "Paneelit";
 "Bereiche angleichen" = "Tasaa paneelit";
+"Bereit" = "Valmiina";
 "Bereit · Version {}" = "Valmis · versio {}";
 "Bereit · {}" = "Valmis · {}";
 "Bericht senden?" = "Lähetetäänkö raportti?";
@@ -527,6 +529,7 @@
 "Geerbt von „{}“" = "Peritty profiilista ”{}”";
 "Geerbt: {}" = "Peritty: {}";
 "Gehe zu Zeile" = "Siirry riville";
+"Gerade läuft nichts." = "Mitään ei ole käynnissä.";
 "Gesendet. Nummer des Berichts: {}" = "Lähetetty. Raportin numero: {}";
 "Gespeicherte Regeln von Claude" = "Clauden tallennetut säännöt";
 "Gestoppt" = "Pysäytetty";
@@ -1177,6 +1180,7 @@
 "Worktrees" = "Työpuut";
 "Wähle im Feld eine Anmeldung aus Passwörter; die App trägt sie in das Formular der Seite ein und behält sie nicht." = "Valitse kentässä kirjautumistiedot Salasanat-apista; appi täyttää ne sivun lomakkeeseen eikä säilytä niitä.";
 "Zeichensatz laut .editorconfig: {}" = "Merkistö .editorconfigin mukaan: {}";
+"Zeigen" = "Näytä";
 "Zeigt, womit die Sitzung läuft" = "Näyttää, millä istunto toimii";
 "Zeile des Cursors hervorheben" = "Korosta kohdistimen rivi";
 "Zeilen" = "riviä";

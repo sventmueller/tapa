@@ -41,6 +41,7 @@
 "Agenten werden gesucht …" = "Mencari ejen…";
 "Aktion suchen" = "Cari tindakan";
 "Aktive Sitzung oder Benutzerordner" = "Sesi aktif atau folder rumah";
+"Aktivität" = "Aktiviti";
 "Aktualisieren" = "Segar Semula";
 "Alle Fenster zusammenführen" = "Gabungkan Semua Tetingkap";
 "Alle Konflikte gelöst. Fertig schließt das Anwenden ab." = "Semua konflik diselesaikan. Selesai akan menamatkan penggunaan stash.";
@@ -169,6 +170,7 @@
 "Bereich schließen" = "Tutup Anak Tetingkap";
 "Bereiche" = "Anak Tetingkap";
 "Bereiche angleichen" = "Samakan Anak Tetingkap";
+"Bereit" = "Sedia";
 "Bereit · Version {}" = "Sedia · versi {}";
 "Bereit · {}" = "Sedia · {}";
 "Bericht senden?" = "Hantar laporan?";
@@ -527,6 +529,7 @@
 "Geerbt von „{}“" = "Diwarisi daripada “{}”";
 "Geerbt: {}" = "Diwarisi: {}";
 "Gehe zu Zeile" = "Pergi ke Baris";
+"Gerade läuft nichts." = "Tiada apa-apa yang sedang berjalan.";
 "Gesendet. Nummer des Berichts: {}" = "Dihantar. Nombor laporan: {}";
 "Gespeicherte Regeln von Claude" = "Peraturan tersimpan Claude";
 "Gestoppt" = "Dihentikan";
@@ -1177,6 +1180,7 @@
 "Worktrees" = "Worktree";
 "Wähle im Feld eine Anmeldung aus Passwörter; die App trägt sie in das Formular der Seite ein und behält sie nicht." = "Pilih butiran daftar masuk daripada app Kata Laluan dalam medan; app mengisinya ke dalam borang halaman dan tidak menyimpannya.";
 "Zeichensatz laut .editorconfig: {}" = "Set aksara menurut .editorconfig: {}";
+"Zeigen" = "Tunjukkan";
 "Zeigt, womit die Sitzung läuft" = "Menunjukkan apa yang digunakan oleh sesi";
 "Zeile des Cursors hervorheben" = "Serlahkan baris kursor";
 "Zeilen" = "baris";

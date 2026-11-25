@@ -41,6 +41,7 @@
 "Agenten werden gesucht …" = "Mencari agen…";
 "Aktion suchen" = "Cari tindakan";
 "Aktive Sitzung oder Benutzerordner" = "Sesi aktif atau folder rumah";
+"Aktivität" = "Aktivitas";
 "Aktualisieren" = "Segarkan";
 "Alle Fenster zusammenführen" = "Gabungkan Semua Jendela";
 "Alle Konflikte gelöst. Fertig schließt das Anwenden ab." = "Semua konflik telah diselesaikan. “Selesai” akan menuntaskan penerapan stash.";
@@ -169,6 +170,7 @@
 "Bereich schließen" = "Tutup Panel";
 "Bereiche" = "Panel";
 "Bereiche angleichen" = "Samakan Panel";
+"Bereit" = "Siap";
 "Bereit · Version {}" = "Siap · versi {}";
 "Bereit · {}" = "Siap · {}";
 "Bericht senden?" = "Kirim laporan?";
@@ -527,6 +529,7 @@
 "Geerbt von „{}“" = "Diwarisi dari “{}”";
 "Geerbt: {}" = "Diwarisi: {}";
 "Gehe zu Zeile" = "Buka Baris";
+"Gerade läuft nichts." = "Tidak ada yang berjalan.";
 "Gesendet. Nummer des Berichts: {}" = "Terkirim. Nomor laporan: {}";
 "Gespeicherte Regeln von Claude" = "Aturan tersimpan Claude";
 "Gestoppt" = "Dihentikan";
@@ -1177,6 +1180,7 @@
 "Worktrees" = "Worktree";
 "Wähle im Feld eine Anmeldung aus Passwörter; die App trägt sie in das Formular der Seite ein und behält sie nicht." = "Di bidang tersebut, pilih data masuk dari aplikasi Kata Sandi; data itu diisikan ke formulir halaman dan tidak disimpan oleh aplikasi.";
 "Zeichensatz laut .editorconfig: {}" = "Charset menurut .editorconfig: {}";
+"Zeigen" = "Tampilkan";
 "Zeigt, womit die Sitzung läuft" = "Menampilkan apa yang digunakan sesi";
 "Zeile des Cursors hervorheben" = "Sorot baris kursor";
 "Zeilen" = "baris";

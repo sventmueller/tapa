@@ -41,6 +41,7 @@
 "Agenten werden gesucht …" = "エージェントを検索中…";
 "Aktion suchen" = "アクションを検索";
 "Aktive Sitzung oder Benutzerordner" = "アクティブなセッションまたはホームフォルダ";
+"Aktivität" = "アクティビティ";
 "Aktualisieren" = "更新";
 "Alle Fenster zusammenführen" = "すべてのウインドウを結合";
 "Alle Konflikte gelöst. Fertig schließt das Anwenden ab." = "すべての競合が解決されました。“完了”をクリックするとスタッシュの適用が完了します。";
@@ -169,6 +170,7 @@
 "Bereich schließen" = "ペインを閉じる";
 "Bereiche" = "ペイン";
 "Bereiche angleichen" = "ペインのサイズを揃える";
+"Bereit" = "準備完了";
 "Bereit · Version {}" = "準備完了 · バージョン{}";
 "Bereit · {}" = "準備完了 · {}";
 "Bericht senden?" = "レポートを送信しますか?";
@@ -527,6 +529,7 @@
 "Geerbt von „{}“" = "「{}」から継承";
 "Geerbt: {}" = "継承：{}";
 "Gehe zu Zeile" = "行へ移動";
+"Gerade läuft nichts." = "実行中のものはありません。";
 "Gesendet. Nummer des Berichts: {}" = "送信しました。レポート番号: {}";
 "Gespeicherte Regeln von Claude" = "Claude の保存済みルール";
 "Gestoppt" = "停止";
@@ -1177,6 +1180,7 @@
 "Worktrees" = "ワークツリー";
 "Wähle im Feld eine Anmeldung aus Passwörter; die App trägt sie in das Formular der Seite ein und behält sie nicht." = "フィールドで“パスワード”からサインイン情報を選択してください。アプリはその情報をページのフォームに入力し、保持しません。";
 "Zeichensatz laut .editorconfig: {}" = ".editorconfigによる文字セット: {}";
+"Zeigen" = "表示";
 "Zeigt, womit die Sitzung läuft" = "セッションの実行環境を表示";
 "Zeile des Cursors hervorheben" = "カーソルのある行をハイライト";
 "Zeilen" = "行";

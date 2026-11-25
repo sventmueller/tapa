@@ -41,6 +41,7 @@
 "Agenten werden gesucht …" = "Traženje agenata…";
 "Aktion suchen" = "Traži radnje";
 "Aktive Sitzung oder Benutzerordner" = "Aktivna sesija ili početna mapa";
+"Aktivität" = "Aktivnost";
 "Aktualisieren" = "Osvježi";
 "Alle Fenster zusammenführen" = "Spoji sve prozore";
 "Alle Konflikte gelöst. Fertig schließt das Anwenden ab." = "Svi su konflikti riješeni. “Gotovo” dovršava primjenu stasha.";
@@ -169,6 +170,7 @@
 "Bereich schließen" = "Zatvori okno";
 "Bereiche" = "Okna";
 "Bereiche angleichen" = "Izjednači okna";
+"Bereit" = "Spremno";
 "Bereit · Version {}" = "Spremno · verzija {}";
 "Bereit · {}" = "Spremno · {}";
 "Bericht senden?" = "Poslati izvješće?";
@@ -527,6 +529,7 @@
 "Geerbt von „{}“" = "Naslijeđeno od profila „{}“";
 "Geerbt: {}" = "Naslijeđeno: {}";
 "Gehe zu Zeile" = "Idi na redak";
+"Gerade läuft nichts." = "Trenutačno ništa ne radi.";
 "Gesendet. Nummer des Berichts: {}" = "Poslano. Broj izvješća: {}";
 "Gespeicherte Regeln von Claude" = "Claudeova spremljena pravila";
 "Gestoppt" = "Zaustavljeno";
@@ -1177,6 +1180,7 @@
 "Worktrees" = "Radna stabla";
 "Wähle im Feld eine Anmeldung aus Passwörter; die App trägt sie in das Formular der Seite ein und behält sie nicht." = "Odaberite u polju prijavu iz aplikacije Lozinke; unosi se u obrazac stranice i aplikacija je ne zadržava.";
 "Zeichensatz laut .editorconfig: {}" = "Skup znakova prema .editorconfig: {}";
+"Zeigen" = "Prikaži";
 "Zeigt, womit die Sitzung läuft" = "Prikazuje s čime sesija radi";
 "Zeile des Cursors hervorheben" = "Istakni redak kursora";
 "Zeilen" = "redaka";

@@ -521,3 +521,10 @@
 "Fortsetzen" = "Jatka";
 "Sitzung fortsetzen" = "Jatka istuntoa";
 "Setzt eine frühere Sitzung dieses Ordners fort" = "Jatkaa tämän kansion aiempaa istuntoa";
+"Aktivität" = "Toiminta";
+"Arbeitet" = "Työskentelee";
+"Bereit" = "Valmiina";
+"Fertig" = "Valmis";
+"Gerade läuft nichts." = "Mitään ei ole käynnissä.";
+"Wartet auf dich" = "Odottaa sinua";
+"Zeigen" = "Näytä";

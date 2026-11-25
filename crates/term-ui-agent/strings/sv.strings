@@ -521,3 +521,10 @@
 "Fortsetzen" = "Fortsätt";
 "Sitzung fortsetzen" = "Återuppta session";
 "Setzt eine frühere Sitzung dieses Ordners fort" = "Återupptar en tidigare session i den här mappen";
+"Aktivität" = "Aktivitet";
+"Arbeitet" = "Arbetar";
+"Bereit" = "Redo";
+"Fertig" = "Klar";
+"Gerade läuft nichts." = "Inget körs just nu.";
+"Wartet auf dich" = "Väntar på dig";
+"Zeigen" = "Visa";

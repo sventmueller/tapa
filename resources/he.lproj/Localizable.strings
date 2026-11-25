@@ -41,6 +41,7 @@
 "Agenten werden gesucht …" = "מתבצע חיפוש סוכנים…";
 "Aktion suchen" = "חפש פעולות";
 "Aktive Sitzung oder Benutzerordner" = "הסשן הפעיל או תיקיית הבית";
+"Aktivität" = "פעילות";
 "Aktualisieren" = "רענון";
 "Alle Fenster zusammenführen" = "מיזוג כל החלונות";
 "Alle Konflikte gelöst. Fertig schließt das Anwenden ab." = "כל ההתנגשויות נפתרו. ״הסתיים״ משלים את החלת ה-Stash.";
@@ -169,6 +170,7 @@
 "Bereich schließen" = "סגור חלונית";
 "Bereiche" = "חלוניות";
 "Bereiche angleichen" = "השווה חלוניות";
+"Bereit" = "מוכן";
 "Bereit · Version {}" = "מוכן · גרסה {}";
 "Bereit · {}" = "מוכן · {}";
 "Bericht senden?" = "לשלוח את הדיווח?";
@@ -527,6 +529,7 @@
 "Geerbt von „{}“" = "עובר בירושה מ־“{}”";
 "Geerbt: {}" = "בירושה: {}";
 "Gehe zu Zeile" = "מעבר לשורה";
+"Gerade läuft nichts." = "שום דבר לא פועל כרגע.";
 "Gesendet. Nummer des Berichts: {}" = "נשלח. מספר הדיווח: {}";
 "Gespeicherte Regeln von Claude" = "הכללים השמורים של Claude";
 "Gestoppt" = "נעצר";
@@ -1177,6 +1180,7 @@
 "Worktrees" = "עצי עבודה";
 "Wähle im Feld eine Anmeldung aus Passwörter; die App trägt sie in das Formular der Seite ein und behält sie nicht." = "יש לבחור בשדה פרטי התחברות מ״סיסמאות״; היישום ממלא אותם בטופס של הדף ואינו שומר אותם.";
 "Zeichensatz laut .editorconfig: {}" = "קידוד תווים לפי .editorconfig: {}";
+"Zeigen" = "הצגה";
 "Zeigt, womit die Sitzung läuft" = "מציג עם מה הסשן פועל";
 "Zeile des Cursors hervorheben" = "הדגש את שורת הסמן";
 "Zeilen" = "שורות";

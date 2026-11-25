@@ -41,6 +41,7 @@
 "Agenten werden gesucht …" = "Se caută agenți…";
 "Aktion suchen" = "Căutați acțiuni";
 "Aktive Sitzung oder Benutzerordner" = "Sesiunea activă sau dosarul de pornire";
+"Aktivität" = "Activitate";
 "Aktualisieren" = "Reîmprospătați";
 "Alle Fenster zusammenführen" = "Comasați toate ferestrele";
 "Alle Konflikte gelöst. Fertig schließt das Anwenden ab." = "Toate conflictele sunt rezolvate. Terminat finalizează aplicarea stashului.";
@@ -169,6 +170,7 @@
 "Bereich schließen" = "Închideți panoul";
 "Bereiche" = "Panouri";
 "Bereiche angleichen" = "Egalizați panourile";
+"Bereit" = "Gata";
 "Bereit · Version {}" = "Gata · versiunea {}";
 "Bereit · {}" = "Pregătit · {}";
 "Bericht senden?" = "Trimiteți raportul?";
@@ -527,6 +529,7 @@
 "Geerbt von „{}“" = "Moștenit de la profilul „{}”";
 "Geerbt: {}" = "Moștenit: {}";
 "Gehe zu Zeile" = "Mergeți la linia";
+"Gerade läuft nichts." = "Nimic nu rulează în acest moment.";
 "Gesendet. Nummer des Berichts: {}" = "Trimis. Numărul raportului: {}";
 "Gespeicherte Regeln von Claude" = "Regulile salvate ale lui Claude";
 "Gestoppt" = "Oprit";
@@ -1177,6 +1180,7 @@
 "Worktrees" = "Worktree-uri";
 "Wähle im Feld eine Anmeldung aus Passwörter; die App trägt sie in das Formular der Seite ein und behält sie nicht." = "Alegeți în câmp datele de autentificare din aplicația Parole; aplicația le completează în formularul paginii și nu le păstrează.";
 "Zeichensatz laut .editorconfig: {}" = "Set de caractere conform .editorconfig: {}";
+"Zeigen" = "Afișați";
 "Zeigt, womit die Sitzung läuft" = "Arată cu ce rulează sesiunea";
 "Zeile des Cursors hervorheben" = "Evidențiați linia cursorului";
 "Zeilen" = "rânduri";

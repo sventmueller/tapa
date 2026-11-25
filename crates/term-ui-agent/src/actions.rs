@@ -644,35 +644,10 @@ impl AgentTab {
         }
     }
 
-    /// Lists `part` of the session below `anchor`, else below the head's button for it: each subagent and background
-    /// item by its name, ticked once it ended.
+    /// Opens the activity view of `part` of the session below `anchor`, else below the head's button for it.
     pub fn show_work(&self, part: Part, anchor: Option<&NSView>) {
-        let thread = self.view_snapshot();
-        let menu = NSMenu::new(self.mtm);
-        menu.setAutoenablesItems(false);
-        let heading = item(self.mtm, part.heading(), None, "");
-        heading.setEnabled(false);
-        menu.addItem(&heading);
-        let subagents = if part == Part::Background {
-            &[][..]
-        } else {
-            thread.subagents()
-        };
-        let listed = subagents.iter().map(|sub| (sub.description.clone(), sub.status)).chain(
-            (thread.background().iter())
-                .filter(|b| part.holds(&b.kind))
-                .map(|b| (b.label.clone(), b.status)),
-        );
-        for (label, status) in listed {
-            let entry = item(self.mtm, &format::first_line(&label, 80), None, "");
-            entry.setEnabled(false);
-            if status.is_final() {
-                entry.setState(objc2_app_kit::NSControlStateValueOn);
-            }
-            menu.addItem(&entry);
-        }
         let fallback = ui::view(self.header.work_button(part));
-        pop_up(&menu, anchor.unwrap_or(&fallback));
+        crate::activity::show(self.key, part, anchor.unwrap_or(&fallback));
     }
 
     /// Whether the list of `part` has anything to show, as its button in the head says.
@@ -689,6 +664,7 @@ impl AgentTab {
             let silent = (!reports && tally.listed == 0).then(|| self.agent.name());
             self.header.set_work(part, tally, silent);
         }
+        crate::activity::changed(self.key);
     }
 
     /// Shows only the conversation, without tools, thinking and status lines, or everything again.

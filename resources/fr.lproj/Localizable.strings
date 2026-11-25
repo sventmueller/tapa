@@ -41,6 +41,7 @@
 "Agenten werden gesucht …" = "Recherche des agents…";
 "Aktion suchen" = "Rechercher une action";
 "Aktive Sitzung oder Benutzerordner" = "Session active ou dossier personnel";
+"Aktivität" = "Activité";
 "Aktualisieren" = "Actualiser";
 "Alle Fenster zusammenführen" = "Fusionner toutes les fenêtres";
 "Alle Konflikte gelöst. Fertig schließt das Anwenden ab." = "Tous les conflits sont résolus. « Terminé » achève l’application du stash.";
@@ -169,6 +170,7 @@
 "Bereich schließen" = "Fermer la sous-fenêtre";
 "Bereiche" = "Sous-fenêtres";
 "Bereiche angleichen" = "Égaliser les sous-fenêtres";
+"Bereit" = "Prêt";
 "Bereit · Version {}" = "Prêt · version {}";
 "Bereit · {}" = "Prêt · {}";
 "Bericht senden?" = "Envoyer le rapport ?";
@@ -527,6 +529,7 @@
 "Geerbt von „{}“" = "Hérité de « {} »";
 "Geerbt: {}" = "Hérité : {}";
 "Gehe zu Zeile" = "Aller à la ligne";
+"Gerade läuft nichts." = "Rien n’est en cours.";
 "Gesendet. Nummer des Berichts: {}" = "Envoyé. Numéro du rapport : {}";
 "Gespeicherte Regeln von Claude" = "Règles enregistrées de Claude";
 "Gestoppt" = "Arrêté";
@@ -1177,6 +1180,7 @@
 "Worktrees" = "Worktrees";
 "Wähle im Feld eine Anmeldung aus Passwörter; die App trägt sie in das Formular der Seite ein und behält sie nicht." = "Choisissez dans le champ des données de connexion de l’app Mots de passe ; elles sont saisies dans le formulaire de la page et l’app ne les conserve pas.";
 "Zeichensatz laut .editorconfig: {}" = "Encodage selon .editorconfig : {}";
+"Zeigen" = "Afficher";
 "Zeigt, womit die Sitzung läuft" = "Indique avec quoi la session s’exécute";
 "Zeile des Cursors hervorheben" = "Mettre en évidence la ligne du curseur";
 "Zeilen" = "lignes";

@@ -41,6 +41,7 @@
 "Agenten werden gesucht …" = "正在尋找代理程式…";
 "Aktion suchen" = "搜尋動作";
 "Aktive Sitzung oder Benutzerordner" = "使用中的工作階段或個人檔案夾";
+"Aktivität" = "活動";
 "Aktualisieren" = "重新整理";
 "Alle Fenster zusammenführen" = "合併所有視窗";
 "Alle Konflikte gelöst. Fertig schließt das Anwenden ab." = "已解決所有衝突。按「完成」即可完成套用儲藏。";
@@ -169,6 +170,7 @@
 "Bereich schließen" = "關閉窗格";
 "Bereiche" = "窗格";
 "Bereiche angleichen" = "平均分配窗格";
+"Bereit" = "就緒";
 "Bereit · Version {}" = "就緒 · 版本 {}";
 "Bereit · {}" = "就緒 · {}";
 "Bericht senden?" = "要傳送報告嗎？";
@@ -527,6 +529,7 @@
 "Geerbt von „{}“" = "繼承自「{}」";
 "Geerbt: {}" = "繼承：{}";
 "Gehe zu Zeile" = "前往行";
+"Gerade läuft nichts." = "目前沒有正在執行的項目。";
 "Gesendet. Nummer des Berichts: {}" = "已傳送。報告編號：{}";
 "Gespeicherte Regeln von Claude" = "Claude 已儲存的規則";
 "Gestoppt" = "已停止";
@@ -1177,6 +1180,7 @@
 "Worktrees" = "工作樹";
 "Wähle im Feld eine Anmeldung aus Passwörter; die App trägt sie in das Formular der Seite ein und behält sie nicht." = "在欄位中從「密碼」App 選擇登入資訊；App 會將其填入網頁的表單，且不會保留。";
 "Zeichensatz laut .editorconfig: {}" = "依 .editorconfig 的字元集：{}";
+"Zeigen" = "顯示";
 "Zeigt, womit die Sitzung läuft" = "顯示工作階段的執行設定";
 "Zeile des Cursors hervorheben" = "醒目標示游標所在行";
 "Zeilen" = "列";

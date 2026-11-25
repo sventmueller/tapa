@@ -41,6 +41,7 @@
 "Agenten werden gesucht …" = "Søker etter agenter…";
 "Aktion suchen" = "Søk etter handlinger";
 "Aktive Sitzung oder Benutzerordner" = "Aktiv økt eller hjemmemappe";
+"Aktivität" = "Aktivitet";
 "Aktualisieren" = "Oppdater";
 "Alle Fenster zusammenführen" = "Slå sammen alle vinduer";
 "Alle Konflikte gelöst. Fertig schließt das Anwenden ab." = "Alle konflikter er løst. Ferdig fullfører bruken av stashen.";
@@ -169,6 +170,7 @@
 "Bereich schließen" = "Lukk rute";
 "Bereiche" = "Ruter";
 "Bereiche angleichen" = "Utjevn ruter";
+"Bereit" = "Klar";
 "Bereit · Version {}" = "Klar · versjon {}";
 "Bereit · {}" = "Klar · {}";
 "Bericht senden?" = "Vil du sende rapporten?";
@@ -527,6 +529,7 @@
 "Geerbt von „{}“" = "Arvet fra «{}»";
 "Geerbt: {}" = "Arvet: {}";
 "Gehe zu Zeile" = "Gå til linje";
+"Gerade läuft nichts." = "Ingenting kjører akkurat nå.";
 "Gesendet. Nummer des Berichts: {}" = "Sendt. Rapportnummer: {}";
 "Gespeicherte Regeln von Claude" = "Claudes lagrede regler";
 "Gestoppt" = "Stoppet";
@@ -1177,6 +1180,7 @@
 "Worktrees" = "Arbeidstrær";
 "Wähle im Feld eine Anmeldung aus Passwörter; die App trägt sie in das Formular der Seite ein und behält sie nicht." = "Velg en pålogging fra Passord-appen i feltet; appen fyller den inn i sidens skjema og beholder den ikke.";
 "Zeichensatz laut .editorconfig: {}" = "Tegnsett ifølge .editorconfig: {}";
+"Zeigen" = "Vis";
 "Zeigt, womit die Sitzung läuft" = "Viser hva økten kjører med";
 "Zeile des Cursors hervorheben" = "Uthev markørens linje";
 "Zeilen" = "rader";
