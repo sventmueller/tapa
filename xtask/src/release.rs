@@ -72,7 +72,8 @@ pub(crate) fn release_version(options: Options, version: &str) -> Result<PathBuf
     // The notes must be new against the release before, which only `dist/` holds; a dry run may repeat itself.
     let previous_feed = (!dry_run)
         .then(|| std::fs::read_to_string(out.join(updates::FEED)).ok())
-        .flatten();
+        .flatten()
+        .filter(|feed| !offers(feed, version));
     let notes = notes(&root(), dry_run, previous_feed.as_deref())?;
     let (identity, name) = if dry_run {
         print!("{}", preflight(sh));
@@ -293,6 +294,11 @@ fn without_draft(written: &str) -> (&str, bool) {
         Some(end) => (&trimmed[end + 3..], true),
         None => ("", true),
     }
+}
+
+/// Whether `feed` offers `version`, which makes it that version's own feed, published anew, not the one before.
+fn offers(feed: &str, version: &str) -> bool {
+    feed.contains(&format!("<sparkle:version>{version}</sparkle:version>"))
 }
 
 /// The notes written in `file`, neither empty nor those of the release before.
@@ -680,6 +686,14 @@ mod tests {
         let stale = checked_notes(&translated_notes("de"), "- New.\n", Some(feed)).unwrap_err();
         assert!(stale.contains("assets/readme/de/RELEASE_NOTES.md"), "{stale}");
         assert!(checked_notes(NOTES, "- Newer.\n", Some(feed)).is_ok());
+    }
+
+    #[test]
+    fn a_version_published_anew_is_not_its_own_release_before() {
+        let feed = "<sparkle:version>1.0.3</sparkle:version>";
+        assert!(offers(feed, "1.0.3"));
+        assert!(!offers(feed, "1.0.4"));
+        assert!(!offers(feed, "1.0.30"));
     }
 
     #[test]

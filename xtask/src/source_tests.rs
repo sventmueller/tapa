@@ -239,16 +239,41 @@ fn deploy_pushes_main_and_its_tag_from_clean_main_only() {
 
     write(&git, "new.txt", "new\n");
     assert!(refused(&git).contains("not committed"), "with an untracked file");
-    assert!(push(&mut System, &git, "v0.1.0").is_err());
+    assert!(push(&mut System, &git, "v0.1.0", false).is_err());
     assert!(!origin_refs(&dir).contains("refs/heads/main"), "nothing pushed");
     std::fs::remove_file(git.dir().join("new.txt")).unwrap();
 
     assert_eq!(ready(&mut System, &git), Ok(head));
     git.output(&mut System, &["tag", "v0.1.0"]).unwrap();
-    assert_eq!(push(&mut System, &git, "v0.1.0"), Ok(()));
+    assert_eq!(push(&mut System, &git, "v0.1.0", false), Ok(()));
     let pushed = origin_refs(&dir);
     let main = git.output(&mut System, &["rev-parse", BRANCH]).unwrap();
     assert!(pushed.contains(&format!("refs/heads/main {}", main.trim())), "{pushed}");
     assert!(pushed.contains("refs/tags/v0.1.0"), "{pushed}");
+
+    write(&git, "fix.txt", "fix\n");
+    git.output(&mut System, &["add", "fix.txt"]).unwrap();
+    git.output(&mut System, &["commit", "--quiet", "-m", "Fix"]).unwrap();
+    git.output(&mut System, &["tag", "--force", "v0.1.0"]).unwrap();
+    assert!(
+        push(&mut System, &git, "v0.1.0", false).is_err(),
+        "a tag is not moved unasked"
+    );
+    let kept = origin_refs(&dir);
+    assert!(
+        kept.contains(&format!("refs/heads/main {}", main.trim())),
+        "nothing pushed: {kept}"
+    );
+    assert_eq!(push(&mut System, &git, "v0.1.0", true), Ok(()));
+    let fixed = git.output(&mut System, &["rev-parse", BRANCH]).unwrap();
+    let pushed = origin_refs(&dir);
+    assert!(
+        pushed.contains(&format!("refs/heads/main {}", fixed.trim())),
+        "{pushed}"
+    );
+    assert!(
+        pushed.contains(&format!("refs/tags/v0.1.0 {}", fixed.trim())),
+        "{pushed}"
+    );
     std::fs::remove_dir_all(dir).unwrap();
 }

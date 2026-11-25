@@ -254,10 +254,11 @@ pub(crate) fn siblings_ready(sh: &mut dyn Shell, git: &Git) -> Result<BTreeMap<S
     Ok(commits)
 }
 
-/// Pushes the release commit and version tag atomically, after all draft assets have been uploaded.
-pub(crate) fn push(sh: &mut dyn Shell, git: &Git, tag: &str) -> Result<(), String> {
+/// Pushes the release commit and version tag atomically, after all draft assets have been uploaded; `moved` lets the
+/// tag replace origin's, for a version published anew from a later commit.
+pub(crate) fn push(sh: &mut dyn Shell, git: &Git, tag: &str, moved: bool) -> Result<(), String> {
     ready(sh, git)?;
-    let tag = format!("refs/tags/{tag}");
+    let tag = format!("{}refs/tags/{tag}", if moved { "+" } else { "" });
     sh.run(&mut git.command(&["push", "--atomic", "origin", BRANCH, &tag]))?;
     println!("pushed {BRANCH} {tag}");
     Ok(())

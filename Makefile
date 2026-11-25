@@ -58,7 +58,7 @@ release: ## Dry run of the release with dictation: universal app, disk image, up
 release-notarized: check ## The current version: Developer ID, notarized by Apple, into dist/; the version unchanged
 	cargo xtask release --notarize
 
-deploy: ## Notarize the next version, commit it in Cargo.toml, upload the draft, push main and its tag, then publish the release; ARGS=--minor raises the minor version, ARGS=--major the major version
+deploy: ## Notarize the next version, commit it in Cargo.toml, upload the draft, push main and its tag, then publish the release; ARGS=--minor raises the minor version, ARGS=--major the major version, ARGS=--again publishes the current version anew (owner's word only)
 	cargo xtask deploy $(ARGS)
 
 fuzz: ## The fuzz targets with cargo-fuzz and the nightly it needs, FUZZ_SECONDS each (60 by default), at most 2 GB each

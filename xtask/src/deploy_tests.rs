@@ -126,6 +126,35 @@ fn interrupted_uploads_resume_the_same_version_only_for_the_same_content() {
 }
 
 #[test]
+fn a_version_published_anew_resumes_without_a_version_commit() {
+    let dir = scratch("deploy-again");
+    let again = Deployment {
+        source_commit: "fixed".into(),
+        commit: "fixed".into(),
+        ..deployment()
+    };
+    assert!(again.again() && !deployment().again());
+    again.save(&dir).unwrap();
+    assert!(pending(&dir, "green", "fixed", "0.1.3").unwrap().is_some());
+    assert!(pending(&dir, "green", "later", "0.1.3").is_err());
+    files::remove_dir_all(&dir).unwrap();
+}
+
+#[test]
+fn only_a_published_release_is_withdrawn_into_a_draft() {
+    let mut published = Fake::new(|_: &Command, _: &str| (0, "false\n".into()));
+    withdraw(&mut published, "v0.1.3").unwrap();
+    let edit = published.commands.last().unwrap();
+    assert!(
+        edit.contains("release edit v0.1.3") && edit.contains("--draft=true"),
+        "{edit}"
+    );
+    let mut draft = Fake::new(|_: &Command, _: &str| (0, "true\n".into()));
+    withdraw(&mut draft, "v0.1.3").unwrap();
+    assert_eq!(draft.commands.len(), 1, "a draft stays as it is");
+}
+
+#[test]
 fn changed_or_missing_assets_stop_a_resumed_deploy() {
     let mut sh = Fake::new(|_: &Command, _: &str| (0, "digest  file\n".into()));
     deployment().verify(&mut sh, Path::new("/dist")).unwrap();

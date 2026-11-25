@@ -30,6 +30,11 @@ struct Deployment {
 }
 
 impl Deployment {
+    /// Whether it publishes a published version anew from a later commit, which needs no version commit.
+    fn again(&self) -> bool {
+        self.commit == self.source_commit
+    }
+
     fn save(&self, dist: &Path) -> Result<(), String> {
         let json = serde_json::to_vec_pretty(self).map_err(|e| e.to_string())?;
         files::write(dist.join(MANIFEST), json)
@@ -81,11 +86,12 @@ fn assets(version: &str) -> Vec<String> {
     ]
 }
 
-/// `cargo xtask deploy`. Normal builds and a standalone notarization never change the version.
+/// `cargo xtask deploy`. Normal builds and a standalone notarization never change the version; `--again` publishes
+/// the version in `Cargo.toml`, published before, anew from HEAD, which only the owner's word allows.
 pub(crate) fn deploy(args: &[String]) -> Result<(), String> {
-    let [minor, major] = flags(args, ["--minor", "--major"])?;
-    if minor && major {
-        return Err("--minor and --major exclude each other".into());
+    let [minor, major, again] = flags(args, ["--minor", "--major", "--again"])?;
+    if [minor, major, again].into_iter().filter(|flag| *flag).count() > 1 {
+        return Err("--minor, --major and --again exclude each other".into());
     }
     let sh: &mut dyn Shell = &mut System;
     let git = Git::at(&root());
@@ -118,6 +124,13 @@ pub(crate) fn deploy(args: &[String]) -> Result<(), String> {
         println!("resuming deploy {}", pending.version);
         pending.verify(sh, &dist)?;
         pending
+    } else if again {
+        let tag = format!("v{current}");
+        if release_state(sh, &tag)?.as_deref() != Some("false") {
+            return Err(format!("{tag} is not a published release; --again publishes one anew"));
+        }
+        rebuild(sh, &git, &fp, &head, &current)?;
+        prepare(sh, &dist, &current, head.trim(), head.trim(), fp, siblings)?
     } else {
         let next = if major {
             following_major(&current)?
@@ -133,38 +146,28 @@ pub(crate) fn deploy(args: &[String]) -> Result<(), String> {
             return Err(format!("{tag} already exists; refusing to replace a release"));
         }
         build(sh, &git, &fp, &head, &next)?;
-        files::copy(
-            dist.join(updates::image_name(&next)),
-            dist.join(updates::latest_image_name()),
-        )?;
-        let mut hashes = BTreeMap::new();
-        for file in assets(&next) {
-            hashes.insert(file.clone(), updates::sha256(sh, &dist.join(&file))?);
-        }
-        let prepared = Deployment {
-            version: next,
-            source_commit: head.trim().into(),
-            commit: String::new(),
-            fingerprint: fp,
-            files: hashes,
-            siblings,
-        };
         // Written before the version commit, so an interrupted upload/push can resume without a second bump.
-        prepared.save(&dist)?;
-        prepared
+        prepare(sh, &dist, &next, head.trim(), "", fp, siblings)?
     };
-    commit_version(sh, &git, &mut deployment)?;
-    deployment.save(&dist)?;
     let tag = format!("v{}", deployment.version);
-    ensure_tag(sh, &git, &tag, &deployment.commit)?;
+    if deployment.again() {
+        git.output(sh, &["tag", "--force", &tag, &deployment.commit])?;
+    } else {
+        commit_version(sh, &git, &mut deployment)?;
+        deployment.save(&dist)?;
+        ensure_tag(sh, &git, &tag, &deployment.commit)?;
+    }
     deployment.check_feed(&dist)?;
+    if deployment.again() {
+        withdraw(sh, &tag)?;
+    }
     stage(sh, &dist, &deployment)?;
     // Do not push if files or source changed during the upload.
     deployment.verify(sh, &dist)?;
     if git.output(sh, &["rev-parse", "HEAD"])?.trim() != deployment.commit {
         return Err("HEAD changed during the upload; nothing was pushed".into());
     }
-    source::push(sh, &git, &tag)?;
+    source::push(sh, &git, &tag, deployment.again())?;
     publish(sh, &git, &dist, &deployment)?;
     files::remove_file(dist.join(MANIFEST))?;
     println!("published https://github.com/{REPOSITORY}/releases/tag/{tag}");
@@ -196,6 +199,81 @@ fn build(sh: &mut dyn Shell, git: &Git, fp: &str, head: &str, next: &str) -> Res
         version::restore(sh, git)?;
     }
     built
+}
+
+/// Notarizes the version in `Cargo.toml` once more, then checks that the source did not change meanwhile.
+fn rebuild(sh: &mut dyn Shell, git: &Git, fp: &str, head: &str, current: &str) -> Result<(), String> {
+    release::release_version(
+        release::Options {
+            notarize: true,
+            layout: true,
+        },
+        current,
+    )?;
+    if source::fingerprint(sh, git, source::Content::WorkingTree)? != fp
+        || git.output(sh, &["rev-parse", "HEAD"])? != head
+        || version()? != current
+    {
+        return Err("the source changed while notarizing; nothing was pushed".into());
+    }
+    Ok(())
+}
+
+/// The deployment of `version`'s notarized files in `dist`, with the stable image beside them, saved there.
+fn prepare(
+    sh: &mut dyn Shell,
+    dist: &Path,
+    version: &str,
+    source_commit: &str,
+    commit: &str,
+    fingerprint: String,
+    siblings: BTreeMap<String, String>,
+) -> Result<Deployment, String> {
+    files::copy(
+        dist.join(updates::image_name(version)),
+        dist.join(updates::latest_image_name()),
+    )?;
+    let mut hashes = BTreeMap::new();
+    for file in assets(version) {
+        hashes.insert(file.clone(), updates::sha256(sh, &dist.join(&file))?);
+    }
+    let prepared = Deployment {
+        version: version.into(),
+        source_commit: source_commit.into(),
+        commit: commit.into(),
+        fingerprint,
+        files: hashes,
+        siblings,
+    };
+    prepared.save(dist)?;
+    Ok(prepared)
+}
+
+/// Whether the release of `tag` is a draft, `true` or `false`, or `None` where there is none.
+fn release_state(sh: &mut dyn Shell, tag: &str) -> Result<Option<String>, String> {
+    let query = format!(".[] | select(.tagName == \"{tag}\") | .isDraft");
+    let state = sh.stdout(&mut gh(&[
+        "release",
+        "list",
+        "--repo",
+        REPOSITORY,
+        "--limit",
+        "1000",
+        "--json",
+        "tagName,isDraft",
+        "--jq",
+        &query,
+    ]))?;
+    Ok(Some(state.trim().to_string()).filter(|state| !state.is_empty()))
+}
+
+/// Turns the published release of `tag` back into a draft, so its files are replaced and checked before it is
+/// published again; a draft stays as it is.
+fn withdraw(sh: &mut dyn Shell, tag: &str) -> Result<(), String> {
+    if release_state(sh, tag)?.as_deref() == Some("false") {
+        sh.run(&mut gh(&["release", "edit", tag, "--repo", REPOSITORY, "--draft=true"]))?;
+    }
+    Ok(())
 }
 
 fn pending(dist: &Path, fp: &str, head: &str, current: &str) -> Result<Option<Deployment>, String> {
@@ -301,23 +379,10 @@ fn gh(args: &[&str]) -> Command {
 
 fn stage(sh: &mut dyn Shell, dist: &Path, deployment: &Deployment) -> Result<(), String> {
     let tag = format!("v{}", deployment.version);
-    let query = format!(".[] | select(.tagName == \"{tag}\") | .isDraft");
-    let draft = sh.stdout(&mut gh(&[
-        "release",
-        "list",
-        "--repo",
-        REPOSITORY,
-        "--limit",
-        "1000",
-        "--json",
-        "tagName,isDraft",
-        "--jq",
-        &query,
-    ]))?;
-    match draft.trim() {
-        "false" => return Err(format!("{tag} is already published; refusing to replace its assets")),
-        "true" => {}
-        "" => {
+    match release_state(sh, &tag)?.as_deref() {
+        Some("false") => return Err(format!("{tag} is already published; refusing to replace its assets")),
+        Some("true") => {}
+        None => {
             sh.run(
                 gh(&[
                     "release",
@@ -335,7 +400,7 @@ fn stage(sh: &mut dyn Shell, dist: &Path, deployment: &Deployment) -> Result<(),
                 .arg(dist.join(release::notes_name(&deployment.version))),
             )?;
         }
-        other => return Err(format!("unexpected draft status {other:?}")),
+        Some(other) => return Err(format!("unexpected draft status {other:?}")),
     }
     let mut upload = gh(&["release", "upload", &tag, "--repo", REPOSITORY, "--clobber"]);
     for file in deployment.files.keys() {
