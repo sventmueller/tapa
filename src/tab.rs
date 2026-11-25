@@ -218,6 +218,8 @@ impl Terminal {
                 session.branch = term_ui_sidebar::git::branch(&session.folder);
             }
             Change::Input | Change::Focused | Change::Field => return false,
+            // A banner for every `vite` would be noise in a terminal; Dango opens them in its browser tab.
+            Change::DevServer(_) => return false,
             Change::CommandStarted(command) => {
                 let line = command
                     .as_deref()

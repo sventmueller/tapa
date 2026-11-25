@@ -3,10 +3,8 @@
 //! programs a source asks, such as `docker` and `kubectl`, come from the user's `PATH` outside the project and are
 //! given up after the deadline.
 
-use std::io::Read;
 use std::path::{Path, PathBuf};
-use std::process::{Command, Stdio};
-use std::time::{Duration, Instant};
+use std::time::Instant;
 
 use crate::complete::{Candidate, Kind, Wanted};
 use crate::files;
@@ -201,7 +199,8 @@ pub(crate) fn in_path(name: &str, folder: &Path) -> Option<PathBuf> {
 
 /// The folders of `PATH` and the usual ones for Homebrew, outside `folder` and absolute.
 pub(crate) fn path_folders(folder: &Path) -> Vec<PathBuf> {
-    let mut dirs: Vec<PathBuf> = std::env::var_os("PATH")
+    let mut dirs: Vec<PathBuf> = crate::programs::programs()
+        .path()
         .map(|path| std::env::split_paths(&path).collect())
         .unwrap_or_default();
     dirs.extend(
@@ -230,37 +229,8 @@ fn ask(program: &str, args: &[&str], folder: &Path, home: &Path, deadline: Insta
     let Some(path) = in_path(program, folder) else {
         return Vec::new();
     };
-    let Ok(mut child) = Command::new(path)
-        .args(args)
-        .current_dir(home)
-        .stdin(Stdio::null())
-        .stdout(Stdio::piped())
-        .stderr(Stdio::null())
-        .spawn()
-    else {
-        return Vec::new();
-    };
-    let Some(mut stdout) = child.stdout.take() else {
-        return Vec::new();
-    };
-    let reader = std::thread::spawn(move || {
-        let mut out = String::new();
-        let _ = stdout.read_to_string(&mut out);
-        out
-    });
-    loop {
-        match child.try_wait() {
-            Ok(Some(status)) if status.success() => break,
-            Ok(None) if Instant::now() < deadline => std::thread::sleep(Duration::from_millis(5)),
-            _ => {
-                let _ = child.kill();
-                let _ = child.wait();
-                return Vec::new();
-            }
-        }
-    }
-    reader
-        .join()
+    crate::programs::programs()
+        .output(&path, args, home, deadline)
         .unwrap_or_default()
         .lines()
         .map(str::trim)
@@ -272,6 +242,7 @@ fn ask(program: &str, args: &[&str], folder: &Path, home: &Path, deadline: Insta
 #[cfg(test)]
 mod tests {
     use super::*;
+    use std::time::Duration;
 
     fn wanted(words: &[&str], markers: &[&str]) -> Option<Source> {
         source_for(&Wanted {

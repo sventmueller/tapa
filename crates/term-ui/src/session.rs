@@ -135,8 +135,7 @@ impl TerminalView {
                 self.scroll_marks_changed();
                 super::host().changed(self.id(), Change::CommandFinished(exit_code));
             }
-            // Dango opens these in its browser tab; a terminal has none, and a banner per `vite` would be noise.
-            Event::DevServer(_) => {}
+            Event::DevServer(url) => super::host().changed(self.id(), Change::DevServer(url)),
             Event::Progress(progress) => super::host().changed(self.id(), Change::Progress(progress)),
             Event::Notification(notification) => {
                 super::host().changed(self.id(), Change::Notification(notification));

@@ -12,6 +12,7 @@ mod highlight;
 mod history;
 mod next;
 mod paths;
+mod programs;
 mod rank;
 mod sources;
 mod spec;
@@ -24,6 +25,7 @@ pub use highlight::{Highlight, Part, Runnable, Span, highlight};
 pub use history::{Entry, History};
 pub use next::{Next, Reason, next_without_input};
 pub use paths::complete_path;
+pub use programs::{Programs, install_programs};
 pub use rank::Context;
 pub use spec::{Arg, Opt, Spec, Suggestion};
 

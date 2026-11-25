@@ -56,6 +56,8 @@ pub enum Change {
     Progress(Option<term_session::event::Progress>),
     /// A program asked for a notification (OSC 9, OSC 777).
     Notification(term_session::event::Notification),
+    /// A development server the program started listens at this address, for the app's browser.
+    DevServer(String),
     /// The program in the view ended.
     Exited(Ending),
     /// The view took the keyboard focus, as a click into its pane does.
