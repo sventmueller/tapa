@@ -3769,7 +3769,7 @@ dependencies = [
 
 [[package]]
 name = "tapa"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "block2",
  "lowspeak",
@@ -3828,7 +3828,7 @@ dependencies = [
 
 [[package]]
 name = "term-acp"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "agent-client-protocol",
  "blocking",
@@ -3846,7 +3846,7 @@ dependencies = [
 
 [[package]]
 name = "term-agents"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "serde_json",
  "term-acp",
@@ -3861,7 +3861,7 @@ dependencies = [
 
 [[package]]
 name = "term-base"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "block2",
  "dispatch2",
@@ -3877,7 +3877,7 @@ dependencies = [
 
 [[package]]
 name = "term-claude"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "base64 0.23.1",
  "serde",
@@ -3890,7 +3890,7 @@ dependencies = [
 
 [[package]]
 name = "term-codex"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "base64 0.23.1",
  "serde",
@@ -3903,7 +3903,7 @@ dependencies = [
 
 [[package]]
 name = "term-config"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "serde",
  "term-base",
@@ -3913,7 +3913,7 @@ dependencies = [
 
 [[package]]
 name = "term-document"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "proptest",
  "ropey",
@@ -3929,7 +3929,7 @@ dependencies = [
 
 [[package]]
 name = "term-fuzz"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "proptest",
  "term-vt",
@@ -3937,7 +3937,7 @@ dependencies = [
 
 [[package]]
 name = "term-git"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "libc",
  "proptest",
@@ -3950,7 +3950,7 @@ dependencies = [
 
 [[package]]
 name = "term-net"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "sha2",
  "term-base",
@@ -3959,7 +3959,7 @@ dependencies = [
 
 [[package]]
 name = "term-opencode"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "base64 0.23.1",
  "serde",
@@ -3972,7 +3972,7 @@ dependencies = [
 
 [[package]]
 name = "term-panes"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "serde",
  "serde_json",
@@ -3980,7 +3980,7 @@ dependencies = [
 
 [[package]]
 name = "term-process"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "libc",
  "term-base",
@@ -3988,11 +3988,11 @@ dependencies = [
 
 [[package]]
 name = "term-product"
-version = "1.0.1"
+version = "1.0.2"
 
 [[package]]
 name = "term-project"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "ignore",
  "notify",
@@ -4003,7 +4003,7 @@ dependencies = [
 
 [[package]]
 name = "term-render"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "block2",
  "image",
@@ -4022,7 +4022,7 @@ dependencies = [
 
 [[package]]
 name = "term-seal"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "objc2-core-foundation",
  "objc2-security",
@@ -4031,7 +4031,7 @@ dependencies = [
 
 [[package]]
 name = "term-session"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "libc",
  "memchr",
@@ -4044,7 +4044,7 @@ dependencies = [
 
 [[package]]
 name = "term-suggest"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "rusqlite",
  "serde",
@@ -4055,7 +4055,7 @@ dependencies = [
 
 [[package]]
 name = "term-thread"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "serde",
  "serde_json",
@@ -4064,7 +4064,7 @@ dependencies = [
 
 [[package]]
 name = "term-ui"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "block2",
  "dispatch2",
@@ -4089,7 +4089,7 @@ dependencies = [
 
 [[package]]
 name = "term-ui-agent"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "block2",
  "dispatch2",
@@ -4122,7 +4122,7 @@ dependencies = [
 
 [[package]]
 name = "term-ui-browser"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "block2",
  "objc2",
@@ -4140,7 +4140,7 @@ dependencies = [
 
 [[package]]
 name = "term-ui-dictation"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "block2",
  "libc",
@@ -4161,7 +4161,7 @@ dependencies = [
 
 [[package]]
 name = "term-ui-editor"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "block2",
  "dispatch2",
@@ -4185,7 +4185,7 @@ dependencies = [
 
 [[package]]
 name = "term-ui-files"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "block2",
  "objc2",
@@ -4202,7 +4202,7 @@ dependencies = [
 
 [[package]]
 name = "term-ui-git"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "block2",
  "objc2",
@@ -4219,7 +4219,7 @@ dependencies = [
 
 [[package]]
 name = "term-ui-icons"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "block2",
  "kurbo",
@@ -4235,7 +4235,7 @@ dependencies = [
 
 [[package]]
 name = "term-ui-panes"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "objc2",
  "objc2-app-kit",
@@ -4246,7 +4246,7 @@ dependencies = [
 
 [[package]]
 name = "term-ui-preview"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "block2",
  "dispatch2",
@@ -4270,7 +4270,7 @@ dependencies = [
 
 [[package]]
 name = "term-ui-sidebar"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "block2",
  "objc2",
@@ -4286,7 +4286,7 @@ dependencies = [
 
 [[package]]
 name = "term-vim"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "modalkit",
  "proptest",
@@ -4297,7 +4297,7 @@ dependencies = [
 
 [[package]]
 name = "term-vt"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "libc",
  "memchr",
@@ -5127,7 +5127,7 @@ checksum = "9440ea3e5aeabb0ac63af70daf835274065238cdd0cec83418f417eae38bacee"
 
 [[package]]
 name = "xtask"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "serde",
  "serde_json",
