@@ -98,6 +98,7 @@
 "Arbeitet" = "Working";
 "Arbeitsbereich entfernen" = "Remove Workspace";
 "Arbeitsbereich nicht vertraut" = "Workspace Not Trusted";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "Rename a workspace by clicking its name";
 "Arbeitsbereich umbenennen" = "Rename Workspace";
 "Arbeitsbereich vertrauen" = "Trust Workspace";
 "Arbeitsbereich vertrauen?" = "Trust Workspace?";
@@ -134,6 +135,7 @@
 "Ausgabestil" = "Output style";
 "Ausgabestil wählen" = "Choose the output style";
 "Ausgeschaltet" = "Turned off";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "When off, rows show no pencil and a workspace is renamed only from its row’s context menu.";
 "Ausschneiden" = "Cut";
 "Auswahl" = "Matcher";
 "Auswahl anhängen" = "Attach Selection";

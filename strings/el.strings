@@ -54,6 +54,8 @@
 "Die Einstellungsdatei lässt sich nicht lesen: {}" = "Δεν είναι δυνατή η ανάγνωση του αρχείου ρυθμίσεων: {}";
 "Die Einstellungsdatei lässt sich nicht schreiben: {}" = "Δεν είναι δυνατή η εγγραφή του αρχείου ρυθμίσεων: {}";
 "Die Seitenleiste listet die Arbeitsbereiche; ihre Taste in der Werkzeugleiste blendet sie je Fenster aus." = "Η πλαϊνή στήλη δείχνει τους χώρους εργασίας· το κουμπί της στη γραμμή εργαλείων την αποκρύπτει ανά παράθυρο.";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "Μετονομασία χώρου εργασίας με κλικ στο όνομά του";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "Όταν είναι απενεργοποιημένο, η σειρά δεν δείχνει μολύβι και η μετονομασία γίνεται μόνο από το μενού συντομεύσεων της σειράς.";
 "Die gewählte Wahltaste sendet Escape-Folgen statt Sonderzeichen." = "Το επιλεγμένο πλήκτρο Option στέλνει ακολουθίες διαφυγής αντί για ειδικούς χαρακτήρες.";
 "Dienste" = "Υπηρεσίες";
 "Diese Programme laufen noch und werden beendet: {}" = "Αυτά τα προγράμματα εκτελούνται ακόμα και θα τερματιστούν: {}";

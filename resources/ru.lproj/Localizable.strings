@@ -98,6 +98,7 @@
 "Arbeitet" = "Работает";
 "Arbeitsbereich entfernen" = "Удалить рабочую область";
 "Arbeitsbereich nicht vertraut" = "Рабочая область не является доверенной";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "Переименовывать рабочую область нажатием на её название";
 "Arbeitsbereich umbenennen" = "Переименовать рабочую область";
 "Arbeitsbereich vertrauen" = "Доверять рабочей области";
 "Arbeitsbereich vertrauen?" = "Доверять рабочей области?";
@@ -134,6 +135,7 @@
 "Ausgabestil" = "Стиль вывода";
 "Ausgabestil wählen" = "Выберите стиль вывода";
 "Ausgeschaltet" = "Выключено";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "Если выключено, в строке нет карандаша, а переименовать можно только через контекстное меню строки.";
 "Ausschneiden" = "Вырезать";
 "Auswahl" = "Фильтр";
 "Auswahl anhängen" = "Прикрепить выделенное";

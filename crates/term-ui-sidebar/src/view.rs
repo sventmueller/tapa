@@ -81,6 +81,8 @@ pub struct Ivars {
     count_digits: Cell<usize>,
     /// Set while the app selects a row, so that the selection does not come back to it as the user's pick.
     quiet: Cell<bool>,
+    /// Whether the pencil and a click on the selected workspace's name rename it, or only the row's menu does.
+    pub(crate) click_renames: Cell<bool>,
     pub(crate) renamed: RefCell<Option<Renamed>>,
     /// The workspace whose name the user edits in its row, with the name it had.
     pub(crate) editing: RefCell<Option<crate::rename::Editing>>,
@@ -164,7 +166,15 @@ define_class!(
                 let toggles = self.ivars().toggled.borrow().is_some();
                 let size = Size::of(self.ivars().count_digits.get());
                 let target: &AnyObject = self;
-                let cell = RowCell::new(self.mtm(), entry, &self.ivars().home, &size, toggles.then_some(target));
+                let pencil = self.ivars().click_renames.get();
+                let cell = RowCell::new(
+                    self.mtm(),
+                    entry,
+                    &self.ivars().home,
+                    &size,
+                    toggles.then_some(target),
+                    pencil,
+                );
                 Some(Retained::into_super(Retained::into_super(cell)))
             })
         }
@@ -293,6 +303,7 @@ impl Sidebar {
             gear: RefCell::new(None),
             count_digits: Cell::new(0),
             quiet: Cell::new(false),
+            click_renames: Cell::new(true),
             renamed: RefCell::new(None),
             editing: RefCell::new(None),
             moved: RefCell::new(None),

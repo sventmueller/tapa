@@ -54,6 +54,8 @@
 "Die Einstellungsdatei lässt sich nicht lesen: {}" = "Không thể đọc tệp cài đặt: {}";
 "Die Einstellungsdatei lässt sich nicht schreiben: {}" = "Không thể ghi tệp cài đặt: {}";
 "Die Seitenleiste listet die Arbeitsbereiche; ihre Taste in der Werkzeugleiste blendet sie je Fenster aus." = "Thanh bên liệt kê các không gian làm việc; nút của nó trên thanh công cụ ẩn nó theo từng cửa sổ.";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "Đổi tên không gian làm việc bằng cách bấm vào tên";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "Khi tắt, hàng không hiển thị bút chì và chỉ đổi tên được từ menu ngữ cảnh của hàng.";
 "Die gewählte Wahltaste sendet Escape-Folgen statt Sonderzeichen." = "Phím Option đã chọn gửi chuỗi thoát thay vì ký tự đặc biệt.";
 "Dienste" = "Dịch vụ";
 "Diese Programme laufen noch und werden beendet: {}" = "Các chương trình này vẫn đang chạy và sẽ bị dừng: {}";

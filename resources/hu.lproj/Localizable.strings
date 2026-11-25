@@ -98,6 +98,7 @@
 "Arbeitet" = "Dolgozik";
 "Arbeitsbereich entfernen" = "Munkaterület eltávolítása";
 "Arbeitsbereich nicht vertraut" = "A munkaterület nem megbízható";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "Munkaterület átnevezése a nevére kattintva";
 "Arbeitsbereich umbenennen" = "Munkaterület átnevezése";
 "Arbeitsbereich vertrauen" = "Munkaterület megbízhatónak jelölése";
 "Arbeitsbereich vertrauen?" = "Megbízol a munkaterületben?";
@@ -134,6 +135,7 @@
 "Ausgabestil" = "Kimeneti stílus";
 "Ausgabestil wählen" = "Kimeneti stílus kiválasztása";
 "Ausgeschaltet" = "Kikapcsolva";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "Kikapcsolva a sor nem mutat ceruzát, és átnevezni csak a sor helyi menüjéből lehet.";
 "Ausschneiden" = "Kivágás";
 "Auswahl" = "Szűrő";
 "Auswahl anhängen" = "Kijelölés csatolása";

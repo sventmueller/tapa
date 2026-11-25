@@ -54,6 +54,8 @@
 "Die Einstellungsdatei lässt sich nicht lesen: {}" = "Nie można odczytać pliku ustawień: {}";
 "Die Einstellungsdatei lässt sich nicht schreiben: {}" = "Nie można zapisać pliku ustawień: {}";
 "Die Seitenleiste listet die Arbeitsbereiche; ihre Taste in der Werkzeugleiste blendet sie je Fenster aus." = "Pasek boczny wyświetla obszary robocze; jego przycisk na pasku narzędzi ukrywa go w każdym oknie osobno.";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "Zmieniaj nazwę obszaru roboczego kliknięciem w nazwę";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "Po wyłączeniu wiersz nie pokazuje ołówka, a nazwę można zmienić tylko z menu podręcznego wiersza.";
 "Die gewählte Wahltaste sendet Escape-Folgen statt Sonderzeichen." = "Wybrany klawisz Opcja wysyła sekwencje sterujące zamiast znaków specjalnych.";
 "Dienste" = "Usługi";
 "Diese Programme laufen noch und werden beendet: {}" = "Te programy nadal działają i zostaną zakończone: {}";

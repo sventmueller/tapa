@@ -98,6 +98,7 @@
 "Arbeitet" = "Çalışıyor";
 "Arbeitsbereich entfernen" = "Çalışma Alanını Kaldır";
 "Arbeitsbereich nicht vertraut" = "Çalışma alanı güvenilir değil";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "Çalışma alanının adını adına tıklayarak değiştir";
 "Arbeitsbereich umbenennen" = "Çalışma Alanının Adını Değiştir";
 "Arbeitsbereich vertrauen" = "Çalışma alanına güven";
 "Arbeitsbereich vertrauen?" = "Çalışma alanına güvenilsin mi?";
@@ -134,6 +135,7 @@
 "Ausgabestil" = "Çıktı Stili";
 "Ausgabestil wählen" = "Çıktı stilini seçin";
 "Ausgeschaltet" = "Kapalı";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "Kapalıyken satırda kalem görünmez ve ad yalnızca satırın bağlam menüsünden değiştirilir.";
 "Ausschneiden" = "Kes";
 "Auswahl" = "Filtre";
 "Auswahl anhängen" = "Seçimi Ekle";

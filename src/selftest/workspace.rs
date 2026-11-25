@@ -5,7 +5,8 @@
 //! `mergeall` merges the windows of its workspace again; `sidebarwidth:<points>` drags the sidebar of the window in
 //! front to that width, `windowsize:<width>x<height>` resizes that window as a drag at its edge does; `row:<new|close|rename>.<index>` does what the menu of the sidebar's row `<index>` does;
 //! `workspace:<path>` opens a workspace in that folder as the panel of New Workspace would; `rename:<index>=<name>`
-//! names a workspace, `rowmove:<from>.<to>` drags a sidebar row to another place as the mouse does; `tabmove:<from>.<to>` drags a tab of the front window's tab bar to another place;
+//! names a workspace, `namerename:<index>` prints which rows show the pencil and clicks the name of row `<index>`,
+//! printing whether that renames it; `rowmove:<from>.<to>` drags a sidebar row to another place as the mouse does; `tabmove:<from>.<to>` drags a tab of the front window's tab bar to another place;
 //! `gear:` clicks the settings button at the foot of the sidebar in front; `fullscreen:<name>` prints how the sidebar
 //! sits below the toolbar in full screen, `togglefullscreen` enters or leaves full screen, `toolbarslide:<points>` slides the toolbar's window down as
 //! the menu bar does;
@@ -102,6 +103,11 @@ pub(super) fn run(step: &str) -> bool {
         let (index, name) = spec.split_once('=').unwrap_or((spec, ""));
         if let Some(workspace) = window.workspaces().get(index.parse::<usize>().unwrap_or(0)) {
             window.set_workspace_name(workspace.id, name);
+        }
+    } else if let Some(index) = step.strip_prefix("namerename:") {
+        if let Some((sidebar, _)) = window.front_sidebar() {
+            let (pencils, renames) = sidebar.click_name(index.parse().unwrap_or(0));
+            println!("namerename {index}: pencils {pencils:?}, renames {renames}");
         }
     } else if let Some(spec) = step.strip_prefix("rowmove:") {
         let (from, to) = spec.split_once('.').unwrap_or((spec, "0"));

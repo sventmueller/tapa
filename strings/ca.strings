@@ -54,6 +54,8 @@
 "Die Einstellungsdatei lässt sich nicht lesen: {}" = "No es pot llegir el fitxer de configuració: {}";
 "Die Einstellungsdatei lässt sich nicht schreiben: {}" = "No es pot escriure el fitxer de configuració: {}";
 "Die Seitenleiste listet die Arbeitsbereiche; ihre Taste in der Werkzeugleiste blendet sie je Fenster aus." = "La barra lateral mostra els espais de treball; el seu botó a la barra d’eines l’oculta a cada finestra.";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "Canviar el nom d’un espai de treball fent clic al nom";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "Si està desactivat, la fila no mostra el llapis i el nom només es canvia des del menú contextual de la fila.";
 "Die gewählte Wahltaste sendet Escape-Folgen statt Sonderzeichen." = "La tecla Opció triada envia seqüències d’escapament en lloc de caràcters especials.";
 "Dienste" = "Serveis";
 "Diese Programme laufen noch und werden beendet: {}" = "Aquests programes encara s’estan executant i es tancaran: {}";

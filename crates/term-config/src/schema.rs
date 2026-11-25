@@ -261,6 +261,9 @@ pub struct Window {
     pub interface_font_size: f64,
     /// New windows show the sidebar of workspaces (E9, E20).
     pub sidebar: bool,
+    /// A click on the selected workspace's name or on the pencil in its row renames it; without, only the row's menu
+    /// does, and the rows show no pencil.
+    pub rename_on_click: bool,
     /// Which new sessions start in the folder of the one in front (F51).
     pub inherit_directory: Inherit,
     /// Asks before closing a tab, window or the app while a program runs (F213).
@@ -277,6 +280,7 @@ impl Default for Window {
             appearance: Appearance::System,
             interface_font_size: 13.0,
             sidebar: true,
+            rename_on_click: true,
             inherit_directory: Inherit::default(),
             confirm_close: true,
             columns: 100,

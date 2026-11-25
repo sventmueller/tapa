@@ -128,6 +128,16 @@ mod tests {
     }
 
     #[test]
+    fn an_older_file_renames_on_click_until_the_user_turns_it_off() {
+        let (config, warnings) = Config::parse("version = 1\n[window]\nsidebar = true\n");
+        assert!(warnings.is_empty(), "{warnings:?}");
+        assert!(config.window.rename_on_click);
+        let (config, warnings) = Config::parse("version = 1\n[window]\nrename_on_click = false\n");
+        assert!(warnings.is_empty(), "{warnings:?}");
+        assert!(!config.window.rename_on_click);
+    }
+
+    #[test]
     fn a_missing_file_gives_the_defaults() {
         let dir = term_base::testing::scratch("config-missing");
         let (config, warnings) = Config::load(&dir.join("none.toml")).unwrap();

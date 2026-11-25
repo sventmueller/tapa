@@ -465,6 +465,7 @@ fn make_sidebar(mtm: MainThreadMarker, window: u64, tab: u64) -> (Retained<Sideb
         });
     });
     sidebar.on_settings(|| term_base::main_soon(crate::settings::show));
+    sidebar.set_click_renames(app().config().window.rename_on_click);
     sidebar.on_panel_toggle(move |workspace, panel| {
         // Later, as the table reloads the row whose switch was clicked.
         term_base::main_soon(move || {

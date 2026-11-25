@@ -98,6 +98,7 @@
 "Arbeitet" = "काम कर रहा है";
 "Arbeitsbereich entfernen" = "वर्कस्पेस हटाएँ";
 "Arbeitsbereich nicht vertraut" = "वर्कस्पेस विश्वसनीय नहीं है";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "नाम पर क्लिक करके वर्कस्पेस का नाम बदलें";
 "Arbeitsbereich umbenennen" = "वर्कस्पेस का नाम बदलें";
 "Arbeitsbereich vertrauen" = "वर्कस्पेस पर भरोसा करें";
 "Arbeitsbereich vertrauen?" = "वर्कस्पेस पर भरोसा करें?";
@@ -134,6 +135,7 @@
 "Ausgabestil" = "आउटपुट शैली";
 "Ausgabestil wählen" = "आउटपुट शैली चुनें";
 "Ausgeschaltet" = "बंद";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "बंद होने पर पंक्ति में पेंसिल नहीं दिखती, और नाम केवल पंक्ति के संदर्भ मेनू से बदला जा सकता है।";
 "Ausschneiden" = "काटें";
 "Auswahl" = "पैटर्न";
 "Auswahl anhängen" = "चयन अटैच करें";

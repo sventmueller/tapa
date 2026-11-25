@@ -98,6 +98,7 @@
 "Arbeitet" = "Bezig";
 "Arbeitsbereich entfernen" = "Werkruimte verwijderen";
 "Arbeitsbereich nicht vertraut" = "Werkruimte niet vertrouwd";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "Wijzig de naam van een werkruimte door op de naam te klikken";
 "Arbeitsbereich umbenennen" = "Wijzig naam van werkruimte";
 "Arbeitsbereich vertrauen" = "Werkruimte vertrouwen";
 "Arbeitsbereich vertrauen?" = "Werkruimte vertrouwen?";
@@ -134,6 +135,7 @@
 "Ausgabestil" = "Uitvoerstijl";
 "Ausgabestil wählen" = "Kies de uitvoerstijl";
 "Ausgeschaltet" = "Uitgeschakeld";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "Indien uit, toont de rij geen potlood en kan de naam alleen via het contextuele menu van de rij worden gewijzigd.";
 "Ausschneiden" = "Knip";
 "Auswahl" = "Filter";
 "Auswahl anhängen" = "Voeg selectie toe";

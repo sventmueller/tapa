@@ -54,6 +54,8 @@
 "Die Einstellungsdatei lässt sich nicht lesen: {}" = "The settings file cannot be read: {}";
 "Die Einstellungsdatei lässt sich nicht schreiben: {}" = "The settings file cannot be written: {}";
 "Die Seitenleiste listet die Arbeitsbereiche; ihre Taste in der Werkzeugleiste blendet sie je Fenster aus." = "The sidebar lists the workspaces; its button in the toolbar hides it per window.";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "Rename a workspace by clicking its name";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "When off, rows show no pencil and a workspace is renamed only from its row’s context menu.";
 "Die gewählte Wahltaste sendet Escape-Folgen statt Sonderzeichen." = "The chosen Option key sends escape sequences instead of special characters.";
 "Dienste" = "Services";
 "Diese Programme laufen noch und werden beendet: {}" = "These programs are still running and will be ended: {}";

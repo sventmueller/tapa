@@ -54,6 +54,8 @@
 "Die Einstellungsdatei lässt sich nicht lesen: {}" = "Não é possível ler o arquivo de ajustes: {}";
 "Die Einstellungsdatei lässt sich nicht schreiben: {}" = "Não é possível gravar o arquivo de ajustes: {}";
 "Die Seitenleiste listet die Arbeitsbereiche; ihre Taste in der Werkzeugleiste blendet sie je Fenster aus." = "A barra lateral lista os espaços de trabalho; seu botão na barra de ferramentas a oculta em cada janela.";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "Renomear um espaço de trabalho clicando no nome";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "Desativado, a linha não mostra o lápis e só é possível renomear pelo menu de atalhos da linha.";
 "Die gewählte Wahltaste sendet Escape-Folgen statt Sonderzeichen." = "A tecla Opção escolhida envia sequências de escape em vez de caracteres especiais.";
 "Dienste" = "Serviços";
 "Diese Programme laufen noch und werden beendet: {}" = "Estes programas ainda estão em execução e serão encerrados: {}";

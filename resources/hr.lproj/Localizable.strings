@@ -98,6 +98,7 @@
 "Arbeitet" = "Radi";
 "Arbeitsbereich entfernen" = "Ukloni radni prostor";
 "Arbeitsbereich nicht vertraut" = "Radni prostor nije pouzdan";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "Preimenuj radni prostor klikom na njegov naziv";
 "Arbeitsbereich umbenennen" = "Preimenuj radni prostor";
 "Arbeitsbereich vertrauen" = "Vjeruj radnom prostoru";
 "Arbeitsbereich vertrauen?" = "Vjerovati radnom prostoru?";
@@ -134,6 +135,7 @@
 "Ausgabestil" = "Stil izlaza";
 "Ausgabestil wählen" = "Odaberite stil izlaza";
 "Ausgeschaltet" = "Isključeno";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "Kad je isključeno, redak ne prikazuje olovku, a preimenovati se može samo iz kontekstnog izbornika retka.";
 "Ausschneiden" = "Izreži";
 "Auswahl" = "Uzorak";
 "Auswahl anhängen" = "Priloži odabir";

@@ -98,6 +98,7 @@
 "Arbeitet" = "Työskentelee";
 "Arbeitsbereich entfernen" = "Poista työtila";
 "Arbeitsbereich nicht vertraut" = "Työtilaan ei luoteta";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "Nimeä työtila uudelleen osoittamalla sen nimeä";
 "Arbeitsbereich umbenennen" = "Nimeä työtila uudelleen";
 "Arbeitsbereich vertrauen" = "Luota työtilaan";
 "Arbeitsbereich vertrauen?" = "Luotetaanko työtilaan?";
@@ -134,6 +135,7 @@
 "Ausgabestil" = "Tulostustyyli";
 "Ausgabestil wählen" = "Valitse tulostustyyli";
 "Ausgeschaltet" = "Pois päältä";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "Kun tämä on pois päältä, rivillä ei näy kynää ja uudelleennimeäminen onnistuu vain rivin pikavalikosta.";
 "Ausschneiden" = "Leikkaa";
 "Auswahl" = "Kuvio";
 "Auswahl anhängen" = "Liitä valinta";

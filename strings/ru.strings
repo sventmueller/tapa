@@ -54,6 +54,8 @@
 "Die Einstellungsdatei lässt sich nicht lesen: {}" = "Не удается прочитать файл настроек: {}";
 "Die Einstellungsdatei lässt sich nicht schreiben: {}" = "Не удается записать файл настроек: {}";
 "Die Seitenleiste listet die Arbeitsbereiche; ihre Taste in der Werkzeugleiste blendet sie je Fenster aus." = "Боковая панель показывает рабочие области; её кнопка на панели инструментов скрывает её для каждого окна отдельно.";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "Переименовывать рабочую область нажатием на её название";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "Если выключено, в строке нет карандаша, а переименовать можно только через контекстное меню строки.";
 "Die gewählte Wahltaste sendet Escape-Folgen statt Sonderzeichen." = "Выбранная клавиша Option отправляет escape-последовательности вместо специальных символов.";
 "Dienste" = "Службы";
 "Diese Programme laufen noch und werden beendet: {}" = "Эти программы ещё работают и будут завершены: {}";

@@ -54,6 +54,8 @@
 "Die Einstellungsdatei lässt sich nicht lesen: {}" = "Fișierul de configurări nu poate fi citit: {}";
 "Die Einstellungsdatei lässt sich nicht schreiben: {}" = "Fișierul de configurări nu poate fi scris: {}";
 "Die Seitenleiste listet die Arbeitsbereiche; ihre Taste in der Werkzeugleiste blendet sie je Fenster aus." = "Bara laterală afișează spațiile de lucru; butonul ei din bara de instrumente o ascunde pentru fiecare fereastră.";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "Redenumiți un spațiu de lucru făcând clic pe nume";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "Când este dezactivat, rândul nu afișează creionul, iar redenumirea se face doar din meniul contextual al rândului.";
 "Die gewählte Wahltaste sendet Escape-Folgen statt Sonderzeichen." = "Tasta Opțiune aleasă trimite secvențe escape în loc de caractere speciale.";
 "Dienste" = "Servicii";
 "Diese Programme laufen noch und werden beendet: {}" = "Aceste programe încă rulează și vor fi oprite: {}";

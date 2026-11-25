@@ -98,6 +98,7 @@
 "Arbeitet" = "Au travail";
 "Arbeitsbereich entfernen" = "Supprimer l’espace de travail";
 "Arbeitsbereich nicht vertraut" = "Espace de travail non approuvé";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "Renommer un espace de travail en cliquant sur son nom";
 "Arbeitsbereich umbenennen" = "Renommer l’espace de travail";
 "Arbeitsbereich vertrauen" = "Faire confiance à l’espace de travail";
 "Arbeitsbereich vertrauen?" = "Faire confiance à l’espace de travail ?";
@@ -134,6 +135,7 @@
 "Ausgabestil" = "Style de sortie";
 "Ausgabestil wählen" = "Choisir le style de sortie";
 "Ausgeschaltet" = "Désactivé";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "Désactivé, la ligne n’affiche pas de crayon et seul le menu contextuel de la ligne permet de renommer.";
 "Ausschneiden" = "Couper";
 "Auswahl" = "Motif";
 "Auswahl anhängen" = "Joindre la sélection";

@@ -98,6 +98,7 @@
 "Arbeitet" = "قيد العمل";
 "Arbeitsbereich entfernen" = "إزالة مساحة العمل";
 "Arbeitsbereich nicht vertraut" = "مساحة عمل غير موثوق بها";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "إعادة تسمية مساحة العمل بالنقر على اسمها";
 "Arbeitsbereich umbenennen" = "إعادة تسمية مساحة العمل";
 "Arbeitsbereich vertrauen" = "الوثوق بمساحة العمل";
 "Arbeitsbereich vertrauen?" = "هل تثق بمساحة العمل؟";
@@ -134,6 +135,7 @@
 "Ausgabestil" = "نمط الإخراج";
 "Ausgabestil wählen" = "اختيار نمط الإخراج";
 "Ausgeschaltet" = "مُعطَّل";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "عند إيقافه لا يظهر القلم في الصف، ولا تتم إعادة التسمية إلا من قائمة الاختصارات للصف.";
 "Ausschneiden" = "قص";
 "Auswahl" = "المطابِق";
 "Auswahl anhängen" = "إرفاق التحديد";

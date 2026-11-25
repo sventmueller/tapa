@@ -113,13 +113,15 @@ define_class!(
 
 impl Cell {
     /// The cell that shows `workspace` at `size`.
-    /// With `toggles`, the row's second line ends in the switches of its panels, which send their actions there.
+    /// With `toggles`, the row's second line ends in the switches of its panels, which send their actions there, and
+    /// with `pencil` as well its name in the pencil that renames it.
     pub(crate) fn new(
         mtm: MainThreadMarker,
         workspace: &Workspace,
         home: &Path,
         size: &Size,
         toggles: Option<&AnyObject>,
+        pencil: bool,
     ) -> Retained<Cell> {
         let this = Self::alloc(mtm).set_ivars(Ivars {
             toggles: RefCell::new(Vec::new()),
@@ -127,18 +129,18 @@ impl Cell {
         });
         // SAFETY: NSView's designated initializer, called once on the newly allocated object.
         let this: Retained<Cell> = unsafe { msg_send![super(this), initWithFrame: NSRect::ZERO] };
-        this.fill(workspace, home, size, toggles);
+        this.fill(workspace, home, size, toggles, pencil);
         this
     }
 
-    fn fill(&self, workspace: &Workspace, home: &Path, size: &Size, toggles: Option<&AnyObject>) {
+    fn fill(&self, workspace: &Workspace, home: &Path, size: &Size, toggles: Option<&AnyObject>, pencil: bool) {
         let mtm = self.mtm();
         let heading = text(mtm, &workspace.name, &size.heading);
         heading.setLineBreakMode(NSLineBreakMode::ByTruncatingTail);
         let detail = text(mtm, &workspace.detail(home), &size.detail);
         detail.setTextColor(Some(&NSColor::secondaryLabelColor()));
         let first = line(mtm, &heading);
-        if let (false, Some(target)) = (workspace.fixed, toggles) {
+        if let (false, true, Some(target)) = (workspace.fixed, pencil, toggles) {
             first.addView_inGravity(&self.pencil(workspace.id, size, target), NSStackViewGravity::Leading);
             heading.setContentHuggingPriority_forOrientation(750.0, NSLayoutConstraintOrientation::Horizontal);
         }
@@ -279,6 +281,15 @@ impl Cell {
     /// The field that shows the workspace's name.
     pub(crate) fn name(&self) -> Option<Retained<NSTextField>> {
         self.ivars().name.get().cloned()
+    }
+
+    /// Whether the row shows the pencil that renames its workspace.
+    pub(crate) fn has_pencil(&self) -> bool {
+        self.ivars()
+            .toggles
+            .borrow()
+            .iter()
+            .any(|(button, _)| button.action() == Some(sel!(termSidebarEditName:)))
     }
 
     /// The buttons take the colour of the selection's text on the emphasized selection, else their own.

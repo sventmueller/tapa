@@ -54,6 +54,8 @@
 "Die Einstellungsdatei lässt sich nicht lesen: {}" = "Innstillingsfilen kan ikke leses: {}";
 "Die Einstellungsdatei lässt sich nicht schreiben: {}" = "Innstillingsfilen kan ikke skrives: {}";
 "Die Seitenleiste listet die Arbeitsbereiche; ihre Taste in der Werkzeugleiste blendet sie je Fenster aus." = "Sidepanelet viser arbeidsområdene; knappen i verktøylinjen skjuler det for hvert vindu.";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "Gi nytt navn til et arbeidsområde ved å klikke på navnet";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "Når dette er av, viser raden ingen blyant, og du kan bare gi nytt navn fra radens kontekstmeny.";
 "Die gewählte Wahltaste sendet Escape-Folgen statt Sonderzeichen." = "Den valgte Valg-tasten sender escape-sekvenser i stedet for spesialtegn.";
 "Dienste" = "Tjenester";
 "Diese Programme laufen noch und werden beendet: {}" = "Disse programmene kjører fortsatt og blir avsluttet: {}";

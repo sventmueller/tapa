@@ -98,6 +98,7 @@
 "Arbeitet" = "Đang làm việc";
 "Arbeitsbereich entfernen" = "Xóa không gian làm việc";
 "Arbeitsbereich nicht vertraut" = "Không gian làm việc chưa được tin cậy";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "Đổi tên không gian làm việc bằng cách bấm vào tên";
 "Arbeitsbereich umbenennen" = "Đổi tên không gian làm việc";
 "Arbeitsbereich vertrauen" = "Tin cậy không gian làm việc";
 "Arbeitsbereich vertrauen?" = "Tin cậy không gian làm việc?";
@@ -134,6 +135,7 @@
 "Ausgabestil" = "Kiểu đầu ra";
 "Ausgabestil wählen" = "Chọn kiểu đầu ra";
 "Ausgeschaltet" = "Đã tắt";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "Khi tắt, hàng không hiển thị bút chì và chỉ đổi tên được từ menu ngữ cảnh của hàng.";
 "Ausschneiden" = "Cắt";
 "Auswahl" = "Bộ lọc";
 "Auswahl anhängen" = "Đính kèm lựa chọn";

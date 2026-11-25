@@ -98,6 +98,7 @@
 "Arbeitet" = "作業中";
 "Arbeitsbereich entfernen" = "ワークスペースを削除";
 "Arbeitsbereich nicht vertraut" = "信頼されていないワークスペース";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "名前をクリックしてワークスペース名を変更";
 "Arbeitsbereich umbenennen" = "ワークスペース名を変更";
 "Arbeitsbereich vertrauen" = "ワークスペースを信頼";
 "Arbeitsbereich vertrauen?" = "ワークスペースを信頼しますか？";
@@ -134,6 +135,7 @@
 "Ausgabestil" = "出力スタイル";
 "Ausgabestil wählen" = "出力スタイルを選択";
 "Ausgeschaltet" = "オフ";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "オフのときは行に鉛筆が表示されず、名前は行のコンテキストメニューからのみ変更できます。";
 "Ausschneiden" = "カット";
 "Auswahl" = "フィルタ";
 "Auswahl anhängen" = "選択部分を添付";

@@ -54,6 +54,8 @@
 "Die Einstellungsdatei lässt sich nicht lesen: {}" = "Datoteke z nastavitvami ni mogoče prebrati: {}";
 "Die Einstellungsdatei lässt sich nicht schreiben: {}" = "Datoteke z nastavitvami ni mogoče zapisati: {}";
 "Die Seitenleiste listet die Arbeitsbereiche; ihre Taste in der Werkzeugleiste blendet sie je Fenster aus." = "Stranska vrstica prikazuje delovne prostore; njen gumb v orodni vrstici jo skrije za vsako okno posebej.";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "Preimenuj delovni prostor s klikom na ime";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "Ko je izklopljeno, vrstica ne prikaže svinčnika, preimenovati pa je mogoče le v kontekstnem meniju vrstice.";
 "Die gewählte Wahltaste sendet Escape-Folgen statt Sonderzeichen." = "Izbrana tipka Option pošilja ubežna zaporedja namesto posebnih znakov.";
 "Dienste" = "Storitve";
 "Diese Programme laufen noch und werden beendet: {}" = "Ti programi še tečejo in bodo končani: {}";

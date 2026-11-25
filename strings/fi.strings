@@ -54,6 +54,8 @@
 "Die Einstellungsdatei lässt sich nicht lesen: {}" = "Asetustiedostoa ei voi lukea: {}";
 "Die Einstellungsdatei lässt sich nicht schreiben: {}" = "Asetustiedostoon ei voi kirjoittaa: {}";
 "Die Seitenleiste listet die Arbeitsbereiche; ihre Taste in der Werkzeugleiste blendet sie je Fenster aus." = "Sivupalkki luettelee työtilat; sen painike työkalupalkissa kätkee sen ikkunakohtaisesti.";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "Nimeä työtila uudelleen osoittamalla sen nimeä";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "Kun tämä on pois päältä, rivillä ei näy kynää ja uudelleennimeäminen onnistuu vain rivin pikavalikosta.";
 "Die gewählte Wahltaste sendet Escape-Folgen statt Sonderzeichen." = "Valittu Optio-näppäin lähettää ohjausjaksoja erikoismerkkien sijaan.";
 "Dienste" = "Palvelut";
 "Diese Programme laufen noch und werden beendet: {}" = "Nämä ohjelmat ovat yhä käynnissä ja ne lopetetaan: {}";

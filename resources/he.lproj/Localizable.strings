@@ -98,6 +98,7 @@
 "Arbeitet" = "עובד";
 "Arbeitsbereich entfernen" = "הסרת סביבת העבודה";
 "Arbeitsbereich nicht vertraut" = "סביבת העבודה אינה מהימנה";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "שינוי שם סביבת עבודה בלחיצה על שמה";
 "Arbeitsbereich umbenennen" = "שנה שם לסביבת עבודה";
 "Arbeitsbereich vertrauen" = "מתן אמון בסביבת העבודה";
 "Arbeitsbereich vertrauen?" = "לתת אמון בסביבת העבודה?";
@@ -134,6 +135,7 @@
 "Ausgabestil" = "סגנון פלט";
 "Ausgabestil wählen" = "בחירת סגנון הפלט";
 "Ausgeschaltet" = "כבוי";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "כשהאפשרות כבויה, השורה לא מציגה עיפרון, ושינוי השם אפשרי רק מתפריט ההקשר של השורה.";
 "Ausschneiden" = "גזור";
 "Auswahl" = "תבנית";
 "Auswahl anhängen" = "צירוף הבחירה";

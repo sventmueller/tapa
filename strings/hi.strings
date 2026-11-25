@@ -54,6 +54,8 @@
 "Die Einstellungsdatei lässt sich nicht lesen: {}" = "सेटिंग्ज़ फ़ाइल पढ़ी नहीं जा सकती: {}";
 "Die Einstellungsdatei lässt sich nicht schreiben: {}" = "सेटिंग्ज़ फ़ाइल लिखी नहीं जा सकती: {}";
 "Die Seitenleiste listet die Arbeitsbereiche; ihre Taste in der Werkzeugleiste blendet sie je Fenster aus." = "साइडबार वर्कस्पेस दिखाता है; टूलबार में उसका बटन उसे हर विंडो में अलग से छिपाता है।";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "नाम पर क्लिक करके वर्कस्पेस का नाम बदलें";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "बंद होने पर पंक्ति में पेंसिल नहीं दिखती, और नाम केवल पंक्ति के संदर्भ मेनू से बदला जा सकता है।";
 "Die gewählte Wahltaste sendet Escape-Folgen statt Sonderzeichen." = "चुनी गई Option कुंजी विशेष वर्णों के बजाय एस्केप अनुक्रम भेजती है।";
 "Dienste" = "सेवाएँ";
 "Diese Programme laufen noch und werden beendet: {}" = "ये प्रोग्राम अभी चल रहे हैं और बंद हो जाएँगे: {}";

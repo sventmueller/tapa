@@ -98,6 +98,7 @@
 "Arbeitet" = "Arbetar";
 "Arbeitsbereich entfernen" = "Ta bort arbetsyta";
 "Arbeitsbereich nicht vertraut" = "Arbetsytan är inte betrodd";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "Byt namn på arbetsyta genom att klicka på namnet";
 "Arbeitsbereich umbenennen" = "Byt namn på arbetsyta";
 "Arbeitsbereich vertrauen" = "Lita på arbetsytan";
 "Arbeitsbereich vertrauen?" = "Lita på arbetsytan?";
@@ -134,6 +135,7 @@
 "Ausgabestil" = "Utdatastil";
 "Ausgabestil wählen" = "Välj utdatastil";
 "Ausgeschaltet" = "Avstängd";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "När detta är av visas ingen penna på raden, och namnet kan bara bytas via radens kontextmeny.";
 "Ausschneiden" = "Klipp ut";
 "Auswahl" = "Filter";
 "Auswahl anhängen" = "Bifoga markering";

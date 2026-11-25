@@ -54,6 +54,8 @@
 "Die Einstellungsdatei lässt sich nicht lesen: {}" = "ไม่สามารถอ่านไฟล์การตั้งค่าได้: {}";
 "Die Einstellungsdatei lässt sich nicht schreiben: {}" = "ไม่สามารถเขียนไฟล์การตั้งค่าได้: {}";
 "Die Seitenleiste listet die Arbeitsbereiche; ihre Taste in der Werkzeugleiste blendet sie je Fenster aus." = "แถบด้านข้างแสดงรายการพื้นที่ทำงาน ปุ่มของแถบนี้ในแถบเครื่องมือจะซ่อนแถบในแต่ละหน้าต่าง";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "เปลี่ยนชื่อพื้นที่ทำงานโดยคลิกที่ชื่อ";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "เมื่อปิด แถวจะไม่แสดงดินสอ และจะเปลี่ยนชื่อได้จากเมนูคำสั่งลัดของแถวเท่านั้น";
 "Die gewählte Wahltaste sendet Escape-Folgen statt Sonderzeichen." = "ปุ่ม Option ที่เลือกจะส่งลำดับ Escape แทนอักขระพิเศษ";
 "Dienste" = "บริการ";
 "Diese Programme laufen noch und werden beendet: {}" = "โปรแกรมเหล่านี้ยังทำงานอยู่และจะถูกปิด: {}";

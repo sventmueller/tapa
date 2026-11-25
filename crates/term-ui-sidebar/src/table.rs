@@ -1,5 +1,5 @@
 //! The sidebar's table: a click on the name of the selected workspace starts renaming it in place, as a click on the
-//! name of the selected item does in Finder.
+//! name of the selected item does in Finder, unless the settings leave renaming to the row's menu.
 
 use objc2::rc::{Retained, Weak};
 use objc2::{DefinedClass, MainThreadMarker, MainThreadOnly, define_class, msg_send};

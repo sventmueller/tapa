@@ -1,5 +1,6 @@
-//! Renaming a workspace in its row: its pencil, its menu or a click on the selected workspace's name turn the name
-//! into a field; Return keeps what the user typed, Escape the name it had, and the Terminal keeps its name.
+//! Renaming a workspace in its row: its menu, and where the settings let a click rename, its pencil or a click on the
+//! selected workspace's name turn the name into a field; Return keeps what the user typed, Escape the name it had, and
+//! the Terminal keeps its name.
 
 use objc2::rc::Retained;
 use objc2::runtime::{AnyObject, ProtocolObject, Sel};
@@ -21,6 +22,40 @@ impl Sidebar {
     /// Has `renamed` hear the name the user gives a workspace in its row; an empty one gives it its folder's again.
     pub fn on_rename(&self, renamed: impl Fn(u64, String) + 'static) {
         *self.ivars().renamed.borrow_mut() = Some(Box::new(renamed));
+    }
+
+    /// Has the rows show the pencil and a click on the selected workspace's name rename it, or leaves renaming to the
+    /// rows' menu alone.
+    pub fn set_click_renames(&self, on: bool) {
+        if self.ivars().click_renames.replace(on) == on {
+            return;
+        }
+        let Some(table) = self.table() else { return };
+        // The name the user is typing stays, as the reload would drop its field.
+        if self.ivars().editing.borrow().is_some()
+            && let Some(window) = table.window()
+        {
+            window.makeFirstResponder(Some(&table));
+        }
+        table.reloadData();
+    }
+
+    /// Whether each row shows the pencil, and whether a click on the name of row `row` turns it into a field, which
+    /// it then does, for the self-test.
+    pub fn click_name(&self, row: usize) -> (Vec<bool>, bool) {
+        let Some(table) = self.table() else {
+            return (Vec::new(), false);
+        };
+        let pencils = (0..self.entries().len())
+            .map(|at| {
+                let view = table.viewAtColumn_row_makeIfNecessary(0, isize::try_from(at).unwrap_or(0), true);
+                view.and_then(|view| view.downcast::<Cell>().ok())
+                    .is_some_and(|cell| cell.has_pencil())
+            })
+            .collect();
+        let row = isize::try_from(row).unwrap_or(-1);
+        let renames = name_field(&table, row, true).is_some_and(|field| self.rename_on_click(&table, &field, || true));
+        (pencils, renames)
     }
 
     /// Turns the name in workspace `id`'s row into a field with the name selected, unless it is the Terminal.
@@ -116,7 +151,7 @@ impl Sidebar {
         responder: &NSResponder,
         clicked: impl FnOnce() -> bool,
     ) -> bool {
-        if self.ivars().editing.borrow().is_some() {
+        if !self.ivars().click_renames.get() || self.ivars().editing.borrow().is_some() {
             return false;
         }
         let object: &AnyObject = responder;

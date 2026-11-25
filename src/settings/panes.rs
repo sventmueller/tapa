@@ -128,6 +128,16 @@ pub(super) fn window(fields: &Fields) -> Retained<NSView> {
         fields,
         &mut form,
         "",
+        t("Arbeitsbereich per Klick auf den Namen umbenennen"),
+        flag(|c| c.window.rename_on_click, &["window", "rename_on_click"]),
+    );
+    form.hint(t(
+        "Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile.",
+    ));
+    check_row(
+        fields,
+        &mut form,
+        "",
         t("Vor dem Schließen laufender Programme fragen"),
         flag(|c| c.window.confirm_close, &["window", "confirm_close"]),
     );

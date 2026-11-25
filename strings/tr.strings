@@ -54,6 +54,8 @@
 "Die Einstellungsdatei lässt sich nicht lesen: {}" = "Ayarlar dosyası okunamıyor: {}";
 "Die Einstellungsdatei lässt sich nicht schreiben: {}" = "Ayarlar dosyası yazılamıyor: {}";
 "Die Seitenleiste listet die Arbeitsbereiche; ihre Taste in der Werkzeugleiste blendet sie je Fenster aus." = "Kenar çubuğu çalışma alanlarını listeler; araç çubuğundaki düğmesi onu her pencerede ayrı gizler.";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "Çalışma alanının adını adına tıklayarak değiştir";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "Kapalıyken satırda kalem görünmez ve ad yalnızca satırın bağlam menüsünden değiştirilir.";
 "Die gewählte Wahltaste sendet Escape-Folgen statt Sonderzeichen." = "Seçilen Option tuşu özel karakterler yerine kaçış dizileri gönderir.";
 "Dienste" = "Servisler";
 "Diese Programme laufen noch und werden beendet: {}" = "Bu programlar hâlâ çalışıyor ve sonlandırılacak: {}";

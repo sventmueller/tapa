@@ -54,6 +54,8 @@
 "Die Einstellungsdatei lässt sich nicht lesen: {}" = "לא ניתן לקרוא את קובץ ההגדרות: {}";
 "Die Einstellungsdatei lässt sich nicht schreiben: {}" = "לא ניתן לכתוב את קובץ ההגדרות: {}";
 "Die Seitenleiste listet die Arbeitsbereiche; ihre Taste in der Werkzeugleiste blendet sie je Fenster aus." = "סרגל הצד מציג את סביבות העבודה; הכפתור שלו בסרגל הכלים מסתיר אותו בכל חלון בנפרד.";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "שינוי שם סביבת עבודה בלחיצה על שמה";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "כשהאפשרות כבויה, השורה לא מציגה עיפרון, ושינוי השם אפשרי רק מתפריט ההקשר של השורה.";
 "Die gewählte Wahltaste sendet Escape-Folgen statt Sonderzeichen." = "מקש Option שנבחר שולח רצפי Escape במקום תווים מיוחדים.";
 "Dienste" = "שירותים";
 "Diese Programme laufen noch und werden beendet: {}" = "תוכניות אלה עדיין פועלות ויסתיימו: {}";

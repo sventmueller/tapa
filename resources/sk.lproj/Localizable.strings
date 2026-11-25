@@ -98,6 +98,7 @@
 "Arbeitet" = "Pracuje";
 "Arbeitsbereich entfernen" = "Odstrániť pracovný priestor";
 "Arbeitsbereich nicht vertraut" = "Pracovný priestor nie je dôveryhodný";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "Premenovať pracovný priestor kliknutím na jeho názov";
 "Arbeitsbereich umbenennen" = "Premenovať pracovný priestor";
 "Arbeitsbereich vertrauen" = "Dôverovať pracovnému priestoru";
 "Arbeitsbereich vertrauen?" = "Dôverovať pracovnému priestoru?";
@@ -134,6 +135,7 @@
 "Ausgabestil" = "Štýl výstupu";
 "Ausgabestil wählen" = "Vyberte štýl výstupu";
 "Ausgeschaltet" = "Vypnuté";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "Keď je vypnuté, riadok nezobrazuje ceruzku a premenovať sa dá len z kontextovej ponuky riadka.";
 "Ausschneiden" = "Vystrihnúť";
 "Auswahl" = "Filter";
 "Auswahl anhängen" = "Pripojiť výber";

@@ -54,6 +54,8 @@
 "Die Einstellungsdatei lässt sich nicht lesen: {}" = "Soubor nastavení nelze přečíst: {}";
 "Die Einstellungsdatei lässt sich nicht schreiben: {}" = "Soubor nastavení nelze zapsat: {}";
 "Die Seitenleiste listet die Arbeitsbereiche; ihre Taste in der Werkzeugleiste blendet sie je Fenster aus." = "Boční panel uvádí pracovní prostory; jeho tlačítko na nástrojovém panelu jej skryje pro každé okno zvlášť.";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "Přejmenovat pracovní prostor kliknutím na jeho název";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "Když je vypnuto, řádek nezobrazuje tužku a přejmenovat lze jen z místní nabídky řádku.";
 "Die gewählte Wahltaste sendet Escape-Folgen statt Sonderzeichen." = "Zvolená klávesa Alt odesílá escape sekvence místo zvláštních znaků.";
 "Dienste" = "Služby";
 "Diese Programme laufen noch und werden beendet: {}" = "Tyto programy stále běží a budou ukončeny: {}";

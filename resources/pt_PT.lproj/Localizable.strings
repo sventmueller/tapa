@@ -98,6 +98,7 @@
 "Arbeitet" = "A trabalhar";
 "Arbeitsbereich entfernen" = "Remover espaço de trabalho";
 "Arbeitsbereich nicht vertraut" = "Espaço de trabalho não fidedigno";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "Mudar o nome de um espaço de trabalho clicando no nome";
 "Arbeitsbereich umbenennen" = "Mudar o nome do espaço de trabalho";
 "Arbeitsbereich vertrauen" = "Confiar no espaço de trabalho";
 "Arbeitsbereich vertrauen?" = "Confiar no espaço de trabalho?";
@@ -134,6 +135,7 @@
 "Ausgabestil" = "Estilo de saída";
 "Ausgabestil wählen" = "Escolher o estilo de saída";
 "Ausgeschaltet" = "Desativado";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "Desativado, a linha não mostra o lápis e só é possível mudar o nome pelo menu de atalhos da linha.";
 "Ausschneiden" = "Cortar";
 "Auswahl" = "Filtro";
 "Auswahl anhängen" = "Anexar seleção";

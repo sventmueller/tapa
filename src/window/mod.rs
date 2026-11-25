@@ -317,8 +317,8 @@ impl Window {
             .is_some_and(|tab| plus_menu::choose(self.id(), tab, title))
     }
 
-    /// Follows the settings: the sidebars show or hide where their setting changed, and the tab titles take the
-    /// interface size.
+    /// Follows the settings: the sidebars show or hide where their setting changed and rename on a click or not, and
+    /// the tab titles take the interface size.
     pub(crate) fn config_changed(self: &Rc<Self>) {
         if self.is_quick() {
             return self.quick_config_changed();
@@ -327,8 +327,10 @@ impl Window {
         if self.sidebar_setting.replace(wanted) != wanted && self.sidebar_shown() != wanted {
             self.flip_sidebar();
         }
+        let click_renames = app().config().window.rename_on_click;
         for frame in self.frames.borrow().iter() {
             frame.invalidate_tab_title();
+            frame.sidebar.set_click_renames(click_renames);
         }
         self.refresh();
     }

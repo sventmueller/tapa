@@ -98,6 +98,7 @@
 "Arbeitet" = "Bekerja";
 "Arbeitsbereich entfernen" = "Hapus Ruang Kerja";
 "Arbeitsbereich nicht vertraut" = "Ruang kerja tidak dipercaya";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "Ganti nama ruang kerja dengan mengeklik namanya";
 "Arbeitsbereich umbenennen" = "Ganti Nama Ruang Kerja";
 "Arbeitsbereich vertrauen" = "Percayai Ruang Kerja";
 "Arbeitsbereich vertrauen?" = "Percayai ruang kerja?";
@@ -134,6 +135,7 @@
 "Ausgabestil" = "Gaya keluaran";
 "Ausgabestil wählen" = "Pilih gaya keluaran";
 "Ausgeschaltet" = "Nonaktif";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "Jika dimatikan, baris tidak menampilkan pensil, dan nama hanya dapat diganti dari menu pintasan baris.";
 "Ausschneiden" = "Potong";
 "Auswahl" = "Filter";
 "Auswahl anhängen" = "Lampirkan Pilihan";

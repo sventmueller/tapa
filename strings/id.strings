@@ -54,6 +54,8 @@
 "Die Einstellungsdatei lässt sich nicht lesen: {}" = "File pengaturan tidak dapat dibaca: {}";
 "Die Einstellungsdatei lässt sich nicht schreiben: {}" = "File pengaturan tidak dapat ditulis: {}";
 "Die Seitenleiste listet die Arbeitsbereiche; ihre Taste in der Werkzeugleiste blendet sie je Fenster aus." = "Bar samping menampilkan ruang kerja; tombolnya di bar alat menyembunyikannya per jendela.";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "Ganti nama ruang kerja dengan mengeklik namanya";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "Jika dimatikan, baris tidak menampilkan pensil, dan nama hanya dapat diganti dari menu pintasan baris.";
 "Die gewählte Wahltaste sendet Escape-Folgen statt Sonderzeichen." = "Tombol Option yang dipilih mengirim urutan escape, bukan karakter khusus.";
 "Dienste" = "Layanan";
 "Diese Programme laufen noch und werden beendet: {}" = "Program ini masih berjalan dan akan dihentikan: {}";

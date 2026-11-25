@@ -54,6 +54,8 @@
 "Die Einstellungsdatei lässt sich nicht lesen: {}" = "설정 파일을 읽을 수 없습니다: {}";
 "Die Einstellungsdatei lässt sich nicht schreiben: {}" = "설정 파일에 쓸 수 없습니다: {}";
 "Die Seitenleiste listet die Arbeitsbereiche; ihre Taste in der Werkzeugleiste blendet sie je Fenster aus." = "사이드바에는 작업 공간이 나열됩니다. 도구 막대의 버튼으로 윈도우마다 가릴 수 있습니다.";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "이름을 클릭하여 작업 공간 이름 변경";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "끄면 행에 연필이 표시되지 않고, 행의 컨텍스트 메뉴에서만 이름을 변경할 수 있습니다.";
 "Die gewählte Wahltaste sendet Escape-Folgen statt Sonderzeichen." = "선택한 Option 키가 특수 문자 대신 이스케이프 시퀀스를 보냅니다.";
 "Dienste" = "서비스";
 "Diese Programme laufen noch und werden beendet: {}" = "다음 프로그램이 아직 실행 중이며 종료됩니다: {}";

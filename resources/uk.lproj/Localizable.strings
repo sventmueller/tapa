@@ -98,6 +98,7 @@
 "Arbeitet" = "Працює";
 "Arbeitsbereich entfernen" = "Вилучити робочу область";
 "Arbeitsbereich nicht vertraut" = "Робочий простір не довірений";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "Перейменовувати робочий простір натисканням на його назву";
 "Arbeitsbereich umbenennen" = "Перейменувати робочий простір";
 "Arbeitsbereich vertrauen" = "Довіряти робочому простору";
 "Arbeitsbereich vertrauen?" = "Довіряти робочій області?";
@@ -134,6 +135,7 @@
 "Ausgabestil" = "Стиль виводу";
 "Ausgabestil wählen" = "Виберіть стиль виводу";
 "Ausgeschaltet" = "Вимкнено";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "Якщо вимкнено, рядок не показує олівця, а перейменувати можна лише з контекстного меню рядка.";
 "Ausschneiden" = "Вирізати";
 "Auswahl" = "Фільтр";
 "Auswahl anhängen" = "Прикріпити вибране";

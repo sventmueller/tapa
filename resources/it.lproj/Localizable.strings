@@ -98,6 +98,7 @@
 "Arbeitet" = "Al lavoro";
 "Arbeitsbereich entfernen" = "Rimuovi spazio di lavoro";
 "Arbeitsbereich nicht vertraut" = "Spazio di lavoro non attendibile";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "Rinomina uno spazio di lavoro facendo clic sul nome";
 "Arbeitsbereich umbenennen" = "Rinomina spazio di lavoro";
 "Arbeitsbereich vertrauen" = "Considera attendibile lo spazio di lavoro";
 "Arbeitsbereich vertrauen?" = "Considerare attendibile lo spazio di lavoro?";
@@ -134,6 +135,7 @@
 "Ausgabestil" = "Stile di output";
 "Ausgabestil wählen" = "Scegli lo stile di output";
 "Ausgeschaltet" = "Disattivato";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "Se disattivato, la riga non mostra la matita e si rinomina solo dal menu contestuale della riga.";
 "Ausschneiden" = "Taglia";
 "Auswahl" = "Filtro";
 "Auswahl anhängen" = "Allega selezione";

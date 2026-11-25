@@ -54,6 +54,8 @@
 "Die Einstellungsdatei lässt sich nicht lesen: {}" = "無法讀取設定檔：{}";
 "Die Einstellungsdatei lässt sich nicht schreiben: {}" = "無法寫入設定檔：{}";
 "Die Seitenleiste listet die Arbeitsbereiche; ihre Taste in der Werkzeugleiste blendet sie je Fenster aus." = "側邊欄列出各個工作區；工具列中的側邊欄按鈕可在每個視窗中個別隱藏它。";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "按一下名稱以重新命名工作區";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "關閉後，列中不顯示鉛筆，只能透過該列的快速鍵選單重新命名。";
 "Die gewählte Wahltaste sendet Escape-Folgen statt Sonderzeichen." = "所選的 Option 鍵會送出跳脫序列，而非特殊字元。";
 "Dienste" = "服務";
 "Diese Programme laufen noch und werden beendet: {}" = "以下程式仍在執行，將被結束：{}";

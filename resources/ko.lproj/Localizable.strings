@@ -98,6 +98,7 @@
 "Arbeitet" = "작업 중";
 "Arbeitsbereich entfernen" = "작업 공간 제거";
 "Arbeitsbereich nicht vertraut" = "신뢰하지 않는 작업 공간";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "이름을 클릭하여 작업 공간 이름 변경";
 "Arbeitsbereich umbenennen" = "작업 공간 이름 변경";
 "Arbeitsbereich vertrauen" = "작업 공간 신뢰";
 "Arbeitsbereich vertrauen?" = "작업 공간을 신뢰하시겠습니까?";
@@ -134,6 +135,7 @@
 "Ausgabestil" = "출력 스타일";
 "Ausgabestil wählen" = "출력 스타일 선택";
 "Ausgeschaltet" = "꺼짐";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "끄면 행에 연필이 표시되지 않고, 행의 컨텍스트 메뉴에서만 이름을 변경할 수 있습니다.";
 "Ausschneiden" = "오려두기";
 "Auswahl" = "필터";
 "Auswahl anhängen" = "선택 영역 첨부";

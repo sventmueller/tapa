@@ -54,6 +54,8 @@
 "Die Einstellungsdatei lässt sich nicht lesen: {}" = "設定ファイルを読み込めません：{}";
 "Die Einstellungsdatei lässt sich nicht schreiben: {}" = "設定ファイルに書き込めません：{}";
 "Die Seitenleiste listet die Arbeitsbereiche; ihre Taste in der Werkzeugleiste blendet sie je Fenster aus." = "サイドバーにはワークスペースが一覧表示されます。ツールバーのボタンでウインドウごとに隠せます。";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "名前をクリックしてワークスペース名を変更";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "オフのときは行に鉛筆が表示されず、名前は行のコンテキストメニューからのみ変更できます。";
 "Die gewählte Wahltaste sendet Escape-Folgen statt Sonderzeichen." = "選択したOptionキーは特殊文字の代わりにエスケープシーケンスを送信します。";
 "Dienste" = "サービス";
 "Diese Programme laufen noch und werden beendet: {}" = "次のプログラムは実行中で、終了されます：{}";

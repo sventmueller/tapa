@@ -98,6 +98,7 @@
 "Arbeitet" = "Εργάζεται";
 "Arbeitsbereich entfernen" = "Αφαίρεση χώρου εργασίας";
 "Arbeitsbereich nicht vertraut" = "Μη αξιόπιστος χώρος εργασίας";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "Μετονομασία χώρου εργασίας με κλικ στο όνομά του";
 "Arbeitsbereich umbenennen" = "Μετονομασία χώρου εργασίας";
 "Arbeitsbereich vertrauen" = "Εμπιστοσύνη στον χώρο εργασίας";
 "Arbeitsbereich vertrauen?" = "Εμπιστοσύνη στον χώρο εργασίας;";
@@ -134,6 +135,7 @@
 "Ausgabestil" = "Στυλ εξόδου";
 "Ausgabestil wählen" = "Επιλογή στυλ εξόδου";
 "Ausgeschaltet" = "Απενεργοποιημένο";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "Όταν είναι απενεργοποιημένο, η σειρά δεν δείχνει μολύβι και η μετονομασία γίνεται μόνο από το μενού συντομεύσεων της σειράς.";
 "Ausschneiden" = "Αποκοπή";
 "Auswahl" = "Μοτίβο";
 "Auswahl anhängen" = "Επισύναψη επιλογής";

@@ -98,6 +98,7 @@
 "Arbeitet" = "Pracuje";
 "Arbeitsbereich entfernen" = "Usuń obszar roboczy";
 "Arbeitsbereich nicht vertraut" = "Obszar roboczy niezaufany";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "Zmieniaj nazwę obszaru roboczego kliknięciem w nazwę";
 "Arbeitsbereich umbenennen" = "Zmień nazwę obszaru roboczego";
 "Arbeitsbereich vertrauen" = "Zaufaj obszarowi roboczemu";
 "Arbeitsbereich vertrauen?" = "Zaufać obszarowi roboczemu?";
@@ -134,6 +135,7 @@
 "Ausgabestil" = "Styl odpowiedzi";
 "Ausgabestil wählen" = "Wybierz styl odpowiedzi";
 "Ausgeschaltet" = "Wyłączone";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "Po wyłączeniu wiersz nie pokazuje ołówka, a nazwę można zmienić tylko z menu podręcznego wiersza.";
 "Ausschneiden" = "Wytnij";
 "Auswahl" = "Filtr";
 "Auswahl anhängen" = "Załącz zaznaczenie";

@@ -54,6 +54,8 @@
 "Die Einstellungsdatei lässt sich nicht lesen: {}" = "Súbor nastavení sa nedá prečítať: {}";
 "Die Einstellungsdatei lässt sich nicht schreiben: {}" = "Súbor nastavení sa nedá zapísať: {}";
 "Die Seitenleiste listet die Arbeitsbereiche; ihre Taste in der Werkzeugleiste blendet sie je Fenster aus." = "Bočný panel zobrazuje pracovné priestory; jeho tlačidlo na paneli nástrojov ho skryje pre každé okno zvlášť.";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "Premenovať pracovný priestor kliknutím na jeho názov";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "Keď je vypnuté, riadok nezobrazuje ceruzku a premenovať sa dá len z kontextovej ponuky riadka.";
 "Die gewählte Wahltaste sendet Escape-Folgen statt Sonderzeichen." = "Zvolený kláves Option posiela escape sekvencie namiesto špeciálnych znakov.";
 "Dienste" = "Služby";
 "Diese Programme laufen noch und werden beendet: {}" = "Tieto programy stále bežia a budú ukončené: {}";

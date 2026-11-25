@@ -54,6 +54,8 @@
 "Die Einstellungsdatei lässt sich nicht lesen: {}" = "Het instellingenbestand kan niet worden gelezen: {}";
 "Die Einstellungsdatei lässt sich nicht schreiben: {}" = "Het instellingenbestand kan niet worden geschreven: {}";
 "Die Seitenleiste listet die Arbeitsbereiche; ihre Taste in der Werkzeugleiste blendet sie je Fenster aus." = "De navigatiekolom toont de werkruimtes; de knop ervan in de knoppenbalk verbergt hem per venster.";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "Wijzig de naam van een werkruimte door op de naam te klikken";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "Indien uit, toont de rij geen potlood en kan de naam alleen via het contextuele menu van de rij worden gewijzigd.";
 "Die gewählte Wahltaste sendet Escape-Folgen statt Sonderzeichen." = "De gekozen Option-toets stuurt escapereeksen in plaats van speciale tekens.";
 "Dienste" = "Voorzieningen";
 "Diese Programme laufen noch und werden beendet: {}" = "Deze programma’s draaien nog en worden beëindigd: {}";

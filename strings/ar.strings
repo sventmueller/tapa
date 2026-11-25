@@ -54,6 +54,8 @@
 "Die Einstellungsdatei lässt sich nicht lesen: {}" = "تعذرت قراءة ملف الإعدادات: {}";
 "Die Einstellungsdatei lässt sich nicht schreiben: {}" = "تعذرت كتابة ملف الإعدادات: {}";
 "Die Seitenleiste listet die Arbeitsbereiche; ihre Taste in der Werkzeugleiste blendet sie je Fenster aus." = "يعرض الشريط الجانبي مساحات العمل؛ ويخفيه زره في شريط الأدوات لكل نافذة على حدة.";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "إعادة تسمية مساحة العمل بالنقر على اسمها";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "عند إيقافه لا يظهر القلم في الصف، ولا تتم إعادة التسمية إلا من قائمة الاختصارات للصف.";
 "Die gewählte Wahltaste sendet Escape-Folgen statt Sonderzeichen." = "يرسل مفتاح الخيار المحدد تسلسلات هروب بدلًا من الأحرف الخاصة.";
 "Dienste" = "الخدمات";
 "Diese Programme laufen noch und werden beendet: {}" = "هذه البرامج لا تزال قيد التشغيل وسيتم إنهاؤها: {}";

@@ -98,6 +98,7 @@
 "Arbeitet" = "กำลังทำงาน";
 "Arbeitsbereich entfernen" = "เอาพื้นที่ทำงานออก";
 "Arbeitsbereich nicht vertraut" = "พื้นที่ทำงานที่ไม่น่าเชื่อถือ";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "เปลี่ยนชื่อพื้นที่ทำงานโดยคลิกที่ชื่อ";
 "Arbeitsbereich umbenennen" = "เปลี่ยนชื่อพื้นที่ทำงาน";
 "Arbeitsbereich vertrauen" = "เชื่อถือพื้นที่ทำงาน";
 "Arbeitsbereich vertrauen?" = "ไว้วางใจพื้นที่ทำงานหรือไม่";
@@ -134,6 +135,7 @@
 "Ausgabestil" = "รูปแบบเอาต์พุต";
 "Ausgabestil wählen" = "เลือกรูปแบบเอาต์พุต";
 "Ausgeschaltet" = "ปิดอยู่";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "เมื่อปิด แถวจะไม่แสดงดินสอ และจะเปลี่ยนชื่อได้จากเมนูคำสั่งลัดของแถวเท่านั้น";
 "Ausschneiden" = "ตัด";
 "Auswahl" = "ตัวกรอง";
 "Auswahl anhängen" = "แนบส่วนที่เลือก";

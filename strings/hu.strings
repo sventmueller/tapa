@@ -54,6 +54,8 @@
 "Die Einstellungsdatei lässt sich nicht lesen: {}" = "A beállításfájl nem olvasható: {}";
 "Die Einstellungsdatei lässt sich nicht schreiben: {}" = "A beállításfájl nem írható: {}";
 "Die Seitenleiste listet die Arbeitsbereiche; ihre Taste in der Werkzeugleiste blendet sie je Fenster aus." = "Az oldalsáv a munkaterületeket listázza; az eszközsoron lévő gombja ablakonként elrejti.";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "Munkaterület átnevezése a nevére kattintva";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "Kikapcsolva a sor nem mutat ceruzát, és átnevezni csak a sor helyi menüjéből lehet.";
 "Die gewählte Wahltaste sendet Escape-Folgen statt Sonderzeichen." = "A választott Option billentyű vezérlősorozatokat küld különleges karakterek helyett.";
 "Dienste" = "Szolgáltatások";
 "Diese Programme laufen noch und werden beendet: {}" = "Ezek a programok még futnak, és leállnak: {}";

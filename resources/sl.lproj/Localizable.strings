@@ -98,6 +98,7 @@
 "Arbeitet" = "Dela";
 "Arbeitsbereich entfernen" = "Odstrani delovni prostor";
 "Arbeitsbereich nicht vertraut" = "Delovni prostor ni zaupanja vreden";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "Preimenuj delovni prostor s klikom na ime";
 "Arbeitsbereich umbenennen" = "Preimenuj delovni prostor";
 "Arbeitsbereich vertrauen" = "Zaupaj delovnemu prostoru";
 "Arbeitsbereich vertrauen?" = "Zaupate delovnemu prostoru?";
@@ -134,6 +135,7 @@
 "Ausgabestil" = "Slog izhoda";
 "Ausgabestil wählen" = "Izberite slog izhoda";
 "Ausgeschaltet" = "Izklopljeno";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "Ko je izklopljeno, vrstica ne prikaže svinčnika, preimenovati pa je mogoče le v kontekstnem meniju vrstice.";
 "Ausschneiden" = "Izreži";
 "Auswahl" = "Filter";
 "Auswahl anhängen" = "Priloži izbor";

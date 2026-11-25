@@ -98,6 +98,7 @@
 "Arbeitet" = "Lucrează";
 "Arbeitsbereich entfernen" = "Eliminați spațiul de lucru";
 "Arbeitsbereich nicht vertraut" = "Spațiu de lucru neconsiderat de încredere";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "Redenumiți un spațiu de lucru făcând clic pe nume";
 "Arbeitsbereich umbenennen" = "Redenumiți spațiul de lucru";
 "Arbeitsbereich vertrauen" = "Considerați spațiul de lucru de încredere";
 "Arbeitsbereich vertrauen?" = "Acordați încredere spațiului de lucru?";
@@ -134,6 +135,7 @@
 "Ausgabestil" = "Stil de ieșire";
 "Ausgabestil wählen" = "Alegeți stilul de ieșire";
 "Ausgeschaltet" = "Dezactivat";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "Când este dezactivat, rândul nu afișează creionul, iar redenumirea se face doar din meniul contextual al rândului.";
 "Ausschneiden" = "Tăiați";
 "Auswahl" = "Filtru";
 "Auswahl anhängen" = "Atașați selecția";

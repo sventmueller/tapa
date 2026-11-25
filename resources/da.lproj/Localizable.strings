@@ -98,6 +98,7 @@
 "Arbeitet" = "Arbejder";
 "Arbeitsbereich entfernen" = "Fjern arbejdsområde";
 "Arbeitsbereich nicht vertraut" = "Arbejdsområde ikke betroet";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "Omdøb et arbejdsområde ved at klikke på navnet";
 "Arbeitsbereich umbenennen" = "Omdøb arbejdsområde";
 "Arbeitsbereich vertrauen" = "Stol på arbejdsområdet";
 "Arbeitsbereich vertrauen?" = "Stol på arbejdsområdet?";
@@ -134,6 +135,7 @@
 "Ausgabestil" = "Outputstil";
 "Ausgabestil wählen" = "Vælg outputstil";
 "Ausgeschaltet" = "Slået fra";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "Når det er slået fra, viser rækken ingen blyant, og der kan kun omdøbes via rækkens genvejsmenu.";
 "Ausschneiden" = "Klip";
 "Auswahl" = "Mønster";
 "Auswahl anhängen" = "Vedhæft det valgte";

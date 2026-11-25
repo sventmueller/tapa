@@ -98,6 +98,7 @@
 "Arbeitet" = "Treballant";
 "Arbeitsbereich entfernen" = "Eliminar l’espai de treball";
 "Arbeitsbereich nicht vertraut" = "Espai de treball no de confiança";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "Canviar el nom d’un espai de treball fent clic al nom";
 "Arbeitsbereich umbenennen" = "Canviar el nom de l’espai de treball";
 "Arbeitsbereich vertrauen" = "Confiar en l’espai de treball";
 "Arbeitsbereich vertrauen?" = "Vols confiar en l’espai de treball?";
@@ -134,6 +135,7 @@
 "Ausgabestil" = "Estil de sortida";
 "Ausgabestil wählen" = "Tria l’estil de sortida";
 "Ausgeschaltet" = "Desactivat";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "Si està desactivat, la fila no mostra el llapis i el nom només es canvia des del menú contextual de la fila.";
 "Ausschneiden" = "Retallar";
 "Auswahl" = "Patró";
 "Auswahl anhängen" = "Adjunta la selecció";

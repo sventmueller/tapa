@@ -98,6 +98,7 @@
 "Arbeitet" = "工作中";
 "Arbeitsbereich entfernen" = "移除工作区";
 "Arbeitsbereich nicht vertraut" = "工作区未受信任";
+"Arbeitsbereich per Klick auf den Namen umbenennen" = "点按名称以重命名工作区";
 "Arbeitsbereich umbenennen" = "重命名工作区";
 "Arbeitsbereich vertrauen" = "信任工作区";
 "Arbeitsbereich vertrauen?" = "信任此工作区？";
@@ -134,6 +135,7 @@
 "Ausgabestil" = "输出样式";
 "Ausgabestil wählen" = "选择输出样式";
 "Ausgeschaltet" = "已关闭";
+"Ausgeschaltet zeigt die Zeile keinen Stift, und umbenannt wird nur über das Kontextmenü der Zeile." = "关闭后，行中不显示铅笔，只能通过该行的快捷菜单重命名。";
 "Ausschneiden" = "剪切";
 "Auswahl" = "匹配器";
 "Auswahl anhängen" = "附加所选内容";
