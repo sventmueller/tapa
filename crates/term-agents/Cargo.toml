@@ -32,6 +32,7 @@ term-opencode.workspace = true
 term-process.workspace = true
 term-thread.workspace = true
 serde_json.workspace = true
+term-workspace-hack.workspace = true
 
 [dev-dependencies]
 # Itself with the scripted session and the stand-ins, for the integration tests.

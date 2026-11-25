@@ -14,3 +14,4 @@ workspace = true
 term-base.workspace = true
 objc2-core-foundation.workspace = true
 objc2-security = { workspace = true, features = ["std", "SecBase", "SecItem"] }
+term-workspace-hack.workspace = true

@@ -11,3 +11,4 @@ publish.workspace = true
 workspace = true
 
 [dependencies]
+term-workspace-hack.workspace = true

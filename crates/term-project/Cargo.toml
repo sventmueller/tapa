@@ -16,6 +16,7 @@ ignore.workspace = true
 notify.workspace = true
 splat-i18n.workspace = true
 unicode-normalization = "0.1.26"
+term-workspace-hack.workspace = true
 
 [dev-dependencies]
 term-base = { workspace = true, features = ["testing"] }

@@ -19,6 +19,7 @@ libc.workspace = true
 memchr.workspace = true
 unicode-width = "0.2"
 regex = { version = "1", default-features = false, features = ["std", "perf", "unicode"] }
+term-workspace-hack.workspace = true
 
 [dev-dependencies]
 proptest = "1.12.0"

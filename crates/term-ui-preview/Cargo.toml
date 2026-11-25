@@ -29,6 +29,7 @@ objc2 = { workspace = true, features = ["catch-all"] }
 objc2-app-kit.workspace = true
 objc2-foundation.workspace = true
 libc = { workspace = true, optional = true }
+term-workspace-hack.workspace = true
 
 [dev-dependencies]
 term-base = { workspace = true, features = ["testing"] }

@@ -27,6 +27,7 @@ term-process.workspace = true
 term-thread.workspace = true
 serde.workspace = true
 serde_json.workspace = true
+term-workspace-hack.workspace = true
 
 [dev-dependencies]
 # Itself with the stand-in, for the integration tests.

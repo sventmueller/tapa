@@ -16,3 +16,4 @@ term-panes.workspace = true
 objc2 = { workspace = true, features = ["catch-all"] }
 objc2-app-kit.workspace = true
 objc2-foundation.workspace = true
+term-workspace-hack.workspace = true

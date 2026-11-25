@@ -29,6 +29,7 @@ objc2-core-text.workspace = true
 objc2-foundation.workspace = true
 objc2-metal.workspace = true
 objc2-quartz-core.workspace = true
+term-workspace-hack.workspace = true
 
 [dev-dependencies]
 term-base = { workspace = true, features = ["testing"] }

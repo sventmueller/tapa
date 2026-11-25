@@ -1,6 +1,6 @@
 # Entry points only; the build logic lives in xtask/src.
 .DEFAULT_GOAL := help
-.PHONY: help build run check-dictation selftest esctest ghostty-vt icon lint check perf fuzz fuzz-parser release release-notarized deploy
+.PHONY: help build run check-dictation selftest esctest ghostty-vt icon sweep lint check perf fuzz fuzz-parser release release-notarized deploy
 
 help: ## List the targets
 	@awk 'BEGIN {FS = ":.*## "} /^[a-z-]+:.*## / {printf "  %-12s %s\n", $$1, $$2}' $(MAKEFILE_LIST)
@@ -23,8 +23,10 @@ ghostty-vt: ## Build libghostty-vt (needs zig and network) for term-fuzz's compa
 icon: ## Render assets/logo/app-icon.svg into resources/AppIcon.icns (needs resvg)
 	cargo xtask icon
 
-lint: ## Formatting, clippy with warnings as errors, the files' shape and the interface texts
+lint: ## Formatting, the workspace-hack (E24), clippy with warnings as errors, the files' shape and the interface texts
 	cargo fmt --all --check
+	cargo hakari generate --diff --quiet
+	cargo hakari manage-deps --dry-run --quiet
 	cargo clippy --workspace --all-targets -- -D warnings
 	cargo clippy --workspace --all-targets --features tapa/selftest,term-session/fuzzing -- -D warnings
 	cargo xtask structure
@@ -35,7 +37,10 @@ check-dictation: ## Clippy and the tests of the app and term-ui-dictation with d
 	cargo clippy --release -p tapa -p term-ui-dictation --all-targets --features tapa/dictation,tapa/selftest,term-ui-dictation/engine,term-ui-dictation/selftest -- -D warnings
 	cargo test --release -p term-ui-dictation --features engine
 
-check: lint ## lint, then all tests; needs no window and no network
+sweep: ## Remove what no build read lately from the build folders shared by all workspaces; DRY=1 only reports
+	cargo xtask sweep $(if $(DRY),--dry-run)
+
+check: sweep lint ## sweep and lint, then all tests; needs no window and no network
 	cargo test --workspace
 
 perf: ## The bench of the plan's section 3 (E6) against the pinned Ghostty: spread, crate budgets, start and vtebench throughput of both; meaningful only on an idle Mac

@@ -1,32 +1,26 @@
 //! Fills the build folder of a new worktree with the dependencies the main checkout has built, as APFS clones that take
 //! no space until either side writes them, so the worktree builds only its own crates. git runs it for every
 //! `git worktree add` through the post-checkout hook in `xtask/hooks`; Claude Code, which creates its worktrees without
-//! git's hooks, through its PreToolUse hook before the first command in one. Taken over from Dango's
-//! `xtask/src/seed.rs` with the parts of its `xtask/src/sweep.rs` it uses, at Dango's commit c59fb253.
+//! git's hooks, through its PreToolUse hook before the first command in one.
+//! Taken over from Dango's `xtask/src/seed.rs` at commit e9710234.
 
 use std::collections::{BTreeMap, HashSet};
-use std::fs::{self, File, OpenOptions};
+use std::fs;
 use std::io::Read as _;
 use std::os::unix::ffi::OsStrExt;
 use std::os::unix::fs::symlink;
 use std::path::{Path, PathBuf};
-use std::process::Command;
-use std::time::{Duration, SystemTime};
+use std::time::SystemTime;
 
+use crate::sweep::{self, POLICY};
 use crate::{Shell, System, files};
 
-/// The file in a filled build folder that names its worktree; Dango's sweep reads it to remove the folder with the
-/// worktree, so the name stays Dango's.
+/// The file in a filled build folder that names its worktree, so that the sweep removes the folder with the worktree;
+/// Dango's sweep reads the same name.
 pub(crate) const WORKTREE: &str = ".xtask-worktree";
 
 /// The file in a worktree's git folder that says it was filled, whatever came of it.
 const SEEDED: &str = "xtask-seeded";
-
-/// How long before the newest read in the main checkout's folder a unit may have been read and still be cloned.
-const MAX_AGE: Duration = Duration::from_secs(7 * 24 * 60 * 60);
-
-/// How often `lock` tries before it takes a folder as held by a build.
-const LOCK_TRIES: u32 = 10;
 
 /// `cargo xtask seed <worktree>`, or `seed --hook` with the input of a Claude Code hook.
 pub(crate) fn seed(args: &[String]) -> Result<(), String> {
@@ -62,9 +56,9 @@ fn seed_worktree(worktree: &Path) -> Result<(), String> {
         return Err(format!("{} is no worktree of {}", worktree.display(), main.display()));
     };
     files::write(git_dir.join(SEEDED), "")?;
-    let from = build_dir(&main)?;
-    let to = build_dir(&worktree)?;
-    if from == to || shared_root(&to).is_none() {
+    let from = sweep::build_dir(&main)?;
+    let to = sweep::build_dir(&worktree)?;
+    if from == to || sweep::shared_root(&to).is_none() {
         println!("seed: {} has no build folder of its own", worktree.display());
         return Ok(());
     }
@@ -90,12 +84,12 @@ fn linked_worktree(dir: &Path, main: &Path) -> Option<(PathBuf, PathBuf)> {
 
 /// The packages of the main checkout's builds that come from a registry, not from a folder.
 fn registry_packages() -> Result<HashSet<String>, String> {
-    let shown =
-        System.stdout(
-            cargo()
-                .current_dir(crate::root())
-                .args(["metadata", "--format-version", "1", "--offline"]),
-        )?;
+    let shown = System.stdout(sweep::cargo().current_dir(crate::root()).args([
+        "metadata",
+        "--format-version",
+        "1",
+        "--offline",
+    ]))?;
     let metadata: serde_json::Value = serde_json::from_str(&shown).map_err(|e| format!("cargo metadata: {e}"))?;
     Ok(metadata["packages"]
         .as_array()
@@ -104,38 +98,6 @@ fn registry_packages() -> Result<HashSet<String>, String> {
         .filter(|package| !package["source"].is_null())
         .filter_map(|package| package["name"].as_str().map(str::to_owned))
         .collect())
-}
-
-/// The build folder of the workspace in `dir`, as cargo reports it.
-fn build_dir(dir: &Path) -> Result<PathBuf, String> {
-    let shown = System.stdout(cargo().current_dir(dir).args([
-        "metadata",
-        "--format-version",
-        "1",
-        "--no-deps",
-        "--offline",
-    ]))?;
-    let metadata: serde_json::Value = serde_json::from_str(&shown).map_err(|e| format!("cargo metadata: {e}"))?;
-    metadata["build_directory"]
-        .as_str()
-        .map(PathBuf::from)
-        .ok_or_else(|| "cargo metadata names no build_directory".into())
-}
-
-/// The cargo that runs this task, or the one on the PATH.
-fn cargo() -> Command {
-    Command::new(std::env::var_os("CARGO").unwrap_or_else(|| "cargo".into()))
-}
-
-/// The folder that holds every workspace's build folder when `build-dir` names them by `{workspace-path-hash}`, which
-/// cargo writes as two hex digits, a slash and fourteen more.
-fn shared_root(build_dir: &Path) -> Option<PathBuf> {
-    let shard = build_dir.parent()?;
-    if is_hex(name(build_dir), 14) && is_hex(name(shard), 2) {
-        shard.parent().map(Path::to_path_buf)
-    } else {
-        None
-    }
 }
 
 /// Clones the recent debug units of `packages` from the build folder `from` into `to`, which it marks as `worktree`'s,
@@ -157,14 +119,14 @@ pub(crate) fn fill(
         files::copy(from.join("CACHEDIR.TAG"), &tag)?;
     }
     files::write(to.join(WORKTREE), worktree.as_os_str().as_bytes())?;
-    let (Some(_reading), Some(_writing)) = (lock(&source), lock(&dest)) else {
+    let (Some(_reading), Some(_writing)) = (sweep::lock(&source), sweep::lock(&dest)) else {
         return Ok(None);
     };
     let mut cloned = 0;
     for (package, units) in recent_units(&source.join("build"), packages) {
         let into = dest.join("build").join(package);
         for unit in units {
-            let clone = into.join(name(&unit));
+            let clone = into.join(sweep::name(&unit));
             if clone.exists() {
                 continue;
             }
@@ -197,17 +159,19 @@ fn clone_dir(from: &Path, to: &Path) -> Result<(), String> {
     Ok(())
 }
 
-/// The units in `build` of `packages`, by package, read within `MAX_AGE` of the newest read there; older ones are of an
-/// earlier compiler or dependency version.
+/// The units in `build` of `packages`, by package, read within the sweep's `max_age` of the newest read there; older
+/// ones are of an earlier compiler or dependency version, which the sweep removes anyway.
 fn recent_units(build: &Path, packages: &HashSet<String>) -> BTreeMap<String, Vec<PathBuf>> {
-    let read = |unit: &Path| last_read(&unit.join("fingerprint")).or_else(|| last_read(unit));
-    let units: Vec<(String, SystemTime, PathBuf)> = subdirs(build)
+    let read = |unit: &Path| sweep::last_read(&unit.join("fingerprint")).or_else(|| sweep::last_read(unit));
+    let units: Vec<(String, SystemTime, PathBuf)> = sweep::subdirs(build)
         .into_iter()
         .flat_map(|package| {
-            let name = name(&package).to_owned();
-            subdirs(&package).into_iter().map(move |unit| (name.clone(), unit))
+            let name = sweep::name(&package).to_owned();
+            sweep::subdirs(&package)
+                .into_iter()
+                .map(move |unit| (name.clone(), unit))
         })
-        .filter(|(_, unit)| is_hex(name(unit), 16))
+        .filter(|(_, unit)| sweep::is_hex(sweep::name(unit), 16))
         .filter_map(|(name, unit)| Some((name, read(&unit)?, unit)))
         .collect();
     let Some(newest) = units.iter().map(|(_, read, _)| *read).max() else {
@@ -215,74 +179,10 @@ fn recent_units(build: &Path, packages: &HashSet<String>) -> BTreeMap<String, Ve
     };
     let mut found: BTreeMap<String, Vec<PathBuf>> = BTreeMap::new();
     for (name, read, unit) in units {
-        if packages.contains(&name) && newest.duration_since(read).unwrap_or_default() <= MAX_AGE {
+        if packages.contains(&name) && sweep::age(newest, read) <= POLICY.max_age {
             found.entry(name).or_default().push(unit);
         }
     }
-    found
-}
-
-/// The lock cargo holds on a profile's folder while it builds there, unless a build holds it now.
-fn lock(dest: &Path) -> Option<File> {
-    let file = OpenOptions::new()
-        .read(true)
-        .write(true)
-        .create(true)
-        .truncate(false)
-        .open(dest.join(".cargo-build-lock"))
-        .ok()?;
-    // A process forked meanwhile holds a copy of a just released lock until it execs, a build holds it for good.
-    for _ in 0..LOCK_TRIES {
-        if file.try_lock().is_ok() {
-            return Some(file);
-        }
-        std::thread::sleep(Duration::from_millis(10));
-    }
-    None
-}
-
-/// When a build last read `path` or, for a folder, anything directly in it. macOS refreshes a file's access time once
-/// it is a day old, and cargo reads the fingerprint of every unit a build passes over. A folder counts by its
-/// modification only, since listing it refreshes its access time.
-fn last_read(path: &Path) -> Option<SystemTime> {
-    let meta = fs::symlink_metadata(path).ok()?;
-    let own = touched(&meta)?;
-    if !meta.is_dir() {
-        return Some(own);
-    }
-    let children = fs::read_dir(path)
-        .ok()?
-        .filter_map(|entry| entry.ok()?.metadata().ok())
-        .filter_map(|meta| touched(&meta));
-    Some(children.fold(own, SystemTime::max))
-}
-
-fn touched(meta: &fs::Metadata) -> Option<SystemTime> {
-    let modified = meta.modified().ok()?;
-    if meta.is_file() {
-        Some(meta.accessed().map_or(modified, |read| read.max(modified)))
-    } else {
-        Some(modified)
-    }
-}
-
-fn is_hex(text: &str, len: usize) -> bool {
-    text.len() == len && text.bytes().all(|b| b.is_ascii_hexdigit())
-}
-
-fn name(path: &Path) -> &str {
-    path.file_name().and_then(|n| n.to_str()).unwrap_or("")
-}
-
-fn subdirs(dir: &Path) -> Vec<PathBuf> {
-    let mut found: Vec<PathBuf> = fs::read_dir(dir)
-        .into_iter()
-        .flatten()
-        .filter_map(Result::ok)
-        .filter(|entry| entry.file_type().is_ok_and(|kind| kind.is_dir()))
-        .map(|entry| entry.path())
-        .collect();
-    found.sort();
     found
 }
 

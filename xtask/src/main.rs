@@ -17,6 +17,7 @@ mod shell;
 mod source;
 mod strings;
 mod structure;
+mod sweep;
 mod themes;
 mod universal;
 mod updates;
@@ -64,7 +65,8 @@ fn main() -> ExitCode {
         }),
         Some("deploy") => deploy::deploy(&args[1..]),
         Some("seed") => seed::seed(&args[1..]),
-        _ => Err("usage: cargo xtask bundle|run [--release] | selftest <steps> | esctest … | ghostty-vt | icon | structure | strings [alike] | themes <folder> | perf … | release [--notarize] [--layout] | deploy [--minor|--major] | seed <worktree>|--hook".into()),
+        Some("sweep") => sweep::sweep(&args[1..]),
+        _ => Err("usage: cargo xtask bundle|run [--release] | selftest <steps> | esctest … | ghostty-vt | icon | structure | strings [alike] | themes <folder> | perf … | release [--notarize] [--layout] | deploy [--minor|--major] | seed <worktree>|--hook | sweep [--dry-run]".into()),
     };
     match result {
         Ok(()) => ExitCode::SUCCESS,

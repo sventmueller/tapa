@@ -38,6 +38,7 @@ term-thread.workspace = true
 splat-i18n.workspace = true
 serde.workspace = true
 serde_json.workspace = true
+term-workspace-hack.workspace = true
 
 [dev-dependencies]
 term-base = { workspace = true, features = ["testing"] }

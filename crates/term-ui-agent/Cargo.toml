@@ -38,6 +38,7 @@ objc2-foundation.workspace = true
 objc2-quartz-core.workspace = true
 serde.workspace = true
 serde_json.workspace = true
+term-workspace-hack.workspace = true
 
 [dev-dependencies]
 term-base = { workspace = true, features = ["testing"] }

@@ -20,6 +20,7 @@ term-vt.workspace = true
 libc.workspace = true
 memchr.workspace = true
 polling.workspace = true
+term-workspace-hack.workspace = true
 
 [dev-dependencies]
 term-base = { workspace = true, features = ["testing"] }

@@ -42,6 +42,7 @@ term-ui-preview = { path = "crates/term-ui-preview" }
 term-ui-sidebar = { path = "crates/term-ui-sidebar" }
 term-vim = { path = "crates/term-vim" }
 term-vt = { path = "crates/term-vt" }
+term-workspace-hack = { path = "crates/term-workspace-hack" }
 splat-decoder = { path = "../splat/crates/splat-decoder" }
 splat-file-state = { path = "../splat/crates/splat-file-state" }
 splat-git = { path = "../splat/crates/splat-git" }
@@ -116,6 +117,10 @@ cast_possible_wrap = "warn"
 cast_sign_loss = "warn"
 unwrap_used = "warn"
 
+# The workspace-hack is a dependency no code uses by design (E24), and cargo cannot exempt a single dependency.
+[workspace.lints.cargo]
+unused_dependencies = "allow"
+
 [package]
 name = "tapa"
 version.workspace = true
@@ -180,6 +185,7 @@ objc2-user-notifications.workspace = true
 serde.workspace = true
 serde_json.workspace = true
 toml_edit.workspace = true
+term-workspace-hack.workspace = true
 
 [dev-dependencies]
 term-base = { workspace = true, features = ["testing"] }

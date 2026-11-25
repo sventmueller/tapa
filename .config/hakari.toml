@@ -1,0 +1,22 @@
+# Settings of `cargo hakari`, which keeps crates/term-workspace-hack current; see docs.rs/cargo-hakari for the options.
+
+hakari-package = "term-workspace-hack"
+dep-format-version = "4"
+workspace-hack-line-style = "workspace-dotted"
+resolver = "2"
+unify-target-host = "replicate-target-on-host"
+platforms = ["aarch64-apple-darwin", "x86_64-apple-darwin"]
+
+# xtask keeps its own dependencies out of the unification, as in Dango.
+[traversal-excludes]
+workspace-members = ["xtask"]
+
+# Members are simulated with all their features, so the self-test hooks of Splat would reach every build, the release
+# included.
+[final-excludes]
+third-party = [
+    { name = "splat-decoder", path = "../splat/crates/splat-decoder" },
+    { name = "splat-editor-state", path = "../splat/crates/splat-editor-state" },
+    { name = "splat-markdown", path = "../splat/crates/splat-markdown" },
+    { name = "splat-render", path = "../splat/crates/splat-render" },
+]

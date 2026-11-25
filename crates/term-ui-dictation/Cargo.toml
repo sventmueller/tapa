@@ -26,6 +26,7 @@ objc2-application-services = { workspace = true, optional = true }
 objc2-av-foundation = { workspace = true, optional = true }
 objc2-core-foundation = { workspace = true, optional = true }
 objc2-foundation = { workspace = true, optional = true }
+term-workspace-hack.workspace = true
 
 [features]
 # lowspeak and what talks to it; lowspeak builds whisper.cpp with cmake, so only the app's `dictation` turns it on.

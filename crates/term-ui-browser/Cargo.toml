@@ -23,6 +23,7 @@ objc2-core-foundation.workspace = true
 objc2-foundation.workspace = true
 objc2-security = { workspace = true, features = ["std", "objc2", "SecBase", "SecTrust"] }
 objc2-web-kit.workspace = true
+term-workspace-hack.workspace = true
 
 [dev-dependencies]
 term-base = { workspace = true, features = ["testing"] }
