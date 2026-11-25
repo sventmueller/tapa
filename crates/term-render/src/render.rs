@@ -416,6 +416,9 @@ pub struct Overlay<'a> {
     pub hide_cursor: bool,
     /// Text an input method is composing, shown at the cursor.
     pub marked: &'a str,
+    /// A suggestion for the rest of the line being typed and the cursor position it was made for; it shows faint
+    /// from the cursor on, and only while the cursor is still there.
+    pub ghost: Option<(Point, &'a str)>,
     /// A line drawn after the program ended, and where.
     pub final_line: Option<(usize, &'a str)>,
     /// The bell's flash.
@@ -591,6 +594,7 @@ pub fn paint_overlay(
         canvas.line(words, Face::Regular, x, baseline, theme.palette.foreground.dim());
     } else if overlay.marked.is_empty() {
         cursor(canvas, fonts, theme, screen, overlay);
+        crate::ghost::paint(canvas, fonts, theme, screen, overlay);
     }
     marked(canvas, fonts, theme, screen, overlay.marked);
     if overlay.flash {

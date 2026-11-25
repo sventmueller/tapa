@@ -153,6 +153,7 @@
 "Befehl:" = "Ukaz:";
 "Befehle" = "Ukazi";
 "Befehle als Blöcke markieren" = "Označi ukaze kot bloke";
+"Befehle einfärben" = "Obarvaj ukaze";
 "Befehle und Änderungen schreiben nur im Projekt, ohne Netzwerk" = "Ukazi in spremembe pišejo samo v projekt, brez omrežja";
 "Befehle, die bei Ereignissen laufen" = "Ukazi, ki se zaženejo ob dogodkih";
 "Befehlspalette …" = "Paleta ukazov…";
@@ -1059,6 +1060,7 @@
 "Umgebung:" = "Okolje:";
 "Umgehen" = "Obidi";
 "Unbekannt" = "Neznano";
+"Unbekannte Befehle unterstreichen" = "Podčrtaj neznane ukaze";
 "Unbekannter Digraph: {}" = "Neznan digraf: {}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "Neomejen dostop do interneta in vseh datotek v Macu.";
 "Unerwartete Antwort: {}" = "Nepričakovan odgovor: {}";

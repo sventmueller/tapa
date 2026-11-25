@@ -18,6 +18,7 @@ use objc2_app_kit::{
 use objc2_foundation::{NSEdgeInsets, NSNotification, NSObject, NSObjectProtocol, NSRect};
 use splat_i18n::t;
 
+pub(crate) use model::first_shown;
 pub use model::{glyphs, rank};
 
 use crate::kit::{activate, guarded, label, main_soon, ns};

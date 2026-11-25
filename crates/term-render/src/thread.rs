@@ -56,6 +56,8 @@ pub struct OverlayState {
     pub hide_cursor: bool,
     /// Text an input method is composing, shown at the cursor.
     pub marked: String,
+    /// A suggestion for the rest of the line being typed and the cursor position it was made for.
+    pub ghost: Option<(term_session::Point, String)>,
     /// A line drawn after the program ended, and where.
     pub final_line: Option<(usize, String)>,
     /// The bell's flash.
@@ -525,6 +527,7 @@ impl Surface {
             cursor_on: overlay.cursor_on,
             hide_cursor: overlay.hide_cursor,
             marked: &overlay.marked,
+            ghost: overlay.ghost.as_ref().map(|(point, text)| (*point, text.as_str())),
             final_line,
             flash: overlay.flash,
         };

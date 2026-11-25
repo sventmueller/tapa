@@ -153,6 +153,7 @@
 "Befehl:" = "Naredba:";
 "Befehle" = "Naredbe";
 "Befehle als Blöcke markieren" = "Označi naredbe kao blokove";
+"Befehle einfärben" = "Oboji naredbe";
 "Befehle und Änderungen schreiben nur im Projekt, ohne Netzwerk" = "Naredbe i izmjene zapisuju samo unutar projekta, bez mreže";
 "Befehle, die bei Ereignissen laufen" = "Naredbe koje se izvode pri događajima";
 "Befehlspalette …" = "Paleta naredbi…";
@@ -1059,6 +1060,7 @@
 "Umgebung:" = "Okruženje:";
 "Umgehen" = "Zaobilaženje";
 "Unbekannt" = "Nepoznato";
+"Unbekannte Befehle unterstreichen" = "Podcrtaj nepoznate naredbe";
 "Unbekannter Digraph: {}" = "Nepoznat digraf: {}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "Neograničen pristup internetu i svakoj datoteci na Macu.";
 "Unerwartete Antwort: {}" = "Neočekivani odgovor: {}";

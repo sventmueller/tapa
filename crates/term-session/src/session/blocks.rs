@@ -3,7 +3,7 @@
 
 use std::sync::atomic::Ordering;
 
-pub use term_vt::term::{Block, BlockState};
+pub use term_vt::term::{Block, BlockState, TypedLine};
 
 use super::Session;
 use crate::snapshot::Point;
@@ -121,6 +121,25 @@ impl Session {
         };
         self.write(key.repeat(steps.unsigned_abs()));
         true
+    }
+
+    /// The line the user types at the shell's prompt and the room after it, with the cursor where the next frame
+    /// shows it, for a suggestion drawn there (E7).
+    pub fn typed_line(&self) -> Option<(TypedLine, Point)> {
+        self.with_own(|own| {
+            let typed = own.terminal.typed_line()?;
+            let cursor = own.terminal.cursor();
+            let shown = own.shown_lines();
+            let offset = own.terminal.grid().display_offset;
+            let line = own.cursor_view_line(shown.as_deref(), cursor.line + offset);
+            Some((
+                typed,
+                Point {
+                    line,
+                    column: cursor.column,
+                },
+            ))
+        })
     }
 
     /// Leaves the live prompt out of the view while `hide`, as the input field stands in for it (E7); whether that

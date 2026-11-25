@@ -153,6 +153,7 @@
 "Befehl:" = "الأمر:";
 "Befehle" = "الأوامر";
 "Befehle als Blöcke markieren" = "تمييز الأوامر ككتل";
+"Befehle einfärben" = "تلوين الأوامر";
 "Befehle und Änderungen schreiben nur im Projekt, ohne Netzwerk" = "تكتب الأوامر والتعديلات داخل المشروع فقط، بدون شبكة";
 "Befehle, die bei Ereignissen laufen" = "أوامر تعمل عند وقوع أحداث";
 "Befehlspalette …" = "لوحة الأوامر…";
@@ -1059,6 +1060,7 @@
 "Umgebung:" = "البيئة:";
 "Umgehen" = "تجاوز";
 "Unbekannt" = "غير معروف";
+"Unbekannte Befehle unterstreichen" = "تسطير الأوامر غير المعروفة";
 "Unbekannter Digraph: {}" = "تركيب حرفي غير معروف: {}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "وصول غير مقيّد إلى الإنترنت وإلى كل ملف على جهاز Mac.";
 "Unerwartete Antwort: {}" = "رد غير متوقع: {}";

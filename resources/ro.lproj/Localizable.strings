@@ -153,6 +153,7 @@
 "Befehl:" = "Comandă:";
 "Befehle" = "Comenzi";
 "Befehle als Blöcke markieren" = "Marcați comenzile ca blocuri";
+"Befehle einfärben" = "Colorați comenzile";
 "Befehle und Änderungen schreiben nur im Projekt, ohne Netzwerk" = "Comenzile și modificările scriu doar în proiect, fără rețea";
 "Befehle, die bei Ereignissen laufen" = "Comenzi care rulează la evenimente";
 "Befehlspalette …" = "Paleta de comenzi…";
@@ -1059,6 +1060,7 @@
 "Umgebung:" = "Mediu:";
 "Umgehen" = "Ocolire";
 "Unbekannt" = "Necunoscut";
+"Unbekannte Befehle unterstreichen" = "Subliniați comenzile necunoscute";
 "Unbekannter Digraph: {}" = "Digraf necunoscut: {}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "Acces nerestricționat la internet și la orice fișier de pe Mac.";
 "Unerwartete Antwort: {}" = "Răspuns neașteptat: {}";

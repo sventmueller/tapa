@@ -21,5 +21,5 @@ pub mod selection;
 pub mod style;
 pub mod term;
 
-pub use scan::{Mark, Scanner, WorkingDirectory};
+pub use scan::{Mark, Scanner, ShellReport, WorkingDirectory};
 pub use term::{Event, Size, Terminal};

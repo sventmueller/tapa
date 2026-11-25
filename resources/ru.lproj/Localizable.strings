@@ -153,6 +153,7 @@
 "Befehl:" = "Команда:";
 "Befehle" = "Команды";
 "Befehle als Blöcke markieren" = "Отмечать команды как блоки";
+"Befehle einfärben" = "Подсвечивать команды";
 "Befehle und Änderungen schreiben nur im Projekt, ohne Netzwerk" = "команды и изменения записывают только в проект, без сети";
 "Befehle, die bei Ereignissen laufen" = "Команды, выполняемые при событиях";
 "Befehlspalette …" = "Палитра команд…";
@@ -1059,6 +1060,7 @@
 "Umgebung:" = "Окружение:";
 "Umgehen" = "Обход разрешений";
 "Unbekannt" = "Неизвестно";
+"Unbekannte Befehle unterstreichen" = "Подчёркивать неизвестные команды";
 "Unbekannter Digraph: {}" = "Неизвестный диграф: {}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "Неограниченный доступ к интернету и любому файлу на Mac.";
 "Unerwartete Antwort: {}" = "Неожиданный ответ: {}";

@@ -153,6 +153,7 @@
 "Befehl:" = "Команда:";
 "Befehle" = "Команди";
 "Befehle als Blöcke markieren" = "Позначати команди як блоки";
+"Befehle einfärben" = "Підсвічувати команди";
 "Befehle und Änderungen schreiben nur im Projekt, ohne Netzwerk" = "команди та зміни записують лише в межах проєкту, без мережі";
 "Befehle, die bei Ereignissen laufen" = "Команди, що виконуються під час подій";
 "Befehlspalette …" = "Палітра команд…";
@@ -1059,6 +1060,7 @@
 "Umgebung:" = "Середовище:";
 "Umgehen" = "Обхід";
 "Unbekannt" = "Невідомо";
+"Unbekannte Befehle unterstreichen" = "Підкреслювати невідомі команди";
 "Unbekannter Digraph: {}" = "Невідомий диграф: {}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "Необмежений доступ до інтернету й будь-якого файлу на Mac.";
 "Unerwartete Antwort: {}" = "Неочікувана відповідь: {}";

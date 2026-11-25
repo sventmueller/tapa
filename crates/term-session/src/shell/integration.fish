@@ -26,7 +26,39 @@ if status is-interactive
         end
     end
 
+    # What the terminal's suggestions and colours need to know, sent when it changes (OSC 633 P with Tapa's keys):
+    # whether fish draws its own suggestions, the PATH, and the names fish runs without a program in the PATH.
+    function __ide_report
+        set -l own 1
+        if set -q fish_autosuggestion_enabled; and test "$fish_autosuggestion_enabled" = 0
+            set own 0
+        end
+        if test "$own" != "$__ide_sent_own"
+            printf '\e]633;P;TapaOwnSuggestions=%s\a' $own
+            set -g __ide_sent_own $own
+        end
+        set -l path (string join : -- $PATH)
+        if test "$path" != "$__ide_sent_path"
+            printf '\e]633;P;TapaPath=%s\a' (string replace -a ';' '\\x3b' -- (string replace -a '\\' '\\\\' -- $path))
+            set -g __ide_sent_path $path
+        end
+        set -l names (string join ' ' -- (functions -n) (builtin -n) (abbr --list 2>/dev/null))
+        test "$names" = "$__ide_sent_names"; and return
+        set -g __ide_sent_names $names
+        set names (string replace -a ';' '\\x3b' -- (string replace -a '\\' '\\\\' -- $names))
+        set -l key TapaNames
+        # A sequence longer than 4 KiB is dropped by the terminal, so the list goes in parts cut at spaces.
+        while test (string length -- $names) -gt 3000
+            set -l part (string replace -r ' [^ ]*$' '' -- (string sub -l 3000 -- $names))
+            printf '\e]633;P;%s=%s\a' $key $part
+            set names (string sub -s (math (string length -- $part) + 2) -- $names)
+            set key TapaMoreNames
+        end
+        printf '\e]633;P;%s=%s\a' $key $names
+    end
+
     function __ide_prompt --on-event fish_prompt
+        __ide_report
         printf '\e]133;A\a'
         # config.fish runs after this file and may define the prompt, so it is wrapped only at the first prompt.
         if not set -q __ide_prompt_wrapped; and functions -q fish_prompt

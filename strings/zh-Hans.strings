@@ -218,6 +218,8 @@
 "Voriger Prompt" = "上一个提示符";
 "Voriges Lesezeichen" = "上一个书签";
 "Vorschläge beim Tippen" = "输入时显示建议";
+"Befehle einfärben" = "为命令着色";
+"Unbekannte Befehle unterstreichen" = "为未知命令添加下划线";
 "Weitersuchen" = "查找下一个";
 "Widerrufen" = "撤销";
 "Wiederherstellen:" = "恢复：";

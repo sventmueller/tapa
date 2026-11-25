@@ -153,6 +153,7 @@
 "Befehl:" = "Kommando:";
 "Befehle" = "Kommandon";
 "Befehle als Blöcke markieren" = "Markera kommandon som block";
+"Befehle einfärben" = "Färglägg kommandon";
 "Befehle und Änderungen schreiben nur im Projekt, ohne Netzwerk" = "Kommandon och ändringar skriver bara i projektet, utan nätverk";
 "Befehle, die bei Ereignissen laufen" = "Kommandon som körs vid händelser";
 "Befehlspalette …" = "Kommandopalett…";
@@ -1059,6 +1060,7 @@
 "Umgebung:" = "Miljö:";
 "Umgehen" = "Kringgå";
 "Unbekannt" = "Okänd";
+"Unbekannte Befehle unterstreichen" = "Stryk under okända kommandon";
 "Unbekannter Digraph: {}" = "Okänd digraf: {}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "Obegränsad åtkomst till internet och alla filer på Mac-datorn.";
 "Unerwartete Antwort: {}" = "Oväntat svar: {}";

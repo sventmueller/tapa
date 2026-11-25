@@ -115,7 +115,7 @@ pub fn complete(line: &str, folder: &Path, home: &Path, may_parse: bool) -> Comp
     completion
 }
 
-type Lookup<'l> = dyn Fn(&str, &mut Option<String>) -> Option<Arc<Spec>> + 'l;
+pub(crate) type Lookup<'l> = dyn Fn(&str, &mut Option<String>) -> Option<Arc<Spec>> + 'l;
 
 /// Fills `out` for the command whose words are `words`, the last one being typed.
 fn walk(words: &[Word], folder: &Path, home: &Path, out: &mut Completion, lookup: &Lookup<'_>) {
@@ -146,7 +146,7 @@ fn walk(words: &[Word], folder: &Path, home: &Path, out: &mut Completion, lookup
 }
 
 /// Where the walk through a spec is.
-struct State {
+pub(crate) struct State {
     specs: Vec<Arc<Spec>>,
     /// The path of subcommand indices from the last spec in `specs` down to the current subcommand.
     path: Vec<usize>,
@@ -154,10 +154,11 @@ struct State {
     option_args: Vec<Arg>,
     used: HashSet<String>,
     after_dashes: bool,
+    entered: usize,
 }
 
 impl State {
-    fn new(root: &Arc<Spec>) -> State {
+    pub(crate) fn new(root: &Arc<Spec>) -> State {
         State {
             specs: vec![root.clone()],
             path: Vec::new(),
@@ -165,6 +166,7 @@ impl State {
             option_args: Vec::new(),
             used: HashSet::new(),
             after_dashes: false,
+            entered: 0,
         }
     }
 
@@ -192,8 +194,18 @@ impl State {
         all
     }
 
+    /// How many subcommands the walk entered, which grows when a word was one.
+    pub(crate) fn entered(&self) -> usize {
+        self.entered
+    }
+
+    /// Whether the next word is the value of an option rather than an option, subcommand or argument of its own.
+    pub(crate) fn wants_value(&self) -> bool {
+        !self.option_args.is_empty()
+    }
+
     /// Takes in a word before the one being typed; `Some(true)` when the rest of the line is a command of its own.
-    fn take(&mut self, word: &Word, lookup: &Lookup<'_>, missing: &mut Option<String>) -> Option<bool> {
+    pub(crate) fn take(&mut self, word: &Word, lookup: &Lookup<'_>, missing: &mut Option<String>) -> Option<bool> {
         let text = word.text.as_str();
         if !self.option_args.is_empty() {
             let arg = self.option_args.remove(0);
@@ -228,6 +240,7 @@ impl State {
                 .position(|s| s.name.iter().any(|n| n == text))
         {
             self.path.push(index);
+            self.entered += 1;
             if let Some(name) = self.current().load_spec.clone()
                 && let Some(loaded) = lookup(&name, missing)
             {

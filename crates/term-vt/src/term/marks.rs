@@ -226,35 +226,53 @@ impl Terminal {
         grid.display_offset != before
     }
 
-    /// The text the user typed after the last prompt: the cells from its input mark to the cursor, as the input
-    /// field's suggestions read it in raw mode (E7).
-    pub fn input_text(&self) -> Option<String> {
-        let (line, mark) = self
-            .marks()
-            .into_iter()
-            .rev()
-            .find(|(_, mark)| matches!(mark.kind, MarkKind::Input))?;
-        let cursor_line = self.grid.global(self.grid.history.len() + self.cursor.line);
-        if line > cursor_line {
+    /// The line the user types at the newest prompt while the shell waits for it (E7): none in a full-screen program,
+    /// while a command runs, or once the prompt's input mark left the screen.
+    pub fn typed_line(&self) -> Option<TypedLine> {
+        if self.modes.contains(super::Modes::ALT_SCREEN) {
             return None;
         }
+        let mark = self.marks.iter().rev().find(|mark| mark.kind != MarkKind::Bookmark)?;
+        if mark.kind != MarkKind::Input {
+            return None;
+        }
+        let grid = &self.grid;
+        let cursor = self.cursor.line.min(grid.rows.len().checked_sub(1)?);
+        let first = (0..=cursor).rev().find(|&line| grid.rows[line].serial == mark.serial)?;
         let mut text = String::new();
-        for global in line..=cursor_line {
-            let row = self.grid.row_global(global)?;
-            let from = if global == line { mark.column } else { 0 };
-            let to = if global == cursor_line {
+        for line in first..=cursor {
+            let cells = &grid.rows[line].cells;
+            let from = if line == first { mark.column } else { 0 };
+            let to = if line == cursor {
                 self.cursor.column
             } else {
-                row.cells.len()
+                cells.len()
             };
-            for cell in row.cells.get(from..to.min(row.cells.len()))? {
+            for cell in cells.get(from.min(to)..to.min(cells.len()))? {
                 if !cell.flags.contains(crate::cell::CellFlags::WIDE_SPACER) {
                     text.push(cell.c);
                 }
             }
         }
-        Some(text.trim_end().to_string())
+        let after = grid.rows[cursor].cells.get(self.cursor.column..).unwrap_or_default();
+        let room = after.iter().take_while(|cell| cell.c == ' ').count();
+        Some(TypedLine {
+            text,
+            room,
+            open: room == after.len(),
+        })
     }
+}
+
+/// What the user typed at the prompt and the room after it, for a suggestion drawn from the cursor on.
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct TypedLine {
+    /// The cells from the prompt's input mark to the cursor.
+    pub text: String,
+    /// The blank cells from the cursor to the next written one on its line, or to the line's end.
+    pub room: usize,
+    /// Nothing is written after the cursor on its line, such as a right prompt.
+    pub open: bool,
 }
 
 fn percent_decode(text: &str) -> String {
@@ -310,7 +328,10 @@ mod tests {
             terminal.grid().row_global(prompts[0]).unwrap().text().trim_end(),
             "$ ls"
         );
-        assert_eq!(terminal.input_text().as_deref(), Some("git st"));
+        assert_eq!(
+            terminal.typed_line().map(|typed| (typed.text, typed.room, typed.open)),
+            Some(("git st".into(), 2, true))
+        );
         terminal.resize(Size { columns: 4, lines: 3 });
         let prompts = terminal.prompt_lines();
         assert_eq!(

@@ -153,6 +153,7 @@
 "Befehl:" = "Lệnh:";
 "Befehle" = "Lệnh";
 "Befehle als Blöcke markieren" = "Đánh dấu lệnh thành khối";
+"Befehle einfärben" = "Tô màu lệnh";
 "Befehle und Änderungen schreiben nur im Projekt, ohne Netzwerk" = "Lệnh và chỉnh sửa chỉ ghi trong dự án, không có mạng";
 "Befehle, die bei Ereignissen laufen" = "Lệnh chạy khi có sự kiện";
 "Befehlspalette …" = "Bảng lệnh…";
@@ -1059,6 +1060,7 @@
 "Umgebung:" = "Môi trường:";
 "Umgehen" = "Bỏ qua quyền";
 "Unbekannt" = "Không xác định";
+"Unbekannte Befehle unterstreichen" = "Gạch chân lệnh không xác định";
 "Unbekannter Digraph: {}" = "Chữ ghép không xác định: {}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "Truy cập không giới hạn vào internet và mọi tệp trên máy Mac.";
 "Unerwartete Antwort: {}" = "Phản hồi không mong đợi: {}";

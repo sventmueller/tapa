@@ -372,6 +372,10 @@ pub struct Input {
     pub vim: bool,
     /// Suggestions while typing and the next command without input.
     pub suggestions: bool,
+    /// The parts of a command in the input field in colours of their own (F92).
+    pub highlighting: bool,
+    /// A command the shell cannot run underlined in red in the input field.
+    pub underline_errors: bool,
 }
 
 impl Default for Input {
@@ -380,6 +384,8 @@ impl Default for Input {
             field: false,
             vim: false,
             suggestions: true,
+            highlighting: true,
+            underline_errors: true,
         }
     }
 }

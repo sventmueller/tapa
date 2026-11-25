@@ -153,6 +153,7 @@
 "Befehl:" = "Komut:";
 "Befehle" = "Komutlar";
 "Befehle als Blöcke markieren" = "Komutları blok olarak işaretle";
+"Befehle einfärben" = "Komutları renklendir";
 "Befehle und Änderungen schreiben nur im Projekt, ohne Netzwerk" = "Komutlar ve düzenlemeler yalnızca projenin içine yazar, ağ olmadan";
 "Befehle, die bei Ereignissen laufen" = "Olaylarda çalışan komutlar";
 "Befehlspalette …" = "Komut Paleti…";
@@ -1059,6 +1060,7 @@
 "Umgebung:" = "Ortam:";
 "Umgehen" = "Atla";
 "Unbekannt" = "Bilinmiyor";
+"Unbekannte Befehle unterstreichen" = "Bilinmeyen komutların altını çiz";
 "Unbekannter Digraph: {}" = "Bilinmeyen ikili harf: {}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "İnternete ve Mac’teki her dosyaya sınırsız erişim.";
 "Unerwartete Antwort: {}" = "Beklenmeyen yanıt: {}";

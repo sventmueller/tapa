@@ -153,6 +153,7 @@
 "Befehl:" = "Εντολή:";
 "Befehle" = "Εντολές";
 "Befehle als Blöcke markieren" = "Σήμανση εντολών ως μπλοκ";
+"Befehle einfärben" = "Χρωματισμός εντολών";
 "Befehle und Änderungen schreiben nur im Projekt, ohne Netzwerk" = "Οι εντολές και οι αλλαγές γράφουν μόνο μέσα στο έργο, χωρίς δίκτυο";
 "Befehle, die bei Ereignissen laufen" = "Εντολές που εκτελούνται σε συμβάντα";
 "Befehlspalette …" = "Παλέτα εντολών…";
@@ -1059,6 +1060,7 @@
 "Umgebung:" = "Περιβάλλον:";
 "Umgehen" = "Παράκαμψη";
 "Unbekannt" = "Άγνωστο";
+"Unbekannte Befehle unterstreichen" = "Υπογράμμιση άγνωστων εντολών";
 "Unbekannter Digraph: {}" = "Άγνωστο δίψηφο: {}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "Απεριόριστη πρόσβαση στο διαδίκτυο και σε κάθε αρχείο του Mac.";
 "Unerwartete Antwort: {}" = "Μη αναμενόμενη απάντηση: {}";

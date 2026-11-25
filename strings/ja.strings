@@ -218,6 +218,8 @@
 "Voriger Prompt" = "前のプロンプト";
 "Voriges Lesezeichen" = "前のブックマーク";
 "Vorschläge beim Tippen" = "入力中に候補を表示";
+"Befehle einfärben" = "コマンドを色分け表示";
+"Unbekannte Befehle unterstreichen" = "不明なコマンドに下線を表示";
 "Weitersuchen" = "次を検索";
 "Widerrufen" = "取り消す";
 "Wiederherstellen:" = "復元：";

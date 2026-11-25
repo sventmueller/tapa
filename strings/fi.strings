@@ -218,6 +218,8 @@
 "Voriger Prompt" = "Edellinen kehote";
 "Voriges Lesezeichen" = "Edellinen kirjanmerkki";
 "Vorschläge beim Tippen" = "Ehdotukset kirjoitettaessa";
+"Befehle einfärben" = "Väritä komennot";
+"Unbekannte Befehle unterstreichen" = "Alleviivaa tuntemattomat komennot";
 "Weitersuchen" = "Etsi seuraava";
 "Widerrufen" = "Kumoa";
 "Wiederherstellen:" = "Palauta:";

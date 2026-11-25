@@ -218,6 +218,8 @@
 "Voriger Prompt" = "พรอมต์ก่อนหน้า";
 "Voriges Lesezeichen" = "บุ๊กมาร์กก่อนหน้า";
 "Vorschläge beim Tippen" = "แสดงคำแนะนำขณะพิมพ์";
+"Befehle einfärben" = "แสดงคำสั่งเป็นสี";
+"Unbekannte Befehle unterstreichen" = "ขีดเส้นใต้คำสั่งที่ไม่รู้จัก";
 "Weitersuchen" = "ค้นหาถัดไป";
 "Widerrufen" = "เลิกทำ";
 "Wiederherstellen:" = "กู้คืน:";

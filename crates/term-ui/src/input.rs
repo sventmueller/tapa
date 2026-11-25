@@ -184,6 +184,9 @@ impl TerminalView {
         if self.copy_mode_key(event) {
             return true;
         }
+        if !self.has_marked() && self.raw_accept(event) {
+            return true;
+        }
         self.mark_key();
         let mut typed = self.ivars().keys.typed.borrow_mut();
         if typed.is_none() {

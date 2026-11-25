@@ -153,6 +153,7 @@
 "Befehl:" = "Opdracht:";
 "Befehle" = "Commando's";
 "Befehle als Blöcke markieren" = "Markeer opdrachten als blokken";
+"Befehle einfärben" = "Kleur opdrachten";
 "Befehle und Änderungen schreiben nur im Projekt, ohne Netzwerk" = "Commando's en wijzigingen schrijven alleen binnen het project, zonder netwerk";
 "Befehle, die bei Ereignissen laufen" = "Commando's die bij gebeurtenissen worden uitgevoerd";
 "Befehlspalette …" = "Opdrachtpalet…";
@@ -1059,6 +1060,7 @@
 "Umgebung:" = "Omgeving:";
 "Umgehen" = "Omzeil";
 "Unbekannt" = "Onbekend";
+"Unbekannte Befehle unterstreichen" = "Onderstreep onbekende opdrachten";
 "Unbekannter Digraph: {}" = "Onbekende digraph: {}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "Onbeperkte toegang tot het internet en elk bestand op de Mac.";
 "Unerwartete Antwort: {}" = "Onverwacht antwoord: {}";

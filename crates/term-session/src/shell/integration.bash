@@ -44,8 +44,40 @@ __ide_prompt_start() {
   return $ret
 }
 
+# What the terminal's suggestions and colours need to know, sent when it changes (OSC 633 P with Tapa's keys): whether
+# ble.sh draws suggestions of its own, the PATH, and the names bash runs without a program in the PATH.
+__ide_report() {
+  local LC_ALL=C own=0 names key=TapaNames part
+  if [ -n "${BLE_VERSION:-}" ]; then own=1; fi
+  if [ "$own" != "$__ide_sent_own" ]; then
+    printf '\033]633;P;TapaOwnSuggestions=%s\007' "$own"
+    __ide_sent_own=$own
+  fi
+  if [ "$PATH" != "$__ide_sent_path" ]; then
+    part=${PATH//\\/\\\\}
+    printf '\033]633;P;TapaPath=%s\007' "${part//;/\\x3b}"
+    __ide_sent_path=$PATH
+  fi
+  names=$(compgen -a -b -k -A function)
+  names=${names//$'\n'/ }
+  if [ "$names" = "$__ide_sent_names" ]; then return; fi
+  __ide_sent_names=$names
+  names=${names//\\/\\\\}
+  names=${names//;/\\x3b}
+  # A sequence longer than 4 KiB is dropped by the terminal, so the list goes in parts cut at spaces.
+  while [ ${#names} -gt 3000 ]; do
+    part=${names:0:3000}
+    part=${part% *}
+    printf '\033]633;P;%s=%s\007' "$key" "$part"
+    names=${names:${#part}+1}
+    key=TapaMoreNames
+  done
+  printf '\033]633;P;%s=%s\007' "$key" "$names"
+}
+
 __ide_prompt_end() {
   local ret=$?
+  __ide_report
   __ide_urlencode "$PWD"
   printf '\033]7;file://%s%s\007\033]133;A\007' "$HOSTNAME" "$__ide_reply"
   # Prompt themes rebuild PS1 in PROMPT_COMMAND, which runs before this.
@@ -75,6 +107,9 @@ __ide_preexec() {
 
 __ide_running=
 __ide_in_prompt=
+__ide_sent_own=
+__ide_sent_path=
+__ide_sent_names=
 
 if [ -n "${bash_preexec_imported:-}" ] || declare -F __bp_install >/dev/null 2>&1; then
   # bash-preexec owns the DEBUG trap and PROMPT_COMMAND; it calls these hooks with $? already set.

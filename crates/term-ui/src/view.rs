@@ -72,6 +72,12 @@ pub struct Ivars {
     pub(super) field_state: RefCell<crate::field::model::Field>,
     /// What the history suggests for the field's text now.
     pub(super) suggestion: RefCell<Option<String>>,
+    /// The field's completion menu, while it is open.
+    pub(super) menu: RefCell<Option<crate::field::menu::Menu>>,
+    /// The suggestion drawn from the cursor on without the field.
+    pub(super) ghost: RefCell<Option<crate::field::raw::Ghost>>,
+    /// What the shell integration reported about the shell.
+    pub(super) shell: RefCell<crate::field::shell::Shell>,
     /// Copy mode (F111), while it is on.
     pub(super) copy: RefCell<Option<crate::copy::Copy>>,
 }
@@ -538,6 +544,9 @@ impl TerminalView {
             field: RefCell::new(None),
             field_state: RefCell::new(crate::field::model::Field::new(config.input.field)),
             suggestion: RefCell::new(None),
+            menu: RefCell::new(None),
+            ghost: RefCell::new(None),
+            shell: RefCell::new(crate::field::shell::Shell::default()),
             copy: RefCell::new(None),
         };
         let this = Self::alloc(mtm).set_ivars(ivars);

@@ -153,6 +153,7 @@
 "Befehl:" = "Komento:";
 "Befehle" = "Komennot";
 "Befehle als Blöcke markieren" = "Merkitse komennot lohkoiksi";
+"Befehle einfärben" = "Väritä komennot";
 "Befehle und Änderungen schreiben nur im Projekt, ohne Netzwerk" = "Komennot ja muokkaukset kirjoittavat vain projektiin, ilman verkkoyhteyttä";
 "Befehle, die bei Ereignissen laufen" = "Tapahtumista käynnistyvät komennot";
 "Befehlspalette …" = "Komentopaletti…";
@@ -1059,6 +1060,7 @@
 "Umgebung:" = "Ympäristö:";
 "Umgehen" = "Ohita";
 "Unbekannt" = "Tuntematon";
+"Unbekannte Befehle unterstreichen" = "Alleviivaa tuntemattomat komennot";
 "Unbekannter Digraph: {}" = "Tuntematon digraafi: {}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "Rajoittamaton pääsy internetiin ja Macin kaikkiin tiedostoihin.";
 "Unerwartete Antwort: {}" = "Odottamaton vastaus: {}";

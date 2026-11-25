@@ -153,6 +153,7 @@
 "Befehl:" = "Arahan:";
 "Befehle" = "Perintah";
 "Befehle als Blöcke markieren" = "Tandakan perintah sebagai blok";
+"Befehle einfärben" = "Warnakan perintah";
 "Befehle und Änderungen schreiben nur im Projekt, ohne Netzwerk" = "Perintah dan suntingan hanya menulis di dalam projek, tanpa rangkaian";
 "Befehle, die bei Ereignissen laufen" = "Perintah yang berjalan pada peristiwa";
 "Befehlspalette …" = "Palet Arahan…";
@@ -1059,6 +1060,7 @@
 "Umgebung:" = "Persekitaran:";
 "Umgehen" = "Pintas";
 "Unbekannt" = "Tidak diketahui";
+"Unbekannte Befehle unterstreichen" = "Garis bawah perintah yang tidak dikenali";
 "Unbekannter Digraph: {}" = "Digraf tidak diketahui: {}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "Akses tanpa had ke internet dan setiap fail pada Mac.";
 "Unerwartete Antwort: {}" = "Jawapan tidak dijangka: {}";

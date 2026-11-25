@@ -64,6 +64,23 @@ pub enum Mark {
     Progress(Option<Progress>),
     /// A program asked for a notification (OSC 9, OSC 777).
     Notification(Notification),
+    /// The shell integration told something about the shell itself.
+    Shell(ShellReport),
+}
+
+/// What Tapa's shell integration reports about the shell, as properties of VS Code's OSC 633 P with keys of its own,
+/// which other terminals ignore.
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub enum ShellReport {
+    /// The shell shows suggestions of its own while the user types, as fish and zsh-autosuggestions do.
+    OwnSuggestions(bool),
+    /// The shell's `PATH`.
+    Path(String),
+    /// The names the shell runs without looking in the `PATH`, separated by spaces: aliases, functions, builtins and
+    /// reserved words. A new list starts here.
+    Names(String),
+    /// More of those names, as the list does not fit one sequence.
+    MoreNames(String),
 }
 
 /// A working directory as a shell reports it, possibly on another machine.
@@ -311,6 +328,11 @@ impl Scanner {
                 }
             }
             b"133" => self.mark(rest),
+            b"633" => {
+                if let Some(report) = shell_report(rest) {
+                    self.events.push(Mark::Shell(report));
+                }
+            }
             b"9" => match osc9::osc9(rest) {
                 Some(osc9::Osc9::Progress(progress)) => self.events.push(Mark::Progress(progress)),
                 Some(osc9::Osc9::Notification(notification)) => self.events.push(Mark::Notification(notification)),
@@ -367,6 +389,44 @@ impl Scanner {
             _ => {}
         }
     }
+}
+
+/// A property `P;Key=Value` of OSC 633 with one of Tapa's keys; VS Code's escapes `\\` and `\xNN` are undone.
+fn shell_report(rest: &[u8]) -> Option<ShellReport> {
+    let property = rest.strip_prefix(b"P;")?;
+    let split = property.iter().position(|&b| b == b'=')?;
+    let (key, value) = (&property[..split], &property[split + 1..]);
+    let mut text = Vec::with_capacity(value.len());
+    let mut at = 0;
+    while at < value.len() {
+        match (value[at], value.get(at + 1)) {
+            (b'\\', Some(b'\\')) => {
+                text.push(b'\\');
+                at += 2;
+            }
+            (b'\\', Some(b'x'))
+                if let Some(byte) = value
+                    .get(at + 2..at + 4)
+                    .and_then(|hex| std::str::from_utf8(hex).ok())
+                    .and_then(|hex| u8::from_str_radix(hex, 16).ok()) =>
+            {
+                text.push(byte);
+                at += 4;
+            }
+            (byte, _) => {
+                text.push(byte);
+                at += 1;
+            }
+        }
+    }
+    let text = String::from_utf8_lossy(&text).into_owned();
+    Some(match key {
+        b"TapaOwnSuggestions" => ShellReport::OwnSuggestions(text == "1"),
+        b"TapaPath" => ShellReport::Path(text),
+        b"TapaNames" => ShellReport::Names(text),
+        b"TapaMoreNames" => ShellReport::MoreNames(text),
+        _ => return None,
+    })
 }
 
 /// The length of the control sequence at the start of `bytes`, where it is whole and made of parameter and
@@ -452,6 +512,24 @@ mod tests {
             [directory("h", "/a%20b")]
         );
         assert!(events(&[b"\x1b]7;not a url\x07"]).is_empty());
+    }
+
+    #[test]
+    fn the_shell_reports_its_suggestions_path_and_names_with_escapes_undone() {
+        assert_eq!(
+            events(&[
+                b"\x1b]633;P;TapaOwnSuggestions=1\x07\x1b]633;P;TapaPath=/opt/homebrew/bin:/usr/bin\x07",
+                b"\x1b]633;P;TapaNames=ll gst\x1b\\\x1b]633;P;TapaMoreNames=a\\x3bb c\\\\d\x07",
+                b"\x1b]633;P;Cwd=/tmp\x07\x1b]633;P;TapaOwnSuggestions=0\x07",
+            ]),
+            [
+                Mark::Shell(ShellReport::OwnSuggestions(true)),
+                Mark::Shell(ShellReport::Path("/opt/homebrew/bin:/usr/bin".into())),
+                Mark::Shell(ShellReport::Names("ll gst".into())),
+                Mark::Shell(ShellReport::MoreNames("a;b c\\d".into())),
+                Mark::Shell(ShellReport::OwnSuggestions(false)),
+            ]
+        );
     }
 
     #[test]

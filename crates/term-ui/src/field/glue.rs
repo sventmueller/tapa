@@ -15,6 +15,12 @@ impl TerminalView {
         Some(f(field, &mut state))
     }
 
+    /// The field, borrowed to read and drive it only, which works while its state is borrowed too.
+    pub(super) fn field_view(&self) -> Option<std::cell::Ref<'_, super::InputField>> {
+        let field = self.ivars().field.try_borrow().ok()?;
+        std::cell::Ref::filter_map(field, Option::as_ref).ok()
+    }
+
     /// The shell's marks and the screen move the field: `mark` is `'A'`, `'B'` or `'C'`.
     pub(crate) fn field_mark(&self, mark: char) {
         self.with_field(|_, state| match mark {
@@ -58,7 +64,10 @@ impl TerminalView {
         if self.field_shown() {
             self.field_show_context();
             self.field_text_changed();
+        } else {
+            self.menu_close_quietly();
         }
+        self.raw_suggest();
     }
 
     /// Has the own core leave the live prompt out of the view while the field stands in for it; copy mode moves over
@@ -130,10 +139,13 @@ impl TerminalView {
         self.with_field(|field, _| field.is_visible()).unwrap_or(false)
     }
 
-    /// The field's text and the grey hint beside it.
+    /// The field's text and what shows faint beside it: the suggestion after the text, else the hint at the right.
     pub fn field_contents(&self) -> (String, String) {
-        self.with_field(|field, _| (field.text(), field.hint()))
-            .unwrap_or_default()
+        self.with_field(|field, _| {
+            let ghost = field.ghost();
+            (field.text(), if ghost.is_empty() { field.hint() } else { ghost })
+        })
+        .unwrap_or_default()
     }
 
     /// Puts `text` into the field without sending it, as typing it would.
@@ -156,15 +168,37 @@ impl TerminalView {
             field.fit();
             let text = field.text();
             self.field_suggest(field, &text);
+            self.field_colour(field, &text);
+            self.menu_follow(&text);
         }
     }
 
-    /// →: takes the history's suggestion; whether there was one.
+    /// →, ⌃F or ⌃E: takes the suggestion; whether there was one.
     pub(crate) fn field_accept(&self) -> bool {
         let Some(line) = self.ivars().suggestion.borrow().clone() else {
             return false;
         };
+        self.menu_close_quietly();
         self.with_field(|field, _| field.set_text(&line));
+        true
+    }
+
+    /// ⌃→: takes the suggestion's next word; whether there was one.
+    pub(crate) fn field_accept_word(&self) -> bool {
+        let Some(line) = self.ivars().suggestion.borrow().clone() else {
+            return false;
+        };
+        let Some(text) = self.with_field(|field, _| field.text()) else {
+            return false;
+        };
+        let Some(rest) = line.strip_prefix(text.as_str()) else {
+            return false;
+        };
+        let spaces = rest.len() - rest.trim_start().len();
+        let word = rest[spaces..].find(char::is_whitespace).unwrap_or(rest.len() - spaces);
+        let taken = format!("{text}{}", &rest[..spaces + word]);
+        self.menu_close_quietly();
+        self.with_field(|field, _| field.set_text(&taken));
         true
     }
 
@@ -173,6 +207,7 @@ impl TerminalView {
         let bracketed = self
             .with_session(|session| session.input_modes().bracketed_paste)
             .unwrap_or(false);
+        self.menu_close_quietly();
         let Some(bytes) = self.with_field(|field, state| {
             let bytes = state.submit(&field.text(), bracketed);
             field.set_text("");
@@ -264,15 +299,7 @@ impl TerminalView {
 
     /// The field takes up the terminal's face, size and colours.
     pub(crate) fn style_field(&self) {
-        let theme = self.ivars().theme.borrow().palette.clone();
-        let colour = |c: term_session::Rgb| {
-            objc2_app_kit::NSColor::colorWithSRGBRed_green_blue_alpha(
-                f64::from(c.r) / 255.0,
-                f64::from(c.g) / 255.0,
-                f64::from(c.b) / 255.0,
-                1.0,
-            )
-        };
+        let theme = self.ivars().theme.borrow().clone();
         let size = self.font_size();
         let family = crate::host().config().face().family;
         let font = (!family.is_empty() && family != "SF Mono")
@@ -280,6 +307,7 @@ impl TerminalView {
             .flatten()
             .unwrap_or_else(|| NSFont::monospacedSystemFontOfSize_weight(size, 0.0));
         let _ = self.mtm();
-        self.with_field(|field, _| field.style(&font, &colour(theme.foreground), &colour(theme.background)));
+        self.with_field(|field, _| field.style(&font, &theme));
+        self.field_text_changed();
     }
 }

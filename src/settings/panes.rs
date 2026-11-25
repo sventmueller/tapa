@@ -636,6 +636,20 @@ pub(super) fn input(fields: &Fields) -> Retained<NSView> {
         t("Vorschläge beim Tippen"),
         flag(|c| c.input.suggestions, &["input", "suggestions"]),
     );
+    check_row(
+        fields,
+        &mut form,
+        "",
+        t("Befehle einfärben"),
+        flag(|c| c.input.highlighting, &["input", "highlighting"]),
+    );
+    check_row(
+        fields,
+        &mut form,
+        "",
+        t("Unbekannte Befehle unterstreichen"),
+        flag(|c| c.input.underline_errors, &["input", "underline_errors"]),
+    );
     Retained::into_super(form.build())
 }
 

@@ -153,6 +153,7 @@
 "Befehl:" = "Ordre:";
 "Befehle" = "Ordres";
 "Befehle als Blöcke markieren" = "Marca les ordres com a blocs";
+"Befehle einfärben" = "Acoloreix les ordres";
 "Befehle und Änderungen schreiben nur im Projekt, ohne Netzwerk" = "les ordres i els canvis només escriuen dins del projecte, sense xarxa";
 "Befehle, die bei Ereignissen laufen" = "Ordres que s’executen en produir‑se esdeveniments";
 "Befehlspalette …" = "Paleta d’ordres…";
@@ -1059,6 +1060,7 @@
 "Umgebung:" = "Entorn:";
 "Umgehen" = "Omet els permisos";
 "Unbekannt" = "Desconegut";
+"Unbekannte Befehle unterstreichen" = "Subratlla les ordres desconegudes";
 "Unbekannter Digraph: {}" = "Dígraf desconegut: {}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "Accés sense restriccions a internet i a tots els fitxers del Mac.";
 "Unerwartete Antwort: {}" = "Resposta inesperada: {}";

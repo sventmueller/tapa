@@ -91,6 +91,7 @@ impl TerminalView {
                 self.with_session(|session| session.answer_clipboard(&text));
             }
             Event::WorkingDirectory(dir) => {
+                self.ivars().shell.borrow_mut().remote = !dir.is_local();
                 if dir.is_local() {
                     *self.ivars().cwd.borrow_mut() = dir.path.clone();
                     super::host().changed(self.id(), Change::Directory(dir.path));
@@ -120,6 +121,10 @@ impl TerminalView {
             Event::Progress(progress) => super::host().changed(self.id(), Change::Progress(progress)),
             Event::Notification(notification) => {
                 super::host().changed(self.id(), Change::Notification(notification));
+            }
+            Event::Shell(report) => {
+                self.ivars().shell.borrow_mut().report(report);
+                self.raw_suggest();
             }
             Event::Exited(ending) => {
                 self.exited();

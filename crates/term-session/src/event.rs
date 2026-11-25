@@ -1,8 +1,8 @@
 //! What a terminal session reports to its owner.
 
 use term_base::Ending;
-pub use term_vt::WorkingDirectory;
 pub use term_vt::scan::{Notification, Progress, ProgressState};
+pub use term_vt::{ShellReport, WorkingDirectory};
 
 /// A change in a terminal session, delivered on the session's reader thread.
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -46,6 +46,8 @@ pub enum Event {
     Progress(Option<Progress>),
     /// A program asked for a notification (OSC 9, OSC 777).
     Notification(Notification),
+    /// The shell integration told something about the shell itself.
+    Shell(ShellReport),
     /// The program in the terminal ended.
     Exited(Ending),
 }
@@ -70,6 +72,7 @@ impl From<term_vt::Mark> for Event {
             term_vt::Mark::DevServer(url) => Event::DevServer(url),
             term_vt::Mark::Progress(progress) => Event::Progress(progress),
             term_vt::Mark::Notification(notification) => Event::Notification(notification),
+            term_vt::Mark::Shell(report) => Event::Shell(report),
         }
     }
 }

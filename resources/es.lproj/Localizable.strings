@@ -153,6 +153,7 @@
 "Befehl:" = "Comando:";
 "Befehle" = "Comandos";
 "Befehle als Blöcke markieren" = "Marcar los comandos como bloques";
+"Befehle einfärben" = "Colorear los comandos";
 "Befehle und Änderungen schreiben nur im Projekt, ohne Netzwerk" = "los comandos y los cambios solo escriben en el proyecto, sin red";
 "Befehle, die bei Ereignissen laufen" = "Comandos que se ejecutan ante eventos";
 "Befehlspalette …" = "Paleta de comandos…";
@@ -1059,6 +1060,7 @@
 "Umgebung:" = "Entorno:";
 "Umgehen" = "Omitir permisos";
 "Unbekannt" = "Desconocido";
+"Unbekannte Befehle unterstreichen" = "Subrayar los comandos desconocidos";
 "Unbekannter Digraph: {}" = "Dígrafo desconocido: {}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "Acceso sin restricciones a internet y a todos los archivos del Mac.";
 "Unerwartete Antwort: {}" = "Respuesta inesperada: {}";

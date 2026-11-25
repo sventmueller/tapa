@@ -7,13 +7,18 @@
 //! `paste:<text>` pastes as ⌘V does (`\n` a line break, `\e` Escape) and prints whether a sheet asks first, which
 //! `sheet:accept` or `sheet:cancel` answers; `secure:<name>` prints the state of secure keyboard entry;
 //! `blocks:<name>` prints the command blocks the session in front shows, and `click:<line>.<column>`
-//! clicks that cell of its screen as a plain click moves the cursor at a prompt (F83).
+//! clicks that cell of its screen as a plain click moves the cursor at a prompt (F83). `key:<name>` presses a key
+//! such as `right`, `ctrl-right`, `tab`, `shift-tab`, `down`, `return`, `escape`, `ctrl-f` or `ctrl-e`;
+//! `fieldmenu:<steps>` opens the field's completion menu as Tab does, moves down that many and prints what it lists,
+//! `fieldparts:<name>` the parts of the field's command as its colours show them, `rawghost:<name>` the suggestion
+//! drawn without the field, `picture:<name>` draws the front window into `<name>.png` and `viewpicture:<name>` the
+//! terminal in front.
 
 use crate::state::app;
 
 /// Runs `step` if it is one of these; whether it was.
 pub(super) fn run(step: &str) -> bool {
-    if keyboard(step) || super::workspace::run(step) {
+    if keyboard(step) || suggestions(step) || super::workspace::run(step) {
         return true;
     }
     if let Some(query) = step.strip_prefix("palette:") {
@@ -131,6 +136,109 @@ fn cells(text: &str) -> Vec<term_session::Point> {
 }
 
 /// The steps `responder:` and `keys:`; whether `step` was one.
+/// The steps for the suggestions, the completion menu and the colours, and the pictures that show them.
+fn suggestions(step: &str) -> bool {
+    if let Some(steps) = step.strip_prefix("fieldmenu:") {
+        if let Some(view) = app().front().and_then(|window| window.focused_view()) {
+            view.menu_drive(steps.parse().unwrap_or(0));
+            let entries = view
+                .menu_entries()
+                .map(|entries| entries.into_iter().take(6).collect::<Vec<_>>());
+            println!("fieldmenu {steps}: {entries:?} field {:?}", view.field_contents());
+        }
+    } else if let Some(name) = step.strip_prefix("fieldparts:") {
+        if let Some(view) = app().front().and_then(|window| window.focused_view()) {
+            println!("fieldparts {name}: {}", view.field_parts().join(" "));
+        }
+    } else if let Some(name) = step.strip_prefix("rawghost:") {
+        if let Some(view) = app().front().and_then(|window| window.focused_view()) {
+            println!("rawghost {name}: {}", view.raw_suggestion());
+        }
+    } else if let Some(name) = step.strip_prefix("viewpicture:") {
+        if let Some(view) = app().front().and_then(|window| window.focused_view()) {
+            let dir = std::env::var_os("TAPA_SELFTEST_DIR")
+                .map_or_else(|| std::path::PathBuf::from("target/selftest"), std::path::PathBuf::from);
+            view_picture(&view, &dir.join(format!("{name}.png")));
+        }
+    } else if let Some(name) = step.strip_prefix("picture:") {
+        if let Some(window) = app().front().and_then(|window| window.front_ns_window()) {
+            let dir = std::env::var_os("TAPA_SELFTEST_DIR")
+                .map_or_else(|| std::path::PathBuf::from("target/selftest"), std::path::PathBuf::from);
+            super::menus::picture(&window, &dir.join(format!("{name}.png")));
+        }
+    } else {
+        return false;
+    }
+    true
+}
+
+/// Draws the terminal view `view` into a PNG at `path`, as its own drawing paints it.
+fn view_picture(view: &objc2_app_kit::NSView, path: &std::path::Path) {
+    use objc2_app_kit::NSBitmapImageFileType;
+    let bounds = view.bounds();
+    let Some(bitmap) = view.bitmapImageRepForCachingDisplayInRect(bounds) else {
+        return;
+    };
+    view.cacheDisplayInRect_toBitmapImageRep(bounds, &bitmap);
+    // SAFETY: An empty dictionary of properties, which PNG needs none of.
+    let png = unsafe {
+        bitmap.representationUsingType_properties(NSBitmapImageFileType::PNG, &objc2_foundation::NSDictionary::new())
+    };
+    let written = png.is_some_and(|png| std::fs::write(path, png.to_vec()).is_ok());
+    println!("view picture {}: {written}", path.display());
+}
+
+/// Presses the key `name` in the front window, as the keyboard does.
+fn key(name: &str) {
+    use objc2_app_kit::NSEventModifierFlags as Flags;
+    let arrow = Flags::NumericPad | Flags::Function;
+    let (code, character, flags): (u16, char, Flags) = match name {
+        "right" => (124, '\u{f703}', arrow),
+        "ctrl-right" => (124, '\u{f703}', arrow | Flags::Control),
+        "left" => (123, '\u{f702}', arrow),
+        "down" => (125, '\u{f701}', arrow),
+        "up" => (126, '\u{f700}', arrow),
+        "tab" => (48, '\t', Flags::empty()),
+        "shift-tab" => (48, '\u{19}', Flags::Shift),
+        "return" => (36, '\r', Flags::empty()),
+        "escape" => (53, '\u{1b}', Flags::empty()),
+        "ctrl-f" => (3, 'f', Flags::Control),
+        "ctrl-e" => (14, 'e', Flags::Control),
+        _ => {
+            eprintln!("selftest: no key {name}");
+            return;
+        }
+    };
+    let Some(window) = app().front().and_then(|window| window.front_ns_window()) else {
+        return;
+    };
+    let plain = term_ui::kit::ns(&character.to_string());
+    let typed = if flags.contains(Flags::Control) {
+        term_ui::kit::ns(
+            &char::from_u32(u32::from(character) & 0x1f)
+                .unwrap_or(character)
+                .to_string(),
+        )
+    } else {
+        plain.clone()
+    };
+    let event = objc2_app_kit::NSEvent::keyEventWithType_location_modifierFlags_timestamp_windowNumber_context_characters_charactersIgnoringModifiers_isARepeat_keyCode(
+        objc2_app_kit::NSEventType::KeyDown,
+        objc2_foundation::NSPoint::ZERO,
+        flags,
+        0.0,
+        window.windowNumber(),
+        None,
+        &typed,
+        &plain,
+        false,
+        code,
+    );
+    if let Some(event) = event {
+        window.sendEvent(&event);
+    }
+}
+
 fn keyboard(step: &str) -> bool {
     if let Some(name) = step.strip_prefix("responder:") {
         let view = app().front().and_then(|window| window.focused_view());
@@ -144,6 +252,8 @@ fn keyboard(step: &str) -> bool {
         );
         let field = view.map(|view| view.field_contents());
         println!("responder {name}: {class}, field {field:?}");
+    } else if let Some(name) = step.strip_prefix("key:") {
+        key(name);
     } else if let Some(text) = step.strip_prefix("keys:") {
         let text = text.replace("\\n", "\r");
         if let Some(window) = app().front().and_then(|window| window.front_ns_window()) {

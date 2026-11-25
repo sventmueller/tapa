@@ -153,6 +153,7 @@
 "Befehl:" = "פקודה:";
 "Befehle" = "פקודות";
 "Befehle als Blöcke markieren" = "סימון פקודות כבלוקים";
+"Befehle einfärben" = "צביעת פקודות";
 "Befehle und Änderungen schreiben nur im Projekt, ohne Netzwerk" = "פקודות ושינויים כותבים רק בתוך הפרויקט, ללא רשת";
 "Befehle, die bei Ereignissen laufen" = "פקודות שרצות באירועים";
 "Befehlspalette …" = "לוח פקודות…";
@@ -1059,6 +1060,7 @@
 "Umgebung:" = "סביבה:";
 "Umgehen" = "עקיפה";
 "Unbekannt" = "לא ידוע";
+"Unbekannte Befehle unterstreichen" = "קו תחתון לפקודות לא מוכרות";
 "Unbekannter Digraph: {}" = "צירוף תווים לא מוכר: {}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "גישה בלתי מוגבלת לאינטרנט ולכל קובץ ב-Mac.";
 "Unerwartete Antwort: {}" = "תשובה לא צפויה: {}";

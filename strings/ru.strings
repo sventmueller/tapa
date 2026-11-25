@@ -218,6 +218,8 @@
 "Voriger Prompt" = "Предыдущее приглашение";
 "Voriges Lesezeichen" = "Предыдущая закладка";
 "Vorschläge beim Tippen" = "Подсказки при вводе";
+"Befehle einfärben" = "Подсвечивать команды";
+"Unbekannte Befehle unterstreichen" = "Подчёркивать неизвестные команды";
 "Weitersuchen" = "Найти далее";
 "Widerrufen" = "Отменить";
 "Wiederherstellen:" = "Восстановить:";

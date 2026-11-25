@@ -220,7 +220,7 @@ pub(crate) fn path_folders(folder: &Path) -> Vec<PathBuf> {
     dirs
 }
 
-fn is_executable(path: &Path) -> bool {
+pub(crate) fn is_executable(path: &Path) -> bool {
     use std::os::unix::fs::PermissionsExt;
     std::fs::metadata(path).is_ok_and(|meta| meta.is_file() && meta.permissions().mode() & 0o111 != 0)
 }

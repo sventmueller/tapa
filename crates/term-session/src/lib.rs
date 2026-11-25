@@ -28,10 +28,10 @@ pub mod snapshot;
 #[allow(unsafe_code, reason = "libc calls and the poller registration on the PTY")]
 mod sys;
 
-pub use event::{Clipboard, Event, WorkingDirectory};
+pub use event::{Clipboard, Event, ShellReport, WorkingDirectory};
 pub use foreground::{Agent, Foreground};
 pub use frames::{FrameSink, FrameSource};
 pub use input::{InputModes, Key, KeyAction, KeyCode, Modifiers, MouseAction, MouseButton, MouseEvent, NamedKey};
 pub use paste::{PasteAction, Refusal};
-pub use session::{CellSide, Found, LockTimes, Options, Program, Scroll, SelectionKind, Session, Size};
+pub use session::{CellSide, Found, LockTimes, Options, Program, Scroll, SelectionKind, Session, Size, TypedLine};
 pub use snapshot::{Cell, CellFlags, Cursor, CursorShape, Damage, Highlight, Palette, Point, Rgb, Snapshot};

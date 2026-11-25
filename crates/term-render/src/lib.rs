@@ -13,6 +13,7 @@
 //! ```
 
 pub mod boxdraw;
+pub mod ghost;
 pub mod gpu;
 mod lines;
 pub mod palette;

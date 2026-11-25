@@ -153,6 +153,7 @@
 "Befehl:" = "コマンド：";
 "Befehle" = "コマンド";
 "Befehle als Blöcke markieren" = "コマンドをブロックとして表示";
+"Befehle einfärben" = "コマンドを色分け表示";
 "Befehle und Änderungen schreiben nur im Projekt, ohne Netzwerk" = "コマンドと変更はプロジェクト内にのみ書き込み、ネットワークは使用しません";
 "Befehle, die bei Ereignissen laufen" = "イベント時に実行されるコマンド";
 "Befehlspalette …" = "コマンドパレット…";
@@ -1059,6 +1060,7 @@
 "Umgebung:" = "環境変数：";
 "Umgehen" = "バイパス";
 "Unbekannt" = "不明";
+"Unbekannte Befehle unterstreichen" = "不明なコマンドに下線を表示";
 "Unbekannter Digraph: {}" = "不明なダイグラフ: {}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "インターネットとMac上のすべてのファイルに制限なくアクセスします。";
 "Unerwartete Antwort: {}" = "予期しない応答: {}";

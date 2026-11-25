@@ -153,6 +153,7 @@
 "Befehl:" = "Polecenie:";
 "Befehle" = "Polecenia";
 "Befehle als Blöcke markieren" = "Oznaczaj polecenia jako bloki";
+"Befehle einfärben" = "Koloruj polecenia";
 "Befehle und Änderungen schreiben nur im Projekt, ohne Netzwerk" = "Polecenia i zmiany zapisują tylko w projekcie, bez sieci";
 "Befehle, die bei Ereignissen laufen" = "Polecenia uruchamiane przy zdarzeniach";
 "Befehlspalette …" = "Paleta poleceń…";
@@ -1059,6 +1060,7 @@
 "Umgebung:" = "Środowisko:";
 "Umgehen" = "Pomiń";
 "Unbekannt" = "Nieznany";
+"Unbekannte Befehle unterstreichen" = "Podkreślaj nieznane polecenia";
 "Unbekannter Digraph: {}" = "Nieznany dwugraf: {}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "Nieograniczony dostęp do internetu i każdego pliku na Macu.";
 "Unerwartete Antwort: {}" = "Nieoczekiwana odpowiedź: {}";

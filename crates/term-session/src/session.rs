@@ -30,7 +30,7 @@ mod copy;
 mod format;
 mod marks;
 mod restored;
-pub use blocks::{Block, BlockPart, BlockState, BlocksView, ShownBlock};
+pub use blocks::{Block, BlockPart, BlockState, BlocksView, ShownBlock, TypedLine};
 pub use copy::{RowsText, RowsView};
 pub use format::{Look, StyledRun, StyledText};
 pub use marks::{ScrollMark, ScrollMarks};

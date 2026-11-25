@@ -153,6 +153,7 @@
 "Befehl:" = "Príkaz:";
 "Befehle" = "Príkazy";
 "Befehle als Blöcke markieren" = "Označovať príkazy ako bloky";
+"Befehle einfärben" = "Farebne zvýrazňovať príkazy";
 "Befehle und Änderungen schreiben nur im Projekt, ohne Netzwerk" = "príkazy a zmeny zapisujú iba do projektu, bez siete";
 "Befehle, die bei Ereignissen laufen" = "Príkazy, ktoré sa spúšťajú pri udalostiach";
 "Befehlspalette …" = "Paleta príkazov…";
@@ -1059,6 +1060,7 @@
 "Umgebung:" = "Prostredie:";
 "Umgehen" = "Obísť";
 "Unbekannt" = "Neznáme";
+"Unbekannte Befehle unterstreichen" = "Podčiarkovať neznáme príkazy";
 "Unbekannter Digraph: {}" = "Neznámy digraph: {}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "Neobmedzený prístup na internet a ku všetkým súborom v Macu.";
 "Unerwartete Antwort: {}" = "Neočakávaná odpoveď: {}";

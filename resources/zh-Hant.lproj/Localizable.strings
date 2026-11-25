@@ -153,6 +153,7 @@
 "Befehl:" = "指令：";
 "Befehle" = "指令";
 "Befehle als Blöcke markieren" = "將指令標示為區塊";
+"Befehle einfärben" = "為指令著色";
 "Befehle und Änderungen schreiben nur im Projekt, ohne Netzwerk" = "指令和編輯只會寫入專案內，且不使用網路";
 "Befehle, die bei Ereignissen laufen" = "在事件發生時執行的指令";
 "Befehlspalette …" = "指令面板…";
@@ -1059,6 +1060,7 @@
 "Umgebung:" = "環境變數：";
 "Umgehen" = "略過權限";
 "Unbekannt" = "未知";
+"Unbekannte Befehle unterstreichen" = "為未知指令加上底線";
 "Unbekannter Digraph: {}" = "未知的複合字元：{}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "不受限制地存取網際網路和 Mac 上的所有檔案。";
 "Unerwartete Antwort: {}" = "非預期的回應：{}";

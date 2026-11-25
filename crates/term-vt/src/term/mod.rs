@@ -15,7 +15,7 @@ use std::borrow::Cow;
 use std::sync::Arc;
 
 pub use blocks::{Block, BlockState};
-pub use marks::{Mark, MarkKind};
+pub use marks::{Mark, MarkKind, TypedLine};
 pub use modes::Modes;
 
 use crate::cell::{Link, Row};

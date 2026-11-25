@@ -66,6 +66,7 @@ impl TerminalView {
         if self.has_renderer() {
             return self.frame_published();
         }
+        self.raw_suggest();
         if self.ivars().metal.supported {
             self.ivars().state.stale.set(true);
             return;
@@ -152,6 +153,7 @@ impl TerminalView {
             self.repaint();
         }
         self.field_follow_screen();
+        self.raw_suggest();
         // Re-armed a display frame later rather than at once, so the reader thread wakes the main thread at most that
         // often while output streams; the frame is taken again then, so the last one is never missed.
         if !self.ivars().rearm_pending.replace(true) {
@@ -161,6 +163,7 @@ impl TerminalView {
                     view.ivars().rearm_pending.set(false);
                     view.with_session(Session::rearm);
                     if view.take_latest_frame() {
+                        view.raw_suggest();
                         if view.ivars().state.exited.get() {
                             view.repaint();
                         }
@@ -215,6 +218,7 @@ impl TerminalView {
                 cursor_on: overlay.cursor_on,
                 hide_cursor: overlay.hide_cursor,
                 marked: overlay.marked.to_string(),
+                ghost: overlay.ghost.map(|(point, text)| (point, text.to_string())),
                 final_line: overlay.final_line.map(|(line, text)| (line, text.to_string())),
                 flash: overlay.flash,
             };
@@ -236,6 +240,7 @@ impl TerminalView {
             return;
         }
         self.field_follow_screen();
+        self.raw_suggest();
         let Some(screen) = self.with_session(Session::snapshot) else {
             self.setNeedsDisplay(true);
             return;
@@ -299,6 +304,7 @@ impl TerminalView {
         let screen = screen.as_deref();
         let state = &self.ivars().state;
         let marked = self.ivars().keys.marked.borrow();
+        let ghost = self.ivars().ghost.borrow();
         let final_line = screen.and_then(|screen| {
             (state.exited.get() && screen.display_offset == 0)
                 .then(|| (model::final_line(screen), t("[Prozess beendet]")))
@@ -308,6 +314,7 @@ impl TerminalView {
             cursor_on: !state.cursor_off.get(),
             hide_cursor: self.in_copy_mode(),
             marked: &marked,
+            ghost: ghost.as_ref().map(|ghost| (ghost.point, ghost.shown.as_str())),
             final_line,
             flash: state.flashing(Instant::now()),
         };

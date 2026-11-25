@@ -107,6 +107,7 @@ fn overlay<'a>() -> Overlay<'a> {
         cursor_on: true,
         hide_cursor: false,
         marked: "",
+        ghost: None,
         final_line: None,
         flash: false,
     }

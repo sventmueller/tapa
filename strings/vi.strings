@@ -218,6 +218,8 @@
 "Voriger Prompt" = "Dấu nhắc trước";
 "Voriges Lesezeichen" = "Dấu trang trước";
 "Vorschläge beim Tippen" = "Gợi ý khi nhập";
+"Befehle einfärben" = "Tô màu lệnh";
+"Unbekannte Befehle unterstreichen" = "Gạch chân lệnh không xác định";
 "Weitersuchen" = "Tìm tiếp";
 "Widerrufen" = "Hoàn tác";
 "Wiederherstellen:" = "Khôi phục:";

@@ -8,6 +8,7 @@
 mod complete;
 mod delayed;
 mod files;
+mod highlight;
 mod history;
 mod next;
 mod paths;
@@ -18,6 +19,7 @@ mod words;
 
 pub use complete::{Candidate, Completion, Kind, Wanted, complete};
 pub use delayed::{TIME_LIMIT, cancel, complete_later, complete_with_sources, next_later};
+pub use highlight::{Highlight, Part, Runnable, Span, highlight};
 pub use history::{Entry, History};
 pub use next::{Next, Reason, next_without_input};
 pub use paths::complete_path;
@@ -27,10 +29,21 @@ pub use spec::{Arg, Opt, Spec, Suggestion};
 /// Parses the spec of `command` ahead, as the field does on a pool thread once the first word is typed, so that the
 /// instant stage finds it parsed.
 pub fn warm_spec(command: &str) {
-    if spec::cached(command).is_none() && spec::exists(command) {
-        let command = command.to_string();
-        let _ = std::thread::Builder::new().name("suggest-spec".into()).spawn(move || {
-            spec::load(&command);
-        });
+    static LOADING: std::sync::Mutex<Vec<String>> = std::sync::Mutex::new(Vec::new());
+    if spec::cached(command).is_some() || !spec::exists(command) {
+        return;
     }
+    let Ok(mut loading) = LOADING.lock() else { return };
+    if loading.iter().any(|name| name == command) {
+        return;
+    }
+    loading.push(command.to_string());
+    drop(loading);
+    let command = command.to_string();
+    let _ = std::thread::Builder::new().name("suggest-spec".into()).spawn(move || {
+        spec::load(&command);
+        if let Ok(mut loading) = LOADING.lock() {
+            loading.retain(|name| *name != command);
+        }
+    });
 }

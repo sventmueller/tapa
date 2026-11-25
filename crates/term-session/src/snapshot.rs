@@ -25,6 +25,27 @@ impl Rgb {
         let third = |c: u8| u8::try_from(u16::from(c) * 2 / 3).unwrap_or(c);
         Rgb::new(third(self.r), third(self.g), third(self.b))
     }
+
+    /// This colour moved `share`, from 0 to 1, of the way to `other`.
+    #[must_use]
+    pub fn mix(self, other: Rgb, share: f64) -> Rgb {
+        let share = share.clamp(0.0, 1.0);
+        let channel = |a: u8, b: u8| {
+            let mixed = f64::from(a) + (f64::from(b) - f64::from(a)) * share;
+            #[expect(
+                clippy::cast_possible_truncation,
+                clippy::cast_sign_loss,
+                reason = "clamped to a byte"
+            )]
+            let byte = mixed.round().clamp(0.0, 255.0) as u8;
+            byte
+        };
+        Rgb::new(
+            channel(self.r, other.r),
+            channel(self.g, other.g),
+            channel(self.b, other.b),
+        )
+    }
 }
 
 /// The colours a session starts from; programs may change them (OSC 4, 10, 11).

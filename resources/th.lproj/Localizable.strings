@@ -153,6 +153,7 @@
 "Befehl:" = "คำสั่ง:";
 "Befehle" = "คำสั่ง";
 "Befehle als Blöcke markieren" = "ทำเครื่องหมายคำสั่งเป็นบล็อก";
+"Befehle einfärben" = "แสดงคำสั่งเป็นสี";
 "Befehle und Änderungen schreiben nur im Projekt, ohne Netzwerk" = "คำสั่งและการแก้ไขเขียนได้เฉพาะในโปรเจ็กต์ โดยไม่มีเครือข่าย";
 "Befehle, die bei Ereignissen laufen" = "คำสั่งที่ทำงานเมื่อเกิดเหตุการณ์";
 "Befehlspalette …" = "จานคำสั่ง…";
@@ -1059,6 +1060,7 @@
 "Umgebung:" = "ตัวแปรสภาพแวดล้อม:";
 "Umgehen" = "ข้ามสิทธิ์";
 "Unbekannt" = "ไม่รู้จัก";
+"Unbekannte Befehle unterstreichen" = "ขีดเส้นใต้คำสั่งที่ไม่รู้จัก";
 "Unbekannter Digraph: {}" = "ไดกราฟที่ไม่รู้จัก: {}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "เข้าถึงอินเทอร์เน็ตและทุกไฟล์ใน Mac ได้โดยไม่จำกัด";
 "Unerwartete Antwort: {}" = "การตอบกลับที่ไม่คาดคิด: {}";

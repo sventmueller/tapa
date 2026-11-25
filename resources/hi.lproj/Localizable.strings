@@ -153,6 +153,7 @@
 "Befehl:" = "कमांड:";
 "Befehle" = "कमांड";
 "Befehle als Blöcke markieren" = "कमांड को ब्लॉक के रूप में चिह्नित करें";
+"Befehle einfärben" = "कमांड को रंगीन करें";
 "Befehle und Änderungen schreiben nur im Projekt, ohne Netzwerk" = "कमांड और बदलाव केवल प्रोजेक्ट में लिखते हैं, नेटवर्क के बिना";
 "Befehle, die bei Ereignissen laufen" = "इवेंट पर चलने वाली कमांड";
 "Befehlspalette …" = "कमांड पैलेट…";
@@ -1059,6 +1060,7 @@
 "Umgebung:" = "परिवेश:";
 "Umgehen" = "बायपास";
 "Unbekannt" = "अज्ञात";
+"Unbekannte Befehle unterstreichen" = "अज्ञात कमांड को रेखांकित करें";
 "Unbekannter Digraph: {}" = "अज्ञात डाइग्राफ़: {}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "इंटरनेट और Mac की हर फ़ाइल तक बिना रोक-टोक एक्सेस।";
 "Unerwartete Antwort: {}" = "अनपेक्षित जवाब : {}";

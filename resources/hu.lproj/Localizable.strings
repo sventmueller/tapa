@@ -153,6 +153,7 @@
 "Befehl:" = "Parancs:";
 "Befehle" = "Parancsok";
 "Befehle als Blöcke markieren" = "Parancsok jelölése blokkként";
+"Befehle einfärben" = "Parancsok színezése";
 "Befehle und Änderungen schreiben nur im Projekt, ohne Netzwerk" = "A parancsok és a módosítások csak a projekten belül írnak, hálózat nélkül";
 "Befehle, die bei Ereignissen laufen" = "Eseményekre futó parancsok";
 "Befehlspalette …" = "Parancspaletta…";
@@ -1059,6 +1060,7 @@
 "Umgebung:" = "Környezet:";
 "Umgehen" = "Megkerülés";
 "Unbekannt" = "Ismeretlen";
+"Unbekannte Befehle unterstreichen" = "Ismeretlen parancsok aláhúzása";
 "Unbekannter Digraph: {}" = "Ismeretlen digráf: {}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "Korlátlan hozzáférés az internethez és a Mac minden fájljához.";
 "Unerwartete Antwort: {}" = "Váratlan válasz: {}";

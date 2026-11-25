@@ -1,11 +1,17 @@
 //! The input field (E7, F209): a text view at the bottom of a session's pane where the command line is edited like
 //! text on a Mac and sent as one piece; ↑ and ↓ step through the field's history, ⌃R searches it, ⌃C clears the
 //! field and Escape leaves it for raw typing until the next prompt. It shows only while the shell waits for input.
+//! As in Warp, a suggestion shows faint after the text, → or ⌃F take it and ⌃→ its next word, Tab opens the
+//! completion menu, and the command's parts have colours of their own.
 
 mod chips;
+pub(crate) mod colour;
 mod glue;
 mod look;
+pub(crate) mod menu;
 pub(crate) mod model;
+pub(crate) mod raw;
+pub(crate) mod shell;
 mod suggest;
 pub(crate) mod toggle;
 pub(crate) mod vim;
@@ -16,9 +22,10 @@ use objc2::runtime::AnyObject;
 use objc2::{DefinedClass, MainThreadMarker, MainThreadOnly, define_class, msg_send};
 use objc2_app_kit::{
     NSAccessibility, NSColor, NSEvent, NSEventModifierFlags, NSFont, NSLayoutConstraint, NSResponder, NSScrollView,
-    NSTextView, NSView,
+    NSTextInputClient, NSTextView, NSView,
 };
 use objc2_foundation::{NSPoint, NSRange, NSRect, NSSize};
+use std::cell::RefCell;
 
 use crate::kit::{guarded, ns};
 
@@ -111,6 +118,10 @@ impl FieldText {
             .charactersIgnoringModifiers()
             .map(|s| s.to_string())
             .unwrap_or_default();
+        let at_end = self.caret() >= self.string().length();
+        if let Some(handled) = view.menu_key(event.keyCode(), shift, at_end) {
+            return handled;
+        }
         match (event.keyCode(), key.as_str()) {
             (36 | 76, _) if !shift => {
                 view.field_submit();
@@ -128,7 +139,10 @@ impl FieldText {
                 view.field_leave();
                 true
             }
-            (124, _) if self.caret() >= self.string().length() => view.field_accept(),
+            (124, _) if control => view.field_accept_word(),
+            (124, _) if at_end => view.field_accept(),
+            (_, "f") if control => view.field_accept(),
+            (_, "e") if control && at_end => view.field_accept(),
             (48, _) => {
                 view.field_complete();
                 true
@@ -179,8 +193,12 @@ pub(crate) struct InputField {
     root: Retained<look::Backdrop>,
     text: Retained<FieldText>,
     height: Retained<NSLayoutConstraint>,
-    /// What the history suggests, in grey at the right; → takes it.
+    /// Vim's mode, in grey at the right.
     hint: Retained<objc2_app_kit::NSTextField>,
+    /// The rest of the suggested line, faint right after the text; → takes it.
+    ghost: Retained<objc2_app_kit::NSTextField>,
+    /// The colours of the text, the suggestion and the command's parts.
+    colours: RefCell<colour::Colours>,
     /// What the empty field asks for.
     placeholder: Retained<objc2_app_kit::NSTextField>,
     /// The folder and the branch above the text.
@@ -221,6 +239,11 @@ impl InputField {
         hint.setLineBreakMode(objc2_app_kit::NSLineBreakMode::ByTruncatingHead);
         hint.setAlignment(objc2_app_kit::NSTextAlignment::Right);
         crate::kit::hide_from_voiceover(&hint);
+        let ghost = crate::kit::label(mtm, "");
+        ghost.setLineBreakMode(objc2_app_kit::NSLineBreakMode::ByClipping);
+        ghost.setHidden(true);
+        crate::kit::hide_from_voiceover(&ghost);
+        text.addSubview(&ghost);
         let placeholder = crate::kit::label(mtm, splat_i18n::t("Befehl eingeben"));
         placeholder.setTextColor(Some(&NSColor::placeholderTextColor()));
         crate::kit::hide_from_voiceover(&placeholder);
@@ -236,6 +259,8 @@ impl InputField {
             text,
             height,
             hint,
+            ghost,
+            colours: RefCell::new(colour::Colours::of(&term_render::palette::theme(false, false))),
             placeholder,
             chips,
             toggle: std::cell::OnceCell::new(),
@@ -256,15 +281,93 @@ impl InputField {
         self.hint.setStringValue(&ns(hint.unwrap_or_default()));
     }
 
+    /// The rest of the suggested line that shows after the text.
+    pub(crate) fn ghost(&self) -> String {
+        if self.ghost.isHidden() {
+            return String::new();
+        }
+        self.ghost.stringValue().to_string()
+    }
+
+    /// Shows `ghost` faint right after the text, or nothing.
+    pub(crate) fn set_ghost(&self, ghost: Option<&str>) {
+        self.ghost.setStringValue(&ns(ghost.unwrap_or_default()));
+        self.place_ghost();
+        self.placeholder
+            .setHidden(!self.text().is_empty() || !self.ghost.isHidden());
+    }
+
+    /// Puts the suggestion where the text ends, as far as the field has room; it stays away when the text does not end
+    /// on its last visible line.
+    fn place_ghost(&self) {
+        let wanted = !self.ghost.stringValue().is_empty();
+        let end = self.text.string().length();
+        let Some(caret) = wanted.then(|| self.rect_of_utf16(end, &self.text)).flatten() else {
+            self.ghost.setHidden(true);
+            return;
+        };
+        let room = self.text.bounds().size.width - caret.origin.x - LINE_PADDING;
+        let size = self.ghost.intrinsicContentSize();
+        if room < 1.0 {
+            self.ghost.setHidden(true);
+            return;
+        }
+        // A label draws its text a little in from its frame, as its cell pads it.
+        let padding = 2.0;
+        self.ghost.setFrame(NSRect::new(
+            NSPoint::new(
+                caret.origin.x - padding,
+                caret.origin.y + ((caret.size.height - size.height) / 2.0).round(),
+            ),
+            NSSize::new(room + padding, size.height),
+        ));
+        self.ghost.setHidden(false);
+    }
+
+    /// The rectangle of the text from UTF-16 offset `at` on, as input methods ask for it, in `view`'s coordinates.
+    fn rect_of_utf16(&self, at: usize, view: &NSView) -> Option<NSRect> {
+        let window = self.text.window()?;
+        // SAFETY: An empty range within the text; no actual range is asked for.
+        let screen = unsafe {
+            self.text
+                .firstRectForCharacterRange_actualRange(NSRange::new(at, 0), std::ptr::null_mut())
+        };
+        if screen.size.height <= 0.0 {
+            return None;
+        }
+        let in_window = window.convertRectFromScreen(screen);
+        Some(view.convertRect_fromView(in_window, None))
+    }
+
+    /// Where the text from byte `byte` on shows, in `view`'s coordinates.
+    pub(crate) fn rect_of(&self, byte: usize, view: &NSView) -> Option<NSRect> {
+        let text = self.text();
+        let at = text.get(..byte).map_or(0, |head| head.encode_utf16().count());
+        self.rect_of_utf16(at, view)
+    }
+
+    /// The face of the text.
+    pub(crate) fn font(&self) -> Retained<NSFont> {
+        self.text
+            .font()
+            .unwrap_or_else(|| NSFont::monospacedSystemFontOfSize_weight(13.0, 0.0))
+    }
+
     /// Takes up the terminal's face and colours.
-    pub(crate) fn style(&self, font: &NSFont, foreground: &NSColor, background: &NSColor) {
+    pub(crate) fn style(&self, font: &NSFont, theme: &term_render::palette::Theme) {
+        let colours = colour::Colours::of(theme);
+        let background = colour::ns_colour(theme.palette.background);
         self.text.setFont(Some(font));
-        self.text.setTextColor(Some(foreground));
-        self.text.setInsertionPointColor(Some(foreground));
-        self.root.set_ground(background);
+        self.text.setTextColor(Some(&colours.text));
+        self.text.setInsertionPointColor(Some(&colours.text));
+        self.root.set_ground(&background);
         self.hint.setFont(Some(font));
+        self.ghost.setFont(Some(font));
+        self.ghost.setTextColor(Some(&colours.ghost));
         self.placeholder.setFont(Some(font));
+        *self.colours.borrow_mut() = colours;
         self.fit();
+        self.place_ghost();
     }
 
     /// Shows or hides the field; a shown field takes the keyboard when `focus`.
@@ -307,7 +410,7 @@ impl InputField {
         let font = self.text.font();
         let line = font.map_or(16.0, |font| font.ascender() - font.descender() + font.leading());
         let text = self.text();
-        self.placeholder.setHidden(!text.is_empty());
+        self.placeholder.setHidden(!text.is_empty() || !self.ghost.isHidden());
         let lines = (text.matches('\n').count() + 1) as f64;
         let around = look::TOP + chips::HEIGHT + look::GAP + 2.0 * TEXT_INSET.height + look::BOTTOM;
         self.height.setConstant(lines.min(MOST_LINES) * line.ceil() + around);
