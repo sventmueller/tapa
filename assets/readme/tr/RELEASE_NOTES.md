@@ -1,4 +1,6 @@
-Tapa 1.0.1, tam ekran programlarda yanıp sönen beyaz satırları düzeltir. Tapa 1.0.0 kendini bu sürüme günceller, Homebrew de aynı görüntüyü kurar.
+Tapa 1.0.2, arka planda sekmeler varken daha az bellek kullanır.
 
-## Düzeltilenler
-- htop gibi tam ekran programlar açık görünümde artık beyaz satırlar yanıp söndürmez: Tapa, programın ekranını yarıda değil, program yazmayı bitirdikten sonra gösterir. Bir istemde yazarken her tuş eskisi kadar hızlı görünür.
+## İyileştirmeler
+- Gizli terminal sekmeleri Metal arabelleklerini, gizli aracı sekmeleri ise sohbet görünümlerini serbest bırakır. Terminal oturumları, çıktı geçmişi ve sohbetler korunur.
+- Sekme değiştirme, kaydırma ve pencereyi yeniden boyutlandırma ana iş parçacığına daha az yük bindirir. Çalışma alanı geri yüklenirken de arayüz yanıt vermeye devam eder.
+- Claude ve Codex, sıradaki istekleri ve yanıtları daha güvenilir biçimde işler.

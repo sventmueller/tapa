@@ -1,4 +1,6 @@
-Tapa 1.0.1 ispravlja bijele retke koji su treperili u programima u cijelom zaslonu. Tapa 1.0.0 sama se ažurira na nju, a Homebrew instalira istu sliku.
+Tapa 1.0.2 troši manje memorije dok su kartice u pozadini.
 
-## Ispravljeno
-- Programi u cijelom zaslonu poput htopa više ne trepere bijelim recima u svijetlom izgledu: Tapa prikazuje njihov zaslon kad ga program dovrši, a ne na pola puta. Tipkanje na odzivniku prikazuje svaku tipku jednako brzo kao prije.
+## Poboljšanja
+- Skrivene kartice terminala oslobađaju Metal međuspremnike, a skrivene kartice agenata prikaze razgovora. Sesije terminala, povijest ispisa i razgovori ostaju sačuvani.
+- Prebacivanje kartica, pomicanje sadržaja i promjena veličine prozora manje opterećuju glavnu dretvu. Sučelje ostaje odzivno i tijekom obnove radnog prostora.
+- Claude i Codex pouzdanije obrađuju zahtjeve na čekanju i odgovore.

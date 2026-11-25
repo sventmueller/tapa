@@ -1,4 +1,6 @@
-Tapa 1.0.1 sửa lỗi các hàng trắng nhấp nháy trong chương trình toàn màn hình. Tapa 1.0.0 tự cập nhật lên bản này, và Homebrew cài cùng ảnh đĩa đó.
+Tapa 1.0.2 dùng ít bộ nhớ hơn khi có thẻ chạy nền.
 
-## Đã sửa
-- Các chương trình toàn màn hình như htop không còn nhấp nháy hàng trắng ở chế độ sáng: Tapa hiển thị màn hình của chúng khi chương trình đã ghi xong, chứ không phải giữa chừng. Gõ tại dấu nhắc vẫn hiện từng phím nhanh như trước.
+## Cải tiến
+- Các thẻ terminal ẩn giải phóng bộ đệm Metal, còn các thẻ tác nhân ẩn giải phóng phần hiển thị hội thoại. Các phiên terminal, lịch sử đầu ra và hội thoại vẫn được giữ lại.
+- Việc chuyển thẻ, cuộn và đổi kích thước cửa sổ giảm tải cho luồng chính. Giao diện vẫn phản hồi khi khôi phục không gian làm việc.
+- Claude và Codex xử lý các yêu cầu trong hàng đợi và phản hồi ổn định hơn.

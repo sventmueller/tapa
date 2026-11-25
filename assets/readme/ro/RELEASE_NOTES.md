@@ -1,4 +1,6 @@
-Tapa 1.0.1 remediază rândurile albe care clipeau în programele pe tot ecranul. Tapa 1.0.0 se actualizează singur la această versiune, iar Homebrew instalează aceeași imagine.
+Tapa 1.0.2 folosește mai puțină memorie când filele sunt în fundal.
 
-## Remediat
-- Programele pe tot ecranul, precum htop, nu mai fac să clipească rânduri albe în aspectul luminos: Tapa afișează ecranul lor după ce programul a terminat de scris, nu la jumătate. Tastarea la un prompt afișează fiecare tastă la fel de repede ca înainte.
+## Îmbunătățiri
+- Filele de terminal ascunse eliberează bufferele Metal, iar filele de agenți ascunse eliberează vizualizările conversațiilor. Sesiunile de terminal, istoricul ieșirii și conversațiile se păstrează.
+- Comutarea între file, derularea și redimensionarea ferestrei solicită mai puțin firul principal. Interfața rămâne receptivă și în timpul restaurării unui spațiu de lucru.
+- Claude și Codex gestionează mai fiabil cererile din coadă și răspunsurile.

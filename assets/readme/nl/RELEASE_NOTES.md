@@ -1,4 +1,6 @@
-Tapa 1.0.1 verhelpt witte regels die flitsten in schermvullende programma’s. Tapa 1.0.0 werkt zichzelf hiernaar bij, en Homebrew installeert dezelfde schijfkopie.
+Tapa 1.0.2 gebruikt minder geheugen als er tabbladen op de achtergrond staan.
 
-## Opgelost
-- Schermvullende programma’s zoals htop laten in de lichte weergave geen witte regels meer flitsen: Tapa toont hun scherm zodra het programma het klaar heeft geschreven en niet halverwege. Typen bij een prompt toont elke toets even snel als voorheen.
+## Verbeteringen
+- Verborgen terminaltabbladen geven hun Metal-buffers vrij. Verborgen agenttabbladen geven hun gespreksweergaven vrij. Terminalsessies, uitvoergeschiedenis en gesprekken blijven behouden.
+- Wisselen tussen tabbladen, scrollen en het venster vergroten of verkleinen belasten de hoofdthread minder. De interface blijft reageren tijdens het herstellen van een werkruimte.
+- Claude en Codex verwerken verzoeken in de wachtrij en antwoorden betrouwbaarder.

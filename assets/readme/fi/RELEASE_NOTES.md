@@ -1,4 +1,6 @@
-Tapa 1.0.1 korjaa koko näytön ohjelmissa välkkyneet valkoiset rivit. Tapa 1.0.0 päivittää itsensä siihen, ja Homebrew asentaa saman levykuvan.
+Tapa 1.0.2 käyttää vähemmän muistia, kun välilehtiä on taustalla.
 
-## Korjattu
-- Koko näytön ohjelmat kuten htop eivät enää välkytä valkoisia rivejä vaaleassa ulkoasussa: Tapa näyttää niiden näytön, kun ohjelma on kirjoittanut sen valmiiksi, eikä kesken. Kirjoittaminen kehotteessa näyttää jokaisen näppäimen yhtä nopeasti kuin ennen.
+## Parannukset
+- Piilotetut päätevälilehdet vapauttavat Metal-puskurinsa, ja piilotetut agenttivälilehdet vapauttavat keskustelunäkymänsä. Pääteistunnot, tulostehistoria ja keskustelut säilyvät.
+- Välilehtien vaihtaminen, vieritys ja ikkunan koon muuttaminen kuormittavat pääsäiettä vähemmän. Käyttöliittymä pysyy toimintavalmiina myös työtilaa palautettaessa.
+- Claude ja Codex käsittelevät jonossa olevia pyyntöjä ja vastauksia luotettavammin.

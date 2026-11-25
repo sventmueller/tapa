@@ -1,4 +1,6 @@
-Tapa 1.0.1 retter hvide rækker, der blinkede i programmer i fuld skærm. Tapa 1.0.0 opdaterer sig selv til den, og Homebrew installerer det samme billede.
+Tapa 1.0.2 bruger mindre hukommelse, når faner ligger i baggrunden.
 
-## Rettet
-- Programmer i fuld skærm som htop blinker ikke længere med hvide rækker i lyst udseende: Tapa viser deres skærmbillede, når programmet er færdigt med at skrive det, og ikke halvvejs. Når du skriver ved en prompt, vises hver tast lige så hurtigt som før.
+## Forbedringer
+- Skjulte terminalfaner frigiver Metal-buffere, og skjulte agentfaner frigiver de visninger, der bruges til samtalerne. Terminalsessioner, rullehistorik og samtaler bevares.
+- Faneskift, rulning og ændring af vinduesstørrelse belaster hovedtråden mindre. Brugerfladen reagerer også, mens et arbejdsområde gendannes.
+- Claude og Codex håndterer anmodninger i kø og svar mere pålideligt.

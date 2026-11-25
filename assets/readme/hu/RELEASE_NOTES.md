@@ -1,4 +1,6 @@
-A Tapa 1.0.1 kijavítja a teljes képernyős programokban villogó fehér sorokat. A Tapa 1.0.0 magától frissül erre a verzióra, a Homebrew pedig ugyanezt a lemezképet telepíti.
+A Tapa 1.0.2 kevesebb memóriát használ, amikor lapok vannak a háttérben.
 
-## Javítva
-- A teljes képernyős programok, például a htop, világos megjelenésben már nem villogtatnak fehér sorokat: a Tapa akkor mutatja a képernyőjüket, amikor a program befejezte az írását, nem félúton. A promptnál gépelve minden billentyű ugyanolyan gyorsan jelenik meg, mint korábban.
+## Fejlesztések
+- A rejtett terminállapok felszabadítják Metal-puffereiket, a rejtett ügynöklapok pedig a beszélgetésnézeteket. A terminálmunkamenetek, a kimeneti előzmények és a beszélgetések megmaradnak.
+- A lapváltás, a görgetés és az ablak átméretezése kevésbé terheli a fő szálat. A felület a munkaterület visszaállítása közben is reagál.
+- A Claude és a Codex megbízhatóbban kezeli a sorban álló kéréseket és a válaszokat.

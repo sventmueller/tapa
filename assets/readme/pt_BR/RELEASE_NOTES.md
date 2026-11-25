@@ -1,4 +1,6 @@
-O Tapa 1.0.1 corrige as linhas brancas que piscavam em programas em tela cheia. O Tapa 1.0.0 se atualiza sozinho para ela, e o Homebrew instala a mesma imagem.
+O Tapa 1.0.2 usa menos memória quando há abas em segundo plano.
 
-## Corrigido
-- Programas em tela cheia como o htop não fazem mais linhas brancas piscarem na aparência clara: o Tapa mostra a tela deles quando o programa termina de escrevê-la, e não pela metade. Digitar em um prompt mostra cada tecla tão rápido quanto antes.
+## Melhorias
+- As abas ocultas do terminal liberam os buffers do Metal, e as abas ocultas dos agentes liberam as visualizações de conversa. As sessões do terminal, o histórico de rolagem e as conversas são preservados.
+- Alternar abas, rolar e redimensionar a janela exige menos da thread principal. A interface continua respondendo durante a restauração de um espaço de trabalho.
+- Claude e Codex processam solicitações na fila e respostas com mais confiabilidade.

@@ -1,4 +1,6 @@
-Tapa 1.0.1 behebt weiße Zeilen, die in Vollbildprogrammen aufblitzten. Tapa 1.0.0 aktualisiert sich selbst darauf, und Homebrew installiert dasselbe Image.
+Tapa 1.0.2 verbraucht weniger Speicher, wenn Tabs im Hintergrund liegen.
 
-## Behoben
-- Vollbildprogramme wie htop lassen im hellen Erscheinungsbild keine weißen Zeilen mehr aufblitzen: Tapa zeigt ihren Bildschirm, sobald das Programm ihn fertig geschrieben hat, und nicht schon halb. Tippen an einem Prompt zeigt jede Taste so schnell wie zuvor.
+## Verbesserungen
+- Ausgeblendete Terminal-Tabs geben ihre Metal-Puffer frei. Ausgeblendete Agent-Tabs geben die Darstellung ihrer Verläufe frei. Terminalsitzungen, Scrollback und Unterhaltungen bleiben erhalten.
+- Tab-Wechsel, Scrollen und Größenänderungen belasten den Hauptthread weniger. Auch beim Wiederherstellen eines Arbeitsbereichs bleibt die Oberfläche reaktionsfähig.
+- Claude und Codex verarbeiten wartende Anfragen und Antworten zuverlässiger.

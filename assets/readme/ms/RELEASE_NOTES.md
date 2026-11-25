@@ -1,4 +1,6 @@
-Tapa 1.0.1 membetulkan baris putih yang berkelip dalam program skrin penuh. Tapa 1.0.0 mengemas kini dirinya kepada versi ini, dan Homebrew memasang imej yang sama.
+Tapa 1.0.2 menggunakan kurang memori apabila tab berada di latar belakang.
 
-## Dibetulkan
-- Program skrin penuh seperti htop tidak lagi mengelipkan baris putih dalam penampilan cerah: Tapa memaparkan skrinnya setelah program selesai menulisnya, bukan separuh jalan. Menaip pada prompt memaparkan setiap kekunci secepat sebelumnya.
+## Penambahbaikan
+- Tab terminal tersembunyi melepaskan penimbal Metal, manakala tab ejen tersembunyi melepaskan paparan perbualan. Sesi terminal, sejarah output dan perbualan dikekalkan.
+- Menukar tab, menatal dan mengubah saiz tetingkap mengurangkan beban pada bebenang utama. Antara muka kekal responsif semasa ruang kerja dipulihkan.
+- Claude dan Codex mengendalikan permintaan dalam baris gilir dan balasan dengan lebih andal.

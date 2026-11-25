@@ -1,4 +1,6 @@
-Tapa 1.0.1 opravuje biele riadky, ktoré blikali v programoch na celej obrazovke. Tapa 1.0.0 sa naň aktualizuje sama a Homebrew nainštaluje ten istý obraz.
+Tapa 1.0.2 využíva menej pamäte, keď sú karty na pozadí.
 
-## Opravené
-- Programy na celej obrazovke, napríklad htop, už so svetlým vzhľadom nebliknú bielymi riadkami: Tapa zobrazí ich obrazovku, až keď ju program dopíše, a nie v polovici. Písanie pri výzve zobrazuje každú klávesu rovnako rýchlo ako predtým.
+## Vylepšenia
+- Skryté karty terminálu uvoľňujú vyrovnávacie pamäte Metal a skryté karty agentov uvoľňujú zobrazenia konverzácií. Relácie terminálu, história výstupu a konverzácie sa zachovajú.
+- Prepínanie kariet, posúvanie a zmena veľkosti okna menej zaťažujú hlavné vlákno. Rozhranie zostáva responzívne aj pri obnove pracovného priestoru.
+- Claude a Codex spoľahlivejšie spracúvajú požiadavky vo fronte a odpovede.

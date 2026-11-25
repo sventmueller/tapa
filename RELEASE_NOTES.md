@@ -1,4 +1,6 @@
-Tapa 1.0.1 fixes white rows flashing in full-screen programs. Tapa 1.0.0 updates itself to it, and Homebrew installs the same image.
+Tapa 1.0.2 uses less memory when tabs are in the background.
 
-## Fixed
-- Full-screen programs such as htop no longer flash white rows in the light appearance: Tapa shows their screen once the program finished writing it rather than halfway through. Typing at a prompt shows each key as fast as before.
+## Improvements
+- Hidden terminal tabs release their Metal buffers, and hidden agent tabs release their rendered conversation views. Terminal sessions, scrollback, and conversations are preserved.
+- Tab switching, scrolling, and resizing do less work on the main thread. Restoring a workspace also keeps the interface responsive.
+- Claude and Codex handle queued requests and replies more reliably.

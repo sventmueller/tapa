@@ -1,4 +1,6 @@
-El Tapa 1.0.1 corregeix les files blanques que parpellejaven en els programes a pantalla completa. El Tapa 1.0.0 s’hi actualitza sol, i Homebrew instal·la la mateixa imatge.
+Tapa 1.0.2 fa servir menys memòria quan hi ha pestanyes en segon pla.
 
-## Corregit
-- Els programes a pantalla completa com htop ja no fan parpellejar files blanques amb l’aparença clara: el Tapa en mostra la pantalla quan el programa ha acabat d’escriure-la i no a mig fer. Escriure en un prompt mostra cada tecla tan de pressa com abans.
+## Millores
+- Les pestanyes de terminal ocultes alliberen els búfers de Metal, i les dels agents alliberen les vistes de conversa. Es conserven les sessions de terminal, l’historial de desplaçament i les converses.
+- Canviar de pestanya, desplaçar-se i redimensionar la finestra carreguen menys el fil principal. La interfície continua responent en restaurar un espai de treball.
+- Claude i Codex gestionen amb més fiabilitat les peticions en cua i les respostes.

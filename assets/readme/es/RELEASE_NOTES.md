@@ -1,4 +1,6 @@
-Tapa 1.0.1 corrige las filas blancas que parpadeaban en los programas a pantalla completa. Tapa 1.0.0 se actualiza solo a esta versión, y Homebrew instala la misma imagen.
+Tapa 1.0.2 usa menos memoria cuando hay pestañas en segundo plano.
 
-## Corregido
-- Los programas a pantalla completa como htop ya no hacen parpadear filas blancas con la apariencia clara: Tapa muestra su pantalla cuando el programa ha terminado de escribirla y no a medias. Escribir en un prompt muestra cada tecla tan rápido como antes.
+## Mejoras
+- Las pestañas ocultas del terminal liberan sus búferes de Metal y las de los agentes liberan las vistas de conversación. Se conservan las sesiones de terminal, el historial de desplazamiento y las conversaciones.
+- Cambiar de pestaña, desplazarse y redimensionar la ventana requieren menos trabajo del hilo principal. La interfaz sigue respondiendo al restaurar un espacio de trabajo.
+- Claude y Codex gestionan las solicitudes en cola y las respuestas con mayor fiabilidad.

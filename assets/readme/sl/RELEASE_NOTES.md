@@ -1,4 +1,6 @@
-Tapa 1.0.1 popravlja bele vrstice, ki so utripale v programih v celozaslonskem načinu. Tapa 1.0.0 se nanjo posodobi sama, Homebrew pa namesti isto sliko.
+Tapa 1.0.2 porabi manj pomnilnika, ko so zavihki v ozadju.
 
-## Popravljeno
-- Programi v celozaslonskem načinu, kot je htop, v svetlem videzu ne utripajo več z belimi vrsticami: Tapa prikaže njihov zaslon, ko ga program dokonča, ne na pol poti. Tipkanje ob pozivu prikaže vsako tipko enako hitro kot prej.
+## Izboljšave
+- Skriti terminalski zavihki sprostijo medpomnilnike Metal, skriti zavihki agentov pa prikaze pogovorov. Terminalske seje, zgodovina izpisa in pogovori se ohranijo.
+- Preklapljanje med zavihki, drsenje in spreminjanje velikosti okna manj obremenjujejo glavno nit. Vmesnik ostane odziven tudi med obnovitvijo delovnega prostora.
+- Claude in Codex zanesljiveje obdelujeta zahteve v čakalni vrsti in odgovore.

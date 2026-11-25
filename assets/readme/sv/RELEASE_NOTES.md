@@ -1,4 +1,6 @@
-Tapa 1.0.1 åtgärdar vita rader som blinkade i program i helskärm. Tapa 1.0.0 uppdaterar sig själv till den, och Homebrew installerar samma avbild.
+Tapa 1.0.2 använder mindre minne när flikar ligger i bakgrunden.
 
-## Åtgärdat
-- Program i helskärm som htop får inte längre vita rader att blinka i ljust utseende: Tapa visar deras skärm när programmet har skrivit klart den, inte halvvägs. Att skriva vid en prompt visar varje tangent lika snabbt som förut.
+## Förbättringar
+- Dolda terminalflikar frigör Metal-buffertar, och dolda agentflikar frigör konversationsvyerna. Terminalsessioner, rullningshistorik och konversationer finns kvar.
+- Flikbyten, rullning och storleksändringar belastar huvudtråden mindre. Gränssnittet svarar även medan en arbetsyta återställs.
+- Claude och Codex hanterar köade förfrågningar och svar mer tillförlitligt.
