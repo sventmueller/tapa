@@ -227,6 +227,9 @@ impl Reader {
             self.quiet_since = Some(Instant::now());
             let show = {
                 let mut own = shared.own.lock();
+                if let Some(gather) = &self.gather {
+                    gather.set_full_screen(own.terminal.modes().contains(term_vt::term::Modes::ALT_SCREEN));
+                }
                 if own.terminal.modes().contains(term_vt::term::Modes::SYNC) {
                     let since = *own.sync_since.get_or_insert_with(Instant::now);
                     since.elapsed() >= SYNC_TIMEOUT

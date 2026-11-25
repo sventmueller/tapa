@@ -54,6 +54,7 @@ pub(crate) struct Gather {
     queued: Arc<AtomicUsize>,
     /// The reader thread is about to wait or waits in its poller, so a batch has to wake it.
     sleeping: Arc<AtomicBool>,
+    full_screen: Arc<AtomicBool>,
     free: Sender<Vec<u8>>,
     stop: Arc<AtomicBool>,
     thread: Option<JoinHandle<()>>,
@@ -75,8 +76,10 @@ impl Gather {
             out: Arc::clone(&out),
             queued: Arc::new(AtomicUsize::new(0)),
             sleeping: Arc::new(AtomicBool::new(false)),
+            full_screen: Arc::new(AtomicBool::new(false)),
         };
         let (queued, sleeping) = (Arc::clone(&shared.queued), Arc::clone(&shared.sleeping));
+        let full_screen = Arc::clone(&shared.full_screen);
         let thread = std::thread::Builder::new()
             .name("terminal-gather".into())
             .spawn(move || {
@@ -88,6 +91,7 @@ impl Gather {
             out,
             queued,
             sleeping,
+            full_screen,
             free,
             stop,
             thread: Some(thread),
@@ -102,6 +106,11 @@ impl Gather {
             return false;
         }
         true
+    }
+
+    /// Tells the stage whether a full-screen program shows, whose small writes it gathers until the program pauses.
+    pub(crate) fn set_full_screen(&self, full_screen: bool) {
+        self.full_screen.store(full_screen, Ordering::Relaxed);
     }
 
     /// Tells the stage the reader thread is awake again, taking batches without being woken.
@@ -151,6 +160,7 @@ struct Shared {
     out: Arc<AtomicUsize>,
     queued: Arc<AtomicUsize>,
     sleeping: Arc<AtomicBool>,
+    full_screen: Arc<AtomicBool>,
 }
 
 impl Shared {
@@ -206,7 +216,18 @@ fn drain(
                 Err(error) if error.kind() == ErrorKind::Interrupted => {}
                 Err(error) if error.kind() == ErrorKind::WouldBlock => {
                     if filled < BRIDGE_FROM && !(hot && filled == 0) {
-                        settled = true;
+                        // A program redrawing its screen, as htop does, writes it in dozens of small pieces a few
+                        // microseconds apart; shown between two of them, half the screen flashes.
+                        // Typing at a prompt keeps its echo at once, as there a pause costs a millisecond each key.
+                        if !shared.full_screen.load(Ordering::Relaxed) {
+                            settled = true;
+                            break;
+                        }
+                        let started = *bridging.get_or_insert_with(std::time::Instant::now);
+                        if started.elapsed() < BRIDGE_BUDGET && crate::sys::wait_readable(&pty, BRIDGE_WAIT_MS) {
+                            continue;
+                        }
+                        settled = started.elapsed() < BRIDGE_BUDGET;
                         break;
                     }
                     if retries < RETRIES {
@@ -264,3 +285,7 @@ fn readable(pty: &File, stop: &AtomicBool) -> bool {
         }
     }
 }
+
+#[cfg(test)]
+#[path = "gather_tests.rs"]
+mod tests;

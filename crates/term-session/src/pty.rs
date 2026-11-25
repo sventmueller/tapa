@@ -117,7 +117,7 @@ fn open(size: &libc::winsize) -> io::Result<(OwnedFd, OwnedFd)> {
     Ok((master, slave))
 }
 
-fn set_nonblocking(fd: RawFd) -> io::Result<()> {
+pub(crate) fn set_nonblocking(fd: RawFd) -> io::Result<()> {
     // SAFETY: fcntl reads and changes the status flags of a descriptor the caller keeps open.
     let status = unsafe { libc::fcntl(fd, libc::F_SETFL, libc::fcntl(fd, libc::F_GETFL, 0) | libc::O_NONBLOCK) };
     if status == -1 {
