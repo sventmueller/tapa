@@ -1,0 +1,8 @@
+/* Russian interface texts; the keys are the German texts in the code. */
+"Das Dokument hat noch keine Datei." = "У документа еще нет файла.";
+"Das Dokument ist schreibgeschützt." = "Документ доступен только для чтения.";
+"Die Datei enthält Binärdaten und wird nie gesichert." = "Файл содержит двоичные данные и никогда не сохраняется.";
+"Die Datei ist schreibgeschützt." = "Файл доступен только для чтения.";
+"Die Datei wurde inzwischen außerhalb geändert." = "Тем временем файл был изменен извне.";
+"Die Kodierung der Datei ist unbekannt; sie wird nie gesichert." = "Кодировка файла неизвестна; он никогда не сохраняется.";
+"Die Stelle liegt außerhalb des Textes: {}" = "Позиция находится за пределами текста: {}";

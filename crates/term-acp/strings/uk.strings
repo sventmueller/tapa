@@ -1,0 +1,14 @@
+/* Ukrainian interface texts; the keys are the German texts in the code. */
+"Der Agent hat auf {} nicht rechtzeitig geantwortet." = "Агент не відповів вчасно на {}.";
+"Der Agent ist nicht gestartet: {}" = "Агент не запустився: {}";
+"Der Agent spricht die Protokollversion {}, diese App Version 1" = "Агент використовує версію протоколу {}, а ця програма — версію 1";
+"Der Agent verlangt eine Anmeldung." = "Агент просить увійти.";
+"Die Sitzung ist beendet." = "Сеанс завершено.";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "Цей запит більше не чекає на відповідь.";
+"{} startet nur in einem vertrauten Arbeitsbereich." = "{} запускається лише в довіреному робочому просторі.";
+"{} wurde nicht gefunden." = "Не знайдено: {}.";
+"Die Installation wurde nicht bestätigt." = "Інсталяцію не підтверджено.";
+"{} {} oder neuer wird gebraucht" = "Потрібно {} {} або новіше";
+"{} wird gebraucht" = "Потрібно {}";
+"Der Download ist fehlgeschlagen: {}" = "Не вдалося завантажити: {}";
+"Der Download stimmt nicht mit seiner Prüfsumme überein und wurde verworfen" = "Завантаження не збігається зі своєю контрольною сумою, тому його відкинуто";

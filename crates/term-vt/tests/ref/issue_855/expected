@@ -1,0 +1,207 @@
+size 105 29 0
+cursor 28 38
+line 0 jwilm@jwilm-desk ➜  ~/code/alacritty  ll
+line 1 total 90M
+line 2 -rw-rw-r-- 1 jwilm jwilm  40K May  5  2017 ]
+line 3 -rw-rw-r-- 1 jwilm jwilm  128 May  4  2017 TODO.md
+line 4 -rw-rw-r-- 1 jwilm jwilm  12K Apr 19  2017 typescript
+line 5 -rw-rw-r-- 1 jwilm jwilm 3.0K Mar  7  2017 wego.example
+line 6 jwilm@jwilm-desk ➜  ~/code/alacritty  tput cup 10
+line 7 
+line 8 
+line 9 
+line 10 jwilm@jwilm-desk ➜  ~/code/alacritty  ll
+line 11 total 90M
+line 12 -rw-rw-r-- 1 jwilm jwilm  40K May  5  2017 ]
+line 13 -rw-rw-r-- 1 jwilm jwilm  35K May  8  2017 0001-wip.patch
+line 14 -rwxrwxr-x 1 jwilm jwilm  328 Oct 22 11:43 Alacritty.desktop
+line 15 -rw-rw-r-- 1 jwilm jwilm  139 Oct 22 11:43 alacritty.info
+line 16 -rw-rw-r-- 1 jwilm jwilm  14K Nov  2 08:25 alacritty_macos.yml
+line 17 -rwxrwxr-x 1 jwilm jwilm  16M Jan 25  2017 alacritty-pre-gco
+line 18 -rw-rw-r-- 1 jwilm jwilm  71K May 10  2017 alacritty.profile
+line 19 -rw-rw-r-- 1 jwilm jwilm 5.6K Nov 11 08:50 alacritty.recording
+line 20 -rwxrwxr-x 1 jwilm jwilm  15M Oct 28  2016 alacritty_shader_color
+line 21 -rw-rw-r-- 1 jwilm jwilm 272K May  9  2017 alacritty.svg
+line 22 -rw-rw-r-- 1 jwilm jwilm 1019 Jan  1  2017 alacritty.txt
+line 23 -rwxrwxr-x 1 jwilm jwilm  15M Sep 24  2016 alacritty_with_corrupt_bug
+line 24 -rw-rw-r-- 1 jwilm jwilm  15K Nov  2 08:25 alacritty.yml
+line 25 drwxrwxr-x 3 jwilm jwilm 4.0K Oct 22 11:43 assets
+line 26 -rw-rw-r-- 1 jwilm jwilm 1.1K Jun 29  2016 build.rs
+line 27 -rw-rw-r-- 1 jwilm jwilm 2.1M May  8  2017 build.txt
+line 28 jwilm@jwilm-desk ➜  ~/code/alacritty
+cell 0 17 fg=2 bold
+cell 0 18 fg=2 bold
+cell 0 19 fg=2 bold
+cell 0 20 fg=6 bold
+cell 0 21 fg=6 bold
+cell 0 22 fg=6 bold
+cell 0 23 fg=6 bold
+cell 0 24 fg=6 bold
+cell 0 25 fg=6 bold
+cell 0 26 fg=6 bold
+cell 0 27 fg=6 bold
+cell 0 28 fg=6 bold
+cell 0 29 fg=6 bold
+cell 0 30 fg=6 bold
+cell 0 31 fg=6 bold
+cell 0 32 fg=6 bold
+cell 0 33 fg=6 bold
+cell 0 34 fg=6 bold
+cell 0 35 fg=6 bold
+cell 0 36 fg=6 bold
+cell 0 38 fg=5
+cell 0 39 fg=5
+cell 6 17 fg=2 bold
+cell 6 18 fg=2 bold
+cell 6 19 fg=2 bold
+cell 6 20 fg=6 bold
+cell 6 21 fg=6 bold
+cell 6 22 fg=6 bold
+cell 6 23 fg=6 bold
+cell 6 24 fg=6 bold
+cell 6 25 fg=6 bold
+cell 6 26 fg=6 bold
+cell 6 27 fg=6 bold
+cell 6 28 fg=6 bold
+cell 6 29 fg=6 bold
+cell 6 30 fg=6 bold
+cell 6 31 fg=6 bold
+cell 6 32 fg=6 bold
+cell 6 33 fg=6 bold
+cell 6 34 fg=6 bold
+cell 6 35 fg=6 bold
+cell 6 36 fg=6 bold
+cell 6 38 fg=5
+cell 6 39 fg=5
+cell 6 40 fg=5
+cell 6 41 fg=5
+cell 10 17 fg=2 bold
+cell 10 18 fg=2 bold
+cell 10 19 fg=2 bold
+cell 10 20 fg=6 bold
+cell 10 21 fg=6 bold
+cell 10 22 fg=6 bold
+cell 10 23 fg=6 bold
+cell 10 24 fg=6 bold
+cell 10 25 fg=6 bold
+cell 10 26 fg=6 bold
+cell 10 27 fg=6 bold
+cell 10 28 fg=6 bold
+cell 10 29 fg=6 bold
+cell 10 30 fg=6 bold
+cell 10 31 fg=6 bold
+cell 10 32 fg=6 bold
+cell 10 33 fg=6 bold
+cell 10 34 fg=6 bold
+cell 10 35 fg=6 bold
+cell 10 36 fg=6 bold
+cell 10 38 fg=5
+cell 10 39 fg=5
+cell 14 43 fg=2 bold
+cell 14 44 fg=2 bold
+cell 14 45 fg=2 bold
+cell 14 46 fg=2 bold
+cell 14 47 fg=2 bold
+cell 14 48 fg=2 bold
+cell 14 49 fg=2 bold
+cell 14 50 fg=2 bold
+cell 14 51 fg=2 bold
+cell 14 52 fg=2 bold
+cell 14 53 fg=2 bold
+cell 14 54 fg=2 bold
+cell 14 55 fg=2 bold
+cell 14 56 fg=2 bold
+cell 14 57 fg=2 bold
+cell 14 58 fg=2 bold
+cell 14 59 fg=2 bold
+cell 17 43 fg=2 bold
+cell 17 44 fg=2 bold
+cell 17 45 fg=2 bold
+cell 17 46 fg=2 bold
+cell 17 47 fg=2 bold
+cell 17 48 fg=2 bold
+cell 17 49 fg=2 bold
+cell 17 50 fg=2 bold
+cell 17 51 fg=2 bold
+cell 17 52 fg=2 bold
+cell 17 53 fg=2 bold
+cell 17 54 fg=2 bold
+cell 17 55 fg=2 bold
+cell 17 56 fg=2 bold
+cell 17 57 fg=2 bold
+cell 17 58 fg=2 bold
+cell 17 59 fg=2 bold
+cell 20 43 fg=2 bold
+cell 20 44 fg=2 bold
+cell 20 45 fg=2 bold
+cell 20 46 fg=2 bold
+cell 20 47 fg=2 bold
+cell 20 48 fg=2 bold
+cell 20 49 fg=2 bold
+cell 20 50 fg=2 bold
+cell 20 51 fg=2 bold
+cell 20 52 fg=2 bold
+cell 20 53 fg=2 bold
+cell 20 54 fg=2 bold
+cell 20 55 fg=2 bold
+cell 20 56 fg=2 bold
+cell 20 57 fg=2 bold
+cell 20 58 fg=2 bold
+cell 20 59 fg=2 bold
+cell 20 60 fg=2 bold
+cell 20 61 fg=2 bold
+cell 20 62 fg=2 bold
+cell 20 63 fg=2 bold
+cell 20 64 fg=2 bold
+cell 23 43 fg=2 bold
+cell 23 44 fg=2 bold
+cell 23 45 fg=2 bold
+cell 23 46 fg=2 bold
+cell 23 47 fg=2 bold
+cell 23 48 fg=2 bold
+cell 23 49 fg=2 bold
+cell 23 50 fg=2 bold
+cell 23 51 fg=2 bold
+cell 23 52 fg=2 bold
+cell 23 53 fg=2 bold
+cell 23 54 fg=2 bold
+cell 23 55 fg=2 bold
+cell 23 56 fg=2 bold
+cell 23 57 fg=2 bold
+cell 23 58 fg=2 bold
+cell 23 59 fg=2 bold
+cell 23 60 fg=2 bold
+cell 23 61 fg=2 bold
+cell 23 62 fg=2 bold
+cell 23 63 fg=2 bold
+cell 23 64 fg=2 bold
+cell 23 65 fg=2 bold
+cell 23 66 fg=2 bold
+cell 23 67 fg=2 bold
+cell 23 68 fg=2 bold
+cell 25 43 fg=4 bold
+cell 25 44 fg=4 bold
+cell 25 45 fg=4 bold
+cell 25 46 fg=4 bold
+cell 25 47 fg=4 bold
+cell 25 48 fg=4 bold
+cell 28 17 fg=2 bold
+cell 28 18 fg=2 bold
+cell 28 19 fg=2 bold
+cell 28 20 fg=6 bold
+cell 28 21 fg=6 bold
+cell 28 22 fg=6 bold
+cell 28 23 fg=6 bold
+cell 28 24 fg=6 bold
+cell 28 25 fg=6 bold
+cell 28 26 fg=6 bold
+cell 28 27 fg=6 bold
+cell 28 28 fg=6 bold
+cell 28 29 fg=6 bold
+cell 28 30 fg=6 bold
+cell 28 31 fg=6 bold
+cell 28 32 fg=6 bold
+cell 28 33 fg=6 bold
+cell 28 34 fg=6 bold
+cell 28 35 fg=6 bold
+cell 28 36 fg=6 bold

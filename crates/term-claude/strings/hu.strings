@@ -1,0 +1,13 @@
+/* Hungarian interface texts; the keys are the German texts in the code. */
+"Claude Code hat das Zurückspulen abgelehnt: {}" = "A Claude Code elutasította a visszatekerést: {}";
+"Claude Code hat nicht rechtzeitig geantwortet." = "A Claude Code nem válaszolt időben.";
+"Claude Code ist beendet." = "A Claude Code befejeződött.";
+"Claude Code ist nicht gestartet: {}" = "A Claude Code nem indult el: {}";
+"Claude Code lehnt ab: {}" = "A Claude Code elutasítja: {}";
+"Claude Code liest seine Eingabe nicht mehr." = "A Claude Code már nem olvassa a bemenetét.";
+"Claude Code ließ sich nicht starten: {}" = "A Claude Code nem indult el: {}";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "Ez a kérés már nem vár válaszra.";
+"Diese Version von Claude Code kann das hier nicht." = "A Claude Code ezen verziója itt erre nem képes.";
+"Melde dich an, indem du claude im Terminal startest: {}" = "Jelentkezzen be úgy, hogy elindítja a claude parancsot a terminálban: {}";
+"Unerwartete Antwort: {}" = "Váratlan válasz: {}";
+"{} wurde nicht gefunden." = "A(z) {} nem található.";

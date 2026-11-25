@@ -1,0 +1,10 @@
+/* Swedish interface texts; the keys are the German texts in the code. */
+"Bild: {}" = "Bild: {}";
+"Bilder aus dem Netz laden" = "Läs in bilder från webben";
+"Das Bild lässt sich nicht anzeigen." = "Bilden kan inte visas.";
+"Der Ordner ist nicht vertraut: Bilder aus dem Netz bleiben ungeladen." = "Mappen är inte betrodd: bilder från webben läses inte in.";
+"Die Datei ist kein lesbares PDF." = "Filen är inte en läsbar PDF.";
+"Lädt …" = "Läser in…";
+"PDF: {}" = "PDF: {}";
+"Vorschau: {}" = "Förhandsvisning: {}";
+"„{}“ lässt sich nicht öffnen." = "”{}” kan inte öppnas.";

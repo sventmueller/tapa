@@ -1,0 +1,10 @@
+/* Simplified Chinese interface texts; the keys are the German texts in the code. */
+"Bild: {}" = "图片：{}";
+"Bilder aus dem Netz laden" = "从网络载入图像";
+"Das Bild lässt sich nicht anzeigen." = "无法显示图像。";
+"Der Ordner ist nicht vertraut: Bilder aus dem Netz bleiben ungeladen." = "此文件夹未受信任：不会载入网络上的图像。";
+"Die Datei ist kein lesbares PDF." = "此文件不是可读取的 PDF。";
+"Lädt …" = "正在载入…";
+"PDF: {}" = "PDF：{}";
+"Vorschau: {}" = "预览：{}";
+"„{}“ lässt sich nicht öffnen." = "无法打开“{}”。";

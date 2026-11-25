@@ -1,0 +1,8 @@
+/* Norwegian interface texts; the keys are the German texts in the code. */
+"Das Dokument hat noch keine Datei." = "Dokumentet har ingen fil ennå.";
+"Das Dokument ist schreibgeschützt." = "Dokumentet er skrivebeskyttet.";
+"Die Datei enthält Binärdaten und wird nie gesichert." = "Filen inneholder binærdata og lagres aldri.";
+"Die Datei ist schreibgeschützt." = "Filen er skrivebeskyttet.";
+"Die Datei wurde inzwischen außerhalb geändert." = "Filen har i mellomtiden blitt endret et annet sted.";
+"Die Kodierung der Datei ist unbekannt; sie wird nie gesichert." = "Filens tegnkoding er ukjent; den lagres aldri.";
+"Die Stelle liegt außerhalb des Textes: {}" = "Stedet ligger utenfor teksten: {}";

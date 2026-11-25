@@ -1,0 +1,13 @@
+/* Finnish interface texts; the keys are the German texts in the code. */
+"Claude Code hat das Zurückspulen abgelehnt: {}" = "Claude Code hylkäsi taaksepäin kelauksen: {}";
+"Claude Code hat nicht rechtzeitig geantwortet." = "Claude Code ei vastannut ajoissa.";
+"Claude Code ist beendet." = "Claude Code on päättynyt.";
+"Claude Code ist nicht gestartet: {}" = "Claude Code ei käynnistynyt: {}";
+"Claude Code lehnt ab: {}" = "Claude Code hylkää: {}";
+"Claude Code liest seine Eingabe nicht mehr." = "Claude Code ei enää lue syötettään.";
+"Claude Code ließ sich nicht starten: {}" = "Claude Codea ei voitu käynnistää: {}";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "Tämä pyyntö ei enää odota vastausta.";
+"Diese Version von Claude Code kann das hier nicht." = "Tämä Claude Code -versio ei pysty tähän tässä.";
+"Melde dich an, indem du claude im Terminal startest: {}" = "Kirjaudu sisään käynnistämällä claude päätteessä: {}";
+"Unerwartete Antwort: {}" = "Odottamaton vastaus: {}";
+"{} wurde nicht gefunden." = "Kohdetta ei löytynyt: {}.";

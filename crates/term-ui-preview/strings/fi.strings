@@ -1,0 +1,10 @@
+/* Finnish interface texts; the keys are the German texts in the code. */
+"Bild: {}" = "Kuva: {}";
+"Bilder aus dem Netz laden" = "Lataa kuvat verkosta";
+"Das Bild lässt sich nicht anzeigen." = "Kuvaa ei voi näyttää.";
+"Der Ordner ist nicht vertraut: Bilder aus dem Netz bleiben ungeladen." = "Kansioon ei luoteta: verkosta tulevia kuvia ei ladata.";
+"Die Datei ist kein lesbares PDF." = "Tiedosto ei ole luettava PDF.";
+"Lädt …" = "Ladataan…";
+"PDF: {}" = "PDF: {}";
+"Vorschau: {}" = "Esikatselu: {}";
+"„{}“ lässt sich nicht öffnen." = "Kohdetta ”{}” ei voi avata.";

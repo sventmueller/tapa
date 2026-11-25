@@ -1,0 +1,7 @@
+/* Malay interface texts; the keys are the German texts in the code. */
+"Abbrechen" = "Batal";
+"Alle einklappen" = "Runtuhkan Semua";
+"Dateien" = "Fail";
+"Neue Datei …" = "Fail Baharu…";
+"Neuer Ordner …" = "Folder Baharu…";
+"OK" = "OK";

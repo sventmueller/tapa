@@ -1,0 +1,79 @@
+size 105 29 100
+cursor 2 46
+line 0 %
+line 1 
+line 2  UL  ~/…/tests/ref/grid_reset  dynamic-alloc
+line 3 
+line 4 
+line 5 
+line 6 
+line 7 
+line 8 
+line 9 
+line 10 
+line 11 
+line 12 
+line 13 
+line 14 
+line 15 
+line 16 
+line 17 
+line 18 
+line 19 
+line 20 
+line 21 
+line 22 
+line 23 
+line 24 
+line 25 
+line 26 
+line 27 
+line 28 
+cell 0 0 bold inverse
+cell 0 104 wrapped
+cell 1 104 wrapped
+cell 2 0 fg=0 bg=9
+cell 2 1 fg=0 bg=9
+cell 2 2 fg=0 bg=9
+cell 2 3 fg=0 bg=9
+cell 2 4 fg=7 bg=8
+cell 2 5 fg=7 bg=8
+cell 2 6 fg=7 bg=8
+cell 2 7 fg=7 bg=8
+cell 2 8 fg=7 bg=8
+cell 2 9 fg=7 bg=8
+cell 2 10 fg=7 bg=8
+cell 2 11 fg=7 bg=8
+cell 2 12 fg=7 bg=8
+cell 2 13 fg=7 bg=8
+cell 2 14 fg=7 bg=8
+cell 2 15 fg=7 bg=8
+cell 2 16 fg=7 bg=8
+cell 2 17 fg=7 bg=8
+cell 2 18 fg=7 bg=8
+cell 2 19 fg=7 bg=8
+cell 2 20 fg=7 bg=8
+cell 2 21 fg=7 bg=8
+cell 2 22 fg=7 bg=8
+cell 2 23 fg=7 bg=8
+cell 2 24 fg=7 bg=8
+cell 2 25 fg=7 bg=8
+cell 2 26 fg=7 bg=8
+cell 2 27 fg=7 bg=8
+cell 2 28 fg=7 bg=8
+cell 2 29 fg=7 bg=8
+cell 2 30 fg=0 bg=9
+cell 2 31 fg=0 bg=9
+cell 2 32 fg=0 bg=9
+cell 2 33 fg=0 bg=9
+cell 2 34 fg=0 bg=9
+cell 2 35 fg=0 bg=9
+cell 2 36 fg=0 bg=9
+cell 2 37 fg=0 bg=9
+cell 2 38 fg=0 bg=9
+cell 2 39 fg=0 bg=9
+cell 2 40 fg=0 bg=9
+cell 2 41 fg=0 bg=9
+cell 2 42 fg=0 bg=9
+cell 2 43 fg=0 bg=9
+cell 2 44 fg=0 bg=9

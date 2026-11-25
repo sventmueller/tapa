@@ -1,0 +1,14 @@
+/* Norwegian interface texts; the keys are the German texts in the code. */
+"Der Agent hat auf {} nicht rechtzeitig geantwortet." = "Agenten svarte ikke på {} i tide.";
+"Der Agent ist nicht gestartet: {}" = "Agenten har ikke startet: {}";
+"Der Agent spricht die Protokollversion {}, diese App Version 1" = "Agenten snakker protokollversjon {}, denne appen versjon 1";
+"Der Agent verlangt eine Anmeldung." = "Agenten ber deg logge på.";
+"Die Sitzung ist beendet." = "Økten er avsluttet.";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "Denne forespørselen venter ikke lenger på svar.";
+"{} startet nur in einem vertrauten Arbeitsbereich." = "{} starter bare i et klarert arbeidsområde.";
+"{} wurde nicht gefunden." = "{} ble ikke funnet.";
+"Die Installation wurde nicht bestätigt." = "Installeringen ble ikke bekreftet.";
+"{} {} oder neuer wird gebraucht" = "{} {} eller nyere trengs";
+"{} wird gebraucht" = "{} trengs";
+"Der Download ist fehlgeschlagen: {}" = "Nedlastingen mislyktes: {}";
+"Der Download stimmt nicht mit seiner Prüfsumme überein und wurde verworfen" = "Nedlastingen samsvarer ikke med sjekksummen og ble forkastet";

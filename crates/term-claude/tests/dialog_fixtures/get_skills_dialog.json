@@ -1,0 +1,14 @@
+{
+ "skills": [
+  {
+   "name": "demo",
+   "display_name": "demo",
+   "description": "A demo skill for tests.",
+   "source": "user",
+   "tokens": 9,
+   "state": "on",
+   "advertised": true,
+   "handles": {}
+  }
+ ]
+}

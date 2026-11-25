@@ -1,0 +1,14 @@
+/* Korean interface texts; the keys are the German texts in the code. */
+"Der Agent hat auf {} nicht rechtzeitig geantwortet." = "에이전트가 {}에 제시간에 응답하지 않았습니다.";
+"Der Agent ist nicht gestartet: {}" = "에이전트가 시작되지 않았습니다: {}";
+"Der Agent spricht die Protokollversion {}, diese App Version 1" = "에이전트는 프로토콜 버전 {}을(를) 사용하지만 이 앱은 버전 1을 사용합니다";
+"Der Agent verlangt eine Anmeldung." = "에이전트가 로그인을 요구합니다.";
+"Die Sitzung ist beendet." = "세션이 종료되었습니다.";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "이 요청은 더 이상 응답을 기다리지 않습니다.";
+"{} startet nur in einem vertrauten Arbeitsbereich." = "{}은(는) 신뢰할 수 있는 작업 공간에서만 시작됩니다.";
+"{} wurde nicht gefunden." = "{}을(를) 찾을 수 없습니다.";
+"Die Installation wurde nicht bestätigt." = "설치가 확인되지 않았습니다.";
+"{} {} oder neuer wird gebraucht" = "{} {} 이상이 필요합니다";
+"{} wird gebraucht" = "{}이(가) 필요합니다";
+"Der Download ist fehlgeschlagen: {}" = "다운로드에 실패했습니다: {}";
+"Der Download stimmt nicht mit seiner Prüfsumme überein und wurde verworfen" = "다운로드가 체크섬과 일치하지 않아 폐기되었습니다";

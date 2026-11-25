@@ -1,0 +1,14 @@
+/* Spanish interface texts; the keys are the German texts in the code. */
+"Der Agent hat auf {} nicht rechtzeitig geantwortet." = "El agente no ha respondido a tiempo a {}.";
+"Der Agent ist nicht gestartet: {}" = "El agente no se ha iniciado: {}";
+"Der Agent spricht die Protokollversion {}, diese App Version 1" = "El agente usa la versión {} del protocolo; esta app, la versión 1";
+"Der Agent verlangt eine Anmeldung." = "El agente necesita que inicies sesión.";
+"Die Sitzung ist beendet." = "La sesión ha terminado.";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "Esta solicitud ya no espera respuesta.";
+"{} startet nur in einem vertrauten Arbeitsbereich." = "{} solo se inicia en un espacio de trabajo de confianza.";
+"{} wurde nicht gefunden." = "No se ha encontrado {}.";
+"Die Installation wurde nicht bestätigt." = "No se ha confirmado la instalación.";
+"{} {} oder neuer wird gebraucht" = "Se necesita {} {} o posterior";
+"{} wird gebraucht" = "Se necesita {}";
+"Der Download ist fehlgeschlagen: {}" = "No se ha podido descargar: {}";
+"Der Download stimmt nicht mit seiner Prüfsumme überein und wurde verworfen" = "La descarga no coincide con su suma de comprobación y se ha descartado";

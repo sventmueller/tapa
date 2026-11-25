@@ -1,0 +1,18 @@
+/* Simplified Chinese interface texts; the keys are the German texts in the code. */
+"Als Vorschau öffnen" = "作为预览打开";
+"Daneben öffnen" = "在旁边打开";
+"Darunter öffnen" = "在下方打开";
+"Im Browser-Tab öffnen" = "在浏览器标签页中打开";
+"Im Finder zeigen" = "在访达中显示";
+"In den Papierkorb legen" = "移到废纸篓";
+"Neue Datei" = "新建文件";
+"Neue Datei …" = "新建文件…";
+"Neuer Ordner" = "新建文件夹";
+"Neuer Ordner …" = "新建文件夹…";
+"Pfad kopieren" = "拷贝路径";
+"Relativen Pfad kopieren" = "拷贝相对路径";
+"Umbenennen" = "重新命名";
+"Umbenennen …" = "重新命名…";
+"„{}“ gibt es schon." = "“{}”已存在。";
+"„{}“ wurde nicht angelegt." = "未能创建“{}”。";
+"„{}“ wurde nicht umbenannt." = "未能重新命名“{}”。";

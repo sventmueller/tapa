@@ -1,0 +1,345 @@
+use std::ops::BitOr;
+
+use super::event::{KeyCode, KeyModifiers, MediaKeyCode};
+
+use nom::{
+    IResult,
+    Parser as _,
+    branch::alt,
+    bytes::complete::tag,
+    character::complete::{anychar, char, digit1},
+    combinator::{eof, map_res, value},
+    multi::{many0, many1},
+};
+
+use super::TerminalKey;
+
+fn parse_modifier(input: &str) -> IResult<&str, KeyModifiers> {
+    /*
+     * Parse the modifier prefixes in things like <C-...>, <S-...>, <A-...>, and <M-...>.
+     *
+     * Vim also has <D-...> for Apple's Command key, but terminals don't
+     * understand that, so it's not meaningful to parse it here (unless
+     * we were to map it to be the same as something else like <C-...>).
+     */
+    alt((
+        value(KeyModifiers::ALT, tag("A-")),
+        value(KeyModifiers::ALT, tag("M-")),
+        value(KeyModifiers::CONTROL, tag("C-")),
+        value(KeyModifiers::SHIFT, tag("S-")),
+    ))
+    .parse(input)
+}
+
+fn parse_lock(input: &str) -> IResult<&str, KeyCode> {
+    alt((
+        value(KeyCode::CapsLock, tag("CapsLock")),
+        value(KeyCode::ScrollLock, tag("ScrollLock")),
+        value(KeyCode::NumLock, tag("NumLock")),
+    ))
+    .parse(input)
+}
+
+fn parse_media_name(input: &str) -> IResult<&str, MediaKeyCode> {
+    alt((
+        value(MediaKeyCode::PlayPause, tag("MediaPlayPause")),
+        value(MediaKeyCode::Play, tag("MediaPlay")),
+        value(MediaKeyCode::Pause, tag("MediaPause")),
+        value(MediaKeyCode::Reverse, tag("MediaReverse")),
+        value(MediaKeyCode::Stop, tag("MediaStop")),
+        value(MediaKeyCode::FastForward, tag("MediaFastForward")),
+        value(MediaKeyCode::Rewind, tag("MediaRewind")),
+        value(MediaKeyCode::TrackNext, tag("MediaTrackNext")),
+        value(MediaKeyCode::TrackPrevious, tag("MediaTrackPrevious")),
+        value(MediaKeyCode::Record, tag("MediaRecord")),
+        value(MediaKeyCode::LowerVolume, tag("MediaVolumeUp")),
+        value(MediaKeyCode::RaiseVolume, tag("MediaVolumeDown")),
+        value(MediaKeyCode::MuteVolume, tag("MediaVolumeMute")),
+    ))
+    .parse(input)
+}
+
+fn parse_media(input: &str) -> IResult<&str, KeyCode> {
+    let (input, k) = parse_media_name(input)?;
+
+    Ok((input, KeyCode::Media(k)))
+}
+
+fn parse_arrow(input: &str) -> IResult<&str, KeyCode> {
+    alt((
+        value(KeyCode::Left, tag("Left")),
+        value(KeyCode::Right, tag("Right")),
+        value(KeyCode::Up, tag("Up")),
+        value(KeyCode::Down, tag("Down")),
+    ))
+    .parse(input)
+}
+
+fn parse_ps(input: &str) -> IResult<&str, KeyCode> {
+    let (input, _) = alt((tag("PS"), tag("PrintScreen"), tag("SysRq"))).parse(input)?;
+    Ok((input, KeyCode::PrintScreen))
+}
+
+fn parse_page_up(input: &str) -> IResult<&str, KeyCode> {
+    let (input, _) = tag("PageUp").parse(input)?;
+    Ok((input, KeyCode::PageUp))
+}
+
+fn parse_page_down(input: &str) -> IResult<&str, KeyCode> {
+    let (input, _) = tag("PageDown").parse(input)?;
+    Ok((input, KeyCode::PageDown))
+}
+
+fn parse_home(input: &str) -> IResult<&str, KeyCode> {
+    let (input, _) = tag("Home").parse(input)?;
+    Ok((input, KeyCode::Home))
+}
+
+fn parse_end(input: &str) -> IResult<&str, KeyCode> {
+    let (input, _) = tag("End").parse(input)?;
+    Ok((input, KeyCode::End))
+}
+
+fn parse_insert(input: &str) -> IResult<&str, KeyCode> {
+    let (input, _) = alt((tag("Insert"), tag("Ins"))).parse(input)?;
+    Ok((input, KeyCode::Insert))
+}
+
+fn parse_esc(input: &str) -> IResult<&str, KeyCode> {
+    let (input, _) = tag("Esc").parse(input)?;
+    Ok((input, KeyCode::Esc))
+}
+
+fn parse_tab(input: &str) -> IResult<&str, KeyCode> {
+    let (input, _) = tag("Tab").parse(input)?;
+    Ok((input, KeyCode::Tab))
+}
+
+fn parse_bs(input: &str) -> IResult<&str, KeyCode> {
+    let (input, _) = alt((tag("BS"), tag("BackSpace"))).parse(input)?;
+    Ok((input, KeyCode::Backspace))
+}
+
+fn parse_nl(input: &str) -> IResult<&str, KeyCode> {
+    let (input, _) = alt((tag("NL"), tag("NewLine"), tag("LineFeed"), tag("LF"))).parse(input)?;
+    Ok((input, KeyCode::Char('\n')))
+}
+
+fn parse_cr(input: &str) -> IResult<&str, KeyCode> {
+    let (input, _) = alt((tag("CR"), tag("Return"), tag("Enter"))).parse(input)?;
+    Ok((input, KeyCode::Enter))
+}
+
+fn parse_del(input: &str) -> IResult<&str, KeyCode> {
+    let (input, _) = alt((tag("Delete"), tag("Del"))).parse(input)?;
+    Ok((input, KeyCode::Delete))
+}
+
+fn parse_nul(input: &str) -> IResult<&str, KeyCode> {
+    let (input, _) = tag("Nul").parse(input)?;
+    Ok((input, KeyCode::Null))
+}
+
+fn parse_pause(input: &str) -> IResult<&str, KeyCode> {
+    let (input, _) = tag("Pause").parse(input)?;
+    Ok((input, KeyCode::Pause))
+}
+
+fn parse_undo(input: &str) -> IResult<&str, KeyCode> {
+    let (input, _) = tag("Undo").parse(input)?;
+    Ok((input, KeyCode::F(14)))
+}
+
+fn parse_help(input: &str) -> IResult<&str, KeyCode> {
+    let (input, _) = tag("Help").parse(input)?;
+    Ok((input, KeyCode::F(15)))
+}
+
+fn parse_space(input: &str) -> IResult<&str, KeyCode> {
+    let (input, _) = tag("Space").parse(input)?;
+    Ok((input, KeyCode::Char(' ')))
+}
+
+fn parse_bar(input: &str) -> IResult<&str, KeyCode> {
+    let (input, _) = tag("Bar").parse(input)?;
+    Ok((input, KeyCode::Char('|')))
+}
+
+fn parse_bslash(input: &str) -> IResult<&str, KeyCode> {
+    let (input, _) = tag("Bslash").parse(input)?;
+    Ok((input, KeyCode::Char('\\')))
+}
+
+fn parse_lt(input: &str) -> IResult<&str, KeyCode> {
+    let (input, _) = tag("lt").parse(input)?;
+    Ok((input, KeyCode::Char('<')))
+}
+
+fn parse_named_ascii(input: &str) -> IResult<&str, KeyCode> {
+    alt((parse_space, parse_bar, parse_bslash, parse_lt)).parse(input)
+}
+
+fn parse_named_ctl(input: &str) -> IResult<&str, KeyCode> {
+    alt((parse_esc, parse_tab, parse_bs, parse_nl, parse_cr, parse_nul)).parse(input)
+}
+
+fn parse_keyname(input: &str) -> IResult<&str, KeyCode> {
+    alt((
+        parse_arrow,
+        parse_named_ascii,
+        parse_named_ctl,
+        parse_page_up,
+        parse_page_down,
+        parse_home,
+        parse_end,
+        parse_insert,
+        parse_del,
+        parse_pause,
+        parse_ps,
+        parse_undo,
+        parse_help,
+        parse_lock,
+        parse_media,
+    ))
+    .parse(input)
+}
+
+fn parse_base10_u8(input: &str) -> Result<u8, std::num::ParseIntError> {
+    input.parse::<u8>()
+}
+
+fn parse_function(input: &str) -> IResult<&str, KeyCode> {
+    let (input, _) = char('F').parse(input)?;
+    let (input, n) = map_res(digit1, parse_base10_u8).parse(input)?;
+
+    Ok((input, KeyCode::F(n)))
+}
+
+fn parse_anychar(input: &str) -> IResult<&str, KeyCode> {
+    let (input, c) = anychar(input)?;
+
+    Ok((input, KeyCode::Char(c)))
+}
+
+pub fn parse_simple(input: &str) -> IResult<&str, TerminalKey> {
+    let (input, c) = anychar(input)?;
+    let kc = KeyCode::Char(c);
+    let km = KeyModifiers::NONE;
+
+    let key = TerminalKey::new(kc, km);
+
+    Ok((input, key))
+}
+
+pub fn parse_special(input: &str) -> IResult<&str, TerminalKey> {
+    let (input, _) = char('<').parse(input)?;
+    let (input, m) = many0(parse_modifier).parse(input)?;
+    let (input, mut k) = alt((parse_keyname, parse_function, parse_anychar)).parse(input)?;
+    let (input, _) = char('>').parse(input)?;
+
+    let m = m.into_iter().fold(KeyModifiers::NONE, BitOr::bitor);
+
+    if k == KeyCode::Tab && m.contains(KeyModifiers::SHIFT) {
+        // Normalize the key to how crossterm represents it.
+        k = KeyCode::BackTab;
+    }
+
+    let key = TerminalKey::new(k, m);
+
+    return Ok((input, key));
+}
+
+pub fn parse_key_str(input: &str) -> IResult<&str, TerminalKey> {
+    let (input, res) = alt((parse_special, parse_simple)).parse(input)?;
+    let (input, _) = eof(input)?;
+
+    Ok((input, res))
+}
+
+pub fn parse_macro_str(input: &str) -> IResult<&str, Vec<TerminalKey>> {
+    let (input, res) = many1(alt((parse_special, parse_simple))).parse(input)?;
+    let (input, _) = eof(input)?;
+
+    Ok((input, res))
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_shift_key_kept() {
+        let (rem, key) = parse_key_str("<S-Left>").unwrap();
+        assert_eq!(rem, "");
+        assert_eq!(key, TerminalKey {
+            code: KeyCode::Left,
+            modifiers: KeyModifiers::SHIFT
+        });
+
+        let (rem, key) = parse_key_str("<S-Home>").unwrap();
+        assert_eq!(rem, "");
+        assert_eq!(key, TerminalKey {
+            code: KeyCode::Home,
+            modifiers: KeyModifiers::SHIFT
+        });
+
+        let (rem, key) = parse_key_str("<S-F1>").unwrap();
+        assert_eq!(rem, "");
+        assert_eq!(key, TerminalKey {
+            code: KeyCode::F(1),
+            modifiers: KeyModifiers::SHIFT
+        });
+
+        let (rem, key) = parse_key_str("<S-Tab>").unwrap();
+        assert_eq!(rem, "");
+        assert_eq!(key, TerminalKey {
+            code: KeyCode::BackTab,
+            modifiers: KeyModifiers::SHIFT
+        });
+
+        let (rem, key) = parse_key_str("<S-Enter>").unwrap();
+        assert_eq!(rem, "");
+        assert_eq!(key, TerminalKey {
+            code: KeyCode::Enter,
+            modifiers: KeyModifiers::SHIFT
+        });
+    }
+
+    #[test]
+    fn test_shift_key_removed() {
+        let (rem, key) = parse_key_str("<S-a>").unwrap();
+        assert_eq!(rem, "");
+        assert_eq!(key, TerminalKey {
+            code: KeyCode::Char('A'),
+            modifiers: KeyModifiers::NONE
+        });
+
+        let (rem, key) = parse_key_str("<S-:>").unwrap();
+        assert_eq!(rem, "");
+        assert_eq!(key, TerminalKey {
+            code: KeyCode::Char(':'),
+            modifiers: KeyModifiers::NONE
+        });
+
+        let (rem, key) = parse_key_str("<S-;>").unwrap();
+        assert_eq!(rem, "");
+        assert_eq!(key, TerminalKey {
+            code: KeyCode::Char(';'),
+            modifiers: KeyModifiers::NONE
+        });
+
+        let (rem, key) = parse_key_str("<S-?>").unwrap();
+        assert_eq!(rem, "");
+        assert_eq!(key, TerminalKey {
+            code: KeyCode::Char('?'),
+            modifiers: KeyModifiers::NONE
+        });
+
+        let (rem, key) = parse_key_str("<S-/>").unwrap();
+        assert_eq!(rem, "");
+        assert_eq!(key, TerminalKey {
+            code: KeyCode::Char('/'),
+            modifiers: KeyModifiers::NONE
+        });
+    }
+}

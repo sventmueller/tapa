@@ -1,0 +1,14 @@
+/* Norwegian Bokmål interface texts; the keys are the German texts in the code. */
+"Dafür fehlt die Berechtigung." = "Tillatelse mangler for dette.";
+"Das ist ein Ordner, keine Datei." = "Dette er en mappe, ikke en fil.";
+"Der Dateiname ist ungültig." = "Filnavnet er ugyldig.";
+"Der Datenträger ist schreibgeschützt." = "Volumet er skrivebeskyttet.";
+"Der Datenträger ist voll." = "Volumet er fullt.";
+"Der Ordner ist nicht leer." = "Mappen er ikke tom.";
+"Der Vorgang hat zu lange gedauert." = "Handlingen tok for lang tid.";
+"Die Datei ist gerade belegt." = "Filen er i bruk akkurat nå.";
+"Die Datei ist zu groß." = "Filen er for stor.";
+"Die Datei oder der Ordner existiert nicht." = "Filen eller mappen finnes ikke.";
+"Die Gegenstelle hat die Verbindung abgelehnt." = "Motparten avviste tilkoblingen.";
+"Ein Teil des Pfads ist kein Ordner." = "En del av banen er ikke en mappe.";
+"Es gibt dort schon eine Datei dieses Namens." = "Det finnes allerede en fil med dette navnet der.";

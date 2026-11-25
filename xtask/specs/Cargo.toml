@@ -1,0 +1,17 @@
+[package]
+name = "fig-specs"
+version = "0.0.0"
+description = "Turns the static part of the Fig completion specs (MIT) into the JSON that term-suggest bundles (E8, R10)"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+publish = false
+
+# Its own workspace, so that oxc is built only when the specs are converted by hand (E8: no Node, no oxc in the build).
+[workspace]
+
+[dependencies]
+oxc_allocator = "0.160"
+oxc_ast = "0.160"
+oxc_parser = "0.160"
+oxc_span = "0.160"
+serde_json = { version = "1", features = ["preserve_order"] }

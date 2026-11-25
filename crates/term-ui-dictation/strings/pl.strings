@@ -1,0 +1,27 @@
+/* Polish interface texts; the keys are the German texts in the code. */
+"API-Schlüssel für {}" = "Klucz API dla {}";
+"Abgebrochen" = "Anulowano";
+"Das Diktat ist gerade beschäftigt." = "Dyktowanie jest teraz zajęte.";
+"Das Feld des Diktats ist nicht mehr offen. Der Text liegt in der Zwischenablage." = "Pole dyktowania nie jest już otwarte. Tekst jest w schowku.";
+"Das ist kein Schlüssel von OpenAI (sk-…) oder Groq (gsk_…)." = "To nie jest klucz OpenAI (sk-…) ani Groq (gsk_…).";
+"Das lokale Modell ist nicht installiert. Lade es in den Einstellungen unter Diktat." = "Model lokalny nie jest zainstalowany. Pobierz go w Ustawieniach w sekcji Dyktowanie.";
+"Der Schlüsselbund lehnt ab: {}" = "Pęk kluczy odmawia: {}";
+"Die Aufnahme hat ihre Höchstdauer erreicht." = "Nagranie osiągnęło maksymalną długość.";
+"Diktat beenden" = "Zakończ dyktowanie";
+"Diktat starten" = "Rozpocznij dyktowanie";
+"Höre zu …" = "Słucham…";
+"Kein API-Schlüssel für {}. Trage ihn in den Einstellungen unter Diktat ein." = "Brak klucza API dla {}. Wpisz go w Ustawieniach w sekcji Dyktowanie.";
+"Keine Sprache erkannt" = "Nie rozpoznano mowy";
+"Lowspeak hat einen Schlüssel für {}. Für {} übernehmen?" = "Lowspeak ma klucz dla {}. Użyć go też dla {}?";
+"Lowspeak hat keinen Schlüssel mehr." = "Lowspeak nie ma już klucza.";
+"Lowspeak meldet: {}" = "Lowspeak zgłasza: {}";
+"Lowspeak transkribiert online mit {}. {} braucht dafür einen eigenen Schlüssel und legt ihn im Schlüsselbund ab." = "Lowspeak transkrybuje online za pomocą {}. {} potrzebuje do tego własnego klucza i przechowuje go w pęku kluczy.";
+"Lowspeaks Schlüssel ließ sich nicht lesen. Gib den Schlüssel selbst ein." = "Nie można odczytać klucza Lowspeak. Wpisz klucz samodzielnie.";
+"Nicht jetzt" = "Nie teraz";
+"Selbst eingeben …" = "Wpisz samodzielnie…";
+"Sichern" = "Zachowaj";
+"Transkribiere …" = "Transkrybuję…";
+"{} bietet {} nicht mehr an. Wähle in den Einstellungen unter Diktat ein anderes Modell." = "{} nie oferuje już {}. Wybierz inny model w Ustawieniach w sekcji Dyktowanie.";
+"{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "{} nie ma dostępu do mikrofonu. Pozwól na to w Ustawieniach systemowych > Prywatność i ochrona > Mikrofon.";
+"{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "{} odczyta go w tym celu jeden raz, a macOS najpierw zapyta. Wybierz tam „Pozwól”, nie „Zawsze pozwalaj”: wtedy wpis Lowspeak pozostanie bez zmian. {} przechowuje klucz we własnym wpisie.";
+"Übernehmen" = "Użyj klucza";

@@ -1,0 +1,14 @@
+/* Hungarian interface texts; the keys are the German texts in the code. */
+"Dafür fehlt die Berechtigung." = "Ehhez nincs jogosultság.";
+"Das ist ein Ordner, keine Datei." = "Ez egy mappa, nem fájl.";
+"Der Dateiname ist ungültig." = "A fájlnév érvénytelen.";
+"Der Datenträger ist schreibgeschützt." = "A kötet írásvédett.";
+"Der Datenträger ist voll." = "A kötet megtelt.";
+"Der Ordner ist nicht leer." = "A mappa nem üres.";
+"Der Vorgang hat zu lange gedauert." = "A művelet túl sokáig tartott.";
+"Die Datei ist gerade belegt." = "A fájl éppen használatban van.";
+"Die Datei ist zu groß." = "A fájl túl nagy.";
+"Die Datei oder der Ordner existiert nicht." = "A fájl vagy mappa nem létezik.";
+"Die Gegenstelle hat die Verbindung abgelehnt." = "A másik fél elutasította a kapcsolatot.";
+"Ein Teil des Pfads ist kein Ordner." = "Az útvonal egy része nem mappa.";
+"Es gibt dort schon eine Datei dieses Namens." = "Már létezik ott ilyen nevű fájl.";

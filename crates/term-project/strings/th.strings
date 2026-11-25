@@ -1,0 +1,18 @@
+/* Thai interface texts; the keys are the German texts in the code. */
+"Als Vorschau öffnen" = "เปิดเป็นการแสดงตัวอย่าง";
+"Daneben öffnen" = "เปิดไว้ด้านข้าง";
+"Darunter öffnen" = "เปิดไว้ด้านล่าง";
+"Im Browser-Tab öffnen" = "เปิดในแถบเบราว์เซอร์";
+"Im Finder zeigen" = "แสดงใน Finder";
+"In den Papierkorb legen" = "ย้ายไปที่ถังขยะ";
+"Neue Datei" = "ไฟล์ใหม่";
+"Neue Datei …" = "ไฟล์ใหม่…";
+"Neuer Ordner" = "โฟลเดอร์ใหม่";
+"Neuer Ordner …" = "โฟลเดอร์ใหม่…";
+"Pfad kopieren" = "คัดลอกพาธ";
+"Relativen Pfad kopieren" = "คัดลอกพาธแบบสัมพัทธ์";
+"Umbenennen" = "เปลี่ยนชื่อ";
+"Umbenennen …" = "เปลี่ยนชื่อ…";
+"„{}“ gibt es schon." = "“{}” มีอยู่แล้ว";
+"„{}“ wurde nicht angelegt." = "ไม่ได้สร้าง “{}”";
+"„{}“ wurde nicht umbenannt." = "ไม่ได้เปลี่ยนชื่อ “{}”";

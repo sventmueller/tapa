@@ -1,0 +1,10 @@
+/* Greek interface texts; the keys are the German texts in the code. */
+"Bild: {}" = "Εικόνα: {}";
+"Bilder aus dem Netz laden" = "Φόρτωση εικόνων από το διαδίκτυο";
+"Das Bild lässt sich nicht anzeigen." = "Δεν είναι δυνατή η εμφάνιση της εικόνας.";
+"Der Ordner ist nicht vertraut: Bilder aus dem Netz bleiben ungeladen." = "Ο φάκελος δεν είναι αξιόπιστος: οι εικόνες από το διαδίκτυο δεν φορτώνονται.";
+"Die Datei ist kein lesbares PDF." = "Το αρχείο δεν είναι αναγνώσιμο PDF.";
+"Lädt …" = "Φόρτωση…";
+"PDF: {}" = "PDF: {}";
+"Vorschau: {}" = "Προεπισκόπηση: {}";
+"„{}“ lässt sich nicht öffnen." = "Δεν είναι δυνατό το άνοιγμα του «{}».";

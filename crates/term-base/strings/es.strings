@@ -1,0 +1,14 @@
+/* Spanish interface texts; the keys are the German texts in the code. */
+"Dafür fehlt die Berechtigung." = "Falta el permiso necesario.";
+"Das ist ein Ordner, keine Datei." = "Es una carpeta, no un archivo.";
+"Der Dateiname ist ungültig." = "El nombre de archivo no es válido.";
+"Der Datenträger ist schreibgeschützt." = "El volumen es de solo lectura.";
+"Der Datenträger ist voll." = "El volumen está lleno.";
+"Der Ordner ist nicht leer." = "La carpeta no está vacía.";
+"Der Vorgang hat zu lange gedauert." = "La operación ha tardado demasiado.";
+"Die Datei ist gerade belegt." = "El archivo está en uso en este momento.";
+"Die Datei ist zu groß." = "El archivo es demasiado grande.";
+"Die Datei oder der Ordner existiert nicht." = "El archivo o la carpeta no existe.";
+"Die Gegenstelle hat die Verbindung abgelehnt." = "El otro extremo ha rechazado la conexión.";
+"Ein Teil des Pfads ist kein Ordner." = "Una parte de la ruta no es una carpeta.";
+"Es gibt dort schon eine Datei dieses Namens." = "Ya existe un archivo con este nombre en esa ubicación.";

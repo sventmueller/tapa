@@ -1,0 +1,14 @@
+/* Polish interface texts; the keys are the German texts in the code. */
+"Der Agent hat auf {} nicht rechtzeitig geantwortet." = "Agent nie odpowiedział na czas na {}.";
+"Der Agent ist nicht gestartet: {}" = "Agent nie został uruchomiony: {}";
+"Der Agent spricht die Protokollversion {}, diese App Version 1" = "Agent używa protokołu w wersji {}, ta aplikacja w wersji 1";
+"Der Agent verlangt eine Anmeldung." = "Agent prosi o zalogowanie się.";
+"Die Sitzung ist beendet." = "Sesja zakończyła się.";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "To żądanie nie czeka już na odpowiedź.";
+"{} startet nur in einem vertrauten Arbeitsbereich." = "{} uruchamia się tylko w zaufanym obszarze roboczym.";
+"{} wurde nicht gefunden." = "Nie znaleziono: {}.";
+"Die Installation wurde nicht bestätigt." = "Instalacja nie została potwierdzona.";
+"{} {} oder neuer wird gebraucht" = "Potrzebne: {} {} lub nowszy";
+"{} wird gebraucht" = "Potrzebne: {}";
+"Der Download ist fehlgeschlagen: {}" = "Pobieranie nie powiodło się: {}";
+"Der Download stimmt nicht mit seiner Prüfsumme überein und wurde verworfen" = "Pobrany plik nie zgadza się ze swoją sumą kontrolną i został odrzucony";

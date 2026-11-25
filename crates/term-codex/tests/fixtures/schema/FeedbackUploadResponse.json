@@ -1,0 +1,1 @@
+{"properties":{"promptHash":{"default":null,"type":["string","null"]},"threadId":{"type":"string"}},"required":["threadId"],"title":"FeedbackUploadResponse","type":"object"}

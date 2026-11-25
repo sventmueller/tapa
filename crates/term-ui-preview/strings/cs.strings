@@ -1,0 +1,10 @@
+/* Czech interface texts; the keys are the German texts in the code. */
+"Bild: {}" = "Obrázek: {}";
+"Bilder aus dem Netz laden" = "Načíst obrázky z webu";
+"Das Bild lässt sich nicht anzeigen." = "Obrázek nelze zobrazit.";
+"Der Ordner ist nicht vertraut: Bilder aus dem Netz bleiben ungeladen." = "Složka není důvěryhodná: obrázky z webu se nenačítají.";
+"Die Datei ist kein lesbares PDF." = "Soubor není čitelný PDF.";
+"Lädt …" = "Načítání…";
+"PDF: {}" = "PDF: {}";
+"Vorschau: {}" = "Náhled: {}";
+"„{}“ lässt sich nicht öffnen." = "„{}“ nelze otevřít.";

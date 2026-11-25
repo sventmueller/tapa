@@ -1,0 +1,14 @@
+/* Czech interface texts; the keys are the German texts in the code. */
+"Dafür fehlt die Berechtigung." = "K tomu chybí oprávnění.";
+"Das ist ein Ordner, keine Datei." = "Toto je složka, ne soubor.";
+"Der Dateiname ist ungültig." = "Název souboru je neplatný.";
+"Der Datenträger ist schreibgeschützt." = "Svazek je chráněný proti zápisu.";
+"Der Datenträger ist voll." = "Svazek je plný.";
+"Der Ordner ist nicht leer." = "Složka není prázdná.";
+"Der Vorgang hat zu lange gedauert." = "Operace trvala příliš dlouho.";
+"Die Datei ist gerade belegt." = "Soubor se právě používá.";
+"Die Datei ist zu groß." = "Soubor je příliš velký.";
+"Die Datei oder der Ordner existiert nicht." = "Soubor nebo složka neexistuje.";
+"Die Gegenstelle hat die Verbindung abgelehnt." = "Protistrana odmítla spojení.";
+"Ein Teil des Pfads ist kein Ordner." = "Část cesty není složka.";
+"Es gibt dort schon eine Datei dieses Namens." = "Soubor s tímto názvem tam již existuje.";

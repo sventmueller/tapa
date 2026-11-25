@@ -1,0 +1,10 @@
+/* Hebrew interface texts; the keys are the German texts in the code. */
+"Bild: {}" = "תמונה: {}";
+"Bilder aus dem Netz laden" = "טעינת תמונות מהאינטרנט";
+"Das Bild lässt sich nicht anzeigen." = "לא ניתן להציג את התמונה.";
+"Der Ordner ist nicht vertraut: Bilder aus dem Netz bleiben ungeladen." = "התיקיה אינה מהימנה: תמונות מהאינטרנט לא נטענות.";
+"Die Datei ist kein lesbares PDF." = "הקובץ אינו PDF קריא.";
+"Lädt …" = "טוען…";
+"PDF: {}" = "‏PDF: {}";
+"Vorschau: {}" = "תצוגה מקדימה: {}";
+"„{}“ lässt sich nicht öffnen." = "לא ניתן לפתוח את ״{}״.";

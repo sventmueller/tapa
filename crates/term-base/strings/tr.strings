@@ -1,0 +1,14 @@
+/* Turkish interface texts; the keys are the German texts in the code. */
+"Dafür fehlt die Berechtigung." = "Bunun için izin yok.";
+"Das ist ein Ordner, keine Datei." = "Bu bir dosya değil, klasör.";
+"Der Dateiname ist ungültig." = "Dosya adı geçersiz.";
+"Der Datenträger ist schreibgeschützt." = "Bölüm salt okunur.";
+"Der Datenträger ist voll." = "Bölüm dolu.";
+"Der Ordner ist nicht leer." = "Klasör boş değil.";
+"Der Vorgang hat zu lange gedauert." = "İşlem çok uzun sürdü.";
+"Die Datei ist gerade belegt." = "Dosya şu anda kullanımda.";
+"Die Datei ist zu groß." = "Dosya çok büyük.";
+"Die Datei oder der Ordner existiert nicht." = "Dosya veya klasör yok.";
+"Die Gegenstelle hat die Verbindung abgelehnt." = "Karşı taraf bağlantıyı reddetti.";
+"Ein Teil des Pfads ist kein Ordner." = "Yolun bir kısmı klasör değil.";
+"Es gibt dort schon eine Datei dieses Namens." = "Orada bu adda bir dosya zaten var.";

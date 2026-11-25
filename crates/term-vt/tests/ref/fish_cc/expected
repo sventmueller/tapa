@@ -1,0 +1,231 @@
+size 105 29 0
+cursor 6 0
+line 0 Welcome to fish, the friendly interactive shell
+line 1 Type help for instructions on how to use fish
+line 2 [I] ➜  alacritty git:(master) ✗ a^C
+line 3 [I] ➜  alacritty git:(master) ✗ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa^C
+line 4 [I] ➜  alacritty git:(master) ✗ aaaaaaaaaaaaaaaaaaaaaaaaaaa^C
+line 5 [I] ➜  alacritty git:(master) ✗
+line 6 
+line 7 
+line 8 
+line 9 
+line 10 
+line 11 
+line 12 
+line 13 
+line 14 
+line 15 
+line 16 
+line 17 
+line 18 
+line 19 
+line 20 
+line 21 
+line 22 
+line 23 
+line 24 
+line 25 
+line 26 
+line 27 
+line 28 
+cell 1 5 fg=2
+cell 1 6 fg=2
+cell 1 7 fg=2
+cell 1 8 fg=2
+cell 2 0 fg=7 bg=2 bold
+cell 2 1 fg=7 bg=2 bold
+cell 2 2 fg=7 bg=2 bold
+cell 2 4 fg=2 bold
+cell 2 5 fg=2 bold
+cell 2 6 fg=2 bold
+cell 2 7 fg=6 bold
+cell 2 8 fg=6 bold
+cell 2 9 fg=6 bold
+cell 2 10 fg=6 bold
+cell 2 11 fg=6 bold
+cell 2 12 fg=6 bold
+cell 2 13 fg=6 bold
+cell 2 14 fg=6 bold
+cell 2 15 fg=6 bold
+cell 2 16 fg=4 bold
+cell 2 17 fg=4 bold
+cell 2 18 fg=4 bold
+cell 2 19 fg=4 bold
+cell 2 20 fg=4 bold
+cell 2 21 fg=4 bold
+cell 2 22 fg=1 bold
+cell 2 23 fg=1 bold
+cell 2 24 fg=1 bold
+cell 2 25 fg=1 bold
+cell 2 26 fg=1 bold
+cell 2 27 fg=1 bold
+cell 2 28 fg=4 bold
+cell 2 29 fg=3 bold
+cell 2 30 fg=3 bold
+cell 2 32 fg=1 bold
+cell 2 33 inverse
+cell 2 34 inverse
+cell 3 0 fg=7 bg=2 bold
+cell 3 1 fg=7 bg=2 bold
+cell 3 2 fg=7 bg=2 bold
+cell 3 4 fg=2 bold
+cell 3 5 fg=2 bold
+cell 3 6 fg=2 bold
+cell 3 7 fg=6 bold
+cell 3 8 fg=6 bold
+cell 3 9 fg=6 bold
+cell 3 10 fg=6 bold
+cell 3 11 fg=6 bold
+cell 3 12 fg=6 bold
+cell 3 13 fg=6 bold
+cell 3 14 fg=6 bold
+cell 3 15 fg=6 bold
+cell 3 16 fg=4 bold
+cell 3 17 fg=4 bold
+cell 3 18 fg=4 bold
+cell 3 19 fg=4 bold
+cell 3 20 fg=4 bold
+cell 3 21 fg=4 bold
+cell 3 22 fg=1 bold
+cell 3 23 fg=1 bold
+cell 3 24 fg=1 bold
+cell 3 25 fg=1 bold
+cell 3 26 fg=1 bold
+cell 3 27 fg=1 bold
+cell 3 28 fg=4 bold
+cell 3 29 fg=3 bold
+cell 3 30 fg=3 bold
+cell 3 32 fg=1 bold
+cell 3 33 fg=1 bold
+cell 3 34 fg=1 bold
+cell 3 35 fg=1 bold
+cell 3 36 fg=1 bold
+cell 3 37 fg=1 bold
+cell 3 38 fg=1 bold
+cell 3 39 fg=1 bold
+cell 3 40 fg=1 bold
+cell 3 41 fg=1 bold
+cell 3 42 fg=1 bold
+cell 3 43 fg=1 bold
+cell 3 44 fg=1 bold
+cell 3 45 fg=1 bold
+cell 3 46 fg=1 bold
+cell 3 47 fg=1 bold
+cell 3 48 fg=1 bold
+cell 3 49 fg=1 bold
+cell 3 50 fg=1 bold
+cell 3 51 fg=1 bold
+cell 3 52 fg=1 bold
+cell 3 53 fg=1 bold
+cell 3 54 fg=1 bold
+cell 3 55 fg=1 bold
+cell 3 56 fg=1 bold
+cell 3 57 fg=1 bold
+cell 3 58 fg=1 bold
+cell 3 59 fg=1 bold
+cell 3 60 fg=1 bold
+cell 3 61 fg=1 bold
+cell 3 62 fg=1 bold
+cell 3 63 fg=1 bold
+cell 3 64 fg=1 bold
+cell 3 65 fg=1 bold
+cell 3 66 fg=1 bold
+cell 3 67 fg=1 bold
+cell 3 68 fg=1 bold
+cell 3 69 fg=1 bold
+cell 3 70 fg=1 bold
+cell 3 71 fg=1 bold
+cell 3 72 fg=1 bold
+cell 3 73 fg=1 bold
+cell 3 74 inverse
+cell 3 75 inverse
+cell 4 0 fg=7 bg=2 bold
+cell 4 1 fg=7 bg=2 bold
+cell 4 2 fg=7 bg=2 bold
+cell 4 4 fg=2 bold
+cell 4 5 fg=2 bold
+cell 4 6 fg=2 bold
+cell 4 7 fg=6 bold
+cell 4 8 fg=6 bold
+cell 4 9 fg=6 bold
+cell 4 10 fg=6 bold
+cell 4 11 fg=6 bold
+cell 4 12 fg=6 bold
+cell 4 13 fg=6 bold
+cell 4 14 fg=6 bold
+cell 4 15 fg=6 bold
+cell 4 16 fg=4 bold
+cell 4 17 fg=4 bold
+cell 4 18 fg=4 bold
+cell 4 19 fg=4 bold
+cell 4 20 fg=4 bold
+cell 4 21 fg=4 bold
+cell 4 22 fg=1 bold
+cell 4 23 fg=1 bold
+cell 4 24 fg=1 bold
+cell 4 25 fg=1 bold
+cell 4 26 fg=1 bold
+cell 4 27 fg=1 bold
+cell 4 28 fg=4 bold
+cell 4 29 fg=3 bold
+cell 4 30 fg=3 bold
+cell 4 32 fg=1 bold
+cell 4 33 fg=1 bold
+cell 4 34 fg=1 bold
+cell 4 35 fg=1 bold
+cell 4 36 fg=1 bold
+cell 4 37 fg=1 bold
+cell 4 38 fg=1 bold
+cell 4 39 fg=1 bold
+cell 4 40 fg=1 bold
+cell 4 41 fg=1 bold
+cell 4 42 fg=1 bold
+cell 4 43 fg=1 bold
+cell 4 44 fg=1 bold
+cell 4 45 fg=1 bold
+cell 4 46 fg=1 bold
+cell 4 47 fg=1 bold
+cell 4 48 fg=1 bold
+cell 4 49 fg=1 bold
+cell 4 50 fg=1 bold
+cell 4 51 fg=1 bold
+cell 4 52 fg=1 bold
+cell 4 53 fg=1 bold
+cell 4 54 fg=1 bold
+cell 4 55 fg=1 bold
+cell 4 56 fg=1 bold
+cell 4 57 fg=1 bold
+cell 4 58 fg=1 bold
+cell 4 59 inverse
+cell 4 60 inverse
+cell 5 0 fg=7 bg=2 bold
+cell 5 1 fg=7 bg=2 bold
+cell 5 2 fg=7 bg=2 bold
+cell 5 4 fg=2 bold
+cell 5 5 fg=2 bold
+cell 5 6 fg=2 bold
+cell 5 7 fg=6 bold
+cell 5 8 fg=6 bold
+cell 5 9 fg=6 bold
+cell 5 10 fg=6 bold
+cell 5 11 fg=6 bold
+cell 5 12 fg=6 bold
+cell 5 13 fg=6 bold
+cell 5 14 fg=6 bold
+cell 5 15 fg=6 bold
+cell 5 16 fg=4 bold
+cell 5 17 fg=4 bold
+cell 5 18 fg=4 bold
+cell 5 19 fg=4 bold
+cell 5 20 fg=4 bold
+cell 5 21 fg=4 bold
+cell 5 22 fg=1 bold
+cell 5 23 fg=1 bold
+cell 5 24 fg=1 bold
+cell 5 25 fg=1 bold
+cell 5 26 fg=1 bold
+cell 5 27 fg=1 bold
+cell 5 28 fg=4 bold
+cell 5 29 fg=3 bold
+cell 5 30 fg=3 bold

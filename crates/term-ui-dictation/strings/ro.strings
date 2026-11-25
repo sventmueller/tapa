@@ -1,0 +1,27 @@
+/* Romanian interface texts; the keys are the German texts in the code. */
+"API-Schlüssel für {}" = "Cheie API pentru {}";
+"Abgebrochen" = "Anulat";
+"Das Diktat ist gerade beschäftigt." = "Dictarea este ocupată acum.";
+"Das Feld des Diktats ist nicht mehr offen. Der Text liegt in der Zwischenablage." = "Câmpul dictării nu mai este deschis. Textul se află în clipboard.";
+"Das ist kein Schlüssel von OpenAI (sk-…) oder Groq (gsk_…)." = "Aceasta nu este o cheie OpenAI (sk-…) sau Groq (gsk_…).";
+"Das lokale Modell ist nicht installiert. Lade es in den Einstellungen unter Diktat." = "Modelul local nu este instalat. Descărcați-l în Configurări, la Dictare.";
+"Der Schlüsselbund lehnt ab: {}" = "Portcheiul refuză: {}";
+"Die Aufnahme hat ihre Höchstdauer erreicht." = "Înregistrarea a atins durata maximă.";
+"Diktat beenden" = "Încheiați dictarea";
+"Diktat starten" = "Porniți dictarea";
+"Höre zu …" = "Se ascultă…";
+"Kein API-Schlüssel für {}. Trage ihn in den Einstellungen unter Diktat ein." = "Nicio cheie API pentru {}. Introduceți-o în Configurări, la Dictare.";
+"Keine Sprache erkannt" = "Nu s-a recunoscut nicio vorbire";
+"Lowspeak hat einen Schlüssel für {}. Für {} übernehmen?" = "Lowspeak are o cheie pentru {}. O folosiți și pentru {}?";
+"Lowspeak hat keinen Schlüssel mehr." = "Lowspeak nu mai are o cheie.";
+"Lowspeak meldet: {}" = "Lowspeak transmite: {}";
+"Lowspeak transkribiert online mit {}. {} braucht dafür einen eigenen Schlüssel und legt ihn im Schlüsselbund ab." = "Lowspeak transcrie online cu {}. {} are nevoie de o cheie proprie pentru aceasta și o păstrează în portchei.";
+"Lowspeaks Schlüssel ließ sich nicht lesen. Gib den Schlüssel selbst ein." = "Cheia Lowspeak nu a putut fi citită. Introduceți cheia manual.";
+"Nicht jetzt" = "Nu acum";
+"Selbst eingeben …" = "Introduceți manual…";
+"Sichern" = "Salvați";
+"Transkribiere …" = "Se transcrie…";
+"{} bietet {} nicht mehr an. Wähle in den Einstellungen unter Diktat ein anderes Modell." = "{} nu mai oferă {}. Alegeți alt model în Configurări, la Dictare.";
+"{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "{} nu are acces la microfon. Permiteți accesul în Configurări sistem > Intimitate și securitate > Microfon.";
+"{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "{} o citește o dată în acest scop, iar macOS cere mai întâi confirmarea. Alegeți „Permiteți”, nu „Permiteți întotdeauna”: astfel, elementul Lowspeak rămâne neschimbat. {} păstrează cheia într-un element propriu.";
+"Übernehmen" = "Folosiți cheia";

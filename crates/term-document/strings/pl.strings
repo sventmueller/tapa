@@ -1,0 +1,8 @@
+/* Polish interface texts; the keys are the German texts in the code. */
+"Das Dokument hat noch keine Datei." = "Dokument nie ma jeszcze pliku.";
+"Das Dokument ist schreibgeschützt." = "Dokument jest tylko do odczytu.";
+"Die Datei enthält Binärdaten und wird nie gesichert." = "Plik zawiera dane binarne i nigdy nie jest zachowywany.";
+"Die Datei ist schreibgeschützt." = "Plik jest tylko do odczytu.";
+"Die Datei wurde inzwischen außerhalb geändert." = "Plik został w międzyczasie zmieniony w innym miejscu.";
+"Die Kodierung der Datei ist unbekannt; sie wird nie gesichert." = "Kodowanie pliku jest nieznane; plik nigdy nie jest zachowywany.";
+"Die Stelle liegt außerhalb des Textes: {}" = "Miejsce leży poza tekstem: {}";

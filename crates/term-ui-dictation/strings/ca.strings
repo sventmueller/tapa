@@ -1,0 +1,27 @@
+/* Catalan interface texts; the keys are the German texts in the code. */
+"API-Schlüssel für {}" = "Clau d’API per a {}";
+"Abgebrochen" = "Cancel·lat";
+"Das Diktat ist gerade beschäftigt." = "El dictat està ocupat en aquest moment.";
+"Das Feld des Diktats ist nicht mehr offen. Der Text liegt in der Zwischenablage." = "El camp del dictat ja no és obert. El text és al porta-retalls.";
+"Das ist kein Schlüssel von OpenAI (sk-…) oder Groq (gsk_…)." = "Això no és una clau d’OpenAI (sk-…) ni de Groq (gsk_…).";
+"Das lokale Modell ist nicht installiert. Lade es in den Einstellungen unter Diktat." = "El model local no està instal·lat. Descarrega’l a la configuració, a Dictat.";
+"Der Schlüsselbund lehnt ab: {}" = "El clauer ho rebutja: {}";
+"Die Aufnahme hat ihre Höchstdauer erreicht." = "La gravació ha arribat a la durada màxima.";
+"Diktat beenden" = "Atura el dictat";
+"Diktat starten" = "Inicia el dictat";
+"Höre zu …" = "Escoltant…";
+"Kein API-Schlüssel für {}. Trage ihn in den Einstellungen unter Diktat ein." = "No hi ha cap clau d’API per a {}. Introdueix‑la a la configuració, a Dictat.";
+"Keine Sprache erkannt" = "No s’ha detectat cap veu";
+"Lowspeak hat einen Schlüssel für {}. Für {} übernehmen?" = "Lowspeak té una clau per a {}. Vols utilitzar‑la també per a {}?";
+"Lowspeak hat keinen Schlüssel mehr." = "Lowspeak ja no té cap clau.";
+"Lowspeak meldet: {}" = "Lowspeak informa: {}";
+"Lowspeak transkribiert online mit {}. {} braucht dafür einen eigenen Schlüssel und legt ihn im Schlüsselbund ab." = "Lowspeak transcriu en línia amb {}. Per fer‑ho, {} necessita una clau pròpia i la desa al clauer.";
+"Lowspeaks Schlüssel ließ sich nicht lesen. Gib den Schlüssel selbst ein." = "No s’ha pogut llegir la clau de Lowspeak. Introdueix la clau tu mateix.";
+"Nicht jetzt" = "Ara no";
+"Selbst eingeben …" = "Introdueix‑la tu…";
+"Sichern" = "Desa";
+"Transkribiere …" = "Transcrivint…";
+"{} bietet {} nicht mehr an. Wähle in den Einstellungen unter Diktat ein anderes Modell." = "{} ja no ofereix {}. Tria un altre model a la configuració, a Dictat.";
+"{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "{} no té accés al micròfon. Dona‑li accés a Configuració del Sistema, a Privacitat i seguretat > Micròfon.";
+"{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "Per fer‑ho, {} la llegeix una vegada i el macOS et demanarà permís. Tria “Permet”, no “Permet sempre”: així l’ítem de Lowspeak es queda tal com és. {} desa la clau en un ítem propi.";
+"Übernehmen" = "Utilitza la clau";

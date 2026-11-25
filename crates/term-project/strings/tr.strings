@@ -1,0 +1,18 @@
+/* Turkish interface texts; the keys are the German texts in the code. */
+"Als Vorschau öffnen" = "Önizleme Olarak Aç";
+"Daneben öffnen" = "Yanda Aç";
+"Darunter öffnen" = "Altta Aç";
+"Im Browser-Tab öffnen" = "Tarayıcı Sekmesinde Aç";
+"Im Finder zeigen" = "Finder’da Göster";
+"In den Papierkorb legen" = "Çöp Sepeti’ne Taşı";
+"Neue Datei" = "Yeni Dosya";
+"Neue Datei …" = "Yeni Dosya…";
+"Neuer Ordner" = "Yeni Klasör";
+"Neuer Ordner …" = "Yeni Klasör…";
+"Pfad kopieren" = "Yolu Kopyala";
+"Relativen Pfad kopieren" = "Göreli Yolu Kopyala";
+"Umbenennen" = "Adını Değiştir";
+"Umbenennen …" = "Adını Değiştir…";
+"„{}“ gibt es schon." = "“{}” zaten var.";
+"„{}“ wurde nicht angelegt." = "“{}” oluşturulmadı.";
+"„{}“ wurde nicht umbenannt." = "“{}” öğesinin adı değiştirilmedi.";

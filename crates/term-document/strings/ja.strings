@@ -1,0 +1,8 @@
+/* Japanese interface texts; the keys are the German texts in the code. */
+"Das Dokument hat noch keine Datei." = "書類にはまだファイルがありません。";
+"Das Dokument ist schreibgeschützt." = "書類は読み出し専用です。";
+"Die Datei enthält Binärdaten und wird nie gesichert." = "ファイルにはバイナリデータが含まれているため、保存されることはありません。";
+"Die Datei ist schreibgeschützt." = "ファイルは読み出し専用です。";
+"Die Datei wurde inzwischen außerhalb geändert." = "ファイルはその間にほかの場所で変更されました。";
+"Die Kodierung der Datei ist unbekannt; sie wird nie gesichert." = "ファイルのエンコーディングが不明なため、保存されることはありません。";
+"Die Stelle liegt außerhalb des Textes: {}" = "位置がテキストの範囲外です: {}";

@@ -1,0 +1,1 @@
+{"properties":{"error":{"type":["string","null"]},"loginId":{"type":["string","null"]},"name":{"type":"string"},"success":{"type":"boolean"},"threadId":{"type":["string","null"]}},"required":["name","success"],"title":"McpServerOauthLoginCompletedNotification","type":"object"}

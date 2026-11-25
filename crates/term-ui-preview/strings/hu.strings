@@ -1,0 +1,10 @@
+/* Hungarian interface texts; the keys are the German texts in the code. */
+"Bild: {}" = "Kép: {}";
+"Bilder aus dem Netz laden" = "Képek betöltése a webről";
+"Das Bild lässt sich nicht anzeigen." = "A kép nem jeleníthető meg.";
+"Der Ordner ist nicht vertraut: Bilder aus dem Netz bleiben ungeladen." = "A mappa nem megbízható: a webes képek nem töltődnek be.";
+"Die Datei ist kein lesbares PDF." = "A fájl nem olvasható PDF.";
+"Lädt …" = "Betöltés…";
+"PDF: {}" = "PDF: {}";
+"Vorschau: {}" = "Előnézet: {}";
+"„{}“ lässt sich nicht öffnen." = "A(z) „{}” nem nyitható meg.";

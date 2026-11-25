@@ -1,0 +1,7 @@
+/* Norwegian interface texts; the keys are the German texts in the code. */
+"Abbrechen" = "Avbryt";
+"Alle einklappen" = "Skjul alle";
+"Dateien" = "Filer";
+"Neue Datei …" = "Ny fil…";
+"Neuer Ordner …" = "Ny mappe…";
+"OK" = "OK";

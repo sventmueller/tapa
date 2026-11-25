@@ -1,0 +1,14 @@
+/* Thai interface texts; the keys are the German texts in the code. */
+"Dafür fehlt die Berechtigung." = "ไม่มีสิทธิ์สำหรับการดำเนินการนี้";
+"Das ist ein Ordner, keine Datei." = "นี่คือโฟลเดอร์ ไม่ใช่ไฟล์";
+"Der Dateiname ist ungültig." = "ชื่อไฟล์ไม่ถูกต้อง";
+"Der Datenträger ist schreibgeschützt." = "ข้อมูลบรรจุเป็นแบบอ่านได้อย่างเดียว";
+"Der Datenträger ist voll." = "ข้อมูลบรรจุเต็ม";
+"Der Ordner ist nicht leer." = "โฟลเดอร์ไม่ว่าง";
+"Der Vorgang hat zu lange gedauert." = "การดำเนินการใช้เวลานานเกินไป";
+"Die Datei ist gerade belegt." = "ไฟล์กำลังถูกใช้งานอยู่";
+"Die Datei ist zu groß." = "ไฟล์มีขนาดใหญ่เกินไป";
+"Die Datei oder der Ordner existiert nicht." = "ไม่มีไฟล์หรือโฟลเดอร์นี้อยู่";
+"Die Gegenstelle hat die Verbindung abgelehnt." = "ปลายทางปฏิเสธการเชื่อมต่อ";
+"Ein Teil des Pfads ist kein Ordner." = "บางส่วนของเส้นทางไม่ใช่โฟลเดอร์";
+"Es gibt dort schon eine Datei dieses Namens." = "มีไฟล์ชื่อนี้อยู่ที่นั่นแล้ว";

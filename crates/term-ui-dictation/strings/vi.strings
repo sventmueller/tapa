@@ -1,0 +1,27 @@
+/* Vietnamese interface texts; the keys are the German texts in the code. */
+"API-Schlüssel für {}" = "Khóa API cho {}";
+"Abgebrochen" = "Đã hủy";
+"Das Diktat ist gerade beschäftigt." = "Đọc chính tả hiện đang bận.";
+"Das Feld des Diktats ist nicht mehr offen. Der Text liegt in der Zwischenablage." = "Trường đọc chính tả không còn mở. Văn bản đang ở trong bảng nhớ tạm.";
+"Das ist kein Schlüssel von OpenAI (sk-…) oder Groq (gsk_…)." = "Đây không phải là khóa của OpenAI (sk-…) hoặc Groq (gsk_…).";
+"Das lokale Modell ist nicht installiert. Lade es in den Einstellungen unter Diktat." = "Mô hình cục bộ chưa được cài đặt. Hãy tải về trong Cài đặt, mục Đọc chính tả.";
+"Der Schlüsselbund lehnt ab: {}" = "Chuỗi khóa từ chối: {}";
+"Die Aufnahme hat ihre Höchstdauer erreicht." = "Bản ghi âm đã đạt thời lượng tối đa.";
+"Diktat beenden" = "Dừng đọc chính tả";
+"Diktat starten" = "Bắt đầu đọc chính tả";
+"Höre zu …" = "Đang nghe…";
+"Kein API-Schlüssel für {}. Trage ihn in den Einstellungen unter Diktat ein." = "Không có khóa API cho {}. Hãy nhập khóa trong Cài đặt, mục Đọc chính tả.";
+"Keine Sprache erkannt" = "Không nhận dạng được giọng nói";
+"Lowspeak hat einen Schlüssel für {}. Für {} übernehmen?" = "Lowspeak có khóa cho {}. Dùng khóa này cho cả {}?";
+"Lowspeak hat keinen Schlüssel mehr." = "Lowspeak không còn khóa.";
+"Lowspeak meldet: {}" = "Lowspeak báo: {}";
+"Lowspeak transkribiert online mit {}. {} braucht dafür einen eigenen Schlüssel und legt ihn im Schlüsselbund ab." = "Lowspeak chép lại trực tuyến bằng {}. {} cần khóa riêng cho việc này và lưu khóa trong Chuỗi khóa.";
+"Lowspeaks Schlüssel ließ sich nicht lesen. Gib den Schlüssel selbst ein." = "Không thể đọc khóa của Lowspeak. Hãy tự nhập khóa.";
+"Nicht jetzt" = "Không phải bây giờ";
+"Selbst eingeben …" = "Tự nhập…";
+"Sichern" = "Lưu";
+"Transkribiere …" = "Đang chép lại…";
+"{} bietet {} nicht mehr an. Wähle in den Einstellungen unter Diktat ein anderes Modell." = "{} không còn cung cấp {}. Hãy chọn mô hình khác trong Cài đặt, mục Đọc chính tả.";
+"{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "{} không có quyền truy cập micrô. Hãy cho phép trong Cài đặt hệ thống > Quyền riêng tư & Bảo mật > Micrô.";
+"{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "{} chỉ đọc khóa này một lần cho việc đó, và macOS sẽ hỏi trước. Hãy chọn “Cho phép”, không chọn “Luôn cho phép”: như vậy mục của Lowspeak được giữ nguyên. {} lưu khóa trong một mục riêng.";
+"Übernehmen" = "Dùng khóa";

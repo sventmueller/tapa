@@ -1,0 +1,849 @@
+//! # Text completion
+//!
+//! ## Overview
+//!
+//! This module contains the types and code needed for completing text.
+use std::borrow::{Borrow, Cow};
+use std::cmp::Ordering;
+use std::fs::DirEntry;
+use std::path::{Component, MAIN_SEPARATOR, Path};
+use std::sync::Arc;
+
+use radix_trie::{Trie, TrieCommon, TrieKey};
+use unicode_segmentation::UnicodeSegmentation;
+
+use crate::{
+    editing::{
+        application::ApplicationInfo,
+        cursor::{Adjustable, Cursor, CursorAdjustment},
+        rope::EditRope,
+    },
+    prelude::*,
+    util::{MAX_COMPLETIONS, common_prefix, completion_keys, idx_offset},
+};
+
+const DIR_CURRENT: &str = unsafe { str::from_utf8_unchecked(&[b'.', MAIN_SEPARATOR as u8]) };
+const DIR_PARENT: &str = unsafe { str::from_utf8_unchecked(&[b'.', b'.', MAIN_SEPARATOR as u8]) };
+
+/// A trait for implementing custom completers for an application.
+pub trait Completer<I: ApplicationInfo>: Send + Sync {
+    /// Complete the word just before [Cursor] inside the [EditRope].
+    ///
+    /// When this method returns, the [Cursor] should be updated to point at the
+    /// beginning of the word, so that the resulting range may be replaced by the
+    /// possible completions returned.
+    ///
+    /// The [ApplicationInfo::ContentId] will be the application's identifier for
+    /// the buffer where the completion is happening.
+    fn complete(
+        &mut self,
+        text: &EditRope,
+        cursor: &mut Cursor,
+        content: &I::ContentId,
+        store: &mut I::Store,
+    ) -> Vec<String>;
+}
+
+/// A basic implementation of [Completer] that never returns anything.
+#[derive(Default)]
+pub struct EmptyCompleter;
+
+impl<I: ApplicationInfo> Completer<I> for EmptyCompleter {
+    fn complete(
+        &mut self,
+        _: &EditRope,
+        _: &mut Cursor,
+        _: &I::ContentId,
+        _: &mut I::Store,
+    ) -> Vec<String> {
+        vec![]
+    }
+}
+
+/// List of text completion candidates to show to the user.
+#[derive(Clone)]
+pub struct CompletionList {
+    /// The original prefix being completed.
+    pub prefix: String,
+
+    /// Candidates for text completion.
+    pub candidates: Arc<Vec<String>>,
+
+    /// Currently selected index in `candidates`.
+    pub selected: Option<usize>,
+
+    /// How to display the list of candidates.
+    pub display: CompletionDisplay,
+
+    /// The cursor's current position after the word.
+    pub cursor: Cursor,
+
+    /// The start of the text being completed.
+    pub start: Cursor,
+}
+
+impl CompletionList {
+    pub(crate) fn replace(&self, rope: &mut EditRope, val: String) -> Vec<CursorAdjustment> {
+        let so = rope.cursor_to_offset(&self.start);
+        let eo = rope.cursor_to_offset(&self.cursor);
+        rope.replace(so..eo, EditRope::from(val)).1
+    }
+
+    /// Select a different candidate from the completion list.
+    pub fn select(&mut self, selection: &CompletionStyle) -> Option<String> {
+        match selection {
+            CompletionStyle::List(dir, _) => {
+                let len = self.candidates.len();
+                let max = len.saturating_sub(1);
+                let idx = match (self.selected, dir) {
+                    (None, MoveDir1D::Next) => max,
+                    (None, MoveDir1D::Previous) => 0,
+                    (Some(idx), MoveDir1D::Next) if idx == max => {
+                        self.selected = None;
+                        return Some(self.prefix.clone());
+                    },
+                    (Some(0), MoveDir1D::Previous) => {
+                        self.selected = None;
+                        return Some(self.prefix.clone());
+                    },
+                    (Some(idx), _) => idx,
+                };
+
+                self.selected = idx_offset(idx, 1, dir, len, true);
+                self.selected.map(|i| self.candidates[i].clone())
+            },
+            CompletionStyle::None => {
+                return None;
+            },
+            CompletionStyle::Prefix => {
+                let mut prefix = None;
+
+                for candidate in self.candidates.iter() {
+                    if let Some(p) = prefix {
+                        let common = common_prefix(p, candidate.as_str());
+
+                        if common.is_empty() {
+                            return None;
+                        } else {
+                            prefix = Some(common);
+                        }
+                    } else {
+                        prefix = Some(candidate.as_str());
+                    }
+                }
+
+                return prefix.map(ToString::to_string);
+            },
+            CompletionStyle::Single => {
+                if self.candidates.len() == 1 {
+                    return Some(self.candidates[0].clone());
+                } else {
+                    return None;
+                }
+            },
+        }
+    }
+
+    /// Whether to preserve this list after completing a `selection`.
+    pub fn preserve(&self, selection: &CompletionStyle) -> bool {
+        match selection {
+            // Always save a non-empty list so we can cycle back to the non-completed prefix:
+            CompletionStyle::List(_, true) => !self.candidates.is_empty(),
+
+            // Always save a non-empty list to make sure that `None` can display the candidates:
+            CompletionStyle::None => !self.candidates.is_empty(),
+
+            // If there were multiple candidates available, save the list so it gets displayed:
+            CompletionStyle::List(_, false) | CompletionStyle::Prefix | CompletionStyle::Single => {
+                self.candidates.len() > 1
+            },
+        }
+    }
+}
+
+impl Adjustable for CompletionList {
+    fn adjust(&mut self, adjs: &[CursorAdjustment]) {
+        self.cursor.adjust(adjs);
+    }
+
+    fn zero(&mut self) {
+        self.start.zero();
+        self.cursor.zero();
+    }
+}
+
+#[derive(Clone, Eq, PartialEq)]
+struct StrLike<K: AsRef<str> + Clone + Eq>(K);
+
+impl<K> Borrow<str> for StrLike<K>
+where
+    K: AsRef<str> + Clone + Eq,
+{
+    fn borrow(&self) -> &str {
+        self.0.as_ref()
+    }
+}
+
+impl<K> TrieKey for StrLike<K>
+where
+    K: AsRef<str> + Clone + Eq,
+{
+    fn encode_bytes(&self) -> Vec<u8> {
+        str::encode_bytes(self.borrow())
+    }
+}
+
+/// Maps keys onto values with support for listing keys by prefix.
+pub struct CompletionMap<K, V>
+where
+    K: AsRef<str> + Clone + Eq,
+{
+    trie: Trie<StrLike<K>, V>,
+}
+
+impl<K, V> CompletionMap<K, V>
+where
+    K: AsRef<str> + Clone + Eq,
+{
+    /// Whether this completer contains zero completions.
+    pub fn is_empty(&self) -> bool {
+        self.trie.is_empty()
+    }
+
+    /// Map the given key onto the given value.
+    pub fn insert(&mut self, k: K, v: V) -> Option<V> {
+        self.trie.insert(StrLike(k), v)
+    }
+
+    /// Unmap the given key, returning its previous value if one existed.
+    pub fn remove<Q>(&mut self, k: &Q) -> Option<V>
+    where
+        Q: AsRef<str> + ?Sized,
+    {
+        self.trie.remove(k.as_ref())
+    }
+
+    /// Get an immutable reference to a value if the key exists.
+    pub fn get<Q>(&self, k: &Q) -> Option<&V>
+    where
+        Q: AsRef<str> + ?Sized,
+    {
+        self.trie.get(k.as_ref())
+    }
+
+    /// Get a mutable reference to a value if the key exists.
+    pub fn get_mut<Q>(&mut self, k: &Q) -> Option<&mut V>
+    where
+        Q: AsRef<str> + ?Sized,
+    {
+        self.trie.get_mut(k.as_ref())
+    }
+
+    /// Get a mutable reference to a value for the given key.
+    ///
+    /// If the key is unmapped, then this will insert a [Default] value first.
+    pub fn get_or_default(&mut self, k: K) -> &mut V
+    where
+        V: Default,
+    {
+        if self.trie.get(k.as_ref()).is_none() {
+            self.trie.insert(StrLike(k.clone()), V::default());
+        }
+
+        self.trie
+            .get_mut(k.as_ref())
+            .expect("default value should have been inserted")
+    }
+
+    /// Get a list of keys that share a common prefix.
+    pub fn complete(&self, prefix: &str) -> Vec<K> {
+        completion_keys(&self.trie, prefix).into_iter().map(|k| k.0).collect()
+    }
+
+    /// Returns an iterator over the entries
+    pub fn iter(&self) -> impl Iterator<Item = (&K, &V)> {
+        self.trie.iter().map(|(k, v)| (&k.0, v))
+    }
+}
+
+impl<K, V> Default for CompletionMap<K, V>
+where
+    K: AsRef<str> + Clone + Eq,
+{
+    fn default() -> Self {
+        CompletionMap { trie: Trie::new() }
+    }
+}
+
+/// Tracks words and handles completions for them.
+///
+/// Words are reference-counted to make it easy to forget them once every occurrence has been
+/// removed from a source.
+#[derive(Default)]
+pub struct WordCompleter {
+    map: CompletionMap<String, usize>,
+}
+
+impl WordCompleter {
+    /// Whether this completer contains zero completions.
+    pub fn is_empty(&self) -> bool {
+        self.map.is_empty()
+    }
+
+    /// Decrement the reference count for a `word`.
+    pub fn word_decr(&mut self, word: &str) {
+        if let Some(count) = self.map.get_mut(word) {
+            *count -= 1;
+
+            if *count == 0 {
+                self.map.remove(word);
+            }
+        }
+    }
+
+    /// Increment the reference count for a `word`.
+    pub fn word_incr(&mut self, word: &str) {
+        if let Some(count) = self.map.get_mut(word) {
+            *count += 1;
+        } else {
+            self.map.insert(word.to_string(), 1);
+        }
+    }
+
+    /// Get the completions for the given word prefix.
+    pub fn complete_word(&self, prefix: &str) -> Vec<String> {
+        self.map.complete(prefix)
+    }
+}
+
+/// Tracks lines and handles completions for them and their contained words.
+///
+/// Lines are reference-counted to make it easy to forget them once every occurrence has been
+/// removed from a source.
+#[derive(Default)]
+pub struct LineCompleter {
+    map: CompletionMap<String, usize>,
+    words: WordCompleter,
+}
+
+impl LineCompleter {
+    /// Whether this completer contains zero completions.
+    pub fn is_empty(&self) -> bool {
+        self.map.is_empty()
+    }
+
+    /// Decrement the reference count for a given `line` of text.
+    pub fn line_decr(&mut self, line: &str) {
+        if let Some(count) = self.map.get_mut(line) {
+            *count -= 1;
+
+            if *count == 0 {
+                self.map.remove(line);
+            }
+
+            for word in UnicodeSegmentation::unicode_words(line) {
+                self.words.word_decr(word);
+            }
+        }
+    }
+
+    /// Increment the reference count for a given `line` of text.
+    pub fn line_incr(&mut self, line: &str) {
+        if line.is_empty() {
+            // Don't complete empty lines.
+            return;
+        }
+
+        if let Some(count) = self.map.get_mut(line) {
+            *count += 1;
+        } else {
+            self.map.insert(line.to_string(), 1);
+        }
+
+        for word in UnicodeSegmentation::unicode_words(line) {
+            self.words.word_incr(word);
+        }
+    }
+
+    /// Get the completions for the given line prefix.
+    pub fn complete_line(&self, prefix: &str) -> Vec<String> {
+        self.map.complete(prefix)
+    }
+
+    /// Get the completions for the given word prefix.
+    pub fn complete_word(&self, prefix: &str) -> Vec<String> {
+        self.words.complete_word(prefix)
+    }
+}
+
+mod parse {
+    use std::{borrow::Cow, path::MAIN_SEPARATOR};
+
+    use nom::{
+        IResult,
+        Parser as _,
+        branch::alt,
+        bytes::complete::{escaped_transform, is_not, tag},
+        character::complete::anychar,
+        combinator::{eof, opt, value},
+    };
+
+    use crate::editing::{cursor::Cursor, rope::EditRope};
+
+    fn filepath_char(input: &str) -> IResult<&str, &str> {
+        is_not("\t\n\\ |\"")(input)
+    }
+
+    /// Parse a path and unescape special characters at the start of the string.
+    ///
+    /// Note that this expects `\` to be escaped, even on Windows.
+    fn parse_filepath(input: &str) -> IResult<&str, String> {
+        escaped_transform(
+            filepath_char,
+            '\\',
+            alt((
+                value("\\", tag("\\")),
+                value(" ", tag(" ")),
+                value("#", tag("#")),
+                value("%", tag("%")),
+                value("|", tag("|")),
+                value("\"", tag("\"")),
+            )),
+        )(input)
+    }
+
+    fn parse_filepath_end(input: &str) -> IResult<&str, String> {
+        let (input, res) = parse_filepath(input)?;
+        let (input, _) = eof(input)?;
+
+        Ok((input, res))
+    }
+
+    fn filepath_at_end(mut input: &str) -> IResult<&str, String> {
+        loop {
+            let (i, res) = opt(parse_filepath_end).parse(input)?;
+            if let Some(res) = res {
+                return Ok((i, res));
+            }
+            while let Ok((i, _)) = filepath_char(input) {
+                input = i;
+            }
+            input = anychar(i)?.0;
+        }
+    }
+
+    pub fn filepath_prefix(input: &EditRope, cursor: &Cursor) -> Option<String> {
+        let mut start = cursor.clone();
+        start.left(4096); // no good way to access NAME_MAX in rust
+        let prefix = input.slice(input.cursor_to_offset(&start)..input.cursor_to_offset(cursor));
+        let prefix = Cow::from(&prefix);
+
+        filepath_at_end(prefix.as_ref()).ok().map(|(_, path)| path)
+    }
+
+    /// Escape special characters in the in input string.
+    ///
+    /// Note that this escapes `\`, even on Windows.
+    pub fn escape_string(input: &mut String) {
+        for c in ["\\\\", "\\ ", "\\#", "\\%", "\\|", "\\\""] {
+            if input.contains(&c[1..2]) {
+                *input = input.replace(&c[1..2], c);
+            }
+        }
+    }
+
+    /// How many columns `input` takes up in the buffer once escaped.
+    ///
+    /// [Cursor] columns are character offsets, so this counts characters and not bytes.
+    pub fn escaped_len(input: &str) -> usize {
+        let mut escaped = input.to_string();
+        escape_string(&mut escaped);
+        escaped.chars().count()
+    }
+
+    pub fn trailing_filename(input: &str) -> &str {
+        let start = input.rfind(MAIN_SEPARATOR).map(|s| s + 1).unwrap_or(0);
+        &input[start..]
+    }
+
+    pub fn trailing_filename_escaped_len(input: &str) -> usize {
+        escaped_len(trailing_filename(input))
+    }
+}
+
+/// Complete filenames within a path leading up to the cursor.
+pub fn complete_path(input: &EditRope, cursor: &mut Cursor) -> Vec<String> {
+    let Some(filepath_in) = parse::filepath_prefix(input, cursor) else {
+        return vec![];
+    };
+
+    let filepath_in = Cow::from(&filepath_in);
+    let Ok(filepath_noenv) = shellexpand::env(filepath_in.as_ref()) else {
+        return vec![];
+    };
+
+    if filepath_noenv != filepath_in {
+        // Expand environment variables in the path the first time:
+        cursor.left(parse::escaped_len(filepath_in.as_ref()));
+
+        let mut expanded = filepath_noenv.into_owned();
+        parse::escape_string(&mut expanded);
+
+        return vec![expanded];
+    }
+
+    // Dango: no `~` expansion, see Cargo.toml.
+    let mut filepath_expanded = std::borrow::Cow::Borrowed(filepath_noenv.as_ref());
+    if filepath_noenv.as_ref() == "~" {
+        // Expand plain tilde to the home directory:
+        cursor.left(parse::escaped_len(filepath_in.as_ref()));
+
+        let mut home = format!("{}{MAIN_SEPARATOR}", filepath_expanded.into_owned());
+        parse::escape_string(&mut home);
+
+        return vec![home];
+    }
+
+    if filepath_expanded.is_empty() {
+        filepath_expanded = DIR_CURRENT.into();
+    }
+
+    let mut res = Vec::<String>::with_capacity(MAX_COMPLETIONS);
+    let path = Path::new(filepath_expanded.as_ref());
+
+    if filepath_expanded.as_ref().ends_with(MAIN_SEPARATOR) {
+        // complete all normal files
+
+        if let Ok(dir) = path.read_dir() {
+            let filter = |entry: DirEntry| {
+                let name = entry.file_name();
+                let name = name.to_string_lossy();
+
+                if name.starts_with('.') {
+                    return None;
+                } else {
+                    return Some(maybe_complete_dir(&name, &entry));
+                }
+            };
+
+            res.extend(dir.flatten().flat_map(filter).take(MAX_COMPLETIONS));
+        }
+    } else if filepath_expanded.as_ref() == "." ||
+        filepath_expanded
+            .strip_suffix('.')
+            .is_some_and(|s| s.ends_with(MAIN_SEPARATOR))
+    {
+        // complete all dotfiles
+        // The .parent() and .file_name() methods treat . especially, so we
+        // have to special-case completion of hidden files here.
+
+        cursor.left(parse::trailing_filename_escaped_len(filepath_in.as_ref()));
+
+        if let Ok(dir) = path.read_dir() {
+            let filter = |entry: DirEntry| {
+                let name = entry.file_name();
+                let name = name.to_string_lossy();
+
+                if name.starts_with('.') {
+                    return Some(maybe_complete_dir(&name, &entry));
+                } else {
+                    return None;
+                }
+            };
+
+            res.push(DIR_CURRENT.into());
+            res.push(DIR_PARENT.into());
+
+            res.extend(dir.flatten().flat_map(filter).take(MAX_COMPLETIONS));
+        }
+    } else {
+        // complete a path
+        cursor.left(parse::trailing_filename_escaped_len(filepath_in.as_ref()));
+
+        let Some(prefix) = path.components().next_back() else {
+            return vec![];
+        };
+        let prefix = match prefix {
+            Component::Normal(_) | Component::CurDir | Component::ParentDir => {
+                prefix.as_os_str().to_string_lossy()
+            },
+            _ => {
+                return vec![];
+            },
+        };
+
+        let dir = filepath_expanded
+            .strip_suffix(prefix.as_ref())
+            .or_else(|| filepath_expanded.rsplit_once(MAIN_SEPARATOR).map(|(p, _)| p))
+            .map(Path::new)
+            .filter(|p| !p.as_os_str().is_empty())
+            .and_then(|p| p.read_dir().ok())
+            .or_else(|| std::env::current_dir().and_then(|cwd| cwd.read_dir()).ok());
+
+        if let Some(dir) = dir {
+            let filter = |entry: DirEntry| {
+                let name = entry.file_name();
+                let name = name.to_string_lossy();
+
+                if name.starts_with(prefix.as_ref()) {
+                    return Some(maybe_complete_dir(&name, &entry));
+                } else {
+                    return None;
+                }
+            };
+
+            if prefix.as_ref() == "." {
+                res.push(DIR_CURRENT.into());
+                res.push(DIR_PARENT.into());
+            } else if prefix.as_ref() == ".." {
+                res.push(DIR_PARENT.into());
+            }
+
+            res.extend(dir.flatten().flat_map(filter).take(MAX_COMPLETIONS));
+        }
+    }
+
+    sort_paths(&mut res);
+
+    for comp in &mut res {
+        parse::escape_string(comp);
+    }
+
+    return res;
+}
+
+/// Add a trailing slash to directory names.
+fn maybe_complete_dir(name: &str, entry: &DirEntry) -> String {
+    if entry.file_type().is_ok_and(|t| t.is_dir()) {
+        format!("{name}{MAIN_SEPARATOR}")
+    } else {
+        name.to_string()
+    }
+}
+
+/// Perform a custom sort to have `.` and `..` at the top.
+fn sort_paths(paths: &mut [String]) {
+    paths.sort_unstable_by(|a, b| {
+        if a == DIR_CURRENT {
+            return Ordering::Less;
+        }
+        if b == DIR_CURRENT {
+            return Ordering::Greater;
+        }
+        if a == DIR_PARENT {
+            return Ordering::Less;
+        }
+        if b == DIR_PARENT {
+            return Ordering::Greater;
+        }
+
+        a.cmp(b)
+    });
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use std::path::MAIN_SEPARATOR_STR;
+
+    fn mkmap() -> CompletionMap<String, usize> {
+        let mut map = CompletionMap::default();
+
+        map.insert("press".into(), 1);
+        map.insert("pressed".into(), 1);
+        map.insert("presses".into(), 1);
+        map.insert("pressing".into(), 1);
+        map.insert("pressings".into(), 1);
+        map.insert("pressman".into(), 1);
+        map.insert("pressmen".into(), 1);
+        map.insert("pressure".into(), 1);
+        map.insert("pressured".into(), 1);
+        map.insert("pressures".into(), 1);
+        map.insert("pressuring".into(), 1);
+        map.insert("pressurization".into(), 1);
+        map.insert("pressurize".into(), 1);
+        map.insert("pressurized".into(), 1);
+        map.insert("pressurizes".into(), 1);
+        map.insert("pressurizing".into(), 1);
+
+        return map;
+    }
+
+    #[test]
+    fn test_map_complete() {
+        let map = mkmap();
+
+        let res = map.complete("");
+        assert_eq!(res, strs![
+            "press",
+            "pressed",
+            "presses",
+            "pressing",
+            "pressings",
+            "pressman",
+            "pressmen",
+            "pressure",
+            "pressured",
+            "pressures",
+            "pressuring",
+            "pressurization",
+            "pressurize",
+            "pressurized",
+            "pressurizes",
+            "pressurizing"
+        ]);
+
+        let res = map.complete("presse");
+        assert_eq!(res, strs!["pressed", "presses"]);
+
+        let res = map.complete("pressur");
+        assert_eq!(res, strs![
+            "pressure",
+            "pressured",
+            "pressures",
+            "pressuring",
+            "pressurization",
+            "pressurize",
+            "pressurized",
+            "pressurizes",
+            "pressurizing"
+        ]);
+    }
+
+    #[test]
+    fn test_line_incr_decr() {
+        let mut completer = LineCompleter::default();
+
+        // Increment and decrement two different lines, so that only one is left.
+        completer.line_incr("foo bar baz");
+        completer.line_incr("foo bar baz");
+        completer.line_incr("foo bar quux");
+        completer.line_decr("foo bar baz");
+        completer.line_incr("foo bar baz");
+        completer.line_decr("foo bar quux");
+        completer.line_decr("foo bar baz");
+
+        let res = completer.complete_line("foo bar");
+        assert_eq!(res, vec!["foo bar baz"]);
+
+        let res = completer.complete_line("foo bar q");
+        assert_eq!(res, Vec::<String>::new());
+
+        let res = completer.complete_word("f");
+        assert_eq!(res, vec!["foo"]);
+
+        let res = completer.complete_word("b");
+        assert_eq!(res, vec!["bar", "baz"]);
+
+        let res = completer.complete_word("q");
+        assert_eq!(res, Vec::<String>::new());
+    }
+
+    #[test]
+    fn test_line_complete() {
+        let mut completer = LineCompleter::default();
+
+        completer.line_incr("foo bar baz");
+        completer.line_incr("foo bar quux");
+        completer.line_incr("foo baz");
+
+        let res = completer.complete_line("f");
+        assert_eq!(res, vec!["foo bar baz", "foo bar quux", "foo baz"]);
+
+        let res = completer.complete_line("foo bar");
+        assert_eq!(res, vec!["foo bar baz", "foo bar quux"]);
+
+        let res = completer.complete_line("foo bar q");
+        assert_eq!(res, vec!["foo bar quux"]);
+    }
+
+    #[test]
+    fn test_complete_path_expand_env_simple() {
+        unsafe {
+            std::env::set_var("HOME", "/home/user");
+        }
+
+        let rope = EditRope::from("sp $HOME");
+        let mut cursor = Cursor::new(0, 8);
+        let res = complete_path(&rope, &mut cursor);
+        assert_eq!(res, vec![std::env::var("HOME").unwrap()]);
+
+        let rope = EditRope::from("sp $HOME/");
+        let mut cursor = Cursor::new(0, 9);
+        let res = complete_path(&rope, &mut cursor);
+        assert_eq!(res, vec![std::env::var("HOME").unwrap() + "/"]);
+
+        let rope = EditRope::from("sp $HOME/D");
+        let mut cursor = Cursor::new(0, 10);
+        let res = complete_path(&rope, &mut cursor);
+        assert_eq!(res, vec![std::env::var("HOME").unwrap() + "/D"]);
+    }
+
+    #[test]
+    fn test_complete_path_expand_tilde_only() {
+        let rope = EditRope::from("sp ~");
+        let mut cursor = Cursor::new(0, 4);
+        let res = complete_path(&rope, &mut cursor);
+        let mut exp =
+            std::env::home_dir().unwrap().to_string_lossy().into_owned() + MAIN_SEPARATOR_STR;
+        parse::escape_string(&mut exp);
+        assert_eq!(res, vec![exp]);
+        assert_eq!(cursor.get_x(), 3);
+    }
+
+    #[test]
+    fn test_complete_path_expand_escapes_result() {
+        // Environment variables whose contents need escaping are escaped
+        // in the expanded completion:
+        unsafe {
+            std::env::set_var("FOOBAR_TEST_DIR", "/a b/c#d");
+        }
+
+        let rope = EditRope::from("sp $FOOBAR_TEST_DIR");
+        let mut cursor = Cursor::new(0, 19);
+        let res = complete_path(&rope, &mut cursor);
+        assert_eq!(res, vec!["/a\\ b/c\\#d"]);
+        assert_eq!(cursor.get_x(), 3);
+    }
+
+    #[test]
+    fn test_complete_path_expand_cursor_multibyte() {
+        unsafe {
+            std::env::set_var("HOME", "/home/user");
+        }
+
+        // The cursor moves over characters (and not bytes or columns):
+        let rope = EditRope::from("sp $HOME/文");
+        let mut cursor = Cursor::new(0, 10);
+        let res = complete_path(&rope, &mut cursor);
+        assert_eq!(res, vec![std::env::var("HOME").unwrap() + "/文"]);
+        assert_eq!(cursor.get_x(), 3);
+    }
+
+    #[test]
+    fn test_complete_path_expand_cursor_escaped() {
+        unsafe {
+            std::env::set_var("HOME", "/home/user");
+        }
+
+        // Cursor needs to move back over the original escaped text, and not the unescaped text:
+        let rope = EditRope::from("sp $HOME/a\\ b");
+        let mut cursor = Cursor::new(0, 13);
+        let res = complete_path(&rope, &mut cursor);
+        assert_eq!(res, vec![std::env::var("HOME").unwrap() + "/a\\ b"]);
+        assert_eq!(cursor.get_x(), 3);
+    }
+
+    #[test]
+    fn test_complete_path_cursor_multibyte() {
+        unsafe {
+            std::env::set_var("HOME", "/home/user");
+        }
+
+        let rope = EditRope::from(format!("sp .{MAIN_SEPARATOR}文"));
+        let mut cursor = Cursor::new(0, 6);
+        let res = complete_path(&rope, &mut cursor);
+        assert!(res.is_empty());
+        assert_eq!(cursor.get_x(), 5);
+    }
+}

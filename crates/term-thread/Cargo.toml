@@ -1,0 +1,23 @@
+[package]
+name = "term-thread"
+version.workspace = true
+description = "The one thread model every agent connection fills: entries, subagents, background work and a persisted index"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[lints]
+workspace = true
+
+[features]
+# The checks the agent connections' fuzz targets run on the thread they fill.
+fuzzing = []
+
+[dependencies]
+term-base.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+
+[dev-dependencies]
+term-base = { workspace = true, features = ["testing"] }

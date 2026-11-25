@@ -1,0 +1,41 @@
+{
+ "state": {
+  "rules": [
+   {
+    "behavior": "allow",
+    "source": "userSettings",
+    "rule": "Bash(git status)",
+    "description": {
+     "prefix": "The Bash command ",
+     "emphasis": "git status"
+    },
+    "editability": "persistent"
+   },
+   {
+    "behavior": "allow",
+    "source": "userSettings",
+    "rule": "Read(./docs/**)",
+    "editability": "persistent"
+   },
+   {
+    "behavior": "ask",
+    "source": "userSettings",
+    "rule": "Bash(git push *)",
+    "description": {
+     "prefix": "Any Bash command starting with ",
+     "emphasis": "git push"
+    },
+    "editability": "persistent"
+   },
+   {
+    "behavior": "deny",
+    "source": "userSettings",
+    "rule": "Read(./.env)",
+    "editability": "persistent"
+   }
+  ],
+  "workspaceDirectories": [],
+  "originalCwd": "/private/tmp/a0/proj",
+  "managedOnly": false
+ }
+}

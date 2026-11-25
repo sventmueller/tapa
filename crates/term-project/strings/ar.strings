@@ -1,0 +1,18 @@
+/* Arabic interface texts; the keys are the German texts in the code. */
+"Als Vorschau öffnen" = "فتح كمعاينة";
+"Daneben öffnen" = "فتح بجانبه";
+"Darunter öffnen" = "فتح أسفله";
+"Im Browser-Tab öffnen" = "فتح في علامة تبويب المتصفح";
+"Im Finder zeigen" = "إظهار في Finder";
+"In den Papierkorb legen" = "نقل إلى سلة المهملات";
+"Neue Datei" = "ملف جديد";
+"Neue Datei …" = "ملف جديد…";
+"Neuer Ordner" = "مجلد جديد";
+"Neuer Ordner …" = "مجلد جديد…";
+"Pfad kopieren" = "نسخ المسار";
+"Relativen Pfad kopieren" = "نسخ المسار النسبي";
+"Umbenennen" = "إعادة تسمية";
+"Umbenennen …" = "إعادة تسمية…";
+"„{}“ gibt es schon." = "يوجد “{}” بالفعل.";
+"„{}“ wurde nicht angelegt." = "لم يتم إنشاء “{}”.";
+"„{}“ wurde nicht umbenannt." = "لم تتم إعادة تسمية “{}”.";

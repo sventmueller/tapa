@@ -1,0 +1,8 @@
+/* Danish interface texts; the keys are the German texts in the code. */
+"Das Dokument hat noch keine Datei." = "Dokumentet har endnu ikke et arkiv.";
+"Das Dokument ist schreibgeschützt." = "Dokumentet er skrivebeskyttet.";
+"Die Datei enthält Binärdaten und wird nie gesichert." = "Arkivet indeholder binære data og gemmes aldrig.";
+"Die Datei ist schreibgeschützt." = "Arkivet er skrivebeskyttet.";
+"Die Datei wurde inzwischen außerhalb geändert." = "Arkivet er i mellemtiden blevet ændret et andet sted.";
+"Die Kodierung der Datei ist unbekannt; sie wird nie gesichert." = "Arkivets tegnkodning er ukendt; det gemmes aldrig.";
+"Die Stelle liegt außerhalb des Textes: {}" = "Stedet ligger uden for teksten: {}";

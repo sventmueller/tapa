@@ -1,0 +1,7 @@
+/* Korean interface texts; the keys are the German texts in the code. */
+"Abbrechen" = "취소";
+"Alle einklappen" = "모두 접기";
+"Dateien" = "파일";
+"Neue Datei …" = "새로운 파일…";
+"Neuer Ordner …" = "새로운 폴더…";
+"OK" = "확인";

@@ -1,0 +1,1 @@
+{"definitions":{"AbsolutePathBuf":{"type":"string"}},"properties":{"codexHome":{"allOf":[{"$ref":"#/definitions/AbsolutePathBuf"}]},"platformFamily":{"type":"string"},"platformOs":{"type":"string"},"userAgent":{"type":"string"}},"required":["codexHome","platformFamily","platformOs","userAgent"],"title":"InitializeResponse","type":"object"}

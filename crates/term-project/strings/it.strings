@@ -1,0 +1,18 @@
+/* Italian interface texts; the keys are the German texts in the code. */
+"Als Vorschau öffnen" = "Apri come anteprima";
+"Daneben öffnen" = "Apri a lato";
+"Darunter öffnen" = "Apri sotto";
+"Im Browser-Tab öffnen" = "Apri in un pannello del browser";
+"Im Finder zeigen" = "Mostra nel Finder";
+"In den Papierkorb legen" = "Sposta nel Cestino";
+"Neue Datei" = "Nuovo file";
+"Neue Datei …" = "Nuovo file…";
+"Neuer Ordner" = "Nuova cartella";
+"Neuer Ordner …" = "Nuova cartella…";
+"Pfad kopieren" = "Copia percorso";
+"Relativen Pfad kopieren" = "Copia percorso relativo";
+"Umbenennen" = "Rinomina";
+"Umbenennen …" = "Rinomina…";
+"„{}“ gibt es schon." = "“{}” esiste già.";
+"„{}“ wurde nicht angelegt." = "“{}” non è stato creato.";
+"„{}“ wurde nicht umbenannt." = "“{}” non è stato rinominato.";

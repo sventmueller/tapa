@@ -1,0 +1,13 @@
+[package]
+name = "term-product"
+version.workspace = true
+description = "The product's name and the identifiers its stored data hangs on; only the app depends on it (E3, E19)"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]

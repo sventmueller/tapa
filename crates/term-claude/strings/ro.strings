@@ -1,0 +1,13 @@
+/* Romanian interface texts; the keys are the German texts in the code. */
+"Claude Code hat das Zurückspulen abgelehnt: {}" = "Claude Code a refuzat derularea înapoi: {}";
+"Claude Code hat nicht rechtzeitig geantwortet." = "Claude Code nu a răspuns la timp.";
+"Claude Code ist beendet." = "Claude Code s-a încheiat.";
+"Claude Code ist nicht gestartet: {}" = "Claude Code nu a pornit: {}";
+"Claude Code lehnt ab: {}" = "Claude Code refuză: {}";
+"Claude Code liest seine Eingabe nicht mehr." = "Claude Code nu mai citește intrarea.";
+"Claude Code ließ sich nicht starten: {}" = "Claude Code nu a putut porni: {}";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "Această cerere nu mai așteaptă un răspuns.";
+"Diese Version von Claude Code kann das hier nicht." = "Această versiune de Claude Code nu poate face asta aici.";
+"Melde dich an, indem du claude im Terminal startest: {}" = "Autentificați-vă pornind claude într-un terminal: {}";
+"Unerwartete Antwort: {}" = "Răspuns neașteptat: {}";
+"{} wurde nicht gefunden." = "{} nu a fost găsit.";

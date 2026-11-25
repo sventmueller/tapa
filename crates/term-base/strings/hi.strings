@@ -1,0 +1,14 @@
+/* Hindi interface texts; the keys are the German texts in the code. */
+"Dafür fehlt die Berechtigung." = "इसके लिए अनुमति नहीं है।";
+"Das ist ein Ordner, keine Datei." = "यह एक फ़ोल्डर है, फ़ाइल नहीं।";
+"Der Dateiname ist ungültig." = "फ़ाइल का नाम मान्य नहीं है।";
+"Der Datenträger ist schreibgeschützt." = "वॉल्यूम केवल-पढ़ने योग्य है।";
+"Der Datenträger ist voll." = "वॉल्यूम भरा हुआ है।";
+"Der Ordner ist nicht leer." = "फ़ोल्डर खाली नहीं है।";
+"Der Vorgang hat zu lange gedauert." = "प्रक्रिया में बहुत अधिक समय लगा।";
+"Die Datei ist gerade belegt." = "फ़ाइल अभी उपयोग में है।";
+"Die Datei ist zu groß." = "फ़ाइल बहुत बड़ी है।";
+"Die Datei oder der Ordner existiert nicht." = "फ़ाइल या फ़ोल्डर मौजूद नहीं है।";
+"Die Gegenstelle hat die Verbindung abgelehnt." = "दूसरे पक्ष ने कनेक्शन अस्वीकार कर दिया।";
+"Ein Teil des Pfads ist kein Ordner." = "पथ का एक हिस्सा फ़ोल्डर नहीं है।";
+"Es gibt dort schon eine Datei dieses Namens." = "वहाँ इस नाम की फ़ाइल पहले से मौजूद है।";

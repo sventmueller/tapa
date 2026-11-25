@@ -1,0 +1,14 @@
+/* French interface texts; the keys are the German texts in the code. */
+"Dafür fehlt die Berechtigung." = "Vous ne disposez pas de l’autorisation nécessaire.";
+"Das ist ein Ordner, keine Datei." = "C’est un dossier, pas un fichier.";
+"Der Dateiname ist ungültig." = "Le nom de fichier n’est pas valide.";
+"Der Datenträger ist schreibgeschützt." = "Le volume est en lecture seule.";
+"Der Datenträger ist voll." = "Le volume est plein.";
+"Der Ordner ist nicht leer." = "Le dossier n’est pas vide.";
+"Der Vorgang hat zu lange gedauert." = "L’opération a pris trop de temps.";
+"Die Datei ist gerade belegt." = "Le fichier est actuellement utilisé.";
+"Die Datei ist zu groß." = "Le fichier est trop volumineux.";
+"Die Datei oder der Ordner existiert nicht." = "Le fichier ou le dossier n’existe pas.";
+"Die Gegenstelle hat die Verbindung abgelehnt." = "L’hôte distant a refusé la connexion.";
+"Ein Teil des Pfads ist kein Ordner." = "Une partie du chemin n’est pas un dossier.";
+"Es gibt dort schon eine Datei dieses Namens." = "Un fichier portant ce nom existe déjà à cet emplacement.";

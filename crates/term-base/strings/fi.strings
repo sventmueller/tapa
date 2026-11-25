@@ -1,0 +1,14 @@
+/* Finnish interface texts; the keys are the German texts in the code. */
+"Dafür fehlt die Berechtigung." = "Tähän puuttuu käyttöoikeus.";
+"Das ist ein Ordner, keine Datei." = "Tämä on kansio, ei tiedosto.";
+"Der Dateiname ist ungültig." = "Tiedostonimi ei kelpaa.";
+"Der Datenträger ist schreibgeschützt." = "Taltio on kirjoitussuojattu.";
+"Der Datenträger ist voll." = "Taltio on täynnä.";
+"Der Ordner ist nicht leer." = "Kansio ei ole tyhjä.";
+"Der Vorgang hat zu lange gedauert." = "Toiminto kesti liian kauan.";
+"Die Datei ist gerade belegt." = "Tiedosto on juuri nyt käytössä.";
+"Die Datei ist zu groß." = "Tiedosto on liian suuri.";
+"Die Datei oder der Ordner existiert nicht." = "Tiedostoa tai kansiota ei ole olemassa.";
+"Die Gegenstelle hat die Verbindung abgelehnt." = "Vastapuoli torjui yhteyden.";
+"Ein Teil des Pfads ist kein Ordner." = "Osa polusta ei ole kansio.";
+"Es gibt dort schon eine Datei dieses Namens." = "Siellä on jo samanniminen tiedosto.";

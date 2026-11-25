@@ -1,0 +1,8 @@
+/* Turkish interface texts; the keys are the German texts in the code. */
+"Das Dokument hat noch keine Datei." = "Belgenin henüz bir dosyası yok.";
+"Das Dokument ist schreibgeschützt." = "Belge salt okunur.";
+"Die Datei enthält Binärdaten und wird nie gesichert." = "Dosya ikili veri içeriyor ve asla kaydedilmez.";
+"Die Datei ist schreibgeschützt." = "Dosya salt okunur.";
+"Die Datei wurde inzwischen außerhalb geändert." = "Dosya bu arada başka bir yerde değiştirildi.";
+"Die Kodierung der Datei ist unbekannt; sie wird nie gesichert." = "Dosyanın kodlaması bilinmiyor; asla kaydedilmez.";
+"Die Stelle liegt außerhalb des Textes: {}" = "Konum metnin dışında: {}";

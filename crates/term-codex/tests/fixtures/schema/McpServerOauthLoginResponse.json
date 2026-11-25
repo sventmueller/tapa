@@ -1,0 +1,1 @@
+{"properties":{"authorizationUrl":{"type":"string"},"loginId":{"default":null,"type":["string","null"]}},"required":["authorizationUrl"],"title":"McpServerOauthLoginResponse","type":"object"}

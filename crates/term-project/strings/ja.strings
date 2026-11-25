@@ -1,0 +1,18 @@
+/* Japanese interface texts; the keys are the German texts in the code. */
+"Als Vorschau öffnen" = "プレビューとして開く";
+"Daneben öffnen" = "横に開く";
+"Darunter öffnen" = "下に開く";
+"Im Browser-Tab öffnen" = "ブラウザタブで開く";
+"Im Finder zeigen" = "Finderに表示";
+"In den Papierkorb legen" = "ゴミ箱に入れる";
+"Neue Datei" = "新規ファイル";
+"Neue Datei …" = "新規ファイル…";
+"Neuer Ordner" = "新規フォルダ";
+"Neuer Ordner …" = "新規フォルダ…";
+"Pfad kopieren" = "パスをコピー";
+"Relativen Pfad kopieren" = "相対パスをコピー";
+"Umbenennen" = "名称変更";
+"Umbenennen …" = "名称変更…";
+"„{}“ gibt es schon." = "“{}”はすでに存在します。";
+"„{}“ wurde nicht angelegt." = "“{}”は作成されませんでした。";
+"„{}“ wurde nicht umbenannt." = "“{}”の名前は変更されませんでした。";

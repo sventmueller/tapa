@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Idea
+    url: https://github.com/sventmueller/tapa/discussions/new?category=ideas
+    about: Suggest something Tapa should do.
+  - name: Question
+    url: https://github.com/sventmueller/tapa/discussions
+    about: Ask how to do something in Tapa.

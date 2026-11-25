@@ -1,0 +1,34 @@
+size 140 32 0
+cursor 14 0
+line 0 sh-5.2$ cat alacritty_terminal/tests/ref/hyperlinks/alacritty.recording
+line 1 sh-5.1$ printf '\e]8;;https://example.com\e\\foo\e]8;;\e\\\n'
+line 2 foo
+line 3 sh-5.1$ printf '\e]8;;https://example.com\e\\foo\e]8;;\e\\\n'
+line 4 foo
+line 5 sh-5.1$ printf '\e]8;id=42;https://example.com\e\\bar\e]8;;\e\\\n'
+line 6 bar
+line 7 sh-5.1$ printf '\e]8;id=42;https://example.com\e\\bar\e]8;;\e\\\n'
+line 8 bar
+line 9 sh-5.1$
+line 10 exit
+line 11 sh-5.2$ printf '\e]8;id=hello;http://example.com/naoheu;ntahoeu\e\\This is a link\e]8;id=hello;\e\\\n'
+line 12 This is a link
+line 13 sh-5.2$ exit
+line 14 
+line 15 
+line 16 
+line 17 
+line 18 
+line 19 
+line 20 
+line 21 
+line 22 
+line 23 
+line 24 
+line 25 
+line 26 
+line 27 
+line 28 
+line 29 
+line 30 
+line 31 

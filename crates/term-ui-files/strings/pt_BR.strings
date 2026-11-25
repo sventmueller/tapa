@@ -1,0 +1,7 @@
+/* Brazilian Portuguese interface texts; the keys are the German texts in the code. */
+"Abbrechen" = "Cancelar";
+"Alle einklappen" = "Recolher Tudo";
+"Dateien" = "Arquivos";
+"Neue Datei …" = "Novo Arquivo…";
+"Neuer Ordner …" = "Nova Pasta…";
+"OK" = "OK";

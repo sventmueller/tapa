@@ -1,0 +1,85 @@
+size 139 35 0
+cursor 26 0
+line 0 [undeadleech@archhq sgr]$ echo -e "\e[9;38:2:255:0:255;4mTEST\e[0m"
+line 1 TEST
+line 2 [undeadleech@archhq sgr]$ echo -e "\e[9;38:2:0:255:0:255;4mTEST\e[0m"
+line 3 TEST
+line 4 [undeadleech@archhq sgr]$ echo -e "\e[9;38:5:1;4mTEST\e[0m"
+line 5 TEST
+line 6 [undeadleech@archhq sgr]$ echo -e "\e[9;48:2:255:0:255;4mTEST\e[0m"
+line 7 TEST
+line 8 [undeadleech@archhq sgr]$ echo -e "\e[9;48:2:0:255:0:255;4mTEST\e[0m"
+line 9 TEST
+line 10 [undeadleech@archhq sgr]$ echo -e "\e[9;48:5:1;4mTEST\e[0m"
+line 11 TEST
+line 12 [undeadleech@archhq sgr]$ echo -e "\e[9;38;2;255;0;255;4mTEST\e[0m"
+line 13 TEST
+line 14 [undeadleech@archhq sgr]$ echo -e "\e[9;38;2;0;255;0;255;4mTEST\e[0m"
+line 15 TEST
+line 16 [undeadleech@archhq sgr]$ echo -e "\e[9;38;5;1;4mTEST\e[0m"
+line 17 TEST
+line 18 [undeadleech@archhq sgr]$ echo -e "\e[9;48;2;255;0;255;4mTEST\e[0m"
+line 19 TEST
+line 20 [undeadleech@archhq sgr]$ echo -e "\e[9;48;2;0;255;0;255;4mTEST\e[0m"
+line 21 TEST
+line 22 [undeadleech@archhq sgr]$ echo -e "\e[9;48;5;1;4mTEST\e[0m"
+line 23 TEST
+line 24 [undeadleech@archhq sgr]$ exit
+line 25 exit
+line 26 
+line 27 
+line 28 
+line 29 
+line 30 
+line 31 
+line 32 
+line 33 
+line 34 
+cell 1 0 fg=#ff00ff underline strike
+cell 1 1 fg=#ff00ff underline strike
+cell 1 2 fg=#ff00ff underline strike
+cell 1 3 fg=#ff00ff underline strike
+cell 3 0 fg=#ff00ff underline strike
+cell 3 1 fg=#ff00ff underline strike
+cell 3 2 fg=#ff00ff underline strike
+cell 3 3 fg=#ff00ff underline strike
+cell 5 0 fg=1 underline strike
+cell 5 1 fg=1 underline strike
+cell 5 2 fg=1 underline strike
+cell 5 3 fg=1 underline strike
+cell 7 0 bg=#ff00ff underline strike
+cell 7 1 bg=#ff00ff underline strike
+cell 7 2 bg=#ff00ff underline strike
+cell 7 3 bg=#ff00ff underline strike
+cell 9 0 bg=#ff00ff underline strike
+cell 9 1 bg=#ff00ff underline strike
+cell 9 2 bg=#ff00ff underline strike
+cell 9 3 bg=#ff00ff underline strike
+cell 11 0 bg=1 underline strike
+cell 11 1 bg=1 underline strike
+cell 11 2 bg=1 underline strike
+cell 11 3 bg=1 underline strike
+cell 13 0 fg=#ff00ff underline strike
+cell 13 1 fg=#ff00ff underline strike
+cell 13 2 fg=#ff00ff underline strike
+cell 13 3 fg=#ff00ff underline strike
+cell 15 0 fg=#00ff00 underline strike
+cell 15 1 fg=#00ff00 underline strike
+cell 15 2 fg=#00ff00 underline strike
+cell 15 3 fg=#00ff00 underline strike
+cell 17 0 fg=1 underline strike
+cell 17 1 fg=1 underline strike
+cell 17 2 fg=1 underline strike
+cell 17 3 fg=1 underline strike
+cell 19 0 bg=#ff00ff underline strike
+cell 19 1 bg=#ff00ff underline strike
+cell 19 2 bg=#ff00ff underline strike
+cell 19 3 bg=#ff00ff underline strike
+cell 21 0 bg=#00ff00 underline strike
+cell 21 1 bg=#00ff00 underline strike
+cell 21 2 bg=#00ff00 underline strike
+cell 21 3 bg=#00ff00 underline strike
+cell 23 0 bg=1 underline strike
+cell 23 1 bg=1 underline strike
+cell 23 2 bg=1 underline strike
+cell 23 3 bg=1 underline strike

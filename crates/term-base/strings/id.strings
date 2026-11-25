@@ -1,0 +1,14 @@
+/* Indonesian interface texts; the keys are the German texts in the code. */
+"Dafür fehlt die Berechtigung." = "Izin untuk ini tidak ada.";
+"Das ist ein Ordner, keine Datei." = "Ini adalah folder, bukan file.";
+"Der Dateiname ist ungültig." = "Nama file tidak valid.";
+"Der Datenträger ist schreibgeschützt." = "Volume hanya dapat dibaca.";
+"Der Datenträger ist voll." = "Volume penuh.";
+"Der Ordner ist nicht leer." = "Folder tidak kosong.";
+"Der Vorgang hat zu lange gedauert." = "Operasi memakan waktu terlalu lama.";
+"Die Datei ist gerade belegt." = "File sedang digunakan.";
+"Die Datei ist zu groß." = "File terlalu besar.";
+"Die Datei oder der Ordner existiert nicht." = "File atau folder tidak ada.";
+"Die Gegenstelle hat die Verbindung abgelehnt." = "Pihak lain menolak koneksi.";
+"Ein Teil des Pfads ist kein Ordner." = "Sebagian jalur bukan folder.";
+"Es gibt dort schon eine Datei dieses Namens." = "Sudah ada file dengan nama ini di sana.";

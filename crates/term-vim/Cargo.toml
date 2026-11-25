@@ -1,0 +1,20 @@
+[package]
+name = "term-vim"
+version.workspace = true
+description = "Vim's modes, keys, motions and operators on a shadow copy of a text, for the input field (F95), without AppKit"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+modalkit = { version = "=0.0.32", default-features = false }
+regex = "1"
+ropey = { version = "1.6.1", default-features = false, features = ["cr_lines", "simd"] }
+
+[dev-dependencies]
+term-base = { workspace = true, features = ["testing"] }
+proptest = "1.12.0"

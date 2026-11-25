@@ -1,0 +1,7 @@
+/* Traditional Chinese interface texts; the keys are the German texts in the code. */
+"Abbrechen" = "取消";
+"Alle einklappen" = "全部收合";
+"Dateien" = "檔案";
+"Neue Datei …" = "新增檔案…";
+"Neuer Ordner …" = "新增檔案夾…";
+"OK" = "好";

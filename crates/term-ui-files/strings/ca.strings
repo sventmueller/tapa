@@ -1,0 +1,7 @@
+/* Catalan interface texts; the keys are the German texts in the code. */
+"Abbrechen" = "Cancel·lar";
+"Alle einklappen" = "Plega‑ho tot";
+"Dateien" = "Fitxers";
+"Neue Datei …" = "Nou fitxer…";
+"Neuer Ordner …" = "Nova carpeta…";
+"OK" = "D’acord";

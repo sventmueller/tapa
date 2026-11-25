@@ -1,0 +1,620 @@
+size 105 29 0
+cursor 22 1
+line 0 * bdd2181 - (2 hours ago) Add support for recording/running ref tests - Joe Wilm
+line 1  (HEAD -> ref-tests, origin/ref-tests)
+line 2 | *   d629f72 - (2 days ago) WIP on master: d97996e Make bindings configurable f
+line 3 rom alacritty.yml - Joe Wilm (refs/stash)
+line 4 | |\
+line 5 |/ /
+line 6 | * 5908bde - (2 days ago) index on master: d97996e Make bindings configurable f
+line 7 rom alacritty.yml - Joe Wilm
+line 8 |/
+line 9 * d97996e - (4 days ago) Make bindings configurable from alacritty.yml - Joe Wil
+line 10 m (origin/master, origin/bindings-v2, origin/HEAD, master, bindings-v2)
+line 11 * cb2bc4e - (4 days ago) Fix test for Cell layout - Joe Wilm
+line 12 * cbb9167 - (5 days ago) Redraw screen on focus - Joe Wilm
+line 13 * 8360ab4 - (8 days ago) Fallback to received chars when no bindings - Joe Wilm
+line 14 * 6925daa - (8 days ago) Fix/add some keybindings - Joe Wilm
+line 15 * e426013 - (8 days ago) Fix alacritty shutdown when shell exits on macOS - Joe
+line 16 Wilm
+line 17 * 8cbd768 - (8 days ago) Fix resize on macOS leaving screen blank - Joe Wilm
+line 18 * a652b4a - (8 days ago) Rustup - Joe Wilm
+line 19 * 8cbd768 - (8 days ago) Fix resize
+line 20                                     on macOS leaving screen blank - Joe Wilm
+line 21 * a652b4a - (8 days ago) Rustup - Joe Wilm
+line 22 :
+line 23 1:git*
+line 24 
+line 25 
+line 26 
+line 27 
+line 28 
+cell 0 2 fg=4 bold
+cell 0 3 fg=4 bold
+cell 0 4 fg=4 bold
+cell 0 5 fg=4 bold
+cell 0 6 fg=4 bold
+cell 0 7 fg=4 bold
+cell 0 8 fg=4 bold
+cell 0 12 fg=2 bold
+cell 0 13 fg=2 bold
+cell 0 14 fg=2 bold
+cell 0 15 fg=2 bold
+cell 0 16 fg=2 bold
+cell 0 17 fg=2 bold
+cell 0 18 fg=2 bold
+cell 0 19 fg=2 bold
+cell 0 20 fg=2 bold
+cell 0 21 fg=2 bold
+cell 0 22 fg=2 bold
+cell 0 23 fg=2 bold
+cell 0 24 fg=2 bold
+cell 0 70 fg=2
+cell 0 71 fg=2
+cell 0 72 fg=2
+cell 0 73 fg=2
+cell 0 74 fg=2
+cell 0 75 fg=2
+cell 0 76 fg=2
+cell 0 77 fg=2
+cell 0 78 fg=2
+cell 0 79 fg=2
+cell 1 0 fg=1 bold
+cell 1 1 fg=1 bold
+cell 1 2 fg=1 bold
+cell 1 3 fg=1 bold
+cell 1 4 fg=1 bold
+cell 1 5 fg=1 bold
+cell 1 6 fg=1 bold
+cell 1 7 fg=1 bold
+cell 1 8 fg=1 bold
+cell 1 9 fg=1 bold
+cell 1 10 fg=1 bold
+cell 1 11 fg=1 bold
+cell 1 12 fg=1 bold
+cell 1 13 fg=1 bold
+cell 1 14 fg=1 bold
+cell 1 15 fg=1 bold
+cell 1 16 fg=1 bold
+cell 1 17 fg=1 bold
+cell 1 18 fg=1 bold
+cell 1 19 fg=1 bold
+cell 1 20 fg=1 bold
+cell 1 21 fg=1 bold
+cell 1 22 fg=1 bold
+cell 1 23 fg=1 bold
+cell 1 24 fg=1 bold
+cell 1 25 fg=1 bold
+cell 1 26 fg=1 bold
+cell 1 27 fg=1 bold
+cell 1 28 fg=1 bold
+cell 1 29 fg=1 bold
+cell 1 30 fg=1 bold
+cell 1 31 fg=1 bold
+cell 1 32 fg=1 bold
+cell 1 33 fg=1 bold
+cell 1 34 fg=1 bold
+cell 1 35 fg=1 bold
+cell 1 36 fg=1 bold
+cell 1 37 fg=1 bold
+cell 2 0 fg=1
+cell 2 6 fg=4 bold
+cell 2 7 fg=4 bold
+cell 2 8 fg=4 bold
+cell 2 9 fg=4 bold
+cell 2 10 fg=4 bold
+cell 2 11 fg=4 bold
+cell 2 12 fg=4 bold
+cell 2 16 fg=2 bold
+cell 2 17 fg=2 bold
+cell 2 18 fg=2 bold
+cell 2 19 fg=2 bold
+cell 2 20 fg=2 bold
+cell 2 21 fg=2 bold
+cell 2 22 fg=2 bold
+cell 2 23 fg=2 bold
+cell 2 24 fg=2 bold
+cell 2 25 fg=2 bold
+cell 2 26 fg=2 bold
+cell 2 27 fg=2 bold
+cell 3 18 fg=2
+cell 3 19 fg=2
+cell 3 20 fg=2
+cell 3 21 fg=2
+cell 3 22 fg=2
+cell 3 23 fg=2
+cell 3 24 fg=2
+cell 3 25 fg=2
+cell 3 26 fg=2
+cell 3 27 fg=2
+cell 3 28 fg=1 bold
+cell 3 29 fg=1 bold
+cell 3 30 fg=1 bold
+cell 3 31 fg=1 bold
+cell 3 32 fg=1 bold
+cell 3 33 fg=1 bold
+cell 3 34 fg=1 bold
+cell 3 35 fg=1 bold
+cell 3 36 fg=1 bold
+cell 3 37 fg=1 bold
+cell 3 38 fg=1 bold
+cell 3 39 fg=1 bold
+cell 3 40 fg=1 bold
+cell 4 0 fg=1
+cell 4 2 fg=1
+cell 4 3 fg=3
+cell 5 0 fg=1
+cell 5 1 fg=1
+cell 5 3 fg=3
+cell 6 0 fg=1
+cell 6 4 fg=4 bold
+cell 6 5 fg=4 bold
+cell 6 6 fg=4 bold
+cell 6 7 fg=4 bold
+cell 6 8 fg=4 bold
+cell 6 9 fg=4 bold
+cell 6 10 fg=4 bold
+cell 6 14 fg=2 bold
+cell 6 15 fg=2 bold
+cell 6 16 fg=2 bold
+cell 6 17 fg=2 bold
+cell 6 18 fg=2 bold
+cell 6 19 fg=2 bold
+cell 6 20 fg=2 bold
+cell 6 21 fg=2 bold
+cell 6 22 fg=2 bold
+cell 6 23 fg=2 bold
+cell 6 24 fg=2 bold
+cell 6 25 fg=2 bold
+cell 7 18 fg=2
+cell 7 19 fg=2
+cell 7 20 fg=2
+cell 7 21 fg=2
+cell 7 22 fg=2
+cell 7 23 fg=2
+cell 7 24 fg=2
+cell 7 25 fg=2
+cell 7 26 fg=2
+cell 7 27 fg=2
+cell 8 0 fg=1
+cell 8 1 fg=1
+cell 9 2 fg=4 bold
+cell 9 3 fg=4 bold
+cell 9 4 fg=4 bold
+cell 9 5 fg=4 bold
+cell 9 6 fg=4 bold
+cell 9 7 fg=4 bold
+cell 9 8 fg=4 bold
+cell 9 12 fg=2 bold
+cell 9 13 fg=2 bold
+cell 9 14 fg=2 bold
+cell 9 15 fg=2 bold
+cell 9 16 fg=2 bold
+cell 9 17 fg=2 bold
+cell 9 18 fg=2 bold
+cell 9 19 fg=2 bold
+cell 9 20 fg=2 bold
+cell 9 21 fg=2 bold
+cell 9 22 fg=2 bold
+cell 9 23 fg=2 bold
+cell 9 71 fg=2
+cell 9 72 fg=2
+cell 9 73 fg=2
+cell 9 74 fg=2
+cell 9 75 fg=2
+cell 9 76 fg=2
+cell 9 77 fg=2
+cell 9 78 fg=2
+cell 9 79 fg=2
+cell 10 0 fg=2
+cell 10 1 fg=1 bold
+cell 10 2 fg=1 bold
+cell 10 3 fg=1 bold
+cell 10 4 fg=1 bold
+cell 10 5 fg=1 bold
+cell 10 6 fg=1 bold
+cell 10 7 fg=1 bold
+cell 10 8 fg=1 bold
+cell 10 9 fg=1 bold
+cell 10 10 fg=1 bold
+cell 10 11 fg=1 bold
+cell 10 12 fg=1 bold
+cell 10 13 fg=1 bold
+cell 10 14 fg=1 bold
+cell 10 15 fg=1 bold
+cell 10 16 fg=1 bold
+cell 10 17 fg=1 bold
+cell 10 18 fg=1 bold
+cell 10 19 fg=1 bold
+cell 10 20 fg=1 bold
+cell 10 21 fg=1 bold
+cell 10 22 fg=1 bold
+cell 10 23 fg=1 bold
+cell 10 24 fg=1 bold
+cell 10 25 fg=1 bold
+cell 10 26 fg=1 bold
+cell 10 27 fg=1 bold
+cell 10 28 fg=1 bold
+cell 10 29 fg=1 bold
+cell 10 30 fg=1 bold
+cell 10 31 fg=1 bold
+cell 10 32 fg=1 bold
+cell 10 33 fg=1 bold
+cell 10 34 fg=1 bold
+cell 10 35 fg=1 bold
+cell 10 36 fg=1 bold
+cell 10 37 fg=1 bold
+cell 10 38 fg=1 bold
+cell 10 39 fg=1 bold
+cell 10 40 fg=1 bold
+cell 10 41 fg=1 bold
+cell 10 42 fg=1 bold
+cell 10 43 fg=1 bold
+cell 10 44 fg=1 bold
+cell 10 45 fg=1 bold
+cell 10 46 fg=1 bold
+cell 10 47 fg=1 bold
+cell 10 48 fg=1 bold
+cell 10 49 fg=1 bold
+cell 10 50 fg=1 bold
+cell 10 51 fg=1 bold
+cell 10 52 fg=1 bold
+cell 10 53 fg=1 bold
+cell 10 54 fg=1 bold
+cell 10 55 fg=1 bold
+cell 10 56 fg=1 bold
+cell 10 57 fg=1 bold
+cell 10 58 fg=1 bold
+cell 10 59 fg=1 bold
+cell 10 60 fg=1 bold
+cell 10 61 fg=1 bold
+cell 10 62 fg=1 bold
+cell 10 63 fg=1 bold
+cell 10 64 fg=1 bold
+cell 10 65 fg=1 bold
+cell 10 66 fg=1 bold
+cell 10 67 fg=1 bold
+cell 10 68 fg=1 bold
+cell 10 69 fg=1 bold
+cell 10 70 fg=1 bold
+cell 11 2 fg=4 bold
+cell 11 3 fg=4 bold
+cell 11 4 fg=4 bold
+cell 11 5 fg=4 bold
+cell 11 6 fg=4 bold
+cell 11 7 fg=4 bold
+cell 11 8 fg=4 bold
+cell 11 12 fg=2 bold
+cell 11 13 fg=2 bold
+cell 11 14 fg=2 bold
+cell 11 15 fg=2 bold
+cell 11 16 fg=2 bold
+cell 11 17 fg=2 bold
+cell 11 18 fg=2 bold
+cell 11 19 fg=2 bold
+cell 11 20 fg=2 bold
+cell 11 21 fg=2 bold
+cell 11 22 fg=2 bold
+cell 11 23 fg=2 bold
+cell 11 50 fg=2
+cell 11 51 fg=2
+cell 11 52 fg=2
+cell 11 53 fg=2
+cell 11 54 fg=2
+cell 11 55 fg=2
+cell 11 56 fg=2
+cell 11 57 fg=2
+cell 11 58 fg=2
+cell 11 59 fg=2
+cell 12 2 fg=4 bold
+cell 12 3 fg=4 bold
+cell 12 4 fg=4 bold
+cell 12 5 fg=4 bold
+cell 12 6 fg=4 bold
+cell 12 7 fg=4 bold
+cell 12 8 fg=4 bold
+cell 12 12 fg=2 bold
+cell 12 13 fg=2 bold
+cell 12 14 fg=2 bold
+cell 12 15 fg=2 bold
+cell 12 16 fg=2 bold
+cell 12 17 fg=2 bold
+cell 12 18 fg=2 bold
+cell 12 19 fg=2 bold
+cell 12 20 fg=2 bold
+cell 12 21 fg=2 bold
+cell 12 22 fg=2 bold
+cell 12 23 fg=2 bold
+cell 12 48 fg=2
+cell 12 49 fg=2
+cell 12 50 fg=2
+cell 12 51 fg=2
+cell 12 52 fg=2
+cell 12 53 fg=2
+cell 12 54 fg=2
+cell 12 55 fg=2
+cell 12 56 fg=2
+cell 12 57 fg=2
+cell 13 2 fg=4 bold
+cell 13 3 fg=4 bold
+cell 13 4 fg=4 bold
+cell 13 5 fg=4 bold
+cell 13 6 fg=4 bold
+cell 13 7 fg=4 bold
+cell 13 8 fg=4 bold
+cell 13 12 fg=2 bold
+cell 13 13 fg=2 bold
+cell 13 14 fg=2 bold
+cell 13 15 fg=2 bold
+cell 13 16 fg=2 bold
+cell 13 17 fg=2 bold
+cell 13 18 fg=2 bold
+cell 13 19 fg=2 bold
+cell 13 20 fg=2 bold
+cell 13 21 fg=2 bold
+cell 13 22 fg=2 bold
+cell 13 23 fg=2 bold
+cell 13 69 fg=2
+cell 13 70 fg=2
+cell 13 71 fg=2
+cell 13 72 fg=2
+cell 13 73 fg=2
+cell 13 74 fg=2
+cell 13 75 fg=2
+cell 13 76 fg=2
+cell 13 77 fg=2
+cell 13 78 fg=2
+cell 14 2 fg=4 bold
+cell 14 3 fg=4 bold
+cell 14 4 fg=4 bold
+cell 14 5 fg=4 bold
+cell 14 6 fg=4 bold
+cell 14 7 fg=4 bold
+cell 14 8 fg=4 bold
+cell 14 12 fg=2 bold
+cell 14 13 fg=2 bold
+cell 14 14 fg=2 bold
+cell 14 15 fg=2 bold
+cell 14 16 fg=2 bold
+cell 14 17 fg=2 bold
+cell 14 18 fg=2 bold
+cell 14 19 fg=2 bold
+cell 14 20 fg=2 bold
+cell 14 21 fg=2 bold
+cell 14 22 fg=2 bold
+cell 14 23 fg=2 bold
+cell 14 50 fg=2
+cell 14 51 fg=2
+cell 14 52 fg=2
+cell 14 53 fg=2
+cell 14 54 fg=2
+cell 14 55 fg=2
+cell 14 56 fg=2
+cell 14 57 fg=2
+cell 14 58 fg=2
+cell 14 59 fg=2
+cell 15 2 fg=4 bold
+cell 15 3 fg=4 bold
+cell 15 4 fg=4 bold
+cell 15 5 fg=4 bold
+cell 15 6 fg=4 bold
+cell 15 7 fg=4 bold
+cell 15 8 fg=4 bold
+cell 15 12 fg=2 bold
+cell 15 13 fg=2 bold
+cell 15 14 fg=2 bold
+cell 15 15 fg=2 bold
+cell 15 16 fg=2 bold
+cell 15 17 fg=2 bold
+cell 15 18 fg=2 bold
+cell 15 19 fg=2 bold
+cell 15 20 fg=2 bold
+cell 15 21 fg=2 bold
+cell 15 22 fg=2 bold
+cell 15 23 fg=2 bold
+cell 15 74 fg=2
+cell 15 75 fg=2
+cell 15 76 fg=2
+cell 15 77 fg=2
+cell 15 78 fg=2
+cell 15 79 fg=2
+cell 16 0 fg=2
+cell 16 1 fg=2
+cell 16 2 fg=2
+cell 16 3 fg=2
+cell 17 2 fg=4 bold
+cell 17 3 fg=4 bold
+cell 17 4 fg=4 bold
+cell 17 5 fg=4 bold
+cell 17 6 fg=4 bold
+cell 17 7 fg=4 bold
+cell 17 8 fg=4 bold
+cell 17 12 fg=2 bold
+cell 17 13 fg=2 bold
+cell 17 14 fg=2 bold
+cell 17 15 fg=2 bold
+cell 17 16 fg=2 bold
+cell 17 17 fg=2 bold
+cell 17 18 fg=2 bold
+cell 17 19 fg=2 bold
+cell 17 20 fg=2 bold
+cell 17 21 fg=2 bold
+cell 17 22 fg=2 bold
+cell 17 23 fg=2 bold
+cell 17 66 fg=2
+cell 17 67 fg=2
+cell 17 68 fg=2
+cell 17 69 fg=2
+cell 17 70 fg=2
+cell 17 71 fg=2
+cell 17 72 fg=2
+cell 17 73 fg=2
+cell 17 74 fg=2
+cell 17 75 fg=2
+cell 18 2 fg=4 bold
+cell 18 3 fg=4 bold
+cell 18 4 fg=4 bold
+cell 18 5 fg=4 bold
+cell 18 6 fg=4 bold
+cell 18 7 fg=4 bold
+cell 18 8 fg=4 bold
+cell 18 12 fg=2 bold
+cell 18 13 fg=2 bold
+cell 18 14 fg=2 bold
+cell 18 15 fg=2 bold
+cell 18 16 fg=2 bold
+cell 18 17 fg=2 bold
+cell 18 18 fg=2 bold
+cell 18 19 fg=2 bold
+cell 18 20 fg=2 bold
+cell 18 21 fg=2 bold
+cell 18 22 fg=2 bold
+cell 18 23 fg=2 bold
+cell 18 32 fg=2
+cell 18 33 fg=2
+cell 18 34 fg=2
+cell 18 35 fg=2
+cell 18 36 fg=2
+cell 18 37 fg=2
+cell 18 38 fg=2
+cell 18 39 fg=2
+cell 18 40 fg=2
+cell 18 41 fg=2
+cell 19 2 fg=4 bold
+cell 19 3 fg=4 bold
+cell 19 4 fg=4 bold
+cell 19 5 fg=4 bold
+cell 19 6 fg=4 bold
+cell 19 7 fg=4 bold
+cell 19 8 fg=4 bold
+cell 19 12 fg=2 bold
+cell 19 13 fg=2 bold
+cell 19 14 fg=2 bold
+cell 19 15 fg=2 bold
+cell 19 16 fg=2 bold
+cell 19 17 fg=2 bold
+cell 19 18 fg=2 bold
+cell 19 19 fg=2 bold
+cell 19 20 fg=2 bold
+cell 19 21 fg=2 bold
+cell 19 22 fg=2 bold
+cell 19 23 fg=2 bold
+cell 20 66 fg=2
+cell 20 67 fg=2
+cell 20 68 fg=2
+cell 20 69 fg=2
+cell 20 70 fg=2
+cell 20 71 fg=2
+cell 20 72 fg=2
+cell 20 73 fg=2
+cell 20 74 fg=2
+cell 20 75 fg=2
+cell 21 2 fg=4 bold
+cell 21 3 fg=4 bold
+cell 21 4 fg=4 bold
+cell 21 5 fg=4 bold
+cell 21 6 fg=4 bold
+cell 21 7 fg=4 bold
+cell 21 8 fg=4 bold
+cell 21 12 fg=2 bold
+cell 21 13 fg=2 bold
+cell 21 14 fg=2 bold
+cell 21 15 fg=2 bold
+cell 21 16 fg=2 bold
+cell 21 17 fg=2 bold
+cell 21 18 fg=2 bold
+cell 21 19 fg=2 bold
+cell 21 20 fg=2 bold
+cell 21 21 fg=2 bold
+cell 21 22 fg=2 bold
+cell 21 23 fg=2 bold
+cell 21 32 fg=2
+cell 21 33 fg=2
+cell 21 34 fg=2
+cell 21 35 fg=2
+cell 21 36 fg=2
+cell 21 37 fg=2
+cell 21 38 fg=2
+cell 21 39 fg=2
+cell 21 40 fg=2
+cell 21 41 fg=2
+cell 23 0 fg=0 bg=3
+cell 23 1 fg=0 bg=3
+cell 23 2 fg=0 bg=3
+cell 23 3 fg=0 bg=3
+cell 23 4 fg=0 bg=3
+cell 23 5 fg=0 bg=3
+cell 23 6 fg=0 bg=4
+cell 23 7 fg=0 bg=4
+cell 23 8 fg=0 bg=4
+cell 23 9 fg=0 bg=4
+cell 23 10 fg=0 bg=4
+cell 23 11 fg=0 bg=4
+cell 23 12 fg=0 bg=4
+cell 23 13 fg=0 bg=4
+cell 23 14 fg=0 bg=4
+cell 23 15 fg=0 bg=4
+cell 23 16 fg=0 bg=4
+cell 23 17 fg=0 bg=4
+cell 23 18 fg=0 bg=4
+cell 23 19 fg=0 bg=4
+cell 23 20 fg=0 bg=4
+cell 23 21 fg=0 bg=4
+cell 23 22 fg=0 bg=4
+cell 23 23 fg=0 bg=4
+cell 23 24 fg=0 bg=4
+cell 23 25 fg=0 bg=4
+cell 23 26 fg=0 bg=4
+cell 23 27 fg=0 bg=4
+cell 23 28 fg=0 bg=4
+cell 23 29 fg=0 bg=4
+cell 23 30 fg=0 bg=4
+cell 23 31 fg=0 bg=4
+cell 23 32 fg=0 bg=4
+cell 23 33 fg=0 bg=4
+cell 23 34 fg=0 bg=4
+cell 23 35 fg=0 bg=4
+cell 23 36 fg=0 bg=4
+cell 23 37 fg=0 bg=4
+cell 23 38 fg=0 bg=4
+cell 23 39 fg=0 bg=4
+cell 23 40 fg=0 bg=4
+cell 23 41 fg=0 bg=4
+cell 23 42 fg=0 bg=4
+cell 23 43 fg=0 bg=4
+cell 23 44 fg=0 bg=4
+cell 23 45 fg=0 bg=4
+cell 23 46 fg=0 bg=4
+cell 23 47 fg=0 bg=4
+cell 23 48 fg=0 bg=4
+cell 23 49 fg=0 bg=4
+cell 23 50 fg=0 bg=4
+cell 23 51 fg=0 bg=4
+cell 23 52 fg=0 bg=4
+cell 23 53 fg=0 bg=4
+cell 23 54 fg=0 bg=4
+cell 23 55 fg=0 bg=4
+cell 23 56 fg=0 bg=4
+cell 23 57 fg=0 bg=4
+cell 23 58 fg=0 bg=4
+cell 23 59 fg=0 bg=4
+cell 23 60 fg=0 bg=4
+cell 23 61 fg=0 bg=4
+cell 23 62 fg=0 bg=4
+cell 23 63 fg=0 bg=4
+cell 23 64 fg=0 bg=4
+cell 23 65 fg=0 bg=4
+cell 23 66 fg=0 bg=4
+cell 23 67 fg=0 bg=4
+cell 23 68 fg=0 bg=4
+cell 23 69 fg=0 bg=4
+cell 23 70 fg=0 bg=4
+cell 23 71 fg=0 bg=4
+cell 23 72 fg=0 bg=4
+cell 23 73 fg=0 bg=4
+cell 23 74 fg=0 bg=4
+cell 23 75 fg=0 bg=4
+cell 23 76 fg=0 bg=4
+cell 23 77 fg=0 bg=4
+cell 23 78 fg=0 bg=4
+cell 23 79 fg=0 bg=4

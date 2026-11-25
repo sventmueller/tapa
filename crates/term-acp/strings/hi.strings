@@ -1,0 +1,14 @@
+/* Hindi interface texts; the keys are the German texts in the code. */
+"Der Agent hat auf {} nicht rechtzeitig geantwortet." = "एजेंट ने {} का समय पर जवाब नहीं दिया।";
+"Der Agent ist nicht gestartet: {}" = "एजेंट शुरू नहीं हुआ : {}";
+"Der Agent spricht die Protokollversion {}, diese App Version 1" = "एजेंट प्रोटोकॉल संस्करण {} का उपयोग करता है, यह ऐप संस्करण 1 का";
+"Der Agent verlangt eine Anmeldung." = "एजेंट चाहता है कि आप साइन इन करें।";
+"Die Sitzung ist beendet." = "सेशन समाप्त हो गया है।";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "यह अनुरोध अब किसी जवाब की प्रतीक्षा नहीं कर रहा।";
+"{} startet nur in einem vertrauten Arbeitsbereich." = "{} केवल भरोसेमंद वर्कस्पेस में शुरू होता है।";
+"{} wurde nicht gefunden." = "{} नहीं मिला।";
+"Die Installation wurde nicht bestätigt." = "इंस्टॉलेशन की पुष्टि नहीं की गई।";
+"{} {} oder neuer wird gebraucht" = "{} {} या नया संस्करण ज़रूरी है";
+"{} wird gebraucht" = "{} ज़रूरी है";
+"Der Download ist fehlgeschlagen: {}" = "डाउनलोड विफल रहा : {}";
+"Der Download stimmt nicht mit seiner Prüfsumme überein und wurde verworfen" = "डाउनलोड अपने चेकसम से मेल नहीं खाता, इसलिए उसे हटा दिया गया";

@@ -1,0 +1,18 @@
+/* Slovenian interface texts; the keys are the German texts in the code. */
+"Als Vorschau öffnen" = "Odpri kot predogled";
+"Daneben öffnen" = "Odpri ob strani";
+"Darunter öffnen" = "Odpri spodaj";
+"Im Browser-Tab öffnen" = "Odpri v zavihku brskalnika";
+"Im Finder zeigen" = "Prikaži v aplikaciji Finder";
+"In den Papierkorb legen" = "Premakni v Koš";
+"Neue Datei" = "Nova datoteka";
+"Neue Datei …" = "Nova datoteka …";
+"Neuer Ordner" = "Nova mapa";
+"Neuer Ordner …" = "Nova mapa …";
+"Pfad kopieren" = "Kopiraj pot";
+"Relativen Pfad kopieren" = "Kopiraj relativno pot";
+"Umbenennen" = "Preimenuj";
+"Umbenennen …" = "Preimenuj …";
+"„{}“ gibt es schon." = "»{}« že obstaja.";
+"„{}“ wurde nicht angelegt." = "Ustvarjanje »{}« ni uspelo.";
+"„{}“ wurde nicht umbenannt." = "Preimenovanje »{}« ni uspelo.";

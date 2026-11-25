@@ -1,0 +1,13 @@
+/* Hebrew interface texts; the keys are the German texts in the code. */
+"Claude Code hat das Zurückspulen abgelehnt: {}" = "‏Claude Code דחה את החזרה לאחור: {}";
+"Claude Code hat nicht rechtzeitig geantwortet." = "‏Claude Code לא הגיב בזמן.";
+"Claude Code ist beendet." = "‏Claude Code הסתיים.";
+"Claude Code ist nicht gestartet: {}" = "‏Claude Code לא הופעל: {}";
+"Claude Code lehnt ab: {}" = "‏Claude Code מסרב: {}";
+"Claude Code liest seine Eingabe nicht mehr." = "Claude Code כבר לא קורא את הקלט שלו.";
+"Claude Code ließ sich nicht starten: {}" = "לא ניתן היה להפעיל את Claude Code: {}";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "בקשה זו כבר אינה ממתינה לתשובה.";
+"Diese Version von Claude Code kann das hier nicht." = "הגירסה הזו של Claude Code לא יכולה לעשות זאת כאן.";
+"Melde dich an, indem du claude im Terminal startest: {}" = "יש להתחבר על ידי הפעלת claude במסוף: {}";
+"Unerwartete Antwort: {}" = "תשובה לא צפויה: {}";
+"{} wurde nicht gefunden." = "‏{} לא נמצא.";

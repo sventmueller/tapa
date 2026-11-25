@@ -1,0 +1,27 @@
+/* Japanese interface texts; the keys are the German texts in the code. */
+"API-Schlüssel für {}" = "{}のAPIキー";
+"Abgebrochen" = "キャンセルしました";
+"Das Diktat ist gerade beschäftigt." = "音声入力は現在使用中です。";
+"Das Feld des Diktats ist nicht mehr offen. Der Text liegt in der Zwischenablage." = "音声入力のフィールドはもう開いていません。テキストはクリップボードにあります。";
+"Das ist kein Schlüssel von OpenAI (sk-…) oder Groq (gsk_…)." = "これはOpenAI（sk-…）またはGroq（gsk_…）のキーではありません。";
+"Das lokale Modell ist nicht installiert. Lade es in den Einstellungen unter Diktat." = "ローカルモデルがインストールされていません。設定の“音声入力”でダウンロードしてください。";
+"Der Schlüsselbund lehnt ab: {}" = "キーチェーンが拒否しました: {}";
+"Die Aufnahme hat ihre Höchstdauer erreicht." = "録音が最大時間に達しました。";
+"Diktat beenden" = "音声入力を終了";
+"Diktat starten" = "音声入力を開始";
+"Höre zu …" = "聞き取り中…";
+"Kein API-Schlüssel für {}. Trage ihn in den Einstellungen unter Diktat ein." = "{}のAPIキーがありません。設定の“音声入力”で入力してください。";
+"Keine Sprache erkannt" = "音声が認識されませんでした";
+"Lowspeak hat einen Schlüssel für {}. Für {} übernehmen?" = "Lowspeakには{}のキーがあります。{}にも使用しますか?";
+"Lowspeak hat keinen Schlüssel mehr." = "Lowspeakのキーがなくなりました。";
+"Lowspeak meldet: {}" = "Lowspeakからの報告: {}";
+"Lowspeak transkribiert online mit {}. {} braucht dafür einen eigenen Schlüssel und legt ihn im Schlüsselbund ab." = "Lowspeakは{}を使ってオンラインで文字起こしします。{}にはそのための専用キーが必要で、キーチェーンに保存されます。";
+"Lowspeaks Schlüssel ließ sich nicht lesen. Gib den Schlüssel selbst ein." = "Lowspeakのキーを読み込めませんでした。キーを自分で入力してください。";
+"Nicht jetzt" = "今はしない";
+"Selbst eingeben …" = "自分で入力…";
+"Sichern" = "保存";
+"Transkribiere …" = "文字起こし中…";
+"{} bietet {} nicht mehr an. Wähle in den Einstellungen unter Diktat ein anderes Modell." = "{}は{}の提供を終了しました。設定の“音声入力”で別のモデルを選択してください。";
+"{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "{}はマイクにアクセスできません。“システム設定” > “プライバシーとセキュリティ” > “マイク”で許可してください。";
+"{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "{}はそのためにキーを1回読み込み、その前にmacOSが確認します。そこで“常に許可”ではなく“許可”を選択してください。そうすればLowspeakの項目はそのまま残ります。{}は専用の項目にキーを保存します。";
+"Übernehmen" = "キーを使用";

@@ -1,0 +1,10 @@
+/* Dutch interface texts; the keys are the German texts in the code. */
+"Bild: {}" = "Afbeelding: {}";
+"Bilder aus dem Netz laden" = "Laad afbeeldingen van het web";
+"Das Bild lässt sich nicht anzeigen." = "De afbeelding kan niet worden weergegeven.";
+"Der Ordner ist nicht vertraut: Bilder aus dem Netz bleiben ungeladen." = "De map wordt niet vertrouwd: afbeeldingen van het web worden niet geladen.";
+"Die Datei ist kein lesbares PDF." = "Het bestand is geen leesbare pdf.";
+"Lädt …" = "Laden…";
+"PDF: {}" = "PDF: {}";
+"Vorschau: {}" = "Voorvertoning: {}";
+"„{}“ lässt sich nicht öffnen." = "'{}' kan niet worden geopend.";

@@ -1,0 +1,10 @@
+/* Thai interface texts; the keys are the German texts in the code. */
+"Bild: {}" = "รูปภาพ: {}";
+"Bilder aus dem Netz laden" = "โหลดภาพจากเว็บ";
+"Das Bild lässt sich nicht anzeigen." = "ไม่สามารถแสดงภาพได้";
+"Der Ordner ist nicht vertraut: Bilder aus dem Netz bleiben ungeladen." = "ไม่ได้เชื่อถือโฟลเดอร์นี้: ภาพจากเว็บจะไม่ถูกโหลด";
+"Die Datei ist kein lesbares PDF." = "ไฟล์นี้ไม่ใช่ PDF ที่อ่านได้";
+"Lädt …" = "กำลังโหลด…";
+"PDF: {}" = "PDF: {}";
+"Vorschau: {}" = "แสดงตัวอย่าง: {}";
+"„{}“ lässt sich nicht öffnen." = "ไม่สามารถเปิด “{}” ได้";

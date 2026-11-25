@@ -1,0 +1,187 @@
+size 105 29 1000
+cursor 28 40
+line 0 %
+line 1  UL  ~/…/tests/ref/history  issue-1244  for i in {100..2}; do echo $i; done
+line 2 100
+line 3 99
+line 4 98
+line 5 97
+line 6 96
+line 7 95
+line 8 94
+line 9 93
+line 10 92
+line 11 91
+line 12 90
+line 13 89
+line 14 88
+line 15 87
+line 16 86
+line 17 85
+line 18 84
+line 19 83
+line 20 82
+line 21 81
+line 22 80
+line 23 79
+line 24 78
+line 25 77
+line 26 76
+line 27 75
+line 28 74
+line 29 73
+line 30 72
+line 31 71
+line 32 70
+line 33 69
+line 34 68
+line 35 67
+line 36 66
+line 37 65
+line 38 64
+line 39 63
+line 40 62
+line 41 61
+line 42 60
+line 43 59
+line 44 58
+line 45 57
+line 46 56
+line 47 55
+line 48 54
+line 49 53
+line 50 52
+line 51 51
+line 52 50
+line 53 49
+line 54 48
+line 55 47
+line 56 46
+line 57 45
+line 58 44
+line 59 43
+line 60 42
+line 61 41
+line 62 40
+line 63 39
+line 64 38
+line 65 37
+line 66 36
+line 67 35
+line 68 34
+line 69 33
+line 70 32
+line 71 31
+line 72 30
+line 73 29
+line 74 28
+line 75 27
+line 76 26
+line 77 25
+line 78 24
+line 79 23
+line 80 22
+line 81 21
+line 82 20
+line 83 19
+line 84 18
+line 85 17
+line 86 16
+line 87 15
+line 88 14
+line 89 13
+line 90 12
+line 91 11
+line 92 10
+line 93 9
+line 94 8
+line 95 7
+line 96 6
+line 97 5
+line 98 4
+line 99 3
+line 100 2
+line 101 %
+line 102  UL  ~/…/tests/ref/history  issue-1244
+cell 0 0 bold inverse
+cell 0 104 wrapped
+cell 1 0 fg=0 bg=9
+cell 1 1 fg=0 bg=9
+cell 1 2 fg=0 bg=9
+cell 1 3 fg=0 bg=9
+cell 1 4 fg=7 bg=8
+cell 1 5 fg=7 bg=8
+cell 1 6 fg=7 bg=8
+cell 1 7 fg=7 bg=8
+cell 1 8 fg=7 bg=8
+cell 1 9 fg=7 bg=8
+cell 1 10 fg=7 bg=8
+cell 1 11 fg=7 bg=8
+cell 1 12 fg=7 bg=8
+cell 1 13 fg=7 bg=8
+cell 1 14 fg=7 bg=8
+cell 1 15 fg=7 bg=8
+cell 1 16 fg=7 bg=8
+cell 1 17 fg=7 bg=8
+cell 1 18 fg=7 bg=8
+cell 1 19 fg=7 bg=8
+cell 1 20 fg=7 bg=8
+cell 1 21 fg=7 bg=8
+cell 1 22 fg=7 bg=8
+cell 1 23 fg=7 bg=8
+cell 1 24 fg=7 bg=8
+cell 1 25 fg=7 bg=8
+cell 1 26 fg=7 bg=8
+cell 1 27 fg=0 bg=9
+cell 1 28 fg=0 bg=9
+cell 1 29 fg=0 bg=9
+cell 1 30 fg=0 bg=9
+cell 1 31 fg=0 bg=9
+cell 1 32 fg=0 bg=9
+cell 1 33 fg=0 bg=9
+cell 1 34 fg=0 bg=9
+cell 1 35 fg=0 bg=9
+cell 1 36 fg=0 bg=9
+cell 1 37 fg=0 bg=9
+cell 1 38 fg=0 bg=9
+cell 101 0 bold inverse
+cell 101 104 wrapped
+cell 102 0 fg=0 bg=9
+cell 102 1 fg=0 bg=9
+cell 102 2 fg=0 bg=9
+cell 102 3 fg=0 bg=9
+cell 102 4 fg=7 bg=8
+cell 102 5 fg=7 bg=8
+cell 102 6 fg=7 bg=8
+cell 102 7 fg=7 bg=8
+cell 102 8 fg=7 bg=8
+cell 102 9 fg=7 bg=8
+cell 102 10 fg=7 bg=8
+cell 102 11 fg=7 bg=8
+cell 102 12 fg=7 bg=8
+cell 102 13 fg=7 bg=8
+cell 102 14 fg=7 bg=8
+cell 102 15 fg=7 bg=8
+cell 102 16 fg=7 bg=8
+cell 102 17 fg=7 bg=8
+cell 102 18 fg=7 bg=8
+cell 102 19 fg=7 bg=8
+cell 102 20 fg=7 bg=8
+cell 102 21 fg=7 bg=8
+cell 102 22 fg=7 bg=8
+cell 102 23 fg=7 bg=8
+cell 102 24 fg=7 bg=8
+cell 102 25 fg=7 bg=8
+cell 102 26 fg=7 bg=8
+cell 102 27 fg=0 bg=9
+cell 102 28 fg=0 bg=9
+cell 102 29 fg=0 bg=9
+cell 102 30 fg=0 bg=9
+cell 102 31 fg=0 bg=9
+cell 102 32 fg=0 bg=9
+cell 102 33 fg=0 bg=9
+cell 102 34 fg=0 bg=9
+cell 102 35 fg=0 bg=9
+cell 102 36 fg=0 bg=9
+cell 102 37 fg=0 bg=9
+cell 102 38 fg=0 bg=9

@@ -1,0 +1,14 @@
+/* Brazilian Portuguese interface texts; the keys are the German texts in the code. */
+"Dafür fehlt die Berechtigung." = "Falta a permissão necessária.";
+"Das ist ein Ordner, keine Datei." = "Isto é uma pasta, não um arquivo.";
+"Der Dateiname ist ungültig." = "O nome do arquivo não é válido.";
+"Der Datenträger ist schreibgeschützt." = "O volume é somente leitura.";
+"Der Datenträger ist voll." = "O volume está cheio.";
+"Der Ordner ist nicht leer." = "A pasta não está vazia.";
+"Der Vorgang hat zu lange gedauert." = "A operação demorou demais.";
+"Die Datei ist gerade belegt." = "O arquivo está em uso no momento.";
+"Die Datei ist zu groß." = "O arquivo é grande demais.";
+"Die Datei oder der Ordner existiert nicht." = "O arquivo ou a pasta não existe.";
+"Die Gegenstelle hat die Verbindung abgelehnt." = "O outro lado recusou a conexão.";
+"Ein Teil des Pfads ist kein Ordner." = "Parte do caminho não é uma pasta.";
+"Es gibt dort schon eine Datei dieses Namens." = "Já existe um arquivo com este nome nesse local.";

@@ -1,0 +1,27 @@
+/* Czech interface texts; the keys are the German texts in the code. */
+"API-Schlüssel für {}" = "Klíč API pro {}";
+"Abgebrochen" = "Zrušeno";
+"Das Diktat ist gerade beschäftigt." = "Diktování je právě zaneprázdněné.";
+"Das Feld des Diktats ist nicht mehr offen. Der Text liegt in der Zwischenablage." = "Pole pro diktování už není otevřené. Text je ve schránce.";
+"Das ist kein Schlüssel von OpenAI (sk-…) oder Groq (gsk_…)." = "Toto není klíč od OpenAI (sk-…) ani Groq (gsk_…).";
+"Das lokale Modell ist nicht installiert. Lade es in den Einstellungen unter Diktat." = "Lokální model není nainstalován. Stáhněte ho v Nastavení v části Diktování.";
+"Der Schlüsselbund lehnt ab: {}" = "Klíčenka odmítá: {}";
+"Die Aufnahme hat ihre Höchstdauer erreicht." = "Nahrávka dosáhla maximální délky.";
+"Diktat beenden" = "Ukončit diktování";
+"Diktat starten" = "Spustit diktování";
+"Höre zu …" = "Poslouchám…";
+"Kein API-Schlüssel für {}. Trage ihn in den Einstellungen unter Diktat ein." = "Chybí klíč API pro {}. Zadejte ho v Nastavení v části Diktování.";
+"Keine Sprache erkannt" = "Nebyla rozpoznána žádná řeč";
+"Lowspeak hat einen Schlüssel für {}. Für {} übernehmen?" = "Lowspeak má klíč pro {}. Použít ho i pro {}?";
+"Lowspeak hat keinen Schlüssel mehr." = "Lowspeak už nemá klíč.";
+"Lowspeak meldet: {}" = "Lowspeak hlásí: {}";
+"Lowspeak transkribiert online mit {}. {} braucht dafür einen eigenen Schlüssel und legt ihn im Schlüsselbund ab." = "Lowspeak přepisuje online pomocí {}. {} k tomu potřebuje vlastní klíč a uloží ho do klíčenky.";
+"Lowspeaks Schlüssel ließ sich nicht lesen. Gib den Schlüssel selbst ein." = "Klíč z aplikace Lowspeak se nepodařilo načíst. Zadejte klíč ručně.";
+"Nicht jetzt" = "Teď ne";
+"Selbst eingeben …" = "Zadat ručně…";
+"Sichern" = "Uložit";
+"Transkribiere …" = "Přepisuji…";
+"{} bietet {} nicht mehr an. Wähle in den Einstellungen unter Diktat ein anderes Modell." = "{} už nenabízí {}. Vyberte jiný model v Nastavení v části Diktování.";
+"{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "{} nemá přístup k mikrofonu. Povolte ho v Nastavení systému v části Soukromí a zabezpečení > Mikrofon.";
+"{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "{} ho k tomu jednou přečte a macOS se zeptá. Zvolte „Povolit“, ne „Vždy povolit“: položka aplikace Lowspeak tak zůstane beze změny. {} uloží klíč do vlastní položky.";
+"Übernehmen" = "Použít klíč";

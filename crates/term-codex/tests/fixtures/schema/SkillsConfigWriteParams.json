@@ -1,0 +1,1 @@
+{"definitions":{"AbsolutePathBuf":{"type":"string"}},"properties":{"enabled":{"type":"boolean"},"name":{"type":["string","null"]},"path":{"anyOf":[{"$ref":"#/definitions/AbsolutePathBuf"},{"type":"null"}]}},"required":["enabled"],"title":"SkillsConfigWriteParams","type":"object"}

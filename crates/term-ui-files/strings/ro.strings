@@ -1,0 +1,7 @@
+/* Romanian interface texts; the keys are the German texts in the code. */
+"Abbrechen" = "Anulați";
+"Alle einklappen" = "Restrângeți tot";
+"Dateien" = "Fișiere";
+"Neue Datei …" = "Fișier nou…";
+"Neuer Ordner …" = "Dosar nou…";
+"OK" = "OK";

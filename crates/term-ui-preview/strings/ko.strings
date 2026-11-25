@@ -1,0 +1,10 @@
+/* Korean interface texts; the keys are the German texts in the code. */
+"Bild: {}" = "이미지: {}";
+"Bilder aus dem Netz laden" = "웹에서 이미지 불러오기";
+"Das Bild lässt sich nicht anzeigen." = "이미지를 표시할 수 없습니다.";
+"Der Ordner ist nicht vertraut: Bilder aus dem Netz bleiben ungeladen." = "신뢰하지 않는 폴더이므로 웹의 이미지를 불러오지 않습니다.";
+"Die Datei ist kein lesbares PDF." = "읽을 수 있는 PDF 파일이 아닙니다.";
+"Lädt …" = "불러오는 중…";
+"PDF: {}" = "PDF: {}";
+"Vorschau: {}" = "미리보기: {}";
+"„{}“ lässt sich nicht öffnen." = "‘{}’을(를) 열 수 없습니다.";

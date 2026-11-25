@@ -1,0 +1,34 @@
+[package]
+name = "term-session-fuzz"
+version = "0.0.0"
+description = "Fuzz targets of term-session; `cargo xtask fuzz` runs them with the nightly cargo-fuzz needs"
+edition = "2024"
+publish = false
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4.10"
+term-session = { path = "../../crates/term-session", features = ["fuzzing"] }
+
+[[bin]]
+name = "scan"
+path = "fuzz_targets/scan.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "procargs"
+path = "fuzz_targets/procargs.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "terminal"
+path = "fuzz_targets/terminal.rs"
+test = false
+doc = false
+bench = false

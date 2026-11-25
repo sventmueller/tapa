@@ -1,0 +1,8 @@
+/* Arabic interface texts; the keys are the German texts in the code. */
+"Das Dokument hat noch keine Datei." = "لا يوجد ملف للمستند بعد.";
+"Das Dokument ist schreibgeschützt." = "المستند للقراءة فقط.";
+"Die Datei enthält Binärdaten und wird nie gesichert." = "يحتوي الملف على بيانات ثنائية ولن يتم حفظه أبدًا.";
+"Die Datei ist schreibgeschützt." = "الملف للقراءة فقط.";
+"Die Datei wurde inzwischen außerhalb geändert." = "تم تغيير الملف في مكان آخر منذ ذلك الحين.";
+"Die Kodierung der Datei ist unbekannt; sie wird nie gesichert." = "ترميز الملف غير معروف؛ لن يتم حفظه أبدًا.";
+"Die Stelle liegt außerhalb des Textes: {}" = "الموضع خارج النص: {}";

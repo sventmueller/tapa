@@ -1,0 +1,14 @@
+/* Japanese interface texts; the keys are the German texts in the code. */
+"Der Agent hat auf {} nicht rechtzeitig geantwortet." = "エージェントが{}に時間内に応答しませんでした。";
+"Der Agent ist nicht gestartet: {}" = "エージェントが起動しませんでした: {}";
+"Der Agent spricht die Protokollversion {}, diese App Version 1" = "エージェントはプロトコルバージョン{}を使用していますが、このアプリはバージョン1です";
+"Der Agent verlangt eine Anmeldung." = "エージェントがサインインを求めています。";
+"Die Sitzung ist beendet." = "セッションは終了しました。";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "このリクエストはもう応答を待っていません。";
+"{} startet nur in einem vertrauten Arbeitsbereich." = "{} は信頼済みのワークスペースでのみ起動します。";
+"{} wurde nicht gefunden." = "{}が見つかりませんでした。";
+"Die Installation wurde nicht bestätigt." = "インストールは確認されませんでした。";
+"{} {} oder neuer wird gebraucht" = "{} {}以降が必要です";
+"{} wird gebraucht" = "{}が必要です";
+"Der Download ist fehlgeschlagen: {}" = "ダウンロードに失敗しました: {}";
+"Der Download stimmt nicht mit seiner Prüfsumme überein und wurde verworfen" = "ダウンロードがチェックサムと一致しないため、破棄しました";

@@ -1,0 +1,18 @@
+/* Czech interface texts; the keys are the German texts in the code. */
+"Als Vorschau öffnen" = "Otevřít jako náhled";
+"Daneben öffnen" = "Otevřít vedle";
+"Darunter öffnen" = "Otevřít pod";
+"Im Browser-Tab öffnen" = "Otevřít v panelu prohlížeče";
+"Im Finder zeigen" = "Zobrazit ve Finderu";
+"In den Papierkorb legen" = "Přesunout do koše";
+"Neue Datei" = "Nový soubor";
+"Neue Datei …" = "Nový soubor…";
+"Neuer Ordner" = "Nová složka";
+"Neuer Ordner …" = "Nová složka…";
+"Pfad kopieren" = "Zkopírovat cestu";
+"Relativen Pfad kopieren" = "Zkopírovat relativní cestu";
+"Umbenennen" = "Přejmenovat";
+"Umbenennen …" = "Přejmenovat…";
+"„{}“ gibt es schon." = "„{}“ už existuje.";
+"„{}“ wurde nicht angelegt." = "„{}“ se nepodařilo vytvořit.";
+"„{}“ wurde nicht umbenannt." = "„{}“ se nepodařilo přejmenovat.";

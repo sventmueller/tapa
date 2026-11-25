@@ -1,0 +1,18 @@
+/* Polish interface texts; the keys are the German texts in the code. */
+"Als Vorschau öffnen" = "Otwórz jako podgląd";
+"Daneben öffnen" = "Otwórz obok";
+"Darunter öffnen" = "Otwórz poniżej";
+"Im Browser-Tab öffnen" = "Otwórz w karcie przeglądarki";
+"Im Finder zeigen" = "Pokaż w Finderze";
+"In den Papierkorb legen" = "Przenieś do Kosza";
+"Neue Datei" = "Nowy plik";
+"Neue Datei …" = "Nowy plik…";
+"Neuer Ordner" = "Nowy folder";
+"Neuer Ordner …" = "Nowy folder…";
+"Pfad kopieren" = "Kopiuj ścieżkę";
+"Relativen Pfad kopieren" = "Kopiuj ścieżkę względną";
+"Umbenennen" = "Zmień nazwę";
+"Umbenennen …" = "Zmień nazwę…";
+"„{}“ gibt es schon." = "„{}” już istnieje.";
+"„{}“ wurde nicht angelegt." = "Nie utworzono „{}”.";
+"„{}“ wurde nicht umbenannt." = "Nie zmieniono nazwy „{}”.";

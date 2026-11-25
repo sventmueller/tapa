@@ -1,0 +1,7 @@
+/* Thai interface texts; the keys are the German texts in the code. */
+"Abbrechen" = "ยกเลิก";
+"Alle einklappen" = "ยุบทั้งหมด";
+"Dateien" = "ไฟล์";
+"Neue Datei …" = "ไฟล์ใหม่…";
+"Neuer Ordner …" = "โฟลเดอร์ใหม่…";
+"OK" = "ตกลง";

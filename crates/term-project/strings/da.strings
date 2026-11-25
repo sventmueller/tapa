@@ -1,0 +1,18 @@
+/* Danish interface texts; the keys are the German texts in the code. */
+"Als Vorschau öffnen" = "Åbn som eksempel";
+"Daneben öffnen" = "Åbn ved siden af";
+"Darunter öffnen" = "Åbn nedenunder";
+"Im Browser-Tab öffnen" = "Åbn i browserfane";
+"Im Finder zeigen" = "Vis i Finder";
+"In den Papierkorb legen" = "Flyt til papirkurven";
+"Neue Datei" = "Nyt arkiv";
+"Neue Datei …" = "Nyt arkiv…";
+"Neuer Ordner" = "Ny mappe";
+"Neuer Ordner …" = "Ny mappe…";
+"Pfad kopieren" = "Kopier sti";
+"Relativen Pfad kopieren" = "Kopier relativ sti";
+"Umbenennen" = "Omdøb";
+"Umbenennen …" = "Omdøb…";
+"„{}“ gibt es schon." = "“{}” findes allerede.";
+"„{}“ wurde nicht angelegt." = "“{}” blev ikke oprettet.";
+"„{}“ wurde nicht umbenannt." = "“{}” blev ikke omdøbt.";

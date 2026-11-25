@@ -1,0 +1,14 @@
+/* Croatian interface texts; the keys are the German texts in the code. */
+"Der Agent hat auf {} nicht rechtzeitig geantwortet." = "Agent nije na vrijeme odgovorio na {}.";
+"Der Agent ist nicht gestartet: {}" = "Agent nije pokrenut: {}";
+"Der Agent spricht die Protokollversion {}, diese App Version 1" = "Agent koristi verziju protokola {}, a ova aplikacija verziju 1";
+"Der Agent verlangt eine Anmeldung." = "Agent traži prijavu.";
+"Die Sitzung ist beendet." = "Sesija je završila.";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "Ovaj zahtjev više ne čeka odgovor.";
+"{} startet nur in einem vertrauten Arbeitsbereich." = "{} se pokreće samo u pouzdanom radnom prostoru.";
+"{} wurde nicht gefunden." = "{} nije pronađeno.";
+"Die Installation wurde nicht bestätigt." = "Instalacija nije potvrđena.";
+"{} {} oder neuer wird gebraucht" = "Potreban je {} {} ili noviji";
+"{} wird gebraucht" = "Potrebno: {}";
+"Der Download ist fehlgeschlagen: {}" = "Preuzimanje nije uspjelo: {}";
+"Der Download stimmt nicht mit seiner Prüfsumme überein und wurde verworfen" = "Preuzimanje se ne podudara sa svojim kontrolnim zbrojem i odbačeno je";

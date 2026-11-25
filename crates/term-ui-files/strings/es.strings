@@ -1,0 +1,7 @@
+/* Spanish interface texts; the keys are the German texts in the code. */
+"Abbrechen" = "Cancelar";
+"Alle einklappen" = "Plegar todo";
+"Dateien" = "Archivos";
+"Neue Datei …" = "Nuevo archivo…";
+"Neuer Ordner …" = "Nueva carpeta…";
+"OK" = "Aceptar";

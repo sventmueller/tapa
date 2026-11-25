@@ -1,0 +1,24 @@
+/target/
+/dist/
+.DS_Store
+
+# Signing material: the Developer ID key lives in the keychain.
+*.p12
+*.cer
+*.csr
+*.key
+*.pem
+
+# Local agent instructions, settings and skills.
+CLAUDE.md
+.claude/
+
+# Plans and notes stay local; files already tracked there stay tracked.
+/docs/
+
+# Crash inputs and corpora that `cargo xtask fuzz` found; each crash becomes a regression test before it is deleted.
+/fuzz/*/artifacts/
+/fuzz/*/corpus/
+
+# Coverage profiles of test children started with a cleared environment, which land in their working folder.
+*.profraw

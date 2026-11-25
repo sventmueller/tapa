@@ -1,0 +1,10 @@
+/* Polish interface texts; the keys are the German texts in the code. */
+"Bild: {}" = "Obraz: {}";
+"Bilder aus dem Netz laden" = "Wczytaj obrazki z sieci";
+"Das Bild lässt sich nicht anzeigen." = "Nie można wyświetlić obrazu.";
+"Der Ordner ist nicht vertraut: Bilder aus dem Netz bleiben ungeladen." = "Folder nie jest zaufany: obrazki z sieci nie są wczytywane.";
+"Die Datei ist kein lesbares PDF." = "Plik nie jest czytelnym plikiem PDF.";
+"Lädt …" = "Wczytywanie…";
+"PDF: {}" = "PDF: {}";
+"Vorschau: {}" = "Podgląd: {}";
+"„{}“ lässt sich nicht öffnen." = "Nie można otworzyć „{}”.";

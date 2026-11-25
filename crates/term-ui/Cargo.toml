@@ -1,0 +1,39 @@
+[package]
+name = "term-ui"
+version.workspace = true
+description = "A terminal session's view: keys, mouse, pasteboard, notices, links, VoiceOver, and the AppKit shorthands"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+term-base.workspace = true
+term-config.workspace = true
+term-render.workspace = true
+term-session.workspace = true
+term-suggest.workspace = true
+term-vim.workspace = true
+splat-decoder.workspace = true
+splat-i18n.workspace = true
+block2.workspace = true
+dispatch2.workspace = true
+objc2 = { workspace = true, features = ["catch-all"] }
+objc2-app-kit.workspace = true
+objc2-core-foundation.workspace = true
+objc2-core-graphics.workspace = true
+objc2-core-text.workspace = true
+objc2-foundation.workspace = true
+objc2-metal.workspace = true
+objc2-quartz-core.workspace = true
+
+[dev-dependencies]
+term-base = { workspace = true, features = ["testing"] }
+image = { version = "0.25", default-features = false, features = ["png"] }
+
+[features]
+# What the self-test drives and reads in a terminal view.
+selftest = []

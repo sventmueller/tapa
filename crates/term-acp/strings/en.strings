@@ -1,0 +1,14 @@
+/* English interface texts; the keys are the German texts in the code. */
+"Der Agent hat auf {} nicht rechtzeitig geantwortet." = "The agent did not answer {} in time.";
+"Der Agent ist nicht gestartet: {}" = "The agent did not start: {}";
+"Der Agent spricht die Protokollversion {}, diese App Version 1" = "The agent speaks protocol version {}, this app version 1";
+"Der Agent verlangt eine Anmeldung." = "The agent asks you to sign in.";
+"Die Sitzung ist beendet." = "The session has ended.";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "This request no longer waits for an answer.";
+"{} startet nur in einem vertrauten Arbeitsbereich." = "{} only starts in a trusted workspace.";
+"{} wurde nicht gefunden." = "{} was not found.";
+"Die Installation wurde nicht bestätigt." = "The installation was not confirmed.";
+"{} {} oder neuer wird gebraucht" = "{} {} or newer is needed";
+"{} wird gebraucht" = "{} is needed";
+"Der Download ist fehlgeschlagen: {}" = "The download failed: {}";
+"Der Download stimmt nicht mit seiner Prüfsumme überein und wurde verworfen" = "The download does not match its checksum and was discarded";

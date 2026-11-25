@@ -1,0 +1,86 @@
+size 105 29 0
+cursor 1 38
+line 0 jwilm@jwilm-desk ➜  ~/code/alacritty  printf "f\e[10b"
+line 1 jwilm@jwilm-desk ➜  ~/code/alacritty
+line 2 
+line 3 
+line 4 
+line 5 
+line 6 
+line 7 
+line 8 
+line 9 
+line 10 
+line 11 
+line 12 
+line 13 
+line 14 
+line 15 
+line 16 
+line 17 
+line 18 
+line 19 
+line 20 
+line 21 
+line 22 
+line 23 
+line 24 
+line 25 
+line 26 
+line 27 
+line 28 
+cell 0 17 fg=2 bold
+cell 0 18 fg=2 bold
+cell 0 19 fg=2 bold
+cell 0 20 fg=6 bold
+cell 0 21 fg=6 bold
+cell 0 22 fg=6 bold
+cell 0 23 fg=6 bold
+cell 0 24 fg=6 bold
+cell 0 25 fg=6 bold
+cell 0 26 fg=6 bold
+cell 0 27 fg=6 bold
+cell 0 28 fg=6 bold
+cell 0 29 fg=6 bold
+cell 0 30 fg=6 bold
+cell 0 31 fg=6 bold
+cell 0 32 fg=6 bold
+cell 0 33 fg=6 bold
+cell 0 34 fg=6 bold
+cell 0 35 fg=6 bold
+cell 0 36 fg=6 bold
+cell 0 38 fg=5
+cell 0 39 fg=5
+cell 0 40 fg=5
+cell 0 41 fg=5
+cell 0 42 fg=5
+cell 0 43 fg=5
+cell 0 45 fg=3
+cell 0 46 fg=3
+cell 0 47 fg=3
+cell 0 48 fg=3
+cell 0 49 fg=3
+cell 0 50 fg=3
+cell 0 51 fg=3
+cell 0 52 fg=3
+cell 0 53 fg=3
+cell 1 17 fg=2 bold
+cell 1 18 fg=2 bold
+cell 1 19 fg=2 bold
+cell 1 20 fg=6 bold
+cell 1 21 fg=6 bold
+cell 1 22 fg=6 bold
+cell 1 23 fg=6 bold
+cell 1 24 fg=6 bold
+cell 1 25 fg=6 bold
+cell 1 26 fg=6 bold
+cell 1 27 fg=6 bold
+cell 1 28 fg=6 bold
+cell 1 29 fg=6 bold
+cell 1 30 fg=6 bold
+cell 1 31 fg=6 bold
+cell 1 32 fg=6 bold
+cell 1 33 fg=6 bold
+cell 1 34 fg=6 bold
+cell 1 35 fg=6 bold
+cell 1 36 fg=6 bold

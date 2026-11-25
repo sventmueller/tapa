@@ -1,0 +1,13 @@
+/* Malay interface texts; the keys are the German texts in the code. */
+"Claude Code hat das Zurückspulen abgelehnt: {}" = "Claude Code menolak putar balik: {}";
+"Claude Code hat nicht rechtzeitig geantwortet." = "Claude Code tidak menjawab tepat pada masanya.";
+"Claude Code ist beendet." = "Claude Code telah tamat.";
+"Claude Code ist nicht gestartet: {}" = "Claude Code tidak dimulakan: {}";
+"Claude Code lehnt ab: {}" = "Claude Code menolak: {}";
+"Claude Code liest seine Eingabe nicht mehr." = "Claude Code tidak lagi membaca inputnya.";
+"Claude Code ließ sich nicht starten: {}" = "Claude Code tidak dapat dimulakan: {}";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "Permintaan ini tidak lagi menunggu jawapan.";
+"Diese Version von Claude Code kann das hier nicht." = "Versi Claude Code ini tidak dapat melakukannya di sini.";
+"Melde dich an, indem du claude im Terminal startest: {}" = "Daftar masuk dengan menjalankan claude dalam terminal: {}";
+"Unerwartete Antwort: {}" = "Jawapan tidak dijangka: {}";
+"{} wurde nicht gefunden." = "{} tidak ditemui.";

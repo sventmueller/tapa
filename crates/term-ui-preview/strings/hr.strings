@@ -1,0 +1,10 @@
+/* Croatian interface texts; the keys are the German texts in the code. */
+"Bild: {}" = "Slika: {}";
+"Bilder aus dem Netz laden" = "Učitaj slike s weba";
+"Das Bild lässt sich nicht anzeigen." = "Slika se ne može prikazati.";
+"Der Ordner ist nicht vertraut: Bilder aus dem Netz bleiben ungeladen." = "Mapa nije pouzdana: slike s weba ne učitavaju se.";
+"Die Datei ist kein lesbares PDF." = "Datoteka nije čitljiv PDF.";
+"Lädt …" = "Učitavanje…";
+"PDF: {}" = "PDF: {}";
+"Vorschau: {}" = "Pregled: {}";
+"„{}“ lässt sich nicht öffnen." = "“{}” nije moguće otvoriti.";

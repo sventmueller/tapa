@@ -1,0 +1,14 @@
+/* Romanian interface texts; the keys are the German texts in the code. */
+"Dafür fehlt die Berechtigung." = "Lipsește permisiunea pentru aceasta.";
+"Das ist ein Ordner, keine Datei." = "Acesta este un dosar, nu un fișier.";
+"Der Dateiname ist ungültig." = "Numele fișierului nu este valid.";
+"Der Datenträger ist schreibgeschützt." = "Volumul este protejat la scriere.";
+"Der Datenträger ist voll." = "Volumul este plin.";
+"Der Ordner ist nicht leer." = "Dosarul nu este gol.";
+"Der Vorgang hat zu lange gedauert." = "Operațiunea a durat prea mult.";
+"Die Datei ist gerade belegt." = "Fișierul este utilizat în acest moment.";
+"Die Datei ist zu groß." = "Fișierul este prea mare.";
+"Die Datei oder der Ordner existiert nicht." = "Fișierul sau dosarul nu există.";
+"Die Gegenstelle hat die Verbindung abgelehnt." = "Cealaltă parte a refuzat conexiunea.";
+"Ein Teil des Pfads ist kein Ordner." = "O parte a căii nu este un dosar.";
+"Es gibt dort schon eine Datei dieses Namens." = "Acolo există deja un fișier cu acest nume.";

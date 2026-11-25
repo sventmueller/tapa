@@ -1,0 +1,14 @@
+/* Italian interface texts; the keys are the German texts in the code. */
+"Der Agent hat auf {} nicht rechtzeitig geantwortet." = "L’agente non ha risposto in tempo a {}.";
+"Der Agent ist nicht gestartet: {}" = "L’agente non si è avviato: {}";
+"Der Agent spricht die Protokollversion {}, diese App Version 1" = "L’agente parla la versione {} del protocollo, questa app la versione 1";
+"Der Agent verlangt eine Anmeldung." = "L’agente richiede l’accesso.";
+"Die Sitzung ist beendet." = "La sessione è terminata.";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "Questa richiesta non attende più una risposta.";
+"{} startet nur in einem vertrauten Arbeitsbereich." = "{} si avvia solo in uno spazio di lavoro attendibile.";
+"{} wurde nicht gefunden." = "Impossibile trovare {}.";
+"Die Installation wurde nicht bestätigt." = "L’installazione non è stata confermata.";
+"{} {} oder neuer wird gebraucht" = "Serve {} {} o versione successiva";
+"{} wird gebraucht" = "Serve {}";
+"Der Download ist fehlgeschlagen: {}" = "Download non riuscito: {}";
+"Der Download stimmt nicht mit seiner Prüfsumme überein und wurde verworfen" = "Il download non corrisponde al suo checksum ed è stato scartato";

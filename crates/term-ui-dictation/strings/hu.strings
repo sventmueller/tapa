@@ -1,0 +1,27 @@
+/* Hungarian interface texts; the keys are the German texts in the code. */
+"API-Schlüssel für {}" = "API-kulcs ehhez: {}";
+"Abgebrochen" = "Megszakítva";
+"Das Diktat ist gerade beschäftigt." = "A diktálás éppen foglalt.";
+"Das Feld des Diktats ist nicht mehr offen. Der Text liegt in der Zwischenablage." = "A diktálás mezője már nincs nyitva. A szöveg a vágólapon van.";
+"Das ist kein Schlüssel von OpenAI (sk-…) oder Groq (gsk_…)." = "Ez nem OpenAI-kulcs (sk-…) és nem Groq-kulcs (gsk_…).";
+"Das lokale Modell ist nicht installiert. Lade es in den Einstellungen unter Diktat." = "A helyi modell nincs telepítve. Töltse le a Beállítások Diktálás részében.";
+"Der Schlüsselbund lehnt ab: {}" = "A kulcskarika elutasítja: {}";
+"Die Aufnahme hat ihre Höchstdauer erreicht." = "A felvétel elérte a maximális hosszát.";
+"Diktat beenden" = "Diktálás befejezése";
+"Diktat starten" = "Diktálás indítása";
+"Höre zu …" = "Figyel…";
+"Kein API-Schlüssel für {}. Trage ihn in den Einstellungen unter Diktat ein." = "Nincs API-kulcs ehhez: {}. Adja meg a Beállítások Diktálás részében.";
+"Keine Sprache erkannt" = "Nem észlelhető beszéd";
+"Lowspeak hat einen Schlüssel für {}. Für {} übernehmen?" = "A Lowspeaknek van kulcsa ehhez: {}. Átveszi a(z) {} számára?";
+"Lowspeak hat keinen Schlüssel mehr." = "A Lowspeaknek már nincs kulcsa.";
+"Lowspeak meldet: {}" = "A Lowspeak üzenete: {}";
+"Lowspeak transkribiert online mit {}. {} braucht dafür einen eigenen Schlüssel und legt ihn im Schlüsselbund ab." = "A Lowspeak online, a(z) {} segítségével ír át. A(z) {} ehhez saját kulcsot igényel, és a kulcskarikában tárolja.";
+"Lowspeaks Schlüssel ließ sich nicht lesen. Gib den Schlüssel selbst ein." = "A Lowspeak kulcsa nem olvasható. Adja meg saját maga a kulcsot.";
+"Nicht jetzt" = "Most nem";
+"Selbst eingeben …" = "Megadom magam…";
+"Sichern" = "Mentés";
+"Transkribiere …" = "Átírás…";
+"{} bietet {} nicht mehr an. Wähle in den Einstellungen unter Diktat ein anderes Modell." = "A(z) {} már nem kínálja a következőt: {}. Válasszon másik modellt a Beállítások Diktálás részében.";
+"{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "A(z) {} nem fér hozzá a mikrofonhoz. Engedélyezze a Rendszerbeállítások Adatvédelem és biztonság > Mikrofon részében.";
+"{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "A(z) {} ehhez egyszer beolvassa, és a macOS előtte rákérdez. Ott az „Engedélyezés” lehetőséget válassza, ne az „Engedélyezés mindig” lehetőséget: így a Lowspeak bejegyzése változatlan marad. A(z) {} egy saját bejegyzésben tárolja a kulcsot.";
+"Übernehmen" = "Kulcs használata";

@@ -1,0 +1,18 @@
+/* French interface texts; the keys are the German texts in the code. */
+"Als Vorschau öffnen" = "Ouvrir comme aperçu";
+"Daneben öffnen" = "Ouvrir à côté";
+"Darunter öffnen" = "Ouvrir en dessous";
+"Im Browser-Tab öffnen" = "Ouvrir dans l’onglet navigateur";
+"Im Finder zeigen" = "Afficher dans le Finder";
+"In den Papierkorb legen" = "Placer dans la corbeille";
+"Neue Datei" = "Nouveau fichier";
+"Neue Datei …" = "Nouveau fichier…";
+"Neuer Ordner" = "Nouveau dossier";
+"Neuer Ordner …" = "Nouveau dossier…";
+"Pfad kopieren" = "Copier le chemin";
+"Relativen Pfad kopieren" = "Copier le chemin relatif";
+"Umbenennen" = "Renommer";
+"Umbenennen …" = "Renommer…";
+"„{}“ gibt es schon." = "« {} » existe déjà.";
+"„{}“ wurde nicht angelegt." = "« {} » n’a pas été créé.";
+"„{}“ wurde nicht umbenannt." = "« {} » n’a pas été renommé.";

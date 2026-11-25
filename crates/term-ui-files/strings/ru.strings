@@ -1,0 +1,7 @@
+/* Russian interface texts; the keys are the German texts in the code. */
+"Abbrechen" = "Отменить";
+"Alle einklappen" = "Свернуть все";
+"Dateien" = "Файлы";
+"Neue Datei …" = "Новый файл…";
+"Neuer Ordner …" = "Новая папка…";
+"OK" = "ОК";

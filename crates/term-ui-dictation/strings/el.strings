@@ -1,0 +1,27 @@
+/* Greek interface texts; the keys are the German texts in the code. */
+"API-Schlüssel für {}" = "Κλειδί API για {}";
+"Abgebrochen" = "Ακυρώθηκε";
+"Das Diktat ist gerade beschäftigt." = "Η υπαγόρευση είναι απασχολημένη αυτή τη στιγμή.";
+"Das Feld des Diktats ist nicht mehr offen. Der Text liegt in der Zwischenablage." = "Το πεδίο της υπαγόρευσης δεν είναι πλέον ανοιχτό. Το κείμενο βρίσκεται στο πρόχειρο.";
+"Das ist kein Schlüssel von OpenAI (sk-…) oder Groq (gsk_…)." = "Αυτό δεν είναι κλειδί του OpenAI (sk-…) ή του Groq (gsk_…).";
+"Das lokale Modell ist nicht installiert. Lade es in den Einstellungen unter Diktat." = "Το τοπικό μοντέλο δεν είναι εγκατεστημένο. Κάντε λήψη του στις Ρυθμίσεις, στην ενότητα «Υπαγόρευση».";
+"Der Schlüsselbund lehnt ab: {}" = "Η κλειδοθήκη αρνείται: {}";
+"Die Aufnahme hat ihre Höchstdauer erreicht." = "Η ηχογράφηση έφτασε στη μέγιστη διάρκειά της.";
+"Diktat beenden" = "Διακοπή υπαγόρευσης";
+"Diktat starten" = "Έναρξη υπαγόρευσης";
+"Höre zu …" = "Ακρόαση…";
+"Kein API-Schlüssel für {}. Trage ihn in den Einstellungen unter Diktat ein." = "Δεν υπάρχει κλειδί API για {}. Καταχωρίστε ένα στις Ρυθμίσεις, στην ενότητα «Υπαγόρευση».";
+"Keine Sprache erkannt" = "Δεν αναγνωρίστηκε ομιλία";
+"Lowspeak hat einen Schlüssel für {}. Für {} übernehmen?" = "Το Lowspeak έχει κλειδί για {}. Να χρησιμοποιηθεί και για το {};";
+"Lowspeak hat keinen Schlüssel mehr." = "Το Lowspeak δεν έχει πλέον κλειδί.";
+"Lowspeak meldet: {}" = "Το Lowspeak αναφέρει: {}";
+"Lowspeak transkribiert online mit {}. {} braucht dafür einen eigenen Schlüssel und legt ihn im Schlüsselbund ab." = "Το Lowspeak μεταγράφει διαδικτυακά με το {}. Το {} χρειάζεται για αυτό δικό του κλειδί και το αποθηκεύει στην κλειδοθήκη.";
+"Lowspeaks Schlüssel ließ sich nicht lesen. Gib den Schlüssel selbst ein." = "Δεν ήταν δυνατή η ανάγνωση του κλειδιού του Lowspeak. Εισαγάγετε το κλειδί χειροκίνητα.";
+"Nicht jetzt" = "Όχι τώρα";
+"Selbst eingeben …" = "Χειροκίνητη εισαγωγή…";
+"Sichern" = "Αποθήκευση";
+"Transkribiere …" = "Μεταγραφή…";
+"{} bietet {} nicht mehr an. Wähle in den Einstellungen unter Diktat ein anderes Modell." = "Το {} δεν προσφέρει πλέον το {}. Επιλέξτε άλλο μοντέλο στις Ρυθμίσεις, στην ενότητα «Υπαγόρευση».";
+"{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "Το {} δεν έχει πρόσβαση στο μικρόφωνο. Επιτρέψτε την στις Ρυθμίσεις συστήματος, στην ενότητα Απόρρητο και ασφάλεια > Μικρόφωνο.";
+"{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "Το {} θα το διαβάσει μία φορά και το macOS θα ζητήσει επιβεβαίωση. Επιλέξτε «Να επιτρέπεται» και όχι «Να επιτρέπεται πάντα», ώστε το στοιχείο του Lowspeak να μείνει ως έχει. Το {} αποθηκεύει το κλειδί σε δικό του στοιχείο.";
+"Übernehmen" = "Χρήση κλειδιού";

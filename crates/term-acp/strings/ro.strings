@@ -1,0 +1,14 @@
+/* Romanian interface texts; the keys are the German texts in the code. */
+"Der Agent hat auf {} nicht rechtzeitig geantwortet." = "Agentul nu a răspuns la timp la {}.";
+"Der Agent ist nicht gestartet: {}" = "Agentul nu a pornit: {}";
+"Der Agent spricht die Protokollversion {}, diese App Version 1" = "Agentul folosește versiunea de protocol {}, această aplicație versiunea 1";
+"Der Agent verlangt eine Anmeldung." = "Agentul cere autentificarea.";
+"Die Sitzung ist beendet." = "Sesiunea s-a încheiat.";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "Această cerere nu mai așteaptă un răspuns.";
+"{} startet nur in einem vertrauten Arbeitsbereich." = "{} pornește doar într-un spațiu de lucru de încredere.";
+"{} wurde nicht gefunden." = "{} nu a fost găsit.";
+"Die Installation wurde nicht bestätigt." = "Instalarea nu a fost confirmată.";
+"{} {} oder neuer wird gebraucht" = "Este necesar {} {} sau o versiune mai nouă";
+"{} wird gebraucht" = "Este necesar {}";
+"Der Download ist fehlgeschlagen: {}" = "Descărcarea a eșuat: {}";
+"Der Download stimmt nicht mit seiner Prüfsumme überein und wurde verworfen" = "Descărcarea nu corespunde sumei sale de control și a fost eliminată";

@@ -1,0 +1,4 @@
+# The fuzz targets of the crates in one workspace with one lock file; only the nightly that cargo-fuzz needs builds it.
+[workspace]
+resolver = "3"
+members = ["term-*"]

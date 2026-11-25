@@ -1,0 +1,7 @@
+/* Arabic interface texts; the keys are the German texts in the code. */
+"Abbrechen" = "إلغاء";
+"Alle einklappen" = "طي الكل";
+"Dateien" = "الملفات";
+"Neue Datei …" = "ملف جديد…";
+"Neuer Ordner …" = "مجلد جديد…";
+"OK" = "موافق";

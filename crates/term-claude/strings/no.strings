@@ -1,0 +1,13 @@
+/* Norwegian interface texts; the keys are the German texts in the code. */
+"Claude Code hat das Zurückspulen abgelehnt: {}" = "Claude Code avslo tilbakespolingen: {}";
+"Claude Code hat nicht rechtzeitig geantwortet." = "Claude Code svarte ikke i tide.";
+"Claude Code ist beendet." = "Claude Code er avsluttet.";
+"Claude Code ist nicht gestartet: {}" = "Claude Code har ikke startet: {}";
+"Claude Code lehnt ab: {}" = "Claude Code avslår: {}";
+"Claude Code liest seine Eingabe nicht mehr." = "Claude Code leser ikke lenger inndataene sine.";
+"Claude Code ließ sich nicht starten: {}" = "Kunne ikke starte Claude Code: {}";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "Denne forespørselen venter ikke lenger på svar.";
+"Diese Version von Claude Code kann das hier nicht." = "Denne versjonen av Claude Code kan ikke gjøre dette her.";
+"Melde dich an, indem du claude im Terminal startest: {}" = "Logg på ved å starte claude i en terminal: {}";
+"Unerwartete Antwort: {}" = "Uventet svar: {}";
+"{} wurde nicht gefunden." = "{} ble ikke funnet.";

@@ -1,0 +1,14 @@
+/* Hungarian interface texts; the keys are the German texts in the code. */
+"Der Agent hat auf {} nicht rechtzeitig geantwortet." = "Az ügynök nem válaszolt időben erre: {}.";
+"Der Agent ist nicht gestartet: {}" = "Az ügynök nem indult el: {}";
+"Der Agent spricht die Protokollversion {}, diese App Version 1" = "Az ügynök a(z) {} protokollverziót beszéli, ez az app az 1-es verziót";
+"Der Agent verlangt eine Anmeldung." = "Az ügynök bejelentkezést kér.";
+"Die Sitzung ist beendet." = "A munkamenet véget ért.";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "Ez a kérés már nem vár válaszra.";
+"{} startet nur in einem vertrauten Arbeitsbereich." = "A(z) {} csak megbízható munkaterületen indul el.";
+"{} wurde nicht gefunden." = "A(z) {} nem található.";
+"Die Installation wurde nicht bestätigt." = "A telepítés nem lett megerősítve.";
+"{} {} oder neuer wird gebraucht" = "Szükséges: {} {} vagy újabb";
+"{} wird gebraucht" = "Szükséges: {}";
+"Der Download ist fehlgeschlagen: {}" = "A letöltés nem sikerült: {}";
+"Der Download stimmt nicht mit seiner Prüfsumme überein und wurde verworfen" = "A letöltés nem egyezik az ellenőrzőösszegével, ezért el lett vetve";

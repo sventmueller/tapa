@@ -1,0 +1,7 @@
+/* Finnish interface texts; the keys are the German texts in the code. */
+"Abbrechen" = "Kumoa";
+"Alle einklappen" = "Kutista kaikki";
+"Dateien" = "Tiedostot";
+"Neue Datei …" = "Uusi tiedosto…";
+"Neuer Ordner …" = "Uusi kansio…";
+"OK" = "OK";

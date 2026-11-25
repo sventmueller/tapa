@@ -1,0 +1,8 @@
+/* Thai interface texts; the keys are the German texts in the code. */
+"Das Dokument hat noch keine Datei." = "เอกสารยังไม่มีไฟล์";
+"Das Dokument ist schreibgeschützt." = "เอกสารเป็นแบบอ่านอย่างเดียว";
+"Die Datei enthält Binärdaten und wird nie gesichert." = "ไฟล์มีข้อมูลไบนารีและจะไม่ถูกบันทึก";
+"Die Datei ist schreibgeschützt." = "ไฟล์นี้เป็นแบบอ่านอย่างเดียว";
+"Die Datei wurde inzwischen außerhalb geändert." = "ไฟล์ถูกเปลี่ยนแปลงจากที่อื่นในระหว่างนี้";
+"Die Kodierung der Datei ist unbekannt; sie wird nie gesichert." = "ไม่ทราบการเข้ารหัสของไฟล์ ไฟล์จะไม่ถูกบันทึก";
+"Die Stelle liegt außerhalb des Textes: {}" = "ตำแหน่งอยู่นอกข้อความ: {}";

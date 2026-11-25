@@ -1,0 +1,13 @@
+/* Thai interface texts; the keys are the German texts in the code. */
+"Claude Code hat das Zurückspulen abgelehnt: {}" = "Claude Code ปฏิเสธการกรอกลับ: {}";
+"Claude Code hat nicht rechtzeitig geantwortet." = "Claude Code ไม่ตอบสนองภายในเวลาที่กำหนด";
+"Claude Code ist beendet." = "Claude Code สิ้นสุดการทำงานแล้ว";
+"Claude Code ist nicht gestartet: {}" = "Claude Code ไม่ได้เริ่มทำงาน: {}";
+"Claude Code lehnt ab: {}" = "Claude Code ปฏิเสธ: {}";
+"Claude Code liest seine Eingabe nicht mehr." = "Claude Code ไม่อ่านอินพุตของตนอีกต่อไป";
+"Claude Code ließ sich nicht starten: {}" = "ไม่สามารถเริ่ม Claude Code ได้: {}";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "คำขอนี้ไม่ได้รอคำตอบอีกต่อไป";
+"Diese Version von Claude Code kann das hier nicht." = "Claude Code เวอร์ชันนี้ทำสิ่งนี้ที่นี่ไม่ได้";
+"Melde dich an, indem du claude im Terminal startest: {}" = "ลงชื่อเข้าโดยเรียกใช้ claude ในเทอร์มินัล: {}";
+"Unerwartete Antwort: {}" = "การตอบกลับที่ไม่คาดคิด: {}";
+"{} wurde nicht gefunden." = "ไม่พบ {}";

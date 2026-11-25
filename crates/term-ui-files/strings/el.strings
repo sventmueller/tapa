@@ -1,0 +1,7 @@
+/* Greek interface texts; the keys are the German texts in the code. */
+"Abbrechen" = "Ακύρωση";
+"Alle einklappen" = "Σύμπτυξη όλων";
+"Dateien" = "Αρχεία";
+"Neue Datei …" = "Νέο αρχείο…";
+"Neuer Ordner …" = "Νέος φάκελος…";
+"OK" = "OK";

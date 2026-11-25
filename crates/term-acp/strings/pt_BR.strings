@@ -1,0 +1,14 @@
+/* Brazilian Portuguese interface texts; the keys are the German texts in the code. */
+"Der Agent hat auf {} nicht rechtzeitig geantwortet." = "O agente não respondeu a {} a tempo.";
+"Der Agent ist nicht gestartet: {}" = "O agente não foi iniciado: {}";
+"Der Agent spricht die Protokollversion {}, diese App Version 1" = "O agente usa a versão {} do protocolo; este app, a versão 1";
+"Der Agent verlangt eine Anmeldung." = "O agente pede que você inicie sessão.";
+"Die Sitzung ist beendet." = "A sessão foi encerrada.";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "Esta solicitação não aguarda mais uma resposta.";
+"{} startet nur in einem vertrauten Arbeitsbereich." = "{} só é iniciado em um espaço de trabalho confiável.";
+"{} wurde nicht gefunden." = "Não foi possível encontrar {}.";
+"Die Installation wurde nicht bestätigt." = "A instalação não foi confirmada.";
+"{} {} oder neuer wird gebraucht" = "{} {} ou posterior é necessário";
+"{} wird gebraucht" = "{} é necessário";
+"Der Download ist fehlgeschlagen: {}" = "Falha no download: {}";
+"Der Download stimmt nicht mit seiner Prüfsumme überein und wurde verworfen" = "O download não corresponde à sua soma de verificação e foi descartado";

@@ -1,0 +1,14 @@
+/* Simplified Chinese interface texts; the keys are the German texts in the code. */
+"Der Agent hat auf {} nicht rechtzeitig geantwortet." = "智能体未及时响应 {}。";
+"Der Agent ist nicht gestartet: {}" = "智能体未能启动：{}";
+"Der Agent spricht die Protokollversion {}, diese App Version 1" = "智能体使用协议版本 {}，此 App 使用版本 1";
+"Der Agent verlangt eine Anmeldung." = "智能体要求你登录。";
+"Die Sitzung ist beendet." = "会话已结束。";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "此请求已不再等待回复。";
+"{} startet nur in einem vertrauten Arbeitsbereich." = "{} 仅在受信任的工作区中启动。";
+"{} wurde nicht gefunden." = "未找到 {}。";
+"Die Installation wurde nicht bestätigt." = "安装未获确认。";
+"{} {} oder neuer wird gebraucht" = "需要 {} {} 或更高版本";
+"{} wird gebraucht" = "需要 {}";
+"Der Download ist fehlgeschlagen: {}" = "下载失败：{}";
+"Der Download stimmt nicht mit seiner Prüfsumme überein und wurde verworfen" = "下载内容与其校验和不符，已丢弃";

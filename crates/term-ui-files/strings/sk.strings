@@ -1,0 +1,7 @@
+/* Slovak interface texts; the keys are the German texts in the code. */
+"Abbrechen" = "Zrušiť";
+"Alle einklappen" = "Zbaliť všetko";
+"Dateien" = "Súbory";
+"Neue Datei …" = "Nový súbor…";
+"Neuer Ordner …" = "Nový priečinok…";
+"OK" = "Potvrdiť";

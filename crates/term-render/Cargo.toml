@@ -1,0 +1,28 @@
+[package]
+name = "term-render"
+version.workspace = true
+description = "Drawing a terminal's screen: faces, cells, line and block characters, Core Graphics and Metal, colours"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+term-base.workspace = true
+term-config.workspace = true
+term-session.workspace = true
+block2.workspace = true
+objc2 = { workspace = true, features = ["catch-all"] }
+objc2-app-kit.workspace = true
+objc2-core-foundation.workspace = true
+objc2-core-graphics.workspace = true
+objc2-core-text.workspace = true
+objc2-foundation.workspace = true
+objc2-metal.workspace = true
+objc2-quartz-core.workspace = true
+
+[dev-dependencies]
+image = { version = "0.25", default-features = false, features = ["png"] }

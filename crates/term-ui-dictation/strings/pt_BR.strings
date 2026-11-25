@@ -1,0 +1,27 @@
+/* Brazilian Portuguese interface texts; the keys are the German texts in the code. */
+"API-Schlüssel für {}" = "Chave de API para {}";
+"Abgebrochen" = "Cancelado";
+"Das Diktat ist gerade beschäftigt." = "O ditado está ocupado no momento.";
+"Das Feld des Diktats ist nicht mehr offen. Der Text liegt in der Zwischenablage." = "O campo do ditado não está mais aberto. O texto está na área de transferência.";
+"Das ist kein Schlüssel von OpenAI (sk-…) oder Groq (gsk_…)." = "Esta não é uma chave da OpenAI (sk-…) nem do Groq (gsk_…).";
+"Das lokale Modell ist nicht installiert. Lade es in den Einstellungen unter Diktat." = "O modelo local não está instalado. Baixe-o em Ajustes, em Ditado.";
+"Der Schlüsselbund lehnt ab: {}" = "As Chaves recusam: {}";
+"Die Aufnahme hat ihre Höchstdauer erreicht." = "A gravação atingiu a duração máxima.";
+"Diktat beenden" = "Parar Ditado";
+"Diktat starten" = "Iniciar Ditado";
+"Höre zu …" = "Ouvindo…";
+"Kein API-Schlüssel für {}. Trage ihn in den Einstellungen unter Diktat ein." = "Nenhuma chave de API para {}. Informe uma em Ajustes, em Ditado.";
+"Keine Sprache erkannt" = "Nenhuma fala reconhecida";
+"Lowspeak hat einen Schlüssel für {}. Für {} übernehmen?" = "O Lowspeak tem uma chave para {}. Usá-la também para {}?";
+"Lowspeak hat keinen Schlüssel mehr." = "O Lowspeak não tem mais uma chave.";
+"Lowspeak meldet: {}" = "O Lowspeak informa: {}";
+"Lowspeak transkribiert online mit {}. {} braucht dafür einen eigenen Schlüssel und legt ihn im Schlüsselbund ab." = "O Lowspeak transcreve online com {}. {} precisa de uma chave própria para isso e a guarda nas Chaves.";
+"Lowspeaks Schlüssel ließ sich nicht lesen. Gib den Schlüssel selbst ein." = "Não foi possível ler a chave do Lowspeak. Digite a chave manualmente.";
+"Nicht jetzt" = "Agora Não";
+"Selbst eingeben …" = "Digitar Manualmente…";
+"Sichern" = "Salvar";
+"Transkribiere …" = "Transcrevendo…";
+"{} bietet {} nicht mehr an. Wähle in den Einstellungen unter Diktat ein anderes Modell." = "{} não oferece mais {}. Escolha outro modelo em Ajustes, em Ditado.";
+"{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "{} não tem acesso ao microfone. Permita em Ajustes do Sistema > Privacidade e Segurança > Microfone.";
+"{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "{} a lê uma vez para isso, e o macOS pergunta antes. Escolha “Permitir”, não “Permitir Sempre”: assim o item do Lowspeak permanece como está. {} guarda a chave em um item próprio.";
+"Übernehmen" = "Usar Chave";

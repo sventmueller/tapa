@@ -1,0 +1,14 @@
+/* Malay interface texts; the keys are the German texts in the code. */
+"Der Agent hat auf {} nicht rechtzeitig geantwortet." = "Ejen tidak menjawab {} tepat pada masanya.";
+"Der Agent ist nicht gestartet: {}" = "Ejen tidak dimulakan: {}";
+"Der Agent spricht die Protokollversion {}, diese App Version 1" = "Ejen menggunakan versi protokol {}, app ini versi 1";
+"Der Agent verlangt eine Anmeldung." = "Ejen meminta anda mendaftar masuk.";
+"Die Sitzung ist beendet." = "Sesi telah tamat.";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "Permintaan ini tidak lagi menunggu jawapan.";
+"{} startet nur in einem vertrauten Arbeitsbereich." = "{} hanya bermula dalam ruang kerja yang dipercayai.";
+"{} wurde nicht gefunden." = "{} tidak ditemui.";
+"Die Installation wurde nicht bestätigt." = "Pemasangan tidak disahkan.";
+"{} {} oder neuer wird gebraucht" = "{} {} atau lebih baharu diperlukan";
+"{} wird gebraucht" = "{} diperlukan";
+"Der Download ist fehlgeschlagen: {}" = "Muat turun gagal: {}";
+"Der Download stimmt nicht mit seiner Prüfsumme überein und wurde verworfen" = "Muat turun tidak sepadan dengan checksumnya dan telah dibuang";

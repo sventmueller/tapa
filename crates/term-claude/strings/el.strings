@@ -1,0 +1,13 @@
+/* Greek interface texts; the keys are the German texts in the code. */
+"Claude Code hat das Zurückspulen abgelehnt: {}" = "Το Claude Code απέρριψε την επιστροφή: {}";
+"Claude Code hat nicht rechtzeitig geantwortet." = "Το Claude Code δεν απάντησε εγκαίρως.";
+"Claude Code ist beendet." = "Το Claude Code τερματίστηκε.";
+"Claude Code ist nicht gestartet: {}" = "Το Claude Code δεν ξεκίνησε: {}";
+"Claude Code lehnt ab: {}" = "Το Claude Code αρνείται: {}";
+"Claude Code liest seine Eingabe nicht mehr." = "Το Claude Code δεν διαβάζει πλέον την είσοδό του.";
+"Claude Code ließ sich nicht starten: {}" = "Δεν ήταν δυνατή η εκκίνηση του Claude Code: {}";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "Αυτό το αίτημα δεν περιμένει πλέον απάντηση.";
+"Diese Version von Claude Code kann das hier nicht." = "Αυτή η έκδοση του Claude Code δεν μπορεί να το κάνει αυτό εδώ.";
+"Melde dich an, indem du claude im Terminal startest: {}" = "Συνδεθείτε εκκινώντας το claude στο τερματικό: {}";
+"Unerwartete Antwort: {}" = "Μη αναμενόμενη απάντηση: {}";
+"{} wurde nicht gefunden." = "Το {} δεν βρέθηκε.";

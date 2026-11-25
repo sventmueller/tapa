@@ -1,0 +1,14 @@
+/* Croatian interface texts; the keys are the German texts in the code. */
+"Dafür fehlt die Berechtigung." = "Za to nedostaje dopuštenje.";
+"Das ist ein Ordner, keine Datei." = "Ovo je mapa, a ne datoteka.";
+"Der Dateiname ist ungültig." = "Naziv datoteke nije valjan.";
+"Der Datenträger ist schreibgeschützt." = "Volumen je zaštićen od pisanja.";
+"Der Datenträger ist voll." = "Volumen je pun.";
+"Der Ordner ist nicht leer." = "Mapa nije prazna.";
+"Der Vorgang hat zu lange gedauert." = "Postupak je trajao predugo.";
+"Die Datei ist gerade belegt." = "Datoteka je trenutačno u upotrebi.";
+"Die Datei ist zu groß." = "Datoteka je prevelika.";
+"Die Datei oder der Ordner existiert nicht." = "Datoteka ili mapa ne postoji.";
+"Die Gegenstelle hat die Verbindung abgelehnt." = "Druga strana odbila je vezu.";
+"Ein Teil des Pfads ist kein Ordner." = "Dio putanje nije mapa.";
+"Es gibt dort schon eine Datei dieses Namens." = "Datoteka s ovim nazivom tamo već postoji.";

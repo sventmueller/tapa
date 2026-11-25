@@ -1,0 +1,1 @@
+{"properties":{"effectiveEnabled":{"type":"boolean"}},"required":["effectiveEnabled"],"title":"SkillsConfigWriteResponse","type":"object"}

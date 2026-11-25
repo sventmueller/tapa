@@ -1,0 +1,14 @@
+/* Greek interface texts; the keys are the German texts in the code. */
+"Der Agent hat auf {} nicht rechtzeitig geantwortet." = "Ο πράκτορας δεν απάντησε εγκαίρως στο {}.";
+"Der Agent ist nicht gestartet: {}" = "Ο πράκτορας δεν ξεκίνησε: {}";
+"Der Agent spricht die Protokollversion {}, diese App Version 1" = "Ο πράκτορας χρησιμοποιεί την έκδοση πρωτοκόλλου {}, ενώ αυτή η εφαρμογή την έκδοση 1";
+"Der Agent verlangt eine Anmeldung." = "Ο πράκτορας ζητά σύνδεση.";
+"Die Sitzung ist beendet." = "Η συνεδρία τερματίστηκε.";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "Αυτό το αίτημα δεν περιμένει πλέον απάντηση.";
+"{} startet nur in einem vertrauten Arbeitsbereich." = "Το {} ξεκινά μόνο σε αξιόπιστο χώρο εργασίας.";
+"{} wurde nicht gefunden." = "Το {} δεν βρέθηκε.";
+"Die Installation wurde nicht bestätigt." = "Η εγκατάσταση δεν επιβεβαιώθηκε.";
+"{} {} oder neuer wird gebraucht" = "Απαιτείται {} {} ή νεότερη έκδοση";
+"{} wird gebraucht" = "Απαιτείται το {}";
+"Der Download ist fehlgeschlagen: {}" = "Η λήψη απέτυχε: {}";
+"Der Download stimmt nicht mit seiner Prüfsumme überein und wurde verworfen" = "Η λήψη δεν συμφωνεί με το άθροισμα ελέγχου της και απορρίφθηκε";

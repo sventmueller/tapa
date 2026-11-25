@@ -1,0 +1,27 @@
+/* Norwegian Bokmål interface texts; the keys are the German texts in the code. */
+"API-Schlüssel für {}" = "API-nøkkel for {}";
+"Abgebrochen" = "Avbrutt";
+"Das Diktat ist gerade beschäftigt." = "Dikteringen er opptatt akkurat nå.";
+"Das Feld des Diktats ist nicht mehr offen. Der Text liegt in der Zwischenablage." = "Feltet for dikteringen er ikke lenger åpent. Teksten ligger på utklippstavlen.";
+"Das ist kein Schlüssel von OpenAI (sk-…) oder Groq (gsk_…)." = "Dette er ikke en nøkkel fra OpenAI (sk-…) eller Groq (gsk_…).";
+"Das lokale Modell ist nicht installiert. Lade es in den Einstellungen unter Diktat." = "Den lokale modellen er ikke installert. Last den ned under Diktering i Innstillinger.";
+"Der Schlüsselbund lehnt ab: {}" = "Nøkkelringen avslår: {}";
+"Die Aufnahme hat ihre Höchstdauer erreicht." = "Opptaket har nådd maksimal lengde.";
+"Diktat beenden" = "Stopp diktering";
+"Diktat starten" = "Start diktering";
+"Höre zu …" = "Lytter…";
+"Kein API-Schlüssel für {}. Trage ihn in den Einstellungen unter Diktat ein." = "Ingen API-nøkkel for {}. Legg den inn under Diktering i Innstillinger.";
+"Keine Sprache erkannt" = "Ingen tale gjenkjent";
+"Lowspeak hat einen Schlüssel für {}. Für {} übernehmen?" = "Lowspeak har en nøkkel for {}. Vil du bruke den for {} også?";
+"Lowspeak hat keinen Schlüssel mehr." = "Lowspeak har ikke lenger noen nøkkel.";
+"Lowspeak meldet: {}" = "Lowspeak melder: {}";
+"Lowspeak transkribiert online mit {}. {} braucht dafür einen eigenen Schlüssel und legt ihn im Schlüsselbund ab." = "Lowspeak transkriberer på nett med {}. {} trenger en egen nøkkel for det og lagrer den i nøkkelringen.";
+"Lowspeaks Schlüssel ließ sich nicht lesen. Gib den Schlüssel selbst ein." = "Nøkkelen til Lowspeak kunne ikke leses. Skriv inn nøkkelen selv.";
+"Nicht jetzt" = "Ikke nå";
+"Selbst eingeben …" = "Skriv inn selv…";
+"Sichern" = "Lagre";
+"Transkribiere …" = "Transkriberer…";
+"{} bietet {} nicht mehr an. Wähle in den Einstellungen unter Diktat ein anderes Modell." = "{} tilbyr ikke lenger {}. Velg en annen modell under Diktering i Innstillinger.";
+"{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "{} har ikke tilgang til mikrofonen. Tillat det under Systeminnstillinger > Personvern og sikkerhet > Mikrofon.";
+"{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "{} leser den én gang for dette, og macOS spør først. Velg «Tillat», ikke «Tillat alltid»: Da forblir oppføringen til Lowspeak som den er. {} lagrer nøkkelen i en egen oppføring.";
+"Übernehmen" = "Bruk nøkkel";

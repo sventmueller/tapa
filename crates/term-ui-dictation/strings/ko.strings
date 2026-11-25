@@ -1,0 +1,27 @@
+/* Korean interface texts; the keys are the German texts in the code. */
+"API-Schlüssel für {}" = "{}의 API 키";
+"Abgebrochen" = "취소됨";
+"Das Diktat ist gerade beschäftigt." = "받아쓰기가 현재 사용 중입니다.";
+"Das Feld des Diktats ist nicht mehr offen. Der Text liegt in der Zwischenablage." = "받아쓰기 필드가 더 이상 열려 있지 않습니다. 텍스트는 클립보드에 있습니다.";
+"Das ist kein Schlüssel von OpenAI (sk-…) oder Groq (gsk_…)." = "OpenAI(sk-…) 또는 Groq(gsk_…)의 키가 아닙니다.";
+"Das lokale Modell ist nicht installiert. Lade es in den Einstellungen unter Diktat." = "로컬 모델이 설치되어 있지 않습니다. 설정의 받아쓰기에서 다운로드하십시오.";
+"Der Schlüsselbund lehnt ab: {}" = "키체인이 거부했습니다: {}";
+"Die Aufnahme hat ihre Höchstdauer erreicht." = "녹음이 최대 길이에 도달했습니다.";
+"Diktat beenden" = "받아쓰기 종료";
+"Diktat starten" = "받아쓰기 시작";
+"Höre zu …" = "듣는 중…";
+"Kein API-Schlüssel für {}. Trage ihn in den Einstellungen unter Diktat ein." = "{}의 API 키가 없습니다. 설정의 받아쓰기에서 입력하십시오.";
+"Keine Sprache erkannt" = "인식된 음성 없음";
+"Lowspeak hat einen Schlüssel für {}. Für {} übernehmen?" = "Lowspeak에 {}의 키가 있습니다. {}에도 사용하겠습니까?";
+"Lowspeak hat keinen Schlüssel mehr." = "Lowspeak에 더 이상 키가 없습니다.";
+"Lowspeak meldet: {}" = "Lowspeak 보고: {}";
+"Lowspeak transkribiert online mit {}. {} braucht dafür einen eigenen Schlüssel und legt ihn im Schlüsselbund ab." = "Lowspeak는 {}을(를) 사용하여 온라인으로 텍스트를 변환합니다. {}에는 이를 위한 별도의 키가 필요하며 키체인에 보관합니다.";
+"Lowspeaks Schlüssel ließ sich nicht lesen. Gib den Schlüssel selbst ein." = "Lowspeak의 키를 읽을 수 없습니다. 키를 직접 입력하십시오.";
+"Nicht jetzt" = "나중에";
+"Selbst eingeben …" = "직접 입력…";
+"Sichern" = "저장";
+"Transkribiere …" = "텍스트로 변환 중…";
+"{} bietet {} nicht mehr an. Wähle in den Einstellungen unter Diktat ein anderes Modell." = "{}은(는) 더 이상 {}을(를) 제공하지 않습니다. 설정의 받아쓰기에서 다른 모델을 선택하십시오.";
+"{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "{}에 마이크 접근 권한이 없습니다. 시스템 설정 > 개인정보 보호 및 보안 > 마이크에서 허용하십시오.";
+"{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "{}은(는) 이를 위해 키를 한 번 읽으며, macOS가 먼저 묻습니다. 그곳에서 ‘항상 허용’이 아니라 ‘허용’을 선택하십시오. 그래야 Lowspeak의 항목이 그대로 유지됩니다. {}은(는) 키를 별도의 항목에 보관합니다.";
+"Übernehmen" = "키 사용";

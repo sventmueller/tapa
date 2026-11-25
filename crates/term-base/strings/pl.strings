@@ -1,0 +1,14 @@
+/* Polish interface texts; the keys are the German texts in the code. */
+"Dafür fehlt die Berechtigung." = "Brak uprawnień do wykonania tej czynności.";
+"Das ist ein Ordner, keine Datei." = "To jest folder, a nie plik.";
+"Der Dateiname ist ungültig." = "Nazwa pliku jest nieprawidłowa.";
+"Der Datenträger ist schreibgeschützt." = "Wolumin jest chroniony przed zapisem.";
+"Der Datenträger ist voll." = "Wolumin jest pełny.";
+"Der Ordner ist nicht leer." = "Folder nie jest pusty.";
+"Der Vorgang hat zu lange gedauert." = "Operacja trwała zbyt długo.";
+"Die Datei ist gerade belegt." = "Plik jest obecnie w użyciu.";
+"Die Datei ist zu groß." = "Plik jest zbyt duży.";
+"Die Datei oder der Ordner existiert nicht." = "Plik lub folder nie istnieje.";
+"Die Gegenstelle hat die Verbindung abgelehnt." = "Druga strona odrzuciła połączenie.";
+"Ein Teil des Pfads ist kein Ordner." = "Część ścieżki nie jest folderem.";
+"Es gibt dort schon eine Datei dieses Namens." = "Plik o tej nazwie już tam istnieje.";

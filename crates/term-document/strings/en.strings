@@ -1,0 +1,8 @@
+/* English interface texts; the keys are the German texts in the code. */
+"Das Dokument hat noch keine Datei." = "The document has no file yet.";
+"Das Dokument ist schreibgeschützt." = "The document is read-only.";
+"Die Datei enthält Binärdaten und wird nie gesichert." = "The file holds binary data and is never saved.";
+"Die Datei ist schreibgeschützt." = "The file is read-only.";
+"Die Datei wurde inzwischen außerhalb geändert." = "The file was changed elsewhere in the meantime.";
+"Die Kodierung der Datei ist unbekannt; sie wird nie gesichert." = "The file's encoding is unknown; it is never saved.";
+"Die Stelle liegt außerhalb des Textes: {}" = "The place lies outside the text: {}";

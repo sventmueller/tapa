@@ -1,0 +1,13 @@
+/* Traditional Chinese interface texts; the keys are the German texts in the code. */
+"Claude Code hat das Zurückspulen abgelehnt: {}" = "Claude Code 拒絕了回溯：{}";
+"Claude Code hat nicht rechtzeitig geantwortet." = "Claude Code 未及時回應。";
+"Claude Code ist beendet." = "Claude Code 已結束。";
+"Claude Code ist nicht gestartet: {}" = "Claude Code 未能啟動：{}";
+"Claude Code lehnt ab: {}" = "Claude Code 拒絕：{}";
+"Claude Code liest seine Eingabe nicht mehr." = "Claude Code 不再讀取其輸入。";
+"Claude Code ließ sich nicht starten: {}" = "無法啟動 Claude Code：{}";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "此請求已不再等待回應。";
+"Diese Version von Claude Code kann das hier nicht." = "此版本的 Claude Code 無法在這裡執行此操作。";
+"Melde dich an, indem du claude im Terminal startest: {}" = "請在終端機中執行 claude 來登入：{}";
+"Unerwartete Antwort: {}" = "非預期的回應：{}";
+"{} wurde nicht gefunden." = "找不到 {}。";

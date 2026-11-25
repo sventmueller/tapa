@@ -1,0 +1,80 @@
+size 106 30 0
+cursor 2 43
+line 0 [kchibisov@NightLord alacritty]$ printf "\e[31;1;7;4;9md\n"
+line 1 d
+line 2 [kchibisov@NightLord alacritty]$ printf "\ed\n"
+line 3 
+line 4 
+line 5 
+line 6 
+line 7 
+line 8 
+line 9 
+line 10 
+line 11 
+line 12 
+line 13 
+line 14 
+line 15 
+line 16 
+line 17 
+line 18 
+line 19 
+line 20 
+line 21 
+line 22 
+line 23 
+line 24 
+line 25 
+line 26 
+line 27 
+line 28 
+line 29 
+cell 1 0 fg=1 bold underline strike inverse
+cell 2 0 fg=1 bold underline strike inverse
+cell 2 1 fg=1 bold underline strike inverse
+cell 2 2 fg=1 bold underline strike inverse
+cell 2 3 fg=1 bold underline strike inverse
+cell 2 4 fg=1 bold underline strike inverse
+cell 2 5 fg=1 bold underline strike inverse
+cell 2 6 fg=1 bold underline strike inverse
+cell 2 7 fg=1 bold underline strike inverse
+cell 2 8 fg=1 bold underline strike inverse
+cell 2 9 fg=1 bold underline strike inverse
+cell 2 10 fg=1 bold underline strike inverse
+cell 2 11 fg=1 bold underline strike inverse
+cell 2 12 fg=1 bold underline strike inverse
+cell 2 13 fg=1 bold underline strike inverse
+cell 2 14 fg=1 bold underline strike inverse
+cell 2 15 fg=1 bold underline strike inverse
+cell 2 16 fg=1 bold underline strike inverse
+cell 2 17 fg=1 bold underline strike inverse
+cell 2 18 fg=1 bold underline strike inverse
+cell 2 19 fg=1 bold underline strike inverse
+cell 2 20 fg=1 bold underline strike inverse
+cell 2 21 fg=1 bold underline strike inverse
+cell 2 22 fg=1 bold underline strike inverse
+cell 2 23 fg=1 bold underline strike inverse
+cell 2 24 fg=1 bold underline strike inverse
+cell 2 25 fg=1 bold underline strike inverse
+cell 2 26 fg=1 bold underline strike inverse
+cell 2 27 fg=1 bold underline strike inverse
+cell 2 28 fg=1 bold underline strike inverse
+cell 2 29 fg=1 bold underline strike inverse
+cell 2 30 fg=1 bold underline strike inverse
+cell 2 31 fg=1 bold underline strike inverse
+cell 2 32 fg=1 bold underline strike inverse
+cell 2 33 fg=1 bold underline strike inverse
+cell 2 34 fg=1 bold underline strike inverse
+cell 2 35 fg=1 bold underline strike inverse
+cell 2 36 fg=1 bold underline strike inverse
+cell 2 37 fg=1 bold underline strike inverse
+cell 2 38 fg=1 bold underline strike inverse
+cell 2 39 fg=1 bold underline strike inverse
+cell 2 40 fg=1 bold underline strike inverse
+cell 2 41 fg=1 bold underline strike inverse
+cell 2 42 fg=1 bold underline strike inverse
+cell 2 43 fg=1 bold underline strike inverse
+cell 2 44 fg=1 bold underline strike inverse
+cell 2 45 fg=1 bold underline strike inverse
+cell 2 46 fg=1 bold underline strike inverse

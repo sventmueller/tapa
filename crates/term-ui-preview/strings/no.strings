@@ -1,0 +1,10 @@
+/* Norwegian Bokmål interface texts; the keys are the German texts in the code. */
+"Bild: {}" = "Bilde: {}";
+"Bilder aus dem Netz laden" = "Last inn bilder fra nettet";
+"Das Bild lässt sich nicht anzeigen." = "Bildet kan ikke vises.";
+"Der Ordner ist nicht vertraut: Bilder aus dem Netz bleiben ungeladen." = "Mappen er ikke klarert: Bilder fra nettet lastes ikke inn.";
+"Die Datei ist kein lesbares PDF." = "Filen er ikke en lesbar PDF.";
+"Lädt …" = "Laster inn…";
+"PDF: {}" = "PDF: {}";
+"Vorschau: {}" = "Forhåndsvisning: {}";
+"„{}“ lässt sich nicht öffnen." = "«{}» kan ikke åpnes.";

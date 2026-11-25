@@ -1,0 +1,8 @@
+/* Simplified Chinese interface texts; the keys are the German texts in the code. */
+"Das Dokument hat noch keine Datei." = "该文稿还没有文件。";
+"Das Dokument ist schreibgeschützt." = "该文稿为只读。";
+"Die Datei enthält Binärdaten und wird nie gesichert." = "该文件包含二进制数据，永远不会被保存。";
+"Die Datei ist schreibgeschützt." = "该文件为只读。";
+"Die Datei wurde inzwischen außerhalb geändert." = "该文件在此期间已在外部被更改。";
+"Die Kodierung der Datei ist unbekannt; sie wird nie gesichert." = "该文件的编码未知，永远不会被保存。";
+"Die Stelle liegt außerhalb des Textes: {}" = "位置超出文本范围：{}";

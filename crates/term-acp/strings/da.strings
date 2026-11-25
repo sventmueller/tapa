@@ -1,0 +1,14 @@
+/* Danish interface texts; the keys are the German texts in the code. */
+"Der Agent hat auf {} nicht rechtzeitig geantwortet." = "Agenten svarede ikke på {} i tide.";
+"Der Agent ist nicht gestartet: {}" = "Agenten er ikke startet: {}";
+"Der Agent spricht die Protokollversion {}, diese App Version 1" = "Agenten bruger protokolversion {}, denne app version 1";
+"Der Agent verlangt eine Anmeldung." = "Agenten beder dig logge ind.";
+"Die Sitzung ist beendet." = "Sessionen er stoppet.";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "Denne anmodning venter ikke længere på et svar.";
+"{} startet nur in einem vertrauten Arbeitsbereich." = "{} starter kun i et arbejdsområde, der er tillid til.";
+"{} wurde nicht gefunden." = "{} blev ikke fundet.";
+"Die Installation wurde nicht bestätigt." = "Installationen blev ikke bekræftet.";
+"{} {} oder neuer wird gebraucht" = "{} {} eller nyere kræves";
+"{} wird gebraucht" = "{} kræves";
+"Der Download ist fehlgeschlagen: {}" = "Overførslen mislykkedes: {}";
+"Der Download stimmt nicht mit seiner Prüfsumme überein und wurde verworfen" = "Overførslen svarer ikke til sin kontrolsum og blev kasseret";

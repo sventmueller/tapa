@@ -1,0 +1,27 @@
+/* Italian interface texts; the keys are the German texts in the code. */
+"API-Schlüssel für {}" = "Chiave API per {}";
+"Abgebrochen" = "Annullato";
+"Das Diktat ist gerade beschäftigt." = "La dettatura è occupata in questo momento.";
+"Das Feld des Diktats ist nicht mehr offen. Der Text liegt in der Zwischenablage." = "Il campo della dettatura non è più aperto. Il testo è negli appunti.";
+"Das ist kein Schlüssel von OpenAI (sk-…) oder Groq (gsk_…)." = "Questa non è una chiave di OpenAI (sk-…) o di Groq (gsk_…).";
+"Das lokale Modell ist nicht installiert. Lade es in den Einstellungen unter Diktat." = "Il modello locale non è installato. Scaricalo in Impostazioni, sotto Dettatura.";
+"Der Schlüsselbund lehnt ab: {}" = "Il Portachiavi rifiuta: {}";
+"Die Aufnahme hat ihre Höchstdauer erreicht." = "La registrazione ha raggiunto la durata massima.";
+"Diktat beenden" = "Termina dettatura";
+"Diktat starten" = "Avvia dettatura";
+"Höre zu …" = "In ascolto…";
+"Kein API-Schlüssel für {}. Trage ihn in den Einstellungen unter Diktat ein." = "Nessuna chiave API per {}. Inseriscila in Impostazioni, sotto Dettatura.";
+"Keine Sprache erkannt" = "Nessuna voce riconosciuta";
+"Lowspeak hat einen Schlüssel für {}. Für {} übernehmen?" = "Lowspeak ha una chiave per {}. Usarla anche per {}?";
+"Lowspeak hat keinen Schlüssel mehr." = "Lowspeak non ha più una chiave.";
+"Lowspeak meldet: {}" = "Lowspeak segnala: {}";
+"Lowspeak transkribiert online mit {}. {} braucht dafür einen eigenen Schlüssel und legt ihn im Schlüsselbund ab." = "Lowspeak trascrive online con {}. {} ha bisogno di una chiave propria per farlo e la conserva nel Portachiavi.";
+"Lowspeaks Schlüssel ließ sich nicht lesen. Gib den Schlüssel selbst ein." = "Impossibile leggere la chiave di Lowspeak. Inserisci la chiave tu stesso.";
+"Nicht jetzt" = "Non ora";
+"Selbst eingeben …" = "La inserisco io…";
+"Sichern" = "Salva";
+"Transkribiere …" = "Trascrizione…";
+"{} bietet {} nicht mehr an. Wähle in den Einstellungen unter Diktat ein anderes Modell." = "{} non offre più {}. Scegli un altro modello in Impostazioni, sotto Dettatura.";
+"{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "{} non ha accesso al microfono. Consentilo in Impostazioni di Sistema > Privacy e sicurezza > Microfono.";
+"{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "{} la legge una volta per questo, e macOS chiede prima conferma. Lì scegli “Consenti”, non “Consenti sempre”: così la voce di Lowspeak resta com’è. {} conserva la chiave in una voce propria.";
+"Übernehmen" = "Usa chiave";

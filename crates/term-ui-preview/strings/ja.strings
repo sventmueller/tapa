@@ -1,0 +1,10 @@
+/* Japanese interface texts; the keys are the German texts in the code. */
+"Bild: {}" = "イメージ: {}";
+"Bilder aus dem Netz laden" = "Webからイメージを読み込む";
+"Das Bild lässt sich nicht anzeigen." = "画像を表示できません。";
+"Der Ordner ist nicht vertraut: Bilder aus dem Netz bleiben ungeladen." = "フォルダが信頼されていないため、Webからのイメージは読み込まれません。";
+"Die Datei ist kein lesbares PDF." = "ファイルは読み取り可能なPDFではありません。";
+"Lädt …" = "読み込み中…";
+"PDF: {}" = "PDF: {}";
+"Vorschau: {}" = "プレビュー: {}";
+"„{}“ lässt sich nicht öffnen." = "“{}”を開けません。";

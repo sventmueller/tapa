@@ -1,0 +1,14 @@
+/* Japanese interface texts; the keys are the German texts in the code. */
+"Dafür fehlt die Berechtigung." = "この操作を行うためのアクセス権がありません。";
+"Das ist ein Ordner, keine Datei." = "これはファイルではなくフォルダです。";
+"Der Dateiname ist ungültig." = "ファイル名が無効です。";
+"Der Datenträger ist schreibgeschützt." = "ボリュームは読み出し専用です。";
+"Der Datenträger ist voll." = "ボリュームがいっぱいです。";
+"Der Ordner ist nicht leer." = "フォルダが空ではありません。";
+"Der Vorgang hat zu lange gedauert." = "処理に時間がかかりすぎました。";
+"Die Datei ist gerade belegt." = "ファイルは現在使用中です。";
+"Die Datei ist zu groß." = "ファイルが大きすぎます。";
+"Die Datei oder der Ordner existiert nicht." = "ファイルまたはフォルダが存在しません。";
+"Die Gegenstelle hat die Verbindung abgelehnt." = "接続先が接続を拒否しました。";
+"Ein Teil des Pfads ist kein Ordner." = "パスの一部がフォルダではありません。";
+"Es gibt dort schon eine Datei dieses Namens." = "同じ名前のファイルがすでに存在します。";

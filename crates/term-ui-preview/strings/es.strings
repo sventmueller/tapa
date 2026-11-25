@@ -1,0 +1,10 @@
+/* Spanish interface texts; the keys are the German texts in the code. */
+"Bild: {}" = "Imagen: {}";
+"Bilder aus dem Netz laden" = "Cargar imágenes de la web";
+"Das Bild lässt sich nicht anzeigen." = "No se puede mostrar la imagen.";
+"Der Ordner ist nicht vertraut: Bilder aus dem Netz bleiben ungeladen." = "La carpeta no es de confianza: las imágenes de la web no se cargan.";
+"Die Datei ist kein lesbares PDF." = "El archivo no es un PDF legible.";
+"Lädt …" = "Cargando…";
+"PDF: {}" = "PDF: {}";
+"Vorschau: {}" = "Vista previa: {}";
+"„{}“ lässt sich nicht öffnen." = "No se puede abrir «{}».";

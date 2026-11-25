@@ -1,0 +1,14 @@
+/* English interface texts; the keys are the German texts in the code. */
+"Dafür fehlt die Berechtigung." = "Permission is missing for this.";
+"Das ist ein Ordner, keine Datei." = "This is a folder, not a file.";
+"Der Dateiname ist ungültig." = "The file name is not valid.";
+"Der Datenträger ist schreibgeschützt." = "The volume is read-only.";
+"Der Datenträger ist voll." = "The volume is full.";
+"Der Ordner ist nicht leer." = "The folder is not empty.";
+"Der Vorgang hat zu lange gedauert." = "The operation took too long.";
+"Die Datei ist gerade belegt." = "The file is in use right now.";
+"Die Datei ist zu groß." = "The file is too large.";
+"Die Datei oder der Ordner existiert nicht." = "The file or folder does not exist.";
+"Die Gegenstelle hat die Verbindung abgelehnt." = "The other side refused the connection.";
+"Ein Teil des Pfads ist kein Ordner." = "Part of the path is not a folder.";
+"Es gibt dort schon eine Datei dieses Namens." = "A file with this name already exists there.";

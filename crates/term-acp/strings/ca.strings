@@ -1,0 +1,14 @@
+/* Catalan interface texts; the keys are the German texts in the code. */
+"Der Agent hat auf {} nicht rechtzeitig geantwortet." = "L’agent no ha respost a temps a {}.";
+"Der Agent ist nicht gestartet: {}" = "L’agent no s’ha iniciat: {}";
+"Der Agent spricht die Protokollversion {}, diese App Version 1" = "L’agent utilitza la versió {} del protocol, i aquesta app, la versió 1";
+"Der Agent verlangt eine Anmeldung." = "L’agent demana que iniciïs la sessió.";
+"Die Sitzung ist beendet." = "La sessió ha acabat.";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "Aquesta sol·licitud ja no espera cap resposta.";
+"{} startet nur in einem vertrauten Arbeitsbereich." = "{} només s’inicia en un espai de treball de confiança.";
+"{} wurde nicht gefunden." = "No s’ha trobat {}.";
+"Die Installation wurde nicht bestätigt." = "No s’ha confirmat la instal·lació.";
+"{} {} oder neuer wird gebraucht" = "Cal {} {} o posterior";
+"{} wird gebraucht" = "Cal {}";
+"Der Download ist fehlgeschlagen: {}" = "La descàrrega ha fallat: {}";
+"Der Download stimmt nicht mit seiner Prüfsumme überein und wurde verworfen" = "La descàrrega no coincideix amb la seva suma de verificació i s’ha descartat";

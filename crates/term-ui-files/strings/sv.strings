@@ -1,0 +1,7 @@
+/* Swedish interface texts; the keys are the German texts in the code. */
+"Abbrechen" = "Avbryt";
+"Alle einklappen" = "Fäll ihop alla";
+"Dateien" = "Filer";
+"Neue Datei …" = "Ny fil…";
+"Neuer Ordner …" = "Ny mapp…";
+"OK" = "OK";

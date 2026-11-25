@@ -1,0 +1,14 @@
+/* Swedish interface texts; the keys are the German texts in the code. */
+"Dafür fehlt die Berechtigung." = "Behörighet saknas för detta.";
+"Das ist ein Ordner, keine Datei." = "Detta är en mapp, inte en fil.";
+"Der Dateiname ist ungültig." = "Filnamnet är ogiltigt.";
+"Der Datenträger ist schreibgeschützt." = "Volymen är skrivskyddad.";
+"Der Datenträger ist voll." = "Volymen är full.";
+"Der Ordner ist nicht leer." = "Mappen är inte tom.";
+"Der Vorgang hat zu lange gedauert." = "Åtgärden tog för lång tid.";
+"Die Datei ist gerade belegt." = "Filen används just nu.";
+"Die Datei ist zu groß." = "Filen är för stor.";
+"Die Datei oder der Ordner existiert nicht." = "Filen eller mappen finns inte.";
+"Die Gegenstelle hat die Verbindung abgelehnt." = "Motparten nekade anslutningen.";
+"Ein Teil des Pfads ist kein Ordner." = "En del av sökvägen är inte en mapp.";
+"Es gibt dort schon eine Datei dieses Namens." = "Det finns redan en fil med det här namnet där.";

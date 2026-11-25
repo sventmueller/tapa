@@ -1,0 +1,10 @@
+/* Indonesian interface texts; the keys are the German texts in the code. */
+"Bild: {}" = "Gambar: {}";
+"Bilder aus dem Netz laden" = "Muat Gambar dari Web";
+"Das Bild lässt sich nicht anzeigen." = "Gambar tidak dapat ditampilkan.";
+"Der Ordner ist nicht vertraut: Bilder aus dem Netz bleiben ungeladen." = "Folder tidak tepercaya: gambar dari web tidak dimuat.";
+"Die Datei ist kein lesbares PDF." = "File ini bukan PDF yang dapat dibaca.";
+"Lädt …" = "Memuat…";
+"PDF: {}" = "PDF: {}";
+"Vorschau: {}" = "Pratinjau: {}";
+"„{}“ lässt sich nicht öffnen." = "“{}” tidak dapat dibuka.";

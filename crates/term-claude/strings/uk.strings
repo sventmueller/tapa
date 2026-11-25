@@ -1,0 +1,13 @@
+/* Ukrainian interface texts; the keys are the German texts in the code. */
+"Claude Code hat das Zurückspulen abgelehnt: {}" = "Claude Code відхилив відкат: {}";
+"Claude Code hat nicht rechtzeitig geantwortet." = "Claude Code не відповів вчасно.";
+"Claude Code ist beendet." = "Claude Code завершив роботу.";
+"Claude Code ist nicht gestartet: {}" = "Claude Code не запустився: {}";
+"Claude Code lehnt ab: {}" = "Claude Code відмовляє: {}";
+"Claude Code liest seine Eingabe nicht mehr." = "Claude Code більше не читає свій ввід.";
+"Claude Code ließ sich nicht starten: {}" = "Не вдалося запустити Claude Code: {}";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "Цей запит більше не чекає на відповідь.";
+"Diese Version von Claude Code kann das hier nicht." = "Ця версія Claude Code не може зробити це тут.";
+"Melde dich an, indem du claude im Terminal startest: {}" = "Увійдіть, запустивши claude у терміналі: {}";
+"Unerwartete Antwort: {}" = "Неочікувана відповідь: {}";
+"{} wurde nicht gefunden." = "Не знайдено: {}.";

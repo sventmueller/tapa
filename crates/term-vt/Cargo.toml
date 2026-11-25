@@ -1,0 +1,24 @@
+[package]
+name = "term-vt"
+version.workspace = true
+description = "The terminal's VT core: shell integration marks and working directory in the output, later parser and screen"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[lints]
+workspace = true
+
+[features]
+# Entry points for the fuzz targets in `fuzz/`.
+fuzzing = []
+
+[dependencies]
+libc.workspace = true
+memchr.workspace = true
+unicode-width = "0.2"
+regex = { version = "1", default-features = false, features = ["std", "perf", "unicode"] }
+
+[dev-dependencies]
+proptest = "1.12.0"

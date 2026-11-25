@@ -1,0 +1,13 @@
+/* Slovenian interface texts; the keys are the German texts in the code. */
+"Claude Code hat das Zurückspulen abgelehnt: {}" = "Claude Code je zavrnil previjanje nazaj: {}";
+"Claude Code hat nicht rechtzeitig geantwortet." = "Claude Code ni pravočasno odgovoril.";
+"Claude Code ist beendet." = "Claude Code se je končal.";
+"Claude Code ist nicht gestartet: {}" = "Claude Code se ni zagnal: {}";
+"Claude Code lehnt ab: {}" = "Claude Code zavrača: {}";
+"Claude Code liest seine Eingabe nicht mehr." = "Claude Code ne bere več svojega vnosa.";
+"Claude Code ließ sich nicht starten: {}" = "Claude Code se ni mogel zagnati: {}";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "Ta zahteva ne čaka več na odgovor.";
+"Diese Version von Claude Code kann das hier nicht." = "Ta različica Claude Code tega tukaj ne zmore.";
+"Melde dich an, indem du claude im Terminal startest: {}" = "Vpišite se tako, da v terminalu zaženete claude: {}";
+"Unerwartete Antwort: {}" = "Nepričakovan odgovor: {}";
+"{} wurde nicht gefunden." = "{} ni bilo najdeno.";

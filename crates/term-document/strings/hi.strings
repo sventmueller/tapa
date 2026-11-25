@@ -1,0 +1,8 @@
+/* Hindi interface texts; the keys are the German texts in the code. */
+"Das Dokument hat noch keine Datei." = "दस्तावेज़ की अभी कोई फ़ाइल नहीं है।";
+"Das Dokument ist schreibgeschützt." = "दस्तावेज़ केवल पढ़ने के लिए है।";
+"Die Datei enthält Binärdaten und wird nie gesichert." = "फ़ाइल में बाइनरी डेटा है और उसे कभी सहेजा नहीं जाता।";
+"Die Datei ist schreibgeschützt." = "यह फ़ाइल केवल पढ़ने के लिए है।";
+"Die Datei wurde inzwischen außerhalb geändert." = "इस बीच फ़ाइल को एडिटर के बाहर बदला गया है।";
+"Die Kodierung der Datei ist unbekannt; sie wird nie gesichert." = "फ़ाइल की एन्कोडिंग अज्ञात है; उसे कभी सहेजा नहीं जाता।";
+"Die Stelle liegt außerhalb des Textes: {}" = "स्थान टेक्स्ट के बाहर है : {}";

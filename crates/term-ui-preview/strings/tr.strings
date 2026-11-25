@@ -1,0 +1,10 @@
+/* Turkish interface texts; the keys are the German texts in the code. */
+"Bild: {}" = "Görüntü: {}";
+"Bilder aus dem Netz laden" = "Web’deki Görüntüleri Yükle";
+"Das Bild lässt sich nicht anzeigen." = "Görüntü gösterilemiyor.";
+"Der Ordner ist nicht vertraut: Bilder aus dem Netz bleiben ungeladen." = "Klasöre güvenilmiyor: Web’deki görüntüler yüklenmez.";
+"Die Datei ist kein lesbares PDF." = "Dosya okunabilir bir PDF değil.";
+"Lädt …" = "Yükleniyor…";
+"PDF: {}" = "PDF: {}";
+"Vorschau: {}" = "Önizleme: {}";
+"„{}“ lässt sich nicht öffnen." = "“{}” açılamıyor.";

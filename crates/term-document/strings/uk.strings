@@ -1,0 +1,8 @@
+/* Ukrainian interface texts; the keys are the German texts in the code. */
+"Das Dokument hat noch keine Datei." = "Документ ще не має файлу.";
+"Das Dokument ist schreibgeschützt." = "Документ доступний лише для читання.";
+"Die Datei enthält Binärdaten und wird nie gesichert." = "Файл містить двійкові дані й ніколи не зберігається.";
+"Die Datei ist schreibgeschützt." = "Файл доступний лише для читання.";
+"Die Datei wurde inzwischen außerhalb geändert." = "Тим часом файл змінено ззовні.";
+"Die Kodierung der Datei ist unbekannt; sie wird nie gesichert." = "Кодування файлу невідоме; він ніколи не зберігається.";
+"Die Stelle liegt außerhalb des Textes: {}" = "Позиція поза межами тексту: {}";

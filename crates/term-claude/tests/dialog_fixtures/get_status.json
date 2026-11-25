@@ -1,0 +1,50 @@
+{
+ "sections": [
+  {
+   "title": "Session",
+   "rows": [
+    {
+     "label": "Version",
+     "value": "2.1.325"
+    },
+    {
+     "label": "Session ID",
+     "value": "da0e90d9-d68c-49bc-ba83-4d0787a80337"
+    },
+    {
+     "label": "Session kind",
+     "value": "interactive"
+    },
+    {
+     "label": "Peer address",
+     "value": "uds:/tmp/cc-socks/90958.sock"
+    },
+    {
+     "label": "cwd",
+     "value": "/private/tmp/a0/proj"
+    }
+   ]
+  },
+  {
+   "title": "Environment",
+   "rows": [
+    {
+     "label": "Model",
+     "value": "claude-opus-5-5"
+    },
+    {
+     "label": "MCP servers",
+     "value": "1 pending, 1 failed · /mcp"
+    },
+    {
+     "label": "Setting sources",
+     "value": "User settings"
+    },
+    {
+     "label": "Auto mode server",
+     "value": "Disabled"
+    }
+   ]
+  }
+ ]
+}

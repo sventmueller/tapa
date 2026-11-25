@@ -1,0 +1,7 @@
+/* Ukrainian interface texts; the keys are the German texts in the code. */
+"Abbrechen" = "Скасувати";
+"Alle einklappen" = "Згорнути все";
+"Dateien" = "Файли";
+"Neue Datei …" = "Новий файл…";
+"Neuer Ordner …" = "Нова папка…";
+"OK" = "OK";

@@ -1,0 +1,18 @@
+/* Catalan interface texts; the keys are the German texts in the code. */
+"Als Vorschau öffnen" = "Obre com a previsualització";
+"Daneben öffnen" = "Obre al costat";
+"Darunter öffnen" = "Obre a sota";
+"Im Browser-Tab öffnen" = "Obre a la pestanya del navegador";
+"Im Finder zeigen" = "Mostra al Finder";
+"In den Papierkorb legen" = "Trasllada a la paperera";
+"Neue Datei" = "Nou fitxer";
+"Neue Datei …" = "Nou fitxer…";
+"Neuer Ordner" = "Nova carpeta";
+"Neuer Ordner …" = "Nova carpeta…";
+"Pfad kopieren" = "Copia la ruta";
+"Relativen Pfad kopieren" = "Copia la ruta relativa";
+"Umbenennen" = "Canvia el nom";
+"Umbenennen …" = "Canvia el nom…";
+"„{}“ gibt es schon." = "“{}” ja existeix.";
+"„{}“ wurde nicht angelegt." = "No s’ha creat “{}”.";
+"„{}“ wurde nicht umbenannt." = "No s’ha canviat el nom de “{}”.";

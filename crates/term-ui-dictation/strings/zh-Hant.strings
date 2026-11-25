@@ -1,0 +1,27 @@
+/* Traditional Chinese interface texts; the keys are the German texts in the code. */
+"API-Schlüssel für {}" = "{} 的 API 金鑰";
+"Abgebrochen" = "已取消";
+"Das Diktat ist gerade beschäftigt." = "聽寫目前正忙碌中。";
+"Das Feld des Diktats ist nicht mehr offen. Der Text liegt in der Zwischenablage." = "聽寫的目標欄位已關閉。文字已在剪貼板上。";
+"Das ist kein Schlüssel von OpenAI (sk-…) oder Groq (gsk_…)." = "這不是 OpenAI（sk-…）或 Groq（gsk_…）的金鑰。";
+"Das lokale Modell ist nicht installiert. Lade es in den Einstellungen unter Diktat." = "未安裝本機模型。請在設定的「聽寫」中下載。";
+"Der Schlüsselbund lehnt ab: {}" = "鑰匙圈拒絕：{}";
+"Die Aufnahme hat ihre Höchstdauer erreicht." = "錄音已達最長時間。";
+"Diktat beenden" = "停止聽寫";
+"Diktat starten" = "開始聽寫";
+"Höre zu …" = "正在聆聽…";
+"Kein API-Schlüssel für {}. Trage ihn in den Einstellungen unter Diktat ein." = "沒有 {} 的 API 金鑰。請在設定的「聽寫」中輸入。";
+"Keine Sprache erkannt" = "未辨識到語音";
+"Lowspeak hat einen Schlüssel für {}. Für {} übernehmen?" = "Lowspeak 有 {} 的金鑰。要也用於 {} 嗎？";
+"Lowspeak hat keinen Schlüssel mehr." = "Lowspeak 已沒有金鑰。";
+"Lowspeak meldet: {}" = "Lowspeak 回報：{}";
+"Lowspeak transkribiert online mit {}. {} braucht dafür einen eigenen Schlüssel und legt ihn im Schlüsselbund ab." = "Lowspeak 使用 {} 進行線上轉錄。{} 需要自己的金鑰，並會將其存放在鑰匙圈中。";
+"Lowspeaks Schlüssel ließ sich nicht lesen. Gib den Schlüssel selbst ein." = "無法讀取 Lowspeak 的金鑰。請自行輸入金鑰。";
+"Nicht jetzt" = "現在不要";
+"Selbst eingeben …" = "自行輸入…";
+"Sichern" = "儲存";
+"Transkribiere …" = "正在轉錄…";
+"{} bietet {} nicht mehr an. Wähle in den Einstellungen unter Diktat ein anderes Modell." = "{} 已不再提供 {}。請在設定的「聽寫」中選擇其他模型。";
+"{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "{} 無法取用麥克風。請在「系統設定」→「隱私權與安全性」→「麥克風」中允許取用。";
+"{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "{} 只會為此讀取一次，macOS 會先詢問你。請選擇「允許」，而非「永遠允許」：這樣 Lowspeak 的項目會保持不變。{} 會將金鑰存放在自己的項目中。";
+"Übernehmen" = "使用金鑰";

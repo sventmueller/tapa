@@ -1,0 +1,14 @@
+/* Hebrew interface texts; the keys are the German texts in the code. */
+"Dafür fehlt die Berechtigung." = "חסרה הרשאה לכך.";
+"Das ist ein Ordner, keine Datei." = "זוהי תיקייה, לא קובץ.";
+"Der Dateiname ist ungültig." = "שם הקובץ אינו תקין.";
+"Der Datenträger ist schreibgeschützt." = "אמצעי האחסון מוגן מפני כתיבה.";
+"Der Datenträger ist voll." = "אמצעי האחסון מלא.";
+"Der Ordner ist nicht leer." = "התיקייה אינה ריקה.";
+"Der Vorgang hat zu lange gedauert." = "הפעולה נמשכה זמן רב מדי.";
+"Die Datei ist gerade belegt." = "הקובץ נמצא כעת בשימוש.";
+"Die Datei ist zu groß." = "הקובץ גדול מדי.";
+"Die Datei oder der Ordner existiert nicht." = "הקובץ או התיקייה אינם קיימים.";
+"Die Gegenstelle hat die Verbindung abgelehnt." = "הצד השני דחה את החיבור.";
+"Ein Teil des Pfads ist kein Ordner." = "חלק מהנתיב אינו תיקייה.";
+"Es gibt dort schon eine Datei dieses Namens." = "כבר קיים שם קובץ בשם זה.";

@@ -1,0 +1,8 @@
+/* Czech interface texts; the keys are the German texts in the code. */
+"Das Dokument hat noch keine Datei." = "Dokument zatím nemá soubor.";
+"Das Dokument ist schreibgeschützt." = "Dokument je jen pro čtení.";
+"Die Datei enthält Binärdaten und wird nie gesichert." = "Soubor obsahuje binární data a nikdy se neuloží.";
+"Die Datei ist schreibgeschützt." = "Soubor je jen pro čtení.";
+"Die Datei wurde inzwischen außerhalb geändert." = "Soubor byl mezitím změněn jinde.";
+"Die Kodierung der Datei ist unbekannt; sie wird nie gesichert." = "Kódování souboru je neznámé; soubor se nikdy neuloží.";
+"Die Stelle liegt außerhalb des Textes: {}" = "Místo leží mimo text: {}";

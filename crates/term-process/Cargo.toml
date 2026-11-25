@@ -1,0 +1,18 @@
+[package]
+name = "term-process"
+version.workspace = true
+description = "Every process the app starts, in its own group, stopped in order and listed for the activity view"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+term-base.workspace = true
+libc.workspace = true
+
+[dev-dependencies]
+term-base = { workspace = true, features = ["testing"] }

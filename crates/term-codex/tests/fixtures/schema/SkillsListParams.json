@@ -1,0 +1,1 @@
+{"properties":{"cwds":{"items":{"type":"string"},"type":"array"},"forceReload":{"type":"boolean"}},"title":"SkillsListParams","type":"object"}

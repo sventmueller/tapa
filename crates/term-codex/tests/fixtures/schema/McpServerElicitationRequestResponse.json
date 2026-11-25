@@ -1,0 +1,1 @@
+{"definitions":{"McpServerElicitationAction":{"enum":["accept","decline","cancel"],"type":"string"}},"properties":{"_meta":{},"action":{"$ref":"#/definitions/McpServerElicitationAction"},"content":{}},"required":["action"],"title":"McpServerElicitationRequestResponse","type":"object"}

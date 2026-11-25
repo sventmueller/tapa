@@ -1,0 +1,229 @@
+[workspace]
+resolver = "3"
+members = ["crates/*", "xtask"]
+exclude = ["fuzz"]
+default-members = [".", "crates/*"]
+
+# modalkit with the patches in vendor/modalkit/PATCHES.md.
+[patch.crates-io]
+modalkit = { path = "vendor/modalkit" }
+
+[workspace.dependencies]
+term-acp = { path = "crates/term-acp" }
+term-agents = { path = "crates/term-agents" }
+term-base = { path = "crates/term-base" }
+term-claude = { path = "crates/term-claude" }
+term-codex = { path = "crates/term-codex" }
+term-config = { path = "crates/term-config" }
+term-document = { path = "crates/term-document" }
+term-fuzz = { path = "crates/term-fuzz" }
+term-git = { path = "crates/term-git" }
+term-net = { path = "crates/term-net" }
+term-opencode = { path = "crates/term-opencode" }
+term-panes = { path = "crates/term-panes" }
+term-process = { path = "crates/term-process" }
+term-product = { path = "crates/term-product" }
+term-project = { path = "crates/term-project" }
+term-render = { path = "crates/term-render" }
+term-seal = { path = "crates/term-seal" }
+term-session = { path = "crates/term-session" }
+term-suggest = { path = "crates/term-suggest" }
+term-thread = { path = "crates/term-thread" }
+term-ui = { path = "crates/term-ui" }
+term-ui-agent = { path = "crates/term-ui-agent" }
+term-ui-browser = { path = "crates/term-ui-browser" }
+term-ui-dictation = { path = "crates/term-ui-dictation" }
+term-ui-git = { path = "crates/term-ui-git" }
+term-ui-editor = { path = "crates/term-ui-editor" }
+term-ui-files = { path = "crates/term-ui-files" }
+term-ui-icons = { path = "crates/term-ui-icons" }
+term-ui-panes = { path = "crates/term-ui-panes" }
+term-ui-preview = { path = "crates/term-ui-preview" }
+term-ui-sidebar = { path = "crates/term-ui-sidebar" }
+term-vim = { path = "crates/term-vim" }
+term-vt = { path = "crates/term-vt" }
+splat-decoder = { path = "../splat/crates/splat-decoder" }
+splat-file-state = { path = "../splat/crates/splat-file-state" }
+splat-git = { path = "../splat/crates/splat-git" }
+splat-i18n = { path = "../splat/crates/splat-i18n" }
+splat-import = { path = "../splat/crates/splat-import" }
+splat-markdown = { path = "../splat/crates/splat-markdown" }
+splat-preview = { path = "../splat/crates/splat-preview" }
+splat-editor-state = { path = "../splat/crates/splat-editor-state" }
+splat-render = { path = "../splat/crates/splat-render" }
+# The owner's dictation library; it builds whisper.cpp with cmake, so only the feature `dictation` links it.
+lowspeak = { path = "../lowspeak" }
+block2 = "0.6.2"
+dispatch2 = "0.3"
+ignore = "0.4.35"
+libc = "0.2"
+memchr = "2"
+notify = { version = "9.0.0", default-features = false, features = ["macos_fsevent"] }
+objc2 = "0.6.5"
+objc2-app-kit = "0.3.2"
+objc2-application-services = "0.3.2"
+objc2-av-foundation = "0.3.2"
+objc2-core-foundation = "0.3.2"
+objc2-core-graphics = "0.3.2"
+objc2-core-image = "0.3.2"
+objc2-core-text = "0.3.2"
+objc2-foundation = "0.3.2"
+objc2-security = { version = "0.3.2", default-features = false }
+objc2-web-kit = "0.3.2"
+objc2-metal = "0.3.2"
+objc2-quartz-core = { version = "0.3.2", features = ["objc2-core-graphics", "objc2-metal"] }
+objc2-user-notifications = { version = "0.3.2", default-features = false, features = [
+    "std",
+    "bitflags",
+    "block2",
+    "UNNotification",
+    "UNNotificationContent",
+    "UNNotificationRequest",
+    "UNNotificationResponse",
+    "UNNotificationSound",
+    "UNNotificationTrigger",
+    "UNUserNotificationCenter",
+] }
+polling = "3"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+similar = { version = "3.2.1", default-features = false, features = ["std"] }
+toml = "1.2"
+toml_edit = "0.25"
+
+[workspace.package]
+# The product's one version, which only `cargo xtask deploy` raises.
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+publish = false
+rust-version = "1.100"
+
+[workspace.lints.rust]
+unsafe_op_in_unsafe_fn = "deny"
+unreachable_pub = "warn"
+missing_docs = "warn"
+
+[workspace.lints.clippy]
+undocumented_unsafe_blocks = "deny"
+dbg_macro = "warn"
+todo = "warn"
+unimplemented = "warn"
+too_many_lines = "warn"
+allow_attributes_without_reason = "warn"
+cast_possible_truncation = "warn"
+cast_possible_wrap = "warn"
+cast_sign_loss = "warn"
+unwrap_used = "warn"
+
+[package]
+name = "tapa"
+version.workspace = true
+description = "A terminal for macOS"
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+rust-version.workspace = true
+
+[[bin]]
+name = "tapa"
+path = "src/main.rs"
+
+# The sandboxed service that decodes untrusted pictures (E22); it uses splat-decoder alone, so it links no WebKit.
+[[bin]]
+name = "term-decoder"
+path = "src/decoder_main.rs"
+
+[lints]
+workspace = true
+
+[dependencies]
+term-base.workspace = true
+term-config.workspace = true
+term-panes.workspace = true
+term-process.workspace = true
+term-product.workspace = true
+term-render.workspace = true
+term-seal.workspace = true
+term-session.workspace = true
+term-suggest.workspace = true
+term-ui.workspace = true
+term-ui-icons.workspace = true
+term-ui-panes.workspace = true
+term-ui-sidebar.workspace = true
+term-ui-agent.workspace = true
+term-claude.workspace = true
+term-ui-browser.workspace = true
+term-ui-editor.workspace = true
+term-ui-files.workspace = true
+term-ui-git.workspace = true
+term-document.workspace = true
+term-ui-preview.workspace = true
+splat-decoder.workspace = true
+# Dictation through Lowspeak, which builds whisper.cpp with cmake; only the feature `dictation` builds it.
+term-ui-dictation = { workspace = true, optional = true }
+lowspeak = { workspace = true, optional = true }
+term-acp.workspace = true
+# The stand-ins the self-test's agent tabs talk to.
+term-codex = { workspace = true, optional = true }
+term-opencode = { workspace = true, optional = true }
+term-thread = { workspace = true, optional = true }
+splat-i18n.workspace = true
+block2.workspace = true
+objc2 = { workspace = true, features = ["catch-all"] }
+objc2-app-kit.workspace = true
+objc2-core-foundation.workspace = true
+objc2-core-graphics.workspace = true
+objc2-foundation.workspace = true
+objc2-quartz-core.workspace = true
+objc2-user-notifications.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+toml_edit.workspace = true
+
+[dev-dependencies]
+term-base = { workspace = true, features = ["testing"] }
+
+[[example]]
+name = "embed"
+path = "examples/embed.rs"
+
+[features]
+# What the self-test drives in the app's windows.
+selftest = [
+    "term-ui/selftest",
+    "term-ui-agent/selftest",
+    "term-ui-browser/selftest",
+    "term-ui-editor/selftest",
+    "term-ui-files/selftest",
+    "term-ui-git/selftest",
+    "term-ui-preview/selftest",
+    "splat-decoder/selftest",
+    "dep:term-codex",
+    "dep:term-opencode",
+    "dep:term-thread",
+    "term-ui-dictation?/selftest",
+]
+# Dictation through Lowspeak into the agent composer and the editor; release bundles turn it on (xtask bundle --release).
+dictation = [
+    "dep:term-ui-dictation",
+    "term-ui-dictation/engine",
+    "dep:lowspeak",
+    "term-ui-agent/dictation",
+    "term-ui-editor/dictation",
+]
+
+[profile.dev.package."*"]
+opt-level = 2
+
+[profile.release]
+lto = "thin"
+overflow-checks = true
+
+[profile.dist]
+inherits = "release"
+lto = "fat"
+codegen-units = 1
+strip = "symbols"
+debug = "line-tables-only"
+split-debuginfo = "packed"

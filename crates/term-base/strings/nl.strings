@@ -1,0 +1,14 @@
+/* Dutch interface texts; the keys are the German texts in the code. */
+"Dafür fehlt die Berechtigung." = "Hiervoor ontbreekt de toestemming.";
+"Das ist ein Ordner, keine Datei." = "Dit is een map, geen bestand.";
+"Der Dateiname ist ungültig." = "De bestandsnaam is ongeldig.";
+"Der Datenträger ist schreibgeschützt." = "Het volume is alleen-lezen.";
+"Der Datenträger ist voll." = "Het volume is vol.";
+"Der Ordner ist nicht leer." = "De map is niet leeg.";
+"Der Vorgang hat zu lange gedauert." = "De bewerking duurde te lang.";
+"Die Datei ist gerade belegt." = "Het bestand is momenteel in gebruik.";
+"Die Datei ist zu groß." = "Het bestand is te groot.";
+"Die Datei oder der Ordner existiert nicht." = "Het bestand of de map bestaat niet.";
+"Die Gegenstelle hat die Verbindung abgelehnt." = "De andere kant heeft de verbinding geweigerd.";
+"Ein Teil des Pfads ist kein Ordner." = "Een deel van het pad is geen map.";
+"Es gibt dort schon eine Datei dieses Namens." = "Er staat daar al een bestand met deze naam.";

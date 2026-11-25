@@ -1,0 +1,14 @@
+/* Traditional Chinese interface texts; the keys are the German texts in the code. */
+"Dafür fehlt die Berechtigung." = "缺少執行此操作的權限。";
+"Das ist ein Ordner, keine Datei." = "這是檔案夾，而不是檔案。";
+"Der Dateiname ist ungültig." = "檔案名稱無效。";
+"Der Datenträger ist schreibgeschützt." = "此卷宗為唯讀。";
+"Der Datenträger ist voll." = "此卷宗已滿。";
+"Der Ordner ist nicht leer." = "檔案夾不是空的。";
+"Der Vorgang hat zu lange gedauert." = "操作耗時過久。";
+"Die Datei ist gerade belegt." = "檔案目前正在使用中。";
+"Die Datei ist zu groß." = "檔案太大。";
+"Die Datei oder der Ordner existiert nicht." = "檔案或檔案夾不存在。";
+"Die Gegenstelle hat die Verbindung abgelehnt." = "對方拒絕了連線。";
+"Ein Teil des Pfads ist kein Ordner." = "路徑的一部分不是檔案夾。";
+"Es gibt dort schon eine Datei dieses Namens." = "該位置已有同名的檔案。";

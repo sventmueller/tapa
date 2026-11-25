@@ -1,0 +1,8 @@
+/* Swedish interface texts; the keys are the German texts in the code. */
+"Das Dokument hat noch keine Datei." = "Dokumentet har ingen fil ännu.";
+"Das Dokument ist schreibgeschützt." = "Dokumentet är skrivskyddat.";
+"Die Datei enthält Binärdaten und wird nie gesichert." = "Filen innehåller binärdata och sparas aldrig.";
+"Die Datei ist schreibgeschützt." = "Filen är skrivskyddad.";
+"Die Datei wurde inzwischen außerhalb geändert." = "Filen har ändrats någon annanstans under tiden.";
+"Die Kodierung der Datei ist unbekannt; sie wird nie gesichert." = "Filens teckenkodning är okänd; den sparas aldrig.";
+"Die Stelle liegt außerhalb des Textes: {}" = "Platsen ligger utanför texten: {}";

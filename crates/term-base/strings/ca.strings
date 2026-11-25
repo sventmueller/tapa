@@ -1,0 +1,14 @@
+/* Catalan interface texts; the keys are the German texts in the code. */
+"Dafür fehlt die Berechtigung." = "Falta el permís necessari.";
+"Das ist ein Ordner, keine Datei." = "Això és una carpeta, no un fitxer.";
+"Der Dateiname ist ungültig." = "El nom del fitxer no és vàlid.";
+"Der Datenträger ist schreibgeschützt." = "El volum és només de lectura.";
+"Der Datenträger ist voll." = "El volum és ple.";
+"Der Ordner ist nicht leer." = "La carpeta no és buida.";
+"Der Vorgang hat zu lange gedauert." = "L’operació ha trigat massa.";
+"Die Datei ist gerade belegt." = "El fitxer està en ús ara mateix.";
+"Die Datei ist zu groß." = "El fitxer és massa gran.";
+"Die Datei oder der Ordner existiert nicht." = "El fitxer o la carpeta no existeix.";
+"Die Gegenstelle hat die Verbindung abgelehnt." = "L’altre extrem ha rebutjat la connexió.";
+"Ein Teil des Pfads ist kein Ordner." = "Una part del camí no és una carpeta.";
+"Es gibt dort schon eine Datei dieses Namens." = "Ja hi ha un fitxer amb aquest nom en aquesta ubicació.";

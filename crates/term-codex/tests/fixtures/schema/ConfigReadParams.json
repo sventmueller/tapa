@@ -1,0 +1,1 @@
+{"properties":{"cwd":{"type":["string","null"]},"includeLayers":{"type":"boolean"}},"title":"ConfigReadParams","type":"object"}

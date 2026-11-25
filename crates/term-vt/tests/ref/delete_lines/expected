@@ -1,0 +1,33 @@
+size 116 31 0
+cursor 12 32
+line 0 -rw-r--r--  1 undeadleech undeadleech   10 Nov 15 20:33 .agignore
+line 1 drwxr-xr-x  3 undeadleech undeadleech  100 Nov 15 20:33 alacritty
+line 2 -rw-r--r--  1 undeadleech undeadleech   41 Nov 15 21:10 alacritty.recording
+line 3 drwxr-xr-x  4 undeadleech undeadleech  120 Nov 15 20:33 alacritty_terminal
+line 4 -rw-r--r--  1 undeadleech undeadleech  17K Nov 15 20:33 alacritty.yml
+line 5 -rw-r--r--  1 undeadleech undeadleech 128K Nov 15 20:33 Cargo.lock
+line 6 -rw-r--r--  1 undeadleech undeadleech  245 Nov 15 20:33 Cargo.toml
+line 7 -rw-r--r--  1 undeadleech undeadleech  22K Nov 15 20:38 CHANGELOG.md
+line 8 drwxr-xr-x  4 undeadleech undeadleech  140 Nov 15 20:33 ci
+line 9 -rw-r--r--  1 undeadleech undeadleech 5.5K Nov 15 20:33 CONTRIBUTING.md
+line 10 [undeadleech@archhq alacritty]$ echo -e "\e[1000M"20:33 .copr
+line 11 
+line 12 [undeadleech@archhq alacritty]$
+line 13 
+line 14 
+line 15 
+line 16 
+line 17 
+line 18 
+line 19 
+line 20 
+line 21 
+line 22 
+line 23 
+line 24 
+line 25 
+line 26 
+line 27 
+line 28 
+line 29 
+line 30 

@@ -1,0 +1,10 @@
+/* Catalan interface texts; the keys are the German texts in the code. */
+"Bild: {}" = "Imatge: {}";
+"Bilder aus dem Netz laden" = "Carrega les imatges del web";
+"Das Bild lässt sich nicht anzeigen." = "No es pot mostrar la imatge.";
+"Der Ordner ist nicht vertraut: Bilder aus dem Netz bleiben ungeladen." = "La carpeta no és de confiança: les imatges del web no es carreguen.";
+"Die Datei ist kein lesbares PDF." = "El fitxer no és un PDF llegible.";
+"Lädt …" = "Carregant…";
+"PDF: {}" = "PDF: {}";
+"Vorschau: {}" = "Previsualització: {}";
+"„{}“ lässt sich nicht öffnen." = "No s’ha pogut obrir “{}”.";

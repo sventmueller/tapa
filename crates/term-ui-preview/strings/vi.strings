@@ -1,0 +1,10 @@
+/* Vietnamese interface texts; the keys are the German texts in the code. */
+"Bild: {}" = "Hình ảnh: {}";
+"Bilder aus dem Netz laden" = "Tải hình ảnh từ web";
+"Das Bild lässt sich nicht anzeigen." = "Không thể hiển thị hình ảnh.";
+"Der Ordner ist nicht vertraut: Bilder aus dem Netz bleiben ungeladen." = "Thư mục chưa được tin cậy: hình ảnh từ web sẽ không được tải.";
+"Die Datei ist kein lesbares PDF." = "Tệp không phải là PDF có thể đọc được.";
+"Lädt …" = "Đang tải…";
+"PDF: {}" = "PDF: {}";
+"Vorschau: {}" = "Xem trước: {}";
+"„{}“ lässt sich nicht öffnen." = "Không thể mở “{}”.";

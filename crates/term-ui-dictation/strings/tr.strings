@@ -1,0 +1,27 @@
+/* Turkish interface texts; the keys are the German texts in the code. */
+"API-Schlüssel für {}" = "{} İçin API Anahtarı";
+"Abgebrochen" = "İptal edildi";
+"Das Diktat ist gerade beschäftigt." = "Dikte şu anda meşgul.";
+"Das Feld des Diktats ist nicht mehr offen. Der Text liegt in der Zwischenablage." = "Dikte alanı artık açık değil. Metin panoda.";
+"Das ist kein Schlüssel von OpenAI (sk-…) oder Groq (gsk_…)." = "Bu bir OpenAI (sk-…) veya Groq (gsk_…) anahtarı değil.";
+"Das lokale Modell ist nicht installiert. Lade es in den Einstellungen unter Diktat." = "Yerel model yüklü değil. Ayarlar’da “Dikte” altında indirin.";
+"Der Schlüsselbund lehnt ab: {}" = "Anahtar Zinciri reddediyor: {}";
+"Die Aufnahme hat ihre Höchstdauer erreicht." = "Kayıt en uzun süresine ulaştı.";
+"Diktat beenden" = "Dikteyi Durdur";
+"Diktat starten" = "Dikteyi Başlat";
+"Höre zu …" = "Dinleniyor…";
+"Kein API-Schlüssel für {}. Trage ihn in den Einstellungen unter Diktat ein." = "{} için API anahtarı yok. Ayarlar’da “Dikte” altında girin.";
+"Keine Sprache erkannt" = "Konuşma algılanmadı";
+"Lowspeak hat einen Schlüssel für {}. Für {} übernehmen?" = "Lowspeak’te {} için bir anahtar var. {} için de kullanılsın mı?";
+"Lowspeak hat keinen Schlüssel mehr." = "Lowspeak’in artık anahtarı yok.";
+"Lowspeak meldet: {}" = "Lowspeak bildiriyor: {}";
+"Lowspeak transkribiert online mit {}. {} braucht dafür einen eigenen Schlüssel und legt ihn im Schlüsselbund ab." = "Lowspeak, {} ile çevrimiçi metne dönüştürür. {} bunun için kendi anahtarına ihtiyaç duyar ve onu Anahtar Zinciri’nde saklar.";
+"Lowspeaks Schlüssel ließ sich nicht lesen. Gib den Schlüssel selbst ein." = "Lowspeak’in anahtarı okunamadı. Anahtarı kendiniz girin.";
+"Nicht jetzt" = "Şimdi Değil";
+"Selbst eingeben …" = "Kendim Gireceğim…";
+"Sichern" = "Kaydet";
+"Transkribiere …" = "Metne dönüştürülüyor…";
+"{} bietet {} nicht mehr an. Wähle in den Einstellungen unter Diktat ein anderes Modell." = "{} artık {} modelini sunmuyor. Ayarlar’da “Dikte” altında başka bir model seçin.";
+"{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "{} mikrofona erişemiyor. Sistem Ayarları > Gizlilik ve Güvenlik > Mikrofon bölümünden izin verin.";
+"{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "{} bunun için anahtarı bir kez okur ve macOS önce sorar. Orada “Her Zaman İzin Ver” yerine “İzin Ver” düğmesini seçin: Böylece Lowspeak’in öğesi olduğu gibi kalır. {} anahtarı kendi öğesinde saklar.";
+"Übernehmen" = "Anahtarı Kullan";

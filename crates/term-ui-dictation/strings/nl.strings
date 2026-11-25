@@ -1,0 +1,27 @@
+/* Dutch interface texts; the keys are the German texts in the code. */
+"API-Schlüssel für {}" = "API-sleutel voor {}";
+"Abgebrochen" = "Geannuleerd";
+"Das Diktat ist gerade beschäftigt." = "De dicteerfunctie is momenteel bezet.";
+"Das Feld des Diktats ist nicht mehr offen. Der Text liegt in der Zwischenablage." = "Het veld van de dicteerfunctie is niet meer open. De tekst staat op het klembord.";
+"Das ist kein Schlüssel von OpenAI (sk-…) oder Groq (gsk_…)." = "Dit is geen sleutel van OpenAI (sk-…) of Groq (gsk_…).";
+"Das lokale Modell ist nicht installiert. Lade es in den Einstellungen unter Diktat." = "Het lokale model is niet geïnstalleerd. Download het bij Instellingen onder Dicteerfunctie.";
+"Der Schlüsselbund lehnt ab: {}" = "De sleutelhanger weigert: {}";
+"Die Aufnahme hat ihre Höchstdauer erreicht." = "De opname heeft de maximale duur bereikt.";
+"Diktat beenden" = "Stop dicteren";
+"Diktat starten" = "Start dicteren";
+"Höre zu …" = "Luisteren…";
+"Kein API-Schlüssel für {}. Trage ihn in den Einstellungen unter Diktat ein." = "Geen API-sleutel voor {}. Voer er een in bij Instellingen onder Dicteerfunctie.";
+"Keine Sprache erkannt" = "Geen spraak herkend";
+"Lowspeak hat einen Schlüssel für {}. Für {} übernehmen?" = "Lowspeak heeft een sleutel voor {}. Ook gebruiken voor {}?";
+"Lowspeak hat keinen Schlüssel mehr." = "Lowspeak heeft geen sleutel meer.";
+"Lowspeak meldet: {}" = "Lowspeak meldt: {}";
+"Lowspeak transkribiert online mit {}. {} braucht dafür einen eigenen Schlüssel und legt ihn im Schlüsselbund ab." = "Lowspeak transcribeert online met {}. {} heeft daarvoor een eigen sleutel nodig en bewaart die in de sleutelhanger.";
+"Lowspeaks Schlüssel ließ sich nicht lesen. Gib den Schlüssel selbst ein." = "De sleutel van Lowspeak kon niet worden gelezen. Voer de sleutel zelf in.";
+"Nicht jetzt" = "Niet nu";
+"Selbst eingeben …" = "Zelf invoeren…";
+"Sichern" = "Bewaar";
+"Transkribiere …" = "Transcriberen…";
+"{} bietet {} nicht mehr an. Wähle in den Einstellungen unter Diktat ein anderes Modell." = "{} biedt {} niet meer aan. Kies een ander model bij Instellingen onder Dicteerfunctie.";
+"{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "{} heeft geen toegang tot de microfoon. Sta het toe in Systeeminstellingen > Privacy en beveiliging > Microfoon.";
+"{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "{} leest de sleutel daarvoor één keer, en macOS vraagt eerst om toestemming. Kies daar 'Sta toe', niet 'Sta altijd toe': zo blijft het onderdeel van Lowspeak zoals het is. {} bewaart de sleutel in een eigen onderdeel.";
+"Übernehmen" = "Gebruik sleutel";

@@ -1,0 +1,18 @@
+/* Russian interface texts; the keys are the German texts in the code. */
+"Als Vorschau öffnen" = "Открыть как просмотр";
+"Daneben öffnen" = "Открыть сбоку";
+"Darunter öffnen" = "Открыть снизу";
+"Im Browser-Tab öffnen" = "Открыть во вкладке браузера";
+"Im Finder zeigen" = "Показать в Finder";
+"In den Papierkorb legen" = "Переместить в Корзину";
+"Neue Datei" = "Новый файл";
+"Neue Datei …" = "Новый файл…";
+"Neuer Ordner" = "Новая папка";
+"Neuer Ordner …" = "Новая папка…";
+"Pfad kopieren" = "Скопировать путь";
+"Relativen Pfad kopieren" = "Скопировать относительный путь";
+"Umbenennen" = "Переименовать";
+"Umbenennen …" = "Переименовать…";
+"„{}“ gibt es schon." = "«{}» уже существует.";
+"„{}“ wurde nicht angelegt." = "Не удалось создать «{}».";
+"„{}“ wurde nicht umbenannt." = "Не удалось переименовать «{}».";

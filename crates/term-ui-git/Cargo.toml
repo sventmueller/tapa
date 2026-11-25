@@ -1,0 +1,31 @@
+[package]
+name = "term-ui-git"
+version.workspace = true
+description = "The Git panel of a workspace's sidebar entry, the diff tab and the branch item of the toolbar"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+term-base.workspace = true
+term-git.workspace = true
+term-process.workspace = true
+term-render.workspace = true
+term-ui.workspace = true
+term-ui-icons.workspace = true
+splat-i18n.workspace = true
+block2.workspace = true
+objc2 = { workspace = true, features = ["catch-all"] }
+objc2-app-kit.workspace = true
+objc2-foundation.workspace = true
+
+[dev-dependencies]
+term-base = { workspace = true, features = ["testing"] }
+
+[features]
+# What the self-test reads of the panel and the diff tab and does with them.
+selftest = []

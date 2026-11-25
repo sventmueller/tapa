@@ -1,0 +1,7 @@
+/* Polish interface texts; the keys are the German texts in the code. */
+"Abbrechen" = "Anuluj";
+"Alle einklappen" = "Zwiń wszystko";
+"Dateien" = "Pliki";
+"Neue Datei …" = "Nowy plik…";
+"Neuer Ordner …" = "Nowy folder…";
+"OK" = "OK";

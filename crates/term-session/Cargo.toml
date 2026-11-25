@@ -1,0 +1,28 @@
+[package]
+name = "term-session"
+version.workspace = true
+description = "Terminal sessions: the shell in a PTY, its screen, keys and mouse as bytes, shell integration and what runs in front"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[lints]
+workspace = true
+
+# Entry points for the fuzz targets in `fuzz/`, which reach parts that are not public.
+[features]
+fuzzing = ["term-vt/fuzzing"]
+
+[dependencies]
+term-base.workspace = true
+term-vt.workspace = true
+libc.workspace = true
+memchr.workspace = true
+polling.workspace = true
+
+[dev-dependencies]
+term-base = { workspace = true, features = ["testing"] }
+term-vt.workspace = true
+term-fuzz.workspace = true
+proptest = "1.12.0"

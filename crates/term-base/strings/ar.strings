@@ -1,0 +1,14 @@
+/* Arabic interface texts; the keys are the German texts in the code. */
+"Dafür fehlt die Berechtigung." = "ليس لديك إذن لذلك.";
+"Das ist ein Ordner, keine Datei." = "هذا مجلد وليس ملفًا.";
+"Der Dateiname ist ungültig." = "اسم الملف غير صالح.";
+"Der Datenträger ist schreibgeschützt." = "وحدة التخزين للقراءة فقط.";
+"Der Datenträger ist voll." = "وحدة التخزين ممتلئة.";
+"Der Ordner ist nicht leer." = "المجلد ليس فارغًا.";
+"Der Vorgang hat zu lange gedauert." = "استغرقت العملية وقتًا طويلًا جدًا.";
+"Die Datei ist gerade belegt." = "الملف قيد الاستخدام حاليًا.";
+"Die Datei ist zu groß." = "الملف كبير جدًا.";
+"Die Datei oder der Ordner existiert nicht." = "الملف أو المجلد غير موجود.";
+"Die Gegenstelle hat die Verbindung abgelehnt." = "رفض الطرف الآخر الاتصال.";
+"Ein Teil des Pfads ist kein Ordner." = "جزء من المسار ليس مجلدًا.";
+"Es gibt dort schon eine Datei dieses Namens." = "يوجد ملف بهذا الاسم هناك بالفعل.";

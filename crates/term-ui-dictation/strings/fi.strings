@@ -1,0 +1,27 @@
+/* Finnish interface texts; the keys are the German texts in the code. */
+"API-Schlüssel für {}" = "Palvelun {} API-avain";
+"Abgebrochen" = "Peruttu";
+"Das Diktat ist gerade beschäftigt." = "Sanelu on juuri nyt varattu.";
+"Das Feld des Diktats ist nicht mehr offen. Der Text liegt in der Zwischenablage." = "Sanelun kenttä ei ole enää auki. Teksti on leikepöydällä.";
+"Das ist kein Schlüssel von OpenAI (sk-…) oder Groq (gsk_…)." = "Tämä ei ole OpenAI:n (sk-…) tai Groqin (gsk_…) avain.";
+"Das lokale Modell ist nicht installiert. Lade es in den Einstellungen unter Diktat." = "Paikallista mallia ei ole asennettu. Lataa se asetusten kohdassa Sanelu.";
+"Der Schlüsselbund lehnt ab: {}" = "Avainnippu hylkää: {}";
+"Die Aufnahme hat ihre Höchstdauer erreicht." = "Äänitys saavutti enimmäiskestonsa.";
+"Diktat beenden" = "Lopeta sanelu";
+"Diktat starten" = "Aloita sanelu";
+"Höre zu …" = "Kuunnellaan…";
+"Kein API-Schlüssel für {}. Trage ihn in den Einstellungen unter Diktat ein." = "Palvelulle {} ei ole API-avainta. Syötä se asetusten kohdassa Sanelu.";
+"Keine Sprache erkannt" = "Puhetta ei tunnistettu";
+"Lowspeak hat einen Schlüssel für {}. Für {} übernehmen?" = "Lowspeakilla on avain palvelulle {}. Käytetäänkö sitä myös apissa {}?";
+"Lowspeak hat keinen Schlüssel mehr." = "Lowspeakilla ei ole enää avainta.";
+"Lowspeak meldet: {}" = "Lowspeak ilmoittaa: {}";
+"Lowspeak transkribiert online mit {}. {} braucht dafür einen eigenen Schlüssel und legt ihn im Schlüsselbund ab." = "Lowspeak litteroi verkossa palvelulla {}. {} tarvitsee tähän oman avaimen ja tallentaa sen avainnippuun.";
+"Lowspeaks Schlüssel ließ sich nicht lesen. Gib den Schlüssel selbst ein." = "Lowspeakin avainta ei voitu lukea. Syötä avain itse.";
+"Nicht jetzt" = "Ei nyt";
+"Selbst eingeben …" = "Syötä itse…";
+"Sichern" = "Tallenna";
+"Transkribiere …" = "Litteroidaan…";
+"{} bietet {} nicht mehr an. Wähle in den Einstellungen unter Diktat ein anderes Modell." = "{} ei enää tarjoa mallia {}. Valitse toinen malli asetusten kohdassa Sanelu.";
+"{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "{} ei pääse käyttämään mikrofonia. Salli se kohdassa Järjestelmäasetukset > Tietosuoja ja turvallisuus > Mikrofoni.";
+"{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "{} lukee sen tätä varten kerran, ja macOS kysyy ensin luvan. Valitse siellä ”Salli”, älä ”Salli aina”: silloin Lowspeakin kohde pysyy ennallaan. {} tallentaa avaimen omaan kohteeseensa.";
+"Übernehmen" = "Käytä avainta";

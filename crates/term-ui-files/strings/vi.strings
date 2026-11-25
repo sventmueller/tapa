@@ -1,0 +1,7 @@
+/* Vietnamese interface texts; the keys are the German texts in the code. */
+"Abbrechen" = "Hủy";
+"Alle einklappen" = "Gấp tất cả";
+"Dateien" = "Tệp";
+"Neue Datei …" = "Tệp mới…";
+"Neuer Ordner …" = "Thư mục mới…";
+"OK" = "OK";

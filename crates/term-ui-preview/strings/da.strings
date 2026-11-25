@@ -1,0 +1,10 @@
+/* Danish interface texts; the keys are the German texts in the code. */
+"Bild: {}" = "Billede: {}";
+"Bilder aus dem Netz laden" = "Indlæs billeder fra nettet";
+"Das Bild lässt sich nicht anzeigen." = "Billedet kan ikke vises.";
+"Der Ordner ist nicht vertraut: Bilder aus dem Netz bleiben ungeladen." = "Mappen er ikke betroet: Billeder fra nettet indlæses ikke.";
+"Die Datei ist kein lesbares PDF." = "Arkivet er ikke en læsbar PDF.";
+"Lädt …" = "Indlæser…";
+"PDF: {}" = "PDF: {}";
+"Vorschau: {}" = "Eksempel: {}";
+"„{}“ lässt sich nicht öffnen." = "“{}” kan ikke åbnes.";

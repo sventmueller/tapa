@@ -1,0 +1,14 @@
+/* Turkish interface texts; the keys are the German texts in the code. */
+"Der Agent hat auf {} nicht rechtzeitig geantwortet." = "Ajan zamanında yanıt vermedi: {}";
+"Der Agent ist nicht gestartet: {}" = "Ajan başlamadı: {}";
+"Der Agent spricht die Protokollversion {}, diese App Version 1" = "Ajan {} protokol sürümünü kullanıyor; bu uygulama ise sürüm 1’i";
+"Der Agent verlangt eine Anmeldung." = "Ajan giriş yapmanızı istiyor.";
+"Die Sitzung ist beendet." = "Oturum sona erdi.";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "Bu istek artık bir yanıt beklemiyor.";
+"{} startet nur in einem vertrauten Arbeitsbereich." = "{} yalnızca güvenilen bir çalışma alanında başlar.";
+"{} wurde nicht gefunden." = "Bulunamadı: {}.";
+"Die Installation wurde nicht bestätigt." = "Yükleme onaylanmadı.";
+"{} {} oder neuer wird gebraucht" = "{} {} veya daha yenisi gerekiyor";
+"{} wird gebraucht" = "{} gerekiyor";
+"Der Download ist fehlgeschlagen: {}" = "İndirme başarısız oldu: {}";
+"Der Download stimmt nicht mit seiner Prüfsumme überein und wurde verworfen" = "İndirilen dosya sağlama toplamıyla eşleşmiyor ve atıldı";

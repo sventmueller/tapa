@@ -1,0 +1,18 @@
+/* Dutch interface texts; the keys are the German texts in the code. */
+"Als Vorschau öffnen" = "Open als voorvertoning";
+"Daneben öffnen" = "Open ernaast";
+"Darunter öffnen" = "Open eronder";
+"Im Browser-Tab öffnen" = "Open in browsertabblad";
+"Im Finder zeigen" = "Toon in Finder";
+"In den Papierkorb legen" = "Verplaats naar prullenmand";
+"Neue Datei" = "Nieuw bestand";
+"Neue Datei …" = "Nieuw bestand…";
+"Neuer Ordner" = "Nieuwe map";
+"Neuer Ordner …" = "Nieuwe map…";
+"Pfad kopieren" = "Kopieer pad";
+"Relativen Pfad kopieren" = "Kopieer relatief pad";
+"Umbenennen" = "Wijzig naam";
+"Umbenennen …" = "Wijzig naam…";
+"„{}“ gibt es schon." = "'{}' bestaat al.";
+"„{}“ wurde nicht angelegt." = "'{}' is niet aangemaakt.";
+"„{}“ wurde nicht umbenannt." = "De naam van '{}' is niet gewijzigd.";

@@ -1,0 +1,27 @@
+/* Thai interface texts; the keys are the German texts in the code. */
+"API-Schlüssel für {}" = "คีย์ API สำหรับ {}";
+"Abgebrochen" = "ยกเลิกแล้ว";
+"Das Diktat ist gerade beschäftigt." = "การป้อนตามคำบอกไม่ว่างในขณะนี้";
+"Das Feld des Diktats ist nicht mehr offen. Der Text liegt in der Zwischenablage." = "ช่องของการป้อนตามคำบอกไม่ได้เปิดอยู่แล้ว ข้อความอยู่ในคลิปบอร์ดแล้ว";
+"Das ist kein Schlüssel von OpenAI (sk-…) oder Groq (gsk_…)." = "นี่ไม่ใช่คีย์ของ OpenAI (sk-…) หรือ Groq (gsk_…)";
+"Das lokale Modell ist nicht installiert. Lade es in den Einstellungen unter Diktat." = "ไม่ได้ติดตั้งโมเดลในเครื่อง ดาวน์โหลดได้ในการตั้งค่า ส่วนการป้อนตามคำบอก";
+"Der Schlüsselbund lehnt ab: {}" = "พวงกุญแจปฏิเสธ: {}";
+"Die Aufnahme hat ihre Höchstdauer erreicht." = "การบันทึกเสียงถึงระยะเวลาสูงสุดแล้ว";
+"Diktat beenden" = "หยุดการป้อนตามคำบอก";
+"Diktat starten" = "เริ่มการป้อนตามคำบอก";
+"Höre zu …" = "กำลังฟัง…";
+"Kein API-Schlüssel für {}. Trage ihn in den Einstellungen unter Diktat ein." = "ไม่มีคีย์ API สำหรับ {} ป้อนคีย์ได้ในการตั้งค่า ส่วนการป้อนตามคำบอก";
+"Keine Sprache erkannt" = "ไม่พบเสียงพูด";
+"Lowspeak hat einen Schlüssel für {}. Für {} übernehmen?" = "Lowspeak มีคีย์สำหรับ {} ใช้คีย์นี้กับ {} ด้วยหรือไม่";
+"Lowspeak hat keinen Schlüssel mehr." = "Lowspeak ไม่มีคีย์อีกต่อไป";
+"Lowspeak meldet: {}" = "Lowspeak แจ้งว่า: {}";
+"Lowspeak transkribiert online mit {}. {} braucht dafür einen eigenen Schlüssel und legt ihn im Schlüsselbund ab." = "Lowspeak ถอดเสียงออนไลน์ด้วย {} สำหรับการนี้ {} ต้องใช้คีย์ของตัวเองและจะเก็บไว้ในพวงกุญแจ";
+"Lowspeaks Schlüssel ließ sich nicht lesen. Gib den Schlüssel selbst ein." = "ไม่สามารถอ่านคีย์ของ Lowspeak ได้ ป้อนคีย์ด้วยตัวเอง";
+"Nicht jetzt" = "ไม่ใช่ตอนนี้";
+"Selbst eingeben …" = "ป้อนเอง…";
+"Sichern" = "บันทึก";
+"Transkribiere …" = "กำลังถอดเสียง…";
+"{} bietet {} nicht mehr an. Wähle in den Einstellungen unter Diktat ein anderes Modell." = "{} เลิกให้บริการ {} แล้ว เลือกโมเดลอื่นในการตั้งค่า ส่วนการป้อนตามคำบอก";
+"{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "{} ไม่มีสิทธิ์เข้าถึงไมโครโฟน ให้อนุญาตในการตั้งค่าระบบ > ความเป็นส่วนตัวและความปลอดภัย > ไมโครโฟน";
+"{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "{} จะอ่านคีย์นี้หนึ่งครั้ง และ macOS จะถามก่อน ให้เลือก “อนุญาต” ไม่ใช่ “อนุญาตเสมอ”: รายการของ Lowspeak จะยังคงเหมือนเดิม {} จะเก็บคีย์ไว้ในรายการของตัวเอง";
+"Übernehmen" = "ใช้คีย์นี้";

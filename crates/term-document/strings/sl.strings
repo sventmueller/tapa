@@ -1,0 +1,8 @@
+/* Slovenian interface texts; the keys are the German texts in the code. */
+"Das Dokument hat noch keine Datei." = "Dokument še nima datoteke.";
+"Das Dokument ist schreibgeschützt." = "Dokument je samo za branje.";
+"Die Datei enthält Binärdaten und wird nie gesichert." = "Datoteka vsebuje binarne podatke in se nikoli ne shrani.";
+"Die Datei ist schreibgeschützt." = "Datoteka je samo za branje.";
+"Die Datei wurde inzwischen außerhalb geändert." = "Datoteka je bila medtem spremenjena drugje.";
+"Die Kodierung der Datei ist unbekannt; sie wird nie gesichert." = "Kodiranje datoteke ni znano; datoteka se nikoli ne shrani.";
+"Die Stelle liegt außerhalb des Textes: {}" = "Mesto je zunaj besedila: {}";

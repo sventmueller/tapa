@@ -1,0 +1,8 @@
+/* Romanian interface texts; the keys are the German texts in the code. */
+"Das Dokument hat noch keine Datei." = "Documentul nu are încă un fișier.";
+"Das Dokument ist schreibgeschützt." = "Documentul este doar în citire.";
+"Die Datei enthält Binärdaten und wird nie gesichert." = "Fișierul conține date binare și nu este salvat niciodată.";
+"Die Datei ist schreibgeschützt." = "Fișierul este doar în citire.";
+"Die Datei wurde inzwischen außerhalb geändert." = "Fișierul a fost modificat între timp în altă parte.";
+"Die Kodierung der Datei ist unbekannt; sie wird nie gesichert." = "Codificarea fișierului este necunoscută; fișierul nu este salvat niciodată.";
+"Die Stelle liegt außerhalb des Textes: {}" = "Poziția se află în afara textului: {}";

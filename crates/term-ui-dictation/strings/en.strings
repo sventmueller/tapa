@@ -1,0 +1,27 @@
+/* English interface texts; the keys are the German texts in the code. */
+"API-Schlüssel für {}" = "API Key for {}";
+"Abgebrochen" = "Cancelled";
+"Das Diktat ist gerade beschäftigt." = "Dictation is busy right now.";
+"Das Feld des Diktats ist nicht mehr offen. Der Text liegt in der Zwischenablage." = "The field of the dictation is no longer open. The text is on the clipboard.";
+"Das ist kein Schlüssel von OpenAI (sk-…) oder Groq (gsk_…)." = "That is not a key from OpenAI (sk-…) or Groq (gsk_…).";
+"Das lokale Modell ist nicht installiert. Lade es in den Einstellungen unter Diktat." = "The local model is not installed. Download it in Settings under Dictation.";
+"Der Schlüsselbund lehnt ab: {}" = "The keychain refuses: {}";
+"Die Aufnahme hat ihre Höchstdauer erreicht." = "The recording reached its maximum length.";
+"Diktat beenden" = "Stop Dictation";
+"Diktat starten" = "Start Dictation";
+"Höre zu …" = "Listening…";
+"Kein API-Schlüssel für {}. Trage ihn in den Einstellungen unter Diktat ein." = "No API key for {}. Enter one in Settings under Dictation.";
+"Keine Sprache erkannt" = "No speech recognized";
+"Lowspeak hat einen Schlüssel für {}. Für {} übernehmen?" = "Lowspeak has a key for {}. Use it for {} too?";
+"Lowspeak hat keinen Schlüssel mehr." = "Lowspeak no longer has a key.";
+"Lowspeak meldet: {}" = "Lowspeak reports: {}";
+"Lowspeak transkribiert online mit {}. {} braucht dafür einen eigenen Schlüssel und legt ihn im Schlüsselbund ab." = "Lowspeak transcribes online with {}. {} needs a key of its own for that and keeps it in the keychain.";
+"Lowspeaks Schlüssel ließ sich nicht lesen. Gib den Schlüssel selbst ein." = "Lowspeak’s key could not be read. Enter the key yourself.";
+"Nicht jetzt" = "Not Now";
+"Selbst eingeben …" = "Enter It Myself…";
+"Sichern" = "Save";
+"Transkribiere …" = "Transcribing…";
+"{} bietet {} nicht mehr an. Wähle in den Einstellungen unter Diktat ein anderes Modell." = "{} no longer offers {}. Choose another model in Settings under Dictation.";
+"{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "{} has no access to the microphone. Allow it in System Settings under Privacy & Security > Microphone.";
+"{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "{} reads it once for that, and macOS asks first. Choose “Allow”, not “Always Allow”: that leaves Lowspeak’s item as it is. {} keeps the key in an item of its own.";
+"Übernehmen" = "Use Key";

@@ -1,0 +1,7 @@
+/* Croatian interface texts; the keys are the German texts in the code. */
+"Abbrechen" = "Odustani";
+"Alle einklappen" = "Sažmi sve";
+"Dateien" = "Datoteke";
+"Neue Datei …" = "Nova datoteka…";
+"Neuer Ordner …" = "Nova mapa…";
+"OK" = "U redu";

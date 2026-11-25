@@ -1,0 +1,14 @@
+/* Slovak interface texts; the keys are the German texts in the code. */
+"Dafür fehlt die Berechtigung." = "Na to chýba oprávnenie.";
+"Das ist ein Ordner, keine Datei." = "Toto je priečinok, nie súbor.";
+"Der Dateiname ist ungültig." = "Názov súboru je neplatný.";
+"Der Datenträger ist schreibgeschützt." = "Zväzok je chránený proti zápisu.";
+"Der Datenträger ist voll." = "Zväzok je plný.";
+"Der Ordner ist nicht leer." = "Priečinok nie je prázdny.";
+"Der Vorgang hat zu lange gedauert." = "Operácia trvala príliš dlho.";
+"Die Datei ist gerade belegt." = "Súbor sa práve používa.";
+"Die Datei ist zu groß." = "Súbor je príliš veľký.";
+"Die Datei oder der Ordner existiert nicht." = "Súbor alebo priečinok neexistuje.";
+"Die Gegenstelle hat die Verbindung abgelehnt." = "Protistrana odmietla spojenie.";
+"Ein Teil des Pfads ist kein Ordner." = "Časť cesty nie je priečinok.";
+"Es gibt dort schon eine Datei dieses Namens." = "Súbor s týmto názvom tam už existuje.";

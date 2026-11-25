@@ -1,0 +1,8 @@
+/* Slovak interface texts; the keys are the German texts in the code. */
+"Das Dokument hat noch keine Datei." = "Dokument ešte nemá súbor.";
+"Das Dokument ist schreibgeschützt." = "Dokument je len na čítanie.";
+"Die Datei enthält Binärdaten und wird nie gesichert." = "Súbor obsahuje binárne dáta a nikdy sa neuloží.";
+"Die Datei ist schreibgeschützt." = "Súbor je len na čítanie.";
+"Die Datei wurde inzwischen außerhalb geändert." = "Súbor bol medzitým zmenený inde.";
+"Die Kodierung der Datei ist unbekannt; sie wird nie gesichert." = "Kódovanie súboru je neznáme; súbor sa nikdy neuloží.";
+"Die Stelle liegt außerhalb des Textes: {}" = "Miesto leží mimo textu: {}";

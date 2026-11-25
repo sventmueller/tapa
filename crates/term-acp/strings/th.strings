@@ -1,0 +1,14 @@
+/* Thai interface texts; the keys are the German texts in the code. */
+"Der Agent hat auf {} nicht rechtzeitig geantwortet." = "เอเจนต์ไม่ตอบ {} ภายในเวลาที่กำหนด";
+"Der Agent ist nicht gestartet: {}" = "เอเจนต์ไม่ได้เริ่มทำงาน: {}";
+"Der Agent spricht die Protokollversion {}, diese App Version 1" = "เอเจนต์ใช้โปรโตคอลเวอร์ชั่น {} แต่แอปนี้ใช้เวอร์ชั่น 1";
+"Der Agent verlangt eine Anmeldung." = "เอเจนต์ต้องการให้คุณลงชื่อเข้า";
+"Die Sitzung ist beendet." = "เซสชันสิ้นสุดแล้ว";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "คำขอนี้ไม่ได้รอคำตอบอีกต่อไป";
+"{} startet nur in einem vertrauten Arbeitsbereich." = "{} จะเริ่มทำงานในพื้นที่ทำงานที่เชื่อถือได้เท่านั้น";
+"{} wurde nicht gefunden." = "ไม่พบ {}";
+"Die Installation wurde nicht bestätigt." = "การติดตั้งไม่ได้รับการยืนยัน";
+"{} {} oder neuer wird gebraucht" = "ต้องใช้ {} {} ขึ้นไป";
+"{} wird gebraucht" = "ต้องใช้ {}";
+"Der Download ist fehlgeschlagen: {}" = "การดาวน์โหลดล้มเหลว: {}";
+"Der Download stimmt nicht mit seiner Prüfsumme überein und wurde verworfen" = "ไฟล์ที่ดาวน์โหลดไม่ตรงกับเช็คซัมและถูกละทิ้งแล้ว";

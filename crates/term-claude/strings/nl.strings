@@ -1,0 +1,13 @@
+/* Dutch interface texts; the keys are the German texts in the code. */
+"Claude Code hat das Zurückspulen abgelehnt: {}" = "Claude Code heeft het terugspoelen geweigerd: {}";
+"Claude Code hat nicht rechtzeitig geantwortet." = "Claude Code heeft niet op tijd geantwoord.";
+"Claude Code ist beendet." = "Claude Code is gestopt.";
+"Claude Code ist nicht gestartet: {}" = "Claude Code is niet gestart: {}";
+"Claude Code lehnt ab: {}" = "Claude Code weigert: {}";
+"Claude Code liest seine Eingabe nicht mehr." = "Claude Code leest zijn invoer niet meer.";
+"Claude Code ließ sich nicht starten: {}" = "Claude Code kon niet starten: {}";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "Dit verzoek wacht niet meer op een antwoord.";
+"Diese Version von Claude Code kann das hier nicht." = "Deze versie van Claude Code kan dit hier niet.";
+"Melde dich an, indem du claude im Terminal startest: {}" = "Log in door claude in een terminal te starten: {}";
+"Unerwartete Antwort: {}" = "Onverwacht antwoord: {}";
+"{} wurde nicht gefunden." = "{} is niet gevonden.";

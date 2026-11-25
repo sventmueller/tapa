@@ -1,0 +1,7 @@
+# Homebrew's Rust ignores this file, so `cargo xtask toolchain` fails `make lint` when its rustc is another version;
+# rustup and CI install exactly this one, so new lints arrive when it changes.
+[toolchain]
+channel = "1.100.0"
+components = ["clippy", "rustfmt", "llvm-tools", "rust-analyzer"]
+profile = "minimal"
+targets = ["aarch64-apple-darwin", "x86_64-apple-darwin", "x86_64-unknown-linux-gnu"]

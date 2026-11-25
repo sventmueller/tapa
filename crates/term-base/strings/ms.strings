@@ -1,0 +1,14 @@
+/* Malay interface texts; the keys are the German texts in the code. */
+"Dafür fehlt die Berechtigung." = "Kebenaran untuk ini tiada.";
+"Das ist ein Ordner, keine Datei." = "Ini ialah folder, bukan fail.";
+"Der Dateiname ist ungültig." = "Nama fail tidak sah.";
+"Der Datenträger ist schreibgeschützt." = "Volum ini baca sahaja.";
+"Der Datenträger ist voll." = "Volum penuh.";
+"Der Ordner ist nicht leer." = "Folder tidak kosong.";
+"Der Vorgang hat zu lange gedauert." = "Operasi mengambil masa terlalu lama.";
+"Die Datei ist gerade belegt." = "Fail sedang digunakan.";
+"Die Datei ist zu groß." = "Fail terlalu besar.";
+"Die Datei oder der Ordner existiert nicht." = "Fail atau folder tidak wujud.";
+"Die Gegenstelle hat die Verbindung abgelehnt." = "Pihak lain menolak sambungan.";
+"Ein Teil des Pfads ist kein Ordner." = "Sebahagian laluan bukan folder.";
+"Es gibt dort schon eine Datei dieses Namens." = "Fail dengan nama ini sudah wujud di sana.";

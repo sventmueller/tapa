@@ -1,0 +1,10 @@
+/* Ukrainian interface texts; the keys are the German texts in the code. */
+"Bild: {}" = "Зображення: {}";
+"Bilder aus dem Netz laden" = "Завантажити зображення з інтернету";
+"Das Bild lässt sich nicht anzeigen." = "Не вдається показати зображення.";
+"Der Ordner ist nicht vertraut: Bilder aus dem Netz bleiben ungeladen." = "Немає довіри до папки: зображення з інтернету не завантажуються.";
+"Die Datei ist kein lesbares PDF." = "Файл не є читабельним PDF.";
+"Lädt …" = "Завантаження…";
+"PDF: {}" = "PDF: {}";
+"Vorschau: {}" = "Попередній перегляд: {}";
+"„{}“ lässt sich nicht öffnen." = "Не вдається відкрити «{}».";

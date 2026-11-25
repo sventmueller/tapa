@@ -1,0 +1,21 @@
+[package]
+name = "term-suggest"
+version.workspace = true
+description = "Command suggestions without network: the history with its context in SQLite, ranking, paths and the next command"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+term-base.workspace = true
+rusqlite = { version = "0.43", features = ["bundled"] }
+serde.workspace = true
+serde_json.workspace = true
+toml.workspace = true
+
+[dev-dependencies]
+term-base = { workspace = true, features = ["testing"] }

@@ -1,0 +1,27 @@
+/* Indonesian interface texts; the keys are the German texts in the code. */
+"API-Schlüssel für {}" = "Kunci API untuk {}";
+"Abgebrochen" = "Dibatalkan";
+"Das Diktat ist gerade beschäftigt." = "Dikte sedang sibuk.";
+"Das Feld des Diktats ist nicht mehr offen. Der Text liegt in der Zwischenablage." = "Kolom dikte sudah tidak terbuka. Teks ada di papan klip.";
+"Das ist kein Schlüssel von OpenAI (sk-…) oder Groq (gsk_…)." = "Ini bukan kunci dari OpenAI (sk-…) atau Groq (gsk_…).";
+"Das lokale Modell ist nicht installiert. Lade es in den Einstellungen unter Diktat." = "Model lokal tidak terinstal. Unduh di Pengaturan bagian Dikte.";
+"Der Schlüsselbund lehnt ab: {}" = "Rantai Kunci menolak: {}";
+"Die Aufnahme hat ihre Höchstdauer erreicht." = "Rekaman mencapai durasi maksimumnya.";
+"Diktat beenden" = "Hentikan Dikte";
+"Diktat starten" = "Mulai Dikte";
+"Höre zu …" = "Mendengarkan…";
+"Kein API-Schlüssel für {}. Trage ihn in den Einstellungen unter Diktat ein." = "Tidak ada kunci API untuk {}. Masukkan di Pengaturan bagian Dikte.";
+"Keine Sprache erkannt" = "Tidak ada ucapan yang dikenali";
+"Lowspeak hat einen Schlüssel für {}. Für {} übernehmen?" = "Lowspeak memiliki kunci untuk {}. Gunakan juga untuk {}?";
+"Lowspeak hat keinen Schlüssel mehr." = "Lowspeak tidak lagi memiliki kunci.";
+"Lowspeak meldet: {}" = "Lowspeak melaporkan: {}";
+"Lowspeak transkribiert online mit {}. {} braucht dafür einen eigenen Schlüssel und legt ihn im Schlüsselbund ab." = "Lowspeak mentranskripsi secara online dengan {}. {} memerlukan kuncinya sendiri untuk itu dan menyimpannya di Rantai Kunci.";
+"Lowspeaks Schlüssel ließ sich nicht lesen. Gib den Schlüssel selbst ein." = "Kunci Lowspeak tidak dapat dibaca. Masukkan kunci sendiri.";
+"Nicht jetzt" = "Jangan Sekarang";
+"Selbst eingeben …" = "Masukkan Sendiri…";
+"Sichern" = "Simpan";
+"Transkribiere …" = "Mentranskripsi…";
+"{} bietet {} nicht mehr an. Wähle in den Einstellungen unter Diktat ein anderes Modell." = "{} tidak lagi menyediakan {}. Pilih model lain di Pengaturan bagian Dikte.";
+"{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "{} tidak memiliki akses ke mikrofon. Izinkan di Pengaturan Sistem > Privasi & Keamanan > Mikrofon.";
+"{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "{} membacanya sekali untuk itu, dan macOS akan bertanya dahulu. Pilih “Izinkan”, bukan “Selalu Izinkan”: dengan begitu entri Lowspeak tetap seperti adanya. {} menyimpan kunci di entrinya sendiri.";
+"Übernehmen" = "Gunakan Kunci";

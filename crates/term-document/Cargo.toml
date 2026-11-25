@@ -1,0 +1,27 @@
+[package]
+name = "term-document"
+version.workspace = true
+description = "One buffer per file: its text, edits in every unit, the file on disk, external changes, sealed recovery copies and colours"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+term-base.workspace = true
+term-seal.workspace = true
+splat-i18n.workspace = true
+splat-file-state.workspace = true
+splat-markdown.workspace = true
+# Language servers count lines at LF, CRLF and CR only, so Ropey's Unicode line breaks stay off.
+ropey = { version = "1.6.1", default-features = false, features = ["cr_lines", "simd"] }
+serde.workspace = true
+serde_json.workspace = true
+similar.workspace = true
+
+[dev-dependencies]
+term-base = { workspace = true, features = ["testing"] }
+proptest = "1.12.0"

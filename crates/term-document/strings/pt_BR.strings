@@ -1,0 +1,8 @@
+/* Brazilian Portuguese interface texts; the keys are the German texts in the code. */
+"Das Dokument hat noch keine Datei." = "O documento ainda não tem um arquivo.";
+"Das Dokument ist schreibgeschützt." = "O documento é somente leitura.";
+"Die Datei enthält Binärdaten und wird nie gesichert." = "O arquivo contém dados binários e nunca é salvo.";
+"Die Datei ist schreibgeschützt." = "O arquivo é somente leitura.";
+"Die Datei wurde inzwischen außerhalb geändert." = "O arquivo foi alterado em outro lugar nesse meio-tempo.";
+"Die Kodierung der Datei ist unbekannt; sie wird nie gesichert." = "A codificação do arquivo é desconhecida; ele nunca é salvo.";
+"Die Stelle liegt außerhalb des Textes: {}" = "A posição está fora do texto: {}";

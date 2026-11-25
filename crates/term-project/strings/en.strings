@@ -1,0 +1,18 @@
+/* English interface texts; the keys are the German texts in the code. */
+"Als Vorschau öffnen" = "Open as Preview";
+"Daneben öffnen" = "Open to the Side";
+"Darunter öffnen" = "Open Below";
+"Im Browser-Tab öffnen" = "Open in Browser Tab";
+"Im Finder zeigen" = "Show in Finder";
+"In den Papierkorb legen" = "Move to Trash";
+"Neue Datei" = "New File";
+"Neue Datei …" = "New File…";
+"Neuer Ordner" = "New Folder";
+"Neuer Ordner …" = "New Folder…";
+"Pfad kopieren" = "Copy Path";
+"Relativen Pfad kopieren" = "Copy Relative Path";
+"Umbenennen" = "Rename";
+"Umbenennen …" = "Rename…";
+"„{}“ gibt es schon." = "“{}” already exists.";
+"„{}“ wurde nicht angelegt." = "“{}” was not created.";
+"„{}“ wurde nicht umbenannt." = "“{}” was not renamed.";

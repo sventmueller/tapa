@@ -1,0 +1,51 @@
+[package]
+name = "term-ui-agent"
+version.workspace = true
+description = "The agent tab with its timeline, composer and status, and the workspace it reaches the app through"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+term-acp.workspace = true
+term-net.workspace = true
+term-agents.workspace = true
+term-base.workspace = true
+term-claude.workspace = true
+term-codex.workspace = true
+term-opencode.workspace = true
+term-process.workspace = true
+term-render.workspace = true
+term-thread.workspace = true
+term-ui.workspace = true
+splat-decoder.workspace = true
+splat-file-state.workspace = true
+splat-i18n.workspace = true
+splat-markdown.workspace = true
+splat-preview.workspace = true
+splat-render.workspace = true
+term-ui-dictation = { workspace = true, optional = true }
+block2.workspace = true
+dispatch2.workspace = true
+objc2 = { workspace = true, features = ["catch-all"] }
+objc2-app-kit.workspace = true
+objc2-core-image.workspace = true
+objc2-foundation.workspace = true
+objc2-quartz-core.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+
+[dev-dependencies]
+term-base = { workspace = true, features = ["testing"] }
+# The scripted session, so the tests run a tab's session in a real registry.
+term-agents = { workspace = true, features = ["selftest"] }
+
+[features]
+# The microphone in the composer, which dictates into it through lowspeak.
+dictation = ["dep:term-ui-dictation", "term-ui-dictation/engine"]
+# What the self-test reads of a tab and does with it, and the recordings and stand-ins it plays.
+selftest = ["term-agents/selftest", "term-acp/testing", "term-codex/testing", "term-opencode/testing", "splat-decoder/selftest"]

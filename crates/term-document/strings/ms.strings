@@ -1,0 +1,8 @@
+/* Malay interface texts; the keys are the German texts in the code. */
+"Das Dokument hat noch keine Datei." = "Dokumen belum mempunyai fail.";
+"Das Dokument ist schreibgeschützt." = "Dokumen ini baca sahaja.";
+"Die Datei enthält Binärdaten und wird nie gesichert." = "Fail mengandungi data binari dan tidak sekali-kali disimpan.";
+"Die Datei ist schreibgeschützt." = "Fail ini baca sahaja.";
+"Die Datei wurde inzwischen außerhalb geändert." = "Fail telah diubah di tempat lain sejak itu.";
+"Die Kodierung der Datei ist unbekannt; sie wird nie gesichert." = "Pengekodan fail tidak diketahui; fail tidak sekali-kali disimpan.";
+"Die Stelle liegt außerhalb des Textes: {}" = "Kedudukan berada di luar teks: {}";

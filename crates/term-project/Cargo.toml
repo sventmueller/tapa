@@ -1,0 +1,21 @@
+[package]
+name = "term-project"
+version.workspace = true
+description = "A project folder without a window: its tree, changes on disk and its .editorconfig settings"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+term-base.workspace = true
+ignore.workspace = true
+notify.workspace = true
+splat-i18n.workspace = true
+unicode-normalization = "0.1.26"
+
+[dev-dependencies]
+term-base = { workspace = true, features = ["testing"] }

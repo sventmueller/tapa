@@ -1,0 +1,35 @@
+size 139 33 0
+cursor 8 0
+line 0 [undeadleech@archhq erase_in_line]$ s=$(echo {1..100}); echo ${s:0:$(($COLUMNS-2))}a$'+\e[0Kb'
+line 1 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49ab
+line 2 [undeadleech@archhq erase_in_line]$ s=$(echo {1..100}); echo ${s:0:$(($COLUMNS-2))}a$'+\e[1Kb'
+line 3                                                                                                                                           b
+line 4 [undeadleech@archhq erase_in_line]$ s=$(echo {1..100}); echo ${s:0:$(($COLUMNS-2))}a$'+\e[2Kb'
+line 5                                                                                                                                           b
+line 6 [undeadleech@archhq erase_in_line]$
+line 7 exit
+line 8 
+line 9 
+line 10 
+line 11 
+line 12 
+line 13 
+line 14 
+line 15 
+line 16 
+line 17 
+line 18 
+line 19 
+line 20 
+line 21 
+line 22 
+line 23 
+line 24 
+line 25 
+line 26 
+line 27 
+line 28 
+line 29 
+line 30 
+line 31 
+line 32 

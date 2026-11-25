@@ -1,0 +1,1 @@
+{"properties":{"grantRoot":{"type":["string","null"]},"itemId":{"type":"string"},"reason":{"type":["string","null"]},"startedAtMs":{"format":"int64","type":"integer"},"threadId":{"type":"string"},"turnId":{"type":"string"}},"required":["itemId","startedAtMs","threadId","turnId"],"title":"FileChangeRequestApprovalParams","type":"object"}

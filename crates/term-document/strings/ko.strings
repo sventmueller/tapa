@@ -1,0 +1,8 @@
+/* Korean interface texts; the keys are the German texts in the code. */
+"Das Dokument hat noch keine Datei." = "문서에 아직 파일이 없습니다.";
+"Das Dokument ist schreibgeschützt." = "문서가 읽기 전용입니다.";
+"Die Datei enthält Binärdaten und wird nie gesichert." = "파일에 바이너리 데이터가 있어 저장되지 않습니다.";
+"Die Datei ist schreibgeschützt." = "파일이 읽기 전용입니다.";
+"Die Datei wurde inzwischen außerhalb geändert." = "그사이 다른 곳에서 파일이 변경되었습니다.";
+"Die Kodierung der Datei ist unbekannt; sie wird nie gesichert." = "파일의 인코딩을 알 수 없어 저장되지 않습니다.";
+"Die Stelle liegt außerhalb des Textes: {}" = "위치가 텍스트 범위를 벗어났습니다: {}";

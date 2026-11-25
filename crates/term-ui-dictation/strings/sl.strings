@@ -1,0 +1,27 @@
+/* Slovenian interface texts; the keys are the German texts in the code. */
+"API-Schlüssel für {}" = "Ključ API za {}";
+"Abgebrochen" = "Preklicano";
+"Das Diktat ist gerade beschäftigt." = "Narekovanje je trenutno zasedeno.";
+"Das Feld des Diktats ist nicht mehr offen. Der Text liegt in der Zwischenablage." = "Polje narekovanja ni več odprto. Besedilo je v odložišču.";
+"Das ist kein Schlüssel von OpenAI (sk-…) oder Groq (gsk_…)." = "To ni ključ OpenAI (sk-…) ali Groq (gsk_…).";
+"Das lokale Modell ist nicht installiert. Lade es in den Einstellungen unter Diktat." = "Lokalni model ni nameščen. Prenesite ga v nastavitvah pod Narekovanje.";
+"Der Schlüsselbund lehnt ab: {}" = "Veriga ključev zavrača: {}";
+"Die Aufnahme hat ihre Höchstdauer erreicht." = "Posnetek je dosegel največjo dolžino.";
+"Diktat beenden" = "Končaj narekovanje";
+"Diktat starten" = "Začni narekovanje";
+"Höre zu …" = "Poslušanje …";
+"Kein API-Schlüssel für {}. Trage ihn in den Einstellungen unter Diktat ein." = "Ni ključa API za {}. Vnesite ga v nastavitvah pod Narekovanje.";
+"Keine Sprache erkannt" = "Govor ni bil zaznan";
+"Lowspeak hat einen Schlüssel für {}. Für {} übernehmen?" = "Lowspeak ima ključ za {}. Ga želite uporabiti tudi za {}?";
+"Lowspeak hat keinen Schlüssel mehr." = "Lowspeak nima več ključa.";
+"Lowspeak meldet: {}" = "Lowspeak sporoča: {}";
+"Lowspeak transkribiert online mit {}. {} braucht dafür einen eigenen Schlüssel und legt ihn im Schlüsselbund ab." = "Lowspeak prepisuje prek spleta s storitvijo {}. {} za to potrebuje lasten ključ in ga shrani v verigo ključev.";
+"Lowspeaks Schlüssel ließ sich nicht lesen. Gib den Schlüssel selbst ein." = "Ključa aplikacije Lowspeak ni bilo mogoče prebrati. Ključ vnesite sami.";
+"Nicht jetzt" = "Ne zdaj";
+"Selbst eingeben …" = "Vnesi ročno …";
+"Sichern" = "Shrani";
+"Transkribiere …" = "Prepisovanje …";
+"{} bietet {} nicht mehr an. Wähle in den Einstellungen unter Diktat ein anderes Modell." = "Storitev {} ne ponuja več modela {}. V nastavitvah pod Narekovanje izberite drug model.";
+"{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "{} nima dostopa do mikrofona. Dovolite ga v Nastavitvah sistema pod Zasebnost in varnost > Mikrofon.";
+"{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "{} ga v ta namen enkrat prebere, macOS pa prej vpraša za dovoljenje. Tam izberite »Dovoli«, ne »Vedno dovoli«: tako vnos aplikacije Lowspeak ostane nespremenjen. {} ključ shrani v lasten vnos.";
+"Übernehmen" = "Uporabi ključ";

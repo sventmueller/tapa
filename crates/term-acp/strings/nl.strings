@@ -1,0 +1,14 @@
+/* Dutch interface texts; the keys are the German texts in the code. */
+"Der Agent hat auf {} nicht rechtzeitig geantwortet." = "De agent heeft niet op tijd op {} geantwoord.";
+"Der Agent ist nicht gestartet: {}" = "De agent is niet gestart: {}";
+"Der Agent spricht die Protokollversion {}, diese App Version 1" = "De agent spreekt protocolversie {}, deze app versie 1";
+"Der Agent verlangt eine Anmeldung." = "De agent vraagt je om in te loggen.";
+"Die Sitzung ist beendet." = "De sessie is gestopt.";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "Dit verzoek wacht niet meer op een antwoord.";
+"{} startet nur in einem vertrauten Arbeitsbereich." = "{} start alleen in een vertrouwde werkruimte.";
+"{} wurde nicht gefunden." = "{} is niet gevonden.";
+"Die Installation wurde nicht bestätigt." = "De installatie is niet bevestigd.";
+"{} {} oder neuer wird gebraucht" = "{} {} of nieuwer is nodig";
+"{} wird gebraucht" = "{} is nodig";
+"Der Download ist fehlgeschlagen: {}" = "De download is mislukt: {}";
+"Der Download stimmt nicht mit seiner Prüfsumme überein und wurde verworfen" = "De download komt niet overeen met de checksum en is verwijderd";

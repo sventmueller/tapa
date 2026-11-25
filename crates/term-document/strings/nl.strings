@@ -1,0 +1,8 @@
+/* Dutch interface texts; the keys are the German texts in the code. */
+"Das Dokument hat noch keine Datei." = "Het document heeft nog geen bestand.";
+"Das Dokument ist schreibgeschützt." = "Het document is alleen-lezen.";
+"Die Datei enthält Binärdaten und wird nie gesichert." = "Het bestand bevat binaire gegevens en wordt nooit bewaard.";
+"Die Datei ist schreibgeschützt." = "Het bestand is alleen-lezen.";
+"Die Datei wurde inzwischen außerhalb geändert." = "Het bestand is intussen elders gewijzigd.";
+"Die Kodierung der Datei ist unbekannt; sie wird nie gesichert." = "De codering van het bestand is onbekend; het wordt nooit bewaard.";
+"Die Stelle liegt außerhalb des Textes: {}" = "De plek ligt buiten de tekst: {}";

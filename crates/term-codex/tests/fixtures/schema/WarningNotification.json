@@ -1,0 +1,1 @@
+{"properties":{"message":{"type":"string"},"threadId":{"type":["string","null"]}},"required":["message"],"title":"WarningNotification","type":"object"}

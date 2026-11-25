@@ -1,0 +1,1 @@
+{"properties":{"cursor":{"type":["string","null"]},"includeHidden":{"type":["boolean","null"]},"limit":{"format":"uint32","minimum":0.0,"type":["integer","null"]}},"title":"ModelListParams","type":"object"}

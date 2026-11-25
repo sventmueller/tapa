@@ -1,0 +1,14 @@
+/* Indonesian interface texts; the keys are the German texts in the code. */
+"Der Agent hat auf {} nicht rechtzeitig geantwortet." = "Agen tidak menjawab {} tepat waktu.";
+"Der Agent ist nicht gestartet: {}" = "Agen tidak dimulai: {}";
+"Der Agent spricht die Protokollversion {}, diese App Version 1" = "Agen menggunakan versi protokol {}, aplikasi ini versi 1";
+"Der Agent verlangt eine Anmeldung." = "Agen meminta Anda masuk.";
+"Die Sitzung ist beendet." = "Sesi telah berakhir.";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "Permintaan ini tidak lagi menunggu jawaban.";
+"{} startet nur in einem vertrauten Arbeitsbereich." = "{} hanya dimulai di ruang kerja tepercaya.";
+"{} wurde nicht gefunden." = "{} tidak ditemukan.";
+"Die Installation wurde nicht bestätigt." = "Instalasi tidak dikonfirmasi.";
+"{} {} oder neuer wird gebraucht" = "{} {} atau yang lebih baru diperlukan";
+"{} wird gebraucht" = "{} diperlukan";
+"Der Download ist fehlgeschlagen: {}" = "Unduhan gagal: {}";
+"Der Download stimmt nicht mit seiner Prüfsumme überein und wurde verworfen" = "Unduhan tidak cocok dengan checksum-nya dan telah dibuang";

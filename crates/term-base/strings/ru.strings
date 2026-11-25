@@ -1,0 +1,14 @@
+/* Russian interface texts; the keys are the German texts in the code. */
+"Dafür fehlt die Berechtigung." = "Для этого нет разрешения.";
+"Das ist ein Ordner, keine Datei." = "Это папка, а не файл.";
+"Der Dateiname ist ungültig." = "Недопустимое имя файла.";
+"Der Datenträger ist schreibgeschützt." = "Том защищен от записи.";
+"Der Datenträger ist voll." = "Том заполнен.";
+"Der Ordner ist nicht leer." = "Папка не пуста.";
+"Der Vorgang hat zu lange gedauert." = "Операция заняла слишком много времени.";
+"Die Datei ist gerade belegt." = "Файл сейчас занят.";
+"Die Datei ist zu groß." = "Файл слишком большой.";
+"Die Datei oder der Ordner existiert nicht." = "Файл или папка не существует.";
+"Die Gegenstelle hat die Verbindung abgelehnt." = "Удаленная сторона отклонила подключение.";
+"Ein Teil des Pfads ist kein Ordner." = "Часть пути не является папкой.";
+"Es gibt dort schon eine Datei dieses Namens." = "Там уже есть файл с таким именем.";

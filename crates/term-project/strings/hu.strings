@@ -1,0 +1,18 @@
+/* Hungarian interface texts; the keys are the German texts in the code. */
+"Als Vorschau öffnen" = "Megnyitás előnézetként";
+"Daneben öffnen" = "Megnyitás mellette";
+"Darunter öffnen" = "Megnyitás alatta";
+"Im Browser-Tab öffnen" = "Megnyitás böngészőlapon";
+"Im Finder zeigen" = "Megjelenítés a Finderben";
+"In den Papierkorb legen" = "Áthelyezés a kukába";
+"Neue Datei" = "Új fájl";
+"Neue Datei …" = "Új fájl…";
+"Neuer Ordner" = "Új mappa";
+"Neuer Ordner …" = "Új mappa…";
+"Pfad kopieren" = "Útvonal másolása";
+"Relativen Pfad kopieren" = "Relatív útvonal másolása";
+"Umbenennen" = "Átnevezés";
+"Umbenennen …" = "Átnevezés…";
+"„{}“ gibt es schon." = "A(z) „{}” már létezik.";
+"„{}“ wurde nicht angelegt." = "A(z) „{}” nem lett létrehozva.";
+"„{}“ wurde nicht umbenannt." = "A(z) „{}” nem lett átnevezve.";

@@ -1,0 +1,27 @@
+/* Russian interface texts; the keys are the German texts in the code. */
+"API-Schlüssel für {}" = "Ключ API для {}";
+"Abgebrochen" = "Отменено";
+"Das Diktat ist gerade beschäftigt." = "Диктовка сейчас занята.";
+"Das Feld des Diktats ist nicht mehr offen. Der Text liegt in der Zwischenablage." = "Поле, в которое шла диктовка, больше не открыто. Текст находится в буфере обмена.";
+"Das ist kein Schlüssel von OpenAI (sk-…) oder Groq (gsk_…)." = "Это не ключ OpenAI (sk-…) или Groq (gsk_…).";
+"Das lokale Modell ist nicht installiert. Lade es in den Einstellungen unter Diktat." = "Локальная модель не установлена. Загрузите ее в настройках в разделе «Диктовка».";
+"Der Schlüsselbund lehnt ab: {}" = "Связка ключей отказывает: {}";
+"Die Aufnahme hat ihre Höchstdauer erreicht." = "Запись достигла максимальной длительности.";
+"Diktat beenden" = "Завершить диктовку";
+"Diktat starten" = "Начать диктовку";
+"Höre zu …" = "Слушаю…";
+"Kein API-Schlüssel für {}. Trage ihn in den Einstellungen unter Diktat ein." = "Не задан ключ API для {}. Введите его в настройках в разделе «Диктовка».";
+"Keine Sprache erkannt" = "Речь не распознана";
+"Lowspeak hat einen Schlüssel für {}. Für {} übernehmen?" = "У Lowspeak есть ключ для {}. Использовать его и для {}?";
+"Lowspeak hat keinen Schlüssel mehr." = "У Lowspeak больше нет ключа.";
+"Lowspeak meldet: {}" = "Сообщение Lowspeak: {}";
+"Lowspeak transkribiert online mit {}. {} braucht dafür einen eigenen Schlüssel und legt ihn im Schlüsselbund ab." = "Lowspeak распознает речь онлайн с помощью {}. Приложению {} для этого нужен собственный ключ, который хранится в связке ключей.";
+"Lowspeaks Schlüssel ließ sich nicht lesen. Gib den Schlüssel selbst ein." = "Не удалось прочитать ключ Lowspeak. Введите ключ вручную.";
+"Nicht jetzt" = "Не сейчас";
+"Selbst eingeben …" = "Ввести вручную…";
+"Sichern" = "Сохранить";
+"Transkribiere …" = "Распознавание…";
+"{} bietet {} nicht mehr an. Wähle in den Einstellungen unter Diktat ein anderes Modell." = "Сервис {} больше не предоставляет {}. Выберите другую модель в настройках в разделе «Диктовка».";
+"{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "У {} нет доступа к микрофону. Разрешите доступ: Системные настройки > Конфиденциальность и безопасность > Микрофон.";
+"{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "{} однократно прочитает его, и macOS запросит подтверждение. Выберите там «Разрешить», а не «Всегда разрешать»: тогда запись Lowspeak останется без изменений. {} сохранит ключ в отдельной записи.";
+"Übernehmen" = "Использовать ключ";

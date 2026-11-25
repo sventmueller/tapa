@@ -1,0 +1,27 @@
+/* Hebrew interface texts; the keys are the German texts in the code. */
+"API-Schlüssel für {}" = "מפתח API עבור {}";
+"Abgebrochen" = "בוטל";
+"Das Diktat ist gerade beschäftigt." = "ההכתבה עסוקה כרגע.";
+"Das Feld des Diktats ist nicht mehr offen. Der Text liegt in der Zwischenablage." = "שדה ההכתבה כבר אינו פתוח. המלל נמצא בלוח העריכה.";
+"Das ist kein Schlüssel von OpenAI (sk-…) oder Groq (gsk_…)." = "זה אינו מפתח של OpenAI (sk-…)‎ או של Groq (gsk_…)‎.";
+"Das lokale Modell ist nicht installiert. Lade es in den Einstellungen unter Diktat." = "המודל המקומי אינו מותקן. יש להוריד אותו בהגדרות, תחת ״הכתבה״.";
+"Der Schlüsselbund lehnt ab: {}" = "צרור המפתחות מסרב: {}";
+"Die Aufnahme hat ihre Höchstdauer erreicht." = "ההקלטה הגיעה לאורך המרבי שלה.";
+"Diktat beenden" = "הפסקת ההכתבה";
+"Diktat starten" = "התחלת הכתבה";
+"Höre zu …" = "מאזין…";
+"Kein API-Schlüssel für {}. Trage ihn in den Einstellungen unter Diktat ein." = "אין מפתח API עבור {}. יש להזין אותו בהגדרות, תחת ״הכתבה״.";
+"Keine Sprache erkannt" = "לא זוהה דיבור";
+"Lowspeak hat einen Schlüssel für {}. Für {} übernehmen?" = "ל-Lowspeak יש מפתח עבור {}. להשתמש בו גם עבור {}?";
+"Lowspeak hat keinen Schlüssel mehr." = "ל-Lowspeak אין עוד מפתח.";
+"Lowspeak meldet: {}" = "‏Lowspeak מדווח: {}";
+"Lowspeak transkribiert online mit {}. {} braucht dafür einen eigenen Schlüssel und legt ihn im Schlüsselbund ab." = "התמלול ב-Lowspeak מתבצע באופן מקוון באמצעות {}. לשם כך {} זקוק למפתח משלו ושומר אותו בצרור המפתחות.";
+"Lowspeaks Schlüssel ließ sich nicht lesen. Gib den Schlüssel selbst ein." = "לא ניתן היה לקרוא את המפתח של Lowspeak. יש להזין את המפתח ידנית.";
+"Nicht jetzt" = "לא כעת";
+"Selbst eingeben …" = "הזנה ידנית…";
+"Sichern" = "שמירה";
+"Transkribiere …" = "מתמלל…";
+"{} bietet {} nicht mehr an. Wähle in den Einstellungen unter Diktat ein anderes Modell." = "‏{} כבר אינו מציע את {}. יש לבחור מודל אחר בהגדרות, תחת ״הכתבה״.";
+"{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "ל-{} אין גישה למיקרופון. ניתן לאשר אותה בהגדרות המערכת, תחת ״פרטיות ואבטחה״ > ״מיקרופון״.";
+"{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "לשם כך {} יקרא אותו פעם אחת, ו-macOS יבקש אישור. יש לבחור שם ״אישור״, לא ״הרשאה קבועה״: כך הפריט של Lowspeak יישאר כפי שהוא. {} שומר את המפתח בפריט משלו.";
+"Übernehmen" = "שימוש במפתח";

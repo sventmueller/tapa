@@ -1,0 +1,23 @@
+[package]
+name = "term-git"
+version.workspace = true
+description = "git for the app: status, diffs, staging by hunk, commits, remotes, worktrees, and git neutralised in untrusted workspaces"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+term-base.workspace = true
+term-process.workspace = true
+splat-i18n.workspace = true
+libc.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+
+[dev-dependencies]
+term-base = { workspace = true, features = ["testing"] }
+proptest = "1.12.0"

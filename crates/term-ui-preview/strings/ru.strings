@@ -1,0 +1,10 @@
+/* Russian interface texts; the keys are the German texts in the code. */
+"Bild: {}" = "Изображение: {}";
+"Bilder aus dem Netz laden" = "Загрузить изображения из интернета";
+"Das Bild lässt sich nicht anzeigen." = "Не удаётся показать изображение.";
+"Der Ordner ist nicht vertraut: Bilder aus dem Netz bleiben ungeladen." = "Папка не является доверенной: изображения из интернета не загружаются.";
+"Die Datei ist kein lesbares PDF." = "Файл не является читаемым PDF.";
+"Lädt …" = "Загрузка…";
+"PDF: {}" = "PDF: {}";
+"Vorschau: {}" = "Просмотр: {}";
+"„{}“ lässt sich nicht öffnen." = "Не удается открыть «{}».";

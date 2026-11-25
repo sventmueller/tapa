@@ -1,0 +1,10 @@
+/* Italian interface texts; the keys are the German texts in the code. */
+"Bild: {}" = "Immagine: {}";
+"Bilder aus dem Netz laden" = "Carica immagini dal web";
+"Das Bild lässt sich nicht anzeigen." = "Impossibile mostrare l’immagine.";
+"Der Ordner ist nicht vertraut: Bilder aus dem Netz bleiben ungeladen." = "La cartella non è attendibile: le immagini dal web non vengono caricate.";
+"Die Datei ist kein lesbares PDF." = "Il file non è un PDF leggibile.";
+"Lädt …" = "Caricamento…";
+"PDF: {}" = "PDF: {}";
+"Vorschau: {}" = "Anteprima: {}";
+"„{}“ lässt sich nicht öffnen." = "Impossibile aprire “{}”.";

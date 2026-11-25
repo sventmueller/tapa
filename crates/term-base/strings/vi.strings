@@ -1,0 +1,14 @@
+/* Vietnamese interface texts; the keys are the German texts in the code. */
+"Dafür fehlt die Berechtigung." = "Không có quyền để thực hiện việc này.";
+"Das ist ein Ordner, keine Datei." = "Đây là thư mục, không phải tệp.";
+"Der Dateiname ist ungültig." = "Tên tệp không hợp lệ.";
+"Der Datenträger ist schreibgeschützt." = "Ổ đĩa chỉ đọc.";
+"Der Datenträger ist voll." = "Ổ đĩa đã đầy.";
+"Der Ordner ist nicht leer." = "Thư mục không trống.";
+"Der Vorgang hat zu lange gedauert." = "Thao tác mất quá nhiều thời gian.";
+"Die Datei ist gerade belegt." = "Tệp hiện đang được sử dụng.";
+"Die Datei ist zu groß." = "Tệp quá lớn.";
+"Die Datei oder der Ordner existiert nicht." = "Tệp hoặc thư mục không tồn tại.";
+"Die Gegenstelle hat die Verbindung abgelehnt." = "Phía bên kia đã từ chối kết nối.";
+"Ein Teil des Pfads ist kein Ordner." = "Một phần của đường dẫn không phải là thư mục.";
+"Es gibt dort schon eine Datei dieses Namens." = "Đã có một tệp cùng tên ở đó.";

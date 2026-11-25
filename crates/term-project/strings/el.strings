@@ -1,0 +1,18 @@
+/* Greek interface texts; the keys are the German texts in the code. */
+"Als Vorschau öffnen" = "Άνοιγμα ως προεπισκόπηση";
+"Daneben öffnen" = "Άνοιγμα δίπλα";
+"Darunter öffnen" = "Άνοιγμα από κάτω";
+"Im Browser-Tab öffnen" = "Άνοιγμα σε καρτέλα περιήγησης";
+"Im Finder zeigen" = "Εμφάνιση στο Finder";
+"In den Papierkorb legen" = "Μεταφορά στον Κάδο";
+"Neue Datei" = "Νέο αρχείο";
+"Neue Datei …" = "Νέο αρχείο…";
+"Neuer Ordner" = "Νέος φάκελος";
+"Neuer Ordner …" = "Νέος φάκελος…";
+"Pfad kopieren" = "Αντιγραφή διαδρομής";
+"Relativen Pfad kopieren" = "Αντιγραφή σχετικής διαδρομής";
+"Umbenennen" = "Μετονομασία";
+"Umbenennen …" = "Μετονομασία…";
+"„{}“ gibt es schon." = "Το «{}» υπάρχει ήδη.";
+"„{}“ wurde nicht angelegt." = "Το «{}» δεν δημιουργήθηκε.";
+"„{}“ wurde nicht umbenannt." = "Το «{}» δεν μετονομάστηκε.";

@@ -1,0 +1,7 @@
+/* Hungarian interface texts; the keys are the German texts in the code. */
+"Abbrechen" = "Mégsem";
+"Alle einklappen" = "Összes összecsukása";
+"Dateien" = "Fájlok";
+"Neue Datei …" = "Új fájl…";
+"Neuer Ordner …" = "Új mappa…";
+"OK" = "OK";

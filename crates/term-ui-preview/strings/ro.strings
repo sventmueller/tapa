@@ -1,0 +1,10 @@
+/* Romanian interface texts; the keys are the German texts in the code. */
+"Bild: {}" = "Imagine: {}";
+"Bilder aus dem Netz laden" = "Încărcați imaginile de pe web";
+"Das Bild lässt sich nicht anzeigen." = "Imaginea nu poate fi afișată.";
+"Der Ordner ist nicht vertraut: Bilder aus dem Netz bleiben ungeladen." = "Dosarul nu este de încredere: imaginile de pe web nu sunt încărcate.";
+"Die Datei ist kein lesbares PDF." = "Fișierul nu este un PDF care poate fi citit.";
+"Lädt …" = "Se încarcă…";
+"PDF: {}" = "PDF: {}";
+"Vorschau: {}" = "Previzualizare: {}";
+"„{}“ lässt sich nicht öffnen." = "„{}” nu poate fi deschis.";

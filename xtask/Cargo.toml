@@ -1,0 +1,15 @@
+[package]
+name = "xtask"
+version.workspace = true
+description = "Build tool: the app bundle, its release and deploy, its texts and themes, the structure checks and the bench"
+edition.workspace = true
+license.workspace = true
+publish = false
+
+[lints]
+workspace = true
+
+[dependencies]
+term-product.workspace = true
+serde.workspace = true
+serde_json.workspace = true

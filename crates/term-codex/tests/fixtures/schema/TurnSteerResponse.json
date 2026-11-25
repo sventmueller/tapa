@@ -1,0 +1,1 @@
+{"properties":{"turnId":{"type":"string"}},"required":["turnId"],"title":"TurnSteerResponse","type":"object"}

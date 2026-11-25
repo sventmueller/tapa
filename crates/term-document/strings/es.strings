@@ -1,0 +1,8 @@
+/* Spanish interface texts; the keys are the German texts in the code. */
+"Das Dokument hat noch keine Datei." = "El documento aún no tiene archivo.";
+"Das Dokument ist schreibgeschützt." = "El documento es de solo lectura.";
+"Die Datei enthält Binärdaten und wird nie gesichert." = "El archivo contiene datos binarios y nunca se guarda.";
+"Die Datei ist schreibgeschützt." = "El archivo es de solo lectura.";
+"Die Datei wurde inzwischen außerhalb geändert." = "El archivo se ha modificado fuera del editor mientras tanto.";
+"Die Kodierung der Datei ist unbekannt; sie wird nie gesichert." = "La codificación del archivo es desconocida; nunca se guarda.";
+"Die Stelle liegt außerhalb des Textes: {}" = "La posición está fuera del texto: {}";

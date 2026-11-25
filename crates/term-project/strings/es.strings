@@ -1,0 +1,18 @@
+/* Spanish interface texts; the keys are the German texts in the code. */
+"Als Vorschau öffnen" = "Abrir como vista previa";
+"Daneben öffnen" = "Abrir al lado";
+"Darunter öffnen" = "Abrir debajo";
+"Im Browser-Tab öffnen" = "Abrir en una pestaña del navegador";
+"Im Finder zeigen" = "Mostrar en el Finder";
+"In den Papierkorb legen" = "Trasladar a la papelera";
+"Neue Datei" = "Nuevo archivo";
+"Neue Datei …" = "Nuevo archivo…";
+"Neuer Ordner" = "Nueva carpeta";
+"Neuer Ordner …" = "Nueva carpeta…";
+"Pfad kopieren" = "Copiar ruta";
+"Relativen Pfad kopieren" = "Copiar ruta relativa";
+"Umbenennen" = "Renombrar";
+"Umbenennen …" = "Renombrar…";
+"„{}“ gibt es schon." = "«{}» ya existe.";
+"„{}“ wurde nicht angelegt." = "No se ha creado «{}».";
+"„{}“ wurde nicht umbenannt." = "No se ha renombrado «{}».";

@@ -1,0 +1,8 @@
+/* Indonesian interface texts; the keys are the German texts in the code. */
+"Das Dokument hat noch keine Datei." = "Dokumen belum memiliki file.";
+"Das Dokument ist schreibgeschützt." = "Dokumen ini hanya-baca.";
+"Die Datei enthält Binärdaten und wird nie gesichert." = "File berisi data biner dan tidak pernah disimpan.";
+"Die Datei ist schreibgeschützt." = "File ini hanya-baca.";
+"Die Datei wurde inzwischen außerhalb geändert." = "File sementara itu telah diubah di tempat lain.";
+"Die Kodierung der Datei ist unbekannt; sie wird nie gesichert." = "Enkode file tidak diketahui; file tidak pernah disimpan.";
+"Die Stelle liegt außerhalb des Textes: {}" = "Posisi berada di luar teks: {}";

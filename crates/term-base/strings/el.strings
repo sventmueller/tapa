@@ -1,0 +1,14 @@
+/* Greek interface texts; the keys are the German texts in the code. */
+"Dafür fehlt die Berechtigung." = "Λείπει η άδεια για αυτό.";
+"Das ist ein Ordner, keine Datei." = "Αυτό είναι φάκελος, όχι αρχείο.";
+"Der Dateiname ist ungültig." = "Το όνομα αρχείου δεν είναι έγκυρο.";
+"Der Datenträger ist schreibgeschützt." = "Ο τόμος είναι μόνο για ανάγνωση.";
+"Der Datenträger ist voll." = "Ο τόμος είναι πλήρης.";
+"Der Ordner ist nicht leer." = "Ο φάκελος δεν είναι κενός.";
+"Der Vorgang hat zu lange gedauert." = "Η λειτουργία διήρκεσε υπερβολικά.";
+"Die Datei ist gerade belegt." = "Το αρχείο χρησιμοποιείται αυτήν τη στιγμή.";
+"Die Datei ist zu groß." = "Το αρχείο είναι πολύ μεγάλο.";
+"Die Datei oder der Ordner existiert nicht." = "Το αρχείο ή ο φάκελος δεν υπάρχει.";
+"Die Gegenstelle hat die Verbindung abgelehnt." = "Η άλλη πλευρά απέρριψε τη σύνδεση.";
+"Ein Teil des Pfads ist kein Ordner." = "Μέρος της διαδρομής δεν είναι φάκελος.";
+"Es gibt dort schon eine Datei dieses Namens." = "Υπάρχει ήδη εκεί αρχείο με αυτό το όνομα.";

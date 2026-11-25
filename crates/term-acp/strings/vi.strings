@@ -1,0 +1,14 @@
+/* Vietnamese interface texts; the keys are the German texts in the code. */
+"Der Agent hat auf {} nicht rechtzeitig geantwortet." = "Tác nhân không phản hồi {} kịp thời.";
+"Der Agent ist nicht gestartet: {}" = "Tác nhân chưa khởi động: {}";
+"Der Agent spricht die Protokollversion {}, diese App Version 1" = "Tác nhân dùng giao thức phiên bản {}, ứng dụng này dùng phiên bản 1";
+"Der Agent verlangt eine Anmeldung." = "Tác nhân yêu cầu bạn đăng nhập.";
+"Die Sitzung ist beendet." = "Phiên đã kết thúc.";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "Yêu cầu này không còn chờ câu trả lời.";
+"{} startet nur in einem vertrauten Arbeitsbereich." = "{} chỉ khởi động trong không gian làm việc đáng tin cậy.";
+"{} wurde nicht gefunden." = "Không tìm thấy {}.";
+"Die Installation wurde nicht bestätigt." = "Cài đặt chưa được xác nhận.";
+"{} {} oder neuer wird gebraucht" = "Cần {} {} trở lên";
+"{} wird gebraucht" = "Cần {}";
+"Der Download ist fehlgeschlagen: {}" = "Tải về không thành công: {}";
+"Der Download stimmt nicht mit seiner Prüfsumme überein und wurde verworfen" = "Bản tải về không khớp với tổng kiểm tra của nó và đã bị loại bỏ";

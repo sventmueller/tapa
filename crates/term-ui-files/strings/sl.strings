@@ -1,0 +1,7 @@
+/* Slovenian interface texts; the keys are the German texts in the code. */
+"Abbrechen" = "Prekliči";
+"Alle einklappen" = "Strni vse";
+"Dateien" = "Datoteke";
+"Neue Datei …" = "Nova datoteka …";
+"Neuer Ordner …" = "Nova mapa …";
+"OK" = "V redu";

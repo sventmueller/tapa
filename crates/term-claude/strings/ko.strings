@@ -1,0 +1,13 @@
+/* Korean interface texts; the keys are the German texts in the code. */
+"Claude Code hat das Zurückspulen abgelehnt: {}" = "Claude Code가 되감기를 거부했습니다: {}";
+"Claude Code hat nicht rechtzeitig geantwortet." = "Claude Code가 제시간에 응답하지 않았습니다.";
+"Claude Code ist beendet." = "Claude Code가 종료되었습니다.";
+"Claude Code ist nicht gestartet: {}" = "Claude Code가 시작되지 않았습니다: {}";
+"Claude Code lehnt ab: {}" = "Claude Code가 거부했습니다: {}";
+"Claude Code liest seine Eingabe nicht mehr." = "Claude Code가 더 이상 입력을 읽지 않습니다.";
+"Claude Code ließ sich nicht starten: {}" = "Claude Code를 시작할 수 없습니다: {}";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "이 요청은 더 이상 응답을 기다리지 않습니다.";
+"Diese Version von Claude Code kann das hier nicht." = "이 버전의 Claude Code는 여기에서 이 작업을 할 수 없습니다.";
+"Melde dich an, indem du claude im Terminal startest: {}" = "터미널에서 claude를 실행하여 로그인하십시오: {}";
+"Unerwartete Antwort: {}" = "예상치 못한 응답: {}";
+"{} wurde nicht gefunden." = "{}을(를) 찾을 수 없습니다.";

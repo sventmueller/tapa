@@ -1,0 +1,18 @@
+/* Indonesian interface texts; the keys are the German texts in the code. */
+"Als Vorschau öffnen" = "Buka sebagai Pratinjau";
+"Daneben öffnen" = "Buka di Samping";
+"Darunter öffnen" = "Buka di Bawah";
+"Im Browser-Tab öffnen" = "Buka di Tab Browser";
+"Im Finder zeigen" = "Tampilkan di Finder";
+"In den Papierkorb legen" = "Pindahkan ke Tong Sampah";
+"Neue Datei" = "File Baru";
+"Neue Datei …" = "File Baru…";
+"Neuer Ordner" = "Folder Baru";
+"Neuer Ordner …" = "Folder Baru…";
+"Pfad kopieren" = "Salin Path";
+"Relativen Pfad kopieren" = "Salin Path Relatif";
+"Umbenennen" = "Ubah Nama";
+"Umbenennen …" = "Ubah Nama…";
+"„{}“ gibt es schon." = "“{}” sudah ada.";
+"„{}“ wurde nicht angelegt." = "“{}” tidak dibuat.";
+"„{}“ wurde nicht umbenannt." = "“{}” tidak diubah namanya.";

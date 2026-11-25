@@ -1,0 +1,7 @@
+/* Dutch interface texts; the keys are the German texts in the code. */
+"Abbrechen" = "Annuleer";
+"Alle einklappen" = "Klap alles in";
+"Dateien" = "Bestanden";
+"Neue Datei …" = "Nieuw bestand…";
+"Neuer Ordner …" = "Nieuwe map…";
+"OK" = "OK";

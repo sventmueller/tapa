@@ -1,0 +1,8 @@
+/* Italian interface texts; the keys are the German texts in the code. */
+"Das Dokument hat noch keine Datei." = "Il documento non ha ancora un file.";
+"Das Dokument ist schreibgeschützt." = "Il documento è di sola lettura.";
+"Die Datei enthält Binärdaten und wird nie gesichert." = "Il file contiene dati binari e non viene mai salvato.";
+"Die Datei ist schreibgeschützt." = "Il file è di sola lettura.";
+"Die Datei wurde inzwischen außerhalb geändert." = "Il file nel frattempo è stato modificato altrove.";
+"Die Kodierung der Datei ist unbekannt; sie wird nie gesichert." = "La codifica del file è sconosciuta; non viene mai salvato.";
+"Die Stelle liegt außerhalb des Textes: {}" = "La posizione è fuori dal testo: {}";

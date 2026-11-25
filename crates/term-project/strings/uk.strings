@@ -1,0 +1,18 @@
+/* Ukrainian interface texts; the keys are the German texts in the code. */
+"Als Vorschau öffnen" = "Відкрити як попередній перегляд";
+"Daneben öffnen" = "Відкрити поруч";
+"Darunter öffnen" = "Відкрити знизу";
+"Im Browser-Tab öffnen" = "Відкрити у вкладці браузера";
+"Im Finder zeigen" = "Показати у Finder";
+"In den Papierkorb legen" = "Перемістити в Смітник";
+"Neue Datei" = "Новий файл";
+"Neue Datei …" = "Новий файл…";
+"Neuer Ordner" = "Нова папка";
+"Neuer Ordner …" = "Нова папка…";
+"Pfad kopieren" = "Скопіювати шлях";
+"Relativen Pfad kopieren" = "Скопіювати відносний шлях";
+"Umbenennen" = "Перейменувати";
+"Umbenennen …" = "Перейменувати…";
+"„{}“ gibt es schon." = "«{}» уже існує.";
+"„{}“ wurde nicht angelegt." = "«{}» не створено.";
+"„{}“ wurde nicht umbenannt." = "«{}» не перейменовано.";

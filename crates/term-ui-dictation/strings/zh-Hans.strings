@@ -1,0 +1,27 @@
+/* Simplified Chinese interface texts; the keys are the German texts in the code. */
+"API-Schlüssel für {}" = "{} 的 API 密钥";
+"Abgebrochen" = "已取消";
+"Das Diktat ist gerade beschäftigt." = "听写当前正忙。";
+"Das Feld des Diktats ist nicht mehr offen. Der Text liegt in der Zwischenablage." = "接收听写的输入栏已关闭。文本已在剪贴板中。";
+"Das ist kein Schlüssel von OpenAI (sk-…) oder Groq (gsk_…)." = "这不是 OpenAI（sk-…）或 Groq（gsk_…）的密钥。";
+"Das lokale Modell ist nicht installiert. Lade es in den Einstellungen unter Diktat." = "本地模型未安装。请在“设置”的“听写”中下载。";
+"Der Schlüsselbund lehnt ab: {}" = "钥匙串拒绝：{}";
+"Die Aufnahme hat ihre Höchstdauer erreicht." = "录音已达到最长时长。";
+"Diktat beenden" = "停止听写";
+"Diktat starten" = "开始听写";
+"Höre zu …" = "正在聆听…";
+"Kein API-Schlüssel für {}. Trage ihn in den Einstellungen unter Diktat ein." = "没有 {} 的 API 密钥。请在“设置”的“听写”中填入。";
+"Keine Sprache erkannt" = "未识别到语音";
+"Lowspeak hat einen Schlüssel für {}. Für {} übernehmen?" = "Lowspeak 有一个 {} 的密钥。要将它也用于 {} 吗？";
+"Lowspeak hat keinen Schlüssel mehr." = "Lowspeak 已没有密钥。";
+"Lowspeak meldet: {}" = "Lowspeak 报告：{}";
+"Lowspeak transkribiert online mit {}. {} braucht dafür einen eigenen Schlüssel und legt ihn im Schlüsselbund ab." = "Lowspeak 使用 {} 进行在线转写。为此 {} 需要自己的密钥，并将其存放在钥匙串中。";
+"Lowspeaks Schlüssel ließ sich nicht lesen. Gib den Schlüssel selbst ein." = "无法读取 Lowspeak 的密钥。请自行输入密钥。";
+"Nicht jetzt" = "以后";
+"Selbst eingeben …" = "自行输入…";
+"Sichern" = "保存";
+"Transkribiere …" = "正在转写…";
+"{} bietet {} nicht mehr an. Wähle in den Einstellungen unter Diktat ein anderes Modell." = "{} 已不再提供 {}。请在“设置”的“听写”中选取其他模型。";
+"{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "{} 无权访问麦克风。请在“系统设置”>“隐私与安全性”>“麦克风”中允许访问。";
+"{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "为此，{} 会读取它一次，macOS 会先询问你。请在那里选择“允许”，而不是“始终允许”：这样 Lowspeak 的钥匙串项目会保持原样。{} 会将密钥存放在单独的钥匙串项目中。";
+"Übernehmen" = "使用此密钥";

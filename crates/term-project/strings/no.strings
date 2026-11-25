@@ -1,0 +1,18 @@
+/* Norwegian interface texts; the keys are the German texts in the code. */
+"Als Vorschau öffnen" = "Åpne som forhåndsvisning";
+"Daneben öffnen" = "Åpne ved siden av";
+"Darunter öffnen" = "Åpne nedenfor";
+"Im Browser-Tab öffnen" = "Åpne i nettleserfane";
+"Im Finder zeigen" = "Vis i Finder";
+"In den Papierkorb legen" = "Flytt til papirkurv";
+"Neue Datei" = "Ny fil";
+"Neue Datei …" = "Ny fil…";
+"Neuer Ordner" = "Ny mappe";
+"Neuer Ordner …" = "Ny mappe…";
+"Pfad kopieren" = "Kopier bane";
+"Relativen Pfad kopieren" = "Kopier relativ bane";
+"Umbenennen" = "Endre navn";
+"Umbenennen …" = "Endre navn…";
+"„{}“ gibt es schon." = "«{}» finnes allerede.";
+"„{}“ wurde nicht angelegt." = "«{}» ble ikke opprettet.";
+"„{}“ wurde nicht umbenannt." = "«{}» fikk ikke nytt navn.";

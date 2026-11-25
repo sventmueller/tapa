@@ -1,0 +1,14 @@
+/* Ukrainian interface texts; the keys are the German texts in the code. */
+"Dafür fehlt die Berechtigung." = "Для цього немає дозволу.";
+"Das ist ein Ordner, keine Datei." = "Це папка, а не файл.";
+"Der Dateiname ist ungültig." = "Неприпустима назва файлу.";
+"Der Datenträger ist schreibgeschützt." = "Том захищено від запису.";
+"Der Datenträger ist voll." = "Том заповнено.";
+"Der Ordner ist nicht leer." = "Папка не порожня.";
+"Der Vorgang hat zu lange gedauert." = "Операція тривала надто довго.";
+"Die Datei ist gerade belegt." = "Файл зараз зайнятий.";
+"Die Datei ist zu groß." = "Файл завеликий.";
+"Die Datei oder der Ordner existiert nicht." = "Файл або папка не існує.";
+"Die Gegenstelle hat die Verbindung abgelehnt." = "Віддалена сторона відхилила з’єднання.";
+"Ein Teil des Pfads ist kein Ordner." = "Частина шляху не є папкою.";
+"Es gibt dort schon eine Datei dieses Namens." = "Там уже є файл із такою назвою.";

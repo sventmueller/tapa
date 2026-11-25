@@ -1,0 +1,1 @@
+{"properties":{"threadId":{"type":"string"},"threadName":{"type":["string","null"]}},"required":["threadId"],"title":"ThreadNameUpdatedNotification","type":"object"}

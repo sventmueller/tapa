@@ -1,0 +1,14 @@
+/* Finnish interface texts; the keys are the German texts in the code. */
+"Der Agent hat auf {} nicht rechtzeitig geantwortet." = "Agentti ei vastannut ajoissa pyyntöön: {}";
+"Der Agent ist nicht gestartet: {}" = "Agentti ei käynnistynyt: {}";
+"Der Agent spricht die Protokollversion {}, diese App Version 1" = "Agentti käyttää protokollaversiota {}, tämä appi versiota 1";
+"Der Agent verlangt eine Anmeldung." = "Agentti pyytää sinua kirjautumaan sisään.";
+"Die Sitzung ist beendet." = "Istunto on päättynyt.";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "Tämä pyyntö ei enää odota vastausta.";
+"{} startet nur in einem vertrauten Arbeitsbereich." = "{} käynnistyy vain luotetussa työtilassa.";
+"{} wurde nicht gefunden." = "Kohdetta ei löytynyt: {}.";
+"Die Installation wurde nicht bestätigt." = "Asennusta ei vahvistettu.";
+"{} {} oder neuer wird gebraucht" = "{} {} tai uudempi tarvitaan";
+"{} wird gebraucht" = "{} tarvitaan";
+"Der Download ist fehlgeschlagen: {}" = "Lataus epäonnistui: {}";
+"Der Download stimmt nicht mit seiner Prüfsumme überein und wurde verworfen" = "Lataus ei vastaa tarkistussummaansa, ja se hylättiin";

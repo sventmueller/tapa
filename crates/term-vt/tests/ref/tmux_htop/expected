@@ -1,0 +1,776 @@
+size 105 29 0
+cursor 0 0
+line 0 
+line 1   0  [|||||||                  20.0%]   Tasks: 363, 1603 thr; 1 running
+line 2   1  [||                        5.9%]   Load average: 1.61 1.80 1.79
+line 3   2  [|||||                    13.9%]   Uptime: 2 days, 06:36:04
+line 4   3  [|||                       5.9%]
+line 5   Mem[|||||||||||||||||||9.29G/16.0G]
+line 6   Swp[|||||||||||||||    1000M/2.00G]
+line 7 
+line 8   PID USER      PRI  NI  VIRT   RES S CPU% MEM%   TIME+  Command
+line 9  1141 jwilm      26   0 10.5G  227M R  0.8  0.3 11:35.17 target/release/alacritt
+line 10 29598 jwilm      26   0 10.0G  133M R  2.2  0.2  0:01.37 target/debug/alacritty
+line 11   580 jwilm      17   0 9752M 59344 R  0.8  0.1  7:39.16 tmux
+line 12 29240 jwilm      17   0 13.6G  829M R  0.2  1.3  0:59.49 /Applications/Google Ch
+line 13 29220 jwilm      17   0 13.2G  586M R  0.4  0.9  0:14.83 /Applications/Google Ch
+line 14   923 jwilm      17   0 15.6G 1800M R  3.7  2.7 51:50.94 /Applications/Google Ch
+line 15 29826 jwilm      24   0 9621M  7408 R  0.3  0.0  0:00.12 htop
+line 16 22141 jwilm      17   0 13.3G  517M R  0.2  0.8  1:05.40 /Applications/Google Ch
+line 17 19930 jwilm      17   0 13.2G  588M R  0.3  0.9  1:00.37 /Applications/Google Ch
+line 18 13248 jwilm      17   0 13.8G  446M R  0.2  0.7  6:24.47 /Applications/Google Ch
+line 19   396 jwilm      17   0  9.8G 74240 R  0.2  0.1  3:06.16 /System/Library/CoreSer
+line 20   433 jwilm      17   0  9.7G 45856 R  0.2  0.1  2:35.99 /Applications/Karabiner
+line 21 23390 jwilm      17   0 11.4G  250M R  0.1  0.4  0:53.99 /Applications/Spotify.a
+line 22 F1Help  F2Setup F3SearchF4FilterF5Tree  F6SortByF7Nice -F8Nice +F9Kill  F10Quit
+line 23 1:htop*
+line 24 
+line 25 
+line 26 
+line 27 
+line 28 
+cell 1 2 fg=6
+cell 1 3 fg=6
+cell 1 4 fg=6
+cell 1 5 bold
+cell 1 6 fg=2
+cell 1 7 fg=2
+cell 1 8 fg=2
+cell 1 9 fg=1
+cell 1 10 fg=1
+cell 1 11 fg=1
+cell 1 12 fg=1
+cell 1 13 fg=0 bold
+cell 1 14 fg=0 bold
+cell 1 15 fg=0 bold
+cell 1 16 fg=0 bold
+cell 1 17 fg=0 bold
+cell 1 18 fg=0 bold
+cell 1 19 fg=0 bold
+cell 1 20 fg=0 bold
+cell 1 21 fg=0 bold
+cell 1 22 fg=0 bold
+cell 1 23 fg=0 bold
+cell 1 24 fg=0 bold
+cell 1 25 fg=0 bold
+cell 1 26 fg=0 bold
+cell 1 27 fg=0 bold
+cell 1 28 fg=0 bold
+cell 1 29 fg=0 bold
+cell 1 30 fg=0 bold
+cell 1 31 fg=0 bold
+cell 1 32 fg=0 bold
+cell 1 33 fg=0 bold
+cell 1 34 fg=0 bold
+cell 1 35 fg=0 bold
+cell 1 36 bold
+cell 1 40 fg=6
+cell 1 41 fg=6
+cell 1 42 fg=6
+cell 1 43 fg=6
+cell 1 44 fg=6
+cell 1 45 fg=6
+cell 1 46 fg=6
+cell 1 47 fg=6 bold
+cell 1 48 fg=6 bold
+cell 1 49 fg=6 bold
+cell 1 50 fg=6
+cell 1 51 fg=6
+cell 1 52 fg=2 bold
+cell 1 53 fg=2 bold
+cell 1 54 fg=2 bold
+cell 1 55 fg=2 bold
+cell 1 56 fg=2
+cell 1 57 fg=2
+cell 1 58 fg=2
+cell 1 59 fg=2
+cell 1 60 fg=6
+cell 1 61 fg=6
+cell 1 62 fg=2 bold
+cell 1 63 fg=6
+cell 1 64 fg=6
+cell 1 65 fg=6
+cell 1 66 fg=6
+cell 1 67 fg=6
+cell 1 68 fg=6
+cell 1 69 fg=6
+cell 1 70 fg=6
+cell 2 2 fg=6
+cell 2 3 fg=6
+cell 2 4 fg=6
+cell 2 5 bold
+cell 2 6 fg=2
+cell 2 7 fg=1
+cell 2 8 fg=0 bold
+cell 2 9 fg=0 bold
+cell 2 10 fg=0 bold
+cell 2 11 fg=0 bold
+cell 2 12 fg=0 bold
+cell 2 13 fg=0 bold
+cell 2 14 fg=0 bold
+cell 2 15 fg=0 bold
+cell 2 16 fg=0 bold
+cell 2 17 fg=0 bold
+cell 2 18 fg=0 bold
+cell 2 19 fg=0 bold
+cell 2 20 fg=0 bold
+cell 2 21 fg=0 bold
+cell 2 22 fg=0 bold
+cell 2 23 fg=0 bold
+cell 2 24 fg=0 bold
+cell 2 25 fg=0 bold
+cell 2 26 fg=0 bold
+cell 2 27 fg=0 bold
+cell 2 28 fg=0 bold
+cell 2 29 fg=0 bold
+cell 2 30 fg=0 bold
+cell 2 31 fg=0 bold
+cell 2 32 fg=0 bold
+cell 2 33 fg=0 bold
+cell 2 34 fg=0 bold
+cell 2 35 fg=0 bold
+cell 2 36 bold
+cell 2 40 fg=6
+cell 2 41 fg=6
+cell 2 42 fg=6
+cell 2 43 fg=6
+cell 2 44 fg=6
+cell 2 45 fg=6
+cell 2 46 fg=6
+cell 2 47 fg=6
+cell 2 48 fg=6
+cell 2 49 fg=6
+cell 2 50 fg=6
+cell 2 51 fg=6
+cell 2 52 fg=6
+cell 2 53 fg=6
+cell 2 54 bold
+cell 2 55 bold
+cell 2 56 bold
+cell 2 57 bold
+cell 2 58 bold
+cell 2 59 fg=6 bold
+cell 2 60 fg=6 bold
+cell 2 61 fg=6 bold
+cell 2 62 fg=6 bold
+cell 2 63 fg=6 bold
+cell 2 64 fg=6
+cell 2 65 fg=6
+cell 2 66 fg=6
+cell 2 67 fg=6
+cell 2 68 fg=6
+cell 3 2 fg=6
+cell 3 3 fg=6
+cell 3 4 fg=6
+cell 3 5 bold
+cell 3 6 fg=2
+cell 3 7 fg=2
+cell 3 8 fg=2
+cell 3 9 fg=1
+cell 3 10 fg=1
+cell 3 11 fg=0 bold
+cell 3 12 fg=0 bold
+cell 3 13 fg=0 bold
+cell 3 14 fg=0 bold
+cell 3 15 fg=0 bold
+cell 3 16 fg=0 bold
+cell 3 17 fg=0 bold
+cell 3 18 fg=0 bold
+cell 3 19 fg=0 bold
+cell 3 20 fg=0 bold
+cell 3 21 fg=0 bold
+cell 3 22 fg=0 bold
+cell 3 23 fg=0 bold
+cell 3 24 fg=0 bold
+cell 3 25 fg=0 bold
+cell 3 26 fg=0 bold
+cell 3 27 fg=0 bold
+cell 3 28 fg=0 bold
+cell 3 29 fg=0 bold
+cell 3 30 fg=0 bold
+cell 3 31 fg=0 bold
+cell 3 32 fg=0 bold
+cell 3 33 fg=0 bold
+cell 3 34 fg=0 bold
+cell 3 35 fg=0 bold
+cell 3 36 bold
+cell 3 40 fg=6
+cell 3 41 fg=6
+cell 3 42 fg=6
+cell 3 43 fg=6
+cell 3 44 fg=6
+cell 3 45 fg=6
+cell 3 46 fg=6
+cell 3 47 fg=6
+cell 3 48 fg=6 bold
+cell 3 49 fg=6 bold
+cell 3 50 fg=6 bold
+cell 3 51 fg=6 bold
+cell 3 52 fg=6 bold
+cell 3 53 fg=6 bold
+cell 3 54 fg=6 bold
+cell 3 55 fg=6 bold
+cell 3 56 fg=6 bold
+cell 3 57 fg=6 bold
+cell 3 58 fg=6 bold
+cell 3 59 fg=6 bold
+cell 3 60 fg=6 bold
+cell 3 61 fg=6 bold
+cell 3 62 fg=6 bold
+cell 3 63 fg=6 bold
+cell 4 2 fg=6
+cell 4 3 fg=6
+cell 4 4 fg=6
+cell 4 5 bold
+cell 4 6 fg=2
+cell 4 7 fg=2
+cell 4 8 fg=1
+cell 4 9 fg=0 bold
+cell 4 10 fg=0 bold
+cell 4 11 fg=0 bold
+cell 4 12 fg=0 bold
+cell 4 13 fg=0 bold
+cell 4 14 fg=0 bold
+cell 4 15 fg=0 bold
+cell 4 16 fg=0 bold
+cell 4 17 fg=0 bold
+cell 4 18 fg=0 bold
+cell 4 19 fg=0 bold
+cell 4 20 fg=0 bold
+cell 4 21 fg=0 bold
+cell 4 22 fg=0 bold
+cell 4 23 fg=0 bold
+cell 4 24 fg=0 bold
+cell 4 25 fg=0 bold
+cell 4 26 fg=0 bold
+cell 4 27 fg=0 bold
+cell 4 28 fg=0 bold
+cell 4 29 fg=0 bold
+cell 4 30 fg=0 bold
+cell 4 31 fg=0 bold
+cell 4 32 fg=0 bold
+cell 4 33 fg=0 bold
+cell 4 34 fg=0 bold
+cell 4 35 fg=0 bold
+cell 4 36 bold
+cell 5 2 fg=6
+cell 5 3 fg=6
+cell 5 4 fg=6
+cell 5 5 bold
+cell 5 6 fg=2
+cell 5 7 fg=2
+cell 5 8 fg=2
+cell 5 9 fg=2
+cell 5 10 fg=2
+cell 5 11 fg=2
+cell 5 12 fg=2
+cell 5 13 fg=2
+cell 5 14 fg=2
+cell 5 15 fg=2
+cell 5 16 fg=2
+cell 5 17 fg=2
+cell 5 18 fg=2
+cell 5 19 fg=2
+cell 5 20 fg=2
+cell 5 21 fg=2
+cell 5 22 fg=2
+cell 5 23 fg=2
+cell 5 24 fg=4
+cell 5 25 fg=4
+cell 5 26 fg=3
+cell 5 27 fg=3
+cell 5 28 fg=3
+cell 5 29 fg=3
+cell 5 30 fg=3
+cell 5 31 fg=3
+cell 5 32 fg=3
+cell 5 33 fg=3
+cell 5 34 fg=3
+cell 5 35 fg=0 bold
+cell 5 36 bold
+cell 6 2 fg=6
+cell 6 3 fg=6
+cell 6 4 fg=6
+cell 6 5 bold
+cell 6 6 fg=1
+cell 6 7 fg=1
+cell 6 8 fg=1
+cell 6 9 fg=1
+cell 6 10 fg=1
+cell 6 11 fg=1
+cell 6 12 fg=1
+cell 6 13 fg=1
+cell 6 14 fg=1
+cell 6 15 fg=1
+cell 6 16 fg=1
+cell 6 17 fg=1
+cell 6 18 fg=1
+cell 6 19 fg=1
+cell 6 20 fg=1
+cell 6 21 fg=0 bold
+cell 6 22 fg=0 bold
+cell 6 23 fg=0 bold
+cell 6 24 fg=0 bold
+cell 6 25 fg=0 bold
+cell 6 26 fg=0 bold
+cell 6 27 fg=0 bold
+cell 6 28 fg=0 bold
+cell 6 29 fg=0 bold
+cell 6 30 fg=0 bold
+cell 6 31 fg=0 bold
+cell 6 32 fg=0 bold
+cell 6 33 fg=0 bold
+cell 6 34 fg=0 bold
+cell 6 35 fg=0 bold
+cell 6 36 bold
+cell 8 0 fg=0 bg=2
+cell 8 1 fg=0 bg=2
+cell 8 2 fg=0 bg=2
+cell 8 3 fg=0 bg=2
+cell 8 4 fg=0 bg=2
+cell 8 5 fg=0 bg=2
+cell 8 6 fg=0 bg=2
+cell 8 7 fg=0 bg=2
+cell 8 8 fg=0 bg=2
+cell 8 9 fg=0 bg=2
+cell 8 10 fg=0 bg=2
+cell 8 11 fg=0 bg=2
+cell 8 12 fg=0 bg=2
+cell 8 13 fg=0 bg=2
+cell 8 14 fg=0 bg=2
+cell 8 15 fg=0 bg=2
+cell 8 16 fg=0 bg=2
+cell 8 17 fg=0 bg=2
+cell 8 18 fg=0 bg=2
+cell 8 19 fg=0 bg=2
+cell 8 20 fg=0 bg=2
+cell 8 21 fg=0 bg=2
+cell 8 22 fg=0 bg=2
+cell 8 23 fg=0 bg=2
+cell 8 24 fg=0 bg=2
+cell 8 25 fg=0 bg=2
+cell 8 26 fg=0 bg=2
+cell 8 27 fg=0 bg=2
+cell 8 28 fg=0 bg=2
+cell 8 29 fg=0 bg=2
+cell 8 30 fg=0 bg=2
+cell 8 31 fg=0 bg=2
+cell 8 32 fg=0 bg=2
+cell 8 33 fg=0 bg=2
+cell 8 34 fg=0 bg=2
+cell 8 35 fg=0 bg=2
+cell 8 36 fg=0 bg=2
+cell 8 37 fg=0 bg=2
+cell 8 38 fg=0 bg=6
+cell 8 39 fg=0 bg=6
+cell 8 40 fg=0 bg=6
+cell 8 41 fg=0 bg=6
+cell 8 42 fg=0 bg=6
+cell 8 43 fg=0 bg=2
+cell 8 44 fg=0 bg=2
+cell 8 45 fg=0 bg=2
+cell 8 46 fg=0 bg=2
+cell 8 47 fg=0 bg=2
+cell 8 48 fg=0 bg=2
+cell 8 49 fg=0 bg=2
+cell 8 50 fg=0 bg=2
+cell 8 51 fg=0 bg=2
+cell 8 52 fg=0 bg=2
+cell 8 53 fg=0 bg=2
+cell 8 54 fg=0 bg=2
+cell 8 55 fg=0 bg=2
+cell 8 56 fg=0 bg=2
+cell 8 57 fg=0 bg=2
+cell 8 58 fg=0 bg=2
+cell 8 59 fg=0 bg=2
+cell 8 60 fg=0 bg=2
+cell 8 61 fg=0 bg=2
+cell 8 62 fg=0 bg=2
+cell 8 63 fg=0 bg=2
+cell 8 64 fg=0 bg=2
+cell 8 65 fg=0 bg=2
+cell 8 66 fg=0 bg=2
+cell 8 67 fg=0 bg=2
+cell 8 68 fg=0 bg=2
+cell 8 69 fg=0 bg=2
+cell 8 70 fg=0 bg=2
+cell 8 71 fg=0 bg=2
+cell 8 72 fg=0 bg=2
+cell 8 73 fg=0 bg=2
+cell 8 74 fg=0 bg=2
+cell 8 75 fg=0 bg=2
+cell 8 76 fg=0 bg=2
+cell 8 77 fg=0 bg=2
+cell 8 78 fg=0 bg=2
+cell 8 79 fg=0 bg=2
+cell 9 24 fg=1 bold
+cell 9 25 fg=1 bold
+cell 9 26 fg=1 bold
+cell 9 27 fg=1 bold
+cell 9 28 fg=1 bold
+cell 9 29 fg=1 bold
+cell 9 30 fg=6
+cell 9 31 fg=6
+cell 9 32 fg=6
+cell 9 33 fg=6
+cell 9 34 fg=6
+cell 9 35 fg=6
+cell 9 36 fg=2
+cell 9 37 fg=2
+cell 10 24 fg=1 bold
+cell 10 25 fg=1 bold
+cell 10 26 fg=1 bold
+cell 10 27 fg=1 bold
+cell 10 28 fg=1 bold
+cell 10 29 fg=1 bold
+cell 10 30 fg=6
+cell 10 31 fg=6
+cell 10 32 fg=6
+cell 10 33 fg=6
+cell 10 34 fg=6
+cell 10 35 fg=6
+cell 10 36 fg=2
+cell 10 37 fg=2
+cell 11 24 fg=6
+cell 11 25 fg=6
+cell 11 26 fg=6
+cell 11 27 fg=6
+cell 11 28 fg=6
+cell 11 29 fg=6
+cell 11 30 fg=6
+cell 11 31 fg=6
+cell 11 36 fg=2
+cell 11 37 fg=2
+cell 12 24 fg=1 bold
+cell 12 25 fg=1 bold
+cell 12 26 fg=1 bold
+cell 12 27 fg=1 bold
+cell 12 28 fg=1 bold
+cell 12 29 fg=1 bold
+cell 12 30 fg=6
+cell 12 31 fg=6
+cell 12 32 fg=6
+cell 12 33 fg=6
+cell 12 34 fg=6
+cell 12 35 fg=6
+cell 12 36 fg=2
+cell 12 37 fg=2
+cell 13 24 fg=1 bold
+cell 13 25 fg=1 bold
+cell 13 26 fg=1 bold
+cell 13 27 fg=1 bold
+cell 13 28 fg=1 bold
+cell 13 29 fg=1 bold
+cell 13 30 fg=6
+cell 13 31 fg=6
+cell 13 32 fg=6
+cell 13 33 fg=6
+cell 13 34 fg=6
+cell 13 35 fg=6
+cell 13 36 fg=2
+cell 13 37 fg=2
+cell 14 0 fg=0 bg=6
+cell 14 1 fg=0 bg=6
+cell 14 2 fg=0 bg=6
+cell 14 3 fg=0 bg=6
+cell 14 4 fg=0 bg=6
+cell 14 5 fg=0 bg=6
+cell 14 6 fg=0 bg=6
+cell 14 7 fg=0 bg=6
+cell 14 8 fg=0 bg=6
+cell 14 9 fg=0 bg=6
+cell 14 10 fg=0 bg=6
+cell 14 11 fg=0 bg=6
+cell 14 12 fg=0 bg=6
+cell 14 13 fg=0 bg=6
+cell 14 14 fg=0 bg=6
+cell 14 15 fg=0 bg=6
+cell 14 16 fg=0 bg=6
+cell 14 17 fg=0 bg=6
+cell 14 18 fg=0 bg=6
+cell 14 19 fg=0 bg=6
+cell 14 20 fg=0 bg=6
+cell 14 21 fg=0 bg=6
+cell 14 22 fg=0 bg=6
+cell 14 23 fg=0 bg=6
+cell 14 24 fg=0 bg=6
+cell 14 25 fg=0 bg=6
+cell 14 26 fg=0 bg=6
+cell 14 27 fg=0 bg=6
+cell 14 28 fg=0 bg=6
+cell 14 29 fg=0 bg=6
+cell 14 30 fg=0 bg=6
+cell 14 31 fg=0 bg=6
+cell 14 32 fg=0 bg=6
+cell 14 33 fg=0 bg=6
+cell 14 34 fg=0 bg=6
+cell 14 35 fg=0 bg=6
+cell 14 36 fg=0 bg=6
+cell 14 37 fg=0 bg=6
+cell 14 38 fg=0 bg=6
+cell 14 39 fg=0 bg=6
+cell 14 40 fg=0 bg=6
+cell 14 41 fg=0 bg=6
+cell 14 42 fg=0 bg=6
+cell 14 43 fg=0 bg=6
+cell 14 44 fg=0 bg=6
+cell 14 45 fg=0 bg=6
+cell 14 46 fg=0 bg=6
+cell 14 47 fg=0 bg=6
+cell 14 48 fg=0 bg=6
+cell 14 49 fg=0 bg=6
+cell 14 50 fg=0 bg=6
+cell 14 51 fg=0 bg=6
+cell 14 52 fg=0 bg=6
+cell 14 53 fg=0 bg=6
+cell 14 54 fg=0 bg=6
+cell 14 55 fg=0 bg=6
+cell 14 56 fg=0 bg=6
+cell 14 57 fg=0 bg=6
+cell 14 58 fg=0 bg=6
+cell 14 59 fg=0 bg=6
+cell 14 60 fg=0 bg=6
+cell 14 61 fg=0 bg=6
+cell 14 62 fg=0 bg=6
+cell 14 63 fg=0 bg=6
+cell 14 64 fg=0 bg=6
+cell 14 65 fg=0 bg=6
+cell 14 66 fg=0 bg=6
+cell 14 67 fg=0 bg=6
+cell 14 68 fg=0 bg=6
+cell 14 69 fg=0 bg=6
+cell 14 70 fg=0 bg=6
+cell 14 71 fg=0 bg=6
+cell 14 72 fg=0 bg=6
+cell 14 73 fg=0 bg=6
+cell 14 74 fg=0 bg=6
+cell 14 75 fg=0 bg=6
+cell 14 76 fg=0 bg=6
+cell 14 77 fg=0 bg=6
+cell 14 78 fg=0 bg=6
+cell 14 79 fg=0 bg=6
+cell 15 24 fg=6
+cell 15 25 fg=6
+cell 15 26 fg=6
+cell 15 27 fg=6
+cell 15 28 fg=6
+cell 15 29 fg=6
+cell 15 30 fg=6
+cell 15 31 fg=6
+cell 15 36 fg=2
+cell 15 37 fg=2
+cell 16 24 fg=1 bold
+cell 16 25 fg=1 bold
+cell 16 26 fg=1 bold
+cell 16 27 fg=1 bold
+cell 16 28 fg=1 bold
+cell 16 29 fg=1 bold
+cell 16 30 fg=6
+cell 16 31 fg=6
+cell 16 32 fg=6
+cell 16 33 fg=6
+cell 16 34 fg=6
+cell 16 35 fg=6
+cell 16 36 fg=2
+cell 16 37 fg=2
+cell 17 24 fg=1 bold
+cell 17 25 fg=1 bold
+cell 17 26 fg=1 bold
+cell 17 27 fg=1 bold
+cell 17 28 fg=1 bold
+cell 17 29 fg=1 bold
+cell 17 30 fg=6
+cell 17 31 fg=6
+cell 17 32 fg=6
+cell 17 33 fg=6
+cell 17 34 fg=6
+cell 17 35 fg=6
+cell 17 36 fg=2
+cell 17 37 fg=2
+cell 18 24 fg=1 bold
+cell 18 25 fg=1 bold
+cell 18 26 fg=1 bold
+cell 18 27 fg=1 bold
+cell 18 28 fg=1 bold
+cell 18 29 fg=1 bold
+cell 18 30 fg=6
+cell 18 31 fg=6
+cell 18 32 fg=6
+cell 18 33 fg=6
+cell 18 34 fg=6
+cell 18 35 fg=6
+cell 18 36 fg=2
+cell 18 37 fg=2
+cell 19 24 fg=1 bold
+cell 19 25 fg=1 bold
+cell 19 26 fg=1 bold
+cell 19 27 fg=1 bold
+cell 19 28 fg=1 bold
+cell 19 29 fg=1 bold
+cell 19 30 fg=6
+cell 19 31 fg=6
+cell 19 36 fg=2
+cell 19 37 fg=2
+cell 20 24 fg=1 bold
+cell 20 25 fg=1 bold
+cell 20 26 fg=1 bold
+cell 20 27 fg=1 bold
+cell 20 28 fg=1 bold
+cell 20 29 fg=1 bold
+cell 20 30 fg=6
+cell 20 31 fg=6
+cell 20 36 fg=2
+cell 20 37 fg=2
+cell 21 24 fg=1 bold
+cell 21 25 fg=1 bold
+cell 21 26 fg=1 bold
+cell 21 27 fg=1 bold
+cell 21 28 fg=1 bold
+cell 21 29 fg=1 bold
+cell 21 30 fg=6
+cell 21 31 fg=6
+cell 21 32 fg=6
+cell 21 33 fg=6
+cell 21 34 fg=6
+cell 21 35 fg=6
+cell 21 36 fg=2
+cell 21 37 fg=2
+cell 22 2 fg=0 bg=6
+cell 22 3 fg=0 bg=6
+cell 22 4 fg=0 bg=6
+cell 22 5 fg=0 bg=6
+cell 22 6 fg=0 bg=6
+cell 22 7 fg=0 bg=6
+cell 22 10 fg=0 bg=6
+cell 22 11 fg=0 bg=6
+cell 22 12 fg=0 bg=6
+cell 22 13 fg=0 bg=6
+cell 22 14 fg=0 bg=6
+cell 22 15 fg=0 bg=6
+cell 22 18 fg=0 bg=6
+cell 22 19 fg=0 bg=6
+cell 22 20 fg=0 bg=6
+cell 22 21 fg=0 bg=6
+cell 22 22 fg=0 bg=6
+cell 22 23 fg=0 bg=6
+cell 22 26 fg=0 bg=6
+cell 22 27 fg=0 bg=6
+cell 22 28 fg=0 bg=6
+cell 22 29 fg=0 bg=6
+cell 22 30 fg=0 bg=6
+cell 22 31 fg=0 bg=6
+cell 22 34 fg=0 bg=6
+cell 22 35 fg=0 bg=6
+cell 22 36 fg=0 bg=6
+cell 22 37 fg=0 bg=6
+cell 22 38 fg=0 bg=6
+cell 22 39 fg=0 bg=6
+cell 22 42 fg=0 bg=6
+cell 22 43 fg=0 bg=6
+cell 22 44 fg=0 bg=6
+cell 22 45 fg=0 bg=6
+cell 22 46 fg=0 bg=6
+cell 22 47 fg=0 bg=6
+cell 22 50 fg=0 bg=6
+cell 22 51 fg=0 bg=6
+cell 22 52 fg=0 bg=6
+cell 22 53 fg=0 bg=6
+cell 22 54 fg=0 bg=6
+cell 22 55 fg=0 bg=6
+cell 22 58 fg=0 bg=6
+cell 22 59 fg=0 bg=6
+cell 22 60 fg=0 bg=6
+cell 22 61 fg=0 bg=6
+cell 22 62 fg=0 bg=6
+cell 22 63 fg=0 bg=6
+cell 22 66 fg=0 bg=6
+cell 22 67 fg=0 bg=6
+cell 22 68 fg=0 bg=6
+cell 22 69 fg=0 bg=6
+cell 22 70 fg=0 bg=6
+cell 22 71 fg=0 bg=6
+cell 22 75 fg=0 bg=6
+cell 22 76 fg=0 bg=6
+cell 22 77 fg=0 bg=6
+cell 22 78 fg=0 bg=6
+cell 22 79 fg=0 bg=6
+cell 23 0 fg=0 bg=3
+cell 23 1 fg=0 bg=3
+cell 23 2 fg=0 bg=3
+cell 23 3 fg=0 bg=3
+cell 23 4 fg=0 bg=3
+cell 23 5 fg=0 bg=3
+cell 23 6 fg=0 bg=3
+cell 23 7 fg=0 bg=4
+cell 23 8 fg=0 bg=4
+cell 23 9 fg=0 bg=4
+cell 23 10 fg=0 bg=4
+cell 23 11 fg=0 bg=4
+cell 23 12 fg=0 bg=4
+cell 23 13 fg=0 bg=4
+cell 23 14 fg=0 bg=4
+cell 23 15 fg=0 bg=4
+cell 23 16 fg=0 bg=4
+cell 23 17 fg=0 bg=4
+cell 23 18 fg=0 bg=4
+cell 23 19 fg=0 bg=4
+cell 23 20 fg=0 bg=4
+cell 23 21 fg=0 bg=4
+cell 23 22 fg=0 bg=4
+cell 23 23 fg=0 bg=4
+cell 23 24 fg=0 bg=4
+cell 23 25 fg=0 bg=4
+cell 23 26 fg=0 bg=4
+cell 23 27 fg=0 bg=4
+cell 23 28 fg=0 bg=4
+cell 23 29 fg=0 bg=4
+cell 23 30 fg=0 bg=4
+cell 23 31 fg=0 bg=4
+cell 23 32 fg=0 bg=4
+cell 23 33 fg=0 bg=4
+cell 23 34 fg=0 bg=4
+cell 23 35 fg=0 bg=4
+cell 23 36 fg=0 bg=4
+cell 23 37 fg=0 bg=4
+cell 23 38 fg=0 bg=4
+cell 23 39 fg=0 bg=4
+cell 23 40 fg=0 bg=4
+cell 23 41 fg=0 bg=4
+cell 23 42 fg=0 bg=4
+cell 23 43 fg=0 bg=4
+cell 23 44 fg=0 bg=4
+cell 23 45 fg=0 bg=4
+cell 23 46 fg=0 bg=4
+cell 23 47 fg=0 bg=4
+cell 23 48 fg=0 bg=4
+cell 23 49 fg=0 bg=4
+cell 23 50 fg=0 bg=4
+cell 23 51 fg=0 bg=4
+cell 23 52 fg=0 bg=4
+cell 23 53 fg=0 bg=4
+cell 23 54 fg=0 bg=4
+cell 23 55 fg=0 bg=4
+cell 23 56 fg=0 bg=4
+cell 23 57 fg=0 bg=4
+cell 23 58 fg=0 bg=4
+cell 23 59 fg=0 bg=4
+cell 23 60 fg=0 bg=4
+cell 23 61 fg=0 bg=4
+cell 23 62 fg=0 bg=4
+cell 23 63 fg=0 bg=4
+cell 23 64 fg=0 bg=4
+cell 23 65 fg=0 bg=4
+cell 23 66 fg=0 bg=4
+cell 23 67 fg=0 bg=4
+cell 23 68 fg=0 bg=4
+cell 23 69 fg=0 bg=4
+cell 23 70 fg=0 bg=4
+cell 23 71 fg=0 bg=4
+cell 23 72 fg=0 bg=4
+cell 23 73 fg=0 bg=4
+cell 23 74 fg=0 bg=4
+cell 23 75 fg=0 bg=4
+cell 23 76 fg=0 bg=4
+cell 23 77 fg=0 bg=4
+cell 23 78 fg=0 bg=4
+cell 23 79 fg=0 bg=4

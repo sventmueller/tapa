@@ -1,0 +1,8 @@
+/* Hebrew interface texts; the keys are the German texts in the code. */
+"Das Dokument hat noch keine Datei." = "למסמך אין עדיין קובץ.";
+"Das Dokument ist schreibgeschützt." = "המסמך מיועד לקריאה בלבד.";
+"Die Datei enthält Binärdaten und wird nie gesichert." = "הקובץ מכיל נתונים בינאריים ולעולם לא יישמר.";
+"Die Datei ist schreibgeschützt." = "הקובץ מיועד לקריאה בלבד.";
+"Die Datei wurde inzwischen außerhalb geändert." = "הקובץ שונה בינתיים מחוץ ליישום.";
+"Die Kodierung der Datei ist unbekannt; sie wird nie gesichert." = "קידוד הקובץ אינו ידוע; הוא לעולם לא יישמר.";
+"Die Stelle liegt außerhalb des Textes: {}" = "המיקום נמצא מחוץ לטקסט: {}";

@@ -1,0 +1,27 @@
+/* Hindi interface texts; the keys are the German texts in the code. */
+"API-Schlüssel für {}" = "{} के लिए API कुंजी";
+"Abgebrochen" = "रद्द किया गया";
+"Das Diktat ist gerade beschäftigt." = "डिक्टेशन अभी व्यस्त है।";
+"Das Feld des Diktats ist nicht mehr offen. Der Text liegt in der Zwischenablage." = "डिक्टेशन वाला फ़ील्ड अब खुला नहीं है। टेक्स्ट क्लिपबोर्ड पर है।";
+"Das ist kein Schlüssel von OpenAI (sk-…) oder Groq (gsk_…)." = "यह OpenAI (sk-…) या Groq (gsk_…) की कुंजी नहीं है।";
+"Das lokale Modell ist nicht installiert. Lade es in den Einstellungen unter Diktat." = "लोकल मॉडल इंस्टॉल नहीं है। इसे सेटिंग्ज़ में डिक्टेशन के अंतर्गत डाउनलोड करें।";
+"Der Schlüsselbund lehnt ab: {}" = "कीचेन अस्वीकार करता है : {}";
+"Die Aufnahme hat ihre Höchstdauer erreicht." = "रिकॉर्डिंग अपनी अधिकतम अवधि तक पहुँच गई।";
+"Diktat beenden" = "डिक्टेशन बंद करें";
+"Diktat starten" = "डिक्टेशन शुरू करें";
+"Höre zu …" = "सुन रहा है…";
+"Kein API-Schlüssel für {}. Trage ihn in den Einstellungen unter Diktat ein." = "{} के लिए कोई API कुंजी नहीं है। इसे सेटिंग्ज़ में डिक्टेशन के अंतर्गत दर्ज करें।";
+"Keine Sprache erkannt" = "कोई आवाज़ पहचानी नहीं गई";
+"Lowspeak hat einen Schlüssel für {}. Für {} übernehmen?" = "Lowspeak के पास {} की कुंजी है। क्या इसे {} के लिए भी उपयोग करें?";
+"Lowspeak hat keinen Schlüssel mehr." = "Lowspeak के पास अब कोई कुंजी नहीं है।";
+"Lowspeak meldet: {}" = "Lowspeak का संदेश : {}";
+"Lowspeak transkribiert online mit {}. {} braucht dafür einen eigenen Schlüssel und legt ihn im Schlüsselbund ab." = "Lowspeak {} के साथ ऑनलाइन ट्रांसक्राइब करता है। इसके लिए {} को अपनी अलग कुंजी चाहिए, जिसे वह कीचेन में रखता है।";
+"Lowspeaks Schlüssel ließ sich nicht lesen. Gib den Schlüssel selbst ein." = "Lowspeak की कुंजी पढ़ी नहीं जा सकी। कुंजी खुद दर्ज करें।";
+"Nicht jetzt" = "अभी नहीं";
+"Selbst eingeben …" = "खुद दर्ज करें…";
+"Sichern" = "सहेजें";
+"Transkribiere …" = "ट्रांसक्राइब हो रहा है…";
+"{} bietet {} nicht mehr an. Wähle in den Einstellungen unter Diktat ein anderes Modell." = "{} अब {} उपलब्ध नहीं कराता। सेटिंग्ज़ में डिक्टेशन के अंतर्गत कोई दूसरा मॉडल चुनें।";
+"{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "{} के पास माइक्रोफ़ोन का ऐक्सेस नहीं है। सिस्टम सेटिंग्ज़ में गोपनीयता और सुरक्षा > माइक्रोफ़ोन के अंतर्गत इसकी अनुमति दें।";
+"{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "इसके लिए {} इसे एक बार पढ़ता है, और macOS पहले अनुमति माँगता है। वहाँ “अनुमति दें” चुनें, “हमेशा अनुमति दें” नहीं, ताकि Lowspeak का आइटम जैसा है वैसा ही रहे। {} कुंजी को अपने अलग आइटम में रखता है।";
+"Übernehmen" = "कुंजी उपयोग करें";

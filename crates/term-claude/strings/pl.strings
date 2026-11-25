@@ -1,0 +1,13 @@
+/* Polish interface texts; the keys are the German texts in the code. */
+"Claude Code hat das Zurückspulen abgelehnt: {}" = "Claude Code odrzucił przewinięcie do tyłu: {}";
+"Claude Code hat nicht rechtzeitig geantwortet." = "Claude Code nie odpowiedział na czas.";
+"Claude Code ist beendet." = "Claude Code zakończył działanie.";
+"Claude Code ist nicht gestartet: {}" = "Claude Code nie został uruchomiony: {}";
+"Claude Code lehnt ab: {}" = "Claude Code odmawia: {}";
+"Claude Code liest seine Eingabe nicht mehr." = "Claude Code nie odczytuje już swojego wejścia.";
+"Claude Code ließ sich nicht starten: {}" = "Nie można uruchomić Claude Code: {}";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "To żądanie nie czeka już na odpowiedź.";
+"Diese Version von Claude Code kann das hier nicht." = "Ta wersja Claude Code nie może tego tutaj zrobić.";
+"Melde dich an, indem du claude im Terminal startest: {}" = "Zaloguj się, uruchamiając claude w terminalu: {}";
+"Unerwartete Antwort: {}" = "Nieoczekiwana odpowiedź: {}";
+"{} wurde nicht gefunden." = "Nie znaleziono: {}.";

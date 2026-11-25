@@ -1,0 +1,7 @@
+/* English interface texts; the keys are the German texts in the code. */
+"Abbrechen" = "Cancel";
+"Alle einklappen" = "Fold All";
+"Dateien" = "Files";
+"Neue Datei …" = "New File…";
+"Neuer Ordner …" = "New Folder…";
+"OK" = "OK";

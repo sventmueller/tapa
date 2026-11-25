@@ -1,0 +1,8 @@
+/* French interface texts; the keys are the German texts in the code. */
+"Das Dokument hat noch keine Datei." = "Le document n’a pas encore de fichier.";
+"Das Dokument ist schreibgeschützt." = "Le document est en lecture seule.";
+"Die Datei enthält Binärdaten und wird nie gesichert." = "Le fichier contient des données binaires et n’est jamais enregistré.";
+"Die Datei ist schreibgeschützt." = "Le fichier est en lecture seule.";
+"Die Datei wurde inzwischen außerhalb geändert." = "Le fichier a été modifié ailleurs entre-temps.";
+"Die Kodierung der Datei ist unbekannt; sie wird nie gesichert." = "L’encodage du fichier est inconnu ; il n’est jamais enregistré.";
+"Die Stelle liegt außerhalb des Textes: {}" = "L’emplacement se trouve hors du texte : {}";

@@ -1,0 +1,7 @@
+/* Turkish interface texts; the keys are the German texts in the code. */
+"Abbrechen" = "Vazgeç";
+"Alle einklappen" = "Tümünü Katla";
+"Dateien" = "Dosyalar";
+"Neue Datei …" = "Yeni Dosya…";
+"Neuer Ordner …" = "Yeni Klasör…";
+"OK" = "Tamam";

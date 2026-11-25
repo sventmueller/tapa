@@ -1,0 +1,46 @@
+[package]
+name = "term-acp"
+version.workspace = true
+description = "Agents over the Agent Client Protocol: the connection, the register of agents and their installation"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[lints]
+workspace = true
+
+[[bin]]
+name = "acp-test-agent"
+path = "src/bin/acp-test-agent.rs"
+test = false
+required-features = ["testing"]
+
+[[bin]]
+name = "acp-record"
+path = "src/bin/acp-record.rs"
+test = false
+required-features = ["testing"]
+
+[features]
+# The scripted test agent, its program and the recorder, for tests and the self-test; not in the shipped app.
+testing = []
+
+[dependencies]
+# Pinned exactly: the unstable features may change in a 5.x minor, and each minor pins a newer schema.
+agent-client-protocol = { version = "=5.6.1", features = ["unstable_end_turn_token_usage", "unstable_session_fork"] }
+blocking = "1.7.0"
+futures = { version = "0.3.34", default-features = false, features = ["std", "executor"] }
+term-base.workspace = true
+term-net.workspace = true
+term-process.workspace = true
+term-thread.workspace = true
+splat-i18n.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+
+[dev-dependencies]
+term-base = { workspace = true, features = ["testing"] }
+# Itself with the test agent, for the integration tests.
+term-acp = { path = ".", features = ["testing"] }
+sha2 = "0.11.1"

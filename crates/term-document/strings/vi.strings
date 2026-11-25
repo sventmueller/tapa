@@ -1,0 +1,8 @@
+/* Vietnamese interface texts; the keys are the German texts in the code. */
+"Das Dokument hat noch keine Datei." = "Tài liệu chưa có tệp.";
+"Das Dokument ist schreibgeschützt." = "Tài liệu chỉ đọc.";
+"Die Datei enthält Binärdaten und wird nie gesichert." = "Tệp chứa dữ liệu nhị phân và không bao giờ được lưu.";
+"Die Datei ist schreibgeschützt." = "Tệp chỉ đọc.";
+"Die Datei wurde inzwischen außerhalb geändert." = "Trong lúc đó, tệp đã được thay đổi ở nơi khác.";
+"Die Kodierung der Datei ist unbekannt; sie wird nie gesichert." = "Không rõ mã hóa của tệp; tệp không bao giờ được lưu.";
+"Die Stelle liegt außerhalb des Textes: {}" = "Vị trí nằm ngoài văn bản: {}";

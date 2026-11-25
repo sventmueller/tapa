@@ -1,0 +1,7 @@
+/* French interface texts; the keys are the German texts in the code. */
+"Abbrechen" = "Annuler";
+"Alle einklappen" = "Tout replier";
+"Dateien" = "Fichiers";
+"Neue Datei …" = "Nouveau fichier…";
+"Neuer Ordner …" = "Nouveau dossier…";
+"OK" = "OK";

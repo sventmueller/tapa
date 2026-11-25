@@ -1,0 +1,36 @@
+size 80 30 10
+cursor 29 32
+line 0 [undeadleech@archhq alacritty]$ ls -lah
+line 1 total 464K
+line 2 drwxr-xr-x 13 undeadleech undeadleech 4.0K Feb 12 20:50 .
+line 3 drwxr-xr-x 15 undeadleech undeadleech 4.0K Dec  9 18:42 ..
+line 4 drwxr-xr-x  5 undeadleech undeadleech 4.0K Feb 10 09:04 alacritty
+line 5 [undeadleech@archhq alacritty]$ ls
+line 6 alacritty	      	        Cargo.toml	      grid.json	      rustfmt.toml
+line 7 alacritty_config	        CHANGELOG.md	    INSTALL.md	     scripts
+line 8 alacritty_config_derive  config.json	     LICENSE-APACHE  size.json
+line 9 alacritty.recording	     CONTRIBUTING.md  LICENSE-MIT	    target
+line 10 alacritty_terminal	      docs	  	         Makefile	       TODO
+line 11 Cargo.lock	     	        extra	 	         README.md
+line 12 [undeadleech@archhq alacritty]$ ls
+line 13 alacritty	      	        Cargo.toml	      grid.json	      rustfmt.toml
+line 14 alacritty_config	        CHANGELOG.md	    INSTALL.md	     scripts
+line 15 alacritty_config_derive  config.json	     LICENSE-APACHE  size.json
+line 16 alacritty.recording	     CONTRIBUTING.md  LICENSE-MIT	    target
+line 17 alacritty_terminal	      docs	  	         Makefile	       TODO
+line 18 Cargo.lock	     	        extra	 	         README.md
+line 19 [undeadleech@archhq alacritty]$ ls
+line 20 alacritty	      	        Cargo.toml	      grid.json	      rustfmt.toml
+line 21 alacritty_config	        CHANGELOG.md	    INSTALL.md	     scripts
+line 22 alacritty_config_derive  config.json	     LICENSE-APACHE  size.json
+line 23 alacritty.recording	     CONTRIBUTING.md  LICENSE-MIT	    target
+line 24 alacritty_terminal	      docs	  	         Makefile	       TODO
+line 25 Cargo.lock	     	        extra	 	         README.md
+line 26 [undeadleech@archhq alacritty]$ ls
+line 27 alacritty	      	        Cargo.toml	      grid.json	      rustfmt.toml
+line 28 alacritty_config	        CHANGELOG.md	    INSTALL.md	     scripts
+line 29 alacritty_config_derive  config.json	     LICENSE-APACHE  size.json
+line 30 alacritty.recording	     CONTRIBUTING.md  LICENSE-MIT	    target
+line 31 alacritty_terminal	      docs	  	         Makefile	       TODO
+line 32 Cargo.lock	     	        extra	 	         README.md
+line 33 [undeadleech@archhq alacritty]$

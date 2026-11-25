@@ -1,0 +1,18 @@
+/* Hindi interface texts; the keys are the German texts in the code. */
+"Als Vorschau öffnen" = "प्रीव्यू के रूप में खोलें";
+"Daneben öffnen" = "बगल में खोलें";
+"Darunter öffnen" = "नीचे खोलें";
+"Im Browser-Tab öffnen" = "ब्राउज़र टैब में खोलें";
+"Im Finder zeigen" = "Finder में दिखाएँ";
+"In den Papierkorb legen" = "ट्रैश में ले जाएँ";
+"Neue Datei" = "नई फ़ाइल";
+"Neue Datei …" = "नई फ़ाइल…";
+"Neuer Ordner" = "नया फ़ोल्डर";
+"Neuer Ordner …" = "नया फ़ोल्डर…";
+"Pfad kopieren" = "पाथ कॉपी करें";
+"Relativen Pfad kopieren" = "रिलेटिव पाथ कॉपी करें";
+"Umbenennen" = "नाम बदलें";
+"Umbenennen …" = "नाम बदलें…";
+"„{}“ gibt es schon." = "“{}” पहले से मौजूद है।";
+"„{}“ wurde nicht angelegt." = "“{}” नहीं बनाया जा सका।";
+"„{}“ wurde nicht umbenannt." = "“{}” का नाम नहीं बदला जा सका।";

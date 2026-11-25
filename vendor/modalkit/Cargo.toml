@@ -1,0 +1,126 @@
+# Dango's maintained copy of modalkit 0.0.32 from crates.io, edited by hand; PATCHES.md lists every change.
+
+[package]
+edition = "2024"
+rust-version = "1.88"
+name = "modalkit"
+version = "0.0.32"
+authors = ["Ulyssa <git@ulyssa.dev>"]
+build = false
+exclude = [
+    ".github",
+    "CONTRIBUTING.md",
+]
+autolib = false
+autobins = false
+autoexamples = false
+autotests = false
+autobenches = false
+description = "A library for building applications that use modal editing"
+homepage = "https://github.com/ulyssa/modalkit/tree/main/crates/modalkit"
+readme = "README.md"
+keywords = [
+    "modal",
+    "vim",
+    "emacs",
+    "kakoune",
+]
+categories = [
+    "command-line-interface",
+    "text-editors",
+]
+license = "Apache-2.0"
+repository = "https://github.com/ulyssa/modalkit"
+resolver = "2"
+
+[features]
+clipboard = ["dep:arboard"]
+# Dango: only the conversions from crossterm's key events; the key types themselves live in `key::event`.
+crossterm = ["dep:crossterm"]
+default = []
+
+[lib]
+name = "modalkit"
+path = "src/lib.rs"
+
+[dependencies.anyhow]
+version = "1.0.104"
+
+[dependencies.arboard]
+version = "^3.3.2"
+features = ["wayland-data-control"]
+optional = true
+
+[dependencies.bitflags]
+version = "2.4.2"
+
+[dependencies.crossterm]
+version = "0.29"
+optional = true
+
+[dependencies.derive_more]
+version = "2.1.1"
+features = [
+    "add",
+    "from",
+    "into",
+]
+
+[dependencies.editor-types]
+version = "0.0.7"
+
+[dependencies.intervaltree]
+version = "0.2.6"
+
+[dependencies.keybindings]
+version = "0.0.4"
+
+[dependencies.nom]
+version = "8.0.0"
+
+[dependencies.radix_trie]
+version = "0.3.0"
+
+[dependencies.regex]
+version = "^1.5"
+
+[dependencies.ropey]
+version = "1.6.1"
+default-features = false
+features = ["cr_lines", "simd"]
+
+[dependencies.shellexpand]
+version = "3.1.1"
+# Dango: without `tilde`, whose `dirs` brings `option-ext`; Dango opens no files through Vim's commands.
+default-features = false
+features = ["base-0"]
+
+[dependencies.thiserror]
+version = "2.0.0"
+
+[dependencies.unicode-segmentation]
+version = "^1.7"
+
+[dependencies.unicode-width]
+version = "0.2.0"
+
+[dev-dependencies.pretty_assertions]
+version = "^1.4.1"
+
+[dev-dependencies.rand]
+version = "0.10.0"
+
+[dev-dependencies.temp-dir]
+version = "0.2.0"
+
+[lints.clippy]
+bool_assert_comparison = "allow"
+bool_to_int_with_if = "allow"
+enum_variant_names = "allow"
+field_reassign_with_default = "allow"
+len_without_is_empty = "allow"
+manual_range_contains = "allow"
+match_like_matches_macro = "allow"
+needless_return = "allow"
+too_many_arguments = "allow"
+type_complexity = "allow"

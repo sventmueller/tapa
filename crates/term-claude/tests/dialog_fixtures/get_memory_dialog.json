@@ -1,0 +1,39 @@
+{
+ "files": [
+  {
+   "kind": "user",
+   "path": "/tmp/a0/cfg/CLAUDE.md",
+   "label": "User instructions",
+   "description": "Saved in ~/.claude/CLAUDE.md",
+   "exists": true
+  },
+  {
+   "kind": "project",
+   "path": "/private/tmp/a0/proj/CLAUDE.md",
+   "label": "Project instructions",
+   "description": "Checked in at ./CLAUDE.md",
+   "exists": false
+  }
+ ],
+ "folders": [
+  {
+   "kind": "auto",
+   "path": "/tmp/a0/cfg/projects/-private-tmp-a0-proj/memory/",
+   "label": "Open auto-memory folder",
+   "description": ""
+  }
+ ],
+ "memories": [],
+ "auto_memory": {
+  "enabled": true,
+  "toggleable": true,
+  "status": "on"
+ },
+ "auto_dream": {
+  "shown": false,
+  "enabled": false,
+  "toggleable": false,
+  "status": "off",
+  "detail": "can't be turned on here; use a session started outside Claude Code"
+ }
+}

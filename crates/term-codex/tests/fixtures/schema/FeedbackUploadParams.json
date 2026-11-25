@@ -1,0 +1,1 @@
+{"properties":{"classification":{"type":"string"},"extraLogFiles":{"items":{"type":"string"},"type":["array","null"]},"includeLogs":{"type":"boolean"},"reason":{"type":["string","null"]},"tags":{"additionalProperties":{"type":"string"},"type":["object","null"]},"threadId":{"type":["string","null"]}},"required":["classification"],"title":"FeedbackUploadParams","type":"object"}

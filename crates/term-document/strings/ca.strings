@@ -1,0 +1,8 @@
+/* Catalan interface texts; the keys are the German texts in the code. */
+"Das Dokument hat noch keine Datei." = "El document encara no té cap fitxer.";
+"Das Dokument ist schreibgeschützt." = "El document és només de lectura.";
+"Die Datei enthält Binärdaten und wird nie gesichert." = "El fitxer conté dades binàries i no es desa mai.";
+"Die Datei ist schreibgeschützt." = "El fitxer és només de lectura.";
+"Die Datei wurde inzwischen außerhalb geändert." = "Mentrestant, el fitxer s’ha modificat en un altre lloc.";
+"Die Kodierung der Datei ist unbekannt; sie wird nie gesichert." = "La codificació del fitxer és desconeguda; no es desa mai.";
+"Die Stelle liegt außerhalb des Textes: {}" = "La posició és fora del text: {}";

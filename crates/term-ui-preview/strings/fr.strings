@@ -1,0 +1,10 @@
+/* French interface texts; the keys are the German texts in the code. */
+"Bild: {}" = "Image : {}";
+"Bilder aus dem Netz laden" = "Charger les images du web";
+"Das Bild lässt sich nicht anzeigen." = "Impossible d’afficher l’image.";
+"Der Ordner ist nicht vertraut: Bilder aus dem Netz bleiben ungeladen." = "Le dossier n’est pas approuvé : les images du web ne sont pas chargées.";
+"Die Datei ist kein lesbares PDF." = "Le fichier n’est pas un PDF lisible.";
+"Lädt …" = "Chargement…";
+"PDF: {}" = "PDF : {}";
+"Vorschau: {}" = "Aperçu : {}";
+"„{}“ lässt sich nicht öffnen." = "Impossible d’ouvrir « {} ».";

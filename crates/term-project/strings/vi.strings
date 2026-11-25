@@ -1,0 +1,18 @@
+/* Vietnamese interface texts; the keys are the German texts in the code. */
+"Als Vorschau öffnen" = "Mở dưới dạng xem trước";
+"Daneben öffnen" = "Mở ở Bên cạnh";
+"Darunter öffnen" = "Mở ở Bên dưới";
+"Im Browser-Tab öffnen" = "Mở trong tab trình duyệt";
+"Im Finder zeigen" = "Hiển thị trong Finder";
+"In den Papierkorb legen" = "Chuyển vào Thùng rác";
+"Neue Datei" = "Tệp mới";
+"Neue Datei …" = "Tệp mới…";
+"Neuer Ordner" = "Thư mục mới";
+"Neuer Ordner …" = "Thư mục mới…";
+"Pfad kopieren" = "Sao chép đường dẫn";
+"Relativen Pfad kopieren" = "Sao chép đường dẫn tương đối";
+"Umbenennen" = "Đổi tên";
+"Umbenennen …" = "Đổi tên…";
+"„{}“ gibt es schon." = "“{}” đã tồn tại.";
+"„{}“ wurde nicht angelegt." = "Không thể tạo “{}”.";
+"„{}“ wurde nicht umbenannt." = "Không thể đổi tên “{}”.";

@@ -1,0 +1,10 @@
+/* English interface texts; the keys are the German texts in the code. */
+"Bild: {}" = "Image: {}";
+"Bilder aus dem Netz laden" = "Load Pictures from the Web";
+"Das Bild lässt sich nicht anzeigen." = "The image cannot be shown.";
+"Der Ordner ist nicht vertraut: Bilder aus dem Netz bleiben ungeladen." = "The folder is not trusted: pictures from the web are not loaded.";
+"Die Datei ist kein lesbares PDF." = "The file is not a readable PDF.";
+"Lädt …" = "Loading …";
+"PDF: {}" = "PDF: {}";
+"Vorschau: {}" = "Preview: {}";
+"„{}“ lässt sich nicht öffnen." = "“{}” can’t be opened.";

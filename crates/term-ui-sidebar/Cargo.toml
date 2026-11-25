@@ -1,0 +1,26 @@
+[package]
+name = "term-ui-sidebar"
+version.workspace = true
+description = "The sidebar of workspaces"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+block2.workspace = true
+term-base.workspace = true
+term-ui.workspace = true
+term-ui-icons.workspace = true
+term-session.workspace = true
+splat-decoder.workspace = true
+splat-i18n.workspace = true
+objc2 = { workspace = true, features = ["catch-all"] }
+objc2-app-kit.workspace = true
+objc2-foundation.workspace = true
+
+[dev-dependencies]
+term-base = { workspace = true, features = ["testing"] }

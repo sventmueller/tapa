@@ -1,0 +1,13 @@
+/* Hindi interface texts; the keys are the German texts in the code. */
+"Claude Code hat das Zurückspulen abgelehnt: {}" = "Claude Code ने रिवाइंड अस्वीकार किया : {}";
+"Claude Code hat nicht rechtzeitig geantwortet." = "Claude Code ने समय पर जवाब नहीं दिया।";
+"Claude Code ist beendet." = "Claude Code बंद हो गया है।";
+"Claude Code ist nicht gestartet: {}" = "Claude Code शुरू नहीं हुआ : {}";
+"Claude Code lehnt ab: {}" = "Claude Code अस्वीकार करता है : {}";
+"Claude Code liest seine Eingabe nicht mehr." = "Claude Code अब अपना इनपुट नहीं पढ़ रहा है।";
+"Claude Code ließ sich nicht starten: {}" = "Claude Code शुरू नहीं हो सका : {}";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "यह अनुरोध अब किसी जवाब की प्रतीक्षा नहीं कर रहा।";
+"Diese Version von Claude Code kann das hier nicht." = "Claude Code का यह संस्करण यहाँ यह नहीं कर सकता।";
+"Melde dich an, indem du claude im Terminal startest: {}" = "टर्मिनल में claude चलाकर साइन इन करें : {}";
+"Unerwartete Antwort: {}" = "अनपेक्षित जवाब : {}";
+"{} wurde nicht gefunden." = "{} नहीं मिला।";

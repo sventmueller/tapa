@@ -1,0 +1,39 @@
+name: Report a problem
+description: Something in Tapa does not work as it should.
+labels: [bug]
+body:
+  - type: textarea
+    id: happened
+    attributes:
+      label: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: input
+    id: shell
+    attributes:
+      label: Shell and programs
+      description: Issues are public. Name the shell and the programs involved, not private files or output.
+      placeholder: e.g. zsh with tmux, or Claude in an agent tab
+  - type: input
+    id: version
+    attributes:
+      label: Tapa version
+    validations:
+      required: true
+  - type: input
+    id: macos
+    attributes:
+      label: macOS version
+    validations:
+      required: true
+  - type: input
+    id: mac
+    attributes:
+      label: Mac
+      placeholder: Apple Silicon or Intel

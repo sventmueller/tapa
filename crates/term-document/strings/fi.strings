@@ -1,0 +1,8 @@
+/* Finnish interface texts; the keys are the German texts in the code. */
+"Das Dokument hat noch keine Datei." = "Dokumentilla ei ole vielä tiedostoa.";
+"Das Dokument ist schreibgeschützt." = "Dokumentti on vain luettavissa.";
+"Die Datei enthält Binärdaten und wird nie gesichert." = "Tiedosto sisältää binääridataa, eikä sitä koskaan tallenneta.";
+"Die Datei ist schreibgeschützt." = "Tiedosto on vain luettavissa.";
+"Die Datei wurde inzwischen außerhalb geändert." = "Tiedostoa on sillä välin muutettu muualla.";
+"Die Kodierung der Datei ist unbekannt; sie wird nie gesichert." = "Tiedoston merkistökoodaus on tuntematon; sitä ei koskaan tallenneta.";
+"Die Stelle liegt außerhalb des Textes: {}" = "Kohta on tekstin ulkopuolella: {}";

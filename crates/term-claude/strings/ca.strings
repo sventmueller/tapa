@@ -1,0 +1,13 @@
+/* Catalan interface texts; the keys are the German texts in the code. */
+"Claude Code hat das Zurückspulen abgelehnt: {}" = "Claude Code ha rebutjat el retrocés: {}";
+"Claude Code hat nicht rechtzeitig geantwortet." = "Claude Code no ha respost a temps.";
+"Claude Code ist beendet." = "Claude Code s’ha aturat.";
+"Claude Code ist nicht gestartet: {}" = "Claude Code no s’ha iniciat: {}";
+"Claude Code lehnt ab: {}" = "Claude Code ho rebutja: {}";
+"Claude Code liest seine Eingabe nicht mehr." = "Claude Code ja no llegeix la seva entrada.";
+"Claude Code ließ sich nicht starten: {}" = "No s’ha pogut iniciar Claude Code: {}";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "Aquesta sol·licitud ja no espera cap resposta.";
+"Diese Version von Claude Code kann das hier nicht." = "Aquesta versió de Claude Code no pot fer això aquí.";
+"Melde dich an, indem du claude im Terminal startest: {}" = "Inicia la sessió executant claude en un terminal: {}";
+"Unerwartete Antwort: {}" = "Resposta inesperada: {}";
+"{} wurde nicht gefunden." = "No s’ha trobat {}.";

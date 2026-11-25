@@ -1,0 +1,13 @@
+/* Turkish interface texts; the keys are the German texts in the code. */
+"Claude Code hat das Zurückspulen abgelehnt: {}" = "Claude Code geri sarmayı reddetti: {}";
+"Claude Code hat nicht rechtzeitig geantwortet." = "Claude Code zamanında yanıt vermedi.";
+"Claude Code ist beendet." = "Claude Code sonlandı.";
+"Claude Code ist nicht gestartet: {}" = "Claude Code başlamadı: {}";
+"Claude Code lehnt ab: {}" = "Claude Code reddediyor: {}";
+"Claude Code liest seine Eingabe nicht mehr." = "Claude Code artık girdisini okumuyor.";
+"Claude Code ließ sich nicht starten: {}" = "Claude Code başlatılamadı: {}";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "Bu istek artık bir yanıt beklemiyor.";
+"Diese Version von Claude Code kann das hier nicht." = "Claude Code’un bu sürümü bunu burada yapamaz.";
+"Melde dich an, indem du claude im Terminal startest: {}" = "Terminalde claude’u başlatarak giriş yapın: {}";
+"Unerwartete Antwort: {}" = "Beklenmeyen yanıt: {}";
+"{} wurde nicht gefunden." = "Bulunamadı: {}.";

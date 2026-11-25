@@ -1,0 +1,10 @@
+/* Arabic interface texts; the keys are the German texts in the code. */
+"Bild: {}" = "صورة: {}";
+"Bilder aus dem Netz laden" = "تحميل الصور من الويب";
+"Das Bild lässt sich nicht anzeigen." = "تعذّر عرض الصورة.";
+"Der Ordner ist nicht vertraut: Bilder aus dem Netz bleiben ungeladen." = "المجلد غير موثوق به: لا تُحمَّل الصور من الويب.";
+"Die Datei ist kein lesbares PDF." = "الملف ليس PDF قابلًا للقراءة.";
+"Lädt …" = "جارٍ التحميل…";
+"PDF: {}" = "‏PDF: {}";
+"Vorschau: {}" = "معاينة: {}";
+"„{}“ lässt sich nicht öffnen." = "يتعذّر فتح “{}”.";

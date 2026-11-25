@@ -1,0 +1,14 @@
+/* Russian interface texts; the keys are the German texts in the code. */
+"Der Agent hat auf {} nicht rechtzeitig geantwortet." = "Агент не ответил вовремя на {}.";
+"Der Agent ist nicht gestartet: {}" = "Агент не запустился: {}";
+"Der Agent spricht die Protokollversion {}, diese App Version 1" = "Агент использует протокол версии {}, а это приложение — версии 1";
+"Der Agent verlangt eine Anmeldung." = "Агент требует входа.";
+"Die Sitzung ist beendet." = "Сеанс завершен.";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "Этот запрос больше не ждет ответа.";
+"{} startet nur in einem vertrauten Arbeitsbereich." = "{} запускается только в доверенной рабочей области.";
+"{} wurde nicht gefunden." = "Не найдено: {}.";
+"Die Installation wurde nicht bestätigt." = "Установка не подтверждена.";
+"{} {} oder neuer wird gebraucht" = "Требуется {} {} или новее";
+"{} wird gebraucht" = "Требуется {}";
+"Der Download ist fehlgeschlagen: {}" = "Ошибка загрузки: {}";
+"Der Download stimmt nicht mit seiner Prüfsumme überein und wurde verworfen" = "Загруженный файл не совпадает с контрольной суммой и удален";

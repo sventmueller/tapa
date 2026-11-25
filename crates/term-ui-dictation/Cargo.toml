@@ -1,0 +1,49 @@
+[package]
+name = "term-ui-dictation"
+version.workspace = true
+description = "Dictation into the app's text fields through lowspeak: the microphone controls, fn, the keys and the menu action"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+term-config.workspace = true
+term-base = { workspace = true, optional = true }
+term-render = { workspace = true, optional = true }
+term-seal = { workspace = true, optional = true }
+term-ui = { workspace = true, optional = true }
+splat-i18n = { workspace = true, optional = true }
+lowspeak = { workspace = true, optional = true }
+block2 = { workspace = true, optional = true }
+libc = { workspace = true, optional = true }
+objc2 = { workspace = true, optional = true, features = ["catch-all"] }
+objc2-app-kit = { workspace = true, optional = true }
+objc2-application-services = { workspace = true, optional = true }
+objc2-av-foundation = { workspace = true, optional = true }
+objc2-core-foundation = { workspace = true, optional = true }
+objc2-foundation = { workspace = true, optional = true }
+
+[features]
+# lowspeak and what talks to it; lowspeak builds whisper.cpp with cmake, so only the app's `dictation` turns it on.
+engine = [
+    "dep:term-base",
+    "dep:term-render",
+    "dep:term-seal",
+    "dep:term-ui",
+    "dep:splat-i18n",
+    "dep:lowspeak",
+    "dep:block2",
+    "dep:libc",
+    "dep:objc2",
+    "dep:objc2-app-kit",
+    "dep:objc2-application-services",
+    "dep:objc2-av-foundation",
+    "dep:objc2-core-foundation",
+    "dep:objc2-foundation",
+]
+# What the self-test reads of the fields, and a microphone and an engine that play what a scenario prepared.
+selftest = []

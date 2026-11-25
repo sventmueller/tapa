@@ -1,0 +1,8 @@
+/* Greek interface texts; the keys are the German texts in the code. */
+"Das Dokument hat noch keine Datei." = "Το έγγραφο δεν έχει ακόμη αρχείο.";
+"Das Dokument ist schreibgeschützt." = "Το έγγραφο είναι μόνο για ανάγνωση.";
+"Die Datei enthält Binärdaten und wird nie gesichert." = "Το αρχείο περιέχει δυαδικά δεδομένα και δεν αποθηκεύεται ποτέ.";
+"Die Datei ist schreibgeschützt." = "Το αρχείο είναι μόνο για ανάγνωση.";
+"Die Datei wurde inzwischen außerhalb geändert." = "Το αρχείο άλλαξε στο μεταξύ εκτός της εφαρμογής.";
+"Die Kodierung der Datei ist unbekannt; sie wird nie gesichert." = "Η κωδικοποίηση του αρχείου είναι άγνωστη, οπότε δεν αποθηκεύεται ποτέ.";
+"Die Stelle liegt außerhalb des Textes: {}" = "Η θέση βρίσκεται εκτός του κειμένου: {}";

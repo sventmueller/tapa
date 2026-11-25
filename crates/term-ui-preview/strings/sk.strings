@@ -1,0 +1,10 @@
+/* Slovak interface texts; the keys are the German texts in the code. */
+"Bild: {}" = "Obrázok: {}";
+"Bilder aus dem Netz laden" = "Načítať obrázky z webu";
+"Das Bild lässt sich nicht anzeigen." = "Obrázok nie je možné zobraziť.";
+"Der Ordner ist nicht vertraut: Bilder aus dem Netz bleiben ungeladen." = "Priečinok nie je dôveryhodný: obrázky z webu sa nenačítajú.";
+"Die Datei ist kein lesbares PDF." = "Súbor nie je čitateľné PDF.";
+"Lädt …" = "Načítava sa…";
+"PDF: {}" = "PDF: {}";
+"Vorschau: {}" = "Náhľad: {}";
+"„{}“ lässt sich nicht öffnen." = "„{}“ sa nedá otvoriť.";

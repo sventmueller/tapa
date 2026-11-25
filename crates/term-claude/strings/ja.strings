@@ -1,0 +1,13 @@
+/* Japanese interface texts; the keys are the German texts in the code. */
+"Claude Code hat das Zurückspulen abgelehnt: {}" = "Claude Codeが巻き戻しを拒否しました: {}";
+"Claude Code hat nicht rechtzeitig geantwortet." = "Claude Codeが時間内に応答しませんでした。";
+"Claude Code ist beendet." = "Claude Codeは終了しました。";
+"Claude Code ist nicht gestartet: {}" = "Claude Codeが起動しませんでした: {}";
+"Claude Code lehnt ab: {}" = "Claude Codeが拒否しました: {}";
+"Claude Code liest seine Eingabe nicht mehr." = "Claude Code が入力を読み取らなくなりました。";
+"Claude Code ließ sich nicht starten: {}" = "Claude Codeを起動できませんでした: {}";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "このリクエストはもう応答を待っていません。";
+"Diese Version von Claude Code kann das hier nicht." = "このバージョンのClaude Codeでは、ここでこの操作はできません。";
+"Melde dich an, indem du claude im Terminal startest: {}" = "ターミナルでclaudeを実行してサインインしてください: {}";
+"Unerwartete Antwort: {}" = "予期しない応答: {}";
+"{} wurde nicht gefunden." = "{}が見つかりませんでした。";

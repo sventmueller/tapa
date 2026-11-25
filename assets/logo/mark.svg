@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="273 302 646 646" role="img" aria-labelledby="title">
+  <title id="title">Terminal prompt</title>
+  <defs>
+    <linearGradient id="front" gradientUnits="userSpaceOnUse" x1="277" y1="303" x2="382" y2="527">
+      <stop stop-color="#ff65a2"/>
+      <stop offset=".48" stop-color="#ff3584"/>
+      <stop offset="1" stop-color="#ff1672"/>
+    </linearGradient>
+    <linearGradient id="fold" gradientUnits="userSpaceOnUse" x1="297" y1="884" x2="595" y2="637">
+      <stop stop-color="#ff6da8"/>
+      <stop offset=".43" stop-color="#ff5699"/>
+      <stop offset=".74" stop-color="#d73476"/>
+      <stop offset="1" stop-color="#8f1045"/>
+    </linearGradient>
+    <linearGradient id="cursor">
+      <stop stop-color="#ff2183"/>
+      <stop offset=".49" stop-color="#ca26ad"/>
+      <stop offset="1" stop-color="#8012ef"/>
+    </linearGradient>
+  </defs>
+  <!-- Narrow the chevron around its left edge to steepen both diagonals. -->
+  <g transform="translate(49.14 0) scale(.82 1)">
+    <path fill="url(#fold)" d="M498 586 711 662Q740 686 708 714L309 942Q297 950 286 946Q273 942 273 921V767Q273 742 298 726Z"/>
+    <path fill="url(#front)" d="M273 339Q273 317 289 307Q304 298 318 307L701 502Q730 517 730 549V672Q730 695 713 710Q717 702 703 695L297 508Q273 496 273 470Z"/>
+  </g>
+  <path fill="url(#cursor)" d="M608 802.33H918V947.33H608Z"/>
+</svg>

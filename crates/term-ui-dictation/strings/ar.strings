@@ -1,0 +1,27 @@
+/* Arabic interface texts; the keys are the German texts in the code. */
+"API-Schlüssel für {}" = "مفتاح API لـ {}";
+"Abgebrochen" = "تم الإلغاء";
+"Das Diktat ist gerade beschäftigt." = "الإملاء مشغول حاليًا.";
+"Das Feld des Diktats ist nicht mehr offen. Der Text liegt in der Zwischenablage." = "حقل الإملاء لم يعد مفتوحًا. النص موجود في الحافظة.";
+"Das ist kein Schlüssel von OpenAI (sk-…) oder Groq (gsk_…)." = "هذا ليس مفتاحًا من OpenAI (sk-…) أو Groq (gsk_…).";
+"Das lokale Modell ist nicht installiert. Lade es in den Einstellungen unter Diktat." = "النموذج المحلي غير مثبّت. قم بتنزيله في الإعدادات ضمن الإملاء.";
+"Der Schlüsselbund lehnt ab: {}" = "ترفض سلسلة المفاتيح: {}";
+"Die Aufnahme hat ihre Höchstdauer erreicht." = "بلغ التسجيل مدته القصوى.";
+"Diktat beenden" = "إيقاف الإملاء";
+"Diktat starten" = "بدء الإملاء";
+"Höre zu …" = "جارٍ الاستماع…";
+"Kein API-Schlüssel für {}. Trage ihn in den Einstellungen unter Diktat ein." = "لا يوجد مفتاح API لـ {}. أدخله في الإعدادات ضمن الإملاء.";
+"Keine Sprache erkannt" = "لم يتم التعرف على أي كلام";
+"Lowspeak hat einen Schlüssel für {}. Für {} übernehmen?" = "لدى Lowspeak مفتاح لـ {}. هل تريد استخدامه لـ {} أيضًا؟";
+"Lowspeak hat keinen Schlüssel mehr." = "لم يعد لدى Lowspeak مفتاح.";
+"Lowspeak meldet: {}" = "أبلغ Lowspeak: {}";
+"Lowspeak transkribiert online mit {}. {} braucht dafür einen eigenen Schlüssel und legt ihn im Schlüsselbund ab." = "يجري Lowspeak التفريغ النصي عبر الإنترنت باستخدام {}. ويحتاج {} لذلك إلى مفتاح خاص به يحفظه في سلسلة المفاتيح.";
+"Lowspeaks Schlüssel ließ sich nicht lesen. Gib den Schlüssel selbst ein." = "تعذّرت قراءة مفتاح Lowspeak. أدخل المفتاح بنفسك.";
+"Nicht jetzt" = "ليس الآن";
+"Selbst eingeben …" = "إدخاله بنفسي…";
+"Sichern" = "حفظ";
+"Transkribiere …" = "جارٍ التفريغ النصي…";
+"{} bietet {} nicht mehr an. Wähle in den Einstellungen unter Diktat ein anderes Modell." = "لم يعد {} يوفر {}. اختر نموذجًا آخر في الإعدادات ضمن الإملاء.";
+"{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "لا يملك {} حق الوصول إلى الميكروفون. اسمح به في إعدادات النظام ضمن الخصوصية والأمن > الميكروفون.";
+"{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "يقرؤه {} لهذا الغرض مرة واحدة، وسيطلب macOS الإذن أولًا. اختر هناك “سماح” وليس “السماح دائمًا”: بذلك يبقى عنصر Lowspeak كما هو. ويحفظ {} المفتاح في عنصر خاص به.";
+"Übernehmen" = "استخدام المفتاح";

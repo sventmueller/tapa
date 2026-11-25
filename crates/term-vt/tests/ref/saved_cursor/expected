@@ -1,0 +1,37 @@
+size 139 35 0
+cursor 8 0
+line 0 [undeadleech@archhq saved_cursor]$ echo -e "\e7 \e(0 test \e8 xxx"
+line 1  xxx⎽├
+line 2 [undeadleech@archhq saved_cursor]$ echo -e "\e[?1049h \e(0 test \e[?1049l xxx"
+line 3  xxx
+line 4 [undeadleech@archhq saved_cursor]$ echo -e "\e7 \e(0 \e[?1049h test \e[?1049l \e8 xxx"
+line 5    │││
+line 6 [┤┼␍␊▒␍┌␊␊␌␤@▒⎼␌␤␤─ ⎽▒┴␊␍ ␌┤⎼⎽⎺⎼]$ ␊│␋├
+line 7 ␊│␋├
+line 8 
+line 9 
+line 10 
+line 11 
+line 12 
+line 13 
+line 14 
+line 15 
+line 16 
+line 17 
+line 18 
+line 19 
+line 20 
+line 21 
+line 22 
+line 23 
+line 24 
+line 25 
+line 26 
+line 27 
+line 28 
+line 29 
+line 30 
+line 31 
+line 32 
+line 33 
+line 34 

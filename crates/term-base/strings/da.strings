@@ -1,0 +1,14 @@
+/* Danish interface texts; the keys are the German texts in the code. */
+"Dafür fehlt die Berechtigung." = "Tilladelsen hertil mangler.";
+"Das ist ein Ordner, keine Datei." = "Dette er en mappe, ikke en fil.";
+"Der Dateiname ist ungültig." = "Filnavnet er ugyldigt.";
+"Der Datenträger ist schreibgeschützt." = "Enheden er skrivebeskyttet.";
+"Der Datenträger ist voll." = "Enheden er fuld.";
+"Der Ordner ist nicht leer." = "Mappen er ikke tom.";
+"Der Vorgang hat zu lange gedauert." = "Handlingen tog for lang tid.";
+"Die Datei ist gerade belegt." = "Filen er i brug lige nu.";
+"Die Datei ist zu groß." = "Filen er for stor.";
+"Die Datei oder der Ordner existiert nicht." = "Filen eller mappen findes ikke.";
+"Die Gegenstelle hat die Verbindung abgelehnt." = "Modparten afviste forbindelsen.";
+"Ein Teil des Pfads ist kein Ordner." = "En del af stien er ikke en mappe.";
+"Es gibt dort schon eine Datei dieses Namens." = "Der findes allerede en fil med dette navn.";

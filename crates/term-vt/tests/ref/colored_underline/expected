@@ -1,0 +1,304 @@
+size 157 40 0
+cursor 4 0
+line 0 fork on  colored-underlines-v3 via 🦀 v1.59.0 ➜ echo -e '\e[58;2;255;0;255m\e[4:1mUNDERLINE\e[4:2mDOUBLE\e[58:5:196m\e[4:3mUh̷̗ERCURL\e[4:4mDOTTED\e[4:5mDASHE
+line 1 D\e[59mNOT_COLORED_DASH\e[0m'
+line 2 UNDERLINEDOUBLEUh̷̗ERCURLDOTTEDDASHEDNOT_COLORED_DASH
+line 3 fork on  colored-underlines-v3 via 🦀 v1.59.0 ➜
+line 4 
+line 5 
+line 6 
+line 7 
+line 8 
+line 9 
+line 10 
+line 11 
+line 12 
+line 13 
+line 14 
+line 15 
+line 16 
+line 17 
+line 18 
+line 19 
+line 20 
+line 21 
+line 22 
+line 23 
+line 24 
+line 25 
+line 26 
+line 27 
+line 28 
+line 29 
+line 30 
+line 31 
+line 32 
+line 33 
+line 34 
+line 35 
+line 36 
+line 37 
+line 38 
+line 39 
+cell 0 0 fg=4 bold
+cell 0 1 fg=4 bold
+cell 0 2 fg=4 bold
+cell 0 3 fg=4 bold
+cell 0 8 fg=5 bold
+cell 0 9 fg=5 bold
+cell 0 10 fg=5 bold
+cell 0 11 fg=5 bold
+cell 0 12 fg=5 bold
+cell 0 13 fg=5 bold
+cell 0 14 fg=5 bold
+cell 0 15 fg=5 bold
+cell 0 16 fg=5 bold
+cell 0 17 fg=5 bold
+cell 0 18 fg=5 bold
+cell 0 19 fg=5 bold
+cell 0 20 fg=5 bold
+cell 0 21 fg=5 bold
+cell 0 22 fg=5 bold
+cell 0 23 fg=5 bold
+cell 0 24 fg=5 bold
+cell 0 25 fg=5 bold
+cell 0 26 fg=5 bold
+cell 0 27 fg=5 bold
+cell 0 28 fg=5 bold
+cell 0 29 fg=5 bold
+cell 0 30 fg=5 bold
+cell 0 36 fg=1 bold wide
+cell 0 37 fg=1 bold wide-spacer
+cell 0 38 fg=1 bold
+cell 0 39 fg=1 bold
+cell 0 40 fg=1 bold
+cell 0 41 fg=1 bold
+cell 0 42 fg=1 bold
+cell 0 43 fg=1 bold
+cell 0 44 fg=1 bold
+cell 0 45 fg=1 bold
+cell 0 46 fg=1 bold
+cell 0 47 fg=7 bold
+cell 0 49 fg=10 bold
+cell 0 50 fg=10 bold
+cell 0 51 fg=10 bold
+cell 0 52 fg=10 bold
+cell 0 57 fg=10
+cell 0 58 fg=10
+cell 0 59 fg=10
+cell 0 60 fg=10
+cell 0 61 fg=10
+cell 0 62 fg=10
+cell 0 63 fg=10
+cell 0 64 fg=10
+cell 0 65 fg=10
+cell 0 66 fg=10
+cell 0 67 fg=10
+cell 0 68 fg=10
+cell 0 69 fg=10
+cell 0 70 fg=10
+cell 0 71 fg=10
+cell 0 72 fg=10
+cell 0 73 fg=10
+cell 0 74 fg=10
+cell 0 75 fg=10
+cell 0 76 fg=10
+cell 0 77 fg=10
+cell 0 78 fg=10
+cell 0 79 fg=10
+cell 0 80 fg=10
+cell 0 81 fg=10
+cell 0 82 fg=10
+cell 0 83 fg=10
+cell 0 84 fg=10
+cell 0 85 fg=10
+cell 0 86 fg=10
+cell 0 87 fg=10
+cell 0 88 fg=10
+cell 0 89 fg=10
+cell 0 90 fg=10
+cell 0 91 fg=10
+cell 0 92 fg=10
+cell 0 93 fg=10
+cell 0 94 fg=10
+cell 0 95 fg=10
+cell 0 96 fg=10
+cell 0 97 fg=10
+cell 0 98 fg=10
+cell 0 99 fg=10
+cell 0 100 fg=10
+cell 0 101 fg=10
+cell 0 102 fg=10
+cell 0 103 fg=10
+cell 0 104 fg=10
+cell 0 105 fg=10
+cell 0 106 fg=10
+cell 0 107 fg=10
+cell 0 108 fg=10
+cell 0 109 fg=10
+cell 0 110 fg=10
+cell 0 111 fg=10
+cell 0 112 fg=10
+cell 0 113 fg=10
+cell 0 114 fg=10
+cell 0 115 fg=10
+cell 0 116 fg=10
+cell 0 117 fg=10
+cell 0 118 fg=10
+cell 0 119 fg=10
+cell 0 120 fg=10
+cell 0 121 fg=10
+cell 0 122 fg=10
+cell 0 123 fg=10
+cell 0 124 fg=10
+cell 0 125 fg=10
+cell 0 126 fg=10
+cell 0 127 fg=10
+cell 0 128 fg=10
+cell 0 129 fg=10
+cell 0 130 fg=10
+cell 0 131 fg=10
+cell 0 132 fg=10
+cell 0 133 fg=10
+cell 0 134 fg=10
+cell 0 135 fg=10
+cell 0 136 fg=10
+cell 0 137 fg=10
+cell 0 138 fg=10
+cell 0 139 fg=10
+cell 0 140 fg=10
+cell 0 141 fg=10
+cell 0 142 fg=10
+cell 0 143 fg=10
+cell 0 144 fg=10
+cell 0 145 fg=10
+cell 0 146 fg=10
+cell 0 147 fg=10
+cell 0 148 fg=10
+cell 0 149 fg=10
+cell 0 150 fg=10
+cell 0 151 fg=10
+cell 0 152 fg=10
+cell 0 153 fg=10
+cell 0 154 fg=10
+cell 0 155 fg=10
+cell 0 156 fg=10 wrapped
+cell 1 0 fg=10
+cell 1 1 fg=10
+cell 1 2 fg=10
+cell 1 3 fg=10
+cell 1 4 fg=10
+cell 1 5 fg=10
+cell 1 6 fg=10
+cell 1 7 fg=10
+cell 1 8 fg=10
+cell 1 9 fg=10
+cell 1 10 fg=10
+cell 1 11 fg=10
+cell 1 12 fg=10
+cell 1 13 fg=10
+cell 1 14 fg=10
+cell 1 15 fg=10
+cell 1 16 fg=10
+cell 1 17 fg=10
+cell 1 18 fg=10
+cell 1 19 fg=10
+cell 1 20 fg=10
+cell 1 21 fg=10
+cell 1 22 fg=10
+cell 1 23 fg=10
+cell 1 24 fg=10
+cell 1 25 fg=10
+cell 1 26 fg=10
+cell 1 27 fg=10
+cell 1 28 fg=10
+cell 2 0 underline
+cell 2 1 underline
+cell 2 2 underline
+cell 2 3 underline
+cell 2 4 underline
+cell 2 5 underline
+cell 2 6 underline
+cell 2 7 underline
+cell 2 8 underline
+cell 2 9 double-underline
+cell 2 10 double-underline
+cell 2 11 double-underline
+cell 2 12 double-underline
+cell 2 13 double-underline
+cell 2 14 double-underline
+cell 2 15 undercurl
+cell 2 16 undercurl
+cell 2 17 undercurl
+cell 2 18 undercurl
+cell 2 19 undercurl
+cell 2 20 undercurl
+cell 2 21 undercurl
+cell 2 22 undercurl
+cell 2 23 dotted-underline
+cell 2 24 dotted-underline
+cell 2 25 dotted-underline
+cell 2 26 dotted-underline
+cell 2 27 dotted-underline
+cell 2 28 dotted-underline
+cell 2 29 dashed-underline
+cell 2 30 dashed-underline
+cell 2 31 dashed-underline
+cell 2 32 dashed-underline
+cell 2 33 dashed-underline
+cell 2 34 dashed-underline
+cell 2 35 dashed-underline
+cell 2 36 dashed-underline
+cell 2 37 dashed-underline
+cell 2 38 dashed-underline
+cell 2 39 dashed-underline
+cell 2 40 dashed-underline
+cell 2 41 dashed-underline
+cell 2 42 dashed-underline
+cell 2 43 dashed-underline
+cell 2 44 dashed-underline
+cell 2 45 dashed-underline
+cell 2 46 dashed-underline
+cell 2 47 dashed-underline
+cell 2 48 dashed-underline
+cell 2 49 dashed-underline
+cell 2 50 dashed-underline
+cell 3 0 fg=4 bold
+cell 3 1 fg=4 bold
+cell 3 2 fg=4 bold
+cell 3 3 fg=4 bold
+cell 3 8 fg=5 bold
+cell 3 9 fg=5 bold
+cell 3 10 fg=5 bold
+cell 3 11 fg=5 bold
+cell 3 12 fg=5 bold
+cell 3 13 fg=5 bold
+cell 3 14 fg=5 bold
+cell 3 15 fg=5 bold
+cell 3 16 fg=5 bold
+cell 3 17 fg=5 bold
+cell 3 18 fg=5 bold
+cell 3 19 fg=5 bold
+cell 3 20 fg=5 bold
+cell 3 21 fg=5 bold
+cell 3 22 fg=5 bold
+cell 3 23 fg=5 bold
+cell 3 24 fg=5 bold
+cell 3 25 fg=5 bold
+cell 3 26 fg=5 bold
+cell 3 27 fg=5 bold
+cell 3 28 fg=5 bold
+cell 3 29 fg=5 bold
+cell 3 30 fg=5 bold
+cell 3 36 fg=1 bold wide
+cell 3 37 fg=1 bold wide-spacer
+cell 3 38 fg=1 bold
+cell 3 39 fg=1 bold
+cell 3 40 fg=1 bold
+cell 3 41 fg=1 bold
+cell 3 42 fg=1 bold
+cell 3 43 fg=1 bold
+cell 3 44 fg=1 bold
+cell 3 45 fg=1 bold
+cell 3 46 fg=1 bold
+cell 3 47 fg=7 bold

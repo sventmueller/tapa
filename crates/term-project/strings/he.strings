@@ -1,0 +1,18 @@
+/* Hebrew interface texts; the keys are the German texts in the code. */
+"Als Vorschau öffnen" = "פתיחה כתצוגה מקדימה";
+"Daneben öffnen" = "פתיחה לצד";
+"Darunter öffnen" = "פתיחה מתחת";
+"Im Browser-Tab öffnen" = "פתיחה בכרטיסיית הדפדפן";
+"Im Finder zeigen" = "הצגה ב-Finder";
+"In den Papierkorb legen" = "העברה לפח";
+"Neue Datei" = "קובץ חדש";
+"Neue Datei …" = "קובץ חדש…";
+"Neuer Ordner" = "תיקיה חדשה";
+"Neuer Ordner …" = "תיקיה חדשה…";
+"Pfad kopieren" = "העתקת הנתיב";
+"Relativen Pfad kopieren" = "העתקת הנתיב היחסי";
+"Umbenennen" = "שינוי שם";
+"Umbenennen …" = "שינוי שם…";
+"„{}“ gibt es schon." = "״{}״ כבר קיים.";
+"„{}“ wurde nicht angelegt." = "״{}״ לא נוצר.";
+"„{}“ wurde nicht umbenannt." = "השם של ״{}״ לא שונה.";

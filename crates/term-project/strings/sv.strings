@@ -1,0 +1,18 @@
+/* Swedish interface texts; the keys are the German texts in the code. */
+"Als Vorschau öffnen" = "Öppna som förhandsvisning";
+"Daneben öffnen" = "Öppna bredvid";
+"Darunter öffnen" = "Öppna nedanför";
+"Im Browser-Tab öffnen" = "Öppna i webbläsarflik";
+"Im Finder zeigen" = "Visa i Finder";
+"In den Papierkorb legen" = "Flytta till papperskorgen";
+"Neue Datei" = "Ny fil";
+"Neue Datei …" = "Ny fil…";
+"Neuer Ordner" = "Ny mapp";
+"Neuer Ordner …" = "Ny mapp…";
+"Pfad kopieren" = "Kopiera sökväg";
+"Relativen Pfad kopieren" = "Kopiera relativ sökväg";
+"Umbenennen" = "Byt namn";
+"Umbenennen …" = "Byt namn…";
+"„{}“ gibt es schon." = "”{}” finns redan.";
+"„{}“ wurde nicht angelegt." = "Det gick inte att skapa ”{}”.";
+"„{}“ wurde nicht umbenannt." = "Det gick inte att byta namn på ”{}”.";

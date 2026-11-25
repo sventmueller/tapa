@@ -1,0 +1,7 @@
+/* Japanese interface texts; the keys are the German texts in the code. */
+"Abbrechen" = "キャンセル";
+"Alle einklappen" = "すべて折りたたむ";
+"Dateien" = "ファイル";
+"Neue Datei …" = "新規ファイル…";
+"Neuer Ordner …" = "新規フォルダ…";
+"OK" = "OK";

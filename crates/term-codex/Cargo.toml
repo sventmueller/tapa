@@ -1,0 +1,34 @@
+[package]
+name = "term-codex"
+version.workspace = true
+description = "OpenAI Codex over its app-server protocol: the connection, its management calls and the mapping onto the thread model"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[lints]
+workspace = true
+
+[[bin]]
+name = "codex-test-server"
+path = "src/bin/codex-test-server.rs"
+test = false
+required-features = ["testing"]
+
+[features]
+# The stand-in of `codex app-server` and its program, for tests and the self-test; not in the shipped app.
+testing = []
+
+[dependencies]
+base64 = "0.23.1"
+term-base.workspace = true
+term-process.workspace = true
+term-thread.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+
+[dev-dependencies]
+# Itself with the stand-in, for the integration tests.
+term-codex = { path = ".", features = ["testing"] }
+term-base = { workspace = true, features = ["testing"] }

@@ -1,0 +1,13 @@
+/* Arabic interface texts; the keys are the German texts in the code. */
+"Claude Code hat das Zurückspulen abgelehnt: {}" = "رفض Claude Code الإرجاع: {}";
+"Claude Code hat nicht rechtzeitig geantwortet." = "لم يستجب Claude Code في الوقت المحدد.";
+"Claude Code ist beendet." = "انتهى Claude Code.";
+"Claude Code ist nicht gestartet: {}" = "لم يبدأ Claude Code: {}";
+"Claude Code lehnt ab: {}" = "يرفض Claude Code: {}";
+"Claude Code liest seine Eingabe nicht mehr." = "لم يعد Claude Code يقرأ مدخلاته.";
+"Claude Code ließ sich nicht starten: {}" = "تعذّر بدء Claude Code: {}";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "لم يعد هذا الطلب ينتظر ردًا.";
+"Diese Version von Claude Code kann das hier nicht." = "لا يستطيع هذا الإصدار من Claude Code فعل ذلك هنا.";
+"Melde dich an, indem du claude im Terminal startest: {}" = "سجّل الدخول بتشغيل claude في الطرفية: {}";
+"Unerwartete Antwort: {}" = "رد غير متوقع: {}";
+"{} wurde nicht gefunden." = "لم يتم العثور على {}.";

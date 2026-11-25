@@ -1,0 +1,12 @@
+{"method":"turn/started","params":{"threadId":"thr_1","turn":{"id":"turn-b","items":[],"status":"inProgress"}}}
+{"method":"item/started","params":{"threadId":"thr_1","turnId":"turn-b","startedAtMs":1000,"item":{"type":"agentMessage","id":"a1","text":""}}}
+{"method":"item/agentMessage/delta","params":{"threadId":"thr_1","turnId":"turn-b","itemId":"a1","delta":"Half an"}}
+{"method":"turn/completed","params":{"threadId":"thr_1","turn":{"id":"turn-b","items":[],"status":"interrupted"}}}
+{"method":"turn/started","params":{"threadId":"thr_1","turn":{"id":"turn-c","items":[],"status":"inProgress"}}}
+{"method":"turn/completed","params":{"threadId":"thr_1","turn":{"id":"turn-c","items":[],"status":"failed","error":{"message":"Your session has expired.","codexErrorInfo":"unauthorized","additionalDetails":"Sign in again."}}}}
+{"method":"turn/started","params":{"threadId":"thr_1","turn":{"id":"turn-d","items":[],"status":"inProgress"}}}
+{"method":"error","params":{"threadId":"thr_1","turnId":"turn-d","willRetry":false,"error":{"message":"Context window exceeded.","codexErrorInfo":"contextWindowExceeded"}}}
+{"method":"turn/completed","params":{"threadId":"thr_1","turn":{"id":"turn-d","items":[],"status":"failed","error":{"message":"Context window exceeded.","codexErrorInfo":"contextWindowExceeded"}}}}
+{"method":"thread/name/updated","params":{"threadId":"thr_1","threadName":"Expired session"}}
+{"method":"account/updated","params":{"authMode":"apikey","planType":null}}
+{"method":"configWarning","params":{"summary":"Unknown key foo","details":"in config.toml line 3","path":"/home/.codex/config.toml"}}

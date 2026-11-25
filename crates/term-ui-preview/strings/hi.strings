@@ -1,0 +1,10 @@
+/* Hindi interface texts; the keys are the German texts in the code. */
+"Bild: {}" = "इमेज : {}";
+"Bilder aus dem Netz laden" = "वेब से चित्र लोड करें";
+"Das Bild lässt sich nicht anzeigen." = "छवि नहीं दिखाई जा सकती।";
+"Der Ordner ist nicht vertraut: Bilder aus dem Netz bleiben ungeladen." = "फ़ोल्डर भरोसेमंद नहीं है : वेब से चित्र लोड नहीं किए जाते।";
+"Die Datei ist kein lesbares PDF." = "यह फ़ाइल पढ़ने योग्य PDF नहीं है।";
+"Lädt …" = "लोड हो रहा है…";
+"PDF: {}" = "PDF : {}";
+"Vorschau: {}" = "प्रीव्यू : {}";
+"„{}“ lässt sich nicht öffnen." = "“{}” को खोला नहीं जा सकता।";

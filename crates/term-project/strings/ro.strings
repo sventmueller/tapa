@@ -1,0 +1,18 @@
+/* Romanian interface texts; the keys are the German texts in the code. */
+"Als Vorschau öffnen" = "Deschideți ca previzualizare";
+"Daneben öffnen" = "Deschideți alături";
+"Darunter öffnen" = "Deschideți dedesubt";
+"Im Browser-Tab öffnen" = "Deschideți într-o filă de browser";
+"Im Finder zeigen" = "Afișați în Finder";
+"In den Papierkorb legen" = "Mutați în Coș";
+"Neue Datei" = "Fișier nou";
+"Neue Datei …" = "Fișier nou…";
+"Neuer Ordner" = "Dosar nou";
+"Neuer Ordner …" = "Dosar nou…";
+"Pfad kopieren" = "Copiați calea";
+"Relativen Pfad kopieren" = "Copiați calea relativă";
+"Umbenennen" = "Redenumiți";
+"Umbenennen …" = "Redenumiți…";
+"„{}“ gibt es schon." = "„{}” există deja.";
+"„{}“ wurde nicht angelegt." = "„{}” nu a fost creat.";
+"„{}“ wurde nicht umbenannt." = "„{}” nu a fost redenumit.";

@@ -1,0 +1,18 @@
+/* Finnish interface texts; the keys are the German texts in the code. */
+"Als Vorschau öffnen" = "Avaa esikatseluna";
+"Daneben öffnen" = "Avaa viereen";
+"Darunter öffnen" = "Avaa alle";
+"Im Browser-Tab öffnen" = "Avaa selainvälilehdessä";
+"Im Finder zeigen" = "Näytä Finderissa";
+"In den Papierkorb legen" = "Siirrä roskakoriin";
+"Neue Datei" = "Uusi tiedosto";
+"Neue Datei …" = "Uusi tiedosto…";
+"Neuer Ordner" = "Uusi kansio";
+"Neuer Ordner …" = "Uusi kansio…";
+"Pfad kopieren" = "Kopioi polku";
+"Relativen Pfad kopieren" = "Kopioi suhteellinen polku";
+"Umbenennen" = "Nimeä uudelleen";
+"Umbenennen …" = "Nimeä uudelleen…";
+"„{}“ gibt es schon." = "”{}” on jo olemassa.";
+"„{}“ wurde nicht angelegt." = "Kohdetta ”{}” ei luotu.";
+"„{}“ wurde nicht umbenannt." = "Kohdetta ”{}” ei nimetty uudelleen.";

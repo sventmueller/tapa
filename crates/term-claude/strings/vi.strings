@@ -1,0 +1,13 @@
+/* Vietnamese interface texts; the keys are the German texts in the code. */
+"Claude Code hat das Zurückspulen abgelehnt: {}" = "Claude Code đã từ chối tua lại: {}";
+"Claude Code hat nicht rechtzeitig geantwortet." = "Claude Code không phản hồi kịp thời.";
+"Claude Code ist beendet." = "Claude Code đã kết thúc.";
+"Claude Code ist nicht gestartet: {}" = "Claude Code chưa khởi động: {}";
+"Claude Code lehnt ab: {}" = "Claude Code từ chối: {}";
+"Claude Code liest seine Eingabe nicht mehr." = "Claude Code không còn đọc dữ liệu đầu vào của nó.";
+"Claude Code ließ sich nicht starten: {}" = "Không thể khởi động Claude Code: {}";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "Yêu cầu này không còn chờ câu trả lời.";
+"Diese Version von Claude Code kann das hier nicht." = "Phiên bản Claude Code này không thể làm việc này ở đây.";
+"Melde dich an, indem du claude im Terminal startest: {}" = "Hãy đăng nhập bằng cách chạy claude trong terminal: {}";
+"Unerwartete Antwort: {}" = "Phản hồi không mong đợi: {}";
+"{} wurde nicht gefunden." = "Không tìm thấy {}.";

@@ -1,0 +1,7 @@
+/* Italian interface texts; the keys are the German texts in the code. */
+"Abbrechen" = "Annulla";
+"Alle einklappen" = "Comprimi tutto";
+"Dateien" = "File";
+"Neue Datei …" = "Nuovo file…";
+"Neuer Ordner …" = "Nuova cartella…";
+"OK" = "OK";

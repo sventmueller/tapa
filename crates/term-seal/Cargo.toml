@@ -1,0 +1,16 @@
+[package]
+name = "term-seal"
+version.workspace = true
+description = "Files sealed on disk with AES-256-CTR and HMAC-SHA-256 from CommonCrypto, under a key in the keychain"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+term-base.workspace = true
+objc2-core-foundation.workspace = true
+objc2-security = { workspace = true, features = ["std", "SecBase", "SecItem"] }

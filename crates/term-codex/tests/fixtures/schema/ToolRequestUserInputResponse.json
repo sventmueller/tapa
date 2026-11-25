@@ -1,0 +1,1 @@
+{"definitions":{"ToolRequestUserInputAnswer":{"properties":{"answers":{"items":{"type":"string"},"type":"array"}},"required":["answers"],"type":"object"}},"properties":{"answers":{"additionalProperties":{"$ref":"#/definitions/ToolRequestUserInputAnswer"},"type":"object"}},"required":["answers"],"title":"ToolRequestUserInputResponse","type":"object"}

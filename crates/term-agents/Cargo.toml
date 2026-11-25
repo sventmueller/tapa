@@ -1,0 +1,39 @@
+[package]
+name = "term-agents"
+version.workspace = true
+description = "One driver over every agent session: start, send, answer requests by a rule, fan events out to any number of views, and a typed end of each turn"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[lints]
+workspace = true
+
+# The stand-ins of the Codex and OpenCode servers and an ACP agent as one program, for the integration tests; not in
+# the shipped app.
+[[bin]]
+name = "session-stand-in"
+path = "src/bin/session-stand-in.rs"
+test = false
+required-features = ["selftest"]
+
+[features]
+# The scripted session, for the self-test and the tests, and the stand-ins of the servers and the ACP agent; not in
+# the shipped app.
+selftest = ["term-acp/testing", "term-codex/testing", "term-opencode/testing"]
+
+[dependencies]
+term-acp.workspace = true
+term-base.workspace = true
+term-claude.workspace = true
+term-codex.workspace = true
+term-opencode.workspace = true
+term-process.workspace = true
+term-thread.workspace = true
+serde_json.workspace = true
+
+[dev-dependencies]
+# Itself with the scripted session and the stand-ins, for the integration tests.
+term-agents = { path = ".", features = ["selftest"] }
+term-base = { workspace = true, features = ["testing"] }

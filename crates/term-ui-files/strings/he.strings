@@ -1,0 +1,7 @@
+/* Hebrew interface texts; the keys are the German texts in the code. */
+"Abbrechen" = "ביטול";
+"Alle einklappen" = "קיפול הכול";
+"Dateien" = "קבצים";
+"Neue Datei …" = "קובץ חדש…";
+"Neuer Ordner …" = "תיקיה חדשה…";
+"OK" = "אישור";

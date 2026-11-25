@@ -1,0 +1,10 @@
+/* Slovenian interface texts; the keys are the German texts in the code. */
+"Bild: {}" = "Slika: {}";
+"Bilder aus dem Netz laden" = "Naloži slike s spleta";
+"Das Bild lässt sich nicht anzeigen." = "Slike ni mogoče prikazati.";
+"Der Ordner ist nicht vertraut: Bilder aus dem Netz bleiben ungeladen." = "Mapi ne zaupate: slike s spleta ostanejo nenaložene.";
+"Die Datei ist kein lesbares PDF." = "Datoteka ni berljiv PDF.";
+"Lädt …" = "Nalaganje …";
+"PDF: {}" = "PDF: {}";
+"Vorschau: {}" = "Predogled: {}";
+"„{}“ lässt sich nicht öffnen." = "»{}« ni mogoče odpreti.";

@@ -1,0 +1,8 @@
+/* Hungarian interface texts; the keys are the German texts in the code. */
+"Das Dokument hat noch keine Datei." = "A dokumentumhoz még nem tartozik fájl.";
+"Das Dokument ist schreibgeschützt." = "A dokumentum csak olvasható.";
+"Die Datei enthält Binärdaten und wird nie gesichert." = "A fájl bináris adatokat tartalmaz, ezért sosem lesz mentve.";
+"Die Datei ist schreibgeschützt." = "A fájl csak olvasható.";
+"Die Datei wurde inzwischen außerhalb geändert." = "A fájl időközben máshol módosult.";
+"Die Kodierung der Datei ist unbekannt; sie wird nie gesichert." = "A fájl kódolása ismeretlen, ezért sosem lesz mentve.";
+"Die Stelle liegt außerhalb des Textes: {}" = "A hely kívül esik a szövegen: {}";

@@ -1,0 +1,7 @@
+/* Czech interface texts; the keys are the German texts in the code. */
+"Abbrechen" = "Zrušit";
+"Alle einklappen" = "Sbalit vše";
+"Dateien" = "Soubory";
+"Neue Datei …" = "Nový soubor…";
+"Neuer Ordner …" = "Nová složka…";
+"OK" = "OK";

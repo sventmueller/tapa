@@ -1,0 +1,13 @@
+/* Slovak interface texts; the keys are the German texts in the code. */
+"Claude Code hat das Zurückspulen abgelehnt: {}" = "Claude Code zamietol pretočenie späť: {}";
+"Claude Code hat nicht rechtzeitig geantwortet." = "Claude Code neodpovedal včas.";
+"Claude Code ist beendet." = "Claude Code je ukončený.";
+"Claude Code ist nicht gestartet: {}" = "Claude Code sa nespustil: {}";
+"Claude Code lehnt ab: {}" = "Claude Code odmieta: {}";
+"Claude Code liest seine Eingabe nicht mehr." = "Claude Code už nečíta svoj vstup.";
+"Claude Code ließ sich nicht starten: {}" = "Claude Code sa nepodarilo spustiť: {}";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "Táto požiadavka už nečaká na odpoveď.";
+"Diese Version von Claude Code kann das hier nicht." = "Táto verzia Claude Code to tu nedokáže.";
+"Melde dich an, indem du claude im Terminal startest: {}" = "Prihláste sa spustením príkazu claude v termináli: {}";
+"Unerwartete Antwort: {}" = "Neočakávaná odpoveď: {}";
+"{} wurde nicht gefunden." = "{} sa nenašlo.";

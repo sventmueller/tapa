@@ -1,0 +1,14 @@
+/* Korean interface texts; the keys are the German texts in the code. */
+"Dafür fehlt die Berechtigung." = "이 작업을 수행할 권한이 없습니다.";
+"Das ist ein Ordner, keine Datei." = "파일이 아니라 폴더입니다.";
+"Der Dateiname ist ungültig." = "파일 이름이 유효하지 않습니다.";
+"Der Datenträger ist schreibgeschützt." = "볼륨이 읽기 전용입니다.";
+"Der Datenträger ist voll." = "볼륨이 가득 찼습니다.";
+"Der Ordner ist nicht leer." = "폴더가 비어 있지 않습니다.";
+"Der Vorgang hat zu lange gedauert." = "작업 시간이 너무 오래 걸렸습니다.";
+"Die Datei ist gerade belegt." = "파일이 현재 사용 중입니다.";
+"Die Datei ist zu groß." = "파일이 너무 큽니다.";
+"Die Datei oder der Ordner existiert nicht." = "파일 또는 폴더가 존재하지 않습니다.";
+"Die Gegenstelle hat die Verbindung abgelehnt." = "상대방이 연결을 거부했습니다.";
+"Ein Teil des Pfads ist kein Ordner." = "경로의 일부가 폴더가 아닙니다.";
+"Es gibt dort schon eine Datei dieses Namens." = "해당 위치에 같은 이름의 파일이 이미 있습니다.";

@@ -1,0 +1,18 @@
+/* Slovak interface texts; the keys are the German texts in the code. */
+"Als Vorschau öffnen" = "Otvoriť ako náhľad";
+"Daneben öffnen" = "Otvoriť vedľa";
+"Darunter öffnen" = "Otvoriť pod";
+"Im Browser-Tab öffnen" = "Otvoriť v tabe prehliadača";
+"Im Finder zeigen" = "Zobraziť vo Finderi";
+"In den Papierkorb legen" = "Presunúť do koša";
+"Neue Datei" = "Nový súbor";
+"Neue Datei …" = "Nový súbor…";
+"Neuer Ordner" = "Nový priečinok";
+"Neuer Ordner …" = "Nový priečinok…";
+"Pfad kopieren" = "Kopírovať cestu";
+"Relativen Pfad kopieren" = "Kopírovať relatívnu cestu";
+"Umbenennen" = "Premenovať";
+"Umbenennen …" = "Premenovať…";
+"„{}“ gibt es schon." = "„{}“ už existuje.";
+"„{}“ wurde nicht angelegt." = "Položka „{}“ nebola vytvorená.";
+"„{}“ wurde nicht umbenannt." = "Položka „{}“ nebola premenovaná.";

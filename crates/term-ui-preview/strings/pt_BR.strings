@@ -1,0 +1,10 @@
+/* Brazilian Portuguese interface texts; the keys are the German texts in the code. */
+"Bild: {}" = "Imagem: {}";
+"Bilder aus dem Netz laden" = "Carregar Imagens da Web";
+"Das Bild lässt sich nicht anzeigen." = "Não é possível mostrar a imagem.";
+"Der Ordner ist nicht vertraut: Bilder aus dem Netz bleiben ungeladen." = "A pasta não é confiável: as imagens da web não são carregadas.";
+"Die Datei ist kein lesbares PDF." = "O arquivo não é um PDF legível.";
+"Lädt …" = "Carregando…";
+"PDF: {}" = "PDF: {}";
+"Vorschau: {}" = "Pré-visualização: {}";
+"„{}“ lässt sich nicht öffnen." = "Não é possível abrir “{}”.";

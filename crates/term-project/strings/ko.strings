@@ -1,0 +1,18 @@
+/* Korean interface texts; the keys are the German texts in the code. */
+"Als Vorschau öffnen" = "미리보기로 열기";
+"Daneben öffnen" = "옆에 열기";
+"Darunter öffnen" = "아래에 열기";
+"Im Browser-Tab öffnen" = "브라우저 탭에서 열기";
+"Im Finder zeigen" = "Finder에서 보기";
+"In den Papierkorb legen" = "휴지통으로 이동";
+"Neue Datei" = "새로운 파일";
+"Neue Datei …" = "새로운 파일…";
+"Neuer Ordner" = "새로운 폴더";
+"Neuer Ordner …" = "새로운 폴더…";
+"Pfad kopieren" = "경로 복사";
+"Relativen Pfad kopieren" = "상대 경로 복사";
+"Umbenennen" = "이름 변경";
+"Umbenennen …" = "이름 변경…";
+"„{}“ gibt es schon." = "‘{}’이(가) 이미 있습니다.";
+"„{}“ wurde nicht angelegt." = "‘{}’이(가) 생성되지 않았습니다.";
+"„{}“ wurde nicht umbenannt." = "‘{}’의 이름이 변경되지 않았습니다.";

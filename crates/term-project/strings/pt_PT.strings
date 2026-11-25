@@ -1,0 +1,18 @@
+/* European Portuguese interface texts; the keys are the German texts in the code. */
+"Als Vorschau öffnen" = "Abrir como pré-visualização";
+"Daneben öffnen" = "Abrir ao lado";
+"Darunter öffnen" = "Abrir abaixo";
+"Im Browser-Tab öffnen" = "Abrir num separador do navegador";
+"Im Finder zeigen" = "Mostrar no Finder";
+"In den Papierkorb legen" = "Mover para o Lixo";
+"Neue Datei" = "Novo ficheiro";
+"Neue Datei …" = "Novo ficheiro…";
+"Neuer Ordner" = "Nova pasta";
+"Neuer Ordner …" = "Nova pasta…";
+"Pfad kopieren" = "Copiar caminho";
+"Relativen Pfad kopieren" = "Copiar caminho relativo";
+"Umbenennen" = "Alterar nome";
+"Umbenennen …" = "Alterar nome…";
+"„{}“ gibt es schon." = "“{}” já existe.";
+"„{}“ wurde nicht angelegt." = "“{}” não foi criado.";
+"„{}“ wurde nicht umbenannt." = "Não foi possível mudar o nome de “{}”.";

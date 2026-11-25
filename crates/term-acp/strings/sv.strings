@@ -1,0 +1,14 @@
+/* Swedish interface texts; the keys are the German texts in the code. */
+"Der Agent hat auf {} nicht rechtzeitig geantwortet." = "Agenten svarade inte på {} i tid.";
+"Der Agent ist nicht gestartet: {}" = "Agenten har inte startat: {}";
+"Der Agent spricht die Protokollversion {}, diese App Version 1" = "Agenten talar protokollversion {}, den här appen version 1";
+"Der Agent verlangt eine Anmeldung." = "Agenten vill att du loggar in.";
+"Die Sitzung ist beendet." = "Sessionen har avslutats.";
+"Diese Anfrage wartet nicht mehr auf eine Antwort." = "Den här förfrågan väntar inte längre på ett svar.";
+"{} startet nur in einem vertrauten Arbeitsbereich." = "{} startar bara i en betrodd arbetsyta.";
+"{} wurde nicht gefunden." = "{} hittades inte.";
+"Die Installation wurde nicht bestätigt." = "Installationen bekräftades inte.";
+"{} {} oder neuer wird gebraucht" = "{} {} eller senare behövs";
+"{} wird gebraucht" = "{} behövs";
+"Der Download ist fehlgeschlagen: {}" = "Hämtningen misslyckades: {}";
+"Der Download stimmt nicht mit seiner Prüfsumme überein und wurde verworfen" = "Hämtningen stämmer inte med sin kontrollsumma och kastades";

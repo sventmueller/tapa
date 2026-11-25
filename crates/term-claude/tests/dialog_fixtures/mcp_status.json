@@ -1,0 +1,29 @@
+{
+ "mcpServers": [
+  {
+   "name": "broken",
+   "status": "failed",
+   "error": "ENOENT: no such file or directory, posix_spawn '/nonexistent/mcp-server'",
+   "config": {
+    "type": "stdio",
+    "command": "/nonexistent/mcp-server",
+    "args": []
+   },
+   "transport": "stdio",
+   "scope": "user",
+   "source": "user"
+  },
+  {
+   "name": "remote",
+   "status": "pending",
+   "config": {
+    "type": "http",
+    "url": "https://example.invalid/mcp"
+   },
+   "transport": "http",
+   "urlHost": "example.invalid",
+   "scope": "user",
+   "source": "user"
+  }
+ ]
+}
