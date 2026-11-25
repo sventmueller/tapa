@@ -1,6 +1,7 @@
 //! The suggestion without the input field (E7, F94): what the history or the spec suggests for the line typed at the
-//! prompt shows faint from the cursor on, as Warp draws it; →, ⌃F, ⌃E and End take it as typed keys, ⌃→ its next
-//! word. A shell that draws suggestions of its own, such as fish or zsh with zsh-autosuggestions, keeps those.
+//! prompt shows faint from the cursor on, as Warp draws it; →, ⌃F, ⌃E and End take it as typed keys, Tab where it is
+//! the one line meant, ⌃→ its next word. Tab otherwise or ⌃Space opens the completion menu above the word. A shell
+//! that draws suggestions of its own, such as fish or zsh with zsh-autosuggestions, keeps those, and Tab with them.
 
 use objc2::DefinedClass;
 use objc2_app_kit::{NSEvent, NSEventModifierFlags};
@@ -23,6 +24,8 @@ pub(crate) struct Ghost {
     pub(crate) rest: String,
     /// The line typed when the suggestion was made; it is taken only while the line is still that.
     typed: String,
+    /// It is the one line meant, from the history or the only candidate, so Tab takes it.
+    sure: bool,
 }
 
 /// The rest's next word with the spaces before it, as ⌃→ takes it.
@@ -33,8 +36,15 @@ fn next_word(rest: &str) -> &str {
 }
 
 impl TerminalView {
-    /// Looks for the suggestion anew after the screen, the shell or the field changed, and draws it.
+    /// Looks for the suggestion anew after the screen, the shell or the field changed, and draws it; an open menu
+    /// follows the line instead, or closes once the prompt is gone.
     pub(crate) fn raw_suggest(&self) {
+        if self.raw_menu_is_open() {
+            match self.raw_line() {
+                Some(text) => self.menu_follow(&text),
+                None => self.menu_close_quietly(),
+            }
+        }
         let ghost = self.raw_ghost();
         if *self.ivars().ghost.borrow() == ghost {
             return;
@@ -43,20 +53,37 @@ impl TerminalView {
         self.repaint();
     }
 
+    /// Whether the terminal suggests and completes at the shell's prompt now: the shell waits for input, without the
+    /// field, and draws no suggestions of its own.
+    fn raw_mode_suggests(&self) -> bool {
+        crate::host().config().input.suggestions
+            && !self.ivars().shell.borrow().own_suggestions
+            && !self.field_view().is_some_and(|field| field.is_visible())
+            && !self.in_copy_mode()
+            && !self.has_marked()
+            && self
+                .ivars()
+                .field_state
+                .try_borrow()
+                .is_ok_and(|state| state.phase == Phase::Input)
+    }
+
+    /// The line typed at the prompt while the terminal suggests there.
+    fn raw_line(&self) -> Option<String> {
+        if !self.raw_mode_suggests() {
+            return None;
+        }
+        let (typed, _) = self.with_session(|session| session.typed_line()).flatten()?;
+        (!typed.text.contains('\n')).then_some(typed.text)
+    }
+
     fn raw_ghost(&self) -> Option<Ghost> {
-        let input = crate::host().config().input.clone();
-        if !input.suggestions
-            || self.ivars().shell.borrow().own_suggestions
-            || self.field_shown()
-            || self.in_copy_mode()
-            || self.has_marked()
-            || self.ivars().field_state.try_borrow().ok()?.phase != Phase::Input
-        {
+        if !self.raw_mode_suggests() || self.raw_menu_is_open() {
             return None;
         }
         let (typed, point) = self.with_session(|session| session.typed_line()).flatten()?;
         let text = typed.text;
-        if text.trim().is_empty() || text.contains('\n') {
+        if !super::suggest::typed_enough(&text) || text.contains('\n') {
             return None;
         }
         let room = if typed.open {
@@ -68,7 +95,7 @@ impl TerminalView {
             return None;
         }
         let (line, missing_spec) = self.instant_line(&text);
-        let Some(line) = line else {
+        let Some((line, sure)) = line else {
             if let Some(missing) = missing_spec {
                 term_suggest::warm_spec(&missing);
                 let id = self.id();
@@ -90,11 +117,40 @@ impl TerminalView {
             shown,
             rest,
             typed: text,
+            sure,
         })
     }
 
-    /// →, ⌃F, ⌃E or End take the suggestion that shows, ⌃→ its next word, typed into the shell; whether the key did.
-    pub(crate) fn raw_accept(&self, event: &NSEvent) -> bool {
+    /// A key at the shell's prompt: the open menu's keys first, then →, ⌃F, ⌃E or End take the suggestion that shows,
+    /// Tab where it is the one line meant, and ⌃→ its next word; Tab otherwise or ⌃Space completes the word. Whether
+    /// the key did.
+    /// Where the terminal finds nothing, Tab goes to the shell's own completion.
+    pub(crate) fn raw_key(&self, event: &NSEvent) -> bool {
+        let flags = event.modifierFlags();
+        if flags.intersects(NSEventModifierFlags::Option | NSEventModifierFlags::Command) {
+            return false;
+        }
+        let shift = flags.contains(NSEventModifierFlags::Shift);
+        let control = flags.contains(NSEventModifierFlags::Control);
+        if self.raw_menu_is_open() {
+            return !control && self.menu_key(event.keyCode(), shift, true).unwrap_or(false);
+        }
+        if self.raw_accept(event) {
+            return true;
+        }
+        let completes = matches!(
+            (event.keyCode(), control, shift),
+            (48, false, false) | (49, true, false)
+        );
+        let completed =
+            completes && self.raw_line().is_some_and(|text| !text.trim().is_empty()) && self.complete_word(true);
+        if completed {
+            self.raw_suggest();
+        }
+        completed
+    }
+
+    fn raw_accept(&self, event: &NSEvent) -> bool {
         let Some(ghost) = self.ivars().ghost.borrow().clone() else {
             return false;
         };
@@ -116,6 +172,7 @@ impl TerminalView {
             .unwrap_or_default();
         let typed = match (event.keyCode(), key.as_str(), control) {
             (124, _, true) => next_word(&ghost.rest).to_string(),
+            (48, _, false) if ghost.sure => ghost.rest,
             (124 | 119, _, false) | (_, "f" | "e", true) => ghost.rest,
             _ => return false,
         };

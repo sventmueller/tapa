@@ -72,6 +72,9 @@ pub struct Ivars {
     pub(super) field_state: RefCell<crate::field::model::Field>,
     /// What the history suggests for the field's text now.
     pub(super) suggestion: RefCell<Option<String>>,
+    /// The suggestion is the one line meant, from the history, the next command or the only candidate, so Tab takes
+    /// it; one candidate of several is left to the menu.
+    pub(super) suggestion_sure: Cell<bool>,
     /// The field's completion menu, while it is open.
     pub(super) menu: RefCell<Option<crate::field::menu::Menu>>,
     /// The suggestion drawn from the cursor on without the field.
@@ -544,6 +547,7 @@ impl TerminalView {
             field: RefCell::new(None),
             field_state: RefCell::new(crate::field::model::Field::new(config.input.field)),
             suggestion: RefCell::new(None),
+            suggestion_sure: Cell::new(false),
             menu: RefCell::new(None),
             ghost: RefCell::new(None),
             shell: RefCell::new(crate::field::shell::Shell::default()),

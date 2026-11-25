@@ -1,8 +1,9 @@
 //! The input field (E7, F209): a text view at the bottom of a session's pane where the command line is edited like
 //! text on a Mac and sent as one piece; ↑ and ↓ step through the field's history, ⌃R searches it, ⌃C clears the
 //! field and Escape leaves it for raw typing until the next prompt. It shows only while the shell waits for input.
-//! As in Warp, a suggestion shows faint after the text, → or ⌃F take it and ⌃→ its next word, Tab opens the
-//! completion menu, and the command's parts have colours of their own.
+//! As in Warp with Tab set to take suggestions, a suggestion shows faint after the text: → or ⌃F take it, Tab where
+//! it is the one line meant rather than one candidate of several, ⌃→ its next word. ⌃Space, or Tab otherwise, opens
+//! the completion menu, and the command's parts have colours of their own.
 
 mod chips;
 pub(crate) mod colour;
@@ -143,7 +144,12 @@ impl FieldText {
             (124, _) if at_end => view.field_accept(),
             (_, "f") if control => view.field_accept(),
             (_, "e") if control && at_end => view.field_accept(),
+            (48, _) if !shift && view.field_tab_accept() => true,
             (48, _) => {
+                view.field_complete();
+                true
+            }
+            (49, _) if control => {
                 view.field_complete();
                 true
             }

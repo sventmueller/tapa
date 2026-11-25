@@ -1,7 +1,8 @@
 //! The field's suggestions (E8), as Warp shows them: the rest of the best line faint right after the text, the
 //! history first and then the spec's best candidate, and the delayed stage after it, whose answer shows only while
 //! the field still holds the same text. With nothing typed, the history's next command shows at once and a fix or the
-//! project's next step replaces it when the pool finds one. Tab opens the completion menu (`menu`).
+//! project's next step replaces it when the pool finds one. Tab takes a suggestion that is the one line meant;
+//! ⌃Space, or Tab otherwise, opens the completion menu (`menu`).
 
 use std::cell::RefCell;
 use std::collections::HashMap;
@@ -16,6 +17,15 @@ use crate::TerminalView;
 thread_local! {
     /// The delayed stage's last completion per view, with the line it is for, for Tab and the menu.
     pub(super) static LATER: RefCell<HashMap<u64, (String, Completion)>> = RefCell::new(HashMap::new());
+}
+
+/// The fewest characters typed before a suggestion shows; after a single letter it mostly guesses wrong (owner's
+/// decision, 2026-11-25).
+const FEWEST_TYPED: usize = 2;
+
+/// Whether enough of `text` is typed for a suggestion to show.
+pub(crate) fn typed_enough(text: &str) -> bool {
+    text.trim_start().chars().count() >= FEWEST_TYPED
 }
 
 /// What of `line` shows after `text`: its rest, or nothing when it does not continue the text.
@@ -44,14 +54,19 @@ fn best_line(completion: &Completion, text: &str) -> Option<String> {
 }
 
 impl TerminalView {
-    /// The line the instant stage suggests for `text`: the history's, else the spec's best candidate; with the spec
-    /// it would have needed but that is not parsed yet.
-    pub(crate) fn instant_line(&self, text: &str) -> (Option<String>, Option<String>) {
+    /// The line the instant stage suggests for `text`: the history's, else the spec's best candidate, and whether it
+    /// is the one line meant rather than one candidate of several; with the spec it would have needed but that is not
+    /// parsed yet.
+    pub(crate) fn instant_line(&self, text: &str) -> (Option<(String, bool)>, Option<String>) {
         if let Some(line) = crate::host().suggest(self.id(), text) {
-            return (Some(line), None);
+            return (Some((line, true)), None);
         }
         let completion = term_suggest::complete(text, &self.cwd(), &term_base::home(), false);
-        (best_line(&completion, text), completion.missing_spec)
+        let sure = completion.candidates.len() == 1;
+        (
+            best_line(&completion, text).map(|line| (line, sure)),
+            completion.missing_spec,
+        )
     }
 
     /// The suggestion for `text` in `field`: the instant stage now, the delayed one asked for.
@@ -59,10 +74,15 @@ impl TerminalView {
         let id = self.id();
         let history = crate::host().suggest(id, text);
         let mut suggestion = history.clone();
+        let mut sure = history.is_some();
         if !crate::host().config().input.suggestions {
             term_suggest::cancel(id);
         } else if text.trim().is_empty() {
             self.ask_next(id);
+        } else if !typed_enough(text) {
+            suggestion = None;
+            term_suggest::cancel(id);
+            term_suggest::warm_spec(text.trim());
         } else {
             let (folder, home) = (self.cwd(), term_base::home());
             if !text.contains(char::is_whitespace) {
@@ -71,6 +91,7 @@ impl TerminalView {
             let completion = term_suggest::complete(text, &folder, &home, false);
             if history.is_none() {
                 suggestion = best_line(&completion, text);
+                sure = completion.candidates.len() == 1;
             }
             if completion.missing_spec.is_some() || completion.wanted.is_some() {
                 self.ask_later(id, text, history.is_some());
@@ -82,6 +103,7 @@ impl TerminalView {
         field.set_ghost(rest);
         let shows = rest.is_some();
         *self.ivars().suggestion.borrow_mut() = suggestion.filter(|_| shows);
+        self.ivars().suggestion_sure.set(shows && sure);
     }
 
     fn ask_later(&self, id: u64, text: &str, has_history: bool) {
@@ -106,6 +128,7 @@ impl TerminalView {
                 {
                     field.set_ghost(Some(rest));
                     *view.ivars().suggestion.borrow_mut() = Some(suggested);
+                    view.ivars().suggestion_sure.set(completion.candidates.len() == 1);
                 }
                 view.field_colour(&field, &line);
             });
@@ -124,6 +147,7 @@ impl TerminalView {
                 if let Some(field) = view.field_with_text("") {
                     field.set_ghost(Some(&next_hint(&next)));
                     *view.ivars().suggestion.borrow_mut() = Some(next.line);
+                    view.ivars().suggestion_sure.set(true);
                 }
             });
         });
@@ -140,6 +164,14 @@ impl TerminalView {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn a_suggestion_waits_for_the_second_character() {
+        assert!(!typed_enough("g"));
+        assert!(!typed_enough("  g"));
+        assert!(typed_enough("gi"));
+        assert!(typed_enough("ä😀"));
+    }
 
     #[test]
     fn the_rest_shows_only_where_the_line_continues_the_text() {

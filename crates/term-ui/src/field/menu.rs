@@ -1,5 +1,6 @@
-//! The completion menu of the input field (F93), as Warp opens it on Tab: the candidates for the word being typed with
-//! what each does, above the field where the word starts. Typing filters it, by scattered letters too; ↑ and ↓ or Tab
+//! The completion menu of the input field (F93), as Warp opens it on ⌃Space, or on Tab while no suggestion shows:
+//! the candidates for the word being typed with what each does, above the field where the word starts, or without
+//! the field above the word at the shell's prompt, where taking one types it into the shell. Typing filters it, by scattered letters too; ↑ and ↓ or Tab
 //! and ⇧Tab move, Return, → or a click take the selected one, Escape closes it. The selected one shows faint after the
 //! text, as a suggestion does.
 
@@ -81,7 +82,9 @@ pub(crate) struct Menu {
     root: Retained<NSView>,
     background: Retained<NSVisualEffectView>,
     rows: Vec<Row>,
-    /// Where the word being completed starts in the field's text, in bytes.
+    /// It completes the line typed at the shell's prompt rather than the field's text.
+    raw: bool,
+    /// Where the word being completed starts in the line, in bytes.
     start: usize,
     /// Every candidate at that place, which the scattered letters choose from.
     every: Vec<Candidate>,
@@ -247,48 +250,88 @@ impl TerminalView {
         self.completion_for(&head).candidates
     }
 
-    /// Tab: one candidate takes the word's place; several complete it as far as those starting with it agree and
-    /// open the menu, which also lists those the word matches by scattered letters.
-    pub(crate) fn field_complete(&self) {
-        let Some(text) = self.field_view().map(|field| field.text()) else {
+    /// The line the menu completes: the field's text, or with `raw` the line typed at the shell's prompt.
+    fn menu_line(&self, raw: bool) -> Option<String> {
+        if raw {
+            return self
+                .with_session(|session| session.typed_line())
+                .flatten()
+                .map(|(typed, _)| typed.text);
+        }
+        self.field_view().map(|field| field.text())
+    }
+
+    /// Makes `old` read `new`: in the field as its text, at the shell's prompt as typed keys, deleting the word from
+    /// byte `start` on first where `new` does not just continue it.
+    fn menu_put(&self, raw: bool, old: &str, new: &str, start: usize) {
+        if !raw {
+            if let Some(field) = self.field_view() {
+                field.set_text(new);
+            }
             return;
+        }
+        let old_word = old.get(start..).unwrap_or_default();
+        let new_word = new.get(start..).unwrap_or_default();
+        let keys = match new_word.strip_prefix(old_word) {
+            Some(rest) => rest.to_string(),
+            None => format!("{}{new_word}", "\x7f".repeat(old_word.chars().count())),
+        };
+        self.with_session(|session| {
+            session.scroll(term_session::Scroll::Bottom);
+            session.write(keys.into_bytes());
+        });
+    }
+
+    /// ⌃Space, or Tab while no suggestion shows: one candidate takes the word's place; several complete it as far as
+    /// those starting with it agree and open the menu, which also lists those the word matches by scattered letters.
+    /// With `raw` it completes the line typed at the shell's prompt; whether it found anything, as the shell's own
+    /// completion takes Tab otherwise.
+    pub(crate) fn complete_word(&self, raw: bool) -> bool {
+        let Some(text) = self.menu_line(raw) else {
+            return false;
         };
         let completion = self.completion_for(&text);
         let found = merge(&completion, &self.every_for(&text, &completion));
         match found.as_slice() {
-            [] => objc2_app_kit::NSBeep(),
+            [] => return false,
             [only] => {
                 let line = completion.apply(&text, &only.text);
-                if let Some(field) = self.field_view() {
-                    field.set_text(&line);
-                }
+                self.menu_put(raw, &text, &line, completion.start);
             }
             _ => {
                 let names: Vec<&str> = completion.candidates.iter().map(|c| c.text.as_str()).collect();
                 let common = shared_start(&names);
+                let mut shown = text.clone();
                 if common.chars().count() > completion.word.chars().count() {
                     let line = completion.apply(&text, &common);
-                    let line = if common.ends_with(['/', '=']) {
+                    shown = if common.ends_with(['/', '=']) {
                         line
                     } else {
                         line.trim_end().to_string()
                     };
-                    if let Some(field) = self.field_view() {
-                        field.set_text(&line);
-                    }
+                    self.menu_put(raw, &text, &shown, completion.start);
                 }
-                self.menu_open();
+                self.menu_open(raw, &shown);
             }
+        }
+        true
+    }
+
+    /// Tab or ⌃Space in the field; a beep when nothing fits.
+    pub(crate) fn field_complete(&self) {
+        if !self.complete_word(false) {
+            objc2_app_kit::NSBeep();
         }
     }
 
-    /// Opens the menu for what the field holds; nothing with fewer than two candidates.
-    fn menu_open(&self) {
-        let Some((text, font)) = self.field_view().map(|field| (field.text(), field.font())) else {
+    /// Opens the menu for `text`, the field's or with `raw` the line at the prompt; nothing with fewer than two
+    /// candidates.
+    fn menu_open(&self, raw: bool, text: &str) {
+        let Some(font) = self.field_view().map(|field| field.font()) else {
             return;
         };
-        let completion = self.completion_for(&text);
-        let every = self.every_for(&text, &completion);
+        let completion = self.completion_for(text);
+        let every = self.every_for(text, &completion);
         let found = merge(&completion, &every);
         if found.len() < 2 {
             return;
@@ -331,6 +374,7 @@ impl TerminalView {
             root,
             background,
             rows,
+            raw,
             start,
             every,
             found,
@@ -338,7 +382,7 @@ impl TerminalView {
             selected: 0,
             first: 0,
         });
-        self.menu_show();
+        self.menu_show(text);
     }
 
     /// Whether the menu is open.
@@ -346,7 +390,15 @@ impl TerminalView {
         self.ivars().menu.try_borrow().is_ok_and(|menu| menu.is_some())
     }
 
-    /// Closes the menu without looking at the field again, as something else takes the field's text next.
+    /// Whether the menu is open for the line at the shell's prompt.
+    pub(crate) fn raw_menu_is_open(&self) -> bool {
+        self.ivars()
+            .menu
+            .try_borrow()
+            .is_ok_and(|menu| menu.as_ref().is_some_and(|menu| menu.raw))
+    }
+
+    /// Closes the menu without looking at the line again, as something else changes it next.
     pub(crate) fn menu_close_quietly(&self) {
         if let Ok(mut menu) = self.ivars().menu.try_borrow_mut()
             && let Some(menu) = menu.take()
@@ -355,18 +407,22 @@ impl TerminalView {
         }
     }
 
-    /// Closes the menu; the field's own suggestion shows again.
+    /// Closes the menu; the suggestion of the field or of the prompt shows again.
     pub(crate) fn menu_close(&self) {
         let Some(menu) = self.ivars().menu.borrow_mut().take() else {
             return;
         };
         menu.root.removeFromSuperview();
-        self.field_text_changed();
+        if menu.raw {
+            self.raw_suggest();
+        } else {
+            self.field_text_changed();
+        }
     }
 
-    /// The field's text changed while the menu is open: it lists what still fits, or closes once nothing does or
-    /// another word is being typed.
-    pub(super) fn menu_follow(&self, text: &str) {
+    /// The line changed while the menu is open: it lists what still fits, or closes once nothing does or another word
+    /// is being typed.
+    pub(crate) fn menu_follow(&self, text: &str) {
         if !self.menu_is_open() {
             return;
         }
@@ -382,14 +438,14 @@ impl TerminalView {
             !menu.found.is_empty()
         });
         if keep {
-            self.menu_show();
-        } else if let Some(menu) = self.ivars().menu.borrow_mut().take() {
-            menu.root.removeFromSuperview();
+            self.menu_show(text);
+        } else {
+            self.menu_close_quietly();
         }
     }
 
     /// A key while the menu is open: whether the menu took it, or none when it is not open or leaves the key alone.
-    pub(super) fn menu_key(&self, code: u16, shift: bool, at_end: bool) -> Option<bool> {
+    pub(crate) fn menu_key(&self, code: u16, shift: bool, at_end: bool) -> Option<bool> {
         if !self.menu_is_open() {
             return None;
         }
@@ -412,15 +468,18 @@ impl TerminalView {
             }
             _ => return None,
         };
-        if let Some(menu) = self.ivars().menu.borrow_mut().as_mut() {
+        let raw = self.ivars().menu.borrow_mut().as_mut().map(|menu| {
             let count = menu.found.len().max(1);
             menu.selected = if step > 0 {
                 (menu.selected + 1) % count
             } else {
                 (menu.selected + count - 1) % count
             };
+            menu.raw
+        })?;
+        if let Some(text) = self.menu_line(raw) {
+            self.menu_show(&text);
         }
-        self.menu_show();
         Some(true)
     }
 
@@ -432,7 +491,7 @@ impl TerminalView {
         }
     }
 
-    /// Takes the candidate at `index`, else the selected one, into the field and closes the menu.
+    /// Takes the candidate at `index`, else the selected one, into the line and closes the menu.
     fn menu_choose(&self, index: Option<usize>) {
         let Some(menu) = self.ivars().menu.borrow_mut().take() else {
             return;
@@ -441,23 +500,42 @@ impl TerminalView {
         let Some(candidate) = menu.found.get(index.unwrap_or(menu.selected)) else {
             return;
         };
-        if let Some(field) = self.field_view() {
-            let line = menu.completion.apply(&field.text(), &candidate.text);
-            field.set_text(&line);
+        if let Some(text) = self.menu_line(menu.raw) {
+            let line = menu.completion.apply(&text, &candidate.text);
+            self.menu_put(menu.raw, &text, &line, menu.completion.start);
         }
     }
 
-    /// Fills the rows around the selected candidate, places the menu over the field where the word starts and shows
-    /// the selected candidate faint after the text.
-    fn menu_show(&self) {
-        let Some(text) = self.field_view().map(|field| field.text()) else {
+    /// Where the word being completed starts on the screen: in the field, or with `raw` the cell at the prompt.
+    fn menu_anchor(&self, raw: bool, text: &str, start: usize) -> Option<NSRect> {
+        if !raw {
+            return self.field_view().and_then(|field| field.rect_of(start, self));
+        }
+        let (_, cursor) = self.with_session(|session| session.typed_line()).flatten()?;
+        let word = text.get(start..).unwrap_or_default().chars().count();
+        let point = term_session::Point {
+            line: cursor.line,
+            column: cursor.column.saturating_sub(word),
+        };
+        Some(self.metrics().cell_rect(point, 1))
+    }
+
+    /// Fills the rows around the selected candidate and places the menu: over the field where the word starts, or
+    /// above the prompt's word, below it where there is no room above. In the field the selected candidate shows
+    /// faint after the text.
+    fn menu_show(&self, text: &str) {
+        let Some((raw, start)) = self.ivars().menu.borrow().as_ref().map(|menu| (menu.raw, menu.start)) else {
             return;
         };
-        let start = self.ivars().menu.borrow().as_ref().map_or(0, |menu| menu.start);
-        let anchor = self.field_view().and_then(|field| field.rect_of(start, self));
+        let anchor = self.menu_anchor(raw, text, start);
         let bounds = self.bounds();
+        let room = if raw {
+            bounds.size.height
+        } else {
+            bounds.size.height - ABOVE_FIELD
+        };
         let fit = (1..=SHOWN)
-            .take_while(|rows| 2.0 * PADDING + *rows as f64 * ROW_HEIGHT + ABOVE_FIELD <= bounds.size.height)
+            .take_while(|rows| 2.0 * PADDING + *rows as f64 * ROW_HEIGHT <= room)
             .last()
             .unwrap_or(1);
         let Some(shown) = self.ivars().menu.borrow_mut().as_mut().map(|menu| {
@@ -477,22 +555,30 @@ impl TerminalView {
         let height = 2.0 * PADDING + shown as f64 * ROW_HEIGHT;
         let left = anchor.map_or(PADDING, |rect| rect.origin.x - PADDING - TEXT_X);
         let x = left.min(bounds.size.width - width - PADDING).max(PADDING);
-        let y = bounds.size.height - height - ABOVE_FIELD;
+        let y = match anchor.filter(|_| raw) {
+            Some(cell) if cell.origin.y - height - ABOVE_FIELD >= 0.0 => cell.origin.y - height - ABOVE_FIELD,
+            Some(cell) => cell.origin.y + cell.size.height + ABOVE_FIELD,
+            None => bounds.size.height - height - ABOVE_FIELD,
+        };
         menu.root
             .setFrame(NSRect::new(NSPoint::new(x, y), NSSize::new(width, height)));
         menu.background
             .setFrame(NSRect::new(NSPoint::ZERO, NSSize::new(width, height)));
         menu.lay_out(shown, NSSize::new(width, height), TEXT_X + name_width + gap, name_width);
         let preview = menu.found.get(menu.selected).map(|candidate| {
-            let line = menu.completion.apply(&text, &candidate.text);
+            let line = menu.completion.apply(text, &candidate.text);
             line.trim_end().to_string()
         });
         drop(guard);
+        if raw {
+            return;
+        }
         let rest = preview
             .as_deref()
-            .and_then(|line| line.strip_prefix(text.as_str()))
+            .and_then(|line| line.strip_prefix(text))
             .filter(|rest| !rest.is_empty());
         *self.ivars().suggestion.borrow_mut() = preview.clone().filter(|_| rest.is_some());
+        self.ivars().suggestion_sure.set(false);
         if let Some(field) = self.field_view() {
             field.set_ghost(rest);
         }
@@ -511,7 +597,7 @@ impl TerminalView {
         Some(entries)
     }
 
-    /// Opens the menu as Tab does and moves `steps` down in it, for the self-test.
+    /// Opens the field's menu as Tab does unless a menu is open, and moves `steps` down in it, for the self-test.
     #[cfg(feature = "selftest")]
     pub fn menu_drive(&self, steps: usize) {
         if !self.menu_is_open() {

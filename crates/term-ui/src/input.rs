@@ -184,7 +184,7 @@ impl TerminalView {
         if self.copy_mode_key(event) {
             return true;
         }
-        if !self.has_marked() && self.raw_accept(event) {
+        if !self.has_marked() && self.raw_key(event) {
             return true;
         }
         self.mark_key();

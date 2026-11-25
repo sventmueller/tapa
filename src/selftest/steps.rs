@@ -8,7 +8,8 @@
 //! `sheet:accept` or `sheet:cancel` answers; `secure:<name>` prints the state of secure keyboard entry;
 //! `blocks:<name>` prints the command blocks the session in front shows, and `click:<line>.<column>`
 //! clicks that cell of its screen as a plain click moves the cursor at a prompt (F83). `key:<name>` presses a key
-//! such as `right`, `ctrl-right`, `tab`, `shift-tab`, `down`, `return`, `escape`, `ctrl-f` or `ctrl-e`;
+//! such as `right`, `ctrl-right`, `tab`, `shift-tab`, `down`, `return`, `escape`, `ctrl-f`, `ctrl-e` or
+//! `ctrl-space`;
 //! `fieldmenu:<steps>` opens the field's completion menu as Tab does, moves down that many and prints what it lists,
 //! `fieldparts:<name>` the parts of the field's command as its colours show them, `rawghost:<name>` the suggestion
 //! drawn without the field, `picture:<name>` draws the front window into `<name>.png` and `viewpicture:<name>` the
@@ -204,6 +205,7 @@ fn key(name: &str) {
         "escape" => (53, '\u{1b}', Flags::empty()),
         "ctrl-f" => (3, 'f', Flags::Control),
         "ctrl-e" => (14, 'e', Flags::Control),
+        "ctrl-space" => (49, ' ', Flags::Control),
         _ => {
             eprintln!("selftest: no key {name}");
             return;

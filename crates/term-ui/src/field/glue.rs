@@ -61,11 +61,13 @@ impl TerminalView {
             window.makeFirstResponder(Some(self));
         }
         self.field_hide_prompt();
-        if self.field_shown() {
+        let shown = self.field_shown();
+        if shown == self.raw_menu_is_open() {
+            self.menu_close_quietly();
+        }
+        if shown {
             self.field_show_context();
             self.field_text_changed();
-        } else {
-            self.menu_close_quietly();
         }
         self.raw_suggest();
     }
@@ -169,7 +171,9 @@ impl TerminalView {
             let text = field.text();
             self.field_suggest(field, &text);
             self.field_colour(field, &text);
-            self.menu_follow(&text);
+            if !self.raw_menu_is_open() {
+                self.menu_follow(&text);
+            }
         }
     }
 
@@ -181,6 +185,11 @@ impl TerminalView {
         self.menu_close_quietly();
         self.with_field(|field, _| field.set_text(&line));
         true
+    }
+
+    /// Tab: takes the suggestion where it is the one line meant; whether it did, else Tab opens the menu.
+    pub(crate) fn field_tab_accept(&self) -> bool {
+        self.ivars().suggestion_sure.get() && self.field_accept()
     }
 
     /// ⌃→: takes the suggestion's next word; whether there was one.
