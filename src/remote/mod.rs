@@ -80,6 +80,8 @@ pub(crate) struct Remote {
     /// The stand-ins of the agent programs installed there.
     bin: PathBuf,
     state: RefCell<State>,
+    /// The home folder there, once a look at the machine found it.
+    home: RefCell<Option<String>>,
     /// Whether the password from the keychain went to ssh in this opening already, so a wrong one is asked for.
     pub(super) tried_password: Cell<bool>,
 }
@@ -112,6 +114,7 @@ impl Remote {
             base,
             bin,
             state: RefCell::new(State::Closed),
+            home: RefCell::new(None),
             tried_password: Cell::new(false),
         });
         REMOTES.with(|remotes| {
@@ -154,6 +157,7 @@ impl Remote {
         let dir = self.base.parent().map_or_else(|| self.base.clone(), Path::to_path_buf);
         *self.connection.borrow_mut() = connection(&target, &dir, &self.token);
         *self.target.borrow_mut() = target;
+        self.home.borrow_mut().take();
         self.connect();
     }
 
@@ -179,6 +183,18 @@ impl Remote {
                 State::Failed(_) => term_ui_sidebar::Connection::Failed,
             },
         }
+    }
+
+    /// Where a shell of the workspace is, as titles show it: `account:folder` with the folder its shell reported
+    /// last, else the workspace's own, `~` standing for the home folder there.
+    pub(crate) fn place(&self, reported: Option<&Path>) -> String {
+        let target = self.target.borrow();
+        let folder = match reported {
+            Some(folder) => from_home(&folder.to_string_lossy(), self.home.borrow().as_deref()),
+            None if target.folder.is_empty() => "~".to_string(),
+            None => target.folder.clone(),
+        };
+        format!("{}:{folder}", target.account())
     }
 
     /// The program of a terminal of the workspace: a local shell that waits for the connection, then ssh with the
@@ -289,6 +305,27 @@ pub(crate) fn is_remote(folder: &Path) -> bool {
     of_folder(folder).is_some()
 }
 
+/// Where a shell started in `folder` is, as titles show it, where `folder` is a remote workspace's placeholder: on
+/// its machine, in the folder it `reported` last (OSC 7) or else the workspace's own.
+pub(crate) fn place_of(folder: &Path, reported: Option<&Path>) -> Option<String> {
+    of_folder(folder).map(|remote| remote.place(reported))
+}
+
+/// `folder` there with `~` for the `home` folder there.
+fn from_home(folder: &str, home: Option<&str>) -> String {
+    let Some(home) = home
+        .map(|home| home.trim_end_matches('/'))
+        .filter(|home| !home.is_empty())
+    else {
+        return folder.to_string();
+    };
+    match folder.strip_prefix(home) {
+        Some("" | "/") => "~".to_string(),
+        Some(rest) if rest.starts_with('/') => format!("~{rest}"),
+        _ => folder.to_string(),
+    }
+}
+
 /// The connection of the workspace with `token` is now `state`.
 fn changed(token: &str, state: State) {
     let Some(remote) = by_token(token) else { return };
@@ -316,13 +353,17 @@ fn find_agents(remote: &Rc<Remote>) {
     let token = remote.token.clone();
     let app = std::env::current_exe().unwrap_or_else(|_| PathBuf::from("tapa"));
     term_base::thread::detach_or_run("finding agents there", move || {
-        let installed = connection.installed(&AGENTS);
-        if let Err(error) = term_remote::stand_in::write(&bin, &app, &connection.forward(), &installed) {
+        let probe = connection.probe(&AGENTS);
+        if let Err(error) = term_remote::stand_in::write(&bin, &app, &connection.forward(), &probe.installed) {
             term_base::diag::report("writing a remote workspace's stand-ins", error);
         }
         term_base::main_soon(move || {
+            let remote = by_token(&token);
+            if let Some(remote) = &remote {
+                *remote.home.borrow_mut() = probe.home;
+            }
             refresh_windows();
-            if let Some(remote) = by_token(&token) {
+            if let Some(remote) = remote {
                 remote.resume();
             }
         });
@@ -397,5 +438,21 @@ pub(crate) fn keep_password(target: &Target, password: &str) {
     };
     if let Err(error) = kept {
         term_base::diag::report("keeping an ssh password", format!("{error:?}"));
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::from_home;
+
+    #[test]
+    fn the_home_folder_there_reads_as_a_tilde() {
+        let home = Some("/home/sven");
+        assert_eq!(from_home("/home/sven", home), "~");
+        assert_eq!(from_home("/home/sven/project", home), "~/project");
+        assert_eq!(from_home("/home/svenja", home), "/home/svenja");
+        assert_eq!(from_home("/var/log", home), "/var/log");
+        assert_eq!(from_home("/var/log", None), "/var/log");
+        assert_eq!(from_home("/etc", Some("/")), "/etc");
     }
 }

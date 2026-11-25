@@ -1,8 +1,8 @@
 //! The self-test's steps for remote workspaces (E25): `remotesheet:` opens the sheet of a new one, `remotefill:` fills
 //! it with `host|port|user|password|folder` and connects, or cancels when empty; `askpass:<text>` answers the question
 //! of ssh a sheet asks now, `askpass:` cancels it; `remote:<name>` prints each remote workspace with its connection,
-//! the stand-ins of its agents and the agents it can start, `remote:select` selecting it too and `remote:reconnect`
-//! connecting it again. `TAPA_REMOTE_SSH_OPTIONS` gives ssh a test's own configuration.
+//! the stand-ins of its agents and the agents it can start, then the window's heading, `remote:select` selecting it too
+//! and `remote:reconnect` connecting it again. `TAPA_REMOTE_SSH_OPTIONS` gives ssh a test's own configuration.
 
 use crate::state::app;
 
@@ -52,4 +52,5 @@ fn print(name: &str) {
             remote.stand_ins()
         );
     }
+    println!("remote {name}: heading {}", window.heading());
 }

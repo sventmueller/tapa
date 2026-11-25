@@ -111,7 +111,9 @@ fn a_workspace_connects_runs_there_and_notices_the_end() {
     assert!(asked.contains("yes/no"), "the unknown host key was asked: {asked}");
     assert!(asked.contains("password"), "{asked}");
 
-    assert_eq!(connection.installed(&["bash", "no-such-program"]), ["bash"]);
+    let probe = connection.probe(&["bash", "no-such-program"]);
+    assert_eq!(probe.installed, ["bash"]);
+    assert_eq!(probe.home.as_deref(), Some("/home/tapa"));
     let mut local = Command::new("/usr/local/bin/sh");
     local
         .args(["-c", "printf '%s|%s' \"$PWD\" \"$KEPT\""])

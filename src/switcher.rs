@@ -20,6 +20,8 @@ struct Place {
     /// The title an agent or program set, if it is worth showing.
     title: Option<String>,
     folder: PathBuf,
+    /// Where it is in a remote workspace, shown in place of `folder`.
+    place: Option<String>,
     branch: Option<String>,
     /// The program in front, empty where it is not known.
     program: String,
@@ -99,6 +101,7 @@ fn places() -> Vec<Place> {
                             .clone()
                             .filter(|title| crate::tab::worth_showing(title, &session.folder)),
                         folder: session.folder.clone(),
+                        place: session.place(),
                         branch: session.branch.clone(),
                         program: program(view),
                         window: several.then_some(number + 1),
@@ -125,7 +128,7 @@ fn program(view: u64) -> String {
 /// The palette's entry for `place`: the title or else the folder, and on the right the folder below a title, the
 /// program and where it is; the full folder and the branch find it too.
 fn entry(place: &Place, tag: usize, home: &Path) -> Entry {
-    let folder = short_folder(&place.folder, home);
+    let folder = place.place.clone().unwrap_or_else(|| short_folder(&place.folder, home));
     let mut right = Vec::new();
     if place.title.is_some() {
         right.push(folder.clone());
@@ -141,7 +144,10 @@ fn entry(place: &Place, tag: usize, home: &Path) -> Entry {
         None => tf("Tab {}", &[&place.tab.to_string()]),
     });
     let hidden = [
-        place.folder.display().to_string(),
+        place
+            .place
+            .clone()
+            .unwrap_or_else(|| place.folder.display().to_string()),
         place.branch.clone().unwrap_or_default(),
         place.program.clone(),
         place.workspace.clone().unwrap_or_default(),
@@ -164,6 +170,7 @@ mod tests {
             view,
             title: title.map(str::to_string),
             folder: folder.into(),
+            place: None,
             branch: Some("main".into()),
             program: program.into(),
             window: None,

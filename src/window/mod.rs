@@ -303,6 +303,15 @@ impl Window {
             .map_or_else(|| "no window".into(), |window| toolbar::state(&window))
     }
 
+    /// The heading at the toolbar's leading edge and the window's title, for the self-test.
+    #[cfg(feature = "selftest")]
+    pub(crate) fn heading(&self) -> String {
+        self.front_ns_window().map_or_else(
+            || "no window".into(),
+            |window| format!("{} | {}", title::heading(&window), window.title()),
+        )
+    }
+
     /// The entries of the menu of the `+` in the tab bar of the window in front, for the self-test.
     #[cfg(feature = "selftest")]
     pub(crate) fn plus_menu_entries(&self) -> Vec<String> {
@@ -445,7 +454,7 @@ impl Window {
             };
             frame.update_tab_title(&tab, entry, &home);
             frame.show_mark(entry.mark());
-            let heading = term_ui_sidebar::model::tilde(&entry.folder.to_string_lossy(), &home);
+            let heading = entry.shown_folder(&home);
             let branch = entry
                 .branch
                 .as_deref()

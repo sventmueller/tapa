@@ -22,6 +22,8 @@ use crate::hosted::Hosted;
 pub(crate) struct Session {
     pub(crate) title: Option<String>,
     pub(crate) folder: PathBuf,
+    /// The folder the shell reported last from the other end of ssh, until it reports one on this Mac again.
+    pub(crate) elsewhere: Option<PathBuf>,
     pub(crate) branch: Option<String>,
     pub(crate) running: Option<(String, Instant)>,
     pub(crate) last: Option<(String, Duration)>,
@@ -33,6 +35,20 @@ pub(crate) struct Session {
     pub(crate) progress: Option<Progress>,
     /// A notification the user has not seen, as the sidebar shows it.
     pub(crate) notice: Option<String>,
+}
+
+impl Session {
+    /// Where its shell is when it belongs to a remote workspace (E25), which titles show in place of the
+    /// placeholder folder on this Mac.
+    pub(crate) fn place(&self) -> Option<String> {
+        crate::remote::place_of(&self.folder, self.elsewhere.as_deref())
+    }
+
+    /// Its folder as titles show it, short.
+    pub(crate) fn short_folder(&self, home: &std::path::Path) -> String {
+        self.place()
+            .unwrap_or_else(|| term_ui_sidebar::model::short_folder(&self.folder, home))
+    }
 }
 
 /// What a workspace's tab is to the tab bar, the sidebar and the window, whatever its kind: a terminal with its
@@ -186,6 +202,13 @@ impl Terminal {
             Change::Directory(folder) => {
                 session.branch = term_ui_sidebar::git::branch(folder);
                 session.folder.clone_from(folder);
+                session.elsewhere = None;
+            }
+            Change::Elsewhere(folder) => {
+                if session.elsewhere.as_ref() == Some(folder) {
+                    return false;
+                }
+                session.elsewhere = Some(folder.clone());
             }
             Change::Prompt => {
                 if session.status == Status::Running {
@@ -245,7 +268,7 @@ impl Terminal {
                     .title
                     .clone()
                     .filter(|title| worth_showing(title, &session.folder))
-                    .unwrap_or_else(|| term_ui_sidebar::model::short_folder(&session.folder, &term_base::home()));
+                    .unwrap_or_else(|| session.short_folder(&term_base::home()));
                 crate::notify::post(view, notification, &heading);
             }
             Change::Bell => {
@@ -299,7 +322,8 @@ impl Terminal {
             kind: term_ui_sidebar::Kind::Terminal,
             icon: focused.map_or(term_ui_icons::SHELL, icon_of),
             others,
-            title: main.title.filter(|title| worth_showing(title, &main.folder)),
+            title: main.title.clone().filter(|title| worth_showing(title, &main.folder)),
+            place: main.place(),
             folder: main.folder,
             branch: main.branch,
             last_command,
@@ -322,7 +346,7 @@ impl Terminal {
                 .as_deref()
                 .is_some_and(|title| worth_showing(title, &session.folder)) =>
             {
-                term_ui_sidebar::model::short_folder(&session.folder, &term_base::home())
+                session.short_folder(&term_base::home())
             }
             _ => session.branch.clone().unwrap_or_default(),
         }

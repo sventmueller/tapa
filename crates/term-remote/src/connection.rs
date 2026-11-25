@@ -35,6 +35,31 @@ pub enum State {
     Failed(String),
 }
 
+/// What a look at the machine found.
+#[derive(Debug, Clone, Default, PartialEq, Eq)]
+pub struct Probe {
+    /// The home folder there.
+    pub home: Option<String>,
+    /// The programs asked about that are installed there.
+    pub installed: Vec<String>,
+}
+
+impl Probe {
+    /// What `output` of the probe's script says about `programs`.
+    fn read(output: &str, programs: &[&str]) -> Probe {
+        let mut probe = Probe::default();
+        for line in output.lines() {
+            match line.strip_prefix("HOME=") {
+                Some(home) if home.starts_with('/') => probe.home = Some(home.to_string()),
+                Some(_) => {}
+                None if programs.contains(&line) => probe.installed.push(line.to_string()),
+                None => {}
+            }
+        }
+        probe
+    }
+}
+
 /// The master connection of one remote workspace.
 pub struct Connection {
     target: Target,
@@ -217,9 +242,10 @@ impl Connection {
         self.command(&agent_script(&self.target.folder, &program, &args, &env))
     }
 
-    /// Which of `programs` the `PATH` there has, as an agent started through `wrap` finds them.
-    pub fn installed(&self, programs: &[&str]) -> Vec<String> {
-        let mut script = String::from("for p in");
+    /// The home folder there and which of `programs` the `PATH` there has, as an agent started through `wrap` finds
+    /// them.
+    pub fn probe(&self, programs: &[&str]) -> Probe {
+        let mut script = String::from("printf 'HOME=%s\\n' \"$HOME\";for p in");
         for program in programs {
             script.push(' ');
             script.push_str(&crate::script::quote(program));
@@ -227,13 +253,9 @@ impl Connection {
         script.push_str(";do command -v \"$p\" >/dev/null 2>&1&&echo \"$p\";done");
         let probe = agent_script("", "/bin/sh", &["-c".into(), script], &[]);
         let Ok(output) = self.command(&probe).stdin(Stdio::null()).output() else {
-            return Vec::new();
+            return Probe::default();
         };
-        String::from_utf8_lossy(&output.stdout)
-            .lines()
-            .map(str::to_string)
-            .filter(|name| programs.contains(&name.as_str()))
-            .collect()
+        Probe::read(&String::from_utf8_lossy(&output.stdout), programs)
     }
 
     fn master_command(&self) -> Command {
@@ -414,6 +436,17 @@ mod tests {
             "{script}"
         );
         assert!(script.contains("'Verbinde mit sven@box …'"));
+    }
+
+    #[test]
+    fn the_probe_reads_the_home_folder_and_the_programs_installed() {
+        let probe = Probe::read(
+            "HOME=/home/sven\nclaude\nmotd line\nopencode\n",
+            &["claude", "codex", "opencode"],
+        );
+        assert_eq!(probe.home.as_deref(), Some("/home/sven"));
+        assert_eq!(probe.installed, ["claude", "opencode"]);
+        assert_eq!(Probe::read("HOME=\n", &["claude"]), Probe::default());
     }
 
     #[test]

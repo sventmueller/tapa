@@ -77,6 +77,12 @@ pub(crate) fn show(ns_window: &NSWindow, heading: &str, detail: &str) {
     set_detail(&subtitle, detail);
 }
 
+/// The heading `ns_window`'s item shows, for the self-test.
+#[cfg(feature = "selftest")]
+pub(crate) fn heading(ns_window: &NSWindow) -> String {
+    fields(ns_window).map_or_else(String::new, |[title, _]| title.stringValue().to_string())
+}
+
 /// Shows `text` for a while in place of the branch below the heading.
 pub(crate) fn notice(ns_window: &NSWindow, text: &str) {
     if let Some([_, subtitle]) = fields(ns_window) {

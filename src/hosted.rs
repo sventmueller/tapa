@@ -115,6 +115,7 @@ impl Hosted {
             icon: self.icon,
             others: Vec::new(),
             title: Some(self.title()),
+            place: crate::remote::place_of(&self.folder, None),
             folder: self.folder.clone(),
             branch: None,
             last_command: None,

@@ -9,7 +9,7 @@ mod script;
 pub mod stand_in;
 mod target;
 
-pub use connection::{Connection, State};
+pub use connection::{Connection, Probe, State};
 pub use script::{agent_script, through_any_shell};
 pub use stand_in::Forward;
 pub use target::Target;

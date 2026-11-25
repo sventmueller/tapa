@@ -107,10 +107,13 @@ impl TerminalView {
                 self.with_session(|session| session.answer_clipboard(&text));
             }
             Event::WorkingDirectory(dir) => {
-                self.ivars().shell.borrow_mut().remote = !dir.is_local();
-                if dir.is_local() {
+                let local = dir.is_local();
+                self.ivars().shell.borrow_mut().remote = !local;
+                if local {
                     *self.ivars().cwd.borrow_mut() = dir.path.clone();
                     super::host().changed(self.id(), Change::Directory(dir.path));
+                } else {
+                    super::host().changed(self.id(), Change::Elsewhere(dir.path));
                 }
             }
             Event::Prompt => {

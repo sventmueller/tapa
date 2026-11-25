@@ -40,6 +40,8 @@ pub enum Change {
     Title(Option<String>),
     /// The shell's working directory on this Mac (OSC 7).
     Directory(PathBuf),
+    /// The shell's working directory on another machine, at the other end of ssh (OSC 7).
+    Elsewhere(PathBuf),
     /// The shell shows its prompt (OSC 133 A).
     Prompt,
     /// The user's input begins after the prompt (OSC 133 B).

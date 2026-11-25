@@ -99,6 +99,9 @@ pub struct Entry {
     pub title: Option<String>,
     /// The active pane's folder.
     pub folder: PathBuf,
+    /// Where the active pane is in a remote workspace (E25), `account:folder` there, shown in place of `folder`,
+    /// which is a placeholder on this Mac.
+    pub place: Option<String>,
     /// The branch of the folder's repository.
     pub branch: Option<String>,
     /// The last command and how long it ran, or how long it runs so far.
@@ -165,10 +168,16 @@ impl Entry {
     /// The first line: the title, else the whole folder from `~`, which the row cuts in the middle where it is too
     /// long.
     pub fn heading(&self, home: &Path) -> String {
-        self.title.as_deref().map_or_else(
-            || tilde(&self.folder.to_string_lossy(), home),
-            |title| tilde(title, home),
-        )
+        self.title
+            .as_deref()
+            .map_or_else(|| self.shown_folder(home), |title| tilde(title, home))
+    }
+
+    /// The folder as headings show it: from `~`, or where it is on a remote workspace's machine.
+    pub fn shown_folder(&self, home: &Path) -> String {
+        self.place
+            .clone()
+            .unwrap_or_else(|| tilde(&self.folder.to_string_lossy(), home))
     }
 
     /// The second line: the folder below a title; then a notification not seen yet, else the branch and the last
@@ -176,7 +185,7 @@ impl Entry {
     pub fn detail(&self, home: &Path) -> String {
         let mut parts = Vec::new();
         if self.title.is_some() {
-            parts.push(tilde(&self.folder.to_string_lossy(), home));
+            parts.push(self.shown_folder(home));
         }
         if let Some(notice) = &self.notice {
             parts.push(notice.clone());
@@ -441,6 +450,7 @@ mod tests {
             others: Vec::new(),
             title: None,
             folder: "/Users/me/Repos/tapa".into(),
+            place: None,
             branch: Some("main".into()),
             last_command: Some(("cargo test".into(), Duration::from_secs(75))),
             status: Status::Succeeded,
@@ -451,6 +461,25 @@ mod tests {
 
     fn progress(state: ProgressState, percent: Option<u8>) -> Option<Progress> {
         Some(Progress { state, percent })
+    }
+
+    #[test]
+    fn a_remote_workspace_shows_where_the_shell_is_there_in_place_of_its_placeholder() {
+        let home = Path::new("/Users/me");
+        let entry = Entry {
+            folder: "/Users/me/Library/Caches/t/remote/0123456789abcdef/evo-1".into(),
+            place: Some("evo-1:~/project".into()),
+            branch: None,
+            last_command: None,
+            ..entry()
+        };
+        assert_eq!(entry.heading(home), "evo-1:~/project");
+        let titled = Entry {
+            title: Some("htop".into()),
+            ..entry.clone()
+        };
+        assert_eq!(titled.heading(home), "htop");
+        assert_eq!(titled.detail(home), "evo-1:~/project");
     }
 
     #[test]
