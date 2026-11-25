@@ -163,6 +163,8 @@
 "Befehlszeile" = "Riga di comando";
 "Bei einem Entwicklungsserver kannst du dem Zertifikat bis zum Beenden der App vertrauen." = "Per un server di sviluppo puoi considerare attendibile il certificato fino alla chiusura dell’app.";
 "Beide" = "Entrambi";
+"Beide dürfen nicht leer sein, nicht mit einem Bindestrich beginnen und keine Leerzeichen oder @ enthalten." = "Nessuno dei due può essere vuoto, iniziare con un trattino o contenere spazi o @.";
+"Benutzer (leer: wie ssh)" = "Utente (vuoto: come ssh)";
 "Benutzername" = "Nome utente";
 "Benutzername oder Passwort waren falsch." = "Il nome utente o la password non erano corretti.";
 "Berechtigungen" = "Permessi";
@@ -456,6 +458,8 @@
 "Einstellungsdateien" = "File di impostazioni";
 "Ende" = "Fine";
 "Entfernen" = "Rimuovi";
+"Entfernter Arbeitsbereich" = "Spazio di lavoro remoto";
+"Entfernter Rechner …" = "Computer remoto…";
 "Entscheidung" = "Decisione";
 "Entschieden" = "Deciso";
 "Er beginnt bei Commit {}, und Git wechselt gleich zu ihm." = "Parte dal commit {} e Git passa subito a esso.";
@@ -504,6 +508,7 @@
 "Fortsetzen" = "Continua";
 "Frage" = "Domanda";
 "Frage nebenbei" = "Domanda a margine";
+"Frage von {}" = "Domanda da {}";
 "Fragen" = "Chiedi";
 "Fragen nebenbei" = "Domande a margine";
 "Fragt nur bei Aktionen, die als möglicherweise unsicher erkannt werden." = "Chiede solo per le azioni rilevate come potenzialmente non sicure.";
@@ -584,6 +589,8 @@
 "Hook „{}“ entfernen?" = "Rimuovere l’hook “{}”?";
 "Hooks" = "Hook";
 "Hooks: {} erfolgreich" = "Hook: {} riusciti";
+"Host oder Benutzer ungültig" = "Host o utente non valido";
+"Host, aus ~/.ssh/config oder eine Adresse" = "Host da ~/.ssh/config o un indirizzo";
 "Höre zu …" = "In ascolto…";
 "Idee" = "Idea";
 "Ignorieren" = "Ignora";
@@ -596,6 +603,7 @@
 "Im Finder zeigen" = "Mostra nel Finder";
 "Im Hintergrund ausführen" = "Esegui in background";
 "Im Projekt arbeiten" = "Lavora nel progetto";
+"Im Schlüsselbund sichern" = "Salva nel portachiavi";
 "Im Terminal öffnen" = "Apri nel terminale";
 "Im Texteditor öffnen" = "Apri nell’editor di testo";
 "Im Verlauf suchen" = "Cerca nella cronologia";
@@ -837,6 +845,8 @@
 "OpenCode: {}" = "OpenCode: {}";
 "OpenType-Features:" = "Funzioni OpenType:";
 "Ordner" = "Cartella";
+"Ordner auf diesem Mac …" = "Cartella su questo Mac…";
+"Ordner dort (leer: Home-Ordner)" = "Cartella lì (vuoto: cartella Inizio)";
 "Ordner nicht vertraut" = "Cartella non attendibile";
 "Ordner vertrauen" = "Fidati della cartella";
 "Ordner wählen …" = "Scegli cartella…";
@@ -845,6 +855,9 @@
 "Originalgröße" = "Dimensioni reali";
 "PDF: {}" = "PDF: {}";
 "Passwort" = "Password";
+"Passwort (leer: unverändert)" = "Password (vuoto: invariata)";
+"Passwort (optional, im Schlüsselbund)" = "Password (facoltativa, nel portachiavi)";
+"Passwort für {}" = "Password per {}";
 "Pausiert" = "In pausa";
 "Pfad kopieren" = "Copia percorso";
 "Pfad: {}" = "Percorso: {}";
@@ -865,6 +878,7 @@
 "Plugin „{}“ entfernen?" = "Rimuovere il plug-in “{}”?";
 "Plugins" = "Plug-in";
 "Plugins und Marktplätze verwalten" = "Gestisci plug-in e marketplace";
+"Port (leer: wie ssh)" = "Porta (vuoto: come ssh)";
 "Problem melden …" = "Segnala un problema…";
 "Profil hinzufügen" = "Aggiungi profilo";
 "Profil löschen" = "Elimina profilo";
@@ -1037,6 +1051,7 @@
 "Terminal" = "Terminale";
 "Terminal leeren" = "Cancella terminale";
 "Terminal: {}" = "Terminale: {}";
+"Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "Terminali e agenti vengono eseguiti sul computer che ssh raggiunge così; l’elenco dei file e Git non sono disponibili lì.";
 "Text mit Steuerzeichen einsetzen?" = "Incollare testo con caratteri di controllo?";
 "Text mit Zeilenumbruch einsetzen?" = "Incollare testo con un ritorno a capo?";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "Incollare testo con {} ritorni a capo?";
@@ -1052,6 +1067,7 @@
 "Trag in den Einstellungen unter „Agent“ einen Anbieter mit Schlüssel ein und wähl ein Modell, oder richte Ollama oder LM Studio ein." = "In Impostazioni, sotto “Agente”, inserisci un provider con la sua chiave e scegli un modello, oppure configura Ollama o LM Studio.";
 "Transkribiere …" = "Trascrizione…";
 "Transkription:" = "Trascrizione:";
+"Trennen" = "Disconnetti";
 "Trennlinie" = "Separatore";
 "Trennlinie nach links" = "Sposta divisore a sinistra";
 "Trennlinie nach oben" = "Sposta divisore in alto";
@@ -1067,6 +1083,7 @@
 "Unbekannt" = "Sconosciuto";
 "Unbekannte Befehle unterstreichen" = "Sottolinea i comandi sconosciuti";
 "Unbekannter Digraph: {}" = "Digramma sconosciuto: {}";
+"Unbekannter Host-Schlüssel bei {}" = "Chiave host sconosciuta su {}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "Accesso illimitato a Internet e a tutti i file del Mac.";
 "Unerwartete Antwort: {}" = "Risposta inattesa: {}";
 "Ungesicherte Änderungen an „{}“ verwerfen?" = "Scartare le modifiche non salvate a “{}”?";
@@ -1085,8 +1102,16 @@
 "VISUELL BLOCK" = "VISUALE BLOCCO";
 "VISUELL ZEILE" = "VISUALE RIGA";
 "Verbieten" = "Nega";
+"Verbinde mit {} …" = "Connessione a {}…";
+"Verbinden" = "Connetti";
 "Verbindet …" = "Connessione…";
 "Verbindung" = "Collegamento";
+"Verbindung bearbeiten" = "Modifica connessione";
+"Verbindung bearbeiten …" = "Modifica connessione…";
+"Verbindung fehlgeschlagen" = "connessione non riuscita";
+"Verbindung zu {}" = "Connessione a {}";
+"Verbindung zu {} fehlgeschlagen" = "Connessione a {} non riuscita";
+"Verbindung zu {} getrennt" = "Connessione a {} interrotta";
 "Verbunden" = "Connesso";
 "Verdichte …" = "Compattazione…";
 "Verdichtet sich selbst ab {} Tokens" = "Si compatta da solo a partire da {} token";
@@ -1174,6 +1199,7 @@
 "Wird fortgesetzt …" = "Continuazione…";
 "Wird gesucht …" = "Ricerca …";
 "Wirkung" = "Effetto";
+"Wo arbeitet der neue Arbeitsbereich?" = "Dove lavora il nuovo spazio di lavoro?";
 "Wochenlimit" = "Limite settimanale";
 "Womit neue Sitzungen starten, bis du im Tab etwas anderes wählst. Leere Felder überlassen die Wahl den Einstellungen des Agenten." = "Con cosa iniziano le nuove sessioni finché non scegli altro nel pannello. I campi vuoti lasciano la scelta alle impostazioni dell’agente.";
 "Worktree wird angelegt …" = "Creazione del worktree…";
@@ -1244,6 +1270,7 @@
 "geschlossen" = "chiuso";
 "geschätzt aus der letzten Antwort" = "stimato dall’ultima risposta";
 "gestern" = "ieri";
+"getrennt" = "disconnesso";
 "gezählt" = "conteggiato";
 "geändert" = "modificato";
 "geöffnet" = "aperto";
@@ -1268,6 +1295,8 @@
 "und {} weitere" = "e altri {}";
 "ungelöst" = "non risolto";
 "unverändert" = "invariato";
+"verbindet" = "connessione in corso";
+"verbunden" = "connesso";
 "von Hand" = "manuale";
 "vor einem Jahr" = "un anno fa";
 "vor einem Monat" = "un mese fa";

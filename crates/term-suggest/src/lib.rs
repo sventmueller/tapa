@@ -19,6 +19,7 @@ mod words;
 
 pub use complete::{Candidate, Completion, Kind, Wanted, complete};
 pub use delayed::{TIME_LIMIT, cancel, complete_later, complete_with_sources, next_later};
+pub use files::ssh_hosts;
 pub use highlight::{Highlight, Part, Runnable, Span, highlight};
 pub use history::{Entry, History};
 pub use next::{Next, Reason, next_without_input};

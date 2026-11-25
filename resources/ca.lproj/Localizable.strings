@@ -163,6 +163,8 @@
 "Befehlszeile" = "Línia d’ordres";
 "Bei einem Entwicklungsserver kannst du dem Zertifikat bis zum Beenden der App vertrauen." = "Si és un servidor de desenvolupament, pots confiar en el certificat fins que surtis de l’app.";
 "Beide" = "Totes dues";
+"Beide dürfen nicht leer sein, nicht mit einem Bindestrich beginnen und keine Leerzeichen oder @ enthalten." = "Cap dels dos pot estar buit, començar amb un guionet ni contenir espais o @.";
+"Benutzer (leer: wie ssh)" = "Usuari (buit: com ssh)";
 "Benutzername" = "Nom d’usuari";
 "Benutzername oder Passwort waren falsch." = "El nom d’usuari o la contrasenya no són correctes.";
 "Berechtigungen" = "Permisos";
@@ -456,6 +458,8 @@
 "Einstellungsdateien" = "Fitxers de configuració";
 "Ende" = "Fi";
 "Entfernen" = "Elimina";
+"Entfernter Arbeitsbereich" = "Espai de treball remot";
+"Entfernter Rechner …" = "Ordinador remot…";
 "Entscheidung" = "Decisió";
 "Entschieden" = "Decidit";
 "Er beginnt bei Commit {}, und Git wechselt gleich zu ihm." = "Comença al commit {}, i Git hi canvia immediatament.";
@@ -504,6 +508,7 @@
 "Fortsetzen" = "Continua";
 "Frage" = "Pregunta";
 "Frage nebenbei" = "Pregunta al marge";
+"Frage von {}" = "Pregunta de {}";
 "Fragen" = "Pregunta";
 "Fragen nebenbei" = "Preguntes al marge";
 "Fragt nur bei Aktionen, die als möglicherweise unsicher erkannt werden." = "Només pregunta per accions detectades com a possiblement insegures.";
@@ -584,6 +589,8 @@
 "Hook „{}“ entfernen?" = "Vols eliminar el hook “{}”?";
 "Hooks" = "Hooks";
 "Hooks: {} erfolgreich" = "Hooks correctes: {}";
+"Host oder Benutzer ungültig" = "Amfitrió o usuari no vàlid";
+"Host, aus ~/.ssh/config oder eine Adresse" = "Amfitrió, de ~/.ssh/config o una adreça";
 "Höre zu …" = "Escoltant…";
 "Idee" = "Idea";
 "Ignorieren" = "Ignora";
@@ -596,6 +603,7 @@
 "Im Finder zeigen" = "Mostra al Finder";
 "Im Hintergrund ausführen" = "Executa en segon pla";
 "Im Projekt arbeiten" = "Treball al projecte";
+"Im Schlüsselbund sichern" = "Desa al clauer";
 "Im Terminal öffnen" = "Obre al terminal";
 "Im Texteditor öffnen" = "Obrir a l’editor de text";
 "Im Verlauf suchen" = "Buscar a l’historial";
@@ -837,6 +845,8 @@
 "OpenCode: {}" = "OpenCode: {}";
 "OpenType-Features:" = "Funcions OpenType:";
 "Ordner" = "Carpeta";
+"Ordner auf diesem Mac …" = "Carpeta en aquest Mac…";
+"Ordner dort (leer: Home-Ordner)" = "Carpeta allà (buit: carpeta d’inici)";
 "Ordner nicht vertraut" = "La carpeta no és de confiança";
 "Ordner vertrauen" = "Confia en la carpeta";
 "Ordner wählen …" = "Triar una carpeta…";
@@ -845,6 +855,9 @@
 "Originalgröße" = "Mida real";
 "PDF: {}" = "PDF: {}";
 "Passwort" = "Contrasenya";
+"Passwort (leer: unverändert)" = "Contrasenya (buit: sense canvis)";
+"Passwort (optional, im Schlüsselbund)" = "Contrasenya (opcional, al clauer)";
+"Passwort für {}" = "Contrasenya per a {}";
 "Pausiert" = "En pausa";
 "Pfad kopieren" = "Copiar el camí";
 "Pfad: {}" = "Ruta: {}";
@@ -865,6 +878,7 @@
 "Plugin „{}“ entfernen?" = "Vols eliminar el connector “{}”?";
 "Plugins" = "Connectors";
 "Plugins und Marktplätze verwalten" = "Gestiona els connectors i els mercats";
+"Port (leer: wie ssh)" = "Port (buit: com ssh)";
 "Problem melden …" = "Informa d’un problema…";
 "Profil hinzufügen" = "Afegir un perfil";
 "Profil löschen" = "Eliminar el perfil";
@@ -1037,6 +1051,7 @@
 "Terminal" = "Terminal";
 "Terminal leeren" = "Esborrar el terminal";
 "Terminal: {}" = "Terminal: {}";
+"Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "Els terminals i els agents s’executen a l’ordinador que ssh hi arriba així; allà no hi ha llista de fitxers ni Git.";
 "Text mit Steuerzeichen einsetzen?" = "Vols enganxar text amb caràcters de control?";
 "Text mit Zeilenumbruch einsetzen?" = "Vols enganxar text amb un salt de línia?";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "Vols enganxar text amb {} salts de línia?";
@@ -1052,6 +1067,7 @@
 "Trag in den Einstellungen unter „Agent“ einen Anbieter mit Schlüssel ein und wähl ein Modell, oder richte Ollama oder LM Studio ein." = "A la configuració, a “Agent”, introdueix un proveïdor amb la seva clau i tria un model, o configura Ollama o LM Studio.";
 "Transkribiere …" = "Transcrivint…";
 "Transkription:" = "Transcripció:";
+"Trennen" = "Desconnecta";
 "Trennlinie" = "Separador";
 "Trennlinie nach links" = "Moure el separador a l’esquerra";
 "Trennlinie nach oben" = "Moure el separador amunt";
@@ -1067,6 +1083,7 @@
 "Unbekannt" = "Desconegut";
 "Unbekannte Befehle unterstreichen" = "Subratlla les ordres desconegudes";
 "Unbekannter Digraph: {}" = "Dígraf desconegut: {}";
+"Unbekannter Host-Schlüssel bei {}" = "Clau d’amfitrió desconeguda a {}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "Accés sense restriccions a internet i a tots els fitxers del Mac.";
 "Unerwartete Antwort: {}" = "Resposta inesperada: {}";
 "Ungesicherte Änderungen an „{}“ verwerfen?" = "Vols descartar els canvis no desats de “{}”?";
@@ -1085,8 +1102,16 @@
 "VISUELL BLOCK" = "VISUAL BLOC";
 "VISUELL ZEILE" = "VISUAL LÍNIA";
 "Verbieten" = "Denega";
+"Verbinde mit {} …" = "S’està connectant a {}…";
+"Verbinden" = "Connecta";
 "Verbindet …" = "Connectant…";
 "Verbindung" = "Connexió";
+"Verbindung bearbeiten" = "Edita la connexió";
+"Verbindung bearbeiten …" = "Edita la connexió…";
+"Verbindung fehlgeschlagen" = "la connexió ha fallat";
+"Verbindung zu {}" = "Connexió amb {}";
+"Verbindung zu {} fehlgeschlagen" = "Ha fallat la connexió amb {}";
+"Verbindung zu {} getrennt" = "S’ha perdut la connexió amb {}";
 "Verbunden" = "Connectat";
 "Verdichte …" = "Compactant…";
 "Verdichtet sich selbst ab {} Tokens" = "Es compacta automàticament a partir de {} tokens";
@@ -1174,6 +1199,7 @@
 "Wird fortgesetzt …" = "Continuant…";
 "Wird gesucht …" = "Cercant …";
 "Wirkung" = "Efecte";
+"Wo arbeitet der neue Arbeitsbereich?" = "On treballa l’espai de treball nou?";
 "Wochenlimit" = "Límit setmanal";
 "Womit neue Sitzungen starten, bis du im Tab etwas anderes wählst. Leere Felder überlassen die Wahl den Einstellungen des Agenten." = "Amb què comencen les sessions noves fins que triïs una altra cosa a la pestanya. Els camps buits deixen l’elecció a la configuració de l’agent.";
 "Worktree wird angelegt …" = "Creant el worktree…";
@@ -1244,6 +1270,7 @@
 "geschlossen" = "tancat";
 "geschätzt aus der letzten Antwort" = "estimat a partir de l’última resposta";
 "gestern" = "ahir";
+"getrennt" = "desconnectat";
 "gezählt" = "comptat";
 "geändert" = "modificat";
 "geöffnet" = "obert";
@@ -1268,6 +1295,8 @@
 "und {} weitere" = "i {} més";
 "ungelöst" = "sense resoldre";
 "unverändert" = "sense canvis";
+"verbindet" = "s’està connectant";
+"verbunden" = "connectat";
 "von Hand" = "manual";
 "vor einem Jahr" = "fa un any";
 "vor einem Monat" = "fa un mes";

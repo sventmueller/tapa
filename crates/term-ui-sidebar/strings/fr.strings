@@ -27,3 +27,10 @@
 "Arbeitet" = "Au travail";
 "Wartet auf dich" = "Attend votre réponse";
 "Einstellungen" = "Réglages";
+"Trennen" = "Se déconnecter";
+"Verbindung bearbeiten …" = "Modifier la connexion…";
+"Verbindung fehlgeschlagen" = "échec de la connexion";
+"Verbindung zu {}" = "Connexion à {}";
+"getrennt" = "déconnecté";
+"verbindet" = "connexion en cours";
+"verbunden" = "connecté";

@@ -138,6 +138,11 @@ impl TerminalView {
         if paths.is_empty() && text.is_none() {
             return false;
         }
+        // The paths of this Mac mean nothing to a shell on another machine (E25).
+        if !paths.is_empty() && objc2::DefinedClass::ivars(self).shell.borrow().remote {
+            objc2_app_kit::NSBeep();
+            return false;
+        }
         match text {
             _ if !paths.is_empty() => {
                 self.with_session(|session| session.paste_paths(&paths));

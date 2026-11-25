@@ -7,6 +7,21 @@ use super::{BASH, FISH, ZSH, ZSHENV};
 /// The command for the remote login shell; it has to read the same in sh, csh and fish, so the script inside the
 /// single quotes holds no quote, backslash, `!` or line break.
 pub(crate) fn command(name: &str, version: &str) -> String {
+    command_in(name, version, "")
+}
+
+/// The command `command` makes, starting the shell in `folder` there: a path from the home folder, `~/…`, or
+/// absolute; empty for the home folder. A folder that does not exist leaves the shell in the home folder.
+pub(crate) fn command_in(name: &str, version: &str, folder: &str) -> String {
+    let folder = folder
+        .strip_prefix("~/")
+        .unwrap_or(if folder == "~" { "" } else { folder });
+    let change = if folder.is_empty() {
+        String::new()
+    } else {
+        let encoded = base64(folder.as_bytes());
+        format!(r#"cd "$(printf %s {encoded}|base64 -d 2>/dev/null||printf %s {encoded}|base64 -D)" 2>/dev/null;"#)
+    };
     let files = [
         ("zsh/.zshenv", ZSHENV),
         ("zsh/integration.zsh", ZSH),
@@ -31,7 +46,9 @@ pub(crate) fn command(name: &str, version: &str) -> String {
         // The shells read the scripts while they start; the folder goes once they surely have.
         r#"(sleep 60;rm -rf "$d")</dev/null >/dev/null 2>&1 &"#,
         &identity,
-        ";case ${s##*/} in ",
+        ";",
+        &change,
+        "case ${s##*/} in ",
         r#"zsh) [ -z "${ZDOTDIR+x}" ]||export IDE_ZSH_ZDOTDIR="$ZDOTDIR";export ZDOTDIR="$d/zsh";exec "$s" -l;;"#,
         r#" bash) exec "$s" --init-file "$d/bash/integration.bash" -i;;"#,
         r#" fish) [ -z "${XDG_DATA_DIRS+x}" ]||export IDE_FISH_XDG_DATA_DIRS="$XDG_DATA_DIRS";"#,
@@ -75,6 +92,35 @@ mod tests {
         assert_eq!(base64(b"fo"), "Zm8=");
         assert_eq!(base64(b"foo"), "Zm9v");
         assert_eq!(base64(b"\xff\xfe\xfd\x00"), "//79AA==");
+    }
+
+    #[test]
+    fn the_shell_starts_in_the_folder_asked_for() {
+        let dir = term_base::testing::scratch("remote-command-folder");
+        let home = dir.join("home");
+        std::fs::create_dir_all(home.join("my project")).unwrap();
+        let fake = dir.join("zsh");
+        std::fs::write(&fake, "#!/bin/sh\npwd\n").unwrap();
+        std::fs::set_permissions(&fake, std::os::unix::fs::PermissionsExt::from_mode(0o755)).unwrap();
+        for folder in ["~/my project", "my project", &home.join("my project").to_string_lossy()] {
+            let command = command_in("Tapa", "1", folder);
+            let inner = command
+                .strip_prefix("exec /bin/sh -c '")
+                .and_then(|rest| rest.strip_suffix('\''))
+                .unwrap();
+            assert!(!inner.contains(['\'', '\\', '!', '\n']), "{inner}");
+            let output = std::process::Command::new("/bin/sh")
+                .args(["-c", &command])
+                .current_dir(&home)
+                .env_clear()
+                .env("PATH", "/usr/bin:/bin")
+                .env("HOME", &home)
+                .env("SHELL", &fake)
+                .output()
+                .unwrap();
+            let shown = String::from_utf8_lossy(&output.stdout);
+            assert!(shown.trim_end().ends_with("/home/my project"), "{folder}: {shown}");
+        }
     }
 
     #[test]

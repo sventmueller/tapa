@@ -183,11 +183,6 @@ impl TerminalView {
         (super::clip::accepts(pasteboard), self.drop_from(pasteboard))
     }
 
-    /// Whether the program in the terminal ended.
-    pub fn has_exited(&self) -> bool {
-        self.ivars().state.exited.get()
-    }
-
     /// The shell's process number.
     pub fn shell(&self) -> Option<u32> {
         self.with_session(term_session::Session::pid)

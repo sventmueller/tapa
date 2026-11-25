@@ -22,6 +22,22 @@ impl TerminalView {
         self.spawn_restored(env, Vec::new());
     }
 
+    /// Whether the program in the terminal ended.
+    pub fn has_exited(&self) -> bool {
+        self.ivars().state.exited.get()
+    }
+
+    /// Starts the program again in a view whose program ended, as when a remote workspace's connection came back
+    /// (E25); nothing while it still runs.
+    pub fn restart(&self, env: &[(String, String)]) {
+        if !self.ivars().state.exited.get() {
+            return;
+        }
+        self.ivars().state.exited.set(false);
+        drop(self.ivars().session.borrow_mut().take());
+        self.spawn(env);
+    }
+
     /// Starts the shell like `spawn`, the rows of an earlier session in its place shown above its first prompt (F71).
     pub fn spawn_restored(&self, env: &[(String, String)], restored: Vec<String>) {
         let config = super::host().config();

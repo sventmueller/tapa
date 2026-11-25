@@ -163,6 +163,8 @@
 "Befehlszeile" = "Ligne de commande";
 "Bei einem Entwicklungsserver kannst du dem Zertifikat bis zum Beenden der App vertrauen." = "Pour un serveur de développement, vous pouvez faire confiance au certificat jusqu’à ce que vous quittiez l’app.";
 "Beide" = "Les deux";
+"Beide dürfen nicht leer sein, nicht mit einem Bindestrich beginnen und keine Leerzeichen oder @ enthalten." = "Aucun des deux ne peut être vide, commencer par un tiret ni contenir d’espaces ou de @.";
+"Benutzer (leer: wie ssh)" = "Utilisateur (vide : comme ssh)";
 "Benutzername" = "Nom d’utilisateur";
 "Benutzername oder Passwort waren falsch." = "Le nom d’utilisateur ou le mot de passe est incorrect.";
 "Berechtigungen" = "Autorisations";
@@ -456,6 +458,8 @@
 "Einstellungsdateien" = "Fichiers de réglages";
 "Ende" = "Fin";
 "Entfernen" = "Supprimer";
+"Entfernter Arbeitsbereich" = "Espace de travail distant";
+"Entfernter Rechner …" = "Ordinateur distant…";
 "Entscheidung" = "Décision";
 "Entschieden" = "Décision prise";
 "Er beginnt bei Commit {}, und Git wechselt gleich zu ihm." = "Elle part du commit {}, et Git bascule aussitôt dessus.";
@@ -504,6 +508,7 @@
 "Fortsetzen" = "Continuer";
 "Frage" = "Question";
 "Frage nebenbei" = "Question annexe";
+"Frage von {}" = "Question de {}";
 "Fragen" = "Demander";
 "Fragen nebenbei" = "Questions annexes";
 "Fragt nur bei Aktionen, die als möglicherweise unsicher erkannt werden." = "Ne demande que pour les actions jugées potentiellement dangereuses.";
@@ -584,6 +589,8 @@
 "Hook „{}“ entfernen?" = "Supprimer le hook « {} » ?";
 "Hooks" = "Hooks";
 "Hooks: {} erfolgreich" = "Hooks : {} réussis";
+"Host oder Benutzer ungültig" = "Hôte ou utilisateur non valide";
+"Host, aus ~/.ssh/config oder eine Adresse" = "Hôte de ~/.ssh/config ou une adresse";
 "Höre zu …" = "Écoute…";
 "Idee" = "Idée";
 "Ignorieren" = "Ignorer";
@@ -596,6 +603,7 @@
 "Im Finder zeigen" = "Afficher dans le Finder";
 "Im Hintergrund ausführen" = "Exécuter en arrière-plan";
 "Im Projekt arbeiten" = "Travailler dans le projet";
+"Im Schlüsselbund sichern" = "Enregistrer dans le trousseau";
 "Im Terminal öffnen" = "Ouvrir dans le terminal";
 "Im Texteditor öffnen" = "Ouvrir dans l’éditeur de texte";
 "Im Verlauf suchen" = "Rechercher dans l’historique";
@@ -837,6 +845,8 @@
 "OpenCode: {}" = "OpenCode : {}";
 "OpenType-Features:" = "Fonctionnalités OpenType :";
 "Ordner" = "Dossier";
+"Ordner auf diesem Mac …" = "Dossier sur ce Mac…";
+"Ordner dort (leer: Home-Ordner)" = "Dossier là-bas (vide : dossier de départ)";
 "Ordner nicht vertraut" = "Dossier non approuvé";
 "Ordner vertrauen" = "Faire confiance au dossier";
 "Ordner wählen …" = "Choisir un dossier…";
@@ -845,6 +855,9 @@
 "Originalgröße" = "Taille réelle";
 "PDF: {}" = "PDF : {}";
 "Passwort" = "Mot de passe";
+"Passwort (leer: unverändert)" = "Mot de passe (vide : inchangé)";
+"Passwort (optional, im Schlüsselbund)" = "Mot de passe (facultatif, dans le trousseau)";
+"Passwort für {}" = "Mot de passe pour {}";
 "Pausiert" = "En pause";
 "Pfad kopieren" = "Copier le chemin";
 "Pfad: {}" = "Chemin : {}";
@@ -865,6 +878,7 @@
 "Plugin „{}“ entfernen?" = "Supprimer le plug-in « {} » ?";
 "Plugins" = "Plug-ins";
 "Plugins und Marktplätze verwalten" = "Gérer les plug-ins et les places de marché";
+"Port (leer: wie ssh)" = "Port (vide : comme ssh)";
 "Problem melden …" = "Signaler un problème…";
 "Profil hinzufügen" = "Ajouter un profil";
 "Profil löschen" = "Supprimer le profil";
@@ -1037,6 +1051,7 @@
 "Terminal" = "Terminal";
 "Terminal leeren" = "Effacer le terminal";
 "Terminal: {}" = "Terminal : {}";
+"Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "Les terminaux et les agents tournent sur l’ordinateur que ssh atteint ainsi ; la liste des fichiers et Git n’y sont pas disponibles.";
 "Text mit Steuerzeichen einsetzen?" = "Coller du texte contenant des caractères de contrôle ?";
 "Text mit Zeilenumbruch einsetzen?" = "Coller du texte contenant un saut de ligne ?";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "Coller du texte contenant {} sauts de ligne ?";
@@ -1052,6 +1067,7 @@
 "Trag in den Einstellungen unter „Agent“ einen Anbieter mit Schlüssel ein und wähl ein Modell, oder richte Ollama oder LM Studio ein." = "Dans les réglages, sous « Agent », saisissez un fournisseur avec sa clé et choisissez un modèle, ou configurez Ollama ou LM Studio.";
 "Transkribiere …" = "Transcription…";
 "Transkription:" = "Transcription :";
+"Trennen" = "Se déconnecter";
 "Trennlinie" = "Séparateur";
 "Trennlinie nach links" = "Déplacer le séparateur vers la gauche";
 "Trennlinie nach oben" = "Déplacer le séparateur vers le haut";
@@ -1067,6 +1083,7 @@
 "Unbekannt" = "Inconnu";
 "Unbekannte Befehle unterstreichen" = "Souligner les commandes inconnues";
 "Unbekannter Digraph: {}" = "Digraphe inconnu : {}";
+"Unbekannter Host-Schlüssel bei {}" = "Clé d’hôte inconnue pour {}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "Accès sans restriction à Internet et à tous les fichiers du Mac.";
 "Unerwartete Antwort: {}" = "Réponse inattendue : {}";
 "Ungesicherte Änderungen an „{}“ verwerfen?" = "Abandonner les modifications non enregistrées de « {} » ?";
@@ -1085,8 +1102,16 @@
 "VISUELL BLOCK" = "VISUEL BLOC";
 "VISUELL ZEILE" = "VISUEL LIGNE";
 "Verbieten" = "Refuser";
+"Verbinde mit {} …" = "Connexion à {}…";
+"Verbinden" = "Se connecter";
 "Verbindet …" = "Connexion…";
 "Verbindung" = "Connexion";
+"Verbindung bearbeiten" = "Modifier la connexion";
+"Verbindung bearbeiten …" = "Modifier la connexion…";
+"Verbindung fehlgeschlagen" = "échec de la connexion";
+"Verbindung zu {}" = "Connexion à {}";
+"Verbindung zu {} fehlgeschlagen" = "Échec de la connexion à {}";
+"Verbindung zu {} getrennt" = "Connexion à {} perdue";
 "Verbunden" = "Connecté";
 "Verdichte …" = "Compactage…";
 "Verdichtet sich selbst ab {} Tokens" = "Se compacte automatiquement à partir de {} jetons";
@@ -1174,6 +1199,7 @@
 "Wird fortgesetzt …" = "Reprise…";
 "Wird gesucht …" = "Recherche …";
 "Wirkung" = "Effet";
+"Wo arbeitet der neue Arbeitsbereich?" = "Où le nouvel espace de travail travaille-t-il ?";
 "Wochenlimit" = "Limite hebdomadaire";
 "Womit neue Sitzungen starten, bis du im Tab etwas anderes wählst. Leere Felder überlassen die Wahl den Einstellungen des Agenten." = "Ce avec quoi les nouvelles sessions démarrent jusqu’à ce que tu choisisses autre chose dans l’onglet. Les champs vides laissent le choix aux réglages de l’agent.";
 "Worktree wird angelegt …" = "Création du worktree…";
@@ -1244,6 +1270,7 @@
 "geschlossen" = "fermé";
 "geschätzt aus der letzten Antwort" = "estimé d’après la dernière réponse";
 "gestern" = "hier";
+"getrennt" = "déconnecté";
 "gezählt" = "décompte exact";
 "geändert" = "modifié";
 "geöffnet" = "ouvert";
@@ -1268,6 +1295,8 @@
 "und {} weitere" = "et {} de plus";
 "ungelöst" = "non résolu";
 "unverändert" = "inchangée";
+"verbindet" = "connexion en cours";
+"verbunden" = "connecté";
 "von Hand" = "manuel";
 "vor einem Jahr" = "il y a un an";
 "vor einem Monat" = "il y a un mois";

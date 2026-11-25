@@ -47,6 +47,10 @@ The fingerprint in the manifest (`xtask/src/source.rs`) is the git tree of the c
 
 Unlike Dango, Tapa has no `make ci` and no CI seals: Dango's deploy requires no seal either and only pushes a green one along when it has one, so Tapa's deploy pushes `main` and the tag alone. What a release was tested with is what `make check` and the self-tests showed in the session before it. A local agent skill `/deploy`, kept out of the repository, drives `make deploy`.
 
+## Remote workspaces
+
+The SSH side of remote workspaces (E25) is in `crates/term-remote`. `TAPA_SSHD_TESTS=1 cargo test -p term-remote --test sshd` runs it against an sshd in a Linux container (Docker and the network for the Alpine image); without the variable that test is skipped, so `make check` needs neither. The self-test drives the app's side with the steps of `src/selftest/remote.rs` against such a container; `TAPA_REMOTE_SSH_OPTIONS`, for example `-F <file>`, gives ssh a configuration of the test's own, so the user's `~/.ssh/known_hosts` stays untouched.
+
 ## Workspace-hack
 Cargo turns on the features of a shared dependency that the crates of one build need, so `cargo check -p term-render` and `cargo check -p term-ui` used to build serde, regex and toml_edit, and every crate above them, with different features each time. The crate `term-workspace-hack` (E24, taken over from Dango's E194) depends on every such dependency with the features all members together use, and every member depends on it, so each dependency is built once per profile. After adding, removing or changing a dependency or a crate, `cargo hakari generate` rewrites its list and `cargo hakari manage-deps` adds it to a new crate; `make lint` fails while either has something to do. Its settings are in `.config/hakari.toml`: xtask stays outside as in Dango, and Splat's crates stay outside because their `selftest` feature would otherwise reach the release.
 

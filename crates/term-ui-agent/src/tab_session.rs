@@ -35,10 +35,11 @@ impl AgentTab {
         }
         let transcript = self.state.borrow().resume().and_then(|r| r.transcript.clone());
         let key = self.key;
+        let cwd = self.cwd.clone();
         let mut thread = self.snapshot();
         thread.apply_all(super::waiting::hidden(self.state.borrow().queue()));
         if let Err(why) = crate::common::util::spawn("claude-start", move || {
-            let env = term_ui::workspace_host::environment(Duration::from_secs(15));
+            let env = term_ui::workspace_host::environment_for(&cwd, Duration::from_secs(15));
             let exe = source::find_claude(&env);
             let thread = match transcript {
                 Some(path) if thread.entries(&term_thread::Lane::Main).is_empty() => {

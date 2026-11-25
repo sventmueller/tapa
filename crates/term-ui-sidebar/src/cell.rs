@@ -18,7 +18,7 @@ use objc2_foundation::{NSArray, NSDictionary, NSObjectProtocol, NSRect};
 use splat_i18n::{t, tf};
 use term_ui::kit::{self, guarded, label, ns, ui_size};
 
-use crate::model::{Mark, Panel, Workspace};
+use crate::model::{Connection, Mark, Panel, Remote, Workspace};
 
 /// The point size of the status dot.
 const DOT: f64 = 6.0;
@@ -219,8 +219,9 @@ impl Cell {
         pencil
     }
 
-    /// The switches of the file list and the Git panel, which show in the accent colour while their panel is open;
-    /// the Git switch with the number of changed files as its title.
+    /// The switches of the Git panel and the file list, in that order, which show in the accent colour while their
+    /// panel is open; the Git switch with the number of changed files before its symbol, and only for a folder in a
+    /// repository.
     fn toggles(&self, workspace: &Workspace, size: &Size, target: &AnyObject) -> Retained<NSStackView> {
         let mtm = self.mtm();
         let row = NSStackView::new(mtm);
@@ -231,7 +232,19 @@ impl Cell {
             kit::space::NONE
         });
         let side = size.switch + ui_size::scaled(SWITCH_PADDING);
-        for panel in Panel::ALL {
+        if let Some(remote) = &workspace.remote {
+            let button = self.connection_switch(workspace.id, remote, size, target);
+            kit::activate([
+                button.widthAnchor().constraintEqualToConstant(side),
+                button.heightAnchor().constraintEqualToConstant(side),
+            ]);
+            row.addArrangedSubview(&button);
+            return row;
+        }
+        let shown = [Panel::Git, Panel::Files]
+            .into_iter()
+            .filter(|panel| *panel != Panel::Git || workspace.branch.is_some());
+        for panel in shown {
             let open = workspace.panels.contains(&panel);
             let (symbol, label, action) = match panel {
                 Panel::Files => ("folder", t("Dateien"), sel!(termSidebarToggleFiles:)),
@@ -253,8 +266,8 @@ impl Cell {
                 } else {
                     String::new()
                 }));
-                button.setImagePosition(NSCellImagePosition::ImageLeading);
-                button.setAlignment(NSTextAlignment::Left);
+                button.setImagePosition(NSCellImagePosition::ImageTrailing);
+                button.setAlignment(NSTextAlignment::Right);
                 button.setFont(Some(&size.detail));
             }
             let spoken = match (panel, workspace.changes) {
@@ -276,6 +289,33 @@ impl Cell {
             row.addArrangedSubview(&button);
         }
         row
+    }
+
+    /// The switch of a remote workspace's connection in place of the panels', its colour the connection's state; a
+    /// click opens the connection's menu (E25).
+    fn connection_switch(&self, id: u64, remote: &Remote, size: &Size, target: &AnyObject) -> Retained<NSButton> {
+        let label = tf("Verbindung zu {}", &[&remote.account]);
+        let button = kit::symbol_button(
+            self.mtm(),
+            "network",
+            &label,
+            size.switch,
+            Some(target),
+            sel!(termSidebarRemote:),
+        );
+        button.setTag(isize::try_from(id).unwrap_or(isize::MAX));
+        let tint = match remote.connection {
+            Connection::Connected => NSColor::secondaryLabelColor(),
+            Connection::Connecting => NSColor::tertiaryLabelColor(),
+            Connection::Disconnected => NSColor::systemOrangeColor(),
+            Connection::Failed => NSColor::systemRedColor(),
+        };
+        button.setContentTintColor(Some(&tint));
+        button.setToolTip(Some(&ns(&tf("{}: {}", &[&label, remote.connection.spoken()]))));
+        button.setAccessibilityLabel(Some(&ns(&tf("{}, {}", &[&label, remote.connection.spoken()]))));
+        button.setTranslatesAutoresizingMaskIntoConstraints(false);
+        self.ivars().toggles.borrow_mut().push((button.clone(), tint));
+        button
     }
 
     /// The field that shows the workspace's name.

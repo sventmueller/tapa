@@ -13,5 +13,5 @@ mod reorder;
 mod table;
 mod view;
 
-pub use model::{Entry, Kind, Mark, Panel, Status, Workspace};
+pub use model::{Connection, Entry, Kind, Mark, Panel, Remote, Status, Workspace};
 pub use view::{PanelView, RowAction, Sidebar};

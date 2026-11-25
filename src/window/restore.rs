@@ -165,7 +165,16 @@ impl Window {
         place: &std::cell::Cell<Option<NSRect>>,
         look: Look,
     ) -> Rc<Workspace> {
-        let workspace = self.add_workspace(stored.base.clone(), stored.name.clone());
+        let workspace = match &stored.remote {
+            Some(target) => {
+                let remote = crate::remote::Remote::at(target.clone(), stored.base.clone());
+                remote.connect();
+                let workspace = Rc::new(Workspace::remote(app().next_id(), remote, stored.name.clone()));
+                self.workspaces.borrow_mut().insert_after_selected(workspace.clone());
+                workspace
+            }
+            None => self.add_workspace(stored.base.clone(), stored.name.clone()),
+        };
         workspace.set_trusted(stored.trusted);
         *workspace.panels.borrow_mut() = stored.panels;
         self.workspaces.borrow_mut().select(WorkspaceId::new(workspace.id));
@@ -354,6 +363,7 @@ fn snapshot_workspace(
         files,
         panels: *workspace.panels.borrow(),
         separate: Vec::new(),
+        remote: workspace.remote_machine().map(|remote| remote.target()),
     };
     Some((stored, saved))
 }

@@ -163,6 +163,8 @@
 "Befehlszeile" = "命令行";
 "Bei einem Entwicklungsserver kannst du dem Zertifikat bis zum Beenden der App vertrauen." = "对于开发服务器，你可以信任该证书，直到退出此 App。";
 "Beide" = "两侧";
+"Beide dürfen nicht leer sein, nicht mit einem Bindestrich beginnen und keine Leerzeichen oder @ enthalten." = "两者都不能为空、以连字符开头或包含空格或 @。";
+"Benutzer (leer: wie ssh)" = "用户(留空:与 ssh 相同)";
 "Benutzername" = "用户名";
 "Benutzername oder Passwort waren falsch." = "用户名或密码错误。";
 "Berechtigungen" = "权限";
@@ -456,6 +458,8 @@
 "Einstellungsdateien" = "设置文件";
 "Ende" = "结束";
 "Entfernen" = "移除";
+"Entfernter Arbeitsbereich" = "远程工作区";
+"Entfernter Rechner …" = "远程电脑…";
 "Entscheidung" = "判断";
 "Entschieden" = "已决定";
 "Er beginnt bei Commit {}, und Git wechselt gleich zu ihm." = "它从提交 {} 开始，Git 会立即切换到该分支。";
@@ -504,6 +508,7 @@
 "Fortsetzen" = "继续";
 "Frage" = "问题";
 "Frage nebenbei" = "顺便提问";
+"Frage von {}" = "来自 {} 的问题";
 "Fragen" = "询问";
 "Fragen nebenbei" = "顺便提问";
 "Fragt nur bei Aktionen, die als möglicherweise unsicher erkannt werden." = "仅在检测到可能不安全的操作时询问。";
@@ -584,6 +589,8 @@
 "Hook „{}“ entfernen?" = "要移除钩子“{}”吗？";
 "Hooks" = "钩子";
 "Hooks: {} erfolgreich" = "钩子：{} 个成功";
+"Host oder Benutzer ungültig" = "主机或用户无效";
+"Host, aus ~/.ssh/config oder eine Adresse" = "~/.ssh/config 中的主机或地址";
 "Höre zu …" = "正在聆听…";
 "Idee" = "想法";
 "Ignorieren" = "忽略";
@@ -596,6 +603,7 @@
 "Im Finder zeigen" = "在访达中显示";
 "Im Hintergrund ausführen" = "在后台运行";
 "Im Projekt arbeiten" = "在项目中工作";
+"Im Schlüsselbund sichern" = "存储在钥匙串中";
 "Im Terminal öffnen" = "在终端中打开";
 "Im Texteditor öffnen" = "在文本编辑器中打开";
 "Im Verlauf suchen" = "搜索历史记录";
@@ -837,6 +845,8 @@
 "OpenCode: {}" = "OpenCode：{}";
 "OpenType-Features:" = "OpenType 功能：";
 "Ordner" = "文件夹";
+"Ordner auf diesem Mac …" = "此 Mac 上的文件夹…";
+"Ordner dort (leer: Home-Ordner)" = "那里的文件夹(留空:个人文件夹)";
 "Ordner nicht vertraut" = "文件夹未受信任";
 "Ordner vertrauen" = "信任文件夹";
 "Ordner wählen …" = "选取文件夹…";
@@ -845,6 +855,9 @@
 "Originalgröße" = "实际大小";
 "PDF: {}" = "PDF：{}";
 "Passwort" = "密码";
+"Passwort (leer: unverändert)" = "密码(留空:不变)";
+"Passwort (optional, im Schlüsselbund)" = "密码(可选,存储在钥匙串中)";
+"Passwort für {}" = "{} 的密码";
 "Pausiert" = "已暂停";
 "Pfad kopieren" = "拷贝路径";
 "Pfad: {}" = "路径：{}";
@@ -865,6 +878,7 @@
 "Plugin „{}“ entfernen?" = "要移除插件“{}”吗？";
 "Plugins" = "插件";
 "Plugins und Marktplätze verwalten" = "管理插件和市场";
+"Port (leer: wie ssh)" = "端口(留空:与 ssh 相同)";
 "Problem melden …" = "报告问题…";
 "Profil hinzufügen" = "添加描述文件";
 "Profil löschen" = "删除描述文件";
@@ -1037,6 +1051,7 @@
 "Terminal" = "终端";
 "Terminal leeren" = "清除终端";
 "Terminal: {}" = "终端：{}";
+"Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "终端和代理在 ssh 以此方式连接的电脑上运行;那里没有文件列表和 Git。";
 "Text mit Steuerzeichen einsetzen?" = "要粘贴包含控制字符的文本吗？";
 "Text mit Zeilenumbruch einsetzen?" = "要粘贴包含换行符的文本吗？";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "要粘贴包含 {} 个换行符的文本吗？";
@@ -1052,6 +1067,7 @@
 "Trag in den Einstellungen unter „Agent“ einen Anbieter mit Schlüssel ein und wähl ein Modell, oder richte Ollama oder LM Studio ein." = "请在“设置”的“智能体”中填入一个提供商及其密钥并选取模型，或者设置 Ollama 或 LM Studio。";
 "Transkribiere …" = "正在转写…";
 "Transkription:" = "转写：";
+"Trennen" = "断开连接";
 "Trennlinie" = "分隔线";
 "Trennlinie nach links" = "向左移动分隔线";
 "Trennlinie nach oben" = "向上移动分隔线";
@@ -1067,6 +1083,7 @@
 "Unbekannt" = "未知";
 "Unbekannte Befehle unterstreichen" = "为未知命令添加下划线";
 "Unbekannter Digraph: {}" = "未知的二合字符：{}";
+"Unbekannter Host-Schlüssel bei {}" = "{} 的主机密钥未知";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "不受限制地访问互联网和 Mac 上的所有文件。";
 "Unerwartete Antwort: {}" = "意外的响应：{}";
 "Ungesicherte Änderungen an „{}“ verwerfen?" = "要放弃对“{}”所做的未保存更改吗？";
@@ -1085,8 +1102,16 @@
 "VISUELL BLOCK" = "可视 块";
 "VISUELL ZEILE" = "可视 行";
 "Verbieten" = "拒绝";
+"Verbinde mit {} …" = "正在连接到 {}…";
+"Verbinden" = "连接";
 "Verbindet …" = "正在连接…";
 "Verbindung" = "连接";
+"Verbindung bearbeiten" = "编辑连接";
+"Verbindung bearbeiten …" = "编辑连接…";
+"Verbindung fehlgeschlagen" = "连接失败";
+"Verbindung zu {}" = "与 {} 的连接";
+"Verbindung zu {} fehlgeschlagen" = "连接到 {} 失败";
+"Verbindung zu {} getrennt" = "与 {} 的连接已断开";
 "Verbunden" = "已连接";
 "Verdichte …" = "正在压缩…";
 "Verdichtet sich selbst ab {} Tokens" = "达到 {} Token 时自动压缩";
@@ -1174,6 +1199,7 @@
 "Wird fortgesetzt …" = "正在继续…";
 "Wird gesucht …" = "正在查找 …";
 "Wirkung" = "作用";
+"Wo arbeitet der neue Arbeitsbereich?" = "新工作区在哪里工作?";
 "Wochenlimit" = "每周限额";
 "Womit neue Sitzungen starten, bis du im Tab etwas anderes wählst. Leere Felder überlassen die Wahl den Einstellungen des Agenten." = "在你于标签页中另行选择之前，新会话以此开始。留空的字段由智能体自身的设置决定。";
 "Worktree wird angelegt …" = "正在创建工作树…";
@@ -1244,6 +1270,7 @@
 "geschlossen" = "已关闭";
 "geschätzt aus der letzten Antwort" = "根据上一条回答估算";
 "gestern" = "昨天";
+"getrennt" = "已断开";
 "gezählt" = "精确计数";
 "geändert" = "已修改";
 "geöffnet" = "已打开";
@@ -1268,6 +1295,8 @@
 "und {} weitere" = "以及另外 {} 个";
 "ungelöst" = "未解决";
 "unverändert" = "未更改";
+"verbindet" = "正在连接";
+"verbunden" = "已连接";
 "von Hand" = "手动";
 "vor einem Jahr" = "一年前";
 "vor einem Monat" = "一个月前";

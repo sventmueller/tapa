@@ -24,6 +24,7 @@ term-panes = { path = "crates/term-panes" }
 term-process = { path = "crates/term-process" }
 term-product = { path = "crates/term-product" }
 term-project = { path = "crates/term-project" }
+term-remote = { path = "crates/term-remote" }
 term-render = { path = "crates/term-render" }
 term-seal = { path = "crates/term-seal" }
 term-session = { path = "crates/term-session" }
@@ -149,6 +150,7 @@ term-panes.workspace = true
 term-process.workspace = true
 term-product.workspace = true
 term-render.workspace = true
+term-remote.workspace = true
 term-seal.workspace = true
 term-session.workspace = true
 term-suggest.workspace = true

@@ -27,3 +27,10 @@
 "Arbeitet" = "Đang làm việc";
 "Wartet auf dich" = "Đang chờ bạn";
 "Einstellungen" = "Cài đặt";
+"Trennen" = "Ngắt kết nối";
+"Verbindung bearbeiten …" = "Sửa kết nối…";
+"Verbindung fehlgeschlagen" = "kết nối thất bại";
+"Verbindung zu {}" = "Kết nối tới {}";
+"getrennt" = "đã ngắt kết nối";
+"verbindet" = "đang kết nối";
+"verbunden" = "đã kết nối";

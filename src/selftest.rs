@@ -34,6 +34,7 @@ pub(crate) mod menus;
 mod modal;
 mod mouse;
 mod preview;
+mod remote;
 pub(crate) mod stand_in;
 mod steps;
 mod switching;

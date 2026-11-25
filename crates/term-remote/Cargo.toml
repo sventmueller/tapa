@@ -1,0 +1,21 @@
+[package]
+name = "term-remote"
+version.workspace = true
+description = "Workspaces on another machine over the system's OpenSSH: the target, one master connection per workspace, the commands that run there and the helper that answers ssh's questions"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+term-base.workspace = true
+term-process.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+term-workspace-hack.workspace = true
+
+[dev-dependencies]
+term-base = { workspace = true, features = ["testing"] }

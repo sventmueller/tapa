@@ -21,6 +21,7 @@ mod preview_tab;
 mod quick;
 mod quit;
 mod recent;
+mod remote;
 mod restore;
 #[cfg(feature = "selftest")]
 mod selftest;
@@ -38,6 +39,17 @@ use objc2_app_kit::{NSApplication, NSApplicationActivationPolicy};
 use objc2_foundation::NSBundle;
 
 fn main() {
+    // A stand-in of a remote workspace's agent program starts the app this way to run the program there (E25).
+    let args: Vec<String> = std::env::args().collect();
+    if args.get(1).map(String::as_str) == Some(term_remote::stand_in::MODE) {
+        std::process::exit(term_remote::stand_in::run(&args[2..]));
+    }
+    // ssh starts the app's own executable as its askpass with the question as the only argument (E25).
+    if std::env::var_os(term_remote::askpass::SOCKET_VAR).is_some()
+        && let Some(prompt) = std::env::args().nth(1)
+    {
+        std::process::exit(term_remote::askpass::helper(&prompt));
+    }
     #[cfg(feature = "selftest")]
     if let Some(code) = selftest::stand_in::run() {
         std::process::exit(code);
@@ -56,6 +68,7 @@ fn main() {
     term_ui::install(&host::AppHost);
     let mtm = MainThreadMarker::new().expect("the app starts on the main thread");
     state::start(mtm);
+    remote::start();
     agent::install();
     browser::install();
     editor_tab::install();

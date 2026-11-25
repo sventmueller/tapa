@@ -24,6 +24,13 @@ const FILES: &[(&str, &str)] = &[
 /// The file below the integration folder that holds the command `ssh` runs on the other host.
 const REMOTE: &str = "ssh/remote";
 
+/// The command ssh runs on another machine for an interactive shell there with the shell integration, started in
+/// `folder` (from the home folder or absolute; empty for the home folder), for a terminal of a remote workspace (E25).
+pub fn remote_shell(folder: &str) -> String {
+    let identity = term_base::identity();
+    remote::command_in(&identity.name, &identity.version, folder)
+}
+
 /// Where the app keeps the scripts: `shell-integration` in its cache folder.
 pub(crate) fn default_dir() -> PathBuf {
     term_base::cache_dir().join("shell-integration")

@@ -27,3 +27,10 @@
 "Arbeitet" = "Treballant";
 "Wartet auf dich" = "T’està esperant";
 "Einstellungen" = "Configuració";
+"Trennen" = "Desconnecta";
+"Verbindung bearbeiten …" = "Edita la connexió…";
+"Verbindung fehlgeschlagen" = "la connexió ha fallat";
+"Verbindung zu {}" = "Connexió amb {}";
+"getrennt" = "desconnectat";
+"verbindet" = "s’està connectant";
+"verbunden" = "connectat";

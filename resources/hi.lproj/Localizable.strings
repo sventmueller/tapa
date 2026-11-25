@@ -163,6 +163,8 @@
 "Befehlszeile" = "कमांड लाइन";
 "Bei einem Entwicklungsserver kannst du dem Zertifikat bis zum Beenden der App vertrauen." = "डेवलपमेंट सर्वर के प्रमाणपत्र पर आप ऐप बंद होने तक भरोसा कर सकते हैं।";
 "Beide" = "दोनों";
+"Beide dürfen nicht leer sein, nicht mit einem Bindestrich beginnen und keine Leerzeichen oder @ enthalten." = "दोनों में से कोई भी खाली नहीं हो सकता, हाइफ़न से शुरू नहीं हो सकता और उसमें स्पेस या @ नहीं हो सकता।";
+"Benutzer (leer: wie ssh)" = "उपयोगकर्ता (खाली: ssh के अनुसार)";
 "Benutzername" = "उपयोगकर्ता नाम";
 "Benutzername oder Passwort waren falsch." = "उपयोगकर्ता नाम या पासवर्ड गलत था।";
 "Berechtigungen" = "अनुमतियाँ";
@@ -456,6 +458,8 @@
 "Einstellungsdateien" = "सेटिंग्ज़ फ़ाइलें";
 "Ende" = "समाप्त";
 "Entfernen" = "हटाएँ";
+"Entfernter Arbeitsbereich" = "रिमोट वर्कस्पेस";
+"Entfernter Rechner …" = "रिमोट कंप्यूटर…";
 "Entscheidung" = "निर्णय";
 "Entschieden" = "निर्णय हो गया";
 "Er beginnt bei Commit {}, und Git wechselt gleich zu ihm." = "यह कमिट {} से शुरू होती है, और Git तुरंत इस पर स्विच कर देता है।";
@@ -504,6 +508,7 @@
 "Fortsetzen" = "जारी रखें";
 "Frage" = "सवाल";
 "Frage nebenbei" = "अलग से सवाल";
+"Frage von {}" = "{} का प्रश्न";
 "Fragen" = "पूछें";
 "Fragen nebenbei" = "अलग से सवाल";
 "Fragt nur bei Aktionen, die als möglicherweise unsicher erkannt werden." = "केवल उन कार्रवाइयों के लिए पूछता है जिन्हें संभवतः असुरक्षित पाया गया हो।";
@@ -584,6 +589,8 @@
 "Hook „{}“ entfernen?" = "हुक “{}” हटाएँ?";
 "Hooks" = "हुक";
 "Hooks: {} erfolgreich" = "हुक : {} सफल";
+"Host oder Benutzer ungültig" = "होस्ट या उपयोगकर्ता अमान्य";
+"Host, aus ~/.ssh/config oder eine Adresse" = "~/.ssh/config से होस्ट या कोई पता";
 "Höre zu …" = "सुन रहा है…";
 "Idee" = "आइडिया";
 "Ignorieren" = "अनदेखा करें";
@@ -596,6 +603,7 @@
 "Im Finder zeigen" = "Finder में दिखाएँ";
 "Im Hintergrund ausführen" = "बैकग्राउंड में चलाएँ";
 "Im Projekt arbeiten" = "प्रोजेक्ट में काम करना";
+"Im Schlüsselbund sichern" = "कीचेन में सहेजें";
 "Im Terminal öffnen" = "टर्मिनल में खोलें";
 "Im Texteditor öffnen" = "टेक्स्ट एडिटर में खोलें";
 "Im Verlauf suchen" = "इतिहास में खोजें";
@@ -837,6 +845,8 @@
 "OpenCode: {}" = "OpenCode : {}";
 "OpenType-Features:" = "OpenType फ़ीचर:";
 "Ordner" = "फ़ोल्डर";
+"Ordner auf diesem Mac …" = "इस Mac पर फ़ोल्डर…";
+"Ordner dort (leer: Home-Ordner)" = "वहाँ का फ़ोल्डर (खाली: होम फ़ोल्डर)";
 "Ordner nicht vertraut" = "फ़ोल्डर भरोसेमंद नहीं";
 "Ordner vertrauen" = "फ़ोल्डर पर भरोसा करें";
 "Ordner wählen …" = "फ़ोल्डर चुनें…";
@@ -845,6 +855,9 @@
 "Originalgröße" = "वास्तविक आकार";
 "PDF: {}" = "PDF : {}";
 "Passwort" = "पासवर्ड";
+"Passwort (leer: unverändert)" = "पासवर्ड (खाली: अपरिवर्तित)";
+"Passwort (optional, im Schlüsselbund)" = "पासवर्ड (वैकल्पिक, कीचेन में)";
+"Passwort für {}" = "{} के लिए पासवर्ड";
 "Pausiert" = "रुका हुआ";
 "Pfad kopieren" = "पथ कॉपी करें";
 "Pfad: {}" = "पाथ : {}";
@@ -865,6 +878,7 @@
 "Plugin „{}“ entfernen?" = "प्लगइन “{}” हटाएँ?";
 "Plugins" = "प्लगइन";
 "Plugins und Marktplätze verwalten" = "प्लगइन और मार्केटप्लेस प्रबंधित करें";
+"Port (leer: wie ssh)" = "पोर्ट (खाली: ssh के अनुसार)";
 "Problem melden …" = "समस्या की रिपोर्ट करें…";
 "Profil hinzufügen" = "प्रोफ़ाइल जोड़ें";
 "Profil löschen" = "प्रोफ़ाइल डिलीट करें";
@@ -1037,6 +1051,7 @@
 "Terminal" = "टर्मिनल";
 "Terminal leeren" = "टर्मिनल साफ़ करें";
 "Terminal: {}" = "टर्मिनल: {}";
+"Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "टर्मिनल और एजेंट उस कंप्यूटर पर चलते हैं जिस तक ssh इस तरह पहुँचता है; वहाँ फ़ाइल सूची और Git उपलब्ध नहीं हैं।";
 "Text mit Steuerzeichen einsetzen?" = "नियंत्रण वर्णों वाला टेक्स्ट पेस्ट करें?";
 "Text mit Zeilenumbruch einsetzen?" = "पंक्ति विराम वाला टेक्स्ट पेस्ट करें?";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "{} पंक्ति विरामों वाला टेक्स्ट पेस्ट करें?";
@@ -1052,6 +1067,7 @@
 "Trag in den Einstellungen unter „Agent“ einen Anbieter mit Schlüssel ein und wähl ein Modell, oder richte Ollama oder LM Studio ein." = "सेटिंग्ज़ में “एजेंट” के अंतर्गत कुंजी के साथ कोई प्रदाता दर्ज करें और मॉडल चुनें, या Ollama या LM Studio सेट अप करें।";
 "Transkribiere …" = "ट्रांसक्राइब हो रहा है…";
 "Transkription:" = "ट्रांसक्रिप्शन :";
+"Trennen" = "डिस्कनेक्ट करें";
 "Trennlinie" = "क्षैतिज रेखा";
 "Trennlinie nach links" = "विभाजक बाईं ओर ले जाएँ";
 "Trennlinie nach oben" = "विभाजक ऊपर ले जाएँ";
@@ -1067,6 +1083,7 @@
 "Unbekannt" = "अज्ञात";
 "Unbekannte Befehle unterstreichen" = "अज्ञात कमांड को रेखांकित करें";
 "Unbekannter Digraph: {}" = "अज्ञात डाइग्राफ़: {}";
+"Unbekannter Host-Schlüssel bei {}" = "{} पर अज्ञात होस्ट कुंजी";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "इंटरनेट और Mac की हर फ़ाइल तक बिना रोक-टोक एक्सेस।";
 "Unerwartete Antwort: {}" = "अनपेक्षित जवाब : {}";
 "Ungesicherte Änderungen an „{}“ verwerfen?" = "“{}” के बिना सहेजे गए बदलाव त्यागें?";
@@ -1085,8 +1102,16 @@
 "VISUELL BLOCK" = "VISUAL BLOCK";
 "VISUELL ZEILE" = "VISUAL LINE";
 "Verbieten" = "अस्वीकार करें";
+"Verbinde mit {} …" = "{} से कनेक्ट हो रहा है…";
+"Verbinden" = "कनेक्ट करें";
 "Verbindet …" = "कनेक्ट हो रहा है…";
 "Verbindung" = "कनेक्शन";
+"Verbindung bearbeiten" = "कनेक्शन संपादित करें";
+"Verbindung bearbeiten …" = "कनेक्शन संपादित करें…";
+"Verbindung fehlgeschlagen" = "कनेक्शन विफल";
+"Verbindung zu {}" = "{} से कनेक्शन";
+"Verbindung zu {} fehlgeschlagen" = "{} से कनेक्शन विफल";
+"Verbindung zu {} getrennt" = "{} से कनेक्शन टूट गया";
 "Verbunden" = "कनेक्ट है";
 "Verdichte …" = "कॉम्पैक्ट हो रहा है…";
 "Verdichtet sich selbst ab {} Tokens" = "{} टोकन पर अपने आप कॉम्पैक्ट होता है";
@@ -1174,6 +1199,7 @@
 "Wird fortgesetzt …" = "जारी रखा जा रहा है…";
 "Wird gesucht …" = "खोज रहा है …";
 "Wirkung" = "प्रभाव";
+"Wo arbeitet der neue Arbeitsbereich?" = "नया वर्कस्पेस कहाँ काम करेगा?";
 "Wochenlimit" = "साप्ताहिक सीमा";
 "Womit neue Sitzungen starten, bis du im Tab etwas anderes wählst. Leere Felder überlassen die Wahl den Einstellungen des Agenten." = "टैब में कुछ और चुनने तक नए सेशन किसके साथ शुरू होते हैं। खाली फ़ील्ड चुनाव एजेंट की अपनी सेटिंग्ज़ पर छोड़ते हैं।";
 "Worktree wird angelegt …" = "वर्कट्री बनाया जा रहा है…";
@@ -1244,6 +1270,7 @@
 "geschlossen" = "बंद";
 "geschätzt aus der letzten Antwort" = "पिछले जवाब से अनुमानित";
 "gestern" = "कल";
+"getrennt" = "डिस्कनेक्ट";
 "gezählt" = "गिना गया";
 "geändert" = "बदला गया";
 "geöffnet" = "खुला";
@@ -1268,6 +1295,8 @@
 "und {} weitere" = "और {} अन्य";
 "ungelöst" = "हल नहीं हुआ";
 "unverändert" = "अपरिवर्तित";
+"verbindet" = "कनेक्ट हो रहा है";
+"verbunden" = "कनेक्टेड";
 "von Hand" = "मैन्युअल";
 "vor einem Jahr" = "एक साल पहले";
 "vor einem Monat" = "एक महीना पहले";

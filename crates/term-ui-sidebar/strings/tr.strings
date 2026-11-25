@@ -27,3 +27,10 @@
 "Arbeitet" = "Çalışıyor";
 "Wartet auf dich" = "Sizi bekliyor";
 "Einstellungen" = "Ayarlar";
+"Trennen" = "Bağlantıyı Kes";
+"Verbindung bearbeiten …" = "Bağlantıyı Düzenle…";
+"Verbindung fehlgeschlagen" = "bağlantı başarısız";
+"Verbindung zu {}" = "{} bağlantısı";
+"getrennt" = "bağlantı kesildi";
+"verbindet" = "bağlanıyor";
+"verbunden" = "bağlandı";

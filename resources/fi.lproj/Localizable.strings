@@ -163,6 +163,8 @@
 "Befehlszeile" = "Komentorivi";
 "Bei einem Entwicklungsserver kannst du dem Zertifikat bis zum Beenden der App vertrauen." = "Kehityspalvelimen kohdalla voit luottaa varmenteeseen, kunnes appi suljetaan.";
 "Beide" = "Molemmat";
+"Beide dürfen nicht leer sein, nicht mit einem Bindestrich beginnen und keine Leerzeichen oder @ enthalten." = "Kumpikaan ei saa olla tyhjä, alkaa yhdysmerkillä tai sisältää välilyöntejä tai @-merkkiä.";
+"Benutzer (leer: wie ssh)" = "Käyttäjä (tyhjä: kuten ssh)";
 "Benutzername" = "Käyttäjänimi";
 "Benutzername oder Passwort waren falsch." = "Käyttäjänimi tai salasana oli väärä.";
 "Berechtigungen" = "Luvat";
@@ -456,6 +458,8 @@
 "Einstellungsdateien" = "Asetustiedostot";
 "Ende" = "Loppu";
 "Entfernen" = "Poista";
+"Entfernter Arbeitsbereich" = "Etätyötila";
+"Entfernter Rechner …" = "Etätietokone…";
 "Entscheidung" = "Päätös";
 "Entschieden" = "Päätetty";
 "Er beginnt bei Commit {}, und Git wechselt gleich zu ihm." = "Se alkaa commitista {}, ja Git vaihtaa siihen heti.";
@@ -504,6 +508,7 @@
 "Fortsetzen" = "Jatka";
 "Frage" = "Kysymys";
 "Frage nebenbei" = "Sivukysymys";
+"Frage von {}" = "Kysymys kohteelta {}";
 "Fragen" = "Kysy";
 "Fragen nebenbei" = "Sivukysymykset";
 "Fragt nur bei Aktionen, die als möglicherweise unsicher erkannt werden." = "Kysyy vain toiminnoista, jotka tunnistetaan mahdollisesti vaarallisiksi.";
@@ -584,6 +589,8 @@
 "Hook „{}“ entfernen?" = "Poistetaanko hook ”{}”?";
 "Hooks" = "Hookit";
 "Hooks: {} erfolgreich" = "Onnistuneet hookit: {}";
+"Host oder Benutzer ungültig" = "Virheellinen palvelin tai käyttäjä";
+"Host, aus ~/.ssh/config oder eine Adresse" = "Palvelin tiedostosta ~/.ssh/config tai osoite";
 "Höre zu …" = "Kuunnellaan…";
 "Idee" = "Idea";
 "Ignorieren" = "Ohita";
@@ -596,6 +603,7 @@
 "Im Finder zeigen" = "Näytä Finderissa";
 "Im Hintergrund ausführen" = "Suorita taustalla";
 "Im Projekt arbeiten" = "Työskentely projektissa";
+"Im Schlüsselbund sichern" = "Tallenna avainnippuun";
 "Im Terminal öffnen" = "Avaa päätteessä";
 "Im Texteditor öffnen" = "Avaa tekstieditorissa";
 "Im Verlauf suchen" = "Etsi historiasta";
@@ -837,6 +845,8 @@
 "OpenCode: {}" = "OpenCode: {}";
 "OpenType-Features:" = "OpenType-ominaisuudet:";
 "Ordner" = "Kansio";
+"Ordner auf diesem Mac …" = "Kansio tässä Macissa…";
+"Ordner dort (leer: Home-Ordner)" = "Kansio siellä (tyhjä: kotikansio)";
 "Ordner nicht vertraut" = "Kansioon ei luoteta";
 "Ordner vertrauen" = "Luota kansioon";
 "Ordner wählen …" = "Valitse kansio…";
@@ -845,6 +855,9 @@
 "Originalgröße" = "Todellinen koko";
 "PDF: {}" = "PDF: {}";
 "Passwort" = "Salasana";
+"Passwort (leer: unverändert)" = "Salasana (tyhjä: ennallaan)";
+"Passwort (optional, im Schlüsselbund)" = "Salasana (valinnainen, avainnippuun)";
+"Passwort für {}" = "Salasana kohteelle {}";
 "Pausiert" = "Tauolla";
 "Pfad kopieren" = "Kopioi polku";
 "Pfad: {}" = "Polku: {}";
@@ -865,6 +878,7 @@
 "Plugin „{}“ entfernen?" = "Poistetaanko lisäosa ”{}”?";
 "Plugins" = "Lisäosat";
 "Plugins und Marktplätze verwalten" = "Hallitse lisäosia ja markkinapaikkoja";
+"Port (leer: wie ssh)" = "Portti (tyhjä: kuten ssh)";
 "Problem melden …" = "Ilmoita ongelmasta…";
 "Profil hinzufügen" = "Lisää profiili";
 "Profil löschen" = "Poista profiili";
@@ -1037,6 +1051,7 @@
 "Terminal" = "Pääte";
 "Terminal leeren" = "Tyhjennä pääte";
 "Terminal: {}" = "Pääte: {}";
+"Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "Päätteet ja agentit toimivat tietokoneessa, johon ssh näin yhdistää; tiedostoluetteloa ja Gitiä siellä ei ole.";
 "Text mit Steuerzeichen einsetzen?" = "Sijoitetaanko teksti, jossa on ohjausmerkkejä?";
 "Text mit Zeilenumbruch einsetzen?" = "Sijoitetaanko teksti, jossa on rivinvaihto?";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "Sijoitetaanko teksti, jossa on {} rivinvaihtoa?";
@@ -1052,6 +1067,7 @@
 "Trag in den Einstellungen unter „Agent“ einen Anbieter mit Schlüssel ein und wähl ein Modell, oder richte Ollama oder LM Studio ein." = "Lisää asetusten kohdassa ”Agentti” palveluntarjoaja avaimineen ja valitse malli, tai ota käyttöön Ollama tai LM Studio.";
 "Transkribiere …" = "Litteroidaan…";
 "Transkription:" = "Litterointi:";
+"Trennen" = "Katkaise yhteys";
 "Trennlinie" = "Erotin";
 "Trennlinie nach links" = "Siirrä jakajaa vasemmalle";
 "Trennlinie nach oben" = "Siirrä jakajaa ylös";
@@ -1067,6 +1083,7 @@
 "Unbekannt" = "Tuntematon";
 "Unbekannte Befehle unterstreichen" = "Alleviivaa tuntemattomat komennot";
 "Unbekannter Digraph: {}" = "Tuntematon digraafi: {}";
+"Unbekannter Host-Schlüssel bei {}" = "Tuntematon palvelimen avain kohteessa {}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "Rajoittamaton pääsy internetiin ja Macin kaikkiin tiedostoihin.";
 "Unerwartete Antwort: {}" = "Odottamaton vastaus: {}";
 "Ungesicherte Änderungen an „{}“ verwerfen?" = "Hylätäänkö tiedoston ”{}” tallentamattomat muutokset?";
@@ -1085,8 +1102,16 @@
 "VISUELL BLOCK" = "VALINTALOHKO";
 "VISUELL ZEILE" = "VALINTARIVI";
 "Verbieten" = "Hylkää";
+"Verbinde mit {} …" = "Yhdistetään kohteeseen {}…";
+"Verbinden" = "Yhdistä";
 "Verbindet …" = "Yhdistetään…";
 "Verbindung" = "Yhteys";
+"Verbindung bearbeiten" = "Muokkaa yhteyttä";
+"Verbindung bearbeiten …" = "Muokkaa yhteyttä…";
+"Verbindung fehlgeschlagen" = "yhteys epäonnistui";
+"Verbindung zu {}" = "Yhteys kohteeseen {}";
+"Verbindung zu {} fehlgeschlagen" = "Yhteys kohteeseen {} epäonnistui";
+"Verbindung zu {} getrennt" = "Yhteys kohteeseen {} katkesi";
 "Verbunden" = "Yhdistetty";
 "Verdichte …" = "Tiivistetään…";
 "Verdichtet sich selbst ab {} Tokens" = "Tiivistyy itsestään {} tokenin kohdalla";
@@ -1174,6 +1199,7 @@
 "Wird fortgesetzt …" = "Jatketaan…";
 "Wird gesucht …" = "Etsitään …";
 "Wirkung" = "Vaikutus";
+"Wo arbeitet der neue Arbeitsbereich?" = "Missä uusi työtila toimii?";
 "Wochenlimit" = "Viikkoraja";
 "Womit neue Sitzungen starten, bis du im Tab etwas anderes wählst. Leere Felder überlassen die Wahl den Einstellungen des Agenten." = "Millä uudet istunnot alkavat, kunnes valitset välilehdellä muuta. Tyhjät kentät jättävät valinnan agentin omiin asetuksiin.";
 "Worktree wird angelegt …" = "Luodaan worktreeta…";
@@ -1244,6 +1270,7 @@
 "geschlossen" = "kiinni";
 "geschätzt aus der letzten Antwort" = "arvioitu viimeisimmästä vastauksesta";
 "gestern" = "eilen";
+"getrennt" = "yhteys katkaistu";
 "gezählt" = "laskettu";
 "geändert" = "muutettu";
 "geöffnet" = "auki";
@@ -1268,6 +1295,8 @@
 "und {} weitere" = "ja {} muuta";
 "ungelöst" = "ratkaisematon";
 "unverändert" = "muuttamaton";
+"verbindet" = "yhdistetään";
+"verbunden" = "yhdistetty";
 "von Hand" = "käsin";
 "vor einem Jahr" = "vuosi sitten";
 "vor einem Monat" = "kuukausi sitten";

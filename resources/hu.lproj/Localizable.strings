@@ -163,6 +163,8 @@
 "Befehlszeile" = "Parancssor";
 "Bei einem Entwicklungsserver kannst du dem Zertifikat bis zum Beenden der App vertrauen." = "Fejlesztői szerver esetén megbízhat a tanúsítványban, amíg ki nem lép az appból.";
 "Beide" = "Mindkettő";
+"Beide dürfen nicht leer sein, nicht mit einem Bindestrich beginnen und keine Leerzeichen oder @ enthalten." = "Egyik sem lehet üres, nem kezdődhet kötőjellel, és nem tartalmazhat szóközt vagy @ jelet.";
+"Benutzer (leer: wie ssh)" = "Felhasználó (üres: ahogy az ssh)";
 "Benutzername" = "Felhasználónév";
 "Benutzername oder Passwort waren falsch." = "Hibás volt a felhasználónév vagy a jelszó.";
 "Berechtigungen" = "Engedélyek";
@@ -456,6 +458,8 @@
 "Einstellungsdateien" = "Beállításfájlok";
 "Ende" = "Vége";
 "Entfernen" = "Eltávolítás";
+"Entfernter Arbeitsbereich" = "Távoli munkaterület";
+"Entfernter Rechner …" = "Távoli számítógép…";
 "Entscheidung" = "Döntés";
 "Entschieden" = "Eldöntve";
 "Er beginnt bei Commit {}, und Git wechselt gleich zu ihm." = "A(z) {} commitból indul, és a Git azonnal átvált rá.";
@@ -504,6 +508,7 @@
 "Fortsetzen" = "Folytatás";
 "Frage" = "Kérdés";
 "Frage nebenbei" = "Közbevetett kérdés";
+"Frage von {}" = "Kérdés innen: {}";
 "Fragen" = "Kérdezés";
 "Fragen nebenbei" = "Közbevetett kérdések";
 "Fragt nur bei Aktionen, die als möglicherweise unsicher erkannt werden." = "Csak a lehetségesen veszélyesnek ítélt műveleteknél kérdez.";
@@ -584,6 +589,8 @@
 "Hook „{}“ entfernen?" = "Eltávolítja a(z) „{}” hookot?";
 "Hooks" = "Hookok";
 "Hooks: {} erfolgreich" = "Hookok: {} sikeres";
+"Host oder Benutzer ungültig" = "Érvénytelen gazdagép vagy felhasználó";
+"Host, aus ~/.ssh/config oder eine Adresse" = "Gazdagép a ~/.ssh/config fájlból vagy cím";
 "Höre zu …" = "Figyel…";
 "Idee" = "Ötlet";
 "Ignorieren" = "Mellőzés";
@@ -596,6 +603,7 @@
 "Im Finder zeigen" = "Megjelenítés a Finderben";
 "Im Hintergrund ausführen" = "Futtatás a háttérben";
 "Im Projekt arbeiten" = "Munka a projektben";
+"Im Schlüsselbund sichern" = "Mentés a kulcskarikába";
 "Im Terminal öffnen" = "Megnyitás a terminálban";
 "Im Texteditor öffnen" = "Megnyitás szövegszerkesztőben";
 "Im Verlauf suchen" = "Keresés az előzményekben";
@@ -837,6 +845,8 @@
 "OpenCode: {}" = "OpenCode: {}";
 "OpenType-Features:" = "OpenType-funkciók:";
 "Ordner" = "Mappa";
+"Ordner auf diesem Mac …" = "Mappa ezen a Macen…";
+"Ordner dort (leer: Home-Ordner)" = "Mappa ott (üres: saját mappa)";
 "Ordner nicht vertraut" = "A mappa nem megbízható";
 "Ordner vertrauen" = "Megbízás a mappában";
 "Ordner wählen …" = "Mappa kiválasztása…";
@@ -845,6 +855,9 @@
 "Originalgröße" = "Tényleges méret";
 "PDF: {}" = "PDF: {}";
 "Passwort" = "Jelszó";
+"Passwort (leer: unverändert)" = "Jelszó (üres: változatlan)";
+"Passwort (optional, im Schlüsselbund)" = "Jelszó (nem kötelező, a kulcskarikában)";
+"Passwort für {}" = "Jelszó ehhez: {}";
 "Pausiert" = "Szüneteltetve";
 "Pfad kopieren" = "Útvonal másolása";
 "Pfad: {}" = "Útvonal: {}";
@@ -865,6 +878,7 @@
 "Plugin „{}“ entfernen?" = "Eltávolítja a(z) „{}” plug-int?";
 "Plugins" = "Plug-inek";
 "Plugins und Marktplätze verwalten" = "Plug-inek és piacterek kezelése";
+"Port (leer: wie ssh)" = "Port (üres: ahogy az ssh)";
 "Problem melden …" = "Probléma jelentése…";
 "Profil hinzufügen" = "Profil hozzáadása";
 "Profil löschen" = "Profil törlése";
@@ -1037,6 +1051,7 @@
 "Terminal" = "Terminál";
 "Terminal leeren" = "Terminál kiürítése";
 "Terminal: {}" = "Terminál: {}";
+"Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "A terminálok és az ügynökök azon a számítógépen futnak, amelyet az ssh így ér el; a fájllista és a Git ott nem érhető el.";
 "Text mit Steuerzeichen einsetzen?" = "Beilleszti a vezérlőkaraktereket tartalmazó szöveget?";
 "Text mit Zeilenumbruch einsetzen?" = "Beilleszti a sortörést tartalmazó szöveget?";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "Beilleszti a(z) {} sortörést tartalmazó szöveget?";
@@ -1052,6 +1067,7 @@
 "Trag in den Einstellungen unter „Agent“ einen Anbieter mit Schlüssel ein und wähl ein Modell, oder richte Ollama oder LM Studio ein." = "A Beállítások „Ügynök” részében adjon meg egy szolgáltatót a kulcsával, és válasszon modellt, vagy állítsa be az Ollamát vagy az LM Studiót.";
 "Transkribiere …" = "Átírás…";
 "Transkription:" = "Átírás:";
+"Trennen" = "Kapcsolat bontása";
 "Trennlinie" = "Elválasztóvonal";
 "Trennlinie nach links" = "Elválasztó balra";
 "Trennlinie nach oben" = "Elválasztó fel";
@@ -1067,6 +1083,7 @@
 "Unbekannt" = "Ismeretlen";
 "Unbekannte Befehle unterstreichen" = "Ismeretlen parancsok aláhúzása";
 "Unbekannter Digraph: {}" = "Ismeretlen digráf: {}";
+"Unbekannter Host-Schlüssel bei {}" = "Ismeretlen gazdagépkulcs: {}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "Korlátlan hozzáférés az internethez és a Mac minden fájljához.";
 "Unerwartete Antwort: {}" = "Váratlan válasz: {}";
 "Ungesicherte Änderungen an „{}“ verwerfen?" = "Elveti a(z) „{}” mentetlen módosításait?";
@@ -1085,8 +1102,16 @@
 "VISUELL BLOCK" = "VIZUÁLIS BLOKK";
 "VISUELL ZEILE" = "VIZUÁLIS SOR";
 "Verbieten" = "Tiltás";
+"Verbinde mit {} …" = "Kapcsolódás: {}…";
+"Verbinden" = "Kapcsolódás";
 "Verbindet …" = "Csatlakozás…";
 "Verbindung" = "Kapcsolat";
+"Verbindung bearbeiten" = "Kapcsolat szerkesztése";
+"Verbindung bearbeiten …" = "Kapcsolat szerkesztése…";
+"Verbindung fehlgeschlagen" = "a kapcsolódás sikertelen";
+"Verbindung zu {}" = "Kapcsolat: {}";
+"Verbindung zu {} fehlgeschlagen" = "Nem sikerült kapcsolódni: {}";
+"Verbindung zu {} getrennt" = "Megszakadt a kapcsolat: {}";
 "Verbunden" = "Csatlakozva";
 "Verdichte …" = "Tömörítés…";
 "Verdichtet sich selbst ab {} Tokens" = "{} tokentől magától tömörít";
@@ -1174,6 +1199,7 @@
 "Wird fortgesetzt …" = "Folytatás…";
 "Wird gesucht …" = "Keresés …";
 "Wirkung" = "Hatás";
+"Wo arbeitet der neue Arbeitsbereich?" = "Hol dolgozik az új munkaterület?";
 "Wochenlimit" = "Heti korlát";
 "Womit neue Sitzungen starten, bis du im Tab etwas anderes wählst. Leere Felder überlassen die Wahl den Einstellungen des Agenten." = "Mivel indulnak az új munkamenetek, amíg a lapon mást nem választasz. Az üres mezők az ügynök saját beállításaira bízzák a választást.";
 "Worktree wird angelegt …" = "Worktree létrehozása…";
@@ -1244,6 +1270,7 @@
 "geschlossen" = "zárva";
 "geschätzt aus der letzten Antwort" = "az utolsó válaszból becsülve";
 "gestern" = "tegnap";
+"getrennt" = "nincs kapcsolat";
 "gezählt" = "megszámolva";
 "geändert" = "módosítva";
 "geöffnet" = "nyitva";
@@ -1268,6 +1295,8 @@
 "und {} weitere" = "és még {}";
 "ungelöst" = "feloldatlan";
 "unverändert" = "változatlan";
+"verbindet" = "kapcsolódás";
+"verbunden" = "kapcsolódva";
 "von Hand" = "kézi";
 "vor einem Jahr" = "egy éve";
 "vor einem Monat" = "egy hónapja";

@@ -138,6 +138,8 @@ pub(crate) struct Workspace {
     pub(crate) panels: RefCell<crate::panels::Panels>,
     /// How many files of its repository have changes, as its Git panel counted them last.
     changes: Cell<usize>,
+    /// The machine of a remote workspace, whose base is a placeholder folder on this Mac (E25).
+    remote: Option<Rc<crate::remote::Remote>>,
 }
 
 impl Keyed for Workspace {
@@ -170,7 +172,22 @@ impl Workspace {
             tabs: RefCell::new(Ordered::new()),
             panels: RefCell::new(crate::panels::Panels::default()),
             changes: Cell::new(0),
+            remote: None,
         }
+    }
+
+    /// A remote workspace without tabs on `remote`'s machine, named `name` or after the folder there (E25).
+    pub(crate) fn remote(id: u64, remote: Rc<crate::remote::Remote>, name: Option<String>) -> Workspace {
+        Workspace {
+            branch: RefCell::new(None),
+            remote: Some(remote.clone()),
+            ..Workspace::new(id, remote.base.clone(), name)
+        }
+    }
+
+    /// The machine of a remote workspace.
+    pub(crate) fn remote_machine(&self) -> Option<Rc<crate::remote::Remote>> {
+        self.remote.clone()
     }
 
     /// The window's Terminal in `base`.
@@ -186,8 +203,10 @@ impl Workspace {
         if self.scratch {
             return splat_i18n::t("Terminal").to_string();
         }
-        self.custom_name()
-            .unwrap_or_else(|| term_ui_sidebar::model::folder_name(&self.base, &term_base::home()))
+        self.custom_name().unwrap_or_else(|| match &self.remote {
+            Some(remote) => remote.target().folder_name(),
+            None => term_ui_sidebar::model::folder_name(&self.base, &term_base::home()),
+        })
     }
 
     /// The name the user gave it, if any.
@@ -267,6 +286,7 @@ impl Workspace {
             fixed: self.scratch,
             panels: self.panels.borrow().open(),
             changes: self.changes.get(),
+            remote: self.remote.as_ref().map(|remote| remote.sidebar()),
         }
     }
 }

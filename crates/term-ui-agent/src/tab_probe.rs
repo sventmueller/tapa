@@ -335,7 +335,7 @@ impl AgentTab {
     /// Starts the session with `program` standing in for `claude`, as `start` does once it looked for the CLI; with
     /// `None` as when it found none.
     pub fn launch_with(&self, program: Option<PathBuf>) {
-        let env = term_ui::workspace_host::environment(std::time::Duration::ZERO);
+        let env = term_ui::workspace_host::environment_for(&self.cwd, std::time::Duration::ZERO);
         let thread = self.snapshot();
         self.launch(program, env, thread);
     }

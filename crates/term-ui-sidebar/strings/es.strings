@@ -27,3 +27,10 @@
 "Arbeitet" = "Trabajando";
 "Wartet auf dich" = "Esperándote";
 "Einstellungen" = "Ajustes";
+"Trennen" = "Desconectar";
+"Verbindung bearbeiten …" = "Editar conexión…";
+"Verbindung fehlgeschlagen" = "la conexión falló";
+"Verbindung zu {}" = "Conexión con {}";
+"getrennt" = "desconectado";
+"verbindet" = "conectando";
+"verbunden" = "conectado";

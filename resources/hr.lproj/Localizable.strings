@@ -163,6 +163,8 @@
 "Befehlszeile" = "Naredbeni redak";
 "Bei einem Entwicklungsserver kannst du dem Zertifikat bis zum Beenden der App vertrauen." = "Za razvojni poslužitelj certifikatu možete vjerovati dok ne zatvorite aplikaciju.";
 "Beide" = "Obje";
+"Beide dürfen nicht leer sein, nicht mit einem Bindestrich beginnen und keine Leerzeichen oder @ enthalten." = "Nijedno ne smije biti prazno, počinjati crticom niti sadržavati razmake ili @.";
+"Benutzer (leer: wie ssh)" = "Korisnik (prazno: kao ssh)";
 "Benutzername" = "Korisničko ime";
 "Benutzername oder Passwort waren falsch." = "Korisničko ime ili lozinka nisu ispravni.";
 "Berechtigungen" = "Dozvole";
@@ -456,6 +458,8 @@
 "Einstellungsdateien" = "Datoteke postavki";
 "Ende" = "Kraj";
 "Entfernen" = "Ukloni";
+"Entfernter Arbeitsbereich" = "Udaljeni radni prostor";
+"Entfernter Rechner …" = "Udaljeno računalo…";
 "Entscheidung" = "Odluka";
 "Entschieden" = "Odlučeno";
 "Er beginnt bei Commit {}, und Git wechselt gleich zu ihm." = "Počinje od commita {}, a Git se odmah prebacuje na nju.";
@@ -504,6 +508,7 @@
 "Fortsetzen" = "Nastavi";
 "Frage" = "Pitanje";
 "Frage nebenbei" = "Usputno pitanje";
+"Frage von {}" = "Pitanje od {}";
 "Fragen" = "Pitaj";
 "Fragen nebenbei" = "Usputna pitanja";
 "Fragt nur bei Aktionen, die als möglicherweise unsicher erkannt werden." = "Pita samo za radnje prepoznate kao moguće nesigurne.";
@@ -584,6 +589,8 @@
 "Hook „{}“ entfernen?" = "Ukloniti hook “{}”?";
 "Hooks" = "Hookovi";
 "Hooks: {} erfolgreich" = "Uspješni hookovi: {}";
+"Host oder Benutzer ungültig" = "Neispravan host ili korisnik";
+"Host, aus ~/.ssh/config oder eine Adresse" = "Host iz ~/.ssh/config ili adresa";
 "Höre zu …" = "Slušanje…";
 "Idee" = "Ideja";
 "Ignorieren" = "Zanemari";
@@ -596,6 +603,7 @@
 "Im Finder zeigen" = "Prikaži u Finderu";
 "Im Hintergrund ausführen" = "Izvrši u pozadini";
 "Im Projekt arbeiten" = "Rad u projektu";
+"Im Schlüsselbund sichern" = "Spremi u privjesak ključeva";
 "Im Terminal öffnen" = "Otvori u terminalu";
 "Im Texteditor öffnen" = "Otvori u uređivaču teksta";
 "Im Verlauf suchen" = "Traži u povijesti";
@@ -837,6 +845,8 @@
 "OpenCode: {}" = "OpenCode: {}";
 "OpenType-Features:" = "OpenType značajke:";
 "Ordner" = "Mapa";
+"Ordner auf diesem Mac …" = "Mapa na ovom Macu…";
+"Ordner dort (leer: Home-Ordner)" = "Mapa tamo (prazno: početna mapa)";
 "Ordner nicht vertraut" = "Mapa nije pouzdana";
 "Ordner vertrauen" = "Vjeruj mapi";
 "Ordner wählen …" = "Odaberi mapu…";
@@ -845,6 +855,9 @@
 "Originalgröße" = "Stvarna veličina";
 "PDF: {}" = "PDF: {}";
 "Passwort" = "Lozinka";
+"Passwort (leer: unverändert)" = "Lozinka (prazno: bez promjene)";
+"Passwort (optional, im Schlüsselbund)" = "Lozinka (neobavezno, u privjesku ključeva)";
+"Passwort für {}" = "Lozinka za {}";
 "Pausiert" = "Pauzirano";
 "Pfad kopieren" = "Kopiraj putanju";
 "Pfad: {}" = "Putanja: {}";
@@ -865,6 +878,7 @@
 "Plugin „{}“ entfernen?" = "Ukloniti dodatak “{}”?";
 "Plugins" = "Dodaci";
 "Plugins und Marktplätze verwalten" = "Upravljanje dodacima i tržištima";
+"Port (leer: wie ssh)" = "Priključak (prazno: kao ssh)";
 "Problem melden …" = "Prijavi problem…";
 "Profil hinzufügen" = "Dodaj profil";
 "Profil löschen" = "Obriši profil";
@@ -1037,6 +1051,7 @@
 "Terminal" = "Terminal";
 "Terminal leeren" = "Očisti terminal";
 "Terminal: {}" = "Terminal: {}";
+"Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "Terminali i agenti rade na računalu do kojeg ssh tako dolazi; popis datoteka i Git ondje nisu dostupni.";
 "Text mit Steuerzeichen einsetzen?" = "Zalijepiti tekst s kontrolnim znakovima?";
 "Text mit Zeilenumbruch einsetzen?" = "Zalijepiti tekst s prijelomom retka?";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "Zalijepiti tekst s prijelomima retka ({})?";
@@ -1052,6 +1067,7 @@
 "Trag in den Einstellungen unter „Agent“ einen Anbieter mit Schlüssel ein und wähl ein Modell, oder richte Ollama oder LM Studio ein." = "U postavkama pod “Agent” unesite pružatelja s ključem i odaberite model ili podesite Ollama ili LM Studio.";
 "Transkribiere …" = "Transkribiranje…";
 "Transkription:" = "Transkripcija:";
+"Trennen" = "Prekini vezu";
 "Trennlinie" = "Linija razdjelnika";
 "Trennlinie nach links" = "Pomakni razdjelnik lijevo";
 "Trennlinie nach oben" = "Pomakni razdjelnik gore";
@@ -1067,6 +1083,7 @@
 "Unbekannt" = "Nepoznato";
 "Unbekannte Befehle unterstreichen" = "Podcrtaj nepoznate naredbe";
 "Unbekannter Digraph: {}" = "Nepoznat digraf: {}";
+"Unbekannter Host-Schlüssel bei {}" = "Nepoznati ključ hosta na {}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "Neograničen pristup internetu i svakoj datoteci na Macu.";
 "Unerwartete Antwort: {}" = "Neočekivani odgovor: {}";
 "Ungesicherte Änderungen an „{}“ verwerfen?" = "Odbaciti nespremljene promjene u “{}”?";
@@ -1085,8 +1102,16 @@
 "VISUELL BLOCK" = "VISUAL BLOCK";
 "VISUELL ZEILE" = "VISUAL LINE";
 "Verbieten" = "Odbij";
+"Verbinde mit {} …" = "Povezivanje s {}…";
+"Verbinden" = "Poveži";
 "Verbindet …" = "Povezivanje…";
 "Verbindung" = "Veza";
+"Verbindung bearbeiten" = "Uredi vezu";
+"Verbindung bearbeiten …" = "Uredi vezu…";
+"Verbindung fehlgeschlagen" = "veza nije uspjela";
+"Verbindung zu {}" = "Veza s {}";
+"Verbindung zu {} fehlgeschlagen" = "Veza s {} nije uspjela";
+"Verbindung zu {} getrennt" = "Veza s {} prekinuta";
 "Verbunden" = "Povezano";
 "Verdichte …" = "Sažimanje…";
 "Verdichtet sich selbst ab {} Tokens" = "Samostalno se sažima od {} tokena";
@@ -1174,6 +1199,7 @@
 "Wird fortgesetzt …" = "Nastavljanje…";
 "Wird gesucht …" = "Traži se …";
 "Wirkung" = "Učinak";
+"Wo arbeitet der neue Arbeitsbereich?" = "Gdje radi novi radni prostor?";
 "Wochenlimit" = "Tjedno ograničenje";
 "Womit neue Sitzungen starten, bis du im Tab etwas anderes wählst. Leere Felder überlassen die Wahl den Einstellungen des Agenten." = "S čime nove sesije počinju dok na kartici ne odabereš nešto drugo. Prazna polja prepuštaju izbor postavkama agenta.";
 "Worktree wird angelegt …" = "Stvaranje worktreeja…";
@@ -1244,6 +1270,7 @@
 "geschlossen" = "zatvoreno";
 "geschätzt aus der letzten Antwort" = "procjena iz zadnjeg odgovora";
 "gestern" = "jučer";
+"getrennt" = "odspojeno";
 "gezählt" = "prebrojeno";
 "geändert" = "promijenjeno";
 "geöffnet" = "otvoreno";
@@ -1268,6 +1295,8 @@
 "und {} weitere" = "i još {}";
 "ungelöst" = "neriješeno";
 "unverändert" = "nepromijenjeno";
+"verbindet" = "povezivanje";
+"verbunden" = "povezano";
 "von Hand" = "ručno";
 "vor einem Jahr" = "prije godinu dana";
 "vor einem Monat" = "prije mjesec dana";

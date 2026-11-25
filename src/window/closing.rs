@@ -86,6 +86,9 @@ impl Window {
             self.forget_frame(tab.id, true);
         }
         crate::panels::workspace_closed(&workspace.handle());
+        if let Some(remote) = workspace.remote_machine() {
+            remote.forget();
+        }
         self.refresh();
         crate::restore::save();
     }

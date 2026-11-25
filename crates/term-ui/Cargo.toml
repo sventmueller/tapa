@@ -15,6 +15,7 @@ term-base.workspace = true
 term-config.workspace = true
 term-render.workspace = true
 term-session.workspace = true
+term-remote.workspace = true
 term-suggest.workspace = true
 term-vim.workspace = true
 splat-decoder.workspace = true

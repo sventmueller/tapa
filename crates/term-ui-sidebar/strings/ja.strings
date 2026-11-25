@@ -27,3 +27,10 @@
 "Arbeitet" = "作業中";
 "Wartet auf dich" = "応答待ち";
 "Einstellungen" = "設定";
+"Trennen" = "接続を解除";
+"Verbindung bearbeiten …" = "接続を編集…";
+"Verbindung fehlgeschlagen" = "接続に失敗";
+"Verbindung zu {}" = "{} への接続";
+"getrennt" = "未接続";
+"verbindet" = "接続中";
+"verbunden" = "接続済み";

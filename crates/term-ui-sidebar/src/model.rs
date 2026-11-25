@@ -241,12 +241,62 @@ pub struct Workspace {
     pub panels: Vec<Panel>,
     /// How many files of its repository have changes, as its Git panel counted them last.
     pub changes: usize,
+    /// The machine and folder of a remote workspace (E25), which shows one switch for its connection in place of the
+    /// panels'.
+    pub remote: Option<Remote>,
+}
+
+/// Where a remote workspace works and how its connection is (E25).
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct Remote {
+    /// `user@host`, with `:port` where one is set.
+    pub account: String,
+    /// The folder there; empty for the home folder.
+    pub folder: String,
+    /// How its connection is.
+    pub connection: Connection,
+}
+
+/// How a remote workspace's connection is, as its switch's colour shows.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum Connection {
+    /// Opening, perhaps waiting for an answer.
+    Connecting,
+    /// Open.
+    Connected,
+    /// Not open: closed by the user, or ended.
+    Disconnected,
+    /// It did not open.
+    Failed,
+}
+
+impl Connection {
+    /// What VoiceOver says of it.
+    pub fn spoken(self) -> &'static str {
+        match self {
+            Connection::Connecting => t("verbindet"),
+            Connection::Connected => t("verbunden"),
+            Connection::Disconnected => t("getrennt"),
+            Connection::Failed => t("Verbindung fehlgeschlagen"),
+        }
+    }
+}
+
+impl Remote {
+    /// `user@host:folder`, `~` standing for the home folder.
+    pub fn place(&self) -> String {
+        let folder = if self.folder.is_empty() { "~" } else { &self.folder };
+        format!("{}:{folder}", self.account)
+    }
 }
 
 impl Workspace {
     /// The second line: the base folder from `~` and its branch, or a notification of a tab not seen yet.
     pub fn detail(&self, home: &Path) -> String {
-        let folder = tilde(&self.base.to_string_lossy(), home);
+        let folder = match &self.remote {
+            Some(remote) => remote.place(),
+            None => tilde(&self.base.to_string_lossy(), home),
+        };
         // The home folder's title already reads `~`.
         let mut parts: Vec<String> = (folder != "~").then_some(folder).into_iter().collect();
         if let Some(notice) = self.tabs.iter().find_map(|tab| tab.notice.clone()) {
@@ -477,6 +527,7 @@ mod tests {
             fixed: false,
             panels: Vec::new(),
             changes: 0,
+            remote: None,
         }
     }
 

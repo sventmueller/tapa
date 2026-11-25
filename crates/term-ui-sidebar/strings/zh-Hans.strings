@@ -27,3 +27,10 @@
 "Arbeitet" = "工作中";
 "Wartet auf dich" = "正在等你";
 "Einstellungen" = "设置";
+"Trennen" = "断开连接";
+"Verbindung bearbeiten …" = "编辑连接…";
+"Verbindung fehlgeschlagen" = "连接失败";
+"Verbindung zu {}" = "与 {} 的连接";
+"getrennt" = "已断开";
+"verbindet" = "正在连接";
+"verbunden" = "已连接";

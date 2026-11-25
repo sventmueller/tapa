@@ -11,6 +11,21 @@ use crate::backend::Backend;
 use crate::inbox::Inbox;
 use crate::launch::{AgentPath, Launch, LaunchError, UserChoices};
 
+/// The program of `path` where `folder` is a remote workspace's and the program is not one of its stand-ins: it would
+/// run on this Mac instead of the other machine (E25).
+fn remote_program_elsewhere(path: &AgentPath, folder: &std::path::Path) -> Option<std::path::PathBuf> {
+    let bin = term_remote::registry::bin_for(folder)?;
+    let program = match path {
+        AgentPath::Claude { program, .. } | AgentPath::Codex { program, .. } | AgentPath::OpenCode { program, .. } => {
+            program.clone()
+        }
+        AgentPath::Acp(launch) => launch.program.clone(),
+        #[cfg(any(test, feature = "selftest"))]
+        _ => return None,
+    };
+    (!program.starts_with(&bin)).then_some(program)
+}
+
 /// Starts the session `launch` describes, reporting to `inbox`.
 pub(crate) fn start(launch: Launch, supervisor: &Supervisor, inbox: &Arc<Inbox>) -> Result<Backend, LaunchError> {
     let Launch {
@@ -25,6 +40,9 @@ pub(crate) fn start(launch: Launch, supervisor: &Supervisor, inbox: &Arc<Inbox>)
         trusted,
         choices,
     } = launch;
+    if let Some(program) = remote_program_elsewhere(&path, &folder) {
+        return Err(LaunchError::NotFound(program));
+    }
     let thread = thread.unwrap_or_else(|| Thread::new(ThreadId::new(), agent_id(&path), &folder));
     let common = Common {
         folder,

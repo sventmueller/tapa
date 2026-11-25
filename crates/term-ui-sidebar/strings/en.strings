@@ -27,3 +27,10 @@
 "Arbeitet" = "Working";
 "Wartet auf dich" = "Waiting for you";
 "Einstellungen" = "Settings";
+"Trennen" = "Disconnect";
+"Verbindung bearbeiten …" = "Edit Connection…";
+"Verbindung fehlgeschlagen" = "connection failed";
+"Verbindung zu {}" = "Connection to {}";
+"getrennt" = "disconnected";
+"verbindet" = "connecting";
+"verbunden" = "connected";

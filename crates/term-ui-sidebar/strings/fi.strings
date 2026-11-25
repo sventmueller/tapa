@@ -27,3 +27,10 @@
 "Arbeitet" = "Työskentelee";
 "Wartet auf dich" = "Odottaa sinua";
 "Einstellungen" = "Asetukset";
+"Trennen" = "Katkaise yhteys";
+"Verbindung bearbeiten …" = "Muokkaa yhteyttä…";
+"Verbindung fehlgeschlagen" = "yhteys epäonnistui";
+"Verbindung zu {}" = "Yhteys kohteeseen {}";
+"getrennt" = "yhteys katkaistu";
+"verbindet" = "yhdistetään";
+"verbunden" = "yhdistetty";

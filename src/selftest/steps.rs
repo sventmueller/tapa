@@ -19,7 +19,7 @@ use crate::state::app;
 
 /// Runs `step` if it is one of these; whether it was.
 pub(super) fn run(step: &str) -> bool {
-    if keyboard(step) || suggestions(step) || super::workspace::run(step) {
+    if keyboard(step) || suggestions(step) || super::remote::run(step) || super::workspace::run(step) {
         return true;
     }
     if let Some(query) = step.strip_prefix("palette:") {

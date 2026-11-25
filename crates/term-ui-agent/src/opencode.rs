@@ -29,6 +29,10 @@ pub(crate) const PRESET: &str = "opencode";
 /// How the OpenCode choice starts: its server when the program the preset finds on the PATH outside `cwd` speaks the
 /// v2 API (E16); none to take `opencode acp`. This runs `opencode --version`, so it runs off the main thread.
 pub(crate) fn launch_for(env: &[(String, String)], cwd: &Path) -> Option<term_opencode::Launch> {
+    // On another machine OpenCode's server would need a port forwarded and its password there; ACP needs neither (E25).
+    if term_remote::registry::bin_for(cwd).is_some() {
+        return None;
+    }
     #[cfg(feature = "selftest")]
     {
         let _ = env;

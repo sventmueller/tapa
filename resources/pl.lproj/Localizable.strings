@@ -163,6 +163,8 @@
 "Befehlszeile" = "Wiersz poleceń";
 "Bei einem Entwicklungsserver kannst du dem Zertifikat bis zum Beenden der App vertrauen." = "W przypadku serwera deweloperskiego możesz ufać certyfikatowi do zakończenia aplikacji.";
 "Beide" = "Oba";
+"Beide dürfen nicht leer sein, nicht mit einem Bindestrich beginnen und keine Leerzeichen oder @ enthalten." = "Żadne z nich nie może być puste, zaczynać się od łącznika ani zawierać spacji lub @.";
+"Benutzer (leer: wie ssh)" = "Użytkownik (puste: jak ssh)";
 "Benutzername" = "Nazwa użytkownika";
 "Benutzername oder Passwort waren falsch." = "Nazwa użytkownika lub hasło były nieprawidłowe.";
 "Berechtigungen" = "Uprawnienia";
@@ -456,6 +458,8 @@
 "Einstellungsdateien" = "Pliki ustawień";
 "Ende" = "Koniec";
 "Entfernen" = "Usuń";
+"Entfernter Arbeitsbereich" = "Zdalny obszar roboczy";
+"Entfernter Rechner …" = "Zdalny komputer…";
 "Entscheidung" = "Decyzja";
 "Entschieden" = "Zdecydowano";
 "Er beginnt bei Commit {}, und Git wechselt gleich zu ihm." = "Zaczyna się od commitu {}, a Git od razu się na nią przełącza.";
@@ -504,6 +508,7 @@
 "Fortsetzen" = "Kontynuuj";
 "Frage" = "Pytanie";
 "Frage nebenbei" = "Pytanie na boku";
+"Frage von {}" = "Pytanie od {}";
 "Fragen" = "Zapytaj";
 "Fragen nebenbei" = "Pytania na boku";
 "Fragt nur bei Aktionen, die als möglicherweise unsicher erkannt werden." = "Pyta tylko o działania rozpoznane jako potencjalnie niebezpieczne.";
@@ -584,6 +589,8 @@
 "Hook „{}“ entfernen?" = "Usunąć hook „{}”?";
 "Hooks" = "Hooki";
 "Hooks: {} erfolgreich" = "Hooki: {} zakończone powodzeniem";
+"Host oder Benutzer ungültig" = "Nieprawidłowy host lub użytkownik";
+"Host, aus ~/.ssh/config oder eine Adresse" = "Host z ~/.ssh/config lub adres";
 "Höre zu …" = "Słucham…";
 "Idee" = "Pomysł";
 "Ignorieren" = "Ignoruj";
@@ -596,6 +603,7 @@
 "Im Finder zeigen" = "Pokaż w Finderze";
 "Im Hintergrund ausführen" = "Uruchom w tle";
 "Im Projekt arbeiten" = "Praca w projekcie";
+"Im Schlüsselbund sichern" = "Zachowaj w pęku kluczy";
 "Im Terminal öffnen" = "Otwórz w terminalu";
 "Im Texteditor öffnen" = "Otwórz w edytorze tekstu";
 "Im Verlauf suchen" = "Szukaj w historii";
@@ -837,6 +845,8 @@
 "OpenCode: {}" = "OpenCode: {}";
 "OpenType-Features:" = "Funkcje OpenType:";
 "Ordner" = "Folder";
+"Ordner auf diesem Mac …" = "Folder na tym Macu…";
+"Ordner dort (leer: Home-Ordner)" = "Folder tam (puste: folder domowy)";
 "Ordner nicht vertraut" = "Folder niezaufany";
 "Ordner vertrauen" = "Zaufaj folderowi";
 "Ordner wählen …" = "Wybierz folder…";
@@ -845,6 +855,9 @@
 "Originalgröße" = "Rzeczywisty rozmiar";
 "PDF: {}" = "PDF: {}";
 "Passwort" = "Hasło";
+"Passwort (leer: unverändert)" = "Hasło (puste: bez zmian)";
+"Passwort (optional, im Schlüsselbund)" = "Hasło (opcjonalne, w pęku kluczy)";
+"Passwort für {}" = "Hasło do {}";
 "Pausiert" = "Wstrzymane";
 "Pfad kopieren" = "Kopiuj ścieżkę";
 "Pfad: {}" = "Ścieżka: {}";
@@ -865,6 +878,7 @@
 "Plugin „{}“ entfernen?" = "Usunąć wtyczkę „{}”?";
 "Plugins" = "Wtyczki";
 "Plugins und Marktplätze verwalten" = "Zarządzaj wtyczkami i marketplace’ami";
+"Port (leer: wie ssh)" = "Port (puste: jak ssh)";
 "Problem melden …" = "Zgłoś problem…";
 "Profil hinzufügen" = "Dodaj profil";
 "Profil löschen" = "Usuń profil";
@@ -1037,6 +1051,7 @@
 "Terminal" = "Terminal";
 "Terminal leeren" = "Wyczyść terminal";
 "Terminal: {}" = "Terminal: {}";
+"Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "Terminale i agenci działają na komputerze, do którego ssh tak dociera; lista plików i Git nie są tam dostępne.";
 "Text mit Steuerzeichen einsetzen?" = "Wkleić tekst ze znakami sterującymi?";
 "Text mit Zeilenumbruch einsetzen?" = "Wkleić tekst z podziałem wiersza?";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "Wkleić tekst z podziałami wiersza ({})?";
@@ -1052,6 +1067,7 @@
 "Trag in den Einstellungen unter „Agent“ einen Anbieter mit Schlüssel ein und wähl ein Modell, oder richte Ollama oder LM Studio ein." = "W Ustawieniach w sekcji „Agent” wpisz dostawcę z jego kluczem i wybierz model albo skonfiguruj Ollamę lub LM Studio.";
 "Transkribiere …" = "Transkrybuję…";
 "Transkription:" = "Transkrypcja:";
+"Trennen" = "Rozłącz";
 "Trennlinie" = "Separator";
 "Trennlinie nach links" = "Przesuń separator w lewo";
 "Trennlinie nach oben" = "Przesuń separator w górę";
@@ -1067,6 +1083,7 @@
 "Unbekannt" = "Nieznany";
 "Unbekannte Befehle unterstreichen" = "Podkreślaj nieznane polecenia";
 "Unbekannter Digraph: {}" = "Nieznany dwugraf: {}";
+"Unbekannter Host-Schlüssel bei {}" = "Nieznany klucz hosta: {}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "Nieograniczony dostęp do internetu i każdego pliku na Macu.";
 "Unerwartete Antwort: {}" = "Nieoczekiwana odpowiedź: {}";
 "Ungesicherte Änderungen an „{}“ verwerfen?" = "Odrzucić niezachowane zmiany w „{}”?";
@@ -1085,8 +1102,16 @@
 "VISUELL BLOCK" = "WIZUALNY BLOKOWY";
 "VISUELL ZEILE" = "WIZUALNY LINIOWY";
 "Verbieten" = "Zabroń";
+"Verbinde mit {} …" = "Łączenie z {}…";
+"Verbinden" = "Połącz";
 "Verbindet …" = "Łączenie…";
 "Verbindung" = "Połączenie";
+"Verbindung bearbeiten" = "Edytuj połączenie";
+"Verbindung bearbeiten …" = "Edytuj połączenie…";
+"Verbindung fehlgeschlagen" = "połączenie nie powiodło się";
+"Verbindung zu {}" = "Połączenie z {}";
+"Verbindung zu {} fehlgeschlagen" = "Nie udało się połączyć z {}";
+"Verbindung zu {} getrennt" = "Utracono połączenie z {}";
 "Verbunden" = "Połączono";
 "Verdichte …" = "Kompaktowanie…";
 "Verdichtet sich selbst ab {} Tokens" = "Kompaktuje się samoczynnie od {} tokenów";
@@ -1174,6 +1199,7 @@
 "Wird fortgesetzt …" = "Kontynuowanie…";
 "Wird gesucht …" = "Wyszukiwanie …";
 "Wirkung" = "Działanie";
+"Wo arbeitet der neue Arbeitsbereich?" = "Gdzie działa nowy obszar roboczy?";
 "Wochenlimit" = "Limit tygodniowy";
 "Womit neue Sitzungen starten, bis du im Tab etwas anderes wählst. Leere Felder überlassen die Wahl den Einstellungen des Agenten." = "Od czego zaczynają nowe sesje, dopóki na karcie nie wybierzesz czegoś innego. Puste pola zostawiają wybór ustawieniom agenta.";
 "Worktree wird angelegt …" = "Tworzenie worktree…";
@@ -1244,6 +1270,7 @@
 "geschlossen" = "zamknięte";
 "geschätzt aus der letzten Antwort" = "oszacowane na podstawie ostatniej odpowiedzi";
 "gestern" = "wczoraj";
+"getrennt" = "rozłączono";
 "gezählt" = "policzone";
 "geändert" = "zmieniony";
 "geöffnet" = "otwarte";
@@ -1268,6 +1295,8 @@
 "und {} weitere" = "i jeszcze {}";
 "ungelöst" = "nierozwiązany";
 "unverändert" = "bez zmian";
+"verbindet" = "łączenie";
+"verbunden" = "połączono";
 "von Hand" = "ręcznie";
 "vor einem Jahr" = "rok temu";
 "vor einem Monat" = "miesiąc temu";

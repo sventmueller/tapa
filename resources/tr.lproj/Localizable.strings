@@ -163,6 +163,8 @@
 "Befehlszeile" = "Komut satırı";
 "Bei einem Entwicklungsserver kannst du dem Zertifikat bis zum Beenden der App vertrauen." = "Bir geliştirme sunucusu için sertifikaya uygulamadan çıkana kadar güvenebilirsiniz.";
 "Beide" = "Her ikisi";
+"Beide dürfen nicht leer sein, nicht mit einem Bindestrich beginnen und keine Leerzeichen oder @ enthalten." = "İkisi de boş olamaz, kısa çizgiyle başlayamaz, boşluk veya @ içeremez.";
+"Benutzer (leer: wie ssh)" = "Kullanıcı (boş: ssh gibi)";
 "Benutzername" = "Kullanıcı Adı";
 "Benutzername oder Passwort waren falsch." = "Kullanıcı adı veya parola yanlış.";
 "Berechtigungen" = "İzinler";
@@ -456,6 +458,8 @@
 "Einstellungsdateien" = "Ayar Dosyaları";
 "Ende" = "Bitiş";
 "Entfernen" = "Sil";
+"Entfernter Arbeitsbereich" = "Uzak Çalışma Alanı";
+"Entfernter Rechner …" = "Uzak Bilgisayar…";
 "Entscheidung" = "Karar";
 "Entschieden" = "Karar verildi";
 "Er beginnt bei Commit {}, und Git wechselt gleich zu ihm." = "{} commit’inden başlar ve Git hemen ona geçer.";
@@ -504,6 +508,7 @@
 "Fortsetzen" = "Devam Et";
 "Frage" = "Soru";
 "Frage nebenbei" = "Yan Soru";
+"Frage von {}" = "{} soruyor";
 "Fragen" = "Sor";
 "Fragen nebenbei" = "Yan Sorular";
 "Fragt nur bei Aktionen, die als möglicherweise unsicher erkannt werden." = "Yalnızca güvensiz olabileceği tespit edilen işlemlerde sorar.";
@@ -584,6 +589,8 @@
 "Hook „{}“ entfernen?" = "“{}” adlı hook kaldırılsın mı?";
 "Hooks" = "Hook’lar";
 "Hooks: {} erfolgreich" = "Hook’lar: {} başarılı";
+"Host oder Benutzer ungültig" = "Geçersiz sunucu veya kullanıcı";
+"Host, aus ~/.ssh/config oder eine Adresse" = "~/.ssh/config içinden sunucu veya bir adres";
 "Höre zu …" = "Dinleniyor…";
 "Idee" = "Fikir";
 "Ignorieren" = "Yok Say";
@@ -596,6 +603,7 @@
 "Im Finder zeigen" = "Finder’da Göster";
 "Im Hintergrund ausführen" = "Arka Planda Çalıştır";
 "Im Projekt arbeiten" = "Projede Çalış";
+"Im Schlüsselbund sichern" = "Anahtar Zinciri’ne kaydet";
 "Im Terminal öffnen" = "Terminalde Aç";
 "Im Texteditor öffnen" = "Metin Düzenleyicide Aç";
 "Im Verlauf suchen" = "Geri kaydırma geçmişinde ara";
@@ -837,6 +845,8 @@
 "OpenCode: {}" = "OpenCode: {}";
 "OpenType-Features:" = "OpenType özellikleri:";
 "Ordner" = "Klasör";
+"Ordner auf diesem Mac …" = "Bu Mac’teki Klasör…";
+"Ordner dort (leer: Home-Ordner)" = "Oradaki klasör (boş: ana klasör)";
 "Ordner nicht vertraut" = "Klasöre Güvenilmiyor";
 "Ordner vertrauen" = "Klasöre Güven";
 "Ordner wählen …" = "Klasör Seç…";
@@ -845,6 +855,9 @@
 "Originalgröße" = "Gerçek Boyut";
 "PDF: {}" = "PDF: {}";
 "Passwort" = "Parola";
+"Passwort (leer: unverändert)" = "Parola (boş: değişmez)";
+"Passwort (optional, im Schlüsselbund)" = "Parola (isteğe bağlı, Anahtar Zinciri’nde)";
+"Passwort für {}" = "{} için parola";
 "Pausiert" = "Duraklatıldı";
 "Pfad kopieren" = "Yolu Kopyala";
 "Pfad: {}" = "Yol: {}";
@@ -865,6 +878,7 @@
 "Plugin „{}“ entfernen?" = "“{}” adlı eklenti kaldırılsın mı?";
 "Plugins" = "Eklentiler";
 "Plugins und Marktplätze verwalten" = "Eklentileri ve pazar yerlerini yönetme";
+"Port (leer: wie ssh)" = "Port (boş: ssh gibi)";
 "Problem melden …" = "Sorun Bildir…";
 "Profil hinzufügen" = "Profil Ekle";
 "Profil löschen" = "Profili Sil";
@@ -1037,6 +1051,7 @@
 "Terminal" = "Terminal";
 "Terminal leeren" = "Terminali Temizle";
 "Terminal: {}" = "Terminal: {}";
+"Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "Terminaller ve aracılar ssh’nin bu şekilde ulaştığı bilgisayarda çalışır; orada dosya listesi ve Git yoktur.";
 "Text mit Steuerzeichen einsetzen?" = "Denetim karakterleri içeren metin yapıştırılsın mı?";
 "Text mit Zeilenumbruch einsetzen?" = "Satır sonu içeren metin yapıştırılsın mı?";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "{} satır sonu içeren metin yapıştırılsın mı?";
@@ -1052,6 +1067,7 @@
 "Trag in den Einstellungen unter „Agent“ einen Anbieter mit Schlüssel ein und wähl ein Modell, oder richte Ollama oder LM Studio ein." = "Ayarlar’da “Ajan” altında anahtarıyla birlikte bir sağlayıcı girin ve bir model seçin ya da Ollama veya LM Studio’yu ayarlayın.";
 "Transkribiere …" = "Metne dönüştürülüyor…";
 "Transkription:" = "Metne dönüştürme:";
+"Trennen" = "Bağlantıyı Kes";
 "Trennlinie" = "Bölücü Çizgi";
 "Trennlinie nach links" = "Ayırıcıyı Sola Taşı";
 "Trennlinie nach oben" = "Ayırıcıyı Yukarı Taşı";
@@ -1067,6 +1083,7 @@
 "Unbekannt" = "Bilinmiyor";
 "Unbekannte Befehle unterstreichen" = "Bilinmeyen komutların altını çiz";
 "Unbekannter Digraph: {}" = "Bilinmeyen ikili harf: {}";
+"Unbekannter Host-Schlüssel bei {}" = "{} için bilinmeyen sunucu anahtarı";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "İnternete ve Mac’teki her dosyaya sınırsız erişim.";
 "Unerwartete Antwort: {}" = "Beklenmeyen yanıt: {}";
 "Ungesicherte Änderungen an „{}“ verwerfen?" = "“{}” dosyasındaki kaydedilmemiş değişiklikler atılsın mı?";
@@ -1085,8 +1102,16 @@
 "VISUELL BLOCK" = "GÖRSEL BLOK";
 "VISUELL ZEILE" = "GÖRSEL SATIR";
 "Verbieten" = "Reddet";
+"Verbinde mit {} …" = "{} sunucusuna bağlanılıyor…";
+"Verbinden" = "Bağlan";
 "Verbindet …" = "Bağlanıyor…";
 "Verbindung" = "Bağlantı";
+"Verbindung bearbeiten" = "Bağlantıyı Düzenle";
+"Verbindung bearbeiten …" = "Bağlantıyı Düzenle…";
+"Verbindung fehlgeschlagen" = "bağlantı başarısız";
+"Verbindung zu {}" = "{} bağlantısı";
+"Verbindung zu {} fehlgeschlagen" = "{} bağlantısı başarısız";
+"Verbindung zu {} getrennt" = "{} bağlantısı kesildi";
 "Verbunden" = "Bağlı";
 "Verdichte …" = "Sıkıştırılıyor…";
 "Verdichtet sich selbst ab {} Tokens" = "{} token’dan itibaren kendiliğinden sıkıştırılır";
@@ -1174,6 +1199,7 @@
 "Wird fortgesetzt …" = "Devam ediliyor…";
 "Wird gesucht …" = "Aranıyor …";
 "Wirkung" = "Etki";
+"Wo arbeitet der neue Arbeitsbereich?" = "Yeni çalışma alanı nerede çalışacak?";
 "Wochenlimit" = "Haftalık sınır";
 "Womit neue Sitzungen starten, bis du im Tab etwas anderes wählst. Leere Felder überlassen die Wahl den Einstellungen des Agenten." = "Sekmede başka bir şey seçene kadar yeni oturumların neyle başladığı. Boş alanlar seçimi ajanın kendi ayarlarına bırakır.";
 "Worktree wird angelegt …" = "Worktree oluşturuluyor…";
@@ -1244,6 +1270,7 @@
 "geschlossen" = "kapalı";
 "geschätzt aus der letzten Antwort" = "son yanıttan tahmin edildi";
 "gestern" = "dün";
+"getrennt" = "bağlantı kesildi";
 "gezählt" = "sayıldı";
 "geändert" = "değiştirildi";
 "geöffnet" = "açık";
@@ -1268,6 +1295,8 @@
 "und {} weitere" = "ve {} tane daha";
 "ungelöst" = "çözülmedi";
 "unverändert" = "değişmedi";
+"verbindet" = "bağlanıyor";
+"verbunden" = "bağlandı";
 "von Hand" = "elle";
 "vor einem Jahr" = "bir yıl önce";
 "vor einem Monat" = "bir ay önce";

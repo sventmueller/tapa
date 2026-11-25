@@ -163,6 +163,8 @@
 "Befehlszeile" = "Kommandolinje";
 "Bei einem Entwicklungsserver kannst du dem Zertifikat bis zum Beenden der App vertrauen." = "Ved en udviklingsserver kan du stole på certifikatet, indtil appen afsluttes.";
 "Beide" = "Begge";
+"Beide dürfen nicht leer sein, nicht mit einem Bindestrich beginnen und keine Leerzeichen oder @ enthalten." = "Ingen af dem må være tom, begynde med en bindestreg eller indeholde mellemrum eller @.";
+"Benutzer (leer: wie ssh)" = "Bruger (tom: som ssh)";
 "Benutzername" = "Brugernavn";
 "Benutzername oder Passwort waren falsch." = "Brugernavnet eller adgangskoden var forkert.";
 "Berechtigungen" = "Tilladelser";
@@ -456,6 +458,8 @@
 "Einstellungsdateien" = "Indstillingsarkiver";
 "Ende" = "Slut";
 "Entfernen" = "Fjern";
+"Entfernter Arbeitsbereich" = "Fjernarbejdsområde";
+"Entfernter Rechner …" = "Fjerncomputer…";
 "Entscheidung" = "Beslutning";
 "Entschieden" = "Besluttet";
 "Er beginnt bei Commit {}, und Git wechselt gleich zu ihm." = "Den starter ved commit {}, og Git skifter straks til den.";
@@ -504,6 +508,7 @@
 "Fortsetzen" = "Fortsæt";
 "Frage" = "Spørgsmål";
 "Frage nebenbei" = "Sidespørgsmål";
+"Frage von {}" = "Spørgsmål fra {}";
 "Fragen" = "Spørg";
 "Fragen nebenbei" = "Sidespørgsmål";
 "Fragt nur bei Aktionen, die als möglicherweise unsicher erkannt werden." = "Spørger kun ved handlinger, der vurderes som muligvis usikre.";
@@ -584,6 +589,8 @@
 "Hook „{}“ entfernen?" = "Fjern hooket “{}”?";
 "Hooks" = "Hooks";
 "Hooks: {} erfolgreich" = "Hooks: {} lykkedes";
+"Host oder Benutzer ungültig" = "Ugyldig vært eller bruger";
+"Host, aus ~/.ssh/config oder eine Adresse" = "Vært fra ~/.ssh/config eller en adresse";
 "Höre zu …" = "Lytter…";
 "Idee" = "Idé";
 "Ignorieren" = "Ignorer";
@@ -596,6 +603,7 @@
 "Im Finder zeigen" = "Vis i Finder";
 "Im Hintergrund ausführen" = "Kør i baggrunden";
 "Im Projekt arbeiten" = "Arbejd i projektet";
+"Im Schlüsselbund sichern" = "Gem i nøglering";
 "Im Terminal öffnen" = "Åbn i terminal";
 "Im Texteditor öffnen" = "Åbn i teksteditor";
 "Im Verlauf suchen" = "Søg i historikken";
@@ -837,6 +845,8 @@
 "OpenCode: {}" = "OpenCode: {}";
 "OpenType-Features:" = "OpenType-funktioner:";
 "Ordner" = "Mappe";
+"Ordner auf diesem Mac …" = "Mappe på denne Mac…";
+"Ordner dort (leer: Home-Ordner)" = "Mappe dér (tom: hjemmemappe)";
 "Ordner nicht vertraut" = "Mappe ikke betroet";
 "Ordner vertrauen" = "Stol på mappe";
 "Ordner wählen …" = "Vælg mappe…";
@@ -845,6 +855,9 @@
 "Originalgröße" = "Faktisk størrelse";
 "PDF: {}" = "PDF: {}";
 "Passwort" = "Adgangskode";
+"Passwort (leer: unverändert)" = "Adgangskode (tom: uændret)";
+"Passwort (optional, im Schlüsselbund)" = "Adgangskode (valgfri, i nøglering)";
+"Passwort für {}" = "Adgangskode til {}";
 "Pausiert" = "Sat på pause";
 "Pfad kopieren" = "Kopiér sti";
 "Pfad: {}" = "Sti: {}";
@@ -865,6 +878,7 @@
 "Plugin „{}“ entfernen?" = "Fjern pluginnet “{}”?";
 "Plugins" = "Plugins";
 "Plugins und Marktplätze verwalten" = "Administrer plugins og markedspladser";
+"Port (leer: wie ssh)" = "Port (tom: som ssh)";
 "Problem melden …" = "Rapportér et problem…";
 "Profil hinzufügen" = "Tilføj profil";
 "Profil löschen" = "Slet profil";
@@ -1037,6 +1051,7 @@
 "Terminal" = "Terminal";
 "Terminal leeren" = "Ryd terminal";
 "Terminal: {}" = "Terminal: {}";
+"Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "Terminaler og agenter kører på den computer, ssh når på denne måde; fillisten og Git findes ikke dér.";
 "Text mit Steuerzeichen einsetzen?" = "Indsæt tekst med kontroltegn?";
 "Text mit Zeilenumbruch einsetzen?" = "Indsæt tekst med et linjeskift?";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "Indsæt tekst med {} linjeskift?";
@@ -1052,6 +1067,7 @@
 "Trag in den Einstellungen unter „Agent“ einen Anbieter mit Schlüssel ein und wähl ein Modell, oder richte Ollama oder LM Studio ein." = "Angiv en udbyder med nøgle i Indstillinger under “Agent”, og vælg en model, eller konfigurer Ollama eller LM Studio.";
 "Transkribiere …" = "Transskriberer…";
 "Transkription:" = "Transskription:";
+"Trennen" = "Afbryd forbindelse";
 "Trennlinie" = "Skillelinje";
 "Trennlinie nach links" = "Flyt skillelinje til venstre";
 "Trennlinie nach oben" = "Flyt skillelinje op";
@@ -1067,6 +1083,7 @@
 "Unbekannt" = "Ukendt";
 "Unbekannte Befehle unterstreichen" = "Understreg ukendte kommandoer";
 "Unbekannter Digraph: {}" = "Ukendt digraf: {}";
+"Unbekannter Host-Schlüssel bei {}" = "Ukendt værtsnøgle hos {}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "Ubegrænset adgang til internettet og alle filer på Mac’en.";
 "Unerwartete Antwort: {}" = "Uventet svar: {}";
 "Ungesicherte Änderungen an „{}“ verwerfen?" = "Kassér ikke-gemte ændringer i “{}”?";
@@ -1085,8 +1102,16 @@
 "VISUELL BLOCK" = "VISUEL BLOK";
 "VISUELL ZEILE" = "VISUEL LINJE";
 "Verbieten" = "Afvis";
+"Verbinde mit {} …" = "Forbinder til {}…";
+"Verbinden" = "Opret forbindelse";
 "Verbindet …" = "Forbinder…";
 "Verbindung" = "Forbindelse";
+"Verbindung bearbeiten" = "Rediger forbindelse";
+"Verbindung bearbeiten …" = "Rediger forbindelse…";
+"Verbindung fehlgeschlagen" = "forbindelsen mislykkedes";
+"Verbindung zu {}" = "Forbindelse til {}";
+"Verbindung zu {} fehlgeschlagen" = "Forbindelsen til {} mislykkedes";
+"Verbindung zu {} getrennt" = "Forbindelsen til {} blev afbrudt";
 "Verbunden" = "Forbundet";
 "Verdichte …" = "Komprimerer…";
 "Verdichtet sich selbst ab {} Tokens" = "Komprimerer automatisk fra {} tokens";
@@ -1174,6 +1199,7 @@
 "Wird fortgesetzt …" = "Fortsætter…";
 "Wird gesucht …" = "Søger …";
 "Wirkung" = "Virkning";
+"Wo arbeitet der neue Arbeitsbereich?" = "Hvor arbejder det nye arbejdsområde?";
 "Wochenlimit" = "Ugegrænse";
 "Womit neue Sitzungen starten, bis du im Tab etwas anderes wählst. Leere Felder überlassen die Wahl den Einstellungen des Agenten." = "Hvad nye sessioner starter med, indtil du vælger noget andet i fanen. Tomme felter overlader valget til agentens egne indstillinger.";
 "Worktree wird angelegt …" = "Opretter worktree…";
@@ -1244,6 +1270,7 @@
 "geschlossen" = "lukket";
 "geschätzt aus der letzten Antwort" = "anslået ud fra det seneste svar";
 "gestern" = "i går";
+"getrennt" = "afbrudt";
 "gezählt" = "optalt";
 "geändert" = "ændret";
 "geöffnet" = "åben";
@@ -1268,6 +1295,8 @@
 "und {} weitere" = "og {} mere";
 "ungelöst" = "uløst";
 "unverändert" = "uændret";
+"verbindet" = "forbinder";
+"verbunden" = "forbundet";
 "von Hand" = "manuelt";
 "vor einem Jahr" = "for et år siden";
 "vor einem Monat" = "for en måned siden";

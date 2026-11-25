@@ -163,6 +163,8 @@
 "Befehlszeile" = "Opdrachtregel";
 "Bei einem Entwicklungsserver kannst du dem Zertifikat bis zum Beenden der App vertrauen." = "Bij een ontwikkelserver kun je het certificaat vertrouwen tot de app stopt.";
 "Beide" = "Beide";
+"Beide dürfen nicht leer sein, nicht mit einem Bindestrich beginnen und keine Leerzeichen oder @ enthalten." = "Geen van beide mag leeg zijn, met een streepje beginnen of spaties of @ bevatten.";
+"Benutzer (leer: wie ssh)" = "Gebruiker (leeg: zoals ssh)";
 "Benutzername" = "Gebruikersnaam";
 "Benutzername oder Passwort waren falsch." = "De gebruikersnaam of het wachtwoord was onjuist.";
 "Berechtigungen" = "Toestemmingen";
@@ -456,6 +458,8 @@
 "Einstellungsdateien" = "Instellingsbestanden";
 "Ende" = "Einde";
 "Entfernen" = "Verwijder";
+"Entfernter Arbeitsbereich" = "Externe werkruimte";
+"Entfernter Rechner …" = "Externe computer…";
 "Entscheidung" = "Beslissing";
 "Entschieden" = "Besloten";
 "Er beginnt bei Commit {}, und Git wechselt gleich zu ihm." = "Hij begint bij commit {}, en Git wisselt er meteen naartoe.";
@@ -504,6 +508,7 @@
 "Fortsetzen" = "Ga door";
 "Frage" = "Vraag";
 "Frage nebenbei" = "Tussenvraag";
+"Frage von {}" = "Vraag van {}";
 "Fragen" = "Vraag";
 "Fragen nebenbei" = "Tussenvragen";
 "Fragt nur bei Aktionen, die als möglicherweise unsicher erkannt werden." = "Vraagt alleen bij acties die als mogelijk onveilig worden herkend.";
@@ -584,6 +589,8 @@
 "Hook „{}“ entfernen?" = "Hook '{}' verwijderen?";
 "Hooks" = "Hooks";
 "Hooks: {} erfolgreich" = "Hooks: {} geslaagd";
+"Host oder Benutzer ungültig" = "Ongeldige host of gebruiker";
+"Host, aus ~/.ssh/config oder eine Adresse" = "Host uit ~/.ssh/config of een adres";
 "Höre zu …" = "Luisteren…";
 "Idee" = "Idee";
 "Ignorieren" = "Negeer";
@@ -596,6 +603,7 @@
 "Im Finder zeigen" = "Toon in Finder";
 "Im Hintergrund ausführen" = "Voer uit op achtergrond";
 "Im Projekt arbeiten" = "Werk in het project";
+"Im Schlüsselbund sichern" = "Bewaar in sleutelhanger";
 "Im Terminal öffnen" = "Open in terminal";
 "Im Texteditor öffnen" = "Open in teksteditor";
 "Im Verlauf suchen" = "Zoek in geschiedenis";
@@ -837,6 +845,8 @@
 "OpenCode: {}" = "OpenCode: {}";
 "OpenType-Features:" = "OpenType-functies:";
 "Ordner" = "Map";
+"Ordner auf diesem Mac …" = "Map op deze Mac…";
+"Ordner dort (leer: Home-Ordner)" = "Map daar (leeg: thuismap)";
 "Ordner nicht vertraut" = "Map niet vertrouwd";
 "Ordner vertrauen" = "Vertrouw map";
 "Ordner wählen …" = "Kies map…";
@@ -845,6 +855,9 @@
 "Originalgröße" = "Ware grootte";
 "PDF: {}" = "PDF: {}";
 "Passwort" = "Wachtwoord";
+"Passwort (leer: unverändert)" = "Wachtwoord (leeg: ongewijzigd)";
+"Passwort (optional, im Schlüsselbund)" = "Wachtwoord (optioneel, in sleutelhanger)";
+"Passwort für {}" = "Wachtwoord voor {}";
 "Pausiert" = "Gepauzeerd";
 "Pfad kopieren" = "Kopieer pad";
 "Pfad: {}" = "Pad: {}";
@@ -865,6 +878,7 @@
 "Plugin „{}“ entfernen?" = "Plug-in '{}' verwijderen?";
 "Plugins" = "Plug-ins";
 "Plugins und Marktplätze verwalten" = "Beheer plug-ins en marketplaces";
+"Port (leer: wie ssh)" = "Poort (leeg: zoals ssh)";
 "Problem melden …" = "Meld een probleem…";
 "Profil hinzufügen" = "Voeg profiel toe";
 "Profil löschen" = "Verwijder profiel";
@@ -1037,6 +1051,7 @@
 "Terminal" = "Terminal";
 "Terminal leeren" = "Wis terminal";
 "Terminal: {}" = "Terminal: {}";
+"Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "Terminals en agenten draaien op de computer die ssh zo bereikt; de bestandenlijst en Git zijn daar niet beschikbaar.";
 "Text mit Steuerzeichen einsetzen?" = "Tekst met stuurtekens plakken?";
 "Text mit Zeilenumbruch einsetzen?" = "Tekst met een regeleinde plakken?";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "Tekst met {} regeleinden plakken?";
@@ -1052,6 +1067,7 @@
 "Trag in den Einstellungen unter „Agent“ einen Anbieter mit Schlüssel ein und wähl ein Modell, oder richte Ollama oder LM Studio ein." = "Voer in Instellingen onder 'Agent' een aanbieder met zijn sleutel in en kies een model, of stel Ollama of LM Studio in.";
 "Transkribiere …" = "Transcriberen…";
 "Transkription:" = "Transcriptie:";
+"Trennen" = "Verbreek verbinding";
 "Trennlinie" = "Scheidingslijn";
 "Trennlinie nach links" = "Verplaats scheidingslijn naar links";
 "Trennlinie nach oben" = "Verplaats scheidingslijn omhoog";
@@ -1067,6 +1083,7 @@
 "Unbekannt" = "Onbekend";
 "Unbekannte Befehle unterstreichen" = "Onderstreep onbekende opdrachten";
 "Unbekannter Digraph: {}" = "Onbekende digraph: {}";
+"Unbekannter Host-Schlüssel bei {}" = "Onbekende hostsleutel bij {}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "Onbeperkte toegang tot het internet en elk bestand op de Mac.";
 "Unerwartete Antwort: {}" = "Onverwacht antwoord: {}";
 "Ungesicherte Änderungen an „{}“ verwerfen?" = "Niet-bewaarde wijzigingen in '{}' weggooien?";
@@ -1085,8 +1102,16 @@
 "VISUELL BLOCK" = "VISUEEL BLOK";
 "VISUELL ZEILE" = "VISUELE REGEL";
 "Verbieten" = "Verbied";
+"Verbinde mit {} …" = "Verbinden met {}…";
+"Verbinden" = "Verbind";
 "Verbindet …" = "Verbinden…";
 "Verbindung" = "Verbinding";
+"Verbindung bearbeiten" = "Wijzig verbinding";
+"Verbindung bearbeiten …" = "Wijzig verbinding…";
+"Verbindung fehlgeschlagen" = "verbinding mislukt";
+"Verbindung zu {}" = "Verbinding met {}";
+"Verbindung zu {} fehlgeschlagen" = "Verbinding met {} mislukt";
+"Verbindung zu {} getrennt" = "Verbinding met {} verbroken";
 "Verbunden" = "Verbonden";
 "Verdichte …" = "Compacteren…";
 "Verdichtet sich selbst ab {} Tokens" = "Compacteert zichzelf vanaf {} tokens";
@@ -1174,6 +1199,7 @@
 "Wird fortgesetzt …" = "Doorgaan…";
 "Wird gesucht …" = "Zoeken …";
 "Wirkung" = "Effect";
+"Wo arbeitet der neue Arbeitsbereich?" = "Waar werkt de nieuwe werkruimte?";
 "Wochenlimit" = "Weeklimiet";
 "Womit neue Sitzungen starten, bis du im Tab etwas anderes wählst. Leere Felder überlassen die Wahl den Einstellungen des Agenten." = "Waarmee nieuwe sessies starten totdat je in het tabblad iets anders kiest. Lege velden laten de keuze aan de instellingen van de agent.";
 "Worktree wird angelegt …" = "Worktree aanmaken…";
@@ -1244,6 +1270,7 @@
 "geschlossen" = "gesloten";
 "geschätzt aus der letzten Antwort" = "geschat uit het laatste antwoord";
 "gestern" = "gisteren";
+"getrennt" = "verbinding verbroken";
 "gezählt" = "geteld";
 "geändert" = "gewijzigd";
 "geöffnet" = "open";
@@ -1268,6 +1295,8 @@
 "und {} weitere" = "en nog {}";
 "ungelöst" = "niet opgelost";
 "unverändert" = "ongewijzigd";
+"verbindet" = "verbinden";
+"verbunden" = "verbonden";
 "von Hand" = "handmatig";
 "vor einem Jahr" = "een jaar geleden";
 "vor einem Monat" = "een maand geleden";

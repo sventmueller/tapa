@@ -27,3 +27,10 @@
 "Arbeitet" = "Al lavoro";
 "Wartet auf dich" = "Attende te";
 "Einstellungen" = "Impostazioni";
+"Trennen" = "Disconnetti";
+"Verbindung bearbeiten …" = "Modifica connessione…";
+"Verbindung fehlgeschlagen" = "connessione non riuscita";
+"Verbindung zu {}" = "Connessione a {}";
+"getrennt" = "disconnesso";
+"verbindet" = "connessione in corso";
+"verbunden" = "connesso";

@@ -95,7 +95,12 @@ define_class!(
     impl Toolbar {
         #[unsafe(method(termNewWorkspace:))]
         fn new_workspace(&self, _sender: Option<&AnyObject>) {
-            guarded((), || self.on_window(|window| window.new_workspace()));
+            guarded((), || self.on_window(|window| window.new_local_workspace()));
+        }
+
+        #[unsafe(method(termNewRemoteWorkspace:))]
+        fn new_remote_workspace(&self, _sender: Option<&AnyObject>) {
+            guarded((), || self.on_window(|window| window.new_remote_workspace()));
         }
 
         #[unsafe(method(termOpenRecent:))]
@@ -327,7 +332,7 @@ impl Toolbar {
         Some(item)
     }
 
-    /// New Workspace: a click shows the folders used last and the folder dialog right below it.
+    /// New Workspace: a click shows the folders used last, the folder dialog right below it and a remote machine (E25).
     fn new_workspace_item(&self, identifier: &NSString) -> Retained<NSToolbarItem> {
         let mtm = self.mtm();
         let item = NSMenuToolbarItem::initWithItemIdentifier(NSMenuToolbarItem::alloc(mtm), identifier);
@@ -383,6 +388,9 @@ impl Toolbar {
         let choose = kit::item(mtm, t("Ordner wählen …"), Some(sel!(termNewWorkspace:)), "");
         kit::set_target(&choose, self as &AnyObject);
         menu.addItem(&choose);
+        let remote = kit::item(mtm, t("Entfernter Rechner …"), Some(sel!(termNewRemoteWorkspace:)), "");
+        kit::set_target(&remote, self as &AnyObject);
+        menu.addItem(&remote);
         *self.ivars().recent.borrow_mut() = folders;
     }
 }

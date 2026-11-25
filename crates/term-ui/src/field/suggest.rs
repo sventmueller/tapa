@@ -93,7 +93,9 @@ impl TerminalView {
                 suggestion = best_line(&completion, text);
                 sure = completion.candidates.len() == 1;
             }
-            if completion.missing_spec.is_some() || completion.wanted.is_some() {
+            // A shell on another machine has its own branches, scripts and containers, which this Mac cannot know.
+            let remote = self.ivars().shell.borrow().remote;
+            if completion.missing_spec.is_some() || (completion.wanted.is_some() && !remote) {
                 self.ask_later(id, text, history.is_some());
             } else {
                 term_suggest::cancel(id);

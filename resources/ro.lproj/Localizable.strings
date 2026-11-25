@@ -163,6 +163,8 @@
 "Befehlszeile" = "Linie de comandă";
 "Bei einem Entwicklungsserver kannst du dem Zertifikat bis zum Beenden der App vertrauen." = "Pentru un server de dezvoltare puteți avea încredere în certificat până la închiderea aplicației.";
 "Beide" = "Ambele";
+"Beide dürfen nicht leer sein, nicht mit einem Bindestrich beginnen und keine Leerzeichen oder @ enthalten." = "Niciunul nu poate fi gol, nu poate începe cu cratimă și nu poate conține spații sau @.";
+"Benutzer (leer: wie ssh)" = "Utilizator (gol: ca ssh)";
 "Benutzername" = "Nume de utilizator";
 "Benutzername oder Passwort waren falsch." = "Numele de utilizator sau parola sunt incorecte.";
 "Berechtigungen" = "Permisiuni";
@@ -456,6 +458,8 @@
 "Einstellungsdateien" = "Fișiere de configurări";
 "Ende" = "Sfârșit";
 "Entfernen" = "Eliminați";
+"Entfernter Arbeitsbereich" = "Spațiu de lucru la distanță";
+"Entfernter Rechner …" = "Computer la distanță…";
 "Entscheidung" = "Decizie";
 "Entschieden" = "Decis";
 "Er beginnt bei Commit {}, und Git wechselt gleich zu ihm." = "Pornește de la commitul {}, iar Git trece imediat la ea.";
@@ -504,6 +508,7 @@
 "Fortsetzen" = "Continuați";
 "Frage" = "Întrebare";
 "Frage nebenbei" = "Întrebare separată";
+"Frage von {}" = "Întrebare de la {}";
 "Fragen" = "Întrebați";
 "Fragen nebenbei" = "Întrebări separate";
 "Fragt nur bei Aktionen, die als möglicherweise unsicher erkannt werden." = "Întreabă doar pentru acțiunile detectate ca posibil nesigure.";
@@ -584,6 +589,8 @@
 "Hook „{}“ entfernen?" = "Eliminați hookul „{}”?";
 "Hooks" = "Hookuri";
 "Hooks: {} erfolgreich" = "Hookuri reușite: {}";
+"Host oder Benutzer ungültig" = "Gazdă sau utilizator nevalid";
+"Host, aus ~/.ssh/config oder eine Adresse" = "Gazdă din ~/.ssh/config sau o adresă";
 "Höre zu …" = "Se ascultă…";
 "Idee" = "Idee";
 "Ignorieren" = "Ignorați";
@@ -596,6 +603,7 @@
 "Im Finder zeigen" = "Afișați în Finder";
 "Im Hintergrund ausführen" = "Rulați în fundal";
 "Im Projekt arbeiten" = "Lucru în proiect";
+"Im Schlüsselbund sichern" = "Salvați în portchei";
 "Im Terminal öffnen" = "Deschideți în terminal";
 "Im Texteditor öffnen" = "Deschideți în editorul de text";
 "Im Verlauf suchen" = "Căutați în istoric";
@@ -837,6 +845,8 @@
 "OpenCode: {}" = "OpenCode: {}";
 "OpenType-Features:" = "Funcționalități OpenType:";
 "Ordner" = "Dosar";
+"Ordner auf diesem Mac …" = "Dosar pe acest Mac…";
+"Ordner dort (leer: Home-Ordner)" = "Dosarul de acolo (gol: dosarul de pornire)";
 "Ordner nicht vertraut" = "Dosarul nu este de încredere";
 "Ordner vertrauen" = "Acordați încredere dosarului";
 "Ordner wählen …" = "Alegeți dosarul…";
@@ -845,6 +855,9 @@
 "Originalgröße" = "Dimensiune reală";
 "PDF: {}" = "PDF: {}";
 "Passwort" = "Parolă";
+"Passwort (leer: unverändert)" = "Parolă (gol: neschimbată)";
+"Passwort (optional, im Schlüsselbund)" = "Parolă (opțională, în portchei)";
+"Passwort für {}" = "Parolă pentru {}";
 "Pausiert" = "În pauză";
 "Pfad kopieren" = "Copiați calea";
 "Pfad: {}" = "Cale: {}";
@@ -865,6 +878,7 @@
 "Plugin „{}“ entfernen?" = "Eliminați pluginul „{}”?";
 "Plugins" = "Pluginuri";
 "Plugins und Marktplätze verwalten" = "Gestionați pluginurile și piețele";
+"Port (leer: wie ssh)" = "Port (gol: ca ssh)";
 "Problem melden …" = "Raportați o problemă…";
 "Profil hinzufügen" = "Adăugați un profil";
 "Profil löschen" = "Ștergeți profilul";
@@ -1037,6 +1051,7 @@
 "Terminal" = "Terminal";
 "Terminal leeren" = "Goliți terminalul";
 "Terminal: {}" = "Terminal: {}";
+"Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "Terminalele și agenții rulează pe computerul la care ajunge ssh astfel; lista de fișiere și Git nu sunt disponibile acolo.";
 "Text mit Steuerzeichen einsetzen?" = "Lipiți text cu caractere de control?";
 "Text mit Zeilenumbruch einsetzen?" = "Lipiți text cu un salt de rând?";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "Lipiți text cu {} salturi de rând?";
@@ -1052,6 +1067,7 @@
 "Trag in den Einstellungen unter „Agent“ einen Anbieter mit Schlüssel ein und wähl ein Modell, oder richte Ollama oder LM Studio ein." = "În Configurări, la „Agent”, introduceți un furnizor cu cheia sa și alegeți un model sau configurați Ollama ori LM Studio.";
 "Transkribiere …" = "Se transcrie…";
 "Transkription:" = "Transcriere:";
+"Trennen" = "Deconectați";
 "Trennlinie" = "Separator";
 "Trennlinie nach links" = "Mutați separatorul la stânga";
 "Trennlinie nach oben" = "Mutați separatorul în sus";
@@ -1067,6 +1083,7 @@
 "Unbekannt" = "Necunoscut";
 "Unbekannte Befehle unterstreichen" = "Subliniați comenzile necunoscute";
 "Unbekannter Digraph: {}" = "Digraf necunoscut: {}";
+"Unbekannter Host-Schlüssel bei {}" = "Cheie de gazdă necunoscută la {}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "Acces nerestricționat la internet și la orice fișier de pe Mac.";
 "Unerwartete Antwort: {}" = "Răspuns neașteptat: {}";
 "Ungesicherte Änderungen an „{}“ verwerfen?" = "Renunțați la modificările nesalvate din „{}”?";
@@ -1085,8 +1102,16 @@
 "VISUELL BLOCK" = "VISUAL BLOCK";
 "VISUELL ZEILE" = "VISUAL LINE";
 "Verbieten" = "Refuzați";
+"Verbinde mit {} …" = "Se conectează la {}…";
+"Verbinden" = "Conectați";
 "Verbindet …" = "Se conectează…";
 "Verbindung" = "Conexiune";
+"Verbindung bearbeiten" = "Editați conexiunea";
+"Verbindung bearbeiten …" = "Editați conexiunea…";
+"Verbindung fehlgeschlagen" = "conexiunea a eșuat";
+"Verbindung zu {}" = "Conexiune la {}";
+"Verbindung zu {} fehlgeschlagen" = "Conexiunea la {} a eșuat";
+"Verbindung zu {} getrennt" = "Conexiunea la {} s-a întrerupt";
 "Verbunden" = "Conectat";
 "Verdichte …" = "Se compactează…";
 "Verdichtet sich selbst ab {} Tokens" = "Se compactează automat când tokenurile depășesc {}";
@@ -1174,6 +1199,7 @@
 "Wird fortgesetzt …" = "Se continuă…";
 "Wird gesucht …" = "Se caută …";
 "Wirkung" = "Efect";
+"Wo arbeitet der neue Arbeitsbereich?" = "Unde lucrează noul spațiu de lucru?";
 "Wochenlimit" = "Limită săptămânală";
 "Womit neue Sitzungen starten, bis du im Tab etwas anderes wählst. Leere Felder überlassen die Wahl den Einstellungen des Agenten." = "Cu ce încep sesiunile noi până când alegeți altceva în filă. Câmpurile goale lasă alegerea pe seama configurărilor agentului.";
 "Worktree wird angelegt …" = "Se creează worktree-ul…";
@@ -1244,6 +1270,7 @@
 "geschlossen" = "închis";
 "geschätzt aus der letzten Antwort" = "estimat din ultimul răspuns";
 "gestern" = "ieri";
+"getrennt" = "deconectat";
 "gezählt" = "numărat";
 "geändert" = "modificat";
 "geöffnet" = "deschis";
@@ -1268,6 +1295,8 @@
 "und {} weitere" = "și încă {}";
 "ungelöst" = "nerezolvat";
 "unverändert" = "neschimbat";
+"verbindet" = "se conectează";
+"verbunden" = "conectat";
 "von Hand" = "manual";
 "vor einem Jahr" = "acum un an";
 "vor einem Monat" = "acum o lună";

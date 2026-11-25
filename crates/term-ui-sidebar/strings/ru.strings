@@ -27,3 +27,10 @@
 "Arbeitet" = "Работает";
 "Wartet auf dich" = "Ждет Вас";
 "Einstellungen" = "Настройки";
+"Trennen" = "Отключиться";
+"Verbindung bearbeiten …" = "Изменить подключение…";
+"Verbindung fehlgeschlagen" = "не удалось подключиться";
+"Verbindung zu {}" = "Подключение к {}";
+"getrennt" = "отключено";
+"verbindet" = "подключение";
+"verbunden" = "подключено";

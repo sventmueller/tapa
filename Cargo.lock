@@ -3794,6 +3794,7 @@ dependencies = [
  "term-panes",
  "term-process",
  "term-product",
+ "term-remote",
  "term-render",
  "term-seal",
  "term-session",
@@ -3858,6 +3859,7 @@ dependencies = [
  "term-codex",
  "term-opencode",
  "term-process",
+ "term-remote",
  "term-thread",
  "term-workspace-hack",
 ]
@@ -4020,6 +4022,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "term-remote"
+version = "1.0.2"
+dependencies = [
+ "serde",
+ "serde_json",
+ "term-base",
+ "term-process",
+ "term-workspace-hack",
+]
+
+[[package]]
 name = "term-render"
 version = "1.0.2"
 dependencies = [
@@ -4104,6 +4117,7 @@ dependencies = [
  "splat-i18n",
  "term-base",
  "term-config",
+ "term-remote",
  "term-render",
  "term-session",
  "term-suggest",
@@ -4138,6 +4152,7 @@ dependencies = [
  "term-net",
  "term-opencode",
  "term-process",
+ "term-remote",
  "term-render",
  "term-thread",
  "term-ui",

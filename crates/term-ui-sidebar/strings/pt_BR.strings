@@ -27,3 +27,10 @@
 "Arbeitet" = "Trabalhando";
 "Wartet auf dich" = "Aguardando você";
 "Einstellungen" = "Ajustes";
+"Trennen" = "Desconectar";
+"Verbindung bearbeiten …" = "Editar Conexão…";
+"Verbindung fehlgeschlagen" = "falha na conexão";
+"Verbindung zu {}" = "Conexão com {}";
+"getrennt" = "desconectado";
+"verbindet" = "conectando";
+"verbunden" = "conectado";

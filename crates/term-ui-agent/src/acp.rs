@@ -221,6 +221,16 @@ impl Agent {
     /// Where the agent's program is, as `installed` finds it: on the PATH, else the version the app installed.
     pub fn program(&self, env: &[(String, String)], base: &Path) -> Option<std::path::PathBuf> {
         let path = term_process::tool::var(env, "PATH");
+        // A remote workspace runs only the programs there, which its stand-ins on the PATH stand for (E25).
+        if let Some(bin) = term_remote::registry::bin_for(base) {
+            let name = match self {
+                Agent::Claude => "claude",
+                Agent::Codex => "codex",
+                Agent::OpenCode => "opencode",
+                Agent::Acp(_) => self.preset()?.on_path.0,
+            };
+            return Some(bin.join(name)).filter(|program| term_process::tool::is_executable(program));
+        }
         let installs = crate::acp_install::installs();
         match self {
             Agent::Claude => crate::claude_program(env).filter(|program| !term_process::tool::lies_in(program, base)),
@@ -344,7 +354,7 @@ impl AgentTab {
         let agent = self.agent.clone();
         let trusted = self.controller.is_trusted();
         if let Err(why) = crate::common::util::spawn("acp-start", move || {
-            let env = term_ui::workspace_host::environment(Duration::from_secs(15));
+            let env = term_ui::workspace_host::environment_for(&cwd, Duration::from_secs(15));
             let codex = matches!(agent, Agent::Codex)
                 .then(|| crate::codex::launch_for(&env, &cwd))
                 .flatten();
@@ -483,7 +493,7 @@ impl AgentTab {
 
     fn launch_program(&self) -> Option<String> {
         let agent = self.agent.acp_agent()?;
-        let env = &term_ui::workspace_host::environment(std::time::Duration::ZERO)[..];
+        let env = &term_ui::workspace_host::environment_for(&self.cwd, std::time::Duration::ZERO)[..];
         launch_of(&agent, env, &self.cwd, self.controller.is_trusted()).map(|l| l.program.display().to_string())
     }
 

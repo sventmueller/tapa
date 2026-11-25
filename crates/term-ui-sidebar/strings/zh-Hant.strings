@@ -27,3 +27,10 @@
 "Arbeitet" = "工作中";
 "Wartet auf dich" = "等待你的回應";
 "Einstellungen" = "設定";
+"Trennen" = "中斷連線";
+"Verbindung bearbeiten …" = "編輯連線…";
+"Verbindung fehlgeschlagen" = "連線失敗";
+"Verbindung zu {}" = "與 {} 的連線";
+"getrennt" = "已中斷";
+"verbindet" = "正在連線";
+"verbunden" = "已連線";

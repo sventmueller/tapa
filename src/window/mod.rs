@@ -16,7 +16,7 @@ mod plus_menu;
 mod probe;
 mod quick;
 mod restore;
-mod session;
+pub(crate) mod session;
 pub(crate) mod spoken_tab;
 mod tabs;
 mod title;
@@ -416,7 +416,7 @@ impl Window {
 
     /// Shows the workspaces' rows in every sidebar on screen, each tab's title on its window and tab, and the toolbars
     /// as they are now.
-    fn refresh(&self) {
+    pub(crate) fn refresh(&self) {
         if let Some(quick) = self.quick.borrow().as_ref() {
             if let Some(tab) = self.selected_tab() {
                 quick.panel.setTitle(&term_ui::kit::ns(&tab.title()));

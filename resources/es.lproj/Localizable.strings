@@ -163,6 +163,8 @@
 "Befehlszeile" = "Línea de comandos";
 "Bei einem Entwicklungsserver kannst du dem Zertifikat bis zum Beenden der App vertrauen." = "Con un servidor de desarrollo puedes confiar en el certificado hasta que salgas de la app.";
 "Beide" = "Ambas";
+"Beide dürfen nicht leer sein, nicht mit einem Bindestrich beginnen und keine Leerzeichen oder @ enthalten." = "Ninguno puede estar vacío, empezar con un guion ni contener espacios o @.";
+"Benutzer (leer: wie ssh)" = "Usuario (vacío: como ssh)";
 "Benutzername" = "Nombre de usuario";
 "Benutzername oder Passwort waren falsch." = "El nombre de usuario o la contraseña no eran correctos.";
 "Berechtigungen" = "Permisos";
@@ -456,6 +458,8 @@
 "Einstellungsdateien" = "Archivos de ajustes";
 "Ende" = "Fin";
 "Entfernen" = "Eliminar";
+"Entfernter Arbeitsbereich" = "Espacio de trabajo remoto";
+"Entfernter Rechner …" = "Ordenador remoto…";
 "Entscheidung" = "Decisión";
 "Entschieden" = "Decidido";
 "Er beginnt bei Commit {}, und Git wechselt gleich zu ihm." = "La rama parte del commit {} y Git cambia a ella de inmediato.";
@@ -504,6 +508,7 @@
 "Fortsetzen" = "Continuar";
 "Frage" = "Pregunta";
 "Frage nebenbei" = "Pregunta aparte";
+"Frage von {}" = "Pregunta de {}";
 "Fragen" = "Preguntar";
 "Fragen nebenbei" = "Preguntas aparte";
 "Fragt nur bei Aktionen, die als möglicherweise unsicher erkannt werden." = "Solo pregunta por acciones detectadas como posiblemente inseguras.";
@@ -584,6 +589,8 @@
 "Hook „{}“ entfernen?" = "¿Eliminar el hook «{}»?";
 "Hooks" = "Hooks";
 "Hooks: {} erfolgreich" = "Hooks correctos: {}";
+"Host oder Benutzer ungültig" = "Host o usuario no válido";
+"Host, aus ~/.ssh/config oder eine Adresse" = "Host de ~/.ssh/config o una dirección";
 "Höre zu …" = "Escuchando…";
 "Idee" = "Idea";
 "Ignorieren" = "Ignorar";
@@ -596,6 +603,7 @@
 "Im Finder zeigen" = "Mostrar en el Finder";
 "Im Hintergrund ausführen" = "Ejecutar en segundo plano";
 "Im Projekt arbeiten" = "Trabajar en el proyecto";
+"Im Schlüsselbund sichern" = "Guardar en el llavero";
 "Im Terminal öffnen" = "Abrir en el terminal";
 "Im Texteditor öffnen" = "Abrir en el editor de texto";
 "Im Verlauf suchen" = "Buscar en el historial";
@@ -837,6 +845,8 @@
 "OpenCode: {}" = "OpenCode: {}";
 "OpenType-Features:" = "Funciones OpenType:";
 "Ordner" = "Carpeta";
+"Ordner auf diesem Mac …" = "Carpeta en este Mac…";
+"Ordner dort (leer: Home-Ordner)" = "Carpeta allí (vacío: carpeta de inicio)";
 "Ordner nicht vertraut" = "La carpeta no es de confianza";
 "Ordner vertrauen" = "Confiar en la carpeta";
 "Ordner wählen …" = "Elegir carpeta…";
@@ -845,6 +855,9 @@
 "Originalgröße" = "Tamaño real";
 "PDF: {}" = "PDF: {}";
 "Passwort" = "Contraseña";
+"Passwort (leer: unverändert)" = "Contraseña (vacío: sin cambios)";
+"Passwort (optional, im Schlüsselbund)" = "Contraseña (opcional, en el llavero)";
+"Passwort für {}" = "Contraseña para {}";
 "Pausiert" = "En pausa";
 "Pfad kopieren" = "Copiar ruta";
 "Pfad: {}" = "Ruta: {}";
@@ -865,6 +878,7 @@
 "Plugin „{}“ entfernen?" = "¿Eliminar el plugin «{}»?";
 "Plugins" = "Plugins";
 "Plugins und Marktplätze verwalten" = "Gestionar plugins y marketplaces";
+"Port (leer: wie ssh)" = "Puerto (vacío: como ssh)";
 "Problem melden …" = "Informar de un problema…";
 "Profil hinzufügen" = "Añadir perfil";
 "Profil löschen" = "Eliminar perfil";
@@ -1037,6 +1051,7 @@
 "Terminal" = "Terminal";
 "Terminal leeren" = "Borrar terminal";
 "Terminal: {}" = "Terminal: {}";
+"Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "Los terminales y los agentes se ejecutan en el ordenador al que ssh llega así; allí no hay lista de archivos ni Git.";
 "Text mit Steuerzeichen einsetzen?" = "¿Pegar texto con caracteres de control?";
 "Text mit Zeilenumbruch einsetzen?" = "¿Pegar texto con un salto de línea?";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "¿Pegar texto con {} saltos de línea?";
@@ -1052,6 +1067,7 @@
 "Trag in den Einstellungen unter „Agent“ einen Anbieter mit Schlüssel ein und wähl ein Modell, oder richte Ollama oder LM Studio ein." = "En Ajustes, en «Agente», introduce un proveedor con su clave y elige un modelo, o configura Ollama o LM Studio.";
 "Transkribiere …" = "Transcribiendo…";
 "Transkription:" = "Transcripción:";
+"Trennen" = "Desconectar";
 "Trennlinie" = "Separador";
 "Trennlinie nach links" = "Mover divisor a la izquierda";
 "Trennlinie nach oben" = "Mover divisor hacia arriba";
@@ -1067,6 +1083,7 @@
 "Unbekannt" = "Desconocido";
 "Unbekannte Befehle unterstreichen" = "Subrayar los comandos desconocidos";
 "Unbekannter Digraph: {}" = "Dígrafo desconocido: {}";
+"Unbekannter Host-Schlüssel bei {}" = "Clave de host desconocida en {}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "Acceso sin restricciones a internet y a todos los archivos del Mac.";
 "Unerwartete Antwort: {}" = "Respuesta inesperada: {}";
 "Ungesicherte Änderungen an „{}“ verwerfen?" = "¿Descartar los cambios no guardados de «{}»?";
@@ -1085,8 +1102,16 @@
 "VISUELL BLOCK" = "BLOQUE VISUAL";
 "VISUELL ZEILE" = "LÍNEA VISUAL";
 "Verbieten" = "Denegar";
+"Verbinde mit {} …" = "Conectando con {}…";
+"Verbinden" = "Conectar";
 "Verbindet …" = "Conectando…";
 "Verbindung" = "Conexión";
+"Verbindung bearbeiten" = "Editar conexión";
+"Verbindung bearbeiten …" = "Editar conexión…";
+"Verbindung fehlgeschlagen" = "la conexión falló";
+"Verbindung zu {}" = "Conexión con {}";
+"Verbindung zu {} fehlgeschlagen" = "No se pudo conectar con {}";
+"Verbindung zu {} getrennt" = "Se perdió la conexión con {}";
 "Verbunden" = "Conectado";
 "Verdichte …" = "Compactando…";
 "Verdichtet sich selbst ab {} Tokens" = "Se compacta automáticamente a partir de {} tokens";
@@ -1174,6 +1199,7 @@
 "Wird fortgesetzt …" = "Continuando…";
 "Wird gesucht …" = "Buscando …";
 "Wirkung" = "Efecto";
+"Wo arbeitet der neue Arbeitsbereich?" = "¿Dónde trabaja el nuevo espacio de trabajo?";
 "Wochenlimit" = "Límite semanal";
 "Womit neue Sitzungen starten, bis du im Tab etwas anderes wählst. Leere Felder überlassen die Wahl den Einstellungen des Agenten." = "Con qué empiezan las sesiones nuevas hasta que elijas otra cosa en la pestaña. Los campos vacíos dejan la elección a los ajustes del agente.";
 "Worktree wird angelegt …" = "Creando el worktree…";
@@ -1244,6 +1270,7 @@
 "geschlossen" = "cerrado";
 "geschätzt aus der letzten Antwort" = "estimado a partir de la última respuesta";
 "gestern" = "ayer";
+"getrennt" = "desconectado";
 "gezählt" = "contado";
 "geändert" = "modificado";
 "geöffnet" = "abierto";
@@ -1268,6 +1295,8 @@
 "und {} weitere" = "y {} más";
 "ungelöst" = "sin resolver";
 "unverändert" = "sin cambios";
+"verbindet" = "conectando";
+"verbunden" = "conectado";
 "von Hand" = "manual";
 "vor einem Jahr" = "hace un año";
 "vor einem Monat" = "hace un mes";

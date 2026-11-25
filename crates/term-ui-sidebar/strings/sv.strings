@@ -27,3 +27,10 @@
 "Arbeitet" = "Arbetar";
 "Wartet auf dich" = "Väntar på dig";
 "Einstellungen" = "Inställningar";
+"Trennen" = "Koppla från";
+"Verbindung bearbeiten …" = "Redigera anslutning…";
+"Verbindung fehlgeschlagen" = "anslutningen misslyckades";
+"Verbindung zu {}" = "Anslutning till {}";
+"getrennt" = "frånkopplad";
+"verbindet" = "ansluter";
+"verbunden" = "ansluten";

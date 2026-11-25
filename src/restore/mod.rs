@@ -78,6 +78,9 @@ pub(crate) struct SavedWorkspace {
     /// The windows the user dragged out of its tab group, which come back beside it.
     #[serde(default)]
     pub(crate) separate: Vec<SavedGroup>,
+    /// The machine of a remote workspace, whose `base` is its placeholder folder on this Mac (E25).
+    #[serde(default)]
+    pub(crate) remote: Option<term_remote::Target>,
 }
 
 /// A tab group of a workspace's windows apart from its main one: the places of its tabs among the workspace's tabs
@@ -151,6 +154,7 @@ impl SavedWindowV1 {
                 files: Vec::new(),
                 panels: crate::panels::Panels::default(),
                 separate: Vec::new(),
+                remote: None,
             }],
             selected: Some(0),
             sidebar_hidden: false,
@@ -479,6 +483,12 @@ mod tests {
                             tabs: vec![2],
                             frame: [900.0, 20.0, 700.0, 500.0],
                         }],
+                        remote: Some(term_remote::Target {
+                            host: "box".into(),
+                            port: Some(2222),
+                            user: Some("sven".into()),
+                            folder: "app".into(),
+                        }),
                     },
                     SavedWorkspace {
                         base: "/".into(),
@@ -493,6 +503,7 @@ mod tests {
                         files: Vec::new(),
                         panels: crate::panels::Panels::default(),
                         separate: Vec::new(),
+                        remote: None,
                     },
                 ],
                 selected: Some(1),

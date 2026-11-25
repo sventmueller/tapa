@@ -59,6 +59,12 @@ pub enum RowAction {
     Close,
     /// Trust the workspace, or take the trust back (E21).
     ToggleTrust,
+    /// Open a remote workspace's connection again (E25).
+    Reconnect,
+    /// Close a remote workspace's connection.
+    Disconnect,
+    /// Change where a remote workspace connects to.
+    EditConnection,
 }
 
 /// What the sidebar keeps.
@@ -260,6 +266,26 @@ define_class!(
             guarded((), || self.act(item, RowAction::Close));
         }
 
+        #[unsafe(method(termSidebarReconnect:))]
+        fn reconnect(&self, item: &NSMenuItem) {
+            guarded((), || self.act(item, RowAction::Reconnect));
+        }
+
+        #[unsafe(method(termSidebarDisconnect:))]
+        fn disconnect(&self, item: &NSMenuItem) {
+            guarded((), || self.act(item, RowAction::Disconnect));
+        }
+
+        #[unsafe(method(termSidebarEditConnection:))]
+        fn edit_connection(&self, item: &NSMenuItem) {
+            guarded((), || self.act(item, RowAction::EditConnection));
+        }
+
+        #[unsafe(method(termSidebarRemote:))]
+        fn remote(&self, sender: &NSButton) {
+            guarded((), || self.pop_up_connection_menu(sender));
+        }
+
         #[unsafe(method(termSidebarShowInFinder:))]
         fn show_in_finder(&self, item: &NSMenuItem) {
             guarded((), || {
@@ -444,12 +470,12 @@ impl Sidebar {
         let Some(table) = self.ivars().table.borrow().clone() else {
             return;
         };
-        let Some((id, trusted, fixed)) = self.workspace_at(table.clickedRow()).and_then(|row| {
+        let Some((id, trusted, fixed, remote)) = self.workspace_at(table.clickedRow()).and_then(|row| {
             self.ivars()
                 .entries
                 .borrow()
                 .get(row)
-                .map(|entry| (entry.id, entry.trusted, entry.fixed))
+                .map(|entry| (entry.id, entry.trusted, entry.fixed, entry.remote.is_some()))
         }) else {
             return;
         };
@@ -474,12 +500,45 @@ impl Sidebar {
             add(trust, sel!(termSidebarToggleTrust:));
             menu.addItem(&kit::separator(mtm));
         }
-        add(t("Im Finder anzeigen"), sel!(termSidebarShowInFinder:));
-        add(t("Pfad kopieren"), sel!(termSidebarCopyPath:));
+        if remote {
+            if acts {
+                self.add_connection_items(menu, id);
+            }
+        } else {
+            add(t("Im Finder anzeigen"), sel!(termSidebarShowInFinder:));
+            add(t("Pfad kopieren"), sel!(termSidebarCopyPath:));
+        }
         if acts && !fixed {
             menu.addItem(&kit::separator(mtm));
             add(t("Arbeitsbereich entfernen"), sel!(termSidebarClose:));
         }
+    }
+
+    /// The items of a remote workspace's connection, for workspace `id`.
+    fn add_connection_items(&self, menu: &NSMenu, id: u64) {
+        let mtm = self.mtm();
+        for (title, action) in [
+            (t("Neu verbinden"), sel!(termSidebarReconnect:)),
+            (t("Trennen"), sel!(termSidebarDisconnect:)),
+            (t("Verbindung bearbeiten …"), sel!(termSidebarEditConnection:)),
+        ] {
+            let item = kit::item(mtm, title, Some(action), "");
+            item.setTag(isize::try_from(id).unwrap_or(isize::MAX));
+            kit::set_target(&item, self as &AnyObject);
+            menu.addItem(&item);
+        }
+    }
+
+    /// The menu of a remote workspace's connection below its switch `button`.
+    fn pop_up_connection_menu(&self, button: &NSButton) {
+        let Ok(id) = u64::try_from(button.tag()) else { return };
+        if self.ivars().acted.borrow().is_none() {
+            return;
+        }
+        let menu = NSMenu::new(self.mtm());
+        self.add_connection_items(&menu, id);
+        let below = objc2_foundation::NSPoint::new(0.0, button.bounds().size.height + 4.0);
+        menu.popUpMenuPositioningItem_atLocation_inView(None, below, Some(button));
     }
 
     fn entry_of(&self, item: &NSMenuItem) -> Option<Workspace> {

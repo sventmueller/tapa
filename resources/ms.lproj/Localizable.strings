@@ -163,6 +163,8 @@
 "Befehlszeile" = "Baris arahan";
 "Bei einem Entwicklungsserver kannst du dem Zertifikat bis zum Beenden der App vertrauen." = "Untuk pelayan pembangunan, anda boleh mempercayai sijil sehingga app ditutup.";
 "Beide" = "Kedua-duanya";
+"Beide dürfen nicht leer sein, nicht mit einem Bindestrich beginnen und keine Leerzeichen oder @ enthalten." = "Kedua-duanya tidak boleh kosong, bermula dengan sempang atau mengandungi ruang atau @.";
+"Benutzer (leer: wie ssh)" = "Pengguna (kosong: seperti ssh)";
 "Benutzername" = "Nama Pengguna";
 "Benutzername oder Passwort waren falsch." = "Nama pengguna atau kata laluan salah.";
 "Berechtigungen" = "Keizinan";
@@ -456,6 +458,8 @@
 "Einstellungsdateien" = "Fail seting";
 "Ende" = "Tamat";
 "Entfernen" = "Keluarkan";
+"Entfernter Arbeitsbereich" = "Ruang Kerja Jauh";
+"Entfernter Rechner …" = "Komputer Jauh…";
 "Entscheidung" = "Keputusan";
 "Entschieden" = "Diputuskan";
 "Er beginnt bei Commit {}, und Git wechselt gleich zu ihm." = "Ia bermula pada commit {}, dan Git terus bertukar kepadanya.";
@@ -504,6 +508,7 @@
 "Fortsetzen" = "Teruskan";
 "Frage" = "Soalan";
 "Frage nebenbei" = "Soalan Sampingan";
+"Frage von {}" = "Soalan daripada {}";
 "Fragen" = "Tanya";
 "Fragen nebenbei" = "Soalan sampingan";
 "Fragt nur bei Aktionen, die als möglicherweise unsicher erkannt werden." = "Hanya bertanya bagi tindakan yang dikesan mungkin tidak selamat.";
@@ -584,6 +589,8 @@
 "Hook „{}“ entfernen?" = "Keluarkan hook “{}”?";
 "Hooks" = "Hook";
 "Hooks: {} erfolgreich" = "Hook: {} berjaya";
+"Host oder Benutzer ungültig" = "Hos atau pengguna tidak sah";
+"Host, aus ~/.ssh/config oder eine Adresse" = "Hos daripada ~/.ssh/config atau alamat";
 "Höre zu …" = "Mendengar…";
 "Idee" = "Idea";
 "Ignorieren" = "Abaikan";
@@ -596,6 +603,7 @@
 "Im Finder zeigen" = "Tunjukkan dalam Finder";
 "Im Hintergrund ausführen" = "Jalankan di Latar Belakang";
 "Im Projekt arbeiten" = "Bekerja dalam Projek";
+"Im Schlüsselbund sichern" = "Simpan dalam rantai kunci";
 "Im Terminal öffnen" = "Buka dalam Terminal";
 "Im Texteditor öffnen" = "Buka dalam Editor Teks";
 "Im Verlauf suchen" = "Cari sejarah";
@@ -837,6 +845,8 @@
 "OpenCode: {}" = "OpenCode: {}";
 "OpenType-Features:" = "Ciri OpenType:";
 "Ordner" = "Folder";
+"Ordner auf diesem Mac …" = "Folder pada Mac Ini…";
+"Ordner dort (leer: Home-Ordner)" = "Folder di sana (kosong: folder rumah)";
 "Ordner nicht vertraut" = "Folder Tidak Dipercayai";
 "Ordner vertrauen" = "Percayai Folder";
 "Ordner wählen …" = "Pilih Folder…";
@@ -845,6 +855,9 @@
 "Originalgröße" = "Saiz Sebenar";
 "PDF: {}" = "PDF: {}";
 "Passwort" = "Kata Laluan";
+"Passwort (leer: unverändert)" = "Kata Laluan (kosong: tidak berubah)";
+"Passwort (optional, im Schlüsselbund)" = "Kata Laluan (pilihan, dalam rantai kunci)";
+"Passwort für {}" = "Kata Laluan untuk {}";
 "Pausiert" = "Dijeda";
 "Pfad kopieren" = "Salin Laluan";
 "Pfad: {}" = "Laluan: {}";
@@ -865,6 +878,7 @@
 "Plugin „{}“ entfernen?" = "Keluarkan plugin “{}”?";
 "Plugins" = "Plugin";
 "Plugins und Marktplätze verwalten" = "Urus plugin dan pasaran";
+"Port (leer: wie ssh)" = "Port (kosong: seperti ssh)";
 "Problem melden …" = "Laporkan Masalah…";
 "Profil hinzufügen" = "Tambah Profil";
 "Profil löschen" = "Padam Profil";
@@ -1037,6 +1051,7 @@
 "Terminal" = "Terminal";
 "Terminal leeren" = "Kosongkan Terminal";
 "Terminal: {}" = "Terminal: {}";
+"Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "Terminal dan ejen berjalan pada komputer yang dicapai ssh dengan cara ini; senarai fail dan Git tiada di sana.";
 "Text mit Steuerzeichen einsetzen?" = "Tampal teks dengan aksara kawalan?";
 "Text mit Zeilenumbruch einsetzen?" = "Tampal teks dengan pemisah baris?";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "Tampal teks dengan {} pemisah baris?";
@@ -1052,6 +1067,7 @@
 "Trag in den Einstellungen unter „Agent“ einen Anbieter mit Schlüssel ein und wähl ein Modell, oder richte Ollama oder LM Studio ein." = "Dalam Seting di bawah “Ejen”, masukkan penyedia bersama kuncinya dan pilih model, atau sediakan Ollama atau LM Studio.";
 "Transkribiere …" = "Mentranskripsi…";
 "Transkription:" = "Transkripsi:";
+"Trennen" = "Putuskan Sambungan";
 "Trennlinie" = "Garis Pembahagi";
 "Trennlinie nach links" = "Alih Pembahagi ke Kiri";
 "Trennlinie nach oben" = "Alih Pembahagi ke Atas";
@@ -1067,6 +1083,7 @@
 "Unbekannt" = "Tidak diketahui";
 "Unbekannte Befehle unterstreichen" = "Garis bawah perintah yang tidak dikenali";
 "Unbekannter Digraph: {}" = "Digraf tidak diketahui: {}";
+"Unbekannter Host-Schlüssel bei {}" = "Kunci hos tidak dikenali di {}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "Akses tanpa had ke internet dan setiap fail pada Mac.";
 "Unerwartete Antwort: {}" = "Jawapan tidak dijangka: {}";
 "Ungesicherte Änderungen an „{}“ verwerfen?" = "Buang perubahan yang belum disimpan pada “{}”?";
@@ -1085,8 +1102,16 @@
 "VISUELL BLOCK" = "VISUAL BLOCK";
 "VISUELL ZEILE" = "VISUAL LINE";
 "Verbieten" = "Larang";
+"Verbinde mit {} …" = "Menyambung ke {}…";
+"Verbinden" = "Sambung";
 "Verbindet …" = "Menyambung…";
 "Verbindung" = "Sambungan";
+"Verbindung bearbeiten" = "Edit Sambungan";
+"Verbindung bearbeiten …" = "Edit Sambungan…";
+"Verbindung fehlgeschlagen" = "sambungan gagal";
+"Verbindung zu {}" = "Sambungan ke {}";
+"Verbindung zu {} fehlgeschlagen" = "Sambungan ke {} gagal";
+"Verbindung zu {} getrennt" = "Sambungan ke {} terputus";
 "Verbunden" = "Disambungkan";
 "Verdichte …" = "Memadatkan…";
 "Verdichtet sich selbst ab {} Tokens" = "Memadatkan sendiri mulai {} token";
@@ -1174,6 +1199,7 @@
 "Wird fortgesetzt …" = "Meneruskan…";
 "Wird gesucht …" = "Mencari …";
 "Wirkung" = "Kesan";
+"Wo arbeitet der neue Arbeitsbereich?" = "Di manakah ruang kerja baharu bekerja?";
 "Wochenlimit" = "Had mingguan";
 "Womit neue Sitzungen starten, bis du im Tab etwas anderes wählst. Leere Felder überlassen die Wahl den Einstellungen des Agenten." = "Perkara yang digunakan sesi baharu semasa bermula sehingga anda memilih yang lain dalam tab. Medan kosong menyerahkan pilihan kepada tetapan ejen.";
 "Worktree wird angelegt …" = "Mencipta worktree…";
@@ -1244,6 +1270,7 @@
 "geschlossen" = "ditutup";
 "geschätzt aus der letzten Antwort" = "dianggarkan daripada jawapan terakhir";
 "gestern" = "semalam";
+"getrennt" = "terputus";
 "gezählt" = "dikira";
 "geändert" = "diubah suai";
 "geöffnet" = "dibuka";
@@ -1268,6 +1295,8 @@
 "und {} weitere" = "dan {} lagi";
 "ungelöst" = "belum diselesaikan";
 "unverändert" = "tidak berubah";
+"verbindet" = "menyambung";
+"verbunden" = "tersambung";
 "von Hand" = "manual";
 "vor einem Jahr" = "setahun lalu";
 "vor einem Monat" = "sebulan lalu";

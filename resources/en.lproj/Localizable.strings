@@ -163,6 +163,8 @@
 "Befehlszeile" = "Command line";
 "Bei einem Entwicklungsserver kannst du dem Zertifikat bis zum Beenden der App vertrauen." = "For a development server you can trust the certificate until the app quits.";
 "Beide" = "Both";
+"Beide dürfen nicht leer sein, nicht mit einem Bindestrich beginnen und keine Leerzeichen oder @ enthalten." = "Neither may be empty, start with a hyphen or contain spaces or @.";
+"Benutzer (leer: wie ssh)" = "User (empty: as ssh has it)";
 "Benutzername" = "User Name";
 "Benutzername oder Passwort waren falsch." = "The user name or password was wrong.";
 "Berechtigungen" = "Permissions";
@@ -456,6 +458,8 @@
 "Einstellungsdateien" = "Settings files";
 "Ende" = "End";
 "Entfernen" = "Remove";
+"Entfernter Arbeitsbereich" = "Remote Workspace";
+"Entfernter Rechner …" = "Remote Computer…";
 "Entscheidung" = "Decision";
 "Entschieden" = "Decided";
 "Er beginnt bei Commit {}, und Git wechselt gleich zu ihm." = "It starts at commit {}, and Git switches to it right away.";
@@ -504,6 +508,7 @@
 "Fortsetzen" = "Continue";
 "Frage" = "Question";
 "Frage nebenbei" = "Side Question";
+"Frage von {}" = "Question from {}";
 "Fragen" = "Ask";
 "Fragen nebenbei" = "Side questions";
 "Fragt nur bei Aktionen, die als möglicherweise unsicher erkannt werden." = "Asks only for actions detected as possibly unsafe.";
@@ -584,6 +589,8 @@
 "Hook „{}“ entfernen?" = "Remove the hook “{}”?";
 "Hooks" = "Hooks";
 "Hooks: {} erfolgreich" = "Hooks: {} succeeded";
+"Host oder Benutzer ungültig" = "Invalid host or user";
+"Host, aus ~/.ssh/config oder eine Adresse" = "Host from ~/.ssh/config or an address";
 "Höre zu …" = "Listening…";
 "Idee" = "Idea";
 "Ignorieren" = "Ignore";
@@ -596,6 +603,7 @@
 "Im Finder zeigen" = "Show in Finder";
 "Im Hintergrund ausführen" = "Run in Background";
 "Im Projekt arbeiten" = "Work in the project";
+"Im Schlüsselbund sichern" = "Save in Keychain";
 "Im Terminal öffnen" = "Open in Terminal";
 "Im Texteditor öffnen" = "Open in Text Editor";
 "Im Verlauf suchen" = "Search history";
@@ -837,6 +845,8 @@
 "OpenCode: {}" = "OpenCode: {}";
 "OpenType-Features:" = "OpenType features:";
 "Ordner" = "Folder";
+"Ordner auf diesem Mac …" = "Folder on This Mac…";
+"Ordner dort (leer: Home-Ordner)" = "Folder there (empty: home folder)";
 "Ordner nicht vertraut" = "Folder Not Trusted";
 "Ordner vertrauen" = "Trust Folder";
 "Ordner wählen …" = "Choose Folder…";
@@ -845,6 +855,9 @@
 "Originalgröße" = "Actual Size";
 "PDF: {}" = "PDF: {}";
 "Passwort" = "Password";
+"Passwort (leer: unverändert)" = "Password (empty: unchanged)";
+"Passwort (optional, im Schlüsselbund)" = "Password (optional, in Keychain)";
+"Passwort für {}" = "Password for {}";
 "Pausiert" = "Paused";
 "Pfad kopieren" = "Copy Path";
 "Pfad: {}" = "Path: {}";
@@ -865,6 +878,7 @@
 "Plugin „{}“ entfernen?" = "Remove the plugin “{}”?";
 "Plugins" = "Plugins";
 "Plugins und Marktplätze verwalten" = "Manage plugins and marketplaces";
+"Port (leer: wie ssh)" = "Port (empty: as ssh has it)";
 "Problem melden …" = "Report a Problem…";
 "Profil hinzufügen" = "Add Profile";
 "Profil löschen" = "Delete Profile";
@@ -1037,6 +1051,7 @@
 "Terminal" = "Terminal";
 "Terminal leeren" = "Clear Terminal";
 "Terminal: {}" = "Terminal: {}";
+"Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "Terminals and agents run on the computer ssh reaches this way; the file list and Git are not available there.";
 "Text mit Steuerzeichen einsetzen?" = "Paste text with control characters?";
 "Text mit Zeilenumbruch einsetzen?" = "Paste text with a line break?";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "Paste text with {} line breaks?";
@@ -1052,6 +1067,7 @@
 "Trag in den Einstellungen unter „Agent“ einen Anbieter mit Schlüssel ein und wähl ein Modell, oder richte Ollama oder LM Studio ein." = "In Settings under “Agent”, enter a provider with its key and choose a model, or set up Ollama or LM Studio.";
 "Transkribiere …" = "Transcribing…";
 "Transkription:" = "Transcription:";
+"Trennen" = "Disconnect";
 "Trennlinie" = "Horizontal Rule";
 "Trennlinie nach links" = "Move Divider Left";
 "Trennlinie nach oben" = "Move Divider Up";
@@ -1067,6 +1083,7 @@
 "Unbekannt" = "Unknown";
 "Unbekannte Befehle unterstreichen" = "Underline unknown commands";
 "Unbekannter Digraph: {}" = "Unknown digraph: {}";
+"Unbekannter Host-Schlüssel bei {}" = "Unknown host key at {}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "Unrestricted access to the internet and every file on the Mac.";
 "Unerwartete Antwort: {}" = "Unexpected answer: {}";
 "Ungesicherte Änderungen an „{}“ verwerfen?" = "Discard unsaved changes to “{}”?";
@@ -1085,8 +1102,16 @@
 "VISUELL BLOCK" = "VISUAL BLOCK";
 "VISUELL ZEILE" = "VISUAL LINE";
 "Verbieten" = "Deny";
+"Verbinde mit {} …" = "Connecting to {}…";
+"Verbinden" = "Connect";
 "Verbindet …" = "Connecting …";
 "Verbindung" = "Connection";
+"Verbindung bearbeiten" = "Edit Connection";
+"Verbindung bearbeiten …" = "Edit Connection…";
+"Verbindung fehlgeschlagen" = "connection failed";
+"Verbindung zu {}" = "Connection to {}";
+"Verbindung zu {} fehlgeschlagen" = "Connection to {} failed";
+"Verbindung zu {} getrennt" = "Connection to {} lost";
 "Verbunden" = "Connected";
 "Verdichte …" = "Compacting…";
 "Verdichtet sich selbst ab {} Tokens" = "Compacts by itself from {} tokens";
@@ -1174,6 +1199,7 @@
 "Wird fortgesetzt …" = "Continuing…";
 "Wird gesucht …" = "Looking …";
 "Wirkung" = "Effect";
+"Wo arbeitet der neue Arbeitsbereich?" = "Where does the new workspace work?";
 "Wochenlimit" = "Weekly limit";
 "Womit neue Sitzungen starten, bis du im Tab etwas anderes wählst. Leere Felder überlassen die Wahl den Einstellungen des Agenten." = "What new sessions start with until you choose otherwise in the tab. Empty fields leave the choice to the agent’s own settings.";
 "Worktree wird angelegt …" = "Creating worktree…";
@@ -1244,6 +1270,7 @@
 "geschlossen" = "closed";
 "geschätzt aus der letzten Antwort" = "estimated from the last response";
 "gestern" = "yesterday";
+"getrennt" = "disconnected";
 "gezählt" = "counted";
 "geändert" = "modified";
 "geöffnet" = "open";
@@ -1268,6 +1295,8 @@
 "und {} weitere" = "and {} more";
 "ungelöst" = "unresolved";
 "unverändert" = "unchanged";
+"verbindet" = "connecting";
+"verbunden" = "connected";
 "von Hand" = "manual";
 "vor einem Jahr" = "a year ago";
 "vor einem Monat" = "a month ago";

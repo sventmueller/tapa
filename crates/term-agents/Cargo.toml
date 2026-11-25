@@ -28,6 +28,7 @@ term-acp.workspace = true
 term-base.workspace = true
 term-claude.workspace = true
 term-codex.workspace = true
+term-remote.workspace = true
 term-opencode.workspace = true
 term-process.workspace = true
 term-thread.workspace = true

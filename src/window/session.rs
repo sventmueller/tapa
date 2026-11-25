@@ -61,16 +61,18 @@ pub(crate) fn make(
     folder: PathBuf,
     program: Option<Program>,
 ) -> (Retained<TerminalView>, Retained<NSView>) {
-    let (view, root) = TerminalView::new(mtm, WindowId::new(window), folder);
+    let (view, root) = TerminalView::new(mtm, WindowId::new(window), folder.clone());
     let config = app().config();
-    let program = program.or_else(|| {
-        let command = config.profile(&config.default_profile).ok()?.command?;
-        let (program, args) = command.split_first()?;
-        Some(Program::Command {
-            program: program.into(),
-            args: args.to_vec(),
-        })
-    });
+    let program = program
+        .or_else(|| crate::remote::terminal_program_for(&folder))
+        .or_else(|| {
+            let command = config.profile(&config.default_profile).ok()?.command?;
+            let (program, args) = command.split_first()?;
+            Some(Program::Command {
+                program: program.into(),
+                args: args.to_vec(),
+            })
+        });
     if let Some(program) = program {
         view.set_program(program);
     }
@@ -96,6 +98,16 @@ pub(crate) fn toggle_field(view: &TerminalView) {
 
 /// Starts the shell of `view` with the app's environment and the default profile's variables.
 pub(crate) fn spawn(view: &TerminalView) {
+    view.spawn_restored(&environment(), crate::restore::take_rows(view.id()));
+}
+
+/// Starts the program of `view` again where it ended, with the environment `spawn` gives.
+pub(crate) fn restart(view: &TerminalView) {
+    view.restart(&environment());
+}
+
+/// The app's environment without what a shell must not inherit, with the default profile's variables.
+fn environment() -> Vec<(String, String)> {
     let config = app().config();
     let mut env: Vec<(String, String)> = std::env::vars()
         .filter(|(name, _)| !NOT_INHERITED.contains(&name.as_str()))
@@ -106,7 +118,7 @@ pub(crate) fn spawn(view: &TerminalView) {
             env.push((name, value));
         }
     }
-    view.spawn_restored(&env, crate::restore::take_rows(view.id()));
+    env
 }
 
 #[cfg(test)]

@@ -163,6 +163,8 @@
 "Befehlszeile" = "Командний рядок";
 "Bei einem Entwicklungsserver kannst du dem Zertifikat bis zum Beenden der App vertrauen." = "Якщо це сервер розробки, ви можете довіряти його сертифікату до завершення роботи програми.";
 "Beide" = "Обидві";
+"Beide dürfen nicht leer sein, nicht mit einem Bindestrich beginnen und keine Leerzeichen oder @ enthalten." = "Жодне з них не може бути порожнім, починатися з дефіса чи містити пробіли або @.";
+"Benutzer (leer: wie ssh)" = "Користувач (порожньо: як у ssh)";
 "Benutzername" = "Імʼя користувача";
 "Benutzername oder Passwort waren falsch." = "Неправильне імʼя користувача або пароль.";
 "Berechtigungen" = "Дозволи";
@@ -456,6 +458,8 @@
 "Einstellungsdateien" = "Файли параметрів";
 "Ende" = "Кінець";
 "Entfernen" = "Вилучити";
+"Entfernter Arbeitsbereich" = "Віддалений робочий простір";
+"Entfernter Rechner …" = "Віддалений компʼютер…";
 "Entscheidung" = "Рішення";
 "Entschieden" = "Вирішено";
 "Er beginnt bei Commit {}, und Git wechselt gleich zu ihm." = "Вона починається з коміту {}, і Git одразу на неї перемкнеться.";
@@ -504,6 +508,7 @@
 "Fortsetzen" = "Продовжити";
 "Frage" = "Запитання";
 "Frage nebenbei" = "Побіжне запитання";
+"Frage von {}" = "Запитання від {}";
 "Fragen" = "Запитувати";
 "Fragen nebenbei" = "Побіжні запитання";
 "Fragt nur bei Aktionen, die als möglicherweise unsicher erkannt werden." = "Питає лише про дії, розпізнані як можливо небезпечні.";
@@ -584,6 +589,8 @@
 "Hook „{}“ entfernen?" = "Вилучити хук «{}»?";
 "Hooks" = "Хуки";
 "Hooks: {} erfolgreich" = "Успішних хуків: {}";
+"Host oder Benutzer ungültig" = "Недійсний хост або користувач";
+"Host, aus ~/.ssh/config oder eine Adresse" = "Хост із ~/.ssh/config або адреса";
 "Höre zu …" = "Слухаю…";
 "Idee" = "Ідея";
 "Ignorieren" = "Ігнорувати";
@@ -596,6 +603,7 @@
 "Im Finder zeigen" = "Показати у Finder";
 "Im Hintergrund ausführen" = "Виконати у фоні";
 "Im Projekt arbeiten" = "Робота в проєкті";
+"Im Schlüsselbund sichern" = "Зберегти у звʼязці ключів";
 "Im Terminal öffnen" = "Відкрити в терміналі";
 "Im Texteditor öffnen" = "Відкрити в текстовому редакторі";
 "Im Verlauf suchen" = "Пошук в історії прокрутки";
@@ -837,6 +845,8 @@
 "OpenCode: {}" = "OpenCode: {}";
 "OpenType-Features:" = "Функції OpenType:";
 "Ordner" = "Папка";
+"Ordner auf diesem Mac …" = "Папка на цьому Mac…";
+"Ordner dort (leer: Home-Ordner)" = "Папка там (порожньо: домашня папка)";
 "Ordner nicht vertraut" = "Немає довіри до папки";
 "Ordner vertrauen" = "Довіряти папці";
 "Ordner wählen …" = "Вибрати папку…";
@@ -845,6 +855,9 @@
 "Originalgröße" = "Фактичний розмір";
 "PDF: {}" = "PDF: {}";
 "Passwort" = "Пароль";
+"Passwort (leer: unverändert)" = "Пароль (порожньо: без змін)";
+"Passwort (optional, im Schlüsselbund)" = "Пароль (необовʼязково, у звʼязці ключів)";
+"Passwort für {}" = "Пароль для {}";
 "Pausiert" = "Призупинено";
 "Pfad kopieren" = "Скопіювати шлях";
 "Pfad: {}" = "Шлях: {}";
@@ -865,6 +878,7 @@
 "Plugin „{}“ entfernen?" = "Вилучити плагін «{}»?";
 "Plugins" = "Плагіни";
 "Plugins und Marktplätze verwalten" = "Керування плагінами та маркетплейсами";
+"Port (leer: wie ssh)" = "Порт (порожньо: як у ssh)";
 "Problem melden …" = "Повідомити про проблему…";
 "Profil hinzufügen" = "Додати профіль";
 "Profil löschen" = "Видалити профіль";
@@ -1037,6 +1051,7 @@
 "Terminal" = "Термінал";
 "Terminal leeren" = "Очистити термінал";
 "Terminal: {}" = "Термінал: {}";
+"Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "Термінали й агенти працюють на компʼютері, до якого так підʼєднується ssh; список файлів і Git там недоступні.";
 "Text mit Steuerzeichen einsetzen?" = "Вставити текст із керівними символами?";
 "Text mit Zeilenumbruch einsetzen?" = "Вставити текст із розривом рядка?";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "Вставити текст із розривами рядка ({})?";
@@ -1052,6 +1067,7 @@
 "Trag in den Einstellungen unter „Agent“ einen Anbieter mit Schlüssel ein und wähl ein Modell, oder richte Ollama oder LM Studio ein." = "У параметрах, у розділі «Агент», укажіть провайдера з ключем і виберіть модель або налаштуйте Ollama чи LM Studio.";
 "Transkribiere …" = "Розпізнавання…";
 "Transkription:" = "Розпізнавання:";
+"Trennen" = "Відʼєднатися";
 "Trennlinie" = "Горизонтальна лінія";
 "Trennlinie nach links" = "Зсунути розділювач ліворуч";
 "Trennlinie nach oben" = "Зсунути розділювач угору";
@@ -1067,6 +1083,7 @@
 "Unbekannt" = "Невідомо";
 "Unbekannte Befehle unterstreichen" = "Підкреслювати невідомі команди";
 "Unbekannter Digraph: {}" = "Невідомий диграф: {}";
+"Unbekannter Host-Schlüssel bei {}" = "Невідомий ключ хоста {}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "Необмежений доступ до інтернету й будь-якого файлу на Mac.";
 "Unerwartete Antwort: {}" = "Неочікувана відповідь: {}";
 "Ungesicherte Änderungen an „{}“ verwerfen?" = "Відкинути незбережені зміни в «{}»?";
@@ -1085,8 +1102,16 @@
 "VISUELL BLOCK" = "ВИБІР БЛОКУ";
 "VISUELL ZEILE" = "ВИБІР РЯДКІВ";
 "Verbieten" = "Заборонити";
+"Verbinde mit {} …" = "Підʼєднання до {}…";
+"Verbinden" = "Підʼєднатися";
 "Verbindet …" = "Підключення…";
 "Verbindung" = "Підключення";
+"Verbindung bearbeiten" = "Редагувати підключення";
+"Verbindung bearbeiten …" = "Редагувати підключення…";
+"Verbindung fehlgeschlagen" = "не вдалося підʼєднатися";
+"Verbindung zu {}" = "Підключення до {}";
+"Verbindung zu {} fehlgeschlagen" = "Не вдалося підʼєднатися до {}";
+"Verbindung zu {} getrennt" = "Підключення до {} перервано";
 "Verbunden" = "Підключено";
 "Verdichte …" = "Стиснення…";
 "Verdichtet sich selbst ab {} Tokens" = "Автостиснення з {} токенів";
@@ -1174,6 +1199,7 @@
 "Wird fortgesetzt …" = "Продовження…";
 "Wird gesucht …" = "Пошук …";
 "Wirkung" = "Дія";
+"Wo arbeitet der neue Arbeitsbereich?" = "Де працює новий робочий простір?";
 "Wochenlimit" = "Тижневий ліміт";
 "Womit neue Sitzungen starten, bis du im Tab etwas anderes wählst. Leere Felder überlassen die Wahl den Einstellungen des Agenten." = "З чим починаються нові сеанси, доки ви не виберете інше у вкладці. Порожні поля залишають вибір параметрам агента.";
 "Worktree wird angelegt …" = "Створення worktree…";
@@ -1244,6 +1270,7 @@
 "geschlossen" = "закрито";
 "geschätzt aus der letzten Antwort" = "оцінка за останньою відповіддю";
 "gestern" = "учора";
+"getrennt" = "відʼєднано";
 "gezählt" = "підраховано";
 "geändert" = "змінено";
 "geöffnet" = "відкрито";
@@ -1268,6 +1295,8 @@
 "und {} weitere" = "і ще {}";
 "ungelöst" = "нерозвʼязано";
 "unverändert" = "без змін";
+"verbindet" = "підʼєднання";
+"verbunden" = "підʼєднано";
 "von Hand" = "вручну";
 "vor einem Jahr" = "рік тому";
 "vor einem Monat" = "місяць тому";

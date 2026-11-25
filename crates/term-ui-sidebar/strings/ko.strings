@@ -27,3 +27,10 @@
 "Arbeitet" = "작업 중";
 "Wartet auf dich" = "사용자를 기다리는 중";
 "Einstellungen" = "설정";
+"Trennen" = "연결 해제";
+"Verbindung bearbeiten …" = "연결 편집…";
+"Verbindung fehlgeschlagen" = "연결 실패";
+"Verbindung zu {}" = "{}에 연결";
+"getrennt" = "연결 끊김";
+"verbindet" = "연결 중";
+"verbunden" = "연결됨";

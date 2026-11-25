@@ -10,6 +10,7 @@ use objc2_app_kit::{NSModalResponse, NSModalResponseOK, NSOpenPanel};
 use objc2_foundation::NSURL;
 use splat_i18n::t;
 use term_base::guarded;
+use term_ui::kit::alert::{Alert, Role};
 use term_ui::kit::ns;
 use term_ui_sidebar::RowAction;
 
@@ -25,12 +26,71 @@ impl Window {
         workspace
     }
 
-    /// Asks for the folder of a new workspace in a sheet, starting at the selected workspace's, and opens it.
+    /// Asks where a new workspace works, a folder on this Mac or another machine (E25), and opens it there.
     pub(crate) fn new_workspace(&self) {
         if self.is_quick() {
             objc2_app_kit::NSBeep();
             return;
         }
+        let Some(ns_window) = self.front_ns_window() else {
+            return;
+        };
+        let id = self.id();
+        Alert::new(self.mtm, t("Wo arbeitet der neue Arbeitsbereich?"))
+            .button(t("Ordner auf diesem Mac …"), Role::Plain)
+            .button(t("Entfernter Rechner …"), Role::Plain)
+            .button(t("Abbrechen"), Role::CancelOnEscape)
+            .sheet(&ns_window, move |response| {
+                // The next sheet waits until this one has gone.
+                term_base::main_soon(move || {
+                    let Some(window) = try_app().and_then(|app| app.window(id)) else {
+                        return;
+                    };
+                    if response == objc2_app_kit::NSAlertFirstButtonReturn {
+                        window.new_local_workspace();
+                    } else if response == objc2_app_kit::NSAlertSecondButtonReturn {
+                        window.new_remote_workspace();
+                    }
+                });
+            });
+    }
+
+    /// Asks for the machine of a new remote workspace in a sheet and opens it (E25).
+    pub(crate) fn new_remote_workspace(&self) {
+        let Some(ns_window) = self.front_ns_window() else {
+            return;
+        };
+        let id = self.id();
+        crate::remote::sheet::ask(&ns_window, None, move |target, password| {
+            if let Some(window) = try_app().and_then(|app| app.window(id)) {
+                if !password.is_empty() {
+                    crate::remote::keep_password(&target, &password);
+                }
+                window.open_remote_workspace(target);
+            }
+        });
+    }
+
+    /// Brings the remote workspace on `target` forward, or opens one with a tab and connects it (E25).
+    pub(crate) fn open_remote_workspace(self: &Rc<Self>, target: term_remote::Target) {
+        let known = self.workspaces().into_iter().find(|workspace| {
+            workspace
+                .remote_machine()
+                .is_some_and(|remote| remote.target() == target)
+        });
+        if let Some(workspace) = known {
+            return self.select_workspace(workspace.id);
+        }
+        let remote = crate::remote::Remote::new(target);
+        remote.connect();
+        let workspace = Rc::new(Workspace::remote(app().next_id(), remote, None));
+        self.workspaces.borrow_mut().insert_after_selected(workspace.clone());
+        self.select_workspace(workspace.id);
+        crate::restore::save();
+    }
+
+    /// Asks for the folder of a new workspace in a sheet, starting at the selected workspace's, and opens it.
+    pub(crate) fn new_local_workspace(&self) {
         let Some(ns_window) = self.front_ns_window() else {
             return;
         };
@@ -173,7 +233,42 @@ impl Window {
                 }
                 self.refresh();
             }
+            RowAction::Reconnect => {
+                if let Some(remote) = self.remote_of(id) {
+                    remote.connect();
+                }
+            }
+            RowAction::Disconnect => {
+                if let Some(remote) = self.remote_of(id) {
+                    remote.disconnect();
+                }
+            }
+            RowAction::EditConnection => self.edit_connection(id),
         }
+    }
+
+    fn remote_of(&self, id: u64) -> Option<Rc<crate::remote::Remote>> {
+        self.workspaces
+            .borrow()
+            .get(WorkspaceId::new(id))
+            .and_then(|workspace| workspace.remote_machine())
+    }
+
+    /// Changes where remote workspace `id` connects to, in a sheet filled with its machine now.
+    fn edit_connection(&self, id: u64) {
+        let (Some(remote), Some(ns_window)) = (self.remote_of(id), self.front_ns_window()) else {
+            return;
+        };
+        let weak = Rc::downgrade(&remote);
+        crate::remote::sheet::ask(&ns_window, Some(&remote.target()), move |target, password| {
+            if !password.is_empty() {
+                crate::remote::keep_password(&target, &password);
+            }
+            if let Some(remote) = weak.upgrade() {
+                remote.retarget(target);
+            }
+            crate::restore::save();
+        });
     }
 
     /// Trusts the selected workspace, or takes the trust back (E21).

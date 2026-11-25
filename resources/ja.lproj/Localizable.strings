@@ -163,6 +163,8 @@
 "Befehlszeile" = "コマンドライン";
 "Bei einem Entwicklungsserver kannst du dem Zertifikat bis zum Beenden der App vertrauen." = "開発サーバの場合は、アプリを終了するまで証明書を信頼できます。";
 "Beide" = "両方";
+"Beide dürfen nicht leer sein, nicht mit einem Bindestrich beginnen und keine Leerzeichen oder @ enthalten." = "どちらも空にできず、ハイフンで始めることも、スペースや @ を含めることもできません。";
+"Benutzer (leer: wie ssh)" = "ユーザ(空欄: ssh の設定どおり)";
 "Benutzername" = "ユーザ名";
 "Benutzername oder Passwort waren falsch." = "ユーザ名またはパスワードが正しくありませんでした。";
 "Berechtigungen" = "権限";
@@ -456,6 +458,8 @@
 "Einstellungsdateien" = "設定ファイル";
 "Ende" = "終了";
 "Entfernen" = "削除";
+"Entfernter Arbeitsbereich" = "リモートワークスペース";
+"Entfernter Rechner …" = "リモートコンピュータ…";
 "Entscheidung" = "判断";
 "Entschieden" = "決定済み";
 "Er beginnt bei Commit {}, und Git wechselt gleich zu ihm." = "コミット{}から始まり、Gitはすぐにそのブランチに切り替えます。";
@@ -504,6 +508,7 @@
 "Fortsetzen" = "続行";
 "Frage" = "質問";
 "Frage nebenbei" = "別枠の質問";
+"Frage von {}" = "{} からの質問";
 "Fragen" = "尋ねる";
 "Fragen nebenbei" = "別枠の質問";
 "Fragt nur bei Aktionen, die als möglicherweise unsicher erkannt werden." = "安全でない可能性があると判定された操作についてのみ確認します。";
@@ -584,6 +589,8 @@
 "Hook „{}“ entfernen?" = "フック“{}”を削除しますか?";
 "Hooks" = "フック";
 "Hooks: {} erfolgreich" = "フック: {}件成功";
+"Host oder Benutzer ungültig" = "ホストまたはユーザが無効です";
+"Host, aus ~/.ssh/config oder eine Adresse" = "~/.ssh/config のホストまたはアドレス";
 "Höre zu …" = "聞き取り中…";
 "Idee" = "アイデア";
 "Ignorieren" = "無視";
@@ -596,6 +603,7 @@
 "Im Finder zeigen" = "Finderに表示";
 "Im Hintergrund ausführen" = "バックグラウンドで実行";
 "Im Projekt arbeiten" = "プロジェクト内で作業";
+"Im Schlüsselbund sichern" = "キーチェーンに保存";
 "Im Terminal öffnen" = "ターミナルで開く";
 "Im Texteditor öffnen" = "テキストエディタで開く";
 "Im Verlauf suchen" = "履歴を検索";
@@ -837,6 +845,8 @@
 "OpenCode: {}" = "OpenCode: {}";
 "OpenType-Features:" = "OpenType機能：";
 "Ordner" = "フォルダ";
+"Ordner auf diesem Mac …" = "この Mac 上のフォルダ…";
+"Ordner dort (leer: Home-Ordner)" = "向こうのフォルダ(空欄: ホームフォルダ)";
 "Ordner nicht vertraut" = "信頼されていないフォルダ";
 "Ordner vertrauen" = "フォルダを信頼";
 "Ordner wählen …" = "フォルダを選択…";
@@ -845,6 +855,9 @@
 "Originalgröße" = "実際のサイズ";
 "PDF: {}" = "PDF: {}";
 "Passwort" = "パスワード";
+"Passwort (leer: unverändert)" = "パスワード(空欄: 変更なし)";
+"Passwort (optional, im Schlüsselbund)" = "パスワード(オプション、キーチェーンに保存)";
+"Passwort für {}" = "{} のパスワード";
 "Pausiert" = "一時停止中";
 "Pfad kopieren" = "パスをコピー";
 "Pfad: {}" = "パス: {}";
@@ -865,6 +878,7 @@
 "Plugin „{}“ entfernen?" = "プラグイン“{}”を削除しますか?";
 "Plugins" = "プラグイン";
 "Plugins und Marktplätze verwalten" = "プラグインとマーケットプレイスを管理";
+"Port (leer: wie ssh)" = "ポート(空欄: ssh の設定どおり)";
 "Problem melden …" = "問題を報告…";
 "Profil hinzufügen" = "プロファイルを追加";
 "Profil löschen" = "プロファイルを削除";
@@ -1037,6 +1051,7 @@
 "Terminal" = "ターミナル";
 "Terminal leeren" = "ターミナルを消去";
 "Terminal: {}" = "ターミナル：{}";
+"Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "ターミナルとエージェントは、ssh がこの設定で接続するコンピュータで動作します。そこではファイルリストと Git は使えません。";
 "Text mit Steuerzeichen einsetzen?" = "制御文字を含むテキストをペーストしますか？";
 "Text mit Zeilenumbruch einsetzen?" = "改行を含むテキストをペーストしますか？";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "改行を{}個含むテキストをペーストしますか？";
@@ -1052,6 +1067,7 @@
 "Trag in den Einstellungen unter „Agent“ einen Anbieter mit Schlüssel ein und wähl ein Modell, oder richte Ollama oder LM Studio ein." = "“設定”の“エージェント”で、プロバイダとそのキーを入力してモデルを選択するか、OllamaまたはLM Studioを設定してください。";
 "Transkribiere …" = "文字起こし中…";
 "Transkription:" = "文字起こし:";
+"Trennen" = "接続を解除";
 "Trennlinie" = "区切り線";
 "Trennlinie nach links" = "区切り線を左へ移動";
 "Trennlinie nach oben" = "区切り線を上へ移動";
@@ -1067,6 +1083,7 @@
 "Unbekannt" = "不明";
 "Unbekannte Befehle unterstreichen" = "不明なコマンドに下線を表示";
 "Unbekannter Digraph: {}" = "不明なダイグラフ: {}";
+"Unbekannter Host-Schlüssel bei {}" = "{} のホスト鍵が不明です";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "インターネットとMac上のすべてのファイルに制限なくアクセスします。";
 "Unerwartete Antwort: {}" = "予期しない応答: {}";
 "Ungesicherte Änderungen an „{}“ verwerfen?" = "“{}”の保存されていない変更を破棄しますか?";
@@ -1085,8 +1102,16 @@
 "VISUELL BLOCK" = "ビジュアル 矩形";
 "VISUELL ZEILE" = "ビジュアル 行";
 "Verbieten" = "拒否";
+"Verbinde mit {} …" = "{} に接続中…";
+"Verbinden" = "接続";
 "Verbindet …" = "接続中…";
 "Verbindung" = "接続";
+"Verbindung bearbeiten" = "接続を編集";
+"Verbindung bearbeiten …" = "接続を編集…";
+"Verbindung fehlgeschlagen" = "接続に失敗";
+"Verbindung zu {}" = "{} への接続";
+"Verbindung zu {} fehlgeschlagen" = "{} への接続に失敗しました";
+"Verbindung zu {} getrennt" = "{} との接続が切れました";
 "Verbunden" = "接続済み";
 "Verdichte …" = "圧縮中…";
 "Verdichtet sich selbst ab {} Tokens" = "{}トークンから自動的に圧縮";
@@ -1174,6 +1199,7 @@
 "Wird fortgesetzt …" = "続行中…";
 "Wird gesucht …" = "検索中 …";
 "Wirkung" = "動作";
+"Wo arbeitet der neue Arbeitsbereich?" = "新しいワークスペースの作業場所は?";
 "Wochenlimit" = "週間上限";
 "Womit neue Sitzungen starten, bis du im Tab etwas anderes wählst. Leere Felder überlassen die Wahl den Einstellungen des Agenten." = "タブで別のものを選ぶまで、新しいセッションが何で始まるか。空欄の項目はエージェント自身の設定に任せます。";
 "Worktree wird angelegt …" = "ワークツリーを作成中…";
@@ -1244,6 +1270,7 @@
 "geschlossen" = "閉じています";
 "geschätzt aus der letzten Antwort" = "最後の応答から推定";
 "gestern" = "昨日";
+"getrennt" = "未接続";
 "gezählt" = "カウント済み";
 "geändert" = "変更済み";
 "geöffnet" = "開いています";
@@ -1268,6 +1295,8 @@
 "und {} weitere" = "ほか{}件";
 "ungelöst" = "未解決";
 "unverändert" = "変更なし";
+"verbindet" = "接続中";
+"verbunden" = "接続済み";
 "von Hand" = "手動";
 "vor einem Jahr" = "1年前";
 "vor einem Monat" = "1か月前";

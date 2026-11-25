@@ -92,7 +92,7 @@ The toolbar holds, from the left, the branch pull-down of the workspace's reposi
 
 ## Workspaces
 
-A workspace is a folder with its tabs. Its row in the sidebar shows the name, the folder and the Git branch, and on the right the buttons for the file list and the Git panel. A click on one of them shows that panel in place of the list of workspaces; **Workspaces** at the top leads back.
+A workspace is a folder with its tabs. Its row in the sidebar shows the name, the folder and the Git branch, and on the right the number of changed files, the Git button and the folder button for the file list; outside a Git repository the Git button and the number stay away. A click on a button shows that panel in place of the list of workspaces; **Workspaces** at the top leads back.
 
 - **The "Terminal" workspace** is always on top. It starts fresh at every launch, in the folder the settings name, with one empty terminal. Nothing of it is stored, and it cannot be renamed or removed.
 - **Every other workspace stays** until you remove it, even without tabs. Tapa keeps its name, tabs, the content of its terminals (as far as the restore settings say), its agent sessions and the window's position. Programs still running end when Tapa quits.
@@ -100,6 +100,7 @@ A workspace is a folder with its tabs. Its row in the sidebar shows the name, th
 - **Status.** A green dot on the row means an agent of the workspace is working, also with subagents or in the background; a red dot means one is waiting for you. Terminals mark nothing there.
 - **Switching.** ⌃⌘[ and ⌃⌘] move between workspaces. The window keeps its place, and the selected workspace's tabs take the place of the others.
 - **Worktrees.** **New Worktree…** in the toolbar's branch pull-down creates a Git worktree on a new branch and opens it as a workspace of its own.
+- **Remote workspaces.** **New Workspace** asks whether the workspace works in a folder on this Mac or on another computer. For another computer you give the host, from `~/.ssh/config` or an address, the port and user where they differ from ssh's own, a password if you like, which Tapa keeps in your keychain, and the folder there. Terminals and agent tabs of the workspace then run on that computer through one SSH connection, with your keys, agent and configuration; ssh's questions, such as an unknown host key or a password, appear as sheets, and a host key is never accepted without you. Its row shows a network button in place of the Git and folder buttons, coloured by the connection; its menu connects again, disconnects or edits the connection. The agents offered are those installed on the other computer, which sign in there themselves; Tapa sends them no keys. OpenCode works there over ACP. The file list, the Git panel, the editor and the previews are not available in a remote workspace.
 
 When the last tab of a workspace closes, the workspace stays in the list. With all tabs closed, only the window goes; the Dock icon or ⌘N brings it back with its workspaces.
 
@@ -279,6 +280,7 @@ Security problems are reported privately, see [SECURITY.md](SECURITY.md).
 
 - **No inline images** in the terminal yet: Kitty graphics, Sixel and iTerm2 images are planned after 1.0.
 - **No tmux control mode**, and sessions do not survive quitting Tapa.
+- **Remote workspaces** lose their terminals and the turn an agent is working on when the connection drops.
 - **Right-to-left text** in the terminal grid stays left to right.
 - **⌘+ and ⌘−** change only the terminal in front.
 - **The editor** has no language servers, formatters or debugger, by design; Dango has them.

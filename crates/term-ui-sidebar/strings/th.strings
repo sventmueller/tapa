@@ -27,3 +27,10 @@
 "Arbeitet" = "กำลังทำงาน";
 "Wartet auf dich" = "กำลังรอคุณ";
 "Einstellungen" = "การตั้งค่า";
+"Trennen" = "ตัดการเชื่อมต่อ";
+"Verbindung bearbeiten …" = "แก้ไขการเชื่อมต่อ…";
+"Verbindung fehlgeschlagen" = "การเชื่อมต่อล้มเหลว";
+"Verbindung zu {}" = "การเชื่อมต่อกับ {}";
+"getrennt" = "ตัดการเชื่อมต่อแล้ว";
+"verbindet" = "กำลังเชื่อมต่อ";
+"verbunden" = "เชื่อมต่อแล้ว";

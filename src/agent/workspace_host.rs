@@ -145,6 +145,11 @@ impl NoticesHost for Workspaces {
 
 impl FilesHost for Workspaces {
     fn open_file(&self, workspace: WorkspaceId, path: &Path) {
+        // The files of a remote workspace are on the other machine, not in its placeholder folder (E25).
+        if crate::remote::is_remote(path) {
+            objc2_app_kit::NSBeep();
+            return;
+        }
         if find(workspace).is_some() {
             crate::editor_tab::open_in(workspace, path, false);
         } else {

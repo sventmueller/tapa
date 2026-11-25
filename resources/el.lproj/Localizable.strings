@@ -163,6 +163,8 @@
 "Befehlszeile" = "Γραμμή εντολών";
 "Bei einem Entwicklungsserver kannst du dem Zertifikat bis zum Beenden der App vertrauen." = "Για έναν διακομιστή ανάπτυξης, μπορείτε να εμπιστευτείτε το πιστοποιητικό μέχρι τον τερματισμό της εφαρμογής.";
 "Beide" = "Και τα δύο";
+"Beide dürfen nicht leer sein, nicht mit einem Bindestrich beginnen und keine Leerzeichen oder @ enthalten." = "Κανένα από τα δύο δεν μπορεί να είναι κενό, να αρχίζει με παύλα ή να περιέχει κενά ή @.";
+"Benutzer (leer: wie ssh)" = "Χρήστης (κενό: όπως το ssh)";
 "Benutzername" = "Όνομα χρήστη";
 "Benutzername oder Passwort waren falsch." = "Το όνομα χρήστη ή το συνθηματικό ήταν λάθος.";
 "Berechtigungen" = "Άδειες";
@@ -456,6 +458,8 @@
 "Einstellungsdateien" = "Αρχεία ρυθμίσεων";
 "Ende" = "Τέλος";
 "Entfernen" = "Αφαίρεση";
+"Entfernter Arbeitsbereich" = "Απομακρυσμένος χώρος εργασίας";
+"Entfernter Rechner …" = "Απομακρυσμένος υπολογιστής…";
 "Entscheidung" = "Απόφαση";
 "Entschieden" = "Αποφασίστηκε";
 "Er beginnt bei Commit {}, und Git wechselt gleich zu ihm." = "Ξεκινά από το commit {} και το Git μεταβαίνει αμέσως σε αυτό.";
@@ -504,6 +508,7 @@
 "Fortsetzen" = "Συνέχεια";
 "Frage" = "Ερώτηση";
 "Frage nebenbei" = "Παράπλευρη ερώτηση";
+"Frage von {}" = "Ερώτηση από {}";
 "Fragen" = "Να ερωτάται";
 "Fragen nebenbei" = "Παράπλευρες ερωτήσεις";
 "Fragt nur bei Aktionen, die als möglicherweise unsicher erkannt werden." = "Ρωτά μόνο για ενέργειες που εντοπίζονται ως πιθανώς μη ασφαλείς.";
@@ -584,6 +589,8 @@
 "Hook „{}“ entfernen?" = "Αφαίρεση του hook «{}»;";
 "Hooks" = "Hook";
 "Hooks: {} erfolgreich" = "Επιτυχή hook: {}";
+"Host oder Benutzer ungültig" = "Μη έγκυρος κεντρικός υπολογιστής ή χρήστης";
+"Host, aus ~/.ssh/config oder eine Adresse" = "Κεντρικός υπολογιστής από το ~/.ssh/config ή διεύθυνση";
 "Höre zu …" = "Ακρόαση…";
 "Idee" = "Ιδέα";
 "Ignorieren" = "Παράβλεψη";
@@ -596,6 +603,7 @@
 "Im Finder zeigen" = "Εμφάνιση στο Finder";
 "Im Hintergrund ausführen" = "Εκτέλεση στο παρασκήνιο";
 "Im Projekt arbeiten" = "Εργασία στο έργο";
+"Im Schlüsselbund sichern" = "Αποθήκευση στην κλειδοθήκη";
 "Im Terminal öffnen" = "Άνοιγμα στο τερματικό";
 "Im Texteditor öffnen" = "Άνοιγμα σε επεξεργαστή κειμένου";
 "Im Verlauf suchen" = "Αναζήτηση στο ιστορικό κύλισης";
@@ -837,6 +845,8 @@
 "OpenCode: {}" = "OpenCode: {}";
 "OpenType-Features:" = "Δυνατότητες OpenType:";
 "Ordner" = "Φάκελος";
+"Ordner auf diesem Mac …" = "Φάκελος σε αυτό το Mac…";
+"Ordner dort (leer: Home-Ordner)" = "Φάκελος εκεί (κενό: αρχικός φάκελος)";
 "Ordner nicht vertraut" = "Μη έμπιστος φάκελος";
 "Ordner vertrauen" = "Εμπιστοσύνη στον φάκελο";
 "Ordner wählen …" = "Επιλογή φακέλου…";
@@ -845,6 +855,9 @@
 "Originalgröße" = "Πραγματικό μέγεθος";
 "PDF: {}" = "PDF: {}";
 "Passwort" = "Συνθηματικό";
+"Passwort (leer: unverändert)" = "Συνθηματικό (κενό: χωρίς αλλαγή)";
+"Passwort (optional, im Schlüsselbund)" = "Συνθηματικό (προαιρετικό, στην κλειδοθήκη)";
+"Passwort für {}" = "Συνθηματικό για {}";
 "Pausiert" = "Σε παύση";
 "Pfad kopieren" = "Αντιγραφή διαδρομής";
 "Pfad: {}" = "Διαδρομή: {}";
@@ -865,6 +878,7 @@
 "Plugin „{}“ entfernen?" = "Αφαίρεση του πρόσθετου «{}»;";
 "Plugins" = "Πρόσθετα";
 "Plugins und Marktplätze verwalten" = "Διαχείριση προσθέτων και αγορών";
+"Port (leer: wie ssh)" = "Θύρα (κενό: όπως το ssh)";
 "Problem melden …" = "Αναφορά προβλήματος…";
 "Profil hinzufügen" = "Προσθήκη προφίλ";
 "Profil löschen" = "Διαγραφή προφίλ";
@@ -1037,6 +1051,7 @@
 "Terminal" = "Τερματικό";
 "Terminal leeren" = "Εκκαθάριση τερματικού";
 "Terminal: {}" = "Τερματικό: {}";
+"Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "Τα τερματικά και οι πράκτορες εκτελούνται στον υπολογιστή που φτάνει έτσι το ssh· εκεί δεν υπάρχουν λίστα αρχείων και Git.";
 "Text mit Steuerzeichen einsetzen?" = "Επικόλληση κειμένου με χαρακτήρες ελέγχου;";
 "Text mit Zeilenumbruch einsetzen?" = "Επικόλληση κειμένου με αλλαγή γραμμής;";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "Επικόλληση κειμένου με {} αλλαγές γραμμής;";
@@ -1052,6 +1067,7 @@
 "Trag in den Einstellungen unter „Agent“ einen Anbieter mit Schlüssel ein und wähl ein Modell, oder richte Ollama oder LM Studio ein." = "Στις Ρυθμίσεις, στην ενότητα «Πράκτορας», καταχωρίστε έναν πάροχο με το κλειδί του και επιλέξτε ένα μοντέλο ή ρυθμίστε το Ollama ή το LM Studio.";
 "Transkribiere …" = "Μεταγραφή…";
 "Transkription:" = "Μεταγραφή:";
+"Trennen" = "Αποσύνδεση";
 "Trennlinie" = "Διαχωριστική γραμμή";
 "Trennlinie nach links" = "Μετακίνηση διαχωριστικού αριστερά";
 "Trennlinie nach oben" = "Μετακίνηση διαχωριστικού πάνω";
@@ -1067,6 +1083,7 @@
 "Unbekannt" = "Άγνωστο";
 "Unbekannte Befehle unterstreichen" = "Υπογράμμιση άγνωστων εντολών";
 "Unbekannter Digraph: {}" = "Άγνωστο δίψηφο: {}";
+"Unbekannter Host-Schlüssel bei {}" = "Άγνωστο κλειδί κεντρικού υπολογιστή στο {}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "Απεριόριστη πρόσβαση στο διαδίκτυο και σε κάθε αρχείο του Mac.";
 "Unerwartete Antwort: {}" = "Μη αναμενόμενη απάντηση: {}";
 "Ungesicherte Änderungen an „{}“ verwerfen?" = "Απόρριψη των μη αποθηκευμένων αλλαγών στο «{}»;";
@@ -1085,8 +1102,16 @@
 "VISUELL BLOCK" = "VISUAL BLOCK";
 "VISUELL ZEILE" = "VISUAL LINE";
 "Verbieten" = "Άρνηση";
+"Verbinde mit {} …" = "Σύνδεση με {}…";
+"Verbinden" = "Σύνδεση";
 "Verbindet …" = "Σύνδεση…";
 "Verbindung" = "Σύνδεση";
+"Verbindung bearbeiten" = "Επεξεργασία σύνδεσης";
+"Verbindung bearbeiten …" = "Επεξεργασία σύνδεσης…";
+"Verbindung fehlgeschlagen" = "η σύνδεση απέτυχε";
+"Verbindung zu {}" = "Σύνδεση με {}";
+"Verbindung zu {} fehlgeschlagen" = "Η σύνδεση με {} απέτυχε";
+"Verbindung zu {} getrennt" = "Η σύνδεση με {} διακόπηκε";
 "Verbunden" = "Συνδέθηκε";
 "Verdichte …" = "Συμπύκνωση…";
 "Verdichtet sich selbst ab {} Tokens" = "Αυτόματη συμπύκνωση από {} token και πάνω";
@@ -1174,6 +1199,7 @@
 "Wird fortgesetzt …" = "Συνέχιση…";
 "Wird gesucht …" = "Αναζήτηση …";
 "Wirkung" = "Επίδραση";
+"Wo arbeitet der neue Arbeitsbereich?" = "Πού λειτουργεί ο νέος χώρος εργασίας;";
 "Wochenlimit" = "Εβδομαδιαίο όριο";
 "Womit neue Sitzungen starten, bis du im Tab etwas anderes wählst. Leere Felder überlassen die Wahl den Einstellungen des Agenten." = "Με τι ξεκινούν οι νέες συνεδρίες μέχρι να επιλέξεις κάτι άλλο στην καρτέλα. Τα κενά πεδία αφήνουν την επιλογή στις ρυθμίσεις του πράκτορα.";
 "Worktree wird angelegt …" = "Δημιουργία worktree…";
@@ -1244,6 +1270,7 @@
 "geschlossen" = "κλειστό";
 "geschätzt aus der letzten Antwort" = "εκτίμηση από την τελευταία απάντηση";
 "gestern" = "χθες";
+"getrennt" = "αποσυνδεδεμένο";
 "gezählt" = "μετρημένο";
 "geändert" = "τροποποιήθηκε";
 "geöffnet" = "ανοιχτό";
@@ -1268,6 +1295,8 @@
 "und {} weitere" = "και {} ακόμη";
 "ungelöst" = "μη επιλυμένο";
 "unverändert" = "αμετάβλητο";
+"verbindet" = "σε σύνδεση";
+"verbunden" = "συνδεδεμένο";
 "von Hand" = "χειροκίνητα";
 "vor einem Jahr" = "πριν από έναν χρόνο";
 "vor einem Monat" = "πριν από έναν μήνα";

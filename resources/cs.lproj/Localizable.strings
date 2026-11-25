@@ -163,6 +163,8 @@
 "Befehlszeile" = "Příkazový řádek";
 "Bei einem Entwicklungsserver kannst du dem Zertifikat bis zum Beenden der App vertrauen." = "U vývojového serveru můžete certifikátu důvěřovat až do ukončení aplikace.";
 "Beide" = "Obě";
+"Beide dürfen nicht leer sein, nicht mit einem Bindestrich beginnen und keine Leerzeichen oder @ enthalten." = "Žádný z nich nesmí být prázdný, začínat pomlčkou ani obsahovat mezery nebo @.";
+"Benutzer (leer: wie ssh)" = "Uživatel (prázdné: jako ssh)";
 "Benutzername" = "Uživatelské jméno";
 "Benutzername oder Passwort waren falsch." = "Uživatelské jméno nebo heslo nebylo správné.";
 "Berechtigungen" = "Povolení";
@@ -456,6 +458,8 @@
 "Einstellungsdateien" = "Soubory nastavení";
 "Ende" = "Konec";
 "Entfernen" = "Odstranit";
+"Entfernter Arbeitsbereich" = "Vzdálený pracovní prostor";
+"Entfernter Rechner …" = "Vzdálený počítač…";
 "Entscheidung" = "Rozhodnutí";
 "Entschieden" = "Rozhodnuto";
 "Er beginnt bei Commit {}, und Git wechselt gleich zu ihm." = "Vychází z commitu {} a Git na ni hned přepne.";
@@ -504,6 +508,7 @@
 "Fortsetzen" = "Pokračovat";
 "Frage" = "Otázka";
 "Frage nebenbei" = "Vedlejší otázka";
+"Frage von {}" = "Dotaz od {}";
 "Fragen" = "Zeptat se";
 "Fragen nebenbei" = "Vedlejší otázky";
 "Fragt nur bei Aktionen, die als möglicherweise unsicher erkannt werden." = "Ptá se jen u akcí rozpoznaných jako možná nebezpečné.";
@@ -584,6 +589,8 @@
 "Hook „{}“ entfernen?" = "Odstranit hook „{}“?";
 "Hooks" = "Hooky";
 "Hooks: {} erfolgreich" = "Úspěšné hooky: {}";
+"Host oder Benutzer ungültig" = "Neplatný hostitel nebo uživatel";
+"Host, aus ~/.ssh/config oder eine Adresse" = "Hostitel z ~/.ssh/config nebo adresa";
 "Höre zu …" = "Poslouchám…";
 "Idee" = "Nápad";
 "Ignorieren" = "Ignorovat";
@@ -596,6 +603,7 @@
 "Im Finder zeigen" = "Zobrazit ve Finderu";
 "Im Hintergrund ausführen" = "Spustit na pozadí";
 "Im Projekt arbeiten" = "Práce v projektu";
+"Im Schlüsselbund sichern" = "Uložit do klíčenky";
 "Im Terminal öffnen" = "Otevřít v terminálu";
 "Im Texteditor öffnen" = "Otevřít v textovém editoru";
 "Im Verlauf suchen" = "Hledat v historii";
@@ -837,6 +845,8 @@
 "OpenCode: {}" = "OpenCode: {}";
 "OpenType-Features:" = "Funkce OpenType:";
 "Ordner" = "Složka";
+"Ordner auf diesem Mac …" = "Složka na tomto Macu…";
+"Ordner dort (leer: Home-Ordner)" = "Složka tam (prázdné: domovská složka)";
 "Ordner nicht vertraut" = "Složka není důvěryhodná";
 "Ordner vertrauen" = "Důvěřovat složce";
 "Ordner wählen …" = "Vybrat složku…";
@@ -845,6 +855,9 @@
 "Originalgröße" = "Skutečná velikost";
 "PDF: {}" = "PDF: {}";
 "Passwort" = "Heslo";
+"Passwort (leer: unverändert)" = "Heslo (prázdné: beze změny)";
+"Passwort (optional, im Schlüsselbund)" = "Heslo (volitelné, v klíčence)";
+"Passwort für {}" = "Heslo pro {}";
 "Pausiert" = "Pozastaveno";
 "Pfad kopieren" = "Kopírovat cestu";
 "Pfad: {}" = "Cesta: {}";
@@ -865,6 +878,7 @@
 "Plugin „{}“ entfernen?" = "Odstranit plugin „{}“?";
 "Plugins" = "Pluginy";
 "Plugins und Marktplätze verwalten" = "Spravovat pluginy a tržiště";
+"Port (leer: wie ssh)" = "Port (prázdné: jako ssh)";
 "Problem melden …" = "Nahlásit problém…";
 "Profil hinzufügen" = "Přidat profil";
 "Profil löschen" = "Smazat profil";
@@ -1037,6 +1051,7 @@
 "Terminal" = "Terminál";
 "Terminal leeren" = "Vymazat terminál";
 "Terminal: {}" = "Terminál: {}";
+"Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "Terminály a agenti běží na počítači, ke kterému se ssh takto připojí; seznam souborů a Git tam nejsou.";
 "Text mit Steuerzeichen einsetzen?" = "Vložit text s řídicími znaky?";
 "Text mit Zeilenumbruch einsetzen?" = "Vložit text se zalomením řádku?";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "Vložit text se zalomeními řádků ({})?";
@@ -1052,6 +1067,7 @@
 "Trag in den Einstellungen unter „Agent“ einen Anbieter mit Schlüssel ein und wähl ein Modell, oder richte Ollama oder LM Studio ein." = "V Nastavení v části „Agent“ zadejte poskytovatele s klíčem a vyberte model, nebo nastavte Ollama či LM Studio.";
 "Transkribiere …" = "Přepisuji…";
 "Transkription:" = "Přepis:";
+"Trennen" = "Odpojit";
 "Trennlinie" = "Oddělovač";
 "Trennlinie nach links" = "Posunout dělicí čáru doleva";
 "Trennlinie nach oben" = "Posunout dělicí čáru nahoru";
@@ -1067,6 +1083,7 @@
 "Unbekannt" = "Neznámé";
 "Unbekannte Befehle unterstreichen" = "Podtrhávat neznámé příkazy";
 "Unbekannter Digraph: {}" = "Neznámý digraf: {}";
+"Unbekannter Host-Schlüssel bei {}" = "Neznámý klíč hostitele u {}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "Neomezený přístup k internetu a ke všem souborům v Macu.";
 "Unerwartete Antwort: {}" = "Neočekávaná odpověď: {}";
 "Ungesicherte Änderungen an „{}“ verwerfen?" = "Zahodit neuložené změny v „{}“?";
@@ -1085,8 +1102,16 @@
 "VISUELL BLOCK" = "VISUAL BLOCK";
 "VISUELL ZEILE" = "VISUAL LINE";
 "Verbieten" = "Zamítnout";
+"Verbinde mit {} …" = "Připojování k {}…";
+"Verbinden" = "Připojit";
 "Verbindet …" = "Připojování…";
 "Verbindung" = "Připojení";
+"Verbindung bearbeiten" = "Upravit připojení";
+"Verbindung bearbeiten …" = "Upravit připojení…";
+"Verbindung fehlgeschlagen" = "připojení selhalo";
+"Verbindung zu {}" = "Připojení k {}";
+"Verbindung zu {} fehlgeschlagen" = "Připojení k {} selhalo";
+"Verbindung zu {} getrennt" = "Připojení k {} bylo přerušeno";
 "Verbunden" = "Připojeno";
 "Verdichte …" = "Zestručňování…";
 "Verdichtet sich selbst ab {} Tokens" = "Automaticky se zestruční od {} tokenů";
@@ -1174,6 +1199,7 @@
 "Wird fortgesetzt …" = "Pokračování…";
 "Wird gesucht …" = "Hledá se …";
 "Wirkung" = "Účinek";
+"Wo arbeitet der neue Arbeitsbereich?" = "Kde nový pracovní prostor pracuje?";
 "Wochenlimit" = "Týdenní limit";
 "Womit neue Sitzungen starten, bis du im Tab etwas anderes wählst. Leere Felder überlassen die Wahl den Einstellungen des Agenten." = "S čím nové relace začínají, dokud v panelu nezvolíš něco jiného. Prázdná pole nechávají volbu na nastavení agenta.";
 "Worktree wird angelegt …" = "Vytváří se worktree…";
@@ -1244,6 +1270,7 @@
 "geschlossen" = "zavřeno";
 "geschätzt aus der letzten Antwort" = "odhadnuto z poslední odpovědi";
 "gestern" = "včera";
+"getrennt" = "odpojeno";
 "gezählt" = "spočítáno";
 "geändert" = "změněno";
 "geöffnet" = "otevřeno";
@@ -1268,6 +1295,8 @@
 "und {} weitere" = "a další: {}";
 "ungelöst" = "nevyřešeno";
 "unverändert" = "beze změny";
+"verbindet" = "připojování";
+"verbunden" = "připojeno";
 "von Hand" = "ručně";
 "vor einem Jahr" = "před rokem";
 "vor einem Monat" = "před měsícem";

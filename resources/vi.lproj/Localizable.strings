@@ -163,6 +163,8 @@
 "Befehlszeile" = "Dòng lệnh";
 "Bei einem Entwicklungsserver kannst du dem Zertifikat bis zum Beenden der App vertrauen." = "Với máy chủ phát triển, bạn có thể tin cậy chứng chỉ cho đến khi thoát ứng dụng.";
 "Beide" = "Cả hai";
+"Beide dürfen nicht leer sein, nicht mit einem Bindestrich beginnen und keine Leerzeichen oder @ enthalten." = "Cả hai không được để trống, bắt đầu bằng dấu gạch ngang hoặc chứa khoảng trắng hay @.";
+"Benutzer (leer: wie ssh)" = "Người dùng (trống: như ssh)";
 "Benutzername" = "Tên người dùng";
 "Benutzername oder Passwort waren falsch." = "Tên người dùng hoặc mật khẩu không đúng.";
 "Berechtigungen" = "Quyền";
@@ -456,6 +458,8 @@
 "Einstellungsdateien" = "Tệp cài đặt";
 "Ende" = "Kết thúc";
 "Entfernen" = "Xóa";
+"Entfernter Arbeitsbereich" = "Không gian làm việc từ xa";
+"Entfernter Rechner …" = "Máy tính từ xa…";
 "Entscheidung" = "Quyết định";
 "Entschieden" = "Đã quyết định";
 "Er beginnt bei Commit {}, und Git wechselt gleich zu ihm." = "Nhánh bắt đầu từ commit {}, và Git sẽ chuyển sang nhánh đó ngay.";
@@ -504,6 +508,7 @@
 "Fortsetzen" = "Tiếp tục";
 "Frage" = "Câu hỏi";
 "Frage nebenbei" = "Câu hỏi bên lề";
+"Frage von {}" = "Câu hỏi từ {}";
 "Fragen" = "Hỏi";
 "Fragen nebenbei" = "Câu hỏi bên lề";
 "Fragt nur bei Aktionen, die als möglicherweise unsicher erkannt werden." = "Chỉ hỏi với các thao tác được nhận diện là có thể không an toàn.";
@@ -584,6 +589,8 @@
 "Hook „{}“ entfernen?" = "Xóa hook “{}”?";
 "Hooks" = "Hook";
 "Hooks: {} erfolgreich" = "Hook: {} thành công";
+"Host oder Benutzer ungültig" = "Máy chủ hoặc người dùng không hợp lệ";
+"Host, aus ~/.ssh/config oder eine Adresse" = "Máy chủ từ ~/.ssh/config hoặc một địa chỉ";
 "Höre zu …" = "Đang nghe…";
 "Idee" = "Ý tưởng";
 "Ignorieren" = "Bỏ qua";
@@ -596,6 +603,7 @@
 "Im Finder zeigen" = "Hiển thị trong Finder";
 "Im Hintergrund ausführen" = "Chạy trong nền";
 "Im Projekt arbeiten" = "Làm việc trong dự án";
+"Im Schlüsselbund sichern" = "Lưu vào chuỗi khóa";
 "Im Terminal öffnen" = "Mở trong terminal";
 "Im Texteditor öffnen" = "Mở trong trình sửa văn bản";
 "Im Verlauf suchen" = "Tìm trong lịch sử";
@@ -837,6 +845,8 @@
 "OpenCode: {}" = "OpenCode: {}";
 "OpenType-Features:" = "Tính năng OpenType:";
 "Ordner" = "Thư mục";
+"Ordner auf diesem Mac …" = "Thư mục trên máy Mac này…";
+"Ordner dort (leer: Home-Ordner)" = "Thư mục ở đó (trống: thư mục nhà)";
 "Ordner nicht vertraut" = "Thư mục chưa được tin cậy";
 "Ordner vertrauen" = "Tin cậy thư mục";
 "Ordner wählen …" = "Chọn thư mục…";
@@ -845,6 +855,9 @@
 "Originalgröße" = "Kích thước thực";
 "PDF: {}" = "PDF: {}";
 "Passwort" = "Mật khẩu";
+"Passwort (leer: unverändert)" = "Mật khẩu (trống: không đổi)";
+"Passwort (optional, im Schlüsselbund)" = "Mật khẩu (tùy chọn, trong chuỗi khóa)";
+"Passwort für {}" = "Mật khẩu cho {}";
 "Pausiert" = "Đã tạm dừng";
 "Pfad kopieren" = "Sao chép đường dẫn";
 "Pfad: {}" = "Đường dẫn: {}";
@@ -865,6 +878,7 @@
 "Plugin „{}“ entfernen?" = "Xóa plugin “{}”?";
 "Plugins" = "Plugin";
 "Plugins und Marktplätze verwalten" = "Quản lý plugin và marketplace";
+"Port (leer: wie ssh)" = "Cổng (trống: như ssh)";
 "Problem melden …" = "Báo cáo sự cố…";
 "Profil hinzufügen" = "Thêm hồ sơ";
 "Profil löschen" = "Xóa hồ sơ";
@@ -1037,6 +1051,7 @@
 "Terminal" = "Terminal";
 "Terminal leeren" = "Xóa sạch terminal";
 "Terminal: {}" = "Terminal: {}";
+"Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "Terminal và tác tử chạy trên máy tính mà ssh kết nối theo cách này; ở đó không có danh sách tệp và Git.";
 "Text mit Steuerzeichen einsetzen?" = "Dán văn bản có ký tự điều khiển?";
 "Text mit Zeilenumbruch einsetzen?" = "Dán văn bản có ngắt dòng?";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "Dán văn bản có {} ngắt dòng?";
@@ -1052,6 +1067,7 @@
 "Trag in den Einstellungen unter „Agent“ einen Anbieter mit Schlüssel ein und wähl ein Modell, oder richte Ollama oder LM Studio ein." = "Trong Cài đặt, mục “Tác nhân”, hãy nhập một nhà cung cấp kèm khóa và chọn mô hình, hoặc thiết lập Ollama hay LM Studio.";
 "Transkribiere …" = "Đang chép lại…";
 "Transkription:" = "Chép lại:";
+"Trennen" = "Ngắt kết nối";
 "Trennlinie" = "Đường phân cách";
 "Trennlinie nach links" = "Di chuyển đường phân cách sang trái";
 "Trennlinie nach oben" = "Di chuyển đường phân cách lên";
@@ -1067,6 +1083,7 @@
 "Unbekannt" = "Không xác định";
 "Unbekannte Befehle unterstreichen" = "Gạch chân lệnh không xác định";
 "Unbekannter Digraph: {}" = "Chữ ghép không xác định: {}";
+"Unbekannter Host-Schlüssel bei {}" = "Khóa máy chủ không xác định tại {}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "Truy cập không giới hạn vào internet và mọi tệp trên máy Mac.";
 "Unerwartete Antwort: {}" = "Phản hồi không mong đợi: {}";
 "Ungesicherte Änderungen an „{}“ verwerfen?" = "Loại bỏ các thay đổi chưa lưu trong “{}”?";
@@ -1085,8 +1102,16 @@
 "VISUELL BLOCK" = "KHỐI VISUAL";
 "VISUELL ZEILE" = "DÒNG VISUAL";
 "Verbieten" = "Từ chối";
+"Verbinde mit {} …" = "Đang kết nối tới {}…";
+"Verbinden" = "Kết nối";
 "Verbindet …" = "Đang kết nối…";
 "Verbindung" = "Kết nối";
+"Verbindung bearbeiten" = "Sửa kết nối";
+"Verbindung bearbeiten …" = "Sửa kết nối…";
+"Verbindung fehlgeschlagen" = "kết nối thất bại";
+"Verbindung zu {}" = "Kết nối tới {}";
+"Verbindung zu {} fehlgeschlagen" = "Kết nối tới {} thất bại";
+"Verbindung zu {} getrennt" = "Mất kết nối tới {}";
 "Verbunden" = "Đã kết nối";
 "Verdichte …" = "Đang thu gọn…";
 "Verdichtet sich selbst ab {} Tokens" = "Tự thu gọn từ {} token";
@@ -1174,6 +1199,7 @@
 "Wird fortgesetzt …" = "Đang tiếp tục…";
 "Wird gesucht …" = "Đang tìm …";
 "Wirkung" = "Tác dụng";
+"Wo arbeitet der neue Arbeitsbereich?" = "Không gian làm việc mới làm việc ở đâu?";
 "Wochenlimit" = "Giới hạn tuần";
 "Womit neue Sitzungen starten, bis du im Tab etwas anderes wählst. Leere Felder überlassen die Wahl den Einstellungen des Agenten." = "Các phiên mới bắt đầu với gì cho đến khi bạn chọn khác trong tab. Trường trống để lựa chọn cho cài đặt riêng của tác nhân.";
 "Worktree wird angelegt …" = "Đang tạo worktree…";
@@ -1244,6 +1270,7 @@
 "geschlossen" = "đang đóng";
 "geschätzt aus der letzten Antwort" = "ước tính từ câu trả lời gần nhất";
 "gestern" = "hôm qua";
+"getrennt" = "đã ngắt kết nối";
 "gezählt" = "đã đếm";
 "geändert" = "đã sửa đổi";
 "geöffnet" = "đang mở";
@@ -1268,6 +1295,8 @@
 "und {} weitere" = "và {} mục khác";
 "ungelöst" = "chưa giải quyết";
 "unverändert" = "không đổi";
+"verbindet" = "đang kết nối";
+"verbunden" = "đã kết nối";
 "von Hand" = "thủ công";
 "vor einem Jahr" = "một năm trước";
 "vor einem Monat" = "một tháng trước";

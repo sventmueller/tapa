@@ -163,6 +163,8 @@
 "Befehlszeile" = "שורת פקודה";
 "Bei einem Entwicklungsserver kannst du dem Zertifikat bis zum Beenden der App vertrauen." = "עבור שרת פיתוח, באפשרותך לתת אמון באישור עד לסיום היישום.";
 "Beide" = "שניהם";
+"Beide dürfen nicht leer sein, nicht mit einem Bindestrich beginnen und keine Leerzeichen oder @ enthalten." = "אף אחד מהם לא יכול להיות ריק, להתחיל במקף או להכיל רווחים או @.";
+"Benutzer (leer: wie ssh)" = "משתמש (ריק: כמו ב‑ssh)";
 "Benutzername" = "שם משתמש";
 "Benutzername oder Passwort waren falsch." = "שם המשתמש או הסיסמה שגויים.";
 "Berechtigungen" = "הרשאות";
@@ -456,6 +458,8 @@
 "Einstellungsdateien" = "קובצי הגדרות";
 "Ende" = "סוף";
 "Entfernen" = "הסרה";
+"Entfernter Arbeitsbereich" = "סביבת עבודה מרוחקת";
+"Entfernter Rechner …" = "מחשב מרוחק…";
 "Entscheidung" = "החלטה";
 "Entschieden" = "הוחלט";
 "Er beginnt bei Commit {}, und Git wechselt gleich zu ihm." = "הוא יתחיל ב-Commit {}, ו-Git יעבור אליו מיד.";
@@ -504,6 +508,7 @@
 "Fortsetzen" = "המשך";
 "Frage" = "שאלה";
 "Frage nebenbei" = "שאלה צדדית";
+"Frage von {}" = "שאלה מ‑{}";
 "Fragen" = "בקשת אישור";
 "Fragen nebenbei" = "שאלות צדדיות";
 "Fragt nur bei Aktionen, die als möglicherweise unsicher erkannt werden." = "שואל רק על פעולות שזוהו כעלולות להיות לא בטוחות.";
@@ -584,6 +589,8 @@
 "Hook „{}“ entfernen?" = "להסיר את ה-Hook ״{}״?";
 "Hooks" = "‏Hooks";
 "Hooks: {} erfolgreich" = "מספר ה-Hooks שהצליחו: {}";
+"Host oder Benutzer ungültig" = "מארח או משתמש לא חוקיים";
+"Host, aus ~/.ssh/config oder eine Adresse" = "מארח מ‑~/.ssh/config או כתובת";
 "Höre zu …" = "מאזין…";
 "Idee" = "רעיון";
 "Ignorieren" = "התעלמות";
@@ -596,6 +603,7 @@
 "Im Finder zeigen" = "הצגה ב-Finder";
 "Im Hintergrund ausführen" = "הרצה ברקע";
 "Im Projekt arbeiten" = "עבודה בפרויקט";
+"Im Schlüsselbund sichern" = "שמור במחזיק המפתחות";
 "Im Terminal öffnen" = "פתיחה במסוף";
 "Im Texteditor öffnen" = "פתח בעורך טקסט";
 "Im Verlauf suchen" = "חפש בהיסטוריה";
@@ -837,6 +845,8 @@
 "OpenCode: {}" = "‏OpenCode: {}";
 "OpenType-Features:" = "תכונות OpenType:";
 "Ordner" = "תיקייה";
+"Ordner auf diesem Mac …" = "תיקייה ב‑Mac זה…";
+"Ordner dort (leer: Home-Ordner)" = "התיקייה שם (ריק: תיקיית הבית)";
 "Ordner nicht vertraut" = "התיקיה אינה מהימנה";
 "Ordner vertrauen" = "מתן אמון בתיקיה";
 "Ordner wählen …" = "בחר תיקייה…";
@@ -845,6 +855,9 @@
 "Originalgröße" = "גודל אמיתי";
 "PDF: {}" = "‏PDF: {}";
 "Passwort" = "סיסמה";
+"Passwort (leer: unverändert)" = "סיסמה (ריק: ללא שינוי)";
+"Passwort (optional, im Schlüsselbund)" = "סיסמה (אופציונלי, במחזיק המפתחות)";
+"Passwort für {}" = "סיסמה עבור {}";
 "Pausiert" = "מושהה";
 "Pfad kopieren" = "העתק נתיב";
 "Pfad: {}" = "נתיב: {}";
@@ -865,6 +878,7 @@
 "Plugin „{}“ entfernen?" = "להסיר את התוסף ״{}״?";
 "Plugins" = "תוספים";
 "Plugins und Marktplätze verwalten" = "ניהול תוספים ושווקים";
+"Port (leer: wie ssh)" = "פורט (ריק: כמו ב‑ssh)";
 "Problem melden …" = "דיווח על בעיה…";
 "Profil hinzufügen" = "הוסף פרופיל";
 "Profil löschen" = "מחק פרופיל";
@@ -1037,6 +1051,7 @@
 "Terminal" = "מסוף";
 "Terminal leeren" = "נקה מסוף";
 "Terminal: {}" = "מסוף: {}";
+"Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "מסופים וסוכנים פועלים במחשב שאליו ssh מגיע כך; רשימת הקבצים ו‑Git אינם זמינים שם.";
 "Text mit Steuerzeichen einsetzen?" = "להדביק טקסט עם תווי בקרה?";
 "Text mit Zeilenumbruch einsetzen?" = "להדביק טקסט עם מעבר שורה?";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "להדביק טקסט עם {} מעברי שורה?";
@@ -1052,6 +1067,7 @@
 "Trag in den Einstellungen unter „Agent“ einen Anbieter mit Schlüssel ein und wähl ein Modell, oder richte Ollama oder LM Studio ein." = "יש להזין בהגדרות, תחת ״סוכן״, ספק עם מפתח ולבחור מודל, או להגדיר את Ollama או LM Studio.";
 "Transkribiere …" = "מתמלל…";
 "Transkription:" = "תמלול:";
+"Trennen" = "התנתק";
 "Trennlinie" = "קו מפריד";
 "Trennlinie nach links" = "הזז מפריד שמאלה";
 "Trennlinie nach oben" = "הזז מפריד למעלה";
@@ -1067,6 +1083,7 @@
 "Unbekannt" = "לא ידוע";
 "Unbekannte Befehle unterstreichen" = "קו תחתון לפקודות לא מוכרות";
 "Unbekannter Digraph: {}" = "צירוף תווים לא מוכר: {}";
+"Unbekannter Host-Schlüssel bei {}" = "מפתח מארח לא ידוע ב‑{}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "גישה בלתי מוגבלת לאינטרנט ולכל קובץ ב-Mac.";
 "Unerwartete Antwort: {}" = "תשובה לא צפויה: {}";
 "Ungesicherte Änderungen an „{}“ verwerfen?" = "לבטל את השינויים שלא נשמרו ב-״{}״?";
@@ -1085,8 +1102,16 @@
 "VISUELL BLOCK" = "VISUAL BLOCK";
 "VISUELL ZEILE" = "VISUAL LINE";
 "Verbieten" = "סירוב";
+"Verbinde mit {} …" = "מתחבר אל {}…";
+"Verbinden" = "התחבר";
 "Verbindet …" = "מתחבר…";
 "Verbindung" = "חיבור";
+"Verbindung bearbeiten" = "ערוך חיבור";
+"Verbindung bearbeiten …" = "ערוך חיבור…";
+"Verbindung fehlgeschlagen" = "החיבור נכשל";
+"Verbindung zu {}" = "חיבור אל {}";
+"Verbindung zu {} fehlgeschlagen" = "החיבור אל {} נכשל";
+"Verbindung zu {} getrennt" = "החיבור אל {} נותק";
 "Verbunden" = "מחובר";
 "Verdichte …" = "דוחס…";
 "Verdichtet sich selbst ab {} Tokens" = "נדחס אוטומטית החל מ-{} טוקנים";
@@ -1174,6 +1199,7 @@
 "Wird fortgesetzt …" = "ממשיך…";
 "Wird gesucht …" = "מחפש …";
 "Wirkung" = "השפעה";
+"Wo arbeitet der neue Arbeitsbereich?" = "היכן פועלת סביבת העבודה החדשה?";
 "Wochenlimit" = "מגבלה שבועית";
 "Womit neue Sitzungen starten, bis du im Tab etwas anderes wählst. Leere Felder überlassen die Wahl den Einstellungen des Agenten." = "עם מה מתחילות הפעלות חדשות עד שתבחר אחרת בכרטיסיה. שדות ריקים משאירים את הבחירה להגדרות של הסוכן.";
 "Worktree wird angelegt …" = "יוצר Worktree…";
@@ -1244,6 +1270,7 @@
 "geschlossen" = "סגור";
 "geschätzt aus der letzten Antwort" = "הוערך לפי התשובה האחרונה";
 "gestern" = "אתמול";
+"getrennt" = "מנותק";
 "gezählt" = "נספר";
 "geändert" = "שונה";
 "geöffnet" = "פתוח";
@@ -1268,6 +1295,8 @@
 "und {} weitere" = "ועוד {}";
 "ungelöst" = "לא נפתר";
 "unverändert" = "ללא שינוי";
+"verbindet" = "מתחבר";
+"verbunden" = "מחובר";
 "von Hand" = "ידנית";
 "vor einem Jahr" = "לפני שנה";
 "vor einem Monat" = "לפני חודש";

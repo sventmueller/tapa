@@ -27,3 +27,10 @@
 "Arbeitet" = "قيد العمل";
 "Wartet auf dich" = "بانتظارك";
 "Einstellungen" = "الإعدادات";
+"Trennen" = "قطع الاتصال";
+"Verbindung bearbeiten …" = "تعديل الاتصال…";
+"Verbindung fehlgeschlagen" = "فشل الاتصال";
+"Verbindung zu {}" = "الاتصال بـ {}";
+"getrennt" = "غير متصل";
+"verbindet" = "جارٍ الاتصال";
+"verbunden" = "متصل";

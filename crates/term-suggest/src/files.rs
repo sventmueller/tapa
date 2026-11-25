@@ -285,7 +285,7 @@ fn workspace_manifests(folder: &Path) -> Vec<PathBuf> {
 }
 
 /// The hosts of `~/.ssh/config` without wildcards, then those of `known_hosts` that are not hashed.
-pub(crate) fn ssh_hosts(home: &Path) -> Vec<String> {
+pub fn ssh_hosts(home: &Path) -> Vec<String> {
     let mut hosts: Vec<String> = Vec::new();
     if let Ok(config) = std::fs::read_to_string(home.join(".ssh/config")) {
         for line in config.lines() {

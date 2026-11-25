@@ -163,6 +163,8 @@
 "Befehlszeile" = "Linha de comando";
 "Bei einem Entwicklungsserver kannst du dem Zertifikat bis zum Beenden der App vertrauen." = "Para um servidor de desenvolvimento, você pode confiar no certificado até encerrar o app.";
 "Beide" = "Ambas";
+"Beide dürfen nicht leer sein, nicht mit einem Bindestrich beginnen und keine Leerzeichen oder @ enthalten." = "Nenhum dos dois pode estar vazio, começar com hífen ou conter espaços ou @.";
+"Benutzer (leer: wie ssh)" = "Usuário (vazio: como no ssh)";
 "Benutzername" = "Nome de Usuário";
 "Benutzername oder Passwort waren falsch." = "O nome de usuário ou a senha estavam incorretos.";
 "Berechtigungen" = "Permissões";
@@ -456,6 +458,8 @@
 "Einstellungsdateien" = "Arquivos de ajustes";
 "Ende" = "Fim";
 "Entfernen" = "Remover";
+"Entfernter Arbeitsbereich" = "Espaço de Trabalho Remoto";
+"Entfernter Rechner …" = "Computador Remoto…";
 "Entscheidung" = "Decisão";
 "Entschieden" = "Decidido";
 "Er beginnt bei Commit {}, und Git wechselt gleich zu ihm." = "Ela começa no commit {}, e o Git passa para ela imediatamente.";
@@ -504,6 +508,7 @@
 "Fortsetzen" = "Continuar";
 "Frage" = "Pergunta";
 "Frage nebenbei" = "Pergunta à Parte";
+"Frage von {}" = "Pergunta de {}";
 "Fragen" = "Perguntar";
 "Fragen nebenbei" = "Perguntas à parte";
 "Fragt nur bei Aktionen, die als möglicherweise unsicher erkannt werden." = "Pergunta apenas sobre ações detectadas como possivelmente inseguras.";
@@ -584,6 +589,8 @@
 "Hook „{}“ entfernen?" = "Remover o hook “{}”?";
 "Hooks" = "Hooks";
 "Hooks: {} erfolgreich" = "Hooks: {} com êxito";
+"Host oder Benutzer ungültig" = "Host ou usuário inválido";
+"Host, aus ~/.ssh/config oder eine Adresse" = "Host do ~/.ssh/config ou um endereço";
 "Höre zu …" = "Ouvindo…";
 "Idee" = "Ideia";
 "Ignorieren" = "Ignorar";
@@ -596,6 +603,7 @@
 "Im Finder zeigen" = "Mostrar no Finder";
 "Im Hintergrund ausführen" = "Executar em Segundo Plano";
 "Im Projekt arbeiten" = "Trabalhar no Projeto";
+"Im Schlüsselbund sichern" = "Salvar nas Chaves";
 "Im Terminal öffnen" = "Abrir no Terminal";
 "Im Texteditor öffnen" = "Abrir no Editor de Texto";
 "Im Verlauf suchen" = "Buscar no histórico";
@@ -837,6 +845,8 @@
 "OpenCode: {}" = "OpenCode: {}";
 "OpenType-Features:" = "Recursos OpenType:";
 "Ordner" = "Pasta";
+"Ordner auf diesem Mac …" = "Pasta Neste Mac…";
+"Ordner dort (leer: Home-Ordner)" = "Pasta lá (vazio: pasta de início)";
 "Ordner nicht vertraut" = "Pasta Não Confiável";
 "Ordner vertrauen" = "Confiar na Pasta";
 "Ordner wählen …" = "Escolher Pasta…";
@@ -845,6 +855,9 @@
 "Originalgröße" = "Tamanho Real";
 "PDF: {}" = "PDF: {}";
 "Passwort" = "Senha";
+"Passwort (leer: unverändert)" = "Senha (vazio: sem alteração)";
+"Passwort (optional, im Schlüsselbund)" = "Senha (opcional, nas Chaves)";
+"Passwort für {}" = "Senha para {}";
 "Pausiert" = "Pausado";
 "Pfad kopieren" = "Copiar Caminho";
 "Pfad: {}" = "Caminho: {}";
@@ -865,6 +878,7 @@
 "Plugin „{}“ entfernen?" = "Remover o plug-in “{}”?";
 "Plugins" = "Plug-ins";
 "Plugins und Marktplätze verwalten" = "Gerenciar plug-ins e marketplaces";
+"Port (leer: wie ssh)" = "Porta (vazio: como no ssh)";
 "Problem melden …" = "Relatar um Problema…";
 "Profil hinzufügen" = "Adicionar Perfil";
 "Profil löschen" = "Apagar Perfil";
@@ -1037,6 +1051,7 @@
 "Terminal" = "Terminal";
 "Terminal leeren" = "Limpar Terminal";
 "Terminal: {}" = "Terminal: {}";
+"Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "Terminais e agentes rodam no computador que o ssh alcança assim; a lista de arquivos e o Git não estão disponíveis lá.";
 "Text mit Steuerzeichen einsetzen?" = "Colar texto com caracteres de controle?";
 "Text mit Zeilenumbruch einsetzen?" = "Colar texto com uma quebra de linha?";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "Colar texto com {} quebras de linha?";
@@ -1052,6 +1067,7 @@
 "Trag in den Einstellungen unter „Agent“ einen Anbieter mit Schlüssel ein und wähl ein Modell, oder richte Ollama oder LM Studio ein." = "Em Ajustes, em “Agente”, informe um provedor com a chave e escolha um modelo, ou configure o Ollama ou o LM Studio.";
 "Transkribiere …" = "Transcrevendo…";
 "Transkription:" = "Transcrição:";
+"Trennen" = "Desconectar";
 "Trennlinie" = "Separador";
 "Trennlinie nach links" = "Mover Divisória para a Esquerda";
 "Trennlinie nach oben" = "Mover Divisória para Cima";
@@ -1067,6 +1083,7 @@
 "Unbekannt" = "Desconhecido";
 "Unbekannte Befehle unterstreichen" = "Sublinhar comandos desconhecidos";
 "Unbekannter Digraph: {}" = "Dígrafo desconhecido: {}";
+"Unbekannter Host-Schlüssel bei {}" = "Chave de host desconhecida em {}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "Acesso irrestrito à internet e a todos os arquivos do Mac.";
 "Unerwartete Antwort: {}" = "Resposta inesperada: {}";
 "Ungesicherte Änderungen an „{}“ verwerfen?" = "Descartar alterações não salvas em “{}”?";
@@ -1085,8 +1102,16 @@
 "VISUELL BLOCK" = "VISUAL/BLOCO";
 "VISUELL ZEILE" = "VISUAL/LINHA";
 "Verbieten" = "Proibir";
+"Verbinde mit {} …" = "Conectando a {}…";
+"Verbinden" = "Conectar";
 "Verbindet …" = "Conectando…";
 "Verbindung" = "Conexão";
+"Verbindung bearbeiten" = "Editar Conexão";
+"Verbindung bearbeiten …" = "Editar Conexão…";
+"Verbindung fehlgeschlagen" = "falha na conexão";
+"Verbindung zu {}" = "Conexão com {}";
+"Verbindung zu {} fehlgeschlagen" = "Falha na conexão com {}";
+"Verbindung zu {} getrennt" = "Conexão com {} perdida";
 "Verbunden" = "Conectado";
 "Verdichte …" = "Compactando…";
 "Verdichtet sich selbst ab {} Tokens" = "Compacta-se sozinho a partir de {} tokens";
@@ -1174,6 +1199,7 @@
 "Wird fortgesetzt …" = "Continuando…";
 "Wird gesucht …" = "Procurando …";
 "Wirkung" = "Efeito";
+"Wo arbeitet der neue Arbeitsbereich?" = "Onde o novo espaço de trabalho funciona?";
 "Wochenlimit" = "Limite semanal";
 "Womit neue Sitzungen starten, bis du im Tab etwas anderes wählst. Leere Felder überlassen die Wahl den Einstellungen des Agenten." = "Com o que as novas sessões começam até você escolher outra coisa na aba. Campos vazios deixam a escolha para os ajustes do agente.";
 "Worktree wird angelegt …" = "Criando worktree…";
@@ -1244,6 +1270,7 @@
 "geschlossen" = "fechado";
 "geschätzt aus der letzten Antwort" = "estimado a partir da última resposta";
 "gestern" = "ontem";
+"getrennt" = "desconectado";
 "gezählt" = "contado";
 "geändert" = "modificado";
 "geöffnet" = "aberto";
@@ -1268,6 +1295,8 @@
 "und {} weitere" = "e mais {}";
 "ungelöst" = "não resolvido";
 "unverändert" = "inalterado";
+"verbindet" = "conectando";
+"verbunden" = "conectado";
 "von Hand" = "manual";
 "vor einem Jahr" = "há um ano";
 "vor einem Monat" = "há um mês";

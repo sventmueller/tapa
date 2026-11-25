@@ -162,6 +162,12 @@ pub fn environment(wait: std::time::Duration) -> Vec<(String, String)> {
     host().environment(wait).unwrap_or_default()
 }
 
+/// The login shell's environment for an agent working in `folder`, waiting up to `wait` for it: in a remote workspace
+/// with the stand-ins of the programs there as its `PATH` (E25).
+pub fn environment_for(folder: &std::path::Path, wait: std::time::Duration) -> Vec<(String, String)> {
+    term_remote::registry::environment(folder, environment(wait))
+}
+
 /// The login shell's environment, waiting up to `wait` for it; `None` while it is not known.
 pub fn try_environment(wait: std::time::Duration) -> Option<Vec<(String, String)>> {
     host().environment(wait)

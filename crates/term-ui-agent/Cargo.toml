@@ -21,6 +21,7 @@ term-opencode.workspace = true
 term-process.workspace = true
 term-render.workspace = true
 term-thread.workspace = true
+term-remote.workspace = true
 term-ui.workspace = true
 splat-decoder.workspace = true
 splat-file-state.workspace = true

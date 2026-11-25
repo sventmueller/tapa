@@ -163,6 +163,8 @@
 "Befehlszeile" = "Командная строка";
 "Bei einem Entwicklungsserver kannst du dem Zertifikat bis zum Beenden der App vertrauen." = "Для сервера разработки можно доверять сертификату до завершения работы приложения.";
 "Beide" = "Обе";
+"Beide dürfen nicht leer sein, nicht mit einem Bindestrich beginnen und keine Leerzeichen oder @ enthalten." = "Ни одно из них не может быть пустым, начинаться с дефиса или содержать пробелы или @.";
+"Benutzer (leer: wie ssh)" = "Пользователь (пусто: как в ssh)";
 "Benutzername" = "Имя пользователя";
 "Benutzername oder Passwort waren falsch." = "Неверное имя пользователя или пароль.";
 "Berechtigungen" = "Разрешения";
@@ -456,6 +458,8 @@
 "Einstellungsdateien" = "Файлы настроек";
 "Ende" = "Конец";
 "Entfernen" = "Удалить";
+"Entfernter Arbeitsbereich" = "Удалённая рабочая область";
+"Entfernter Rechner …" = "Удалённый компьютер…";
 "Entscheidung" = "Решение";
 "Entschieden" = "Решение принято";
 "Er beginnt bei Commit {}, und Git wechselt gleich zu ihm." = "Она начинается с коммита {}, и Git сразу переключится на нее.";
@@ -504,6 +508,7 @@
 "Fortsetzen" = "Продолжить";
 "Frage" = "Вопрос";
 "Frage nebenbei" = "Попутный вопрос";
+"Frage von {}" = "Вопрос от {}";
 "Fragen" = "Спрашивать";
 "Fragen nebenbei" = "Попутные вопросы";
 "Fragt nur bei Aktionen, die als möglicherweise unsicher erkannt werden." = "Спрашивает только о действиях, распознанных как возможно небезопасные.";
@@ -584,6 +589,8 @@
 "Hook „{}“ entfernen?" = "Удалить хук «{}»?";
 "Hooks" = "Хуки";
 "Hooks: {} erfolgreich" = "Успешных хуков: {}";
+"Host oder Benutzer ungültig" = "Недопустимый хост или пользователь";
+"Host, aus ~/.ssh/config oder eine Adresse" = "Хост из ~/.ssh/config или адрес";
 "Höre zu …" = "Слушаю…";
 "Idee" = "Идея";
 "Ignorieren" = "Игнорировать";
@@ -596,6 +603,7 @@
 "Im Finder zeigen" = "Показать в Finder";
 "Im Hintergrund ausführen" = "Выполнить в фоне";
 "Im Projekt arbeiten" = "Работа в проекте";
+"Im Schlüsselbund sichern" = "Сохранить в связке ключей";
 "Im Terminal öffnen" = "Открыть в терминале";
 "Im Texteditor öffnen" = "Открыть в текстовом редакторе";
 "Im Verlauf suchen" = "Поиск в истории прокрутки";
@@ -837,6 +845,8 @@
 "OpenCode: {}" = "OpenCode: {}";
 "OpenType-Features:" = "Функции OpenType:";
 "Ordner" = "Папка";
+"Ordner auf diesem Mac …" = "Папка на этом Mac…";
+"Ordner dort (leer: Home-Ordner)" = "Папка там (пусто: домашняя папка)";
 "Ordner nicht vertraut" = "Папка не является доверенной";
 "Ordner vertrauen" = "Доверять папке";
 "Ordner wählen …" = "Выбрать папку…";
@@ -845,6 +855,9 @@
 "Originalgröße" = "Фактический размер";
 "PDF: {}" = "PDF: {}";
 "Passwort" = "Пароль";
+"Passwort (leer: unverändert)" = "Пароль (пусто: без изменений)";
+"Passwort (optional, im Schlüsselbund)" = "Пароль (необязательно, в связке ключей)";
+"Passwort für {}" = "Пароль для {}";
 "Pausiert" = "Приостановлено";
 "Pfad kopieren" = "Скопировать путь";
 "Pfad: {}" = "Путь: {}";
@@ -865,6 +878,7 @@
 "Plugin „{}“ entfernen?" = "Удалить плагин «{}»?";
 "Plugins" = "Плагины";
 "Plugins und Marktplätze verwalten" = "Управление плагинами и маркетплейсами";
+"Port (leer: wie ssh)" = "Порт (пусто: как в ssh)";
 "Problem melden …" = "Сообщить о проблеме…";
 "Profil hinzufügen" = "Добавить профиль";
 "Profil löschen" = "Удалить профиль";
@@ -1037,6 +1051,7 @@
 "Terminal" = "Терминал";
 "Terminal leeren" = "Очистить терминал";
 "Terminal: {}" = "Терминал: {}";
+"Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "Терминалы и агенты работают на компьютере, к которому так подключается ssh; список файлов и Git там недоступны.";
 "Text mit Steuerzeichen einsetzen?" = "Вставить текст с управляющими символами?";
 "Text mit Zeilenumbruch einsetzen?" = "Вставить текст с переводом строки?";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "Вставить текст с переводами строки ({})?";
@@ -1052,6 +1067,7 @@
 "Trag in den Einstellungen unter „Agent“ einen Anbieter mit Schlüssel ein und wähl ein Modell, oder richte Ollama oder LM Studio ein." = "В настройках в разделе «Агент» укажите провайдера с ключом и выберите модель или настройте Ollama либо LM Studio.";
 "Transkribiere …" = "Распознавание…";
 "Transkription:" = "Распознавание:";
+"Trennen" = "Отключиться";
 "Trennlinie" = "Горизонтальная линия";
 "Trennlinie nach links" = "Сдвинуть разделитель влево";
 "Trennlinie nach oben" = "Сдвинуть разделитель вверх";
@@ -1067,6 +1083,7 @@
 "Unbekannt" = "Неизвестно";
 "Unbekannte Befehle unterstreichen" = "Подчёркивать неизвестные команды";
 "Unbekannter Digraph: {}" = "Неизвестный диграф: {}";
+"Unbekannter Host-Schlüssel bei {}" = "Неизвестный ключ хоста {}";
 "Uneingeschränkter Zugriff auf das Internet und jede Datei des Mac." = "Неограниченный доступ к интернету и любому файлу на Mac.";
 "Unerwartete Antwort: {}" = "Неожиданный ответ: {}";
 "Ungesicherte Änderungen an „{}“ verwerfen?" = "Отбросить несохраненные изменения в «{}»?";
@@ -1085,8 +1102,16 @@
 "VISUELL BLOCK" = "VISUAL BLOCK";
 "VISUELL ZEILE" = "VISUAL LINE";
 "Verbieten" = "Запретить";
+"Verbinde mit {} …" = "Подключение к {}…";
+"Verbinden" = "Подключиться";
 "Verbindet …" = "Подключение…";
 "Verbindung" = "Подключение";
+"Verbindung bearbeiten" = "Изменить подключение";
+"Verbindung bearbeiten …" = "Изменить подключение…";
+"Verbindung fehlgeschlagen" = "не удалось подключиться";
+"Verbindung zu {}" = "Подключение к {}";
+"Verbindung zu {} fehlgeschlagen" = "Не удалось подключиться к {}";
+"Verbindung zu {} getrennt" = "Подключение к {} прервано";
 "Verbunden" = "Подключено";
 "Verdichte …" = "Сжатие…";
 "Verdichtet sich selbst ab {} Tokens" = "Автоматическое сжатие с {} токенов";
@@ -1174,6 +1199,7 @@
 "Wird fortgesetzt …" = "Продолжение…";
 "Wird gesucht …" = "Поиск …";
 "Wirkung" = "Действие";
+"Wo arbeitet der neue Arbeitsbereich?" = "Где работает новая рабочая область?";
 "Wochenlimit" = "Недельный лимит";
 "Womit neue Sitzungen starten, bis du im Tab etwas anderes wählst. Leere Felder überlassen die Wahl den Einstellungen des Agenten." = "С чем начинаются новые сеансы, пока вы не выберете другое во вкладке. Пустые поля оставляют выбор настройкам агента.";
 "Worktree wird angelegt …" = "Создание worktree…";
@@ -1244,6 +1270,7 @@
 "geschlossen" = "закрыто";
 "geschätzt aus der letzten Antwort" = "оценка по последнему ответу";
 "gestern" = "вчера";
+"getrennt" = "отключено";
 "gezählt" = "подсчитано";
 "geändert" = "изменен";
 "geöffnet" = "открыто";
@@ -1268,6 +1295,8 @@
 "und {} weitere" = "и еще {}";
 "ungelöst" = "не разрешен";
 "unverändert" = "без изменений";
+"verbindet" = "подключение";
+"verbunden" = "подключено";
 "von Hand" = "вручную";
 "vor einem Jahr" = "год назад";
 "vor einem Monat" = "месяц назад";

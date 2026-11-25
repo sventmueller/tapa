@@ -213,7 +213,7 @@ fn open_new(
 /// agents found there, then those the app installed from the registry (E16, E21); each only while the settings offer
 /// it.
 pub fn agents(base: &std::path::Path) -> Vec<Agent> {
-    let env = &term_ui::workspace_host::environment(std::time::Duration::ZERO)[..];
+    let env = &term_ui::workspace_host::environment_for(base, std::time::Duration::ZERO)[..];
     let mut agents: Vec<Agent> = [Agent::Claude, Agent::Codex, Agent::OpenCode]
         .into_iter()
         .filter(|agent| agent.offered() && agent.installed(env, base))
@@ -224,13 +224,28 @@ pub fn agents(base: &std::path::Path) -> Vec<Agent> {
             .map(Agent::Acp)
             .filter(|agent| agent.offered() && agent.installed(env, base)),
     );
-    agents.extend(
-        AcpAgent::installed_entries()
-            .into_iter()
-            .map(Agent::Acp)
-            .filter(|agent| agent.offered() && agent.installed(env, base)),
-    );
+    // The agents the app installed live on this Mac; a remote workspace has only those on the other machine (E25).
+    if term_remote::registry::bin_for(base).is_none() {
+        agents.extend(
+            AcpAgent::installed_entries()
+                .into_iter()
+                .map(Agent::Acp)
+                .filter(|agent| agent.offered() && agent.installed(env, base)),
+        );
+    }
     agents
+}
+
+/// Has the agent tabs working in `base` whose session ended start it again, continuing their conversation, once they
+/// are in front or get a prompt, as when a remote workspace's connection came back (E25); parked tabs stay parked.
+pub fn resume_in(base: &std::path::Path) {
+    for tab in all() {
+        let ended = matches!(tab.state.borrow().source(), crate::source::Source::Idle);
+        if ended && tab.cwd.starts_with(base) && tab.parking.process.get().is_none() {
+            tab.parking.deferred.set(true);
+            tab.wake_deferred();
+        }
+    }
 }
 
 /// Claude's own program on the login shell's PATH in `env` or where its installer puts it (E21).

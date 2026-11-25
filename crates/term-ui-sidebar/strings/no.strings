@@ -27,3 +27,10 @@
 "Arbeitet" = "Arbeider";
 "Wartet auf dich" = "Venter på deg";
 "Einstellungen" = "Innstillinger";
+"Trennen" = "Koble fra";
+"Verbindung bearbeiten …" = "Rediger tilkobling…";
+"Verbindung fehlgeschlagen" = "tilkoblingen mislyktes";
+"Verbindung zu {}" = "Tilkobling til {}";
+"getrennt" = "frakoblet";
+"verbindet" = "kobler til";
+"verbunden" = "tilkoblet";

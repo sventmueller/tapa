@@ -27,3 +27,10 @@
 "Arbeitet" = "Dolgozik";
 "Wartet auf dich" = "Önre vár";
 "Einstellungen" = "Beállítások";
+"Trennen" = "Kapcsolat bontása";
+"Verbindung bearbeiten …" = "Kapcsolat szerkesztése…";
+"Verbindung fehlgeschlagen" = "a kapcsolódás sikertelen";
+"Verbindung zu {}" = "Kapcsolat: {}";
+"getrennt" = "nincs kapcsolat";
+"verbindet" = "kapcsolódás";
+"verbunden" = "kapcsolódva";
