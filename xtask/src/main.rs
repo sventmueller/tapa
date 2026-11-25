@@ -11,6 +11,7 @@ mod perf;
 mod readme;
 mod release;
 mod render_page;
+mod seed;
 mod services;
 mod shell;
 mod source;
@@ -62,7 +63,8 @@ fn main() -> ExitCode {
             Ok(())
         }),
         Some("deploy") => deploy::deploy(&args[1..]),
-        _ => Err("usage: cargo xtask bundle|run [--release] | selftest <steps> | esctest … | ghostty-vt | icon | structure | strings [alike] | themes <folder> | perf … | release [--notarize] [--layout] | deploy [--minor|--major]".into()),
+        Some("seed") => seed::seed(&args[1..]),
+        _ => Err("usage: cargo xtask bundle|run [--release] | selftest <steps> | esctest … | ghostty-vt | icon | structure | strings [alike] | themes <folder> | perf … | release [--notarize] [--layout] | deploy [--minor|--major] | seed <worktree>|--hook".into()),
     };
     match result {
         Ok(()) => ExitCode::SUCCESS,
@@ -252,6 +254,10 @@ pub(crate) mod files {
 
     pub(crate) fn copy(from: impl AsRef<Path>, to: impl AsRef<Path>) -> Result<u64, String> {
         at(from.as_ref(), fs::copy(from.as_ref(), to.as_ref()))
+    }
+
+    pub(crate) fn read_dir(path: impl AsRef<Path>) -> Result<fs::ReadDir, String> {
+        at(path.as_ref(), fs::read_dir(path.as_ref()))
     }
 }
 

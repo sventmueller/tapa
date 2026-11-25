@@ -1,0 +1,11 @@
+#!/bin/sh
+# git worktree add runs this hook with the null commit as the previous HEAD.
+case "$1" in *[!0]*) exit 0 ;; esac
+main=$(dirname "$(git rev-parse --path-format=absolute --git-common-dir)")
+xtask="$main/target/debug/xtask"
+if [ -x "$xtask" ]; then
+    "$xtask" seed "$PWD" || echo "post-checkout: the worktree builds its dependencies itself" >&2
+else
+    echo "post-checkout: no $xtask to fill the build folder; cargo xtask in $main builds it" >&2
+fi
+exit 0
