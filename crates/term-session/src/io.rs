@@ -143,6 +143,7 @@ impl Reader {
             }
             if self.shared.publisher.take_wanted() {
                 self.shared.publisher.publish(&self.shared);
+                self.shared.redraw();
             }
             while let Ok(bytes) = self.inbox.try_recv() {
                 self.pending.push_back(bytes);

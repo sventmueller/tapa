@@ -254,6 +254,11 @@ impl Shared {
     /// is already pending.
     pub(crate) fn wake(&self) {
         self.publisher.changed(self);
+        self.redraw();
+    }
+
+    /// A redraw for the owner unless one is already pending, so its copy of the screen follows the newest frame.
+    pub(crate) fn redraw(&self) {
         if !self.redraw_pending.swap(true, Ordering::AcqRel) {
             self.emit(Event::Redraw);
         }
