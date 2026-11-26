@@ -33,7 +33,11 @@ impl AgentTab {
             self.start_acp(thread);
             return;
         }
-        let transcript = self.state.borrow().resume().and_then(|r| r.transcript.clone());
+        let (transcript, session) = self
+            .state
+            .borrow()
+            .resume()
+            .map_or((None, None), |r| (r.transcript.clone(), Some(r.session.clone())));
         let key = self.key;
         let cwd = self.cwd.clone();
         let mut thread = self.snapshot();
@@ -41,11 +45,15 @@ impl AgentTab {
         if let Err(why) = crate::common::util::spawn("claude-start", move || {
             let env = term_ui::workspace_host::environment_for(&cwd, Duration::from_secs(15));
             let exe = source::find_claude(&env);
-            let thread = match transcript {
-                Some(path) if thread.entries(&term_thread::Lane::Main).is_empty() => {
+            let empty = thread.entries(&term_thread::Lane::Main).is_empty();
+            let thread = match (transcript, session) {
+                (Some(path), _) if empty => {
                     let rebuilt = term_claude::history::rebuild(thread.clone(), &path).unwrap_or(thread);
                     crate::common::util::give_back_memory_soon();
                     rebuilt
+                }
+                (None, Some(session)) if empty && crate::remote_transcript::is_remote(&cwd) => {
+                    crate::remote_transcript::rebuild(thread.clone(), &cwd, &session, Duration::ZERO).unwrap_or(thread)
                 }
                 _ => thread,
             };

@@ -16,6 +16,8 @@ use crate::{SSH, Target};
 
 /// The first argument of the app's executable in the stand-in mode.
 pub const MODE: &str = "--tapa-remote";
+/// The file beside the stand-ins that says how they reach the other machine.
+pub(crate) const FORWARD: &str = ".forward.json";
 
 /// Where and how a stand-in reaches the other machine.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
@@ -64,7 +66,7 @@ pub fn write(bin: &Path, app: &Path, forward: &Forward, programs: &[String]) -> 
         std::fs::remove_dir_all(bin)?;
     }
     std::fs::create_dir_all(bin)?;
-    let spec = bin.join(".forward.json");
+    let spec = bin.join(FORWARD);
     std::fs::write(&spec, serde_json::to_vec(forward).map_err(io::Error::other)?)?;
     for program in programs {
         if program.is_empty() || program.contains('/') || program.starts_with('.') {

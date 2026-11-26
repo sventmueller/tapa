@@ -8,11 +8,13 @@ pub mod registry;
 mod script;
 pub mod stand_in;
 mod target;
+mod transcript;
 
 pub use connection::{Connection, Probe, State};
 pub use script::{agent_script, through_any_shell};
 pub use stand_in::Forward;
 pub use target::Target;
+pub use transcript::{claude_transcript, claude_transcript_through};
 
 /// The OpenSSH client of macOS, which reads the user's `~/.ssh/config`, keys and agent (A6).
 pub const SSH: &str = "/usr/bin/ssh";

@@ -126,9 +126,27 @@ fn a_workspace_connects_runs_there_and_notices_the_end() {
         .unwrap();
     assert_eq!(String::from_utf8_lossy(&output.stdout), "/home/tapa/project|it's");
 
+    let wrote = connection
+        .command("mkdir -p ~/.claude/projects/-home-tapa-project && echo '{}' > ~/.claude/projects/-home-tapa-project/abc-123.jsonl")
+        .stdin(std::process::Stdio::null())
+        .output()
+        .unwrap();
+    assert!(wrote.status.success(), "{}", String::from_utf8_lossy(&wrote.stderr));
+    let forward = connection.forward();
+    let transcript = term_remote::claude_transcript_through(&forward, "abc-123").unwrap();
+    assert_eq!(transcript.as_deref(), Some(&b"{}\n"[..]));
+    assert_eq!(
+        term_remote::claude_transcript_through(&forward, "missing-1").unwrap(),
+        None
+    );
+
     docker(&["stop", "-t", "0", &container.0]);
     let state = wait_for(&connection, &states, |state| matches!(state, State::Disconnected(_)));
     assert!(matches!(state, State::Disconnected(_)), "{state:?}");
+    assert!(
+        term_remote::claude_transcript_through(&forward, "abc-123").is_err(),
+        "a closed connection is an error, which a waiting tab tries again"
+    );
     connection.close();
     let _ = std::fs::remove_dir_all(&dir);
 }

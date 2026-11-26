@@ -51,6 +51,7 @@ mod outside;
 mod overlay;
 mod refresh;
 mod registry;
+mod remote_transcript;
 mod requests;
 mod row;
 mod source;
@@ -249,12 +250,15 @@ pub fn resume_in(base: &std::path::Path) {
     }
 }
 
-/// The trust of `workspace` changed: its agent tabs show it and start their sessions again with the configuration it
-/// now allows (E21).
+/// The trust of `workspace` changed: its agent tabs open now show it and start their sessions again with the
+/// configuration it now allows (E21); tabs that open later, as a restored workspace's do, start with it anyway.
 pub fn trust_changed(workspace: &Workspace) {
-    let workspace = *workspace;
+    let keys: Vec<AgentKey> = of_workspace(workspace).iter().map(|tab| tab.key).collect();
+    if keys.is_empty() {
+        return;
+    }
     crate::common::util::main_soon(move || {
-        for tab in of_workspace(&workspace) {
+        for tab in keys.into_iter().filter_map(get) {
             tab.trust_moved();
         }
     });

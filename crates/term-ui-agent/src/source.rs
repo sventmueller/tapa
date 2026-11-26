@@ -264,7 +264,10 @@ impl Source {
 pub(crate) fn find_claude(env: &[(String, String)]) -> Option<PathBuf> {
     #[cfg(feature = "selftest")]
     if let Some(program) = TEST_PROGRAM.lock_ignoring_poison().clone() {
-        return Some(program);
+        // A remote workspace's stand-in starts the stand-in the self-test puts on the machine there.
+        let remote =
+            tool::which("claude", tool::var(env, "PATH")).filter(|found| term_remote::registry::is_stand_in(found));
+        return Some(remote.unwrap_or(program));
     }
     tool::which("claude", tool::var(env, "PATH")).or_else(|| {
         let home = term_base::home();

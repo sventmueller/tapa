@@ -108,8 +108,9 @@ impl AgentTab {
         self.refresh();
     }
 
-    /// Opens a restored Claude session as a parked one: its conversation read from the transcript, its CLI started
-    /// only once the tab comes to the front or gets a prompt. Other agents start at once.
+    /// Opens a restored Claude session as a parked one: its conversation read from the transcript, in a remote
+    /// workspace from the machine there once its connection is open, its CLI started only once the tab comes to the
+    /// front or gets a prompt. Other agents start at once.
     pub(crate) fn start_parked(&self) {
         if !matches!(self.agent, Agent::Claude) {
             self.start();
@@ -117,19 +118,39 @@ impl AgentTab {
         }
         self.parking.deferred.set(true);
         self.refresh();
-        let Some(path) = self.state.borrow().resume().and_then(|r| r.transcript.clone()) else {
+        let Some((transcript, session)) = self
+            .state
+            .borrow()
+            .resume()
+            .map(|r| (r.transcript.clone(), r.session.clone()))
+        else {
             return;
         };
+        if transcript.is_none() && !crate::remote_transcript::is_remote(&self.cwd) {
+            return;
+        }
         let tab = MainThreadBound::new(self.me.borrow().clone(), self.mtm);
         let thread = self.snapshot();
+        let cwd = self.cwd.clone();
         let spawned = crate::common::util::spawn("claude-parked", move || {
-            let Ok(rebuilt) = term_claude::history::rebuild(thread, &path) else {
+            let rebuilt = match transcript {
+                Some(path) => term_claude::history::rebuild(thread, &path).ok(),
+                None => crate::remote_transcript::rebuild(
+                    thread,
+                    &cwd,
+                    &session,
+                    crate::remote_transcript::WAIT_FOR_CONNECTION,
+                ),
+            };
+            let Some(rebuilt) = rebuilt else {
                 return;
             };
             crate::common::util::give_back_memory_soon();
             main_soon(move || {
+                // A start that came first and found no conversation, as one whose connection was not open yet,
+                // takes it as well, as long as no session runs on it.
                 if let Some(tab) = MainThreadMarker::new().and_then(|mtm| tab.get(mtm).upgrade())
-                    && tab.parking.deferred.get()
+                    && (tab.parking.deferred.get() || !tab.state.borrow().source().is_live())
                     && tab.state.borrow().thread().entries(&Lane::Main).is_empty()
                 {
                     tab.absorb(rebuilt, &[Change::Cleared]);
@@ -141,9 +162,10 @@ impl AgentTab {
         }
     }
 
-    /// Starts the CLI of a restored tab that waited for it, once the tab is in front.
+    /// Starts the CLI of a restored tab that waited for it, once the tab is in front and, in a remote workspace, its
+    /// connection is open; the connection wakes it again when it opens.
     pub(crate) fn wake_deferred(&self) {
-        if self.parking.deferred.get() && self.is_shown() {
+        if self.parking.deferred.get() && self.is_shown() && !term_remote::registry::waits_for_connection(&self.cwd) {
             self.start();
         }
     }
@@ -155,7 +177,7 @@ impl AgentTab {
             return;
         }
         let Some(process) = self.parking.process.get() else {
-            if self.parking.deferred.get() {
+            if self.parking.deferred.get() && !term_remote::registry::waits_for_connection(&self.cwd) {
                 self.start();
             }
             return;

@@ -165,6 +165,7 @@ impl Remote {
     pub(crate) fn forget(&self) {
         self.disconnect();
         term_remote::registry::set(&self.base, None);
+        term_remote::registry::set_open(&self.base, false);
         if let Some(dir) = self.base.parent() {
             let _ = std::fs::remove_dir_all(dir);
         }
@@ -246,6 +247,9 @@ impl Remote {
     }
 
     fn show(&self, state: State) {
+        if state != State::Connected {
+            term_remote::registry::set_open(&self.base, false);
+        }
         *self.state.borrow_mut() = state;
         refresh_windows();
     }
@@ -361,6 +365,7 @@ fn find_agents(remote: &Rc<Remote>) {
             let remote = by_token(&token);
             if let Some(remote) = &remote {
                 *remote.home.borrow_mut() = probe.home;
+                term_remote::registry::set_open(&remote.base, remote.connection.borrow().state() == State::Connected);
             }
             refresh_windows();
             if let Some(remote) = remote {
