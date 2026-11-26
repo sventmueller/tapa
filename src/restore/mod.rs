@@ -203,6 +203,8 @@ impl Budget {
 thread_local! {
     /// The stored rows of restored sessions until their shells start, by session view.
     static ROWS: RefCell<HashMap<u64, Vec<String>>> = RefCell::new(HashMap::new());
+    /// Reads and decrypts the saved layout while AppKit builds the menus and installs the app delegate.
+    static LOADING: RefCell<Option<std::thread::JoinHandle<Option<Saved>>>> = const { RefCell::new(None) };
 }
 
 /// Keeps `rows` for the session view `view` until its shell starts.
@@ -215,6 +217,27 @@ pub(crate) fn put_rows(view: u64, rows: Vec<String>) {
 /// The stored rows of session view `view`, once; none for a new session.
 pub(crate) fn take_rows(view: u64) -> Vec<String> {
     ROWS.with(|cell| cell.borrow_mut().remove(&view)).unwrap_or_default()
+}
+
+/// The tail of a deferred session's history, for a save before its shell starts.
+pub(crate) fn pending_rows(view: u64, lines: usize, mut bytes: usize) -> Vec<String> {
+    ROWS.with(|cell| {
+        let rows = cell.borrow();
+        let Some(rows) = rows.get(&view) else { return Vec::new() };
+        let count = rows
+            .iter()
+            .rev()
+            .take(lines)
+            .take_while(|row| {
+                let Some(left) = bytes.checked_sub(row.len() + 1) else {
+                    return false;
+                };
+                bytes = left;
+                true
+            })
+            .count();
+        rows[rows.len() - count..].to_vec()
+    })
 }
 
 /// Where the state is kept: `TAPA_RESTORE_DIR` if set, the self-test's folder in a self-test, else the data folder.
@@ -356,31 +379,49 @@ fn write(folder: &Path, path: &Path, saved: &Saved) -> Result<(), String> {
     term_base::atomic_write::write(path, &sealed).map_err(|error| error.to_string())
 }
 
-/// Opens the windows stored when the app last quit; whether one opened. The file stays, as it holds the workspaces
-/// the user keeps, until the next store replaces it.
+/// Starts reading the last layout before AppKit launches the first window.
+pub(crate) fn prepare() {
+    if app().config().restore.enabled {
+        let loading = std::thread::Builder::new()
+            .name("reading saved windows".into())
+            .spawn(|| {
+                term_base::priority::user_initiated();
+                load()
+            })
+            .ok();
+        LOADING.with(|slot| slot.replace(loading));
+    }
+}
+
+/// Opens the windows stored when the app last quit; whether one opened.
 pub(crate) fn reopen() -> bool {
     if !app().config().restore.enabled {
         return false;
     }
+    let saved = LOADING
+        .with(|slot| slot.take())
+        .and_then(|loading| loading.join().ok())
+        .unwrap_or_else(load);
+    let Some(saved) = saved else { return false };
+    for window in &saved.windows {
+        Window::reopen(window);
+    }
+    !saved.windows.is_empty()
+}
+
+fn load() -> Option<Saved> {
     let folder = folder();
     let path = folder.join(FILE);
-    let Ok(sealed) = std::fs::read(&path) else {
-        return false;
-    };
+    let sealed = std::fs::read(&path).ok()?;
     let saved = key(&folder)
         .map_err(|error| error.to_string())
         .and_then(|key| term_seal::open(&key, &sealed).map_err(|error| error.to_string()))
         .and_then(|plain| read(&plain));
     match saved {
-        Ok(saved) => {
-            for window in &saved.windows {
-                Window::reopen(window);
-            }
-            !saved.windows.is_empty()
-        }
+        Ok(saved) => Some(saved),
         Err(error) => {
             term_base::diag::report("restoring the windows", &error);
-            false
+            None
         }
     }
 }
@@ -412,6 +453,16 @@ fn read(plain: &[u8]) -> Result<Saved, String> {
 mod tests {
     use super::*;
     use term_panes::layout::{Node, Pane, WindowTab};
+
+    #[test]
+    fn a_save_before_shell_start_keeps_the_budgeted_history_for_next_time() {
+        put_rows(42, vec!["old".into(), "newer".into(), "latest".into()]);
+        assert_eq!(pending_rows(42, 3, 13), ["newer", "latest"]);
+        assert_eq!(pending_rows(42, 1, 100), ["latest"]);
+        assert!(pending_rows(42, 3, 6).is_empty());
+        assert_eq!(take_rows(42), ["old", "newer", "latest"]);
+        assert!(pending_rows(42, 3, 100).is_empty());
+    }
 
     fn session(folder: &str, rows: &[&str]) -> SavedSession {
         SavedSession {

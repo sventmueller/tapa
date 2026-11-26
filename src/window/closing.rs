@@ -201,6 +201,7 @@ impl Window {
         };
         let empty = terminal.panes.remove(view);
         terminal.sessions.borrow_mut().remove(&view);
+        drop(crate::restore::take_rows(view));
         if let Some(view) = term_ui::find(view) {
             view.with_session(term_session::Session::close);
         }

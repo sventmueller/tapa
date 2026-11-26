@@ -429,8 +429,11 @@ impl Terminal {
     }
 
     fn close(&self) {
-        for view in self.panes.sessions().into_iter().filter_map(term_ui::find) {
-            view.with_session(term_session::Session::close);
+        for view in self.panes.sessions() {
+            drop(crate::restore::take_rows(view));
+            if let Some(view) = term_ui::find(view) {
+                view.with_session(term_session::Session::close);
+            }
         }
     }
 }

@@ -64,10 +64,12 @@ fn main() {
         bundle_id,
     });
     term_base::diag::install(Box::new(|what, detail| eprintln!("{what}: {detail}")));
+    term_render::gpu::warm_up();
     migrate::run();
     term_ui::install(&host::AppHost);
     let mtm = MainThreadMarker::new().expect("the app starts on the main thread");
     state::start(mtm);
+    restore::prepare();
     remote::start();
     agent::install();
     browser::install();

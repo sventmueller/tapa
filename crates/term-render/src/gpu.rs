@@ -1,11 +1,9 @@
 //! Drawing a terminal frame with Metal: the quads `sprites` collects, put together in one draw call into the view's
 //! `CAMetalLayer`, shown on its own or, while the view resizes, with the window's Core Animation transaction.
 
-use std::cell::OnceCell;
 use std::ptr::NonNull;
-use std::rc::Rc;
-use std::sync::Arc;
 use std::sync::atomic::{AtomicBool, Ordering};
+use std::sync::{Arc, OnceLock};
 
 use objc2::rc::Retained;
 use objc2::runtime::ProtocolObject;
@@ -36,25 +34,32 @@ pub struct Gpu {
     pipeline: Retained<ProtocolObject<dyn MTLRenderPipelineState>>,
 }
 
-thread_local! {
-    static SHARED: OnceCell<Option<Rc<Gpu>>> = const { OnceCell::new() };
-}
-
 /// The GPU the terminal views draw with, set up on first use; none without Metal, when the shader does not build, or
 /// with `IDE_TERMINAL_CPU` set.
-pub fn shared() -> Option<Rc<Gpu>> {
-    SHARED.with(|cell| {
-        cell.get_or_init(|| {
+pub fn shared() -> Option<&'static Gpu> {
+    static SHARED: OnceLock<Option<Gpu>> = OnceLock::new();
+    SHARED
+        .get_or_init(|| {
             if std::env::var_os(CPU_ONLY).is_some() {
                 return None;
             }
             Gpu::new()
                 .map_err(|error| term_base::diag::report("drawing terminals with Metal", error))
                 .ok()
-                .map(Rc::new)
         })
-        .clone()
-    })
+        .as_ref()
+}
+
+/// Compiles the Metal pipeline while the main thread sets up the app.
+pub fn warm_up() {
+    if std::env::var_os(CPU_ONLY).is_none() {
+        let _ = term_base::thread::detach("terminal Metal setup", || {
+            term_base::priority::user_initiated();
+            objc2::rc::autoreleasepool(|_| {
+                let _ = shared();
+            });
+        });
+    }
 }
 
 /// Why terminals draw without Metal; for the system log.
@@ -266,7 +271,7 @@ pub fn layer() -> Option<Retained<CAMetalLayer>> {
 
 /// A view's drawing on the GPU: its sprites, and the frames it presents to the view's layer.
 pub struct Surface {
-    gpu: Rc<Gpu>,
+    gpu: &'static Gpu,
     sprites: Sprites,
     layer: Retained<CAMetalLayer>,
     ring: Ring,

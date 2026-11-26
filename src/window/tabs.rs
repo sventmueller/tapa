@@ -65,6 +65,10 @@ impl Window {
         let Some(workspace) = self.workspace_of_tab(id) else {
             return;
         };
+        let tab = workspace.tabs.borrow().get(TabId::new(id));
+        if let Some(tab) = tab {
+            self.attach_restored_frame(&tab);
+        }
         let Some(frame) = self.frame_of(id) else {
             return;
         };

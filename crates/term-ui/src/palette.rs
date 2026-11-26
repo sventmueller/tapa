@@ -23,7 +23,7 @@ use splat_i18n::t;
 use term_base::Cancel;
 
 pub(crate) use model::first_shown;
-pub use model::{glyphs, rank};
+pub use model::{RankQuery, RankText, glyphs, rank};
 
 use crate::kit::{activate, guarded, label, ns};
 
@@ -562,7 +562,7 @@ fn filter() {
                 palette.first = 0;
                 palette.nothing.setStringValue(&ns(t("Lädt …")));
             }
-            return (!query.trim().is_empty()).then(|| (grouped.search.clone(), query));
+            return Some((grouped.search.clone(), query));
         }
         let entries: Vec<(&str, &str)> = palette
             .entries
@@ -583,7 +583,14 @@ fn filter() {
 /// Refreshes the query of an open grouped palette when its background index changes.
 pub fn refresh_grouped(cancel: &Cancel) {
     if !cancel.is_cancelled() {
-        filter();
+        let request = with_open(|palette| {
+            let grouped = palette.grouped.as_ref()?;
+            let query = grouped.query.as_ref().filter(|query| !query.trim().is_empty())?;
+            Some((grouped.search.clone(), query.clone()))
+        });
+        if let Some((search, query)) = request.flatten() {
+            search(query);
+        }
     }
 }
 

@@ -144,6 +144,12 @@ impl Reader {
             }
             let update = std::mem::take(&mut *self.shared.view_update.lock_ignoring_poison());
             self.apply_view_update(update);
+            if let Ok(bytes) = self.inbox.try_recv() {
+                self.pending.push_back(bytes);
+                self.pending.extend(self.inbox.try_iter());
+                // Give fresh input to the program before parsing a backlog or packing scrollback.
+                self.flush();
+            }
             if deadline.is_some_and(|deadline| Instant::now() >= deadline) {
                 self.end_synchronized_update();
             }
@@ -157,9 +163,6 @@ impl Reader {
             if self.shared.publisher.take_wanted() {
                 self.shared.publisher.publish(&self.shared);
                 self.shared.redraw();
-            }
-            while let Ok(bytes) = self.inbox.try_recv() {
-                self.pending.push_back(bytes);
             }
             let mut exited = None;
             ended |= std::mem::take(&mut ended_early) || events.iter().any(|event| event.key == CHILD_KEY);

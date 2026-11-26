@@ -9,7 +9,7 @@
 use std::cell::RefCell;
 use std::collections::HashMap;
 use std::rc::Rc;
-use std::sync::atomic::{AtomicBool, AtomicU64, Ordering};
+use std::sync::atomic::{AtomicU64, Ordering};
 use std::sync::{Arc, Mutex, OnceLock};
 use std::time::Instant;
 
@@ -112,7 +112,6 @@ struct Shared {
     /// When the last key was pressed, in nanoseconds since the thread started; 0 once its frame showed.
     key_at: AtomicU64,
     latencies: Mutex<Vec<u32>>,
-    awake: AtomicBool,
     /// The view's display link, made on the main thread and handed to the render thread's run loop.
     link: Mutex<Option<Shareable<Retained<CADisplayLink>>>>,
 }
@@ -146,7 +145,6 @@ impl Renderer {
             inputs: Mutex::new(Inputs::default()),
             key_at: AtomicU64::new(0),
             latencies: Mutex::new(Vec::new()),
-            awake: AtomicBool::new(false),
             link: Mutex::new(None),
         });
         Renderer { shared }
@@ -297,8 +295,13 @@ fn wake(id: u64) {
     let thread = thread();
     {
         let mut woken = thread.woken.lock_ignoring_poison();
-        if !woken.contains(&id) {
-            woken.push(id);
+        if woken.contains(&id) {
+            return;
+        }
+        let needs_callback = woken.is_empty();
+        woken.push(id);
+        if !needs_callback {
+            return;
         }
     }
     let block = RcBlock::new(|| term_base::guarded((), serve_wakes));
@@ -340,6 +343,8 @@ thread_local! {
 /// On the render thread: takes in new surfaces and starts the links of those that were woken.
 fn serve_wakes() {
     let thread = thread();
+    // An attachment queues its surface before its wake; draining in this order always sees that surface.
+    let woken = std::mem::take(&mut *thread.woken.lock_ignoring_poison());
     let added: Vec<Arc<Shared>> = std::mem::take(&mut *thread.added.lock_ignoring_poison());
     for shared in added {
         let id = shared.id;
@@ -372,7 +377,6 @@ fn serve_wakes() {
             );
         });
     }
-    let woken: Vec<u64> = std::mem::take(&mut *thread.woken.lock_ignoring_poison());
     let mut closed = Vec::new();
     SURFACES.with(|surfaces| {
         let mut surfaces = surfaces.borrow_mut();
@@ -406,7 +410,6 @@ impl Surface {
                 return true;
             }
         }
-        self.shared.awake.store(true, Ordering::Release);
         let silent = self.last_beat.is_none_or(|at| at.elapsed() > LINK_SILENT);
         let resting = self.link.isPaused() || self.idle > 0 || silent;
         if self.link.isPaused() {

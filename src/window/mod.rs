@@ -59,6 +59,8 @@ pub(crate) struct Window {
     workspaces: RefCell<Ordered<Workspace>>,
     /// The window of every tab of every workspace, on screen or kept off it while another workspace shows.
     frames: RefCell<Vec<Rc<TabWindow>>>,
+    /// Geometry for restored tabs whose native window has yet to be built.
+    restored_frames: RefCell<HashMap<u64, restore::RestoredFrame>>,
     quick: RefCell<Option<Quick>>,
     /// Set while the window closes, so that tabs closing with it do not close it again.
     closing: Cell<bool>,
@@ -71,6 +73,8 @@ pub(crate) struct Window {
     /// The sidebar setting the window last followed, so that reading the settings again changes the sidebar only
     /// when that setting changed.
     sidebar_setting: Cell<bool>,
+    /// Session events may arrive in bursts, each asking for the same window and sidebar update.
+    refresh_queued: Cell<bool>,
 }
 
 impl Window {
@@ -127,10 +131,12 @@ impl Window {
             mtm: app.mtm,
             workspaces: RefCell::new(Ordered::new()),
             frames: RefCell::new(Vec::new()),
+            restored_frames: RefCell::new(HashMap::new()),
             quick: RefCell::new(None),
             closing: Cell::new(false),
             arranging: Cell::new(false),
             restoring: Cell::new(false),
+            refresh_queued: Cell::new(false),
             last_key: Cell::new(None),
             sidebar_setting: Cell::new(app.config().window.sidebar),
         });
@@ -419,13 +425,28 @@ impl Window {
         let in_front =
             self.selected_tab_id() == Some(tab.id) && self.front_ns_window().is_some_and(|window| window.isKeyWindow());
         if tab.changed(view, &change, in_front) {
-            self.refresh();
+            self.refresh_soon();
         }
+    }
+
+    fn refresh_soon(&self) {
+        if self.refresh_queued.replace(true) {
+            return;
+        }
+        let id = self.id();
+        term_base::main_soon(move || {
+            if let Some(window) = crate::state::try_app().and_then(|app| app.window(id))
+                && window.refresh_queued.get()
+            {
+                window.refresh();
+            }
+        });
     }
 
     /// Shows the workspaces' rows in every sidebar on screen, each tab's title on its window and tab, and the toolbars
     /// as they are now.
     pub(crate) fn refresh(&self) {
+        self.refresh_queued.set(false);
         if let Some(quick) = self.quick.borrow().as_ref() {
             if let Some(tab) = self.selected_tab() {
                 quick.panel.setTitle(&term_ui::kit::ns(&tab.title()));

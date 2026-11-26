@@ -2,7 +2,9 @@
 //! windows of each workspace's tab group, the windows dragged out of a group, and the sidebar.
 
 use std::cell::RefCell;
+use std::collections::VecDeque;
 use std::rc::Rc;
+use std::time::Duration;
 use term_ui::workspace_host::{TabId, WorkspaceId};
 
 use objc2_foundation::{NSPoint, NSRect, NSSize};
@@ -14,9 +16,49 @@ use super::{Window, geometry, session};
 use crate::restore::{
     Budget, SavedAgent, SavedBrowser, SavedFile, SavedGroup, SavedSession, SavedWindow, SavedWorkspace, put_rows,
 };
-use crate::state::app;
+use crate::state::{app, try_app};
 use crate::tab::Tab;
 use crate::workspace::Workspace;
+
+#[derive(Default)]
+struct RestoredShells {
+    waiting: VecDeque<(u64, u64)>,
+    scheduled: bool,
+}
+
+pub(super) struct RestoredFrame {
+    workspace: u64,
+    frame: Option<NSRect>,
+    look: Look,
+}
+
+thread_local! {
+    static RESTORED_SHELLS: RefCell<RestoredShells> = RefCell::default();
+}
+
+/// Leave time for input and drawing between shell starts.
+const SHELL_START_GAP: Duration = Duration::from_millis(4);
+
+fn start_next_shell_tab() {
+    if crate::quit::left() {
+        return;
+    }
+    let next = RESTORED_SHELLS.with(|shells| {
+        let mut shells = shells.borrow_mut();
+        let next = shells.waiting.pop_front();
+        shells.scheduled = next.is_some();
+        next
+    });
+    if let Some((window, tab)) = next {
+        if let Some(window) = try_app().and_then(|app| app.window(window))
+            && let Some(tab) = window.tab(tab)
+        {
+            window.attach_restored_frame(&tab);
+            window.start_sessions(&tab);
+        }
+        term_base::main_after(SHELL_START_GAP, start_next_shell_tab);
+    }
+}
 
 impl Window {
     /// The window as it is now, with up to `lines` rows of history per session, without its Terminal; none for a
@@ -120,8 +162,11 @@ impl Window {
             if was_scratch {
                 continue;
             }
-            let workspace = window.reopen_workspace(stored, &place, look);
-            if !stored.agents.is_empty() || !stored.browsers.is_empty() || !stored.files.is_empty() {
+            let hosted = !stored.agents.is_empty() || !stored.browsers.is_empty() || !stored.files.is_empty();
+            let eager =
+                saved.selected == Some(index) || hosted || !stored.separate.is_empty() || stored.remote.is_some();
+            let workspace = window.reopen_workspace(stored, &place, look, eager);
+            if hosted {
                 with_agents.push((workspace.clone(), stored));
             }
             if saved.selected == Some(index) {
@@ -139,9 +184,6 @@ impl Window {
             front.tabs.borrow_mut().select(TabId::new(tab.id));
             window.attach(&tab, front.id, None, place.get(), Some(look));
         }
-        for tab in window.tabs() {
-            window.start_sessions(&tab);
-        }
         for (workspace, stored) in &with_agents {
             window.reopen_hosted(workspace, stored);
         }
@@ -151,19 +193,59 @@ impl Window {
             }
         }
         window.restoring.set(false);
+        window.queue_restored_shells();
         window.workspaces.borrow_mut().select(WorkspaceId::new(selected));
         window.show_workspace(selected, None);
         window.focus_active();
         window
     }
 
-    /// Adds the workspace `stored` with its terminal tabs, each in a window off screen at `place`, which the first
-    /// window that opens without one sets.
+    /// Builds the native window of a restored terminal tab the first time it needs one.
+    pub(super) fn attach_restored_frame(&self, tab: &Tab) {
+        let stored = self.restored_frames.borrow_mut().remove(&tab.id);
+        if let Some(RestoredFrame { workspace, frame, look }) = stored {
+            self.attach(tab, workspace, None, frame, Some(look));
+        }
+    }
+
+    fn queue_restored_shells(&self) {
+        let mut tabs = self.tabs();
+        tabs.retain(|tab| tab.terminal().is_some());
+        // Detached windows already on screen should fill before the tabs behind them.
+        tabs.sort_by_cached_key(|tab| !self.frame_of(tab.id).is_some_and(|frame| frame.ns.isVisible()));
+        let schedule = RESTORED_SHELLS.with(|shells| {
+            let mut shells = shells.borrow_mut();
+            shells.waiting.extend(tabs.iter().map(|tab| (self.id(), tab.id)));
+            if shells.scheduled || shells.waiting.is_empty() {
+                return false;
+            }
+            shells.scheduled = true;
+            true
+        });
+        if schedule {
+            term_base::main_thread::after_frame(|| term_base::main_after(SHELL_START_GAP, start_next_shell_tab));
+        }
+    }
+
+    /// A restored tab taking the keyboard starts before the next key can arrive.
+    pub(super) fn start_restored_shells(&self, tab: &Tab) {
+        let waiting = RESTORED_SHELLS.with(|shells| {
+            let mut shells = shells.borrow_mut();
+            let position = shells.waiting.iter().position(|key| *key == (self.id(), tab.id));
+            position.and_then(|position| shells.waiting.remove(position)).is_some()
+        });
+        if waiting {
+            self.start_sessions(tab);
+        }
+    }
+
+    /// Adds the workspace and its tabs at `place`, building native windows now for groups needed at launch.
     fn reopen_workspace(
         &self,
         stored: &SavedWorkspace,
         place: &std::cell::Cell<Option<NSRect>>,
         look: Look,
+        eager: bool,
     ) -> Rc<Workspace> {
         let workspace = match &stored.remote {
             Some(target) => {
@@ -189,9 +271,20 @@ impl Window {
                     tabs.select(TabId::new(tab.id));
                 }
             }
-            let frame = self.attach(&tab, workspace.id, None, place.get(), Some(look));
-            if place.get().is_none() {
-                place.set(Some(frame.ns.frame()));
+            if eager {
+                let frame = self.attach(&tab, workspace.id, None, place.get(), Some(look));
+                if place.get().is_none() {
+                    place.set(Some(frame.ns.frame()));
+                }
+            } else {
+                self.restored_frames.borrow_mut().insert(
+                    tab.id,
+                    RestoredFrame {
+                        workspace: workspace.id,
+                        frame: place.get(),
+                        look,
+                    },
+                );
             }
         }
         workspace
@@ -241,7 +334,6 @@ impl Window {
             workspace.tabs.borrow_mut().push(tab.clone());
             selected = Some(tab.id);
             self.attach(&tab, workspace.id, None, None, None);
-            self.start_sessions(&tab);
         }
         if let Some(id) = selected {
             workspace.select_tab(TabId::new(id));
@@ -378,17 +470,18 @@ fn snapshot_tab(tab: &Tab, lines: usize, budget: &RefCell<&mut Budget>) -> Optio
         let folder = known
             .map(|session| session.folder.clone())
             .or_else(|| found.as_ref().map(|view| view.cwd()))?;
-        let rows = match (&found, lines) {
-            (Some(found), 1..) => found
-                .with_session(|session| {
-                    let mut budget = budget.borrow_mut();
-                    let mut rows = session.restore_rows(lines, budget.available());
-                    budget.spent(&rows);
-                    term_base::redact::redact_lines(&mut rows);
-                    rows
-                })
-                .unwrap_or_default(),
-            _ => Vec::new(),
+        let rows = if lines > 0 {
+            let mut budget = budget.borrow_mut();
+            let bytes = budget.available();
+            let mut rows = found
+                .as_ref()
+                .and_then(|found| found.with_session(|session| session.restore_rows(lines, bytes)))
+                .unwrap_or_else(|| crate::restore::pending_rows(view, lines, bytes));
+            budget.spent(&rows);
+            term_base::redact::redact_lines(&mut rows);
+            rows
+        } else {
+            Vec::new()
         };
         Some(SavedSession {
             folder,

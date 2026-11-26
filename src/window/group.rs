@@ -66,6 +66,7 @@ impl Window {
         };
         workspace.select_tab(TabId::new(front.id));
         self.workspaces.borrow_mut().select(WorkspaceId::new(id));
+        self.attach_restored_frame(&front);
         let Some(front_frame) = self.frame_of(front.id) else {
             return;
         };
@@ -91,6 +92,9 @@ impl Window {
     /// and behind it, with its sidebar and tab `front`'s window, else the first, selected: the group builds up out of
     /// sight around that window and comes forward whole.
     pub(super) fn bring_back(&self, tabs: &[Rc<Tab>], front: Option<u64>, replacing: Option<&TabWindow>) {
+        for tab in tabs {
+            self.attach_restored_frame(tab);
+        }
         let hidden: Vec<Rc<TabWindow>> = tabs
             .iter()
             .filter_map(|tab| self.frame_of(tab.id))
@@ -226,7 +230,9 @@ impl Window {
         {
             own.apply(before.look());
         }
-        if let Some(tab) = workspace.tabs.borrow().get(TabId::new(tab)) {
+        let tab = workspace.tabs.borrow().get(TabId::new(tab));
+        if let Some(tab) = tab {
+            self.start_restored_shells(&tab);
             tab.seen();
             if tab.as_hosted().is_some_and(|hosted| hosted.kind() == TabKind::Agent) {
                 crate::agent::shown(workspace.id);
@@ -314,6 +320,7 @@ impl Window {
 
     /// Forgets the window of tab `id`, closing it unless it closes already.
     pub(super) fn forget_frame(&self, id: u64, close: bool) {
+        self.restored_frames.borrow_mut().remove(&id);
         let frame = {
             let mut frames = self.frames.borrow_mut();
             let at = frames.iter().position(|frame| frame.tab == id);

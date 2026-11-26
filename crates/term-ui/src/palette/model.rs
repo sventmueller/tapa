@@ -1,58 +1,137 @@
 //! The command palette without AppKit (F102): which entries a query finds in what order, a chord as the menus write
 //! it, and which rows of the list show.
 
+use std::cmp::Reverse;
+
 /// How well a query matches a text; higher is better.
 type Score = i64;
 
 /// The entries that match `query`, the best first, as indexes into `entries`; each entry is its title and words that
 /// find it too but do not show. An empty query keeps every entry in its order.
 pub fn rank(query: &str, entries: &[(&str, &str)]) -> Vec<usize> {
-    let query = query.trim().to_lowercase();
-    if query.is_empty() {
+    let query = RankQuery::new(query);
+    if query.text.is_empty() {
         return (0..entries.len()).collect();
     }
-    let mut scored: Vec<(Score, usize)> = entries
+    let mut scored: Vec<_> = entries
         .iter()
         .enumerate()
-        .filter_map(|(index, (title, extra))| Some((score(&query, title, extra)?, index)))
+        .filter_map(|(index, (title, extra))| Some((Reverse(query.score(&RankText::new(title, extra))?), index)))
         .collect();
-    scored.sort_by(|a, b| b.0.cmp(&a.0).then(a.1.cmp(&b.1)));
+    scored.sort_unstable();
     scored.into_iter().map(|(_, index)| index).collect()
 }
 
-/// How well `query`, in lower case, matches an entry: the title before the hidden words, a whole match before a
-/// prefix, a word's start before the middle, every word of the query before the initials of the title's words before
-/// scattered letters.
-fn score(query: &str, title: &str, extra: &str) -> Option<Score> {
-    let title = title.to_lowercase();
-    let extra = extra.to_lowercase().replace('_', " ");
-    let length = |text: &str| Score::try_from(text.chars().count()).unwrap_or(Score::MAX);
-    if title == query {
-        return Some(10_000);
+/// A candidate's searchable text, normalized once for repeated queries.
+pub struct RankText {
+    title: String,
+    extra: String,
+}
+
+impl RankText {
+    /// Prepares a title and additional search words.
+    pub fn new(title: &str, extra: &str) -> Self {
+        let mut extra = extra.to_lowercase();
+        if extra.contains('_') {
+            extra = extra.replace('_', " ");
+        }
+        Self {
+            title: title.to_lowercase(),
+            extra,
+        }
     }
-    if title.starts_with(query) {
-        return Some(9_000 - length(&title));
+}
+
+/// One query against any number of prepared catalogs.
+pub struct RankQuery {
+    text: String,
+    letters: Vec<char>,
+    several_words: bool,
+}
+
+impl RankQuery {
+    /// Prepares the query once, including the letters used for fuzzy matching.
+    pub fn new(query: &str) -> Self {
+        let text = query.trim().to_lowercase();
+        let letters = text.chars().filter(|c| !c.is_whitespace()).collect();
+        let several_words = text.split_whitespace().nth(1).is_some();
+        Self {
+            text,
+            letters,
+            several_words,
+        }
     }
-    if let Some(at) = word_start(&title, query, 1) {
-        return Some(8_000 - at);
+
+    /// Returns the best matches in descending score order, breaking ties by original position.
+    /// Returns none if the caller has superseded this search.
+    pub fn best<'a>(
+        &self,
+        entries: impl Iterator<Item = &'a RankText>,
+        limit: usize,
+        cancelled: impl Fn() -> bool,
+    ) -> Option<Vec<(Score, usize)>> {
+        let mut scored = Vec::new();
+        for (index, text) in entries.enumerate() {
+            if index % 128 == 0 && cancelled() {
+                return None;
+            }
+            if let Some(score) = self.score(text) {
+                scored.push((Reverse(score), index));
+            }
+        }
+        if cancelled() {
+            return None;
+        }
+        if scored.len() > limit {
+            scored.select_nth_unstable(limit);
+            scored.truncate(limit);
+        }
+        scored.sort_unstable();
+        Some(
+            scored
+                .into_iter()
+                .map(|(Reverse(score), index)| (score, index))
+                .collect(),
+        )
     }
-    if let Some(at) = title.find(query) {
-        return Some(7_000 - length(&title[..at]));
+
+    /// Matches the title before the hidden words, a whole match before a prefix, a word's start before the middle,
+    /// every word of the query before the initials of the title's words before scattered letters.
+    fn score(&self, entry: &RankText) -> Option<Score> {
+        let query = self.text.as_str();
+        let title = entry.title.as_str();
+        let extra = entry.extra.as_str();
+        let length = |text: &str| Score::try_from(text.chars().count()).unwrap_or(Score::MAX);
+        if title == query {
+            return Some(10_000);
+        }
+        if title.starts_with(query) {
+            return Some(9_000 - length(title));
+        }
+        if let Some(at) = word_start(title, query, 1) {
+            return Some(8_000 - at);
+        }
+        if let Some(at) = title.find(query) {
+            return Some(7_000 - length(&title[..at]));
+        }
+        if let Some(at) = word_start(extra, query, 0) {
+            return Some(6_000 - at);
+        }
+        if self.several_words
+            && query
+                .split_whitespace()
+                .all(|word| title.contains(word) || extra.contains(word))
+        {
+            return Some(5_000);
+        }
+        if let Some(skipped) = initials(&self.letters, title) {
+            return Some(4_500 - skipped);
+        }
+        if let Some(spread) = scattered(&self.letters, title) {
+            return Some(4_000 - spread);
+        }
+        extra.contains(query).then_some(3_000)
     }
-    if let Some(at) = word_start(&extra, query, 0) {
-        return Some(6_000 - at);
-    }
-    let words: Vec<&str> = query.split_whitespace().collect();
-    if words.len() > 1 && words.iter().all(|word| title.contains(word) || extra.contains(word)) {
-        return Some(5_000);
-    }
-    if let Some(skipped) = initials(query, &title) {
-        return Some(4_500 - skipped);
-    }
-    if let Some(spread) = scattered(query, &title) {
-        return Some(4_000 - spread);
-    }
-    extra.contains(query).then_some(3_000)
 }
 
 /// Which word of `text` past the first `skip`, counted from 0, begins with `query`.
@@ -66,8 +145,8 @@ fn word_start(text: &str, query: &str, skip: usize) -> Option<Score> {
 }
 
 /// Whether the letters of `query` begin words of `text` in their order, and how many words they leave out between.
-fn initials(query: &str, text: &str) -> Option<Score> {
-    let mut wanted = query.chars().filter(|c| !c.is_whitespace()).peekable();
+fn initials(query: &[char], text: &str) -> Option<Score> {
+    let mut wanted = query.iter().copied().peekable();
     let mut skipped: Score = 0;
     let mut started = false;
     for word in text
@@ -87,22 +166,21 @@ fn initials(query: &str, text: &str) -> Option<Score> {
 
 /// Whether the letters of `query` appear in `text` in their order, and how far apart: the letters skipped between
 /// the first and the last, fewer where they start words.
-fn scattered(query: &str, text: &str) -> Option<Score> {
-    let wanted: Vec<char> = query.chars().filter(|c| !c.is_whitespace()).collect();
+fn scattered(wanted: &[char], text: &str) -> Option<Score> {
     let mut next = 0;
-    let mut first = None;
+    let mut started = false;
     let mut spread: Score = 0;
     let mut previous: Option<char> = None;
-    for (at, c) in text.chars().enumerate() {
+    for c in text.chars() {
         if next == wanted.len() {
             break;
         }
         if c == wanted[next] {
-            first.get_or_insert(at);
+            started = true;
             let starts_word = previous.is_none_or(|p| !p.is_alphanumeric());
             spread -= if starts_word { 2 } else { 0 };
             next += 1;
-        } else if first.is_some() {
+        } else if started {
             spread += 1;
         }
         previous = Some(c);
