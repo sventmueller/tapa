@@ -1,8 +1,7 @@
-Tapa 1.0.8 hitro odpira datoteke iz vseh delovnih prostorov in v orodni vrstici pokaže, kaj teče.
+## Codex Remote Control
 
-## Novo
-- **Hitro odpri …** (⌘P), tudi za lupo v orodni vrstici, najde datoteke v vseh lokalnih delovnih prostorih ter odprte zavihke in seje. Najdene datoteke so združene po delovnem prostoru.
-- Gumb **Aktivnost** v orodni vrstici odpre sproti posodobljen seznam odprtih sej agentov, ukazov terminala v ospredju in upravljanih procesov. **Prikaži** skoči na zavihek ali razdelitev, **Ustavi** konča potezo agenta ali upravljan proces.
+Gumb za telefon na nativnem zavihku Codex omogoča seznanjanje telefona in nadaljevanje iste seje na njem po koncu trenutne poteze. Na voljo je v zaupanja vrednih lokalnih delovnih prostorih.
 
-## Izboljšave
-- Vrstica zavihkov in njen **+** ostaneta vidna tudi z enim samim zavihkom.
+## Zmogljivost
+
+Hitro odpiranje vzporedno indeksira delovne prostore in med tipkanjem prekliče zastarela iskanja. Pri obnovi Tapa najprej prikaže dejavni zavihek, nato naloži skrite. Izrisovanje ponavlja manj dela, pri obilnem izpisu pa ima prednost vnos v terminal.

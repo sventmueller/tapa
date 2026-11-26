@@ -1,8 +1,7 @@
-A Tapa 1.0.8 gyorsan megnyitja a fájlokat az összes munkaterületről, és az eszközsoron megmutatja, mi fut éppen.
+## Codex Remote Control
 
-## Újdonságok
-- A **Gyors megnyitás…** (⌘P), az eszközsor nagyítója mögött is, megtalálja a fájlokat az összes helyi munkaterületen, valamint a nyitott lapokat és munkameneteket. A talált fájlok munkaterület szerint csoportosítva jelennek meg.
-- Az eszközsor **Tevékenység** gombja élő listát nyit a nyitott ügynök-munkamenetekről, az előtérben futó terminálparancsokról és a felügyelt folyamatokról. A **Megjelenítés** a laphoz vagy felosztáshoz ugrik, a **Leállítás** befejezi egy ügynök körét vagy egy felügyelt folyamatot.
+A Codex saját lapján lévő telefongombbal párosíthatod a telefonodat, majd az aktuális kör végén ugyanott folytathatod a munkamenetet. A funkció megbízható helyi munkaterületeken érhető el.
 
-## Fejlesztések
-- A lapsáv és a **+** gombja egyetlen lap esetén is látható marad.
+## Teljesítmény
+
+A gyors megnyitás párhuzamosan indexeli a munkaterületeket, és gépelés közben megszakítja az elavult kereséseket. Visszaállításkor a Tapa először az aktív lapot jeleníti meg, majd betölti a rejtetteket. A megjelenítés kevesebb munkát ismétel meg, nagy kimenetnél pedig a terminálbevitel élvez elsőbbséget.

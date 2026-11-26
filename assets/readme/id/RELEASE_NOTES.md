@@ -1,8 +1,7 @@
-Tapa 1.0.8 membuka file dari semua ruang kerja dengan cepat dan menampilkan di bar alat apa yang sedang berjalan.
+## Codex Remote Control
 
-## Baru
-- **Buka Cepat…** (⌘P), juga melalui kaca pembesar di bar alat, menemukan file di semua ruang kerja lokal serta tab dan sesi yang terbuka. File yang ditemukan dikelompokkan menurut ruang kerja.
-- Tombol **Aktivitas** di bar alat membuka daftar langsung sesi agen yang terbuka, perintah terminal di latar depan, dan proses yang dikelola. **Tampilkan** melompat ke tab atau belahan, **Hentikan** mengakhiri giliran agen atau proses yang dikelola.
+Tombol telepon di tab Codex bawaan memungkinkan Anda memasangkan ponsel dan melanjutkan sesi yang sama di sana setelah giliran saat ini selesai. Tersedia di ruang kerja lokal tepercaya.
 
-## Peningkatan
-- Bar tab dan **+**-nya tetap terlihat walau hanya ada satu tab.
+## Kinerja
+
+Buka Cepat mengindeks ruang kerja secara paralel dan membatalkan pencarian lama saat Anda mengetik. Saat memulihkan sesi, Tapa menampilkan tab aktif terlebih dahulu lalu memuat tab tersembunyi. Perenderan mengurangi pekerjaan berulang, dan masukan terminal diprioritaskan saat keluaran sedang banyak.

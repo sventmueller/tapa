@@ -1,8 +1,7 @@
-Tapa 1.0.8 opent snel bestanden uit alle werkruimtes en toont in de knoppenbalk wat er draait.
+## Codex Remote Control
 
-## Nieuw
-- **Open snel…** (⌘P), ook achter het vergrootglas in de knoppenbalk, vindt bestanden in alle lokale werkruimtes en daarnaast open tabbladen en sessies. Gevonden bestanden zijn per werkruimte gegroepeerd.
-- De knop **Activiteit** in de knoppenbalk opent een live lijst van open agentsessies, terminalopdrachten op de voorgrond en beheerde processen. **Toon** springt naar het tabblad of de splitsing, **Stop** beëindigt de beurt van een agent of een beheerd proces.
+Met de telefoonknop in een native Codex-tabblad kun je je telefoon koppelen en daar dezelfde sessie voortzetten zodra de huidige beurt klaar is. Beschikbaar in vertrouwde lokale werkruimten.
 
-## Verbeteringen
-- De tabbladbalk en zijn **+** blijven zichtbaar bij één tabblad.
+## Prestaties
+
+Snel openen indexeert werkruimten parallel en stopt verouderde zoekopdrachten terwijl je typt. Bij herstel toont Tapa eerst het actieve tabblad en laadt daarna de verborgen tabbladen. De weergave doet minder dubbel werk en terminalinvoer krijgt voorrang bij veel uitvoer.

@@ -1,8 +1,7 @@
-Tapa 1.0.8, tüm çalışma alanlarındaki dosyaları hızla açar ve araç çubuğunda nelerin çalıştığını gösterir.
+## Codex Remote Control
 
-## Yeni
-- **Hızlı Aç…** (⌘P), araç çubuğundaki büyüteçten de açılır; tüm yerel çalışma alanlarındaki dosyaları ve açık sekmeleri ile oturumları bulur. Bulunan dosyalar çalışma alanına göre gruplanır.
-- Araç çubuğundaki **Etkinlik** düğmesi, açık ajan oturumlarının, ön plandaki terminal komutlarının ve yönetilen işlemlerin canlı bir listesini açar. **Göster** sekmeye veya bölmeye gider, **Durdur** bir ajanın sırasını veya yönetilen bir işlemi sonlandırır.
+Yerleşik Codex sekmesindeki telefon düğmesiyle telefonunuzu eşleyebilir ve geçerli tur tamamlandığında aynı oturumu telefondan sürdürebilirsiniz. Güvenilen yerel çalışma alanlarında kullanılabilir.
 
-## İyileştirmeler
-- Sekme çubuğu ve **+** düğmesi tek sekmede de görünür kalır.
+## Performans
+
+Hızlı Aç, çalışma alanlarını paralel olarak dizine ekler ve siz yazarken eski aramaları iptal eder. Geri yükleme sırasında Tapa önce etkin sekmeyi gösterir, ardından gizli sekmeleri yükler. Görüntüleme daha az tekrarlı işlem yapar ve yoğun çıktı sırasında terminal girdisine öncelik verilir.

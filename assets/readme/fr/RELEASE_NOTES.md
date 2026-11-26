@@ -1,8 +1,7 @@
-Tapa 1.0.8 ouvre rapidement les fichiers de tous les espaces de travail et montre dans la barre d’outils ce qui est en cours.
+## Codex Remote Control
 
-## Nouveautés
-- **Ouvrir rapidement…** (⌘P), aussi derrière la loupe de la barre d’outils, trouve les fichiers de tous les espaces de travail locaux ainsi que les onglets et sessions ouverts. Les fichiers trouvés sont regroupés par espace de travail.
-- Le bouton **Activité** de la barre d’outils ouvre une liste en direct des sessions d’agent ouvertes, des commandes de terminal au premier plan et des processus gérés. **Afficher** mène à l’onglet ou à la division, **Arrêter** termine le tour d’un agent ou un processus géré.
+Le bouton de téléphone dans un onglet Codex natif permet d’associer ton mobile et d’y poursuivre la même session à la fin du tour en cours. Disponible dans les espaces de travail locaux de confiance.
 
-## Améliorations
-- La barre d’onglets et son **+** restent visibles avec un seul onglet.
+## Performances
+
+L’ouverture rapide indexe les espaces de travail en parallèle et annule les recherches dépassées au fil de la saisie. Lors de la restauration, Tapa affiche d’abord l’onglet actif, puis charge les onglets masqués. Le rendu évite des opérations répétées et la saisie du terminal passe en priorité quand la sortie est abondante.

@@ -1,8 +1,7 @@
-Tapa 1.0.8 opens files across workspaces quickly and shows in the toolbar what is running.
+## Codex Remote Control
 
-## New
-- **Open Quickly…** (⌘P), also behind the toolbar’s magnifying glass, finds files across the local workspaces as well as open tabs and sessions. File results are grouped by workspace.
-- The toolbar’s **Activity** button opens a live list of open agent sessions, terminal commands in the foreground and managed processes. **Show** jumps to the tab or split, **Stop** ends an agent’s turn or a managed process.
+The phone button in a native Codex tab lets you pair your phone and continue the same session there after the current turn finishes. Available in trusted local workspaces.
 
-## Improvements
-- The tab bar and its **+** stay visible with a single tab.
+## Performance
+
+Quick Open indexes workspaces in parallel and cancels outdated searches as you type. Tapa shows the active tab first when restoring a session and loads hidden tabs afterward. Rendering does less redundant work, and terminal input gets priority during heavy output.

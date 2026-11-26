@@ -1,8 +1,7 @@
-Tapa 1.0.8 abre rápidamente archivos de todos los espacios de trabajo y muestra en la barra de herramientas lo que se está ejecutando.
+## Codex Remote Control
 
-## Novedades
-- **Apertura rápida…** (⌘P), también tras la lupa de la barra de herramientas, encuentra archivos en todos los espacios de trabajo locales, además de pestañas y sesiones abiertas. Los archivos encontrados se agrupan por espacio de trabajo.
-- El botón **Actividad** de la barra de herramientas abre una lista en directo de las sesiones de agente abiertas, los comandos de terminal en primer plano y los procesos gestionados. **Mostrar** salta a la pestaña o división, **Detener** termina el turno de un agente o un proceso gestionado.
+El botón del teléfono de una pestaña nativa de Codex permite vincular el móvil y continuar allí la misma sesión cuando acabe el turno actual. Disponible en espacios de trabajo locales de confianza.
 
-## Mejoras
-- La barra de pestañas y su **+** siguen visibles con una sola pestaña.
+## Rendimiento
+
+La apertura rápida indexa los espacios de trabajo en paralelo y cancela las búsquedas antiguas mientras escribes. Al restaurar una sesión, Tapa muestra primero la pestaña activa y carga después las ocultas. El renderizado evita trabajo repetido y las entradas del terminal tienen prioridad cuando hay mucha salida.

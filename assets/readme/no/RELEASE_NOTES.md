@@ -1,8 +1,7 @@
-Tapa 1.0.8 åpner raskt filer på tvers av arbeidsområder og viser i verktøylinjen hva som kjører.
+## Codex Remote Control
 
-## Nytt
-- **Åpne raskt…** (⌘P), også bak verktøylinjens forstørrelsesglass, finner filer i alle lokale arbeidsområder samt åpne faner og økter. Funne filer grupperes etter arbeidsområde.
-- Verktøylinjens knapp **Aktivitet** åpner en fortløpende oppdatert liste over åpne agentøkter, terminalkommandoer i forgrunnen og administrerte prosesser. **Vis** hopper til fanen eller delingen, **Stopp** avslutter en agents tur eller en administrert prosess.
+Med telefonknappen i en innebygd Codex-fane kan du koble til telefonen og fortsette den samme økten der når den pågående runden er ferdig. Funksjonen finnes i klarerte lokale arbeidsområder.
 
-## Forbedringer
-- Fanelinjen og dens **+** forblir synlige med én fane.
+## Ytelse
+
+Hurtigåpning indekserer arbeidsområder parallelt og avbryter utdaterte søk mens du skriver. Ved gjenoppretting viser Tapa den aktive fanen først og laster de skjulte etterpå. Visningen gjentar mindre arbeid, og terminalinndata har forrang når det kommer mye utdata.

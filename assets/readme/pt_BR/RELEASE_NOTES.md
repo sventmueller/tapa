@@ -1,8 +1,7 @@
-O Tapa 1.0.8 abre rapidamente arquivos de todos os espaços de trabalho e mostra na barra de ferramentas o que está em execução.
+## Codex Remote Control
 
-## Novidades
-- **Abrir Rapidamente…** (⌘P), também atrás da lupa da barra de ferramentas, encontra arquivos em todos os espaços de trabalho locais, além de abas e sessões abertas. Os arquivos encontrados são agrupados por espaço de trabalho.
-- O botão **Atividade** da barra de ferramentas abre uma lista ao vivo das sessões de agente abertas, dos comandos de terminal em primeiro plano e dos processos gerenciados. **Mostrar** vai para a aba ou divisão, **Parar** encerra a vez de um agente ou um processo gerenciado.
+O botão de telefone em uma aba nativa do Codex permite parear o celular e continuar a mesma sessão nele após o turno atual. Disponível em áreas de trabalho locais confiáveis.
 
-## Melhorias
-- A barra de abas e seu **+** continuam visíveis com uma única aba.
+## Desempenho
+
+A abertura rápida indexa as áreas de trabalho em paralelo e cancela buscas anteriores enquanto você digita. Ao restaurar uma sessão, o Tapa mostra primeiro a aba ativa e depois carrega as ocultas. A renderização evita trabalho repetido e a entrada no terminal tem prioridade quando há muita saída.

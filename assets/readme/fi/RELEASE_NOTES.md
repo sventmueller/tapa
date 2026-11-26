@@ -1,8 +1,7 @@
-Tapa 1.0.8 avaa nopeasti tiedostoja kaikista työtiloista ja näyttää työkalupalkissa, mitä on käynnissä.
+## Codex Remote Control
 
-## Uutta
-- **Avaa nopeasti…** (⌘P), myös työkalupalkin suurennuslasin takana, löytää tiedostot kaikista paikallisista työtiloista sekä avoimet välilehdet ja istunnot. Löydetyt tiedostot ryhmitellään työtilan mukaan.
-- Työkalupalkin **Toiminta**-painike avaa reaaliaikaisen luettelon avoimista agentti-istunnoista, etualalla ajettavista päätekomennoista ja hallituista prosesseista. **Näytä** siirtyy välilehteen tai jakoon, **Pysäytä** lopettaa agentin vuoron tai hallitun prosessin.
+Codexin oman välilehden puhelinpainikkeella voi yhdistää puhelimen ja jatkaa siinä samaa istuntoa nykyisen vuoron päätyttyä. Toiminto on käytettävissä luotetuissa paikallisissa työtiloissa.
 
-## Parannuksia
-- Välilehtipalkki ja sen **+** pysyvät näkyvissä myös yhdellä välilehdellä.
+## Suorituskyky
+
+Pika-avaus indeksoi työtiloja rinnakkain ja peruu vanhat haut kirjoittaessasi. Palautuksessa Tapa näyttää aktiivisen välilehden ensin ja lataa piilossa olevat sen jälkeen. Piirtäminen tekee vähemmän toistuvaa työtä, ja päätteen syöte asetetaan etusijalle runsaan tulosteen aikana.

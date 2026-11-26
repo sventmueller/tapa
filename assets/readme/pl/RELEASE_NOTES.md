@@ -1,8 +1,7 @@
-Tapa 1.0.8 szybko otwiera pliki ze wszystkich obszarów roboczych i pokazuje na pasku narzędzi, co jest uruchomione.
+## Codex Remote Control
 
-## Nowości
-- **Szybko otwórz…** (⌘P), dostępne też pod lupą na pasku narzędzi, znajduje pliki we wszystkich lokalnych obszarach roboczych oraz otwarte karty i sesje. Znalezione pliki są pogrupowane według obszaru roboczego.
-- Przycisk **Aktywność** na pasku narzędzi otwiera bieżącą listę otwartych sesji agentów, poleceń terminala na pierwszym planie i zarządzanych procesów. **Pokaż** przechodzi do karty lub podziału, **Zatrzymaj** kończy turę agenta albo zarządzany proces.
+Przycisk telefonu na natywnej karcie Codex umożliwia sparowanie telefonu i kontynuowanie na nim tej samej sesji po zakończeniu bieżącej tury. Funkcja jest dostępna w zaufanych lokalnych obszarach roboczych.
 
-## Ulepszenia
-- Pasek kart i jego **+** pozostają widoczne przy jednej karcie.
+## Wydajność
+
+Szybkie otwieranie indeksuje obszary robocze równolegle i anuluje nieaktualne wyszukiwania podczas pisania. Przy przywracaniu Tapa najpierw pokazuje aktywną kartę, a potem ładuje ukryte. Renderowanie ogranicza powtórną pracę, a przy dużej ilości danych wyjściowych pierwszeństwo ma wprowadzanie danych do terminala.

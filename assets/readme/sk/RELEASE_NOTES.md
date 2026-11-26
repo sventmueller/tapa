@@ -1,8 +1,7 @@
-Tapa 1.0.8 rýchlo otvára súbory zo všetkých pracovných priestorov a na paneli nástrojov ukazuje, čo práve beží.
+## Codex Remote Control
 
-## Novinky
-- **Rýchlo otvoriť…** (⌘P), aj pod lupou na paneli nástrojov, nájde súbory vo všetkých lokálnych pracovných priestoroch aj otvorené karty a relácie. Nájdené súbory sú zoskupené podľa pracovného priestoru.
-- Tlačidlo **Aktivita** na paneli nástrojov otvorí priebežne aktualizovaný zoznam otvorených relácií agentov, príkazov terminálu v popredí a spravovaných procesov. **Zobraziť** prejde na kartu alebo rozdelenie, **Zastaviť** ukončí ťah agenta alebo spravovaný proces.
+Tlačidlom telefónu v natívnej karte Codexu môžete spárovať telefón a po dokončení aktuálneho ťahu na ňom pokračovať v rovnakej relácii. Funkcia je dostupná v dôveryhodných miestnych pracovných priestoroch.
 
-## Vylepšenia
-- Lišta kariet a jej **+** zostávajú viditeľné aj pri jedinej karte.
+## Výkon
+
+Rýchle otvorenie indexuje pracovné priestory súbežne a pri písaní ruší zastarané vyhľadávania. Pri obnove Tapa najprv zobrazí aktívnu kartu a potom načíta skryté. Vykresľovanie obmedzuje opakovanú prácu a pri veľkom množstve výstupu má vstup do terminálu prednosť.
