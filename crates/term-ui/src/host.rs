@@ -11,6 +11,7 @@ use std::sync::atomic::{AtomicBool, AtomicU64, Ordering};
 use std::sync::{Arc, OnceLock};
 
 use objc2::rc::{Retained, Weak};
+use objc2::runtime::Sel;
 use term_base::{Ending, Spawner};
 use term_config::Config;
 use term_config::theme::Themes;
@@ -95,6 +96,20 @@ pub trait Host {
     fn switch_off(&self, path: &[&str]) {
         let _ = path;
     }
+    /// Entries the app adds below the terminal's own in the context menu of view `view`.
+    fn context_items(&self, view: u64) -> Vec<ContextItem> {
+        let _ = view;
+        Vec::new()
+    }
+}
+
+/// An entry of a terminal's context menu that the app adds.
+#[derive(Clone, Debug)]
+pub struct ContextItem {
+    /// What the entry says.
+    pub title: String,
+    /// The action it sends through the responder chain; the entry's tag is the id of the view it was opened on.
+    pub action: Sel,
 }
 
 static HOST: OnceLock<&'static (dyn Host + Sync)> = OnceLock::new();

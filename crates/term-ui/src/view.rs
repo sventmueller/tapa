@@ -729,6 +729,15 @@ impl TerminalView {
                 None => menu.addItem(&separator(mtm)),
             }
         }
+        let added = super::host().context_items(self.id());
+        if !added.is_empty() {
+            menu.addItem(&separator(mtm));
+        }
+        for added in added {
+            let entry = item(mtm, &added.title, Some(added.action), "");
+            entry.setTag(isize::try_from(self.id()).unwrap_or(-1));
+            menu.addItem(&entry);
+        }
         menu
     }
 

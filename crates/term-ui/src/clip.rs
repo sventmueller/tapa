@@ -131,12 +131,20 @@ impl TerminalView {
         pasted.ok()
     }
 
-    /// Pastes files dropped onto the view as their paths, or dropped text; whether there was either.
+    /// Pastes files dropped onto the view as their paths, dropped text, or a dropped image as pasting one does;
+    /// whether there was any of them.
     pub(super) fn drop_from(&self, pasteboard: &NSPasteboard) -> bool {
         let paths = files(pasteboard);
         let text = text(pasteboard);
         if paths.is_empty() && text.is_none() {
-            return false;
+            if png(pasteboard).is_none() {
+                return false;
+            }
+            self.paste_from(pasteboard);
+            if let Some(window) = self.window() {
+                window.makeFirstResponder(Some(self));
+            }
+            return true;
         }
         // The paths of this Mac mean nothing to a shell on another machine (E25).
         if !paths.is_empty() && objc2::DefinedClass::ivars(self).shell.borrow().remote {

@@ -36,7 +36,7 @@ pub mod workspace_host;
 pub use field::toggle::Look as FieldLook;
 #[cfg(feature = "selftest")]
 use host::latest_id;
-pub use host::{Change, Host, Opened, State, all_views, find, install, set_option_as_meta};
+pub use host::{Change, ContextItem, Host, Opened, State, all_views, find, install, set_option_as_meta};
 use host::{forget, host, listener, next_id, option_as_meta, register};
 pub use input::chord_of;
 pub use view::TerminalView;
