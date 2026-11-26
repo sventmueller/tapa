@@ -1,6 +1,4 @@
-//! The activity view of one session, which the buttons in the head of its tab and `/tasks` open: a popover listing
-//! its subagents, its background work or both with the session itself, each with what it does now, Show and Stop,
-//! kept current while it shows.
+//! The activity popover shared by the toolbar, the buttons in an agent tab and `/tasks`.
 
 use std::cell::{Cell, RefCell};
 use std::time::{Duration, SystemTime};
@@ -10,10 +8,11 @@ use objc2::runtime::{AnyObject, NSObject};
 use objc2::{DefinedClass, MainThreadMarker, MainThreadOnly, define_class, msg_send, sel};
 use objc2_app_kit::{
     NSAccessibility, NSButton, NSColor, NSLayoutAttribute, NSPopover, NSPopoverBehavior, NSScrollView, NSStackView,
-    NSView, NSViewController,
+    NSToolbarItem, NSView, NSViewController,
 };
 use objc2_foundation::{NSObjectProtocol, NSSize};
 use splat_i18n::t;
+use term_process::{ProcessId, Supervisor};
 use term_thread::{BackgroundKind, Status, TaskStatus};
 
 use crate::AgentKey;
@@ -33,6 +32,8 @@ const WIDTH: f64 = 420.0;
 /// What a button of the popover does.
 #[derive(Clone, PartialEq)]
 enum Action {
+    ShowPane(u64),
+    StopProcess(ProcessId),
     ShowTab(AgentKey),
     StopTurn(AgentKey),
     Reveal(AgentKey, String),
@@ -44,8 +45,10 @@ pub(crate) struct ActivityIvars {
     popover: RefCell<Option<Retained<NSPopover>>>,
     actions: RefCell<Vec<Action>>,
     scheduled: Cell<bool>,
+    ticking: Cell<bool>,
     /// The tab whose work the popover shows, and which of it.
     only: Cell<Option<(AgentKey, Part)>>,
+    toolbar: Cell<Option<ToolbarSource>>,
     /// The rows the popover shows, to change their texts in place.
     shown: RefCell<Option<Shown>>,
 }
@@ -92,7 +95,9 @@ fn made(mtm: MainThreadMarker) -> Retained<Activity> {
         popover: RefCell::new(None),
         actions: RefCell::new(Vec::new()),
         scheduled: Cell::new(false),
+        ticking: Cell::new(false),
         only: Cell::new(None),
+        toolbar: Cell::new(None),
         shown: RefCell::new(None),
     };
     // SAFETY: NSObject's initializer, called once on the newly allocated object.
@@ -104,14 +109,53 @@ fn made(mtm: MainThreadMarker) -> Retained<Activity> {
 /// Opens the list of `part` of the session in tab `key` below `anchor`.
 pub(crate) fn show(key: AgentKey, part: Part, anchor: &NSView) {
     let activity = made(anchor.mtm());
+    activity.ivars().toolbar.set(None);
     activity.ivars().only.set(Some((key, part)));
-    activity.open(anchor);
+    activity.open(|popover| {
+        popover.showRelativeToRect_ofView_preferredEdge(anchor.bounds(), anchor, objc2_foundation::NSRectEdge::MaxY);
+    });
+}
+
+/// A process shown in the toolbar activity list.
+pub struct ActivityProcess {
+    /// The terminal view id when the process can be shown in a pane.
+    pub pane: Option<u64>,
+    /// The supervisor id when the process can be stopped from the list.
+    pub managed: Option<ProcessId>,
+    /// The symbol for the process kind.
+    pub symbol: &'static str,
+    /// The command line or executable name.
+    pub title: String,
+    /// The location and, when known, elapsed time.
+    pub detail: String,
+}
+
+#[derive(Clone, Copy)]
+struct ToolbarSource {
+    processes: fn() -> Vec<ActivityProcess>,
+    show_pane: fn(u64),
+}
+
+/// Toggles the activity popover anchored to a toolbar item. The app supplies its processes and pane navigation.
+pub fn toggle_toolbar_activity(item: &NSToolbarItem, processes: fn() -> Vec<ActivityProcess>, show_pane: fn(u64)) {
+    let activity = made(item.mtm());
+    if activity.ivars().toolbar.get().is_some() && activity.is_shown() {
+        activity.close();
+        return;
+    }
+    activity.ivars().only.set(None);
+    activity
+        .ivars()
+        .toolbar
+        .set(Some(ToolbarSource { processes, show_pane }));
+    activity.open(|popover| popover.showRelativeToToolbarItem(item));
 }
 
 /// Tells the popover that the session in tab `key` changed, while it shows that session's work.
 pub(crate) fn changed(key: AgentKey) {
     if let Some(activity) = of()
-        && activity.ivars().only.get().is_some_and(|(shown, _)| shown == key)
+        && (activity.ivars().toolbar.get().is_some()
+            || activity.ivars().only.get().is_some_and(|(shown, _)| shown == key))
     {
         activity.changed();
     }
@@ -254,7 +298,7 @@ fn same_or_next<T: PartialEq>(old: &[T], row: usize, new: &[T]) -> Option<usize>
 }
 
 /// The lines of the session in `tab`: the session, all its subagents and its background work that runs.
-fn agent_lines(tab: &AgentTab, now: SystemTime) -> Vec<Line> {
+fn agent_lines(tab: &AgentTab, now: SystemTime, all_subagents: bool) -> Vec<Line> {
     let thread = tab.view_snapshot();
     let mut buttons = vec![(t("Zeigen"), Action::ShowTab(tab.key))];
     if thread.status() != Status::Idle {
@@ -277,6 +321,7 @@ fn agent_lines(tab: &AgentTab, now: SystemTime) -> Vec<Line> {
         thread
             .subagents()
             .iter()
+            .filter(|sub| all_subagents || sub.status == TaskStatus::Running)
             .map(|sub| session::subagent_line(tab.key, sub, now, true)),
     );
     let background = thread
@@ -293,7 +338,7 @@ fn session_lines(key: AgentKey, part: Part, now: SystemTime) -> Vec<Line> {
         return Vec::new();
     };
     match part {
-        Part::All => agent_lines(&tab, now),
+        Part::All => agent_lines(&tab, now, true),
         Part::Subagents | Part::Background => session::lines(key, &tab.view_snapshot(), part, now),
     }
 }
@@ -315,8 +360,16 @@ impl Activity {
         }
     }
 
-    /// Opens the popover below `anchor`.
-    fn open(&self, anchor: &NSView) {
+    fn close(&self) {
+        let popover = self.ivars().popover.borrow().clone();
+        if let Some(popover) = popover {
+            // SAFETY: Closing takes any sender; none is given.
+            unsafe { popover.performClose(None) };
+        }
+    }
+
+    /// Opens the popover at the toolbar item or view selected by the caller.
+    fn open(&self, show: impl FnOnce(&NSPopover)) {
         let mtm = self.mtm();
         let popover = self
             .ivars()
@@ -330,29 +383,60 @@ impl Activity {
             })
             .clone();
         self.fill();
-        popover.showRelativeToRect_ofView_preferredEdge(anchor.bounds(), anchor, objc2_foundation::NSRectEdge::MaxY);
+        show(&popover);
         relink(&popover);
         self.tick();
     }
 
     /// Keeps the running times of an open popover current.
     fn tick(&self) {
+        if self.ivars().ticking.replace(true) {
+            return;
+        }
         main_after(Duration::from_secs(1), || {
-            if let Some(activity) = of()
-                && activity.is_shown()
-            {
-                activity.fill();
-                activity.tick();
+            if let Some(activity) = of() {
+                activity.ivars().ticking.set(false);
+                if activity.is_shown() {
+                    activity.fill();
+                    activity.tick();
+                }
             }
         });
     }
 
-    /// The session's list the popover shows.
     fn sections(&self) -> Vec<(&'static str, Vec<Line>)> {
+        let now = SystemTime::now();
+        if let Some(source) = self.ivars().toolbar.get() {
+            let agents = crate::all()
+                .into_iter()
+                .flat_map(|tab| agent_lines(&tab, now, false))
+                .collect();
+            let processes = (source.processes)()
+                .into_iter()
+                .map(|process| {
+                    let mut buttons = Vec::new();
+                    if let Some(pane) = process.pane {
+                        buttons.push((t("Zeigen"), Action::ShowPane(pane)));
+                    }
+                    if let Some(id) = process.managed {
+                        buttons.push((t("Stopp"), Action::StopProcess(id)));
+                    }
+                    Line {
+                        symbol: process.symbol,
+                        tint: NSColor::secondaryLabelColor(),
+                        title: process.title,
+                        detail: process.detail,
+                        indent: false,
+                        buttons,
+                    }
+                })
+                .collect();
+            return vec![(t("Agenten"), agents), (t("Prozesse"), processes)];
+        }
         let Some((key, part)) = self.ivars().only.get() else {
             return Vec::new();
         };
-        vec![(part.heading(), session_lines(key, part, SystemTime::now()))]
+        vec![(part.heading(), session_lines(key, part, now))]
     }
 
     /// Shows what runs now: in the rows there are, while the same rows would show, else in rows built anew.
@@ -546,8 +630,18 @@ impl Activity {
 
     fn perform(&self, action: Action) {
         match action {
+            Action::ShowPane(pane) => {
+                if let Some(source) = self.ivars().toolbar.get() {
+                    self.close();
+                    (source.show_pane)(pane);
+                }
+            }
+            Action::StopProcess(id) => Supervisor::global().stop(id, Duration::from_secs(2)),
             Action::ShowTab(key) => {
                 if let Some(tab) = crate::get(key) {
+                    if self.ivars().toolbar.get().is_some() {
+                        self.close();
+                    }
                     tab.select();
                 }
             }

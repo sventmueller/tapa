@@ -36,6 +36,7 @@
 "Adresse nach der Anmeldung" = "Osoite kirjautumisen jälkeen";
 "Adresse nicht unterstützt" = "Osoitetta ei tueta";
 "Agent" = "Agentti";
+"Agent-Befehl" = "Agentin komento";
 "Agenten" = "Agentit";
 "Agenten in „{}“ laden dann die Hooks, MCP-Server und Einstellungen des Projekts." = "Tällöin kohteen ”{}” agentit lataavat projektin hookit, MCP-palvelimet ja asetukset.";
 "Agenten werden gesucht …" = "Etsitään agentteja…";
@@ -262,12 +263,14 @@
 "Das lässt sich hier nicht umschalten." = "Tätä ei voi vaihtaa tässä.";
 "Das nächste gedrückte Kürzel übernehmen; Escape bricht ab" = "Käytä seuraavaksi painettua näppäinyhdistelmää; Escape kumoaa";
 "Datei außerhalb des Projekts" = "Tiedosto projektin ulkopuolella";
+"Datei suchen" = "Etsi tiedosto";
 "Datei öffnen" = "Avaa tiedosto";
 "Dateien" = "Tiedostot";
 "Dateien ein-/ausblenden" = "Näytä/piilota tiedostot";
 "Dateien oder Bilder anhängen" = "Liitä tiedostoja tai kuvia";
 "Dateien: {}" = "Tiedostot: {}";
 "Dateiliste:" = "Tiedostoluettelo:";
+"Debug-Adapter" = "Virheenjäljityssovitin";
 "Deine Nachricht: {}" = "Viestisi: {}";
 "Denkaufwand:" = "Panostus:";
 "Denken" = "Ajattelu";
@@ -314,6 +317,7 @@
 "Der Stash sieht nur, was auf der Platte steht. Sichere zuerst, damit deine Änderungen dabei sind." = "Stash näkee vain sen, mikä on levyllä. Tallenna ensin, jotta muutoksesi tulevat mukaan.";
 "Der Vorgang hat zu lange gedauert." = "Toiminto kesti liian kauan.";
 "Details …" = "Lisätiedot…";
+"Dev-Server" = "Kehityspalvelin";
 "Diagramm" = "Kaavio";
 "Die Adresse „{}“ ließ sich nicht auflösen." = "Osoitetta ”{}” ei voitu selvittää.";
 "Die Anmeldung beim Remote ist fehlgeschlagen." = "Kirjautuminen etärepositorioon epäonnistui.";
@@ -895,6 +899,8 @@
 "Projektplan" = "Projektisuunnitelma";
 "Prompts und Lesezeichen" = "Kehotteet ja kirjanmerkit";
 "Protokoll" = "Protokolla";
+"Prozesse" = "Prosessit";
+"Prüfstation" = "Laatuportti";
 "Pull" = "Pull";
 "Pull läuft …" = "Pull käynnissä…";
 "Push" = "Push";
@@ -947,6 +953,8 @@
 "Schlüssel für {} entfernen" = "Poista palvelun {} avain";
 "Schlüssel für {} ändern" = "Muuta palvelun {} avainta";
 "Schlüssel übernehmen …" = "Käytä avainta…";
+"Schnell öffnen" = "Avaa nopeasti";
+"Schnell öffnen …" = "Avaa nopeasti…";
 "Schnelles Terminal ausblenden" = "Kätke pikapääte";
 "Schnelles Terminal ein-/ausblenden" = "Näytä/kätke pikapääte";
 "Schnelles Terminal einblenden" = "Näytä pikapääte";
@@ -1002,6 +1010,7 @@
 "Speicherdateien" = "Muistitiedostot";
 "Sprache" = "Kieli";
 "Sprache:" = "Kieli:";
+"Sprachserver" = "Kielipalvelin";
 "Stand im letzten Commit" = "Tila viimeisimmässä commitissa";
 "Standard" = "Oletus";
 "Standardmodell" = "Oletusmalli";
@@ -1052,6 +1061,7 @@
 "Terminal leeren" = "Tyhjennä pääte";
 "Terminal: {}" = "Pääte: {}";
 "Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "Päätteet ja agentit toimivat tietokoneessa, johon ssh näin yhdistää; tiedostoluetteloa ja Gitiä siellä ei ole.";
+"Test" = "Testi";
 "Text mit Steuerzeichen einsetzen?" = "Sijoitetaanko teksti, jossa on ohjausmerkkejä?";
 "Text mit Zeilenumbruch einsetzen?" = "Sijoitetaanko teksti, jossa on rivinvaihto?";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "Sijoitetaanko teksti, jossa on {} rivinvaihtoa?";
@@ -1184,6 +1194,7 @@
 "Weitersuchen" = "Etsi seuraava";
 "Weniger zeigen" = "Näytä vähemmän";
 "Wer angemeldet ist, und abmelden" = "Kuka on kirjautunut, ja uloskirjautuminen";
+"Werkzeug" = "Työkalu";
 "Werkzeug {}: {}, {}" = "Työkalu {}: {}, {}";
 "Werkzeugaufrufe" = "Työkalukutsut";
 "Werkzeugergebnisse" = "Työkalujen tulokset";
@@ -1349,6 +1360,7 @@
 "{} erlaubt" = "{} sallittu";
 "{} frühere Einträge ausgeblendet" = "{} aiempaa merkintää kätketty";
 "{} gehört jetzt zu „{}“ statt zu „{}“." = "{} kuuluu nyt toiminnolle ”{}” eikä toiminnolle ”{}”.";
+"{} h" = "{} t";
 "{} h {} min" = "{} t {} min";
 "{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "{} ei pääse käyttämään mikrofonia. Salli se kohdassa Järjestelmäasetukset > Tietosuoja ja turvallisuus > Mikrofoni.";
 "{} installieren?" = "Asennetaanko {}?";
@@ -1361,6 +1373,7 @@
 "{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "{} lukee sen tätä varten kerran, ja macOS kysyy ensin luvan. Valitse siellä ”Salli”, älä ”Salli aina”: silloin Lowspeakin kohde pysyy ennallaan. {} tallentaa avaimen omaan kohteeseensa.";
 "{} meldet keine Hintergrundprozesse" = "{} ei ilmoita taustaprosesseista";
 "{} meldet keine Subagenten" = "{} ei ilmoita aliagenteista";
+"{} min" = "{} min";
 "{} min {} s" = "{} min {} s";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet." = "{} pyytää kirjautumaan sisään ennen istunnon avaamista.";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet. Bei der Anmeldung im Terminal liegt der Befehl in der Zwischenablage." = "{} pyytää kirjautumaan sisään ennen istunnon avaamista. Päätteessä kirjautumista varten komento on leikepöydällä.";
@@ -1390,6 +1403,7 @@
 "{} wurde nicht installiert" = "{} jäi asentamatta";
 "{} {} oder neuer wird gebraucht" = "{} {} tai uudempi tarvitaan";
 "{} · {}" = "{} · {}";
+"{} · {} · PID {}" = "{} · {} · PID {}";
 "{}, 1 Datei" = "{}, 1 tiedosto";
 "{}, 1 Eintrag" = "{}, 1 kohde";
 "{}, geänderte Dateien: {}" = "{}, muuttuneet tiedostot: {}";

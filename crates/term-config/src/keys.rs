@@ -199,7 +199,7 @@ actions! {
     PreviousTab => "previous_tab", "Shows the previous tab.";
     NextWorkspace => "next_workspace", "Shows the next workspace.";
     PreviousWorkspace => "previous_workspace", "Shows the previous workspace.";
-    TabSwitcher => "tab_switcher", "Finds a tab across all windows by its name (F57).";
+    TabSwitcher => "tab_switcher", "Finds files and open tabs by name across workspaces (F57).";
     CommandPalette => "command_palette", "Lists every action to find one by its name and run it (F102).";
     Copy => "copy", "Copies the selection.";
     CopyFormatted => "copy_formatted", "Copies the selection with its colours as RTF and HTML (F114).";

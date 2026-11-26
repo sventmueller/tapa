@@ -372,3 +372,16 @@
 "Verbindung zu {} getrennt" = "Подключение к {} прервано";
 "Wo arbeitet der neue Arbeitsbereich?" = "Где работает новая рабочая область?";
 "Vorschlagsliste beim Tippen öffnen" = "Открывать список подсказок при вводе";
+"Sprachserver" = "Языковой сервер";
+"Dev-Server" = "Dev-сервер";
+"Debug-Adapter" = "Адаптер отладки";
+"Test" = "Тест";
+"Werkzeug" = "Инструмент";
+"Agent-Befehl" = "Команда агента";
+"Prüfstation" = "Шлюз";
+"{} · {} · PID {}" = "{} · {} · PID {}";
+"{} min" = "{} мин";
+"{} h" = "{} ч";
+"Schnell öffnen" = "Быстрое открытие";
+"Schnell öffnen …" = "Быстро открыть…";
+"Datei suchen" = "Найти файл";

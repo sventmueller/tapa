@@ -372,3 +372,16 @@
 "Verbindung zu {} getrennt" = "Η σύνδεση με {} διακόπηκε";
 "Wo arbeitet der neue Arbeitsbereich?" = "Πού λειτουργεί ο νέος χώρος εργασίας;";
 "Vorschlagsliste beim Tippen öffnen" = "Άνοιγμα της λίστας προτάσεων κατά την πληκτρολόγηση";
+"Sprachserver" = "Διακομιστής γλώσσας";
+"Dev-Server" = "Διακομιστής ανάπτυξης";
+"Debug-Adapter" = "Προσαρμογέας αποσφαλμάτωσης";
+"Test" = "Δοκιμή";
+"Werkzeug" = "Εργαλείο";
+"Agent-Befehl" = "Εντολή πράκτορα";
+"Prüfstation" = "Πύλη ελέγχου";
+"{} · {} · PID {}" = "{} · {} · PID {}";
+"{} min" = "{} λεπ.";
+"{} h" = "{} ώ.";
+"Schnell öffnen" = "Γρήγορο άνοιγμα";
+"Schnell öffnen …" = "Γρήγορο άνοιγμα…";
+"Datei suchen" = "Εύρεση αρχείου";

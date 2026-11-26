@@ -372,3 +372,16 @@
 "Verbindung zu {} getrennt" = "Verbinding met {} verbroken";
 "Wo arbeitet der neue Arbeitsbereich?" = "Waar werkt de nieuwe werkruimte?";
 "Vorschlagsliste beim Tippen öffnen" = "Open de lijst met suggesties tijdens het typen";
+"Sprachserver" = "Taalserver";
+"Dev-Server" = "Ontwikkelserver";
+"Debug-Adapter" = "Debugadapter";
+"Test" = "Test";
+"Werkzeug" = "Tool";
+"Agent-Befehl" = "Agentcommando";
+"Prüfstation" = "Gate";
+"{} · {} · PID {}" = "{} · {} · PID {}";
+"{} min" = "{} min";
+"{} h" = "{} u";
+"Schnell öffnen" = "Open snel";
+"Schnell öffnen …" = "Open snel…";
+"Datei suchen" = "Zoek bestand";

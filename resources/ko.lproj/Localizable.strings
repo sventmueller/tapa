@@ -36,6 +36,7 @@
 "Adresse nach der Anmeldung" = "로그인 후 주소";
 "Adresse nicht unterstützt" = "지원되지 않는 주소";
 "Agent" = "에이전트";
+"Agent-Befehl" = "에이전트 명령";
 "Agenten" = "에이전트";
 "Agenten in „{}“ laden dann die Hooks, MCP-Server und Einstellungen des Projekts." = "그러면 ‘{}’의 에이전트가 프로젝트의 훅, MCP 서버 및 설정을 불러옵니다.";
 "Agenten werden gesucht …" = "에이전트 검색 중…";
@@ -262,12 +263,14 @@
 "Das lässt sich hier nicht umschalten." = "여기에서는 켜거나 끌 수 없습니다.";
 "Das nächste gedrückte Kürzel übernehmen; Escape bricht ab" = "다음에 누르는 단축키를 사용합니다. Escape를 누르면 취소됩니다";
 "Datei außerhalb des Projekts" = "프로젝트 외부의 파일";
+"Datei suchen" = "파일 찾기";
 "Datei öffnen" = "파일 열기";
 "Dateien" = "파일";
 "Dateien ein-/ausblenden" = "파일 보기/가리기";
 "Dateien oder Bilder anhängen" = "파일 또는 이미지 첨부";
 "Dateien: {}" = "파일: {}";
 "Dateiliste:" = "파일 목록:";
+"Debug-Adapter" = "디버그 어댑터";
 "Deine Nachricht: {}" = "내 메시지: {}";
 "Denkaufwand:" = "추론 강도:";
 "Denken" = "생각";
@@ -314,6 +317,7 @@
 "Der Stash sieht nur, was auf der Platte steht. Sichere zuerst, damit deine Änderungen dabei sind." = "스태시는 디스크에 있는 내용만 봅니다. 변경 사항이 포함되도록 먼저 저장하십시오.";
 "Der Vorgang hat zu lange gedauert." = "작업 시간이 너무 오래 걸렸습니다.";
 "Details …" = "세부사항…";
+"Dev-Server" = "개발 서버";
 "Diagramm" = "다이어그램";
 "Die Adresse „{}“ ließ sich nicht auflösen." = "주소 ‘{}’을(를) 확인할 수 없습니다.";
 "Die Anmeldung beim Remote ist fehlgeschlagen." = "원격에 로그인하지 못했습니다.";
@@ -895,6 +899,8 @@
 "Projektplan" = "프로젝트 계획";
 "Prompts und Lesezeichen" = "프롬프트 및 책갈피";
 "Protokoll" = "프로토콜";
+"Prozesse" = "프로세스";
+"Prüfstation" = "게이트";
 "Pull" = "풀";
 "Pull läuft …" = "풀 중…";
 "Push" = "푸시";
@@ -947,6 +953,8 @@
 "Schlüssel für {} entfernen" = "{} 키 제거";
 "Schlüssel für {} ändern" = "{} 키 변경";
 "Schlüssel übernehmen …" = "키 사용…";
+"Schnell öffnen" = "빠르게 열기";
+"Schnell öffnen …" = "빠르게 열기…";
 "Schnelles Terminal ausblenden" = "빠른 터미널 가리기";
 "Schnelles Terminal ein-/ausblenden" = "빠른 터미널 보기/가리기";
 "Schnelles Terminal einblenden" = "빠른 터미널 보기";
@@ -1002,6 +1010,7 @@
 "Speicherdateien" = "메모리 파일";
 "Sprache" = "언어";
 "Sprache:" = "언어:";
+"Sprachserver" = "언어 서버";
 "Stand im letzten Commit" = "마지막 커밋의 상태";
 "Standard" = "기본값";
 "Standardmodell" = "기본 모델";
@@ -1052,6 +1061,7 @@
 "Terminal leeren" = "터미널 지우기";
 "Terminal: {}" = "터미널: {}";
 "Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "터미널과 에이전트는 ssh가 이렇게 연결하는 컴퓨터에서 실행됩니다. 그곳에서는 파일 목록과 Git을 사용할 수 없습니다.";
+"Test" = "테스트";
 "Text mit Steuerzeichen einsetzen?" = "제어 문자가 포함된 텍스트를 붙여넣겠습니까?";
 "Text mit Zeilenumbruch einsetzen?" = "줄 바꿈이 포함된 텍스트를 붙여넣겠습니까?";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "줄 바꿈이 {}개 포함된 텍스트를 붙여넣겠습니까?";
@@ -1184,6 +1194,7 @@
 "Weitersuchen" = "다음 찾기";
 "Weniger zeigen" = "간단히 보기";
 "Wer angemeldet ist, und abmelden" = "로그인한 사용자 및 로그아웃";
+"Werkzeug" = "도구";
 "Werkzeug {}: {}, {}" = "도구 {}: {}, {}";
 "Werkzeugaufrufe" = "도구 호출";
 "Werkzeugergebnisse" = "도구 결과";
@@ -1349,6 +1360,7 @@
 "{} erlaubt" = "{} 허용됨";
 "{} frühere Einträge ausgeblendet" = "이전 항목 {}개 가려짐";
 "{} gehört jetzt zu „{}“ statt zu „{}“." = "{}이(가) 이제 “{}”에 지정됩니다(이전: “{}”).";
+"{} h" = "{}시간";
 "{} h {} min" = "{}시간 {}분";
 "{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "{}에 마이크 접근 권한이 없습니다. 시스템 설정 > 개인정보 보호 및 보안 > 마이크에서 허용하십시오.";
 "{} installieren?" = "{}을(를) 설치하겠습니까?";
@@ -1361,6 +1373,7 @@
 "{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "{}은(는) 이를 위해 키를 한 번 읽으며, macOS가 먼저 묻습니다. 그곳에서 ‘항상 허용’이 아니라 ‘허용’을 선택하십시오. 그래야 Lowspeak의 항목이 그대로 유지됩니다. {}은(는) 키를 별도의 항목에 보관합니다.";
 "{} meldet keine Hintergrundprozesse" = "{}은(는) 백그라운드 프로세스를 보고하지 않습니다";
 "{} meldet keine Subagenten" = "{}은(는) 하위 에이전트를 보고하지 않습니다";
+"{} min" = "{}분";
 "{} min {} s" = "{}분 {}초";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet." = "{}은(는) 세션을 열기 전에 로그인을 요구합니다.";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet. Bei der Anmeldung im Terminal liegt der Befehl in der Zwischenablage." = "{}은(는) 세션을 열기 전에 로그인을 요구합니다. 터미널에서 로그인하는 데 필요한 명령은 클립보드에 있습니다.";
@@ -1390,6 +1403,7 @@
 "{} wurde nicht installiert" = "{}이(가) 설치되지 않았습니다";
 "{} {} oder neuer wird gebraucht" = "{} {} 이상이 필요합니다";
 "{} · {}" = "{} · {}";
+"{} · {} · PID {}" = "{} · {} · PID {}";
 "{}, 1 Datei" = "{}, 파일 1개";
 "{}, 1 Eintrag" = "{}, 항목 1개";
 "{}, geänderte Dateien: {}" = "{}, 변경된 파일: {}";

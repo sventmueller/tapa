@@ -36,6 +36,7 @@
 "Adresse nach der Anmeldung" = "הכתובת אחרי ההתחברות";
 "Adresse nicht unterstützt" = "הכתובת אינה נתמכת";
 "Agent" = "סוכן";
+"Agent-Befehl" = "פקודת סוכן";
 "Agenten" = "סוכנים";
 "Agenten in „{}“ laden dann die Hooks, MCP-Server und Einstellungen des Projekts." = "הסוכנים ב־„{}“ יטענו אז את ה־hooks, שרתי ה־MCP וההגדרות של הפרויקט.";
 "Agenten werden gesucht …" = "מתבצע חיפוש סוכנים…";
@@ -262,12 +263,14 @@
 "Das lässt sich hier nicht umschalten." = "לא ניתן להחליף את זה כאן.";
 "Das nächste gedrückte Kürzel übernehmen; Escape bricht ab" = "קבל את הקיצור הבא שיוקש; Escape מבטל";
 "Datei außerhalb des Projekts" = "קובץ מחוץ לפרויקט";
+"Datei suchen" = "חיפוש קובץ";
 "Datei öffnen" = "פתיחת הקובץ";
 "Dateien" = "קבצים";
 "Dateien ein-/ausblenden" = "הצג/הסתר קבצים";
 "Dateien oder Bilder anhängen" = "צירוף קבצים או תמונות";
 "Dateien: {}" = "קבצים: {}";
 "Dateiliste:" = "רשימת קבצים:";
+"Debug-Adapter" = "מתאם ניפוי באגים";
 "Deine Nachricht: {}" = "ההודעה שלך: {}";
 "Denkaufwand:" = "מאמץ:";
 "Denken" = "חשיבה";
@@ -314,6 +317,7 @@
 "Der Stash sieht nur, was auf der Platte steht. Sichere zuerst, damit deine Änderungen dabei sind." = "ה-Stash רואה רק את מה שנמצא בדיסק. יש לשמור קודם, כדי שהשינויים ייכללו בו.";
 "Der Vorgang hat zu lange gedauert." = "הפעולה נמשכה זמן רב מדי.";
 "Details …" = "פרטים…";
+"Dev-Server" = "שרת פיתוח";
 "Diagramm" = "תרשים";
 "Die Adresse „{}“ ließ sich nicht auflösen." = "לא ניתן היה לאתר את הכתובת ״{}״.";
 "Die Anmeldung beim Remote ist fehlgeschlagen." = "ההתחברות ל-Remote נכשלה.";
@@ -895,6 +899,8 @@
 "Projektplan" = "תוכנית פרויקט";
 "Prompts und Lesezeichen" = "פרומפטים וסימניות";
 "Protokoll" = "פרוטוקול";
+"Prozesse" = "תהליכים";
+"Prüfstation" = "שער";
 "Pull" = "Pull";
 "Pull läuft …" = "מתבצע Pull…";
 "Push" = "Push";
@@ -947,6 +953,8 @@
 "Schlüssel für {} entfernen" = "הסרת המפתח של {}";
 "Schlüssel für {} ändern" = "שינוי המפתח של {}";
 "Schlüssel übernehmen …" = "שימוש במפתח…";
+"Schnell öffnen" = "פתיחה מהירה";
+"Schnell öffnen …" = "פתיחה מהירה…";
 "Schnelles Terminal ausblenden" = "הסתר מסוף מהיר";
 "Schnelles Terminal ein-/ausblenden" = "הצג/הסתר מסוף מהיר";
 "Schnelles Terminal einblenden" = "הצג מסוף מהיר";
@@ -1002,6 +1010,7 @@
 "Speicherdateien" = "קובצי זיכרון";
 "Sprache" = "שפה";
 "Sprache:" = "שפה:";
+"Sprachserver" = "שרת שפה";
 "Stand im letzten Commit" = "המצב ב-Commit האחרון";
 "Standard" = "ברירת המחדל";
 "Standardmodell" = "מודל ברירת המחדל";
@@ -1052,6 +1061,7 @@
 "Terminal leeren" = "נקה מסוף";
 "Terminal: {}" = "מסוף: {}";
 "Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "מסופים וסוכנים פועלים במחשב שאליו ssh מגיע כך; רשימת הקבצים ו‑Git אינם זמינים שם.";
+"Test" = "בדיקה";
 "Text mit Steuerzeichen einsetzen?" = "להדביק טקסט עם תווי בקרה?";
 "Text mit Zeilenumbruch einsetzen?" = "להדביק טקסט עם מעבר שורה?";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "להדביק טקסט עם {} מעברי שורה?";
@@ -1184,6 +1194,7 @@
 "Weitersuchen" = "חפש את הבא";
 "Weniger zeigen" = "הצגת פחות";
 "Wer angemeldet ist, und abmelden" = "מי מחובר, והתנתקות";
+"Werkzeug" = "כלי";
 "Werkzeug {}: {}, {}" = "כלי {}: {}, {}";
 "Werkzeugaufrufe" = "קריאות לכלים";
 "Werkzeugergebnisse" = "תוצאות כלים";
@@ -1349,6 +1360,7 @@
 "{} erlaubt" = "השימוש ב-{} אושר";
 "{} frühere Einträge ausgeblendet" = "{} רשומות קודמות הוסתרו";
 "{} gehört jetzt zu „{}“ statt zu „{}“." = "{} שייך כעת ל־“{}” במקום ל־“{}”.";
+"{} h" = "{} שע׳";
 "{} h {} min" = "{} שע׳ {} דק׳";
 "{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "ל-{} אין גישה למיקרופון. ניתן לאשר אותה בהגדרות המערכת, תחת ״פרטיות ואבטחה״ > ״מיקרופון״.";
 "{} installieren?" = "להתקין את {}?";
@@ -1361,6 +1373,7 @@
 "{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "לשם כך {} יקרא אותו פעם אחת, ו-macOS יבקש אישור. יש לבחור שם ״אישור״, לא ״הרשאה קבועה״: כך הפריט של Lowspeak יישאר כפי שהוא. {} שומר את המפתח בפריט משלו.";
 "{} meldet keine Hintergrundprozesse" = "‏{} לא מדווח על תהליכים ברקע";
 "{} meldet keine Subagenten" = "‏{} לא מדווח על סוכני משנה";
+"{} min" = "{} דק׳";
 "{} min {} s" = "{} דק׳ {} שנ׳";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet." = "‏{} מבקש התחברות לפני פתיחת סשן.";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet. Bei der Anmeldung im Terminal liegt der Befehl in der Zwischenablage." = "‏{} מבקש התחברות לפני פתיחת סשן. להתחברות במסוף, הפקודה נמצאת בלוח העריכה.";
@@ -1390,6 +1403,7 @@
 "{} wurde nicht installiert" = "‏{} לא הותקן";
 "{} {} oder neuer wird gebraucht" = "נדרש {} {} או חדש יותר";
 "{} · {}" = "{} · {}";
+"{} · {} · PID {}" = "{} · {} · PID {}";
 "{}, 1 Datei" = "‏{}, קובץ אחד";
 "{}, 1 Eintrag" = "‏{}, רשומה אחת";
 "{}, geänderte Dateien: {}" = "{}, קבצים ששונו: {}";

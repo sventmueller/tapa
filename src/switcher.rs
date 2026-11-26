@@ -1,22 +1,51 @@
-//! The tab switcher (F57): the command palette's list over every session in every tab of every workspace of every
-//! window, found by title, folder, branch, program and workspace; choosing one brings its window, workspace, tab and
-//! pane forward.
+//! Quick open (F57): files across workspaces and open tabs or sessions across windows.
 
-use std::cell::RefCell;
 use std::path::{Path, PathBuf};
 
 use objc2_app_kit::NSApplication;
-use splat_i18n::{t, tf};
+use splat_i18n::tf;
 use term_session::Foreground;
 use term_ui::palette::Entry;
 use term_ui_sidebar::model::short_folder;
 
 use crate::state::app;
+use crate::window::Window;
+
+mod search;
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+enum Destination {
+    Pane(u64),
+    Tab(u64),
+    File(term_ui::workspace_host::WorkspaceId, PathBuf),
+}
+
+impl Destination {
+    fn show(self) {
+        match self {
+            Self::Pane(view) => bring_forward(view),
+            Self::Tab(id) => {
+                let app = app();
+                let window = app
+                    .windows
+                    .borrow()
+                    .iter()
+                    .find(|window| window.tab(id).is_some())
+                    .cloned();
+                if let Some(window) = window {
+                    select(&window, id);
+                }
+            }
+            Self::File(workspace, path) => crate::editor_tab::open_in(workspace, &path, false),
+        }
+    }
+}
 
 /// What the switcher shows of a session.
 #[derive(Debug, Clone, PartialEq)]
 struct Place {
-    view: u64,
+    destination: Destination,
+    icon: term_ui_icons::Icon,
     /// The title an agent or program set, if it is worth showing.
     title: Option<String>,
     folder: PathBuf,
@@ -32,31 +61,16 @@ struct Place {
     tab: usize,
 }
 
-thread_local! {
-    /// The sessions of the open switcher, by the tag of their entry.
-    static VIEWS: RefCell<Vec<u64>> = const { RefCell::new(Vec::new()) };
-}
-
 /// Opens the switcher over the window in front, or closes it.
 pub(crate) fn toggle() {
     let Some(window) = app().front().and_then(|front| front.front_ns_window()) else {
         return;
     };
-    let places = places();
-    let home = term_base::home();
-    let entries = places
-        .iter()
-        .enumerate()
-        .map(|(tag, place)| entry(place, tag, &home))
-        .collect();
-    VIEWS.with(|views| *views.borrow_mut() = places.iter().map(|place| place.view).collect());
-    term_ui::palette::open_with(&window, t("Tab oder Sitzung suchen"), entries, chosen);
+    toggle_in(&window);
 }
 
-fn chosen(tag: usize) {
-    if let Some(view) = VIEWS.with(|views| views.borrow().get(tag).copied()) {
-        bring_forward(view);
-    }
+pub(crate) fn toggle_in(window: &objc2_app_kit::NSWindow) {
+    search::toggle(window);
 }
 
 /// Brings session `view` forward: its window in front, its tab selected, its pane with the keyboard.
@@ -69,33 +83,51 @@ pub(crate) fn bring_forward(view: u64) {
     if let Some(terminal) = tab.terminal() {
         terminal.panes.focus(view);
     }
-    window.select(tab.id);
+    select(&window, tab.id);
+}
+
+fn select(window: &std::rc::Rc<Window>, tab: u64) {
+    window.select(tab);
     if let Some(ns_window) = window.front_ns_window() {
         ns_window.makeKeyAndOrderFront(None);
     }
-    NSApplication::sharedApplication(app.mtm).activate();
+    NSApplication::sharedApplication(app().mtm).activate();
 }
 
 /// Every session of every window, those of the window in front first.
 fn places() -> Vec<Place> {
-    let app = app();
-    let mut windows = app.windows.borrow().clone();
+    let windows = windows_front_first();
     let several = windows.len() > 1;
-    if let Some(front) = app.front() {
-        windows.sort_by_key(|window| window.id() != front.id());
-    }
     let mut places = Vec::new();
     for (number, window) in windows.iter().enumerate() {
         let workspaces = window.workspaces();
         for workspace in &workspaces {
             let named = (workspaces.len() > 1).then(|| workspace.name());
             for (index, tab) in workspace.tabs().iter().enumerate() {
+                if let Some(hosted) = tab.as_hosted() {
+                    let entry = hosted.entry(tab.id);
+                    places.push(Place {
+                        destination: Destination::Tab(tab.id),
+                        icon: entry.icon,
+                        title: entry.title.filter(|title| !title.is_empty()),
+                        folder: entry.folder,
+                        place: entry.place,
+                        branch: entry.branch,
+                        program: String::new(),
+                        window: several.then_some(number + 1),
+                        workspace: named.clone(),
+                        tab: index + 1,
+                    });
+                    continue;
+                }
                 let Some(terminal) = tab.terminal() else { continue };
                 let sessions = terminal.sessions.borrow();
                 for view in terminal.panes.sessions() {
                     let Some(session) = sessions.get(&view) else { continue };
+                    let front = foreground(view);
                     places.push(Place {
-                        view,
+                        destination: Destination::Pane(view),
+                        icon: crate::tab::icon(&front),
                         title: session
                             .title
                             .clone()
@@ -103,7 +135,7 @@ fn places() -> Vec<Place> {
                         folder: session.folder.clone(),
                         place: session.place(),
                         branch: session.branch.clone(),
-                        program: program(view),
+                        program: program(front),
                         window: several.then_some(number + 1),
                         workspace: named.clone(),
                         tab: index + 1,
@@ -115,13 +147,26 @@ fn places() -> Vec<Place> {
     places
 }
 
-/// The name of the program in front of session `view`.
-fn program(view: u64) -> String {
-    let front = term_ui::find(view).and_then(|view| view.with_session(term_session::Session::foreground));
+pub(crate) fn windows_front_first() -> Vec<std::rc::Rc<Window>> {
+    let app = app();
+    let mut windows = app.windows.borrow().clone();
+    if let Some(front) = app.front() {
+        windows.sort_by_key(|window| window.id() != front.id());
+    }
+    windows
+}
+
+pub(crate) fn foreground(view: u64) -> Foreground {
+    term_ui::find(view)
+        .and_then(|view| view.with_session(term_session::Session::foreground))
+        .unwrap_or(Foreground::Unknown)
+}
+
+pub(crate) fn program(front: Foreground) -> String {
     match front {
-        Some(Foreground::Agent(agent)) => format!("{agent:?}").to_lowercase(),
-        Some(Foreground::Shell(name) | Foreground::Remote(name) | Foreground::Other(name)) => name,
-        Some(Foreground::Unknown) | None => String::new(),
+        Foreground::Agent(agent) => format!("{agent:?}").to_lowercase(),
+        Foreground::Shell(name) | Foreground::Remote(name) | Foreground::Other(name) => name,
+        Foreground::Unknown => String::new(),
     }
 }
 
@@ -167,7 +212,8 @@ mod tests {
 
     fn place(view: u64, title: Option<&str>, folder: &str, program: &str) -> Place {
         Place {
-            view,
+            destination: Destination::Pane(view),
+            icon: term_ui_icons::SHELL,
             title: title.map(str::to_string),
             folder: folder.into(),
             place: None,
@@ -179,7 +225,7 @@ mod tests {
         }
     }
 
-    fn found(query: &str, places: &[Place]) -> Vec<u64> {
+    fn found(query: &str, places: &[Place]) -> Vec<Destination> {
         let home = Path::new("/Users/me");
         let entries: Vec<Entry> = places
             .iter()
@@ -192,7 +238,7 @@ mod tests {
             .collect();
         term_ui::palette::rank(query, &texts)
             .into_iter()
-            .map(|index| places[index].view)
+            .map(|index| places[index].destination.clone())
             .collect()
     }
 
@@ -213,18 +259,24 @@ mod tests {
 
     #[test]
     fn sessions_are_found_by_title_folder_branch_and_program() {
+        use Destination::{Pane, Tab};
+
+        let mut editor = place(4, Some("README.md"), "/Users/me/Repos/tapa", "");
+        editor.destination = Tab(4);
         let places = [
             place(1, None, "/Users/me/Repos/tapa", "zsh"),
             place(2, Some("Fixing the parser"), "/Users/me/Repos/dango", "claude"),
             place(3, None, "/opt/homebrew/var/log", "nvim"),
+            editor,
         ];
-        assert_eq!(found("", &places), [1, 2, 3]);
-        assert_eq!(found("parser", &places), [2]);
-        assert_eq!(found("dango", &places), [2]);
-        assert_eq!(found("homebrew", &places), [3]);
-        assert_eq!(found("claude", &places), [2]);
-        assert_eq!(found("nvim", &places), [3]);
-        assert_eq!(found("tapa", &places)[0], 1);
-        assert!(found("main", &places).len() == 3);
+        assert_eq!(found("", &places), [Pane(1), Pane(2), Pane(3), Tab(4)]);
+        assert_eq!(found("parser", &places), [Pane(2)]);
+        assert_eq!(found("dango", &places), [Pane(2)]);
+        assert_eq!(found("homebrew", &places), [Pane(3)]);
+        assert_eq!(found("claude", &places), [Pane(2)]);
+        assert_eq!(found("nvim", &places), [Pane(3)]);
+        assert_eq!(found("README", &places), [Tab(4)]);
+        assert_eq!(found("tapa", &places)[0], Pane(1));
+        assert_eq!(found("main", &places).len(), 4);
     }
 }

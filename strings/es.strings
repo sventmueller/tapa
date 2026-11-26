@@ -372,3 +372,16 @@
 "Verbindung zu {} getrennt" = "Se perdió la conexión con {}";
 "Wo arbeitet der neue Arbeitsbereich?" = "¿Dónde trabaja el nuevo espacio de trabajo?";
 "Vorschlagsliste beim Tippen öffnen" = "Abrir la lista de sugerencias al escribir";
+"Sprachserver" = "Servidor de lenguaje";
+"Dev-Server" = "Servidor de desarrollo";
+"Debug-Adapter" = "Adaptador de depuración";
+"Test" = "Prueba";
+"Werkzeug" = "Herramienta";
+"Agent-Befehl" = "Comando del agente";
+"Prüfstation" = "Control";
+"{} · {} · PID {}" = "{} · {} · PID {}";
+"{} min" = "{} min";
+"{} h" = "{} h";
+"Schnell öffnen" = "Abrir rápidamente";
+"Schnell öffnen …" = "Apertura rápida…";
+"Datei suchen" = "Buscar archivo";

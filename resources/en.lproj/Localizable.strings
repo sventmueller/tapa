@@ -36,6 +36,7 @@
 "Adresse nach der Anmeldung" = "Address after signing in";
 "Adresse nicht unterstützt" = "Address Not Supported";
 "Agent" = "Agent";
+"Agent-Befehl" = "Agent command";
 "Agenten" = "Agents";
 "Agenten in „{}“ laden dann die Hooks, MCP-Server und Einstellungen des Projekts." = "Agents in “{}” then load the project’s hooks, MCP servers and settings.";
 "Agenten werden gesucht …" = "Looking for agents…";
@@ -262,12 +263,14 @@
 "Das lässt sich hier nicht umschalten." = "This can’t be switched here.";
 "Das nächste gedrückte Kürzel übernehmen; Escape bricht ab" = "Take the next shortcut pressed; Escape cancels";
 "Datei außerhalb des Projekts" = "File Outside the Project";
+"Datei suchen" = "Find File";
 "Datei öffnen" = "Open File";
 "Dateien" = "Files";
 "Dateien ein-/ausblenden" = "Show/Hide Files";
 "Dateien oder Bilder anhängen" = "Attach Files or Images";
 "Dateien: {}" = "Files: {}";
 "Dateiliste:" = "File list:";
+"Debug-Adapter" = "Debug adapter";
 "Deine Nachricht: {}" = "Your message: {}";
 "Denkaufwand:" = "Effort:";
 "Denken" = "Thinking";
@@ -314,6 +317,7 @@
 "Der Stash sieht nur, was auf der Platte steht. Sichere zuerst, damit deine Änderungen dabei sind." = "The stash sees only what is on disk. Save first so that your changes are included.";
 "Der Vorgang hat zu lange gedauert." = "The operation took too long.";
 "Details …" = "Details…";
+"Dev-Server" = "Dev Server";
 "Diagramm" = "Diagram";
 "Die Adresse „{}“ ließ sich nicht auflösen." = "The address “{}” could not be resolved.";
 "Die Anmeldung beim Remote ist fehlgeschlagen." = "Signing in to the remote failed.";
@@ -895,6 +899,8 @@
 "Projektplan" = "Project plan";
 "Prompts und Lesezeichen" = "Prompts and Bookmarks";
 "Protokoll" = "Protocol";
+"Prozesse" = "Processes";
+"Prüfstation" = "Gate";
 "Pull" = "Pull";
 "Pull läuft …" = "Pulling…";
 "Push" = "Push";
@@ -947,6 +953,8 @@
 "Schlüssel für {} entfernen" = "Remove {} Key";
 "Schlüssel für {} ändern" = "Change {} Key";
 "Schlüssel übernehmen …" = "Use Key…";
+"Schnell öffnen" = "Open Quickly";
+"Schnell öffnen …" = "Open Quickly…";
 "Schnelles Terminal ausblenden" = "Hide Quick Terminal";
 "Schnelles Terminal ein-/ausblenden" = "Show/Hide Quick Terminal";
 "Schnelles Terminal einblenden" = "Show Quick Terminal";
@@ -1002,6 +1010,7 @@
 "Speicherdateien" = "Memory files";
 "Sprache" = "Language";
 "Sprache:" = "Language:";
+"Sprachserver" = "Language server";
 "Stand im letzten Commit" = "As in the last commit";
 "Standard" = "Default";
 "Standardmodell" = "Default model";
@@ -1052,6 +1061,7 @@
 "Terminal leeren" = "Clear Terminal";
 "Terminal: {}" = "Terminal: {}";
 "Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "Terminals and agents run on the computer ssh reaches this way; the file list and Git are not available there.";
+"Test" = "Test";
 "Text mit Steuerzeichen einsetzen?" = "Paste text with control characters?";
 "Text mit Zeilenumbruch einsetzen?" = "Paste text with a line break?";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "Paste text with {} line breaks?";
@@ -1184,6 +1194,7 @@
 "Weitersuchen" = "Find Next";
 "Weniger zeigen" = "Show Less";
 "Wer angemeldet ist, und abmelden" = "Who is signed in, and signing out";
+"Werkzeug" = "Tool";
 "Werkzeug {}: {}, {}" = "Tool {}: {}, {}";
 "Werkzeugaufrufe" = "Tool calls";
 "Werkzeugergebnisse" = "Tool results";
@@ -1349,6 +1360,7 @@
 "{} erlaubt" = "{} allowed";
 "{} frühere Einträge ausgeblendet" = "{} earlier entries hidden";
 "{} gehört jetzt zu „{}“ statt zu „{}“." = "{} now belongs to “{}” instead of “{}”.";
+"{} h" = "{} h";
 "{} h {} min" = "{} h {} min";
 "{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "{} has no access to the microphone. Allow it in System Settings under Privacy & Security > Microphone.";
 "{} installieren?" = "Install {}?";
@@ -1361,6 +1373,7 @@
 "{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "{} reads it once for that, and macOS asks first. Choose “Allow”, not “Always Allow”: that leaves Lowspeak’s item as it is. {} keeps the key in an item of its own.";
 "{} meldet keine Hintergrundprozesse" = "{} reports no background processes";
 "{} meldet keine Subagenten" = "{} reports no subagents";
+"{} min" = "{} min";
 "{} min {} s" = "{} min {} s";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet." = "{} wants you to sign in before it opens a session.";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet. Bei der Anmeldung im Terminal liegt der Befehl in der Zwischenablage." = "{} wants you to sign in before it opens a session. For signing in in a terminal, the command is on the clipboard.";
@@ -1390,6 +1403,7 @@
 "{} wurde nicht installiert" = "{} was not installed";
 "{} {} oder neuer wird gebraucht" = "{} {} or newer is needed";
 "{} · {}" = "{} · {}";
+"{} · {} · PID {}" = "{} · {} · PID {}";
 "{}, 1 Datei" = "{}, 1 file";
 "{}, 1 Eintrag" = "{}, 1 entry";
 "{}, geänderte Dateien: {}" = "{}, changed files: {}";

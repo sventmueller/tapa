@@ -36,6 +36,7 @@
 "Adresse nach der Anmeldung" = "Adresa după autentificare";
 "Adresse nicht unterstützt" = "Adresă neacceptată";
 "Agent" = "Agent";
+"Agent-Befehl" = "Comanda agentului";
 "Agenten" = "Agenți";
 "Agenten in „{}“ laden dann die Hooks, MCP-Server und Einstellungen des Projekts." = "Agenții din „{}” vor încărca atunci hook-urile, serverele MCP și configurările proiectului.";
 "Agenten werden gesucht …" = "Se caută agenți…";
@@ -262,12 +263,14 @@
 "Das lässt sich hier nicht umschalten." = "Acest lucru nu poate fi comutat aici.";
 "Das nächste gedrückte Kürzel übernehmen; Escape bricht ab" = "Preia următoarea scurtătură apăsată; Escape anulează";
 "Datei außerhalb des Projekts" = "Fișier din afara proiectului";
+"Datei suchen" = "Căutați un fișier";
 "Datei öffnen" = "Deschideți fișierul";
 "Dateien" = "Fișiere";
 "Dateien ein-/ausblenden" = "Afișați/ascundeți fișierele";
 "Dateien oder Bilder anhängen" = "Atașați fișiere sau imagini";
 "Dateien: {}" = "Fișiere: {}";
 "Dateiliste:" = "Lista de fișiere:";
+"Debug-Adapter" = "Adaptor de depanare";
 "Deine Nachricht: {}" = "Mesajul dvs.: {}";
 "Denkaufwand:" = "Efort:";
 "Denken" = "Gândire";
@@ -314,6 +317,7 @@
 "Der Stash sieht nur, was auf der Platte steht. Sichere zuerst, damit deine Änderungen dabei sind." = "Stashul vede doar ce este pe disc. Salvați mai întâi, ca modificările dvs. să fie incluse.";
 "Der Vorgang hat zu lange gedauert." = "Operațiunea a durat prea mult.";
 "Details …" = "Detalii…";
+"Dev-Server" = "Server de dezvoltare";
 "Diagramm" = "Diagramă";
 "Die Adresse „{}“ ließ sich nicht auflösen." = "Adresa „{}” nu a putut fi rezolvată.";
 "Die Anmeldung beim Remote ist fehlgeschlagen." = "Autentificarea la remote a eșuat.";
@@ -895,6 +899,8 @@
 "Projektplan" = "Plan de proiect";
 "Prompts und Lesezeichen" = "Prompturi și marcaje";
 "Protokoll" = "Protocol";
+"Prozesse" = "Procese";
+"Prüfstation" = "Control";
 "Pull" = "Pull";
 "Pull läuft …" = "Se face pull…";
 "Push" = "Push";
@@ -947,6 +953,8 @@
 "Schlüssel für {} entfernen" = "Eliminați cheia pentru {}";
 "Schlüssel für {} ändern" = "Modificați cheia pentru {}";
 "Schlüssel übernehmen …" = "Folosiți cheia…";
+"Schnell öffnen" = "Deschidere rapidă";
+"Schnell öffnen …" = "Deschidere rapidă…";
 "Schnelles Terminal ausblenden" = "Ascundeți terminalul rapid";
 "Schnelles Terminal ein-/ausblenden" = "Afișați/ascundeți terminalul rapid";
 "Schnelles Terminal einblenden" = "Afișați terminalul rapid";
@@ -1002,6 +1010,7 @@
 "Speicherdateien" = "Fișiere de memorie";
 "Sprache" = "Limbaj";
 "Sprache:" = "Limbă:";
+"Sprachserver" = "Server de limbaj";
 "Stand im letzten Commit" = "Starea din ultimul commit";
 "Standard" = "Implicit";
 "Standardmodell" = "Model implicit";
@@ -1052,6 +1061,7 @@
 "Terminal leeren" = "Goliți terminalul";
 "Terminal: {}" = "Terminal: {}";
 "Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "Terminalele și agenții rulează pe computerul la care ajunge ssh astfel; lista de fișiere și Git nu sunt disponibile acolo.";
+"Test" = "Test";
 "Text mit Steuerzeichen einsetzen?" = "Lipiți text cu caractere de control?";
 "Text mit Zeilenumbruch einsetzen?" = "Lipiți text cu un salt de rând?";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "Lipiți text cu {} salturi de rând?";
@@ -1184,6 +1194,7 @@
 "Weitersuchen" = "Găsiți următor";
 "Weniger zeigen" = "Afișați mai puțin";
 "Wer angemeldet ist, und abmelden" = "Cine este autentificat și deconectarea";
+"Werkzeug" = "Instrument";
 "Werkzeug {}: {}, {}" = "Instrumentul {}: {}, {}";
 "Werkzeugaufrufe" = "Apeluri de instrumente";
 "Werkzeugergebnisse" = "Rezultatele instrumentelor";
@@ -1349,6 +1360,7 @@
 "{} erlaubt" = "{} permis";
 "{} frühere Einträge ausgeblendet" = "Intrări anterioare ascunse: {}";
 "{} gehört jetzt zu „{}“ statt zu „{}“." = "{} aparține acum acțiunii „{}” în loc de „{}”.";
+"{} h" = "{} h";
 "{} h {} min" = "{} h {} min";
 "{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "{} nu are acces la microfon. Permiteți accesul în Configurări sistem > Intimitate și securitate > Microfon.";
 "{} installieren?" = "Instalați {}?";
@@ -1361,6 +1373,7 @@
 "{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "{} o citește o dată în acest scop, iar macOS cere mai întâi confirmarea. Alegeți „Permiteți”, nu „Permiteți întotdeauna”: astfel, elementul Lowspeak rămâne neschimbat. {} păstrează cheia într-un element propriu.";
 "{} meldet keine Hintergrundprozesse" = "{} nu raportează procese în fundal";
 "{} meldet keine Subagenten" = "{} nu raportează subagenți";
+"{} min" = "{} min";
 "{} min {} s" = "{} min {} s";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet." = "{} cere autentificarea înainte de a deschide o sesiune.";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet. Bei der Anmeldung im Terminal liegt der Befehl in der Zwischenablage." = "{} cere autentificarea înainte de a deschide o sesiune. Pentru autentificarea în terminal, comanda se află în clipboard.";
@@ -1390,6 +1403,7 @@
 "{} wurde nicht installiert" = "{} nu a fost instalat";
 "{} {} oder neuer wird gebraucht" = "Este necesar {} {} sau o versiune mai nouă";
 "{} · {}" = "{} · {}";
+"{} · {} · PID {}" = "{} · {} · PID {}";
 "{}, 1 Datei" = "{}, 1 fișier";
 "{}, 1 Eintrag" = "{}, 1 intrare";
 "{}, geänderte Dateien: {}" = "{}, fișiere modificate: {}";

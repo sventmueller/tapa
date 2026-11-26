@@ -372,3 +372,16 @@
 "Verbindung zu {} getrennt" = "Sambungan ke {} terputus";
 "Wo arbeitet der neue Arbeitsbereich?" = "Di mana ruang kerja baru bekerja?";
 "Vorschlagsliste beim Tippen öffnen" = "Buka daftar saran saat mengetik";
+"Sprachserver" = "Server bahasa";
+"Dev-Server" = "Server Pengembangan";
+"Debug-Adapter" = "Adaptor debug";
+"Test" = "Tes";
+"Werkzeug" = "Alat";
+"Agent-Befehl" = "Perintah agen";
+"Prüfstation" = "Gerbang";
+"{} · {} · PID {}" = "{} · {} · PID {}";
+"{} min" = "{} mnt";
+"{} h" = "{} jam";
+"Schnell öffnen" = "Buka Cepat";
+"Schnell öffnen …" = "Buka Cepat…";
+"Datei suchen" = "Temukan File";

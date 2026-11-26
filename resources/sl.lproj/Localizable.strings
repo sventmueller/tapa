@@ -36,6 +36,7 @@
 "Adresse nach der Anmeldung" = "Naslov po vpisu";
 "Adresse nicht unterstützt" = "Naslov ni podprt";
 "Agent" = "Agent";
+"Agent-Befehl" = "Ukaz agenta";
 "Agenten" = "Agenti";
 "Agenten in „{}“ laden dann die Hooks, MCP-Server und Einstellungen des Projekts." = "Agenti v »{}« bodo nato naložili kljuke, strežnike MCP in nastavitve projekta.";
 "Agenten werden gesucht …" = "Iskanje agentov …";
@@ -262,12 +263,14 @@
 "Das lässt sich hier nicht umschalten." = "Tega tukaj ni mogoče preklopiti.";
 "Das nächste gedrückte Kürzel übernehmen; Escape bricht ab" = "Prevzemi naslednjo pritisnjeno bližnjico; Escape prekliče";
 "Datei außerhalb des Projekts" = "Datoteka zunaj projekta";
+"Datei suchen" = "Poišči datoteko";
 "Datei öffnen" = "Odpri datoteko";
 "Dateien" = "Datoteke";
 "Dateien ein-/ausblenden" = "Pokaži/skrij datoteke";
 "Dateien oder Bilder anhängen" = "Priloži datoteke ali slike";
 "Dateien: {}" = "Datoteke: {}";
 "Dateiliste:" = "Seznam datotek:";
+"Debug-Adapter" = "Adapter za razhroščevanje";
 "Deine Nachricht: {}" = "Vaše sporočilo: {}";
 "Denkaufwand:" = "Trud:";
 "Denken" = "Razmišljanje";
@@ -314,6 +317,7 @@
 "Der Stash sieht nur, was auf der Platte steht. Sichere zuerst, damit deine Änderungen dabei sind." = "Stash vidi le, kar je na disku. Najprej shranite, da bodo vključene tudi vaše spremembe.";
 "Der Vorgang hat zu lange gedauert." = "Postopek je trajal predolgo.";
 "Details …" = "Podrobnosti …";
+"Dev-Server" = "Razvojni strežnik";
 "Diagramm" = "Diagram";
 "Die Adresse „{}“ ließ sich nicht auflösen." = "Naslova »{}« ni bilo mogoče razrešiti.";
 "Die Anmeldung beim Remote ist fehlgeschlagen." = "Vpis v oddaljeni repozitorij ni uspel.";
@@ -895,6 +899,8 @@
 "Projektplan" = "Načrt projekta";
 "Prompts und Lesezeichen" = "Pozivi in zaznamki";
 "Protokoll" = "Protokol";
+"Prozesse" = "Procesi";
+"Prüfstation" = "Kontrola";
 "Pull" = "Pull";
 "Pull läuft …" = "Pull poteka …";
 "Push" = "Push";
@@ -947,6 +953,8 @@
 "Schlüssel für {} entfernen" = "Odstrani ključ za {}";
 "Schlüssel für {} ändern" = "Spremeni ključ za {}";
 "Schlüssel übernehmen …" = "Uporabi ključ …";
+"Schnell öffnen" = "Hitro odpri";
+"Schnell öffnen …" = "Hitro odpri …";
 "Schnelles Terminal ausblenden" = "Skrij hitri terminal";
 "Schnelles Terminal ein-/ausblenden" = "Pokaži/skrij hitri terminal";
 "Schnelles Terminal einblenden" = "Pokaži hitri terminal";
@@ -1002,6 +1010,7 @@
 "Speicherdateien" = "Datoteke spomina";
 "Sprache" = "Jezik";
 "Sprache:" = "Jezik:";
+"Sprachserver" = "Jezikovni strežnik";
 "Stand im letzten Commit" = "Stanje v zadnjem commitu";
 "Standard" = "Privzeto";
 "Standardmodell" = "Privzeti model";
@@ -1052,6 +1061,7 @@
 "Terminal leeren" = "Počisti terminal";
 "Terminal: {}" = "Terminal: {}";
 "Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "Terminali in agenti tečejo na računalniku, do katerega ssh tako dostopa; seznam datotek in Git tam nista na voljo.";
+"Test" = "Test";
 "Text mit Steuerzeichen einsetzen?" = "Prilepim besedilo s kontrolnimi znaki?";
 "Text mit Zeilenumbruch einsetzen?" = "Prilepim besedilo s prelomom vrstice?";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "Prilepim besedilo s prelomi vrstic ({})?";
@@ -1184,6 +1194,7 @@
 "Weitersuchen" = "Najdi naslednje";
 "Weniger zeigen" = "Prikaži manj";
 "Wer angemeldet ist, und abmelden" = "Kdo je vpisan in izpis";
+"Werkzeug" = "Orodje";
 "Werkzeug {}: {}, {}" = "Orodje {}: {}, {}";
 "Werkzeugaufrufe" = "Klici orodij";
 "Werkzeugergebnisse" = "Rezultati orodij";
@@ -1349,6 +1360,7 @@
 "{} erlaubt" = "{}: dovoljeno";
 "{} frühere Einträge ausgeblendet" = "Skriti starejši vnosi: {}";
 "{} gehört jetzt zu „{}“ statt zu „{}“." = "{} zdaj pripada dejanju „{}“ namesto „{}“.";
+"{} h" = "{} h";
 "{} h {} min" = "{} h {} min";
 "{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "{} nima dostopa do mikrofona. Dovolite ga v Nastavitvah sistema pod Zasebnost in varnost > Mikrofon.";
 "{} installieren?" = "Želite namestiti {}?";
@@ -1361,6 +1373,7 @@
 "{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "{} ga v ta namen enkrat prebere, macOS pa prej vpraša za dovoljenje. Tam izberite »Dovoli«, ne »Vedno dovoli«: tako vnos aplikacije Lowspeak ostane nespremenjen. {} ključ shrani v lasten vnos.";
 "{} meldet keine Hintergrundprozesse" = "{} ne poroča o procesih v ozadju";
 "{} meldet keine Subagenten" = "{} ne poroča o podagentih";
+"{} min" = "{} min";
 "{} min {} s" = "{} min {} s";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet." = "{} zahteva vpis, preden odpre sejo.";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet. Bei der Anmeldung im Terminal liegt der Befehl in der Zwischenablage." = "{} zahteva vpis, preden odpre sejo. Za vpis v terminalu je ukaz v odložišču.";
@@ -1390,6 +1403,7 @@
 "{} wurde nicht installiert" = "Agent {} ni bil nameščen";
 "{} {} oder neuer wird gebraucht" = "Potrebno: {} {} ali novejši";
 "{} · {}" = "{} · {}";
+"{} · {} · PID {}" = "{} · {} · PID {}";
 "{}, 1 Datei" = "{}, 1 datoteka";
 "{}, 1 Eintrag" = "{}, 1 vnos";
 "{}, geänderte Dateien: {}" = "{}, spremenjene datoteke: {}";

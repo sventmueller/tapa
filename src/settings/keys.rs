@@ -61,7 +61,7 @@ pub(crate) fn title(action: Action) -> String {
         (Action::PreviousTab, t("Vorherigen Tab zeigen")),
         (Action::NextWorkspace, t("Nächsten Arbeitsbereich zeigen")),
         (Action::PreviousWorkspace, t("Vorherigen Arbeitsbereich zeigen")),
-        (Action::TabSwitcher, t("Tab suchen …")),
+        (Action::TabSwitcher, t("Schnell öffnen …")),
         (Action::Copy, t("Kopieren")),
         (Action::CopyFormatted, t("Mit Formatierung kopieren")),
         (Action::Paste, t("Einsetzen")),

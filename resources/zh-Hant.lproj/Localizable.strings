@@ -36,6 +36,7 @@
 "Adresse nach der Anmeldung" = "登入後的網址";
 "Adresse nicht unterstützt" = "不支援此網址";
 "Agent" = "代理程式";
+"Agent-Befehl" = "代理程式指令";
 "Agenten" = "代理程式";
 "Agenten in „{}“ laden dann die Hooks, MCP-Server und Einstellungen des Projekts." = "這樣「{}」中的代理程式將載入專案的掛鉤、MCP 伺服器和設定。";
 "Agenten werden gesucht …" = "正在尋找代理程式…";
@@ -262,12 +263,14 @@
 "Das lässt sich hier nicht umschalten." = "無法在這裡切換此項目。";
 "Das nächste gedrückte Kürzel übernehmen; Escape bricht ab" = "使用下一個按下的快速鍵；按 Escape 取消";
 "Datei außerhalb des Projekts" = "專案外的檔案";
+"Datei suchen" = "尋找檔案";
 "Datei öffnen" = "打開檔案";
 "Dateien" = "檔案";
 "Dateien ein-/ausblenden" = "顯示/隱藏檔案";
 "Dateien oder Bilder anhängen" = "附加檔案或影像";
 "Dateien: {}" = "檔案：{}";
 "Dateiliste:" = "檔案列表：";
+"Debug-Adapter" = "除錯轉接器";
 "Deine Nachricht: {}" = "你的訊息：{}";
 "Denkaufwand:" = "推理強度：";
 "Denken" = "思考";
@@ -314,6 +317,7 @@
 "Der Stash sieht nur, was auf der Platte steht. Sichere zuerst, damit deine Änderungen dabei sind." = "儲藏只會看到磁碟上的內容。請先儲存，以便納入你的變更。";
 "Der Vorgang hat zu lange gedauert." = "操作耗時過久。";
 "Details …" = "詳細資訊…";
+"Dev-Server" = "開發伺服器";
 "Diagramm" = "圖表";
 "Die Adresse „{}“ ließ sich nicht auflösen." = "無法解析網址「{}」。";
 "Die Anmeldung beim Remote ist fehlgeschlagen." = "登入遠端失敗。";
@@ -895,6 +899,8 @@
 "Projektplan" = "專案計畫";
 "Prompts und Lesezeichen" = "提示符號與書籤";
 "Protokoll" = "通訊協定";
+"Prozesse" = "程序";
+"Prüfstation" = "關卡";
 "Pull" = "提取";
 "Pull läuft …" = "正在提取…";
 "Push" = "推送";
@@ -947,6 +953,8 @@
 "Schlüssel für {} entfernen" = "移除 {} 金鑰";
 "Schlüssel für {} ändern" = "更改 {} 金鑰";
 "Schlüssel übernehmen …" = "使用金鑰…";
+"Schnell öffnen" = "快速打開";
+"Schnell öffnen …" = "快速打開⋯…";
 "Schnelles Terminal ausblenden" = "隱藏快速終端機";
 "Schnelles Terminal ein-/ausblenden" = "顯示／隱藏快速終端機";
 "Schnelles Terminal einblenden" = "顯示快速終端機";
@@ -1002,6 +1010,7 @@
 "Speicherdateien" = "記憶檔案";
 "Sprache" = "語言";
 "Sprache:" = "語言：";
+"Sprachserver" = "語言伺服器";
 "Stand im letzten Commit" = "上次提交時的內容";
 "Standard" = "預設";
 "Standardmodell" = "預設模型";
@@ -1052,6 +1061,7 @@
 "Terminal leeren" = "清除終端機";
 "Terminal: {}" = "終端機：{}";
 "Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "終端機和代理程式在 ssh 以此方式連線的電腦上執行;該處沒有檔案列表和 Git。";
+"Test" = "測試";
 "Text mit Steuerzeichen einsetzen?" = "要貼上包含控制字元的文字嗎？";
 "Text mit Zeilenumbruch einsetzen?" = "要貼上包含換行的文字嗎？";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "要貼上包含 {} 個換行的文字嗎？";
@@ -1184,6 +1194,7 @@
 "Weitersuchen" = "尋找下一個";
 "Weniger zeigen" = "顯示較少";
 "Wer angemeldet ist, und abmelden" = "目前登入者及登出";
+"Werkzeug" = "工具";
 "Werkzeug {}: {}, {}" = "工具 {}：{}，{}";
 "Werkzeugaufrufe" = "工具呼叫";
 "Werkzeugergebnisse" = "工具結果";
@@ -1349,6 +1360,7 @@
 "{} erlaubt" = "已允許 {}";
 "{} frühere Einträge ausgeblendet" = "已隱藏 {} 個較早的項目";
 "{} gehört jetzt zu „{}“ statt zu „{}“." = "{}現在屬於「{}」，不再屬於「{}」。";
+"{} h" = "{} 小時";
 "{} h {} min" = "{} 小時 {} 分鐘";
 "{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "{} 無法取用麥克風。請在「系統設定」→「隱私權與安全性」→「麥克風」中允許取用。";
 "{} installieren?" = "要安裝 {} 嗎？";
@@ -1361,6 +1373,7 @@
 "{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "{} 只會為此讀取一次，macOS 會先詢問你。請選擇「允許」，而非「永遠允許」：這樣 Lowspeak 的項目會保持不變。{} 會將金鑰存放在自己的項目中。";
 "{} meldet keine Hintergrundprozesse" = "{} 不回報背景程序";
 "{} meldet keine Subagenten" = "{} 不回報子代理程式";
+"{} min" = "{} 分鐘";
 "{} min {} s" = "{} 分 {} 秒";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet." = "{} 需要你先登入，才能打開工作階段。";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet. Bei der Anmeldung im Terminal liegt der Befehl in der Zwischenablage." = "{} 需要你先登入，才能打開工作階段。若要在終端機中登入，指令已在剪貼板上。";
@@ -1390,6 +1403,7 @@
 "{} wurde nicht installiert" = "未安裝 {}";
 "{} {} oder neuer wird gebraucht" = "需要 {} {} 或以上版本";
 "{} · {}" = "{} · {}";
+"{} · {} · PID {}" = "{} · {} · PID {}";
 "{}, 1 Datei" = "{}，1 個檔案";
 "{}, 1 Eintrag" = "{}，1 個項目";
 "{}, geänderte Dateien: {}" = "{}，已變更的檔案：{}";

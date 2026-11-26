@@ -372,3 +372,16 @@
 "Verbindung zu {} getrennt" = "S’ha perdut la connexió amb {}";
 "Wo arbeitet der neue Arbeitsbereich?" = "On treballa l’espai de treball nou?";
 "Vorschlagsliste beim Tippen öffnen" = "Obre la llista de suggeriments mentre escrius";
+"Sprachserver" = "Servidor de llenguatge";
+"Dev-Server" = "Servidor de desenvolupament";
+"Debug-Adapter" = "Adaptador de depuració";
+"Test" = "Prova";
+"Werkzeug" = "Eina";
+"Agent-Befehl" = "Ordre de l’agent";
+"Prüfstation" = "Control";
+"{} · {} · PID {}" = "{} · {} · PID {}";
+"{} min" = "{} min";
+"{} h" = "{} h";
+"Schnell öffnen" = "Obertura ràpida";
+"Schnell öffnen …" = "Obre ràpidament…";
+"Datei suchen" = "Cerca un fitxer";

@@ -36,6 +36,7 @@
 "Adresse nach der Anmeldung" = "Adresse etter pålogging";
 "Adresse nicht unterstützt" = "Adressen støttes ikke";
 "Agent" = "Agent";
+"Agent-Befehl" = "Agentkommando";
 "Agenten" = "Agenter";
 "Agenten in „{}“ laden dann die Hooks, MCP-Server und Einstellungen des Projekts." = "Agenter i «{}» laster da inn prosjektets hooks, MCP-servere og innstillinger.";
 "Agenten werden gesucht …" = "Søker etter agenter…";
@@ -262,12 +263,14 @@
 "Das lässt sich hier nicht umschalten." = "Dette kan ikke slås av eller på her.";
 "Das nächste gedrückte Kürzel übernehmen; Escape bricht ab" = "Bruk neste hurtigtast som trykkes; Escape avbryter";
 "Datei außerhalb des Projekts" = "Fil utenfor prosjektet";
+"Datei suchen" = "Finn fil";
 "Datei öffnen" = "Åpne fil";
 "Dateien" = "Filer";
 "Dateien ein-/ausblenden" = "Vis/skjul filer";
 "Dateien oder Bilder anhängen" = "Legg ved filer eller bilder";
 "Dateien: {}" = "Filer: {}";
 "Dateiliste:" = "Filliste:";
+"Debug-Adapter" = "Feilsøkingsadapter";
 "Deine Nachricht: {}" = "Din melding: {}";
 "Denkaufwand:" = "Innsats:";
 "Denken" = "Tenker";
@@ -314,6 +317,7 @@
 "Der Stash sieht nur, was auf der Platte steht. Sichere zuerst, damit deine Änderungen dabei sind." = "Stashen ser bare det som ligger på disken. Lagre først, slik at endringene dine blir med.";
 "Der Vorgang hat zu lange gedauert." = "Handlingen tok for lang tid.";
 "Details …" = "Detaljer…";
+"Dev-Server" = "Utviklingstjener";
 "Diagramm" = "Diagram";
 "Die Adresse „{}“ ließ sich nicht auflösen." = "Adressen «{}» kunne ikke slås opp.";
 "Die Anmeldung beim Remote ist fehlgeschlagen." = "Pålogging til remoten mislyktes.";
@@ -895,6 +899,8 @@
 "Projektplan" = "Prosjektplan";
 "Prompts und Lesezeichen" = "Ledetekster og bokmerker";
 "Protokoll" = "Protokoll";
+"Prozesse" = "Prosesser";
+"Prüfstation" = "Kontrollpunkt";
 "Pull" = "Pull";
 "Pull läuft …" = "Kjører pull…";
 "Push" = "Push";
@@ -947,6 +953,8 @@
 "Schlüssel für {} entfernen" = "Fjern nøkkel for {}";
 "Schlüssel für {} ändern" = "Endre nøkkel for {}";
 "Schlüssel übernehmen …" = "Bruk nøkkel…";
+"Schnell öffnen" = "Åpne raskt";
+"Schnell öffnen …" = "Åpne raskt…";
 "Schnelles Terminal ausblenden" = "Skjul hurtigterminal";
 "Schnelles Terminal ein-/ausblenden" = "Vis/skjul hurtigterminal";
 "Schnelles Terminal einblenden" = "Vis hurtigterminal";
@@ -1002,6 +1010,7 @@
 "Speicherdateien" = "Minnefiler";
 "Sprache" = "Språk";
 "Sprache:" = "Språk:";
+"Sprachserver" = "Språktjener";
 "Stand im letzten Commit" = "Som i siste commit";
 "Standard" = "Standard";
 "Standardmodell" = "Standardmodell";
@@ -1052,6 +1061,7 @@
 "Terminal leeren" = "Tøm terminal";
 "Terminal: {}" = "Terminal: {}";
 "Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "Terminaler og agenter kjører på datamaskinen ssh når på denne måten; fillisten og Git finnes ikke der.";
+"Test" = "Test";
 "Text mit Steuerzeichen einsetzen?" = "Lime inn tekst med kontrolltegn?";
 "Text mit Zeilenumbruch einsetzen?" = "Lime inn tekst med et linjeskift?";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "Lime inn tekst med {} linjeskift?";
@@ -1184,6 +1194,7 @@
 "Weitersuchen" = "Finn neste";
 "Weniger zeigen" = "Vis mindre";
 "Wer angemeldet ist, und abmelden" = "Hvem som er pålogget, og avlogging";
+"Werkzeug" = "Verktøy";
 "Werkzeug {}: {}, {}" = "Verktøy {}: {}, {}";
 "Werkzeugaufrufe" = "Verktøykall";
 "Werkzeugergebnisse" = "Verktøyresultater";
@@ -1349,6 +1360,7 @@
 "{} erlaubt" = "{} tillatt";
 "{} frühere Einträge ausgeblendet" = "{} tidligere oppføringer skjult";
 "{} gehört jetzt zu „{}“ statt zu „{}“." = "{} hører nå til «{}» i stedet for «{}».";
+"{} h" = "{} t";
 "{} h {} min" = "{} t {} min";
 "{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "{} har ikke tilgang til mikrofonen. Tillat det under Systeminnstillinger > Personvern og sikkerhet > Mikrofon.";
 "{} installieren?" = "Vil du installere {}?";
@@ -1361,6 +1373,7 @@
 "{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "{} leser den én gang for dette, og macOS spør først. Velg «Tillat», ikke «Tillat alltid»: Da forblir oppføringen til Lowspeak som den er. {} lagrer nøkkelen i en egen oppføring.";
 "{} meldet keine Hintergrundprozesse" = "{} rapporterer ingen bakgrunnsprosesser";
 "{} meldet keine Subagenten" = "{} rapporterer ingen underagenter";
+"{} min" = "{} min";
 "{} min {} s" = "{} min {} s";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet." = "{} vil at du logger på før den åpner en økt.";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet. Bei der Anmeldung im Terminal liegt der Befehl in der Zwischenablage." = "{} vil at du logger på før den åpner en økt. For pålogging i terminalen ligger kommandoen på utklippstavlen.";
@@ -1390,6 +1403,7 @@
 "{} wurde nicht installiert" = "{} ble ikke installert";
 "{} {} oder neuer wird gebraucht" = "{} {} eller nyere trengs";
 "{} · {}" = "{} · {}";
+"{} · {} · PID {}" = "{} · {} · PID {}";
 "{}, 1 Datei" = "{}, 1 fil";
 "{}, 1 Eintrag" = "{}, 1 oppføring";
 "{}, geänderte Dateien: {}" = "{}, endrede filer: {}";

@@ -372,3 +372,16 @@
 "Verbindung zu {} getrennt" = "انقطع الاتصال بـ {}";
 "Wo arbeitet der neue Arbeitsbereich?" = "أين تعمل مساحة العمل الجديدة؟";
 "Vorschlagsliste beim Tippen öffnen" = "فتح قائمة الاقتراحات أثناء الكتابة";
+"Sprachserver" = "خادم اللغة";
+"Dev-Server" = "خادم التطوير";
+"Debug-Adapter" = "محوّل التصحيح";
+"Test" = "اختبار";
+"Werkzeug" = "أداة";
+"Agent-Befehl" = "أمر الوكيل";
+"Prüfstation" = "بوابة";
+"{} · {} · PID {}" = "{} · {} · PID {}";
+"{} min" = "{} د";
+"{} h" = "{} س";
+"Schnell öffnen" = "فتح سريع";
+"Schnell öffnen …" = "فتح سريع…";
+"Datei suchen" = "البحث عن ملف";

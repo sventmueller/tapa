@@ -372,3 +372,16 @@
 "Verbindung zu {} getrennt" = "Conexiunea la {} s-a întrerupt";
 "Wo arbeitet der neue Arbeitsbereich?" = "Unde lucrează noul spațiu de lucru?";
 "Vorschlagsliste beim Tippen öffnen" = "Deschideți lista de sugestii la tastare";
+"Sprachserver" = "Server de limbaj";
+"Dev-Server" = "Server de dezvoltare";
+"Debug-Adapter" = "Adaptor de depanare";
+"Test" = "Test";
+"Werkzeug" = "Instrument";
+"Agent-Befehl" = "Comanda agentului";
+"Prüfstation" = "Control";
+"{} · {} · PID {}" = "{} · {} · PID {}";
+"{} min" = "{} min";
+"{} h" = "{} h";
+"Schnell öffnen" = "Deschidere rapidă";
+"Schnell öffnen …" = "Deschidere rapidă…";
+"Datei suchen" = "Căutați un fișier";

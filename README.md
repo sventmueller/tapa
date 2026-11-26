@@ -84,11 +84,13 @@ brew install --cask sventmueller/tap/tapa
 
 1. **The window** has the sidebar of workspaces on the left, the tabs of the selected workspace on top and the toolbar above them. ⌃⌘S shows and hides the sidebar.
 2. **A new workspace** comes from the folder button at the top of the sidebar, or **Shell › New Workspace…** (⇧⌘N): pick one of the recent folders or **Choose Folder…**.
-3. **New tabs** start in the workspace's folder: ⌘T for a terminal, the buttons on the right of the toolbar for a terminal, an agent or a browser tab, or the **+** at the end of the tab bar.
+3. **New tabs** start in the workspace's folder: ⌘T for a terminal, the buttons on the right of the toolbar for a terminal, an agent or a browser tab, or the **+** at the end of the tab bar. The tab bar and its **+** stay visible even with a single tab.
 4. **Settings** open with ⌘, or the gear at the bottom of the sidebar.
-5. **The command palette** (⇧⌘P) finds every command by name, and **Find Tab…** (⌘P) every tab of every workspace.
+5. **The command palette** (⇧⌘P) finds commands by name. The toolbar’s magnifying glass opens **Open Quickly…** (⌘P) for files across local workspaces and open tabs and sessions. File results are grouped by workspace.
 
-The toolbar holds, from the left, the branch pull-down of the workspace's repository, the buttons to split the terminal right and down and to show the input field, and the buttons for new terminal, agent and browser tabs. The buttons for splits and the input field are grey while no terminal tab is in front.
+**Activity** opens a live popover with open agent sessions, foreground terminal commands and managed processes. **Show** jumps to the corresponding tab or split. **Stop** stops an active agent turn or a managed process.
+
+The toolbar also holds the branch pull-down, the split and input-field controls, and buttons for new terminal, agent and browser tabs.
 
 ## Workspaces
 
@@ -238,7 +240,7 @@ Tapa follows the language order in **System Settings › General › Language & 
 | Next, previous pane | ⌘], ⌘[ |
 | Next, previous tab; tab 1 to 8, last tab | ⇧⌘], ⇧⌘[; ⌘1 to ⌘8, ⌘9 |
 | Next, previous workspace | ⌃⌘], ⌃⌘[ |
-| Find tab, command palette | ⌘P, ⇧⌘P |
+| Open quickly, command palette | ⌘P, ⇧⌘P |
 | Show or hide the sidebar, the input field | ⌃⌘S, ⌘I |
 | Quick terminal | ⌃⌥⌘Space |
 | Find, find next, find previous | ⌘F, ⌘G, ⇧⌘G |

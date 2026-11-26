@@ -372,3 +372,16 @@
 "Verbindung zu {} getrennt" = "{} との接続が切れました";
 "Wo arbeitet der neue Arbeitsbereich?" = "新しいワークスペースの作業場所は?";
 "Vorschlagsliste beim Tippen öffnen" = "入力中に候補リストを開く";
+"Sprachserver" = "言語サーバ";
+"Dev-Server" = "開発サーバ";
+"Debug-Adapter" = "デバッグアダプタ";
+"Test" = "テスト";
+"Werkzeug" = "ツール";
+"Agent-Befehl" = "エージェントのコマンド";
+"Prüfstation" = "ゲート";
+"{} · {} · PID {}" = "{} · {} · PID {}";
+"{} min" = "{}分";
+"{} h" = "{}時間";
+"Schnell öffnen" = "クイックオープン";
+"Schnell öffnen …" = "クイックオープン…";
+"Datei suchen" = "ファイルを検索";

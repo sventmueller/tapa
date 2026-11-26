@@ -372,3 +372,16 @@
 "Verbindung zu {} getrennt" = "การเชื่อมต่อกับ {} ขาดหาย";
 "Wo arbeitet der neue Arbeitsbereich?" = "พื้นที่ทำงานใหม่ทำงานที่ไหน";
 "Vorschlagsliste beim Tippen öffnen" = "เปิดรายการคำแนะนำขณะพิมพ์";
+"Sprachserver" = "เซิร์ฟเวอร์ภาษา";
+"Dev-Server" = "เซิร์ฟเวอร์ Dev";
+"Debug-Adapter" = "อะแดปเตอร์ดีบัก";
+"Test" = "การทดสอบ";
+"Werkzeug" = "เครื่องมือ";
+"Agent-Befehl" = "คำสั่งของเอเจนต์";
+"Prüfstation" = "ด่านตรวจ";
+"{} · {} · PID {}" = "{} · {} · PID {}";
+"{} min" = "{} นาที";
+"{} h" = "{} ชม.";
+"Schnell öffnen" = "เปิดอย่างรวดเร็ว";
+"Schnell öffnen …" = "เปิดอย่างรวดเร็ว…";
+"Datei suchen" = "ค้นหาไฟล์";

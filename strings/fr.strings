@@ -372,3 +372,16 @@
 "Verbindung zu {} getrennt" = "Connexion à {} perdue";
 "Wo arbeitet der neue Arbeitsbereich?" = "Où le nouvel espace de travail travaille-t-il ?";
 "Vorschlagsliste beim Tippen öffnen" = "Ouvrir la liste des suggestions pendant la saisie";
+"Sprachserver" = "Serveur de langage";
+"Dev-Server" = "Serveur de dev";
+"Debug-Adapter" = "Adaptateur de débogage";
+"Test" = "Test";
+"Werkzeug" = "Outil";
+"Agent-Befehl" = "Commande de l’agent";
+"Prüfstation" = "Contrôle";
+"{} · {} · PID {}" = "{} · {} · PID {}";
+"{} min" = "{} min";
+"{} h" = "{} h";
+"Schnell öffnen" = "Ouverture rapide";
+"Schnell öffnen …" = "Ouvrir rapidement…";
+"Datei suchen" = "Rechercher un fichier";

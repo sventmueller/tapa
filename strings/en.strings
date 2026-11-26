@@ -372,3 +372,16 @@
 "Verbindung zu {} getrennt" = "Connection to {} lost";
 "Wo arbeitet der neue Arbeitsbereich?" = "Where does the new workspace work?";
 "Vorschlagsliste beim Tippen öffnen" = "Open the suggestion list while typing";
+"Sprachserver" = "Language server";
+"Dev-Server" = "Dev Server";
+"Debug-Adapter" = "Debug adapter";
+"Test" = "Test";
+"Werkzeug" = "Tool";
+"Agent-Befehl" = "Agent command";
+"Prüfstation" = "Gate";
+"{} · {} · PID {}" = "{} · {} · PID {}";
+"{} min" = "{} min";
+"{} h" = "{} h";
+"Schnell öffnen" = "Open Quickly";
+"Schnell öffnen …" = "Open Quickly…";
+"Datei suchen" = "Find File";

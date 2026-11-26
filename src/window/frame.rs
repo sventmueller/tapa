@@ -318,6 +318,13 @@ impl TabWindow {
             .unwrap_or_else(|| vec![self.ns.clone()])
     }
 
+    /// Keeps the native tab and its new-tab button available in a group with one window.
+    pub(super) fn show_tab_bar(&self) {
+        if self.ns.tabGroup().is_some_and(|group| !group.isTabBarVisible()) {
+            self.ns.toggleTabBar(None);
+        }
+    }
+
     /// Whether it is on screen, in front or as a tab of a group that is.
     pub(crate) fn is_shown(&self) -> bool {
         self.group().iter().any(|window| window.isVisible())

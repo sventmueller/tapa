@@ -36,6 +36,7 @@
 "Adresse nach der Anmeldung" = "サインイン後のアドレス";
 "Adresse nicht unterstützt" = "アドレスはサポートされていません";
 "Agent" = "エージェント";
+"Agent-Befehl" = "エージェントのコマンド";
 "Agenten" = "エージェント";
 "Agenten in „{}“ laden dann die Hooks, MCP-Server und Einstellungen des Projekts." = "「{}」のエージェントがプロジェクトのフック、MCPサーバ、設定を読み込むようになります。";
 "Agenten werden gesucht …" = "エージェントを検索中…";
@@ -262,12 +263,14 @@
 "Das lässt sich hier nicht umschalten." = "ここではオン/オフを切り替えられません。";
 "Das nächste gedrückte Kürzel übernehmen; Escape bricht ab" = "次に押したショートカットを使用します。Escapeでキャンセル";
 "Datei außerhalb des Projekts" = "プロジェクト外のファイル";
+"Datei suchen" = "ファイルを検索";
 "Datei öffnen" = "ファイルを開く";
 "Dateien" = "ファイル";
 "Dateien ein-/ausblenden" = "ファイルを表示/非表示";
 "Dateien oder Bilder anhängen" = "ファイルまたはイメージを添付";
 "Dateien: {}" = "ファイル: {}";
 "Dateiliste:" = "ファイルリスト:";
+"Debug-Adapter" = "デバッグアダプタ";
 "Deine Nachricht: {}" = "自分のメッセージ: {}";
 "Denkaufwand:" = "推論の深さ:";
 "Denken" = "思考";
@@ -314,6 +317,7 @@
 "Der Stash sieht nur, was auf der Platte steht. Sichere zuerst, damit deine Änderungen dabei sind." = "スタッシュにはディスク上の内容しか含まれません。変更が含まれるように、先に保存してください。";
 "Der Vorgang hat zu lange gedauert." = "処理に時間がかかりすぎました。";
 "Details …" = "詳細…";
+"Dev-Server" = "開発サーバ";
 "Diagramm" = "図";
 "Die Adresse „{}“ ließ sich nicht auflösen." = "アドレス“{}”を解決できませんでした。";
 "Die Anmeldung beim Remote ist fehlgeschlagen." = "リモートへのサインインに失敗しました。";
@@ -895,6 +899,8 @@
 "Projektplan" = "プロジェクト計画";
 "Prompts und Lesezeichen" = "プロンプトとブックマーク";
 "Protokoll" = "プロトコル";
+"Prozesse" = "プロセス";
+"Prüfstation" = "ゲート";
 "Pull" = "プル";
 "Pull läuft …" = "プル中…";
 "Push" = "プッシュ";
@@ -947,6 +953,8 @@
 "Schlüssel für {} entfernen" = "{}のキーを削除";
 "Schlüssel für {} ändern" = "{}のキーを変更";
 "Schlüssel übernehmen …" = "キーを使用…";
+"Schnell öffnen" = "クイックオープン";
+"Schnell öffnen …" = "クイックオープン…";
 "Schnelles Terminal ausblenden" = "クイックターミナルを非表示";
 "Schnelles Terminal ein-/ausblenden" = "クイックターミナルの表示/非表示";
 "Schnelles Terminal einblenden" = "クイックターミナルを表示";
@@ -1002,6 +1010,7 @@
 "Speicherdateien" = "メモリファイル";
 "Sprache" = "言語";
 "Sprache:" = "言語:";
+"Sprachserver" = "言語サーバ";
 "Stand im letzten Commit" = "最後のコミットでの状態";
 "Standard" = "デフォルト";
 "Standardmodell" = "デフォルトのモデル";
@@ -1052,6 +1061,7 @@
 "Terminal leeren" = "ターミナルを消去";
 "Terminal: {}" = "ターミナル：{}";
 "Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "ターミナルとエージェントは、ssh がこの設定で接続するコンピュータで動作します。そこではファイルリストと Git は使えません。";
+"Test" = "テスト";
 "Text mit Steuerzeichen einsetzen?" = "制御文字を含むテキストをペーストしますか？";
 "Text mit Zeilenumbruch einsetzen?" = "改行を含むテキストをペーストしますか？";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "改行を{}個含むテキストをペーストしますか？";
@@ -1184,6 +1194,7 @@
 "Weitersuchen" = "次を検索";
 "Weniger zeigen" = "表示を減らす";
 "Wer angemeldet ist, und abmelden" = "サインイン中のユーザとサインアウト";
+"Werkzeug" = "ツール";
 "Werkzeug {}: {}, {}" = "ツール{}: {}、{}";
 "Werkzeugaufrufe" = "ツール呼び出し";
 "Werkzeugergebnisse" = "ツールの結果";
@@ -1349,6 +1360,7 @@
 "{} erlaubt" = "{}を許可";
 "{} frühere Einträge ausgeblendet" = "以前の{}件の項目を非表示";
 "{} gehört jetzt zu „{}“ statt zu „{}“." = "{}は「{}」に割り当てられました（以前は「{}」）。";
+"{} h" = "{}時間";
 "{} h {} min" = "{}時間{}分";
 "{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "{}はマイクにアクセスできません。“システム設定” > “プライバシーとセキュリティ” > “マイク”で許可してください。";
 "{} installieren?" = "{}をインストールしますか?";
@@ -1361,6 +1373,7 @@
 "{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "{}はそのためにキーを1回読み込み、その前にmacOSが確認します。そこで“常に許可”ではなく“許可”を選択してください。そうすればLowspeakの項目はそのまま残ります。{}は専用の項目にキーを保存します。";
 "{} meldet keine Hintergrundprozesse" = "{}はバックグラウンドプロセスを報告しません";
 "{} meldet keine Subagenten" = "{}はサブエージェントを報告しません";
+"{} min" = "{}分";
 "{} min {} s" = "{}分{}秒";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet." = "{}はセッションを開く前にサインインを求めています。";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet. Bei der Anmeldung im Terminal liegt der Befehl in der Zwischenablage." = "{}はセッションを開く前にサインインを求めています。ターミナルでサインインする場合のコマンドはクリップボードにあります。";
@@ -1390,6 +1403,7 @@
 "{} wurde nicht installiert" = "{}はインストールされませんでした";
 "{} {} oder neuer wird gebraucht" = "{} {}以降が必要です";
 "{} · {}" = "{} · {}";
+"{} · {} · PID {}" = "{} · {} · PID {}";
 "{}, 1 Datei" = "{}、1個のファイル";
 "{}, 1 Eintrag" = "{}、1件";
 "{}, geänderte Dateien: {}" = "{}、変更されたファイル: {}";

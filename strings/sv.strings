@@ -372,3 +372,16 @@
 "Verbindung zu {} getrennt" = "Anslutningen till {} bröts";
 "Wo arbeitet der neue Arbeitsbereich?" = "Var arbetar den nya arbetsytan?";
 "Vorschlagsliste beim Tippen öffnen" = "Öppna förslagslistan medan du skriver";
+"Sprachserver" = "Språkserver";
+"Dev-Server" = "Dev-server";
+"Debug-Adapter" = "Felsökningsadapter";
+"Test" = "Test";
+"Werkzeug" = "Verktyg";
+"Agent-Befehl" = "Agentkommando";
+"Prüfstation" = "Grind";
+"{} · {} · PID {}" = "{} · {} · PID {}";
+"{} min" = "{} min";
+"{} h" = "{} tim";
+"Schnell öffnen" = "Öppna snabbt";
+"Schnell öffnen …" = "Öppna snabbt…";
+"Datei suchen" = "Sök efter fil";

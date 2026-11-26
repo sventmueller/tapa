@@ -372,3 +372,16 @@
 "Verbindung zu {} getrennt" = "Megszakadt a kapcsolat: {}";
 "Wo arbeitet der neue Arbeitsbereich?" = "Hol dolgozik az új munkaterület?";
 "Vorschlagsliste beim Tippen öffnen" = "Javaslatlista megnyitása gépelés közben";
+"Sprachserver" = "Nyelvi szerver";
+"Dev-Server" = "Fejlesztői szerver";
+"Debug-Adapter" = "Hibakereső adapter";
+"Test" = "Teszt";
+"Werkzeug" = "Eszköz";
+"Agent-Befehl" = "Ügynökparancs";
+"Prüfstation" = "Ellenőrzőpont";
+"{} · {} · PID {}" = "{} · {} · PID {}";
+"{} min" = "{} perc";
+"{} h" = "{} ó";
+"Schnell öffnen" = "Gyors megnyitás";
+"Schnell öffnen …" = "Gyors megnyitás…";
+"Datei suchen" = "Fájl keresése";

@@ -372,3 +372,16 @@
 "Verbindung zu {} getrennt" = "與 {} 的連線已中斷";
 "Wo arbeitet der neue Arbeitsbereich?" = "新工作區在哪裡工作?";
 "Vorschlagsliste beim Tippen öffnen" = "輸入時開啟建議列表";
+"Sprachserver" = "語言伺服器";
+"Dev-Server" = "開發伺服器";
+"Debug-Adapter" = "除錯轉接器";
+"Test" = "測試";
+"Werkzeug" = "工具";
+"Agent-Befehl" = "代理程式指令";
+"Prüfstation" = "關卡";
+"{} · {} · PID {}" = "{} · {} · PID {}";
+"{} min" = "{} 分鐘";
+"{} h" = "{} 小時";
+"Schnell öffnen" = "快速打開";
+"Schnell öffnen …" = "快速打開⋯…";
+"Datei suchen" = "尋找檔案";

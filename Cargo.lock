@@ -3794,6 +3794,7 @@ dependencies = [
  "term-panes",
  "term-process",
  "term-product",
+ "term-project",
  "term-remote",
  "term-render",
  "term-seal",

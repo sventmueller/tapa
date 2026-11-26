@@ -222,7 +222,7 @@ impl Window {
     }
 
     /// The tab `id`, in whichever workspace.
-    fn tab(&self, id: u64) -> Option<Rc<Tab>> {
+    pub(crate) fn tab(&self, id: u64) -> Option<Rc<Tab>> {
         self.workspace_of_tab(id)?.tabs.borrow().get(TabId::new(id))
     }
 

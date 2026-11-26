@@ -436,7 +436,7 @@ impl Terminal {
 }
 
 /// The icon of the program in front.
-fn icon(front: &Foreground) -> term_ui_icons::Icon {
+pub(crate) fn icon(front: &Foreground) -> term_ui_icons::Icon {
     match front {
         Foreground::Agent(agent) => term_ui_icons::program_icon(match agent {
             term_session::Agent::Claude => "claude",

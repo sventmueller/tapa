@@ -372,3 +372,16 @@
 "Verbindung zu {} getrennt" = "Connessione a {} interrotta";
 "Wo arbeitet der neue Arbeitsbereich?" = "Dove lavora il nuovo spazio di lavoro?";
 "Vorschlagsliste beim Tippen öffnen" = "Apri l'elenco dei suggerimenti durante la digitazione";
+"Sprachserver" = "Server di linguaggio";
+"Dev-Server" = "Server di sviluppo";
+"Debug-Adapter" = "Adattatore di debug";
+"Test" = "Test";
+"Werkzeug" = "Strumento";
+"Agent-Befehl" = "Comando dell’agente";
+"Prüfstation" = "Gate";
+"{} · {} · PID {}" = "{} · {} · PID {}";
+"{} min" = "{} min";
+"{} h" = "{} h";
+"Schnell öffnen" = "Apertura rapida";
+"Schnell öffnen …" = "Apertura rapida…";
+"Datei suchen" = "Trova file";

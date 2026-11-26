@@ -372,3 +372,16 @@
 "Verbindung zu {} getrennt" = "Povezava z {} je prekinjena";
 "Wo arbeitet der neue Arbeitsbereich?" = "Kje deluje novi delovni prostor?";
 "Vorschlagsliste beim Tippen öffnen" = "Odpri seznam predlogov med tipkanjem";
+"Sprachserver" = "Jezikovni strežnik";
+"Dev-Server" = "Razvojni strežnik";
+"Debug-Adapter" = "Adapter za razhroščevanje";
+"Test" = "Test";
+"Werkzeug" = "Orodje";
+"Agent-Befehl" = "Ukaz agenta";
+"Prüfstation" = "Kontrola";
+"{} · {} · PID {}" = "{} · {} · PID {}";
+"{} min" = "{} min";
+"{} h" = "{} h";
+"Schnell öffnen" = "Hitro odpri";
+"Schnell öffnen …" = "Hitro odpri …";
+"Datei suchen" = "Poišči datoteko";

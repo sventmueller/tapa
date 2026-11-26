@@ -9,9 +9,10 @@ use super::*;
 /// The lines of the open popover, each with its buttons; none while it is closed.
 pub fn activity_lines() -> Option<Vec<String>> {
     let activity = of().filter(|a| a.is_shown())?;
-    let (key, part) = activity.ivars().only.get()?;
-    let lines = session_lines(key, part, SystemTime::now())
+    let lines = activity
+        .sections()
         .into_iter()
+        .flat_map(|(_, lines)| lines)
         .map(|l| {
             let buttons: Vec<&str> = l.buttons.iter().map(|(title, _)| *title).collect();
             format!("{} — {} [{}]", l.title, l.detail, buttons.join(", "))

@@ -36,6 +36,7 @@
 "Adresse nach der Anmeldung" = "Adreça després d’iniciar la sessió";
 "Adresse nicht unterstützt" = "Adreça no compatible";
 "Agent" = "Agent";
+"Agent-Befehl" = "Ordre de l’agent";
 "Agenten" = "Agents";
 "Agenten in „{}“ laden dann die Hooks, MCP-Server und Einstellungen des Projekts." = "Llavors els agents de «{}» carregaran els hooks, els servidors MCP i la configuració del projecte.";
 "Agenten werden gesucht …" = "S’estan cercant agents…";
@@ -262,12 +263,14 @@
 "Das lässt sich hier nicht umschalten." = "Això no es pot canviar aquí.";
 "Das nächste gedrückte Kürzel übernehmen; Escape bricht ab" = "Fer servir la següent drecera premuda; Escape cancel·la";
 "Datei außerhalb des Projekts" = "Fitxer fora del projecte";
+"Datei suchen" = "Cerca un fitxer";
 "Datei öffnen" = "Obre el fitxer";
 "Dateien" = "Fitxers";
 "Dateien ein-/ausblenden" = "Mostra/amaga els fitxers";
 "Dateien oder Bilder anhängen" = "Adjunta fitxers o imatges";
 "Dateien: {}" = "Fitxers: {}";
 "Dateiliste:" = "Llista de fitxers:";
+"Debug-Adapter" = "Adaptador de depuració";
 "Deine Nachricht: {}" = "El teu missatge: {}";
 "Denkaufwand:" = "Esforç:";
 "Denken" = "Pensament";
@@ -314,6 +317,7 @@
 "Der Stash sieht nur, was auf der Platte steht. Sichere zuerst, damit deine Änderungen dabei sind." = "L’stash només veu el que hi ha al disc. Desa primer perquè s’hi incloguin els teus canvis.";
 "Der Vorgang hat zu lange gedauert." = "L’operació ha trigat massa.";
 "Details …" = "Detalls…";
+"Dev-Server" = "Servidor de desenvolupament";
 "Diagramm" = "Diagrama";
 "Die Adresse „{}“ ließ sich nicht auflösen." = "No s’ha pogut resoldre l’adreça “{}”.";
 "Die Anmeldung beim Remote ist fehlgeschlagen." = "No s’ha pogut iniciar la sessió al remot.";
@@ -895,6 +899,8 @@
 "Projektplan" = "Pla del projecte";
 "Prompts und Lesezeichen" = "Prompts i marcadors";
 "Protokoll" = "Protocol";
+"Prozesse" = "Processos";
+"Prüfstation" = "Control";
 "Pull" = "Pull";
 "Pull läuft …" = "Fent pull…";
 "Push" = "Push";
@@ -947,6 +953,8 @@
 "Schlüssel für {} entfernen" = "Elimina la clau de {}";
 "Schlüssel für {} ändern" = "Canvia la clau de {}";
 "Schlüssel übernehmen …" = "Utilitza la clau…";
+"Schnell öffnen" = "Obertura ràpida";
+"Schnell öffnen …" = "Obre ràpidament…";
 "Schnelles Terminal ausblenden" = "Ocultar el terminal ràpid";
 "Schnelles Terminal ein-/ausblenden" = "Mostrar/ocultar el terminal ràpid";
 "Schnelles Terminal einblenden" = "Mostrar el terminal ràpid";
@@ -1002,6 +1010,7 @@
 "Speicherdateien" = "Fitxers de memòria";
 "Sprache" = "Llenguatge";
 "Sprache:" = "Idioma:";
+"Sprachserver" = "Servidor de llenguatge";
 "Stand im letzten Commit" = "Estat a l’últim commit";
 "Standard" = "Per omissió";
 "Standardmodell" = "Model per omissió";
@@ -1052,6 +1061,7 @@
 "Terminal leeren" = "Esborrar el terminal";
 "Terminal: {}" = "Terminal: {}";
 "Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "Els terminals i els agents s’executen a l’ordinador que ssh hi arriba així; allà no hi ha llista de fitxers ni Git.";
+"Test" = "Prova";
 "Text mit Steuerzeichen einsetzen?" = "Vols enganxar text amb caràcters de control?";
 "Text mit Zeilenumbruch einsetzen?" = "Vols enganxar text amb un salt de línia?";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "Vols enganxar text amb {} salts de línia?";
@@ -1184,6 +1194,7 @@
 "Weitersuchen" = "Buscar el següent";
 "Weniger zeigen" = "Mostra’n menys";
 "Wer angemeldet ist, und abmelden" = "Qui té la sessió iniciada, i tancar la sessió";
+"Werkzeug" = "Eina";
 "Werkzeug {}: {}, {}" = "Eina {}: {}, {}";
 "Werkzeugaufrufe" = "Crides a eines";
 "Werkzeugergebnisse" = "Resultats d’eines";
@@ -1349,6 +1360,7 @@
 "{} erlaubt" = "{} permès";
 "{} frühere Einträge ausgeblendet" = "{} entrades anteriors ocultes";
 "{} gehört jetzt zu „{}“ statt zu „{}“." = "{} ara pertany a «{}» en lloc de a «{}».";
+"{} h" = "{} h";
 "{} h {} min" = "{} h {} min";
 "{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "{} no té accés al micròfon. Dona‑li accés a Configuració del Sistema, a Privacitat i seguretat > Micròfon.";
 "{} installieren?" = "Vols instal·lar {}?";
@@ -1361,6 +1373,7 @@
 "{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "Per fer‑ho, {} la llegeix una vegada i el macOS et demanarà permís. Tria “Permet”, no “Permet sempre”: així l’ítem de Lowspeak es queda tal com és. {} desa la clau en un ítem propi.";
 "{} meldet keine Hintergrundprozesse" = "{} no informa de processos en segon pla";
 "{} meldet keine Subagenten" = "{} no informa de subagents";
+"{} min" = "{} min";
 "{} min {} s" = "{} min {} s";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet." = "{} vol que t’identifiquis abans d’obrir una sessió.";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet. Bei der Anmeldung im Terminal liegt der Befehl in der Zwischenablage." = "{} vol que t’identifiquis abans d’obrir una sessió. Per iniciar la sessió en un terminal, l’ordre és al porta-retalls.";
@@ -1390,6 +1403,7 @@
 "{} wurde nicht installiert" = "{} no s’ha instal·lat";
 "{} {} oder neuer wird gebraucht" = "Cal {} {} o posterior";
 "{} · {}" = "{} · {}";
+"{} · {} · PID {}" = "{} · {} · PID {}";
 "{}, 1 Datei" = "{}, 1 fitxer";
 "{}, 1 Eintrag" = "{}, 1 entrada";
 "{}, geänderte Dateien: {}" = "{}, fitxers canviats: {}";

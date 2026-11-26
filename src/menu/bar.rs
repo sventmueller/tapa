@@ -129,7 +129,7 @@ fn edit() -> Vec<Entry> {
 }
 
 fn view() -> Vec<Entry> {
-    use Entry::{Action as A, Item, Menu, Separator, Standard};
+    use Entry::{Action as A, Hidden, Item, Menu, Separator, Standard};
     vec![
         A(Action::CommandPalette),
         Separator,
@@ -139,7 +139,7 @@ fn view() -> Vec<Entry> {
         A(Action::ToggleInputField),
         Item(term_ui_editor::preview_item),
         Separator,
-        Standard(t("Tableiste einblenden").into(), sel!(toggleTabBar:), ""),
+        Hidden(sel!(toggleTabBar:)),
         Standard(
             t("Alle Tabs einblenden").into(),
             sel!(toggleTabOverview:),
@@ -343,7 +343,11 @@ mod tests {
         assert_eq!(shortcut(sel!(toggleTabOverview:)), Some("shift+cmd+\\"));
         assert!(shortcut(sel!(mergeAllWindows:)).is_some());
         assert!(shortcut(sel!(moveTabToNewWindow:)).is_some());
-        assert!(shortcut(sel!(toggleTabBar:)).is_some());
+        assert!(
+            entries
+                .iter()
+                .any(|entry| matches!(entry, Entry::Hidden(selector) if *selector == sel!(toggleTabBar:)))
+        );
         let app = &menus[0].1;
         assert!(matches!(app.first(), Some(Entry::Standard(_, s, _)) if *s == sel!(termAbout:)));
         assert!(matches!(app.last(), Some(Entry::Standard(_, s, _)) if *s == sel!(terminate:)));

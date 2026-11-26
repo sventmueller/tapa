@@ -36,6 +36,7 @@
 "Adresse nach der Anmeldung" = "Adresse après la connexion";
 "Adresse nicht unterstützt" = "Adresse non prise en charge";
 "Agent" = "Agent";
+"Agent-Befehl" = "Commande de l’agent";
 "Agenten" = "Agents";
 "Agenten in „{}“ laden dann die Hooks, MCP-Server und Einstellungen des Projekts." = "Les agents dans « {} » chargeront alors les hooks, les serveurs MCP et les réglages du projet.";
 "Agenten werden gesucht …" = "Recherche des agents…";
@@ -262,12 +263,14 @@
 "Das lässt sich hier nicht umschalten." = "Impossible d’activer ou de désactiver cela ici.";
 "Das nächste gedrückte Kürzel übernehmen; Escape bricht ab" = "Utiliser le prochain raccourci pressé ; Escape annule";
 "Datei außerhalb des Projekts" = "Fichier hors du projet";
+"Datei suchen" = "Rechercher un fichier";
 "Datei öffnen" = "Ouvrir le fichier";
 "Dateien" = "Fichiers";
 "Dateien ein-/ausblenden" = "Afficher/masquer les fichiers";
 "Dateien oder Bilder anhängen" = "Joindre des fichiers ou des images";
 "Dateien: {}" = "Fichiers : {}";
 "Dateiliste:" = "Liste des fichiers :";
+"Debug-Adapter" = "Adaptateur de débogage";
 "Deine Nachricht: {}" = "Votre message : {}";
 "Denkaufwand:" = "Effort :";
 "Denken" = "Réflexion";
@@ -314,6 +317,7 @@
 "Der Stash sieht nur, was auf der Platte steht. Sichere zuerst, damit deine Änderungen dabei sind." = "Le stash ne voit que ce qui se trouve sur le disque. Enregistrez d’abord pour que vos modifications y soient incluses.";
 "Der Vorgang hat zu lange gedauert." = "L’opération a pris trop de temps.";
 "Details …" = "Détails…";
+"Dev-Server" = "Serveur de dev";
 "Diagramm" = "Diagramme";
 "Die Adresse „{}“ ließ sich nicht auflösen." = "Impossible de résoudre l’adresse « {} ».";
 "Die Anmeldung beim Remote ist fehlgeschlagen." = "Échec de la connexion au dépôt distant.";
@@ -895,6 +899,8 @@
 "Projektplan" = "Plan de projet";
 "Prompts und Lesezeichen" = "Invites et signets";
 "Protokoll" = "Protocole";
+"Prozesse" = "Processus";
+"Prüfstation" = "Contrôle";
 "Pull" = "Pull";
 "Pull läuft …" = "Pull en cours…";
 "Push" = "Push";
@@ -947,6 +953,8 @@
 "Schlüssel für {} entfernen" = "Supprimer la clé {}";
 "Schlüssel für {} ändern" = "Modifier la clé {}";
 "Schlüssel übernehmen …" = "Utiliser la clé…";
+"Schnell öffnen" = "Ouverture rapide";
+"Schnell öffnen …" = "Ouvrir rapidement…";
 "Schnelles Terminal ausblenden" = "Masquer le terminal rapide";
 "Schnelles Terminal ein-/ausblenden" = "Afficher/masquer le terminal rapide";
 "Schnelles Terminal einblenden" = "Afficher le terminal rapide";
@@ -1002,6 +1010,7 @@
 "Speicherdateien" = "Fichiers de mémoire";
 "Sprache" = "Langage";
 "Sprache:" = "Langue :";
+"Sprachserver" = "Serveur de langage";
 "Stand im letzten Commit" = "État au dernier commit";
 "Standard" = "Par défaut";
 "Standardmodell" = "Modèle par défaut";
@@ -1052,6 +1061,7 @@
 "Terminal leeren" = "Effacer le terminal";
 "Terminal: {}" = "Terminal : {}";
 "Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "Les terminaux et les agents tournent sur l’ordinateur que ssh atteint ainsi ; la liste des fichiers et Git n’y sont pas disponibles.";
+"Test" = "Test";
 "Text mit Steuerzeichen einsetzen?" = "Coller du texte contenant des caractères de contrôle ?";
 "Text mit Zeilenumbruch einsetzen?" = "Coller du texte contenant un saut de ligne ?";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "Coller du texte contenant {} sauts de ligne ?";
@@ -1184,6 +1194,7 @@
 "Weitersuchen" = "Rechercher le suivant";
 "Weniger zeigen" = "Afficher moins";
 "Wer angemeldet ist, und abmelden" = "Qui est connecté, et déconnexion";
+"Werkzeug" = "Outil";
 "Werkzeug {}: {}, {}" = "Outil {} : {}, {}";
 "Werkzeugaufrufe" = "Appels d’outils";
 "Werkzeugergebnisse" = "Résultats d’outils";
@@ -1349,6 +1360,7 @@
 "{} erlaubt" = "{} autorisé";
 "{} frühere Einträge ausgeblendet" = "{} entrées précédentes masquées";
 "{} gehört jetzt zu „{}“ statt zu „{}“." = "{} appartient désormais à « {} » au lieu de « {} ».";
+"{} h" = "{} h";
 "{} h {} min" = "{} h {} min";
 "{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "{} n’a pas accès au micro. Autorisez-le dans Réglages Système, sous Confidentialité et sécurité > Micro.";
 "{} installieren?" = "Installer {} ?";
@@ -1361,6 +1373,7 @@
 "{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "{} la lit une seule fois pour cela, et macOS vous demande d’abord l’autorisation. Choisissez « Autoriser », pas « Toujours autoriser » : l’élément de Lowspeak reste ainsi inchangé. {} conserve la clé dans son propre élément.";
 "{} meldet keine Hintergrundprozesse" = "{} ne signale aucun processus en arrière-plan";
 "{} meldet keine Subagenten" = "{} ne signale aucun sous-agent";
+"{} min" = "{} min";
 "{} min {} s" = "{} min {} s";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet." = "{} demande une connexion avant d’ouvrir une session.";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet. Bei der Anmeldung im Terminal liegt der Befehl in der Zwischenablage." = "{} demande une connexion avant d’ouvrir une session. Pour vous connecter dans un terminal, la commande se trouve dans le presse-papiers.";
@@ -1390,6 +1403,7 @@
 "{} wurde nicht installiert" = "{} n’a pas été installé";
 "{} {} oder neuer wird gebraucht" = "{} {} ou ultérieur est requis";
 "{} · {}" = "{} · {}";
+"{} · {} · PID {}" = "{} · {} · PID {}";
 "{}, 1 Datei" = "{}, 1 fichier";
 "{}, 1 Eintrag" = "{}, 1 entrée";
 "{}, geänderte Dateien: {}" = "{}, fichiers modifiés : {}";

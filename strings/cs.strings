@@ -372,3 +372,16 @@
 "Verbindung zu {} getrennt" = "Připojení k {} bylo přerušeno";
 "Wo arbeitet der neue Arbeitsbereich?" = "Kde nový pracovní prostor pracuje?";
 "Vorschlagsliste beim Tippen öffnen" = "Otevírat seznam návrhů při psaní";
+"Sprachserver" = "Jazykový server";
+"Dev-Server" = "Vývojový server";
+"Debug-Adapter" = "Ladicí adaptér";
+"Test" = "Test";
+"Werkzeug" = "Nástroj";
+"Agent-Befehl" = "Příkaz agenta";
+"Prüfstation" = "Brána";
+"{} · {} · PID {}" = "{} · {} · PID {}";
+"{} min" = "{} min";
+"{} h" = "{} h";
+"Schnell öffnen" = "Rychle otevřít";
+"Schnell öffnen …" = "Rychle otevřít…";
+"Datei suchen" = "Najít soubor";

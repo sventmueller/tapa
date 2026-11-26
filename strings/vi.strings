@@ -372,3 +372,16 @@
 "Verbindung zu {} getrennt" = "Mất kết nối tới {}";
 "Wo arbeitet der neue Arbeitsbereich?" = "Không gian làm việc mới làm việc ở đâu?";
 "Vorschlagsliste beim Tippen öffnen" = "Mở danh sách gợi ý khi nhập";
+"Sprachserver" = "Máy chủ ngôn ngữ";
+"Dev-Server" = "Máy chủ dev";
+"Debug-Adapter" = "Bộ chuyển đổi gỡ lỗi";
+"Test" = "Kiểm thử";
+"Werkzeug" = "Công cụ";
+"Agent-Befehl" = "Lệnh của tác nhân";
+"Prüfstation" = "Cổng kiểm tra";
+"{} · {} · PID {}" = "{} · {} · PID {}";
+"{} min" = "{} phút";
+"{} h" = "{} giờ";
+"Schnell öffnen" = "Mở nhanh";
+"Schnell öffnen …" = "Mở nhanh…";
+"Datei suchen" = "Tìm tệp";

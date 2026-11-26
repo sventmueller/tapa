@@ -36,6 +36,7 @@
 "Adresse nach der Anmeldung" = "Адрес после входа";
 "Adresse nicht unterstützt" = "Адрес не поддерживается";
 "Agent" = "Агент";
+"Agent-Befehl" = "Команда агента";
 "Agenten" = "Агенты";
 "Agenten in „{}“ laden dann die Hooks, MCP-Server und Einstellungen des Projekts." = "Тогда агенты в «{}» будут загружать хуки, серверы MCP и настройки проекта.";
 "Agenten werden gesucht …" = "Поиск агентов…";
@@ -262,12 +263,14 @@
 "Das lässt sich hier nicht umschalten." = "Это нельзя переключить здесь.";
 "Das nächste gedrückte Kürzel übernehmen; Escape bricht ab" = "Записать следующее нажатое сочетание клавиш; Escape — отмена";
 "Datei außerhalb des Projekts" = "Файл вне проекта";
+"Datei suchen" = "Найти файл";
 "Datei öffnen" = "Открыть файл";
 "Dateien" = "Файлы";
 "Dateien ein-/ausblenden" = "Показать/скрыть файлы";
 "Dateien oder Bilder anhängen" = "Прикрепить файлы или изображения";
 "Dateien: {}" = "Файлы: {}";
 "Dateiliste:" = "Список файлов:";
+"Debug-Adapter" = "Адаптер отладки";
 "Deine Nachricht: {}" = "Ваше сообщение: {}";
 "Denkaufwand:" = "Усилие:";
 "Denken" = "Рассуждения";
@@ -314,6 +317,7 @@
 "Der Stash sieht nur, was auf der Platte steht. Sichere zuerst, damit deine Änderungen dabei sind." = "Stash видит только то, что сохранено на диске. Сначала сохраните документы, чтобы Ваши изменения были учтены.";
 "Der Vorgang hat zu lange gedauert." = "Операция заняла слишком много времени.";
 "Details …" = "Подробнее…";
+"Dev-Server" = "Dev-сервер";
 "Diagramm" = "Диаграмма";
 "Die Adresse „{}“ ließ sich nicht auflösen." = "Не удалось разрешить адрес «{}».";
 "Die Anmeldung beim Remote ist fehlgeschlagen." = "Не удалось выполнить вход в удаленный репозиторий.";
@@ -895,6 +899,8 @@
 "Projektplan" = "План проекта";
 "Prompts und Lesezeichen" = "Приглашения и закладки";
 "Protokoll" = "Протокол";
+"Prozesse" = "Процессы";
+"Prüfstation" = "Шлюз";
 "Pull" = "Pull";
 "Pull läuft …" = "Выполняется pull…";
 "Push" = "Push";
@@ -947,6 +953,8 @@
 "Schlüssel für {} entfernen" = "Удалить ключ {}";
 "Schlüssel für {} ändern" = "Изменить ключ {}";
 "Schlüssel übernehmen …" = "Использовать ключ…";
+"Schnell öffnen" = "Быстрое открытие";
+"Schnell öffnen …" = "Быстро открыть…";
 "Schnelles Terminal ausblenden" = "Скрыть быстрый терминал";
 "Schnelles Terminal ein-/ausblenden" = "Показать/скрыть быстрый терминал";
 "Schnelles Terminal einblenden" = "Показать быстрый терминал";
@@ -1002,6 +1010,7 @@
 "Speicherdateien" = "Файлы памяти";
 "Sprache" = "Язык";
 "Sprache:" = "Язык:";
+"Sprachserver" = "Языковой сервер";
 "Stand im letzten Commit" = "Состояние в последнем коммите";
 "Standard" = "По умолчанию";
 "Standardmodell" = "Модель по умолчанию";
@@ -1052,6 +1061,7 @@
 "Terminal leeren" = "Очистить терминал";
 "Terminal: {}" = "Терминал: {}";
 "Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "Терминалы и агенты работают на компьютере, к которому так подключается ssh; список файлов и Git там недоступны.";
+"Test" = "Тест";
 "Text mit Steuerzeichen einsetzen?" = "Вставить текст с управляющими символами?";
 "Text mit Zeilenumbruch einsetzen?" = "Вставить текст с переводом строки?";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "Вставить текст с переводами строки ({})?";
@@ -1184,6 +1194,7 @@
 "Weitersuchen" = "Найти далее";
 "Weniger zeigen" = "Показать меньше";
 "Wer angemeldet ist, und abmelden" = "Кто вошел, и выход";
+"Werkzeug" = "Инструмент";
 "Werkzeug {}: {}, {}" = "Инструмент {}: {}, {}";
 "Werkzeugaufrufe" = "Вызовы инструментов";
 "Werkzeugergebnisse" = "Результаты инструментов";
@@ -1349,6 +1360,7 @@
 "{} erlaubt" = "{}: разрешено";
 "{} frühere Einträge ausgeblendet" = "Скрыто предыдущих записей: {}";
 "{} gehört jetzt zu „{}“ statt zu „{}“." = "{} теперь относится к «{}», а не к «{}».";
+"{} h" = "{} ч";
 "{} h {} min" = "{} ч {} мин";
 "{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "У {} нет доступа к микрофону. Разрешите доступ: Системные настройки > Конфиденциальность и безопасность > Микрофон.";
 "{} installieren?" = "Установить {}?";
@@ -1361,6 +1373,7 @@
 "{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "{} однократно прочитает его, и macOS запросит подтверждение. Выберите там «Разрешить», а не «Всегда разрешать»: тогда запись Lowspeak останется без изменений. {} сохранит ключ в отдельной записи.";
 "{} meldet keine Hintergrundprozesse" = "{} не сообщает о фоновых процессах";
 "{} meldet keine Subagenten" = "{} не сообщает о субагентах";
+"{} min" = "{} мин";
 "{} min {} s" = "{} мин {} с";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet." = "{} требует входа, прежде чем открыть сеанс.";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet. Bei der Anmeldung im Terminal liegt der Befehl in der Zwischenablage." = "{} требует входа, прежде чем открыть сеанс. Для входа через терминал команда скопирована в буфер обмена.";
@@ -1390,6 +1403,7 @@
 "{} wurde nicht installiert" = "Не удалось установить {}";
 "{} {} oder neuer wird gebraucht" = "Требуется {} {} или новее";
 "{} · {}" = "{} · {}";
+"{} · {} · PID {}" = "{} · {} · PID {}";
 "{}, 1 Datei" = "{}, 1 файл";
 "{}, 1 Eintrag" = "{}, 1 запись";
 "{}, geänderte Dateien: {}" = "{}, изменённые файлы: {}";

@@ -36,6 +36,7 @@
 "Adresse nach der Anmeldung" = "Adres na het inloggen";
 "Adresse nicht unterstützt" = "Adres niet ondersteund";
 "Agent" = "Agent";
+"Agent-Befehl" = "Agentcommando";
 "Agenten" = "Agents";
 "Agenten in „{}“ laden dann die Hooks, MCP-Server und Einstellungen des Projekts." = "Agents in ‘{}’ laden dan de hooks, MCP-servers en instellingen van het project.";
 "Agenten werden gesucht …" = "Agents zoeken…";
@@ -262,12 +263,14 @@
 "Das lässt sich hier nicht umschalten." = "Dit kan hier niet worden in- of uitgeschakeld.";
 "Das nächste gedrückte Kürzel übernehmen; Escape bricht ab" = "Neem de volgende ingedrukte toetscombinatie over; Escape annuleert";
 "Datei außerhalb des Projekts" = "Bestand buiten het project";
+"Datei suchen" = "Zoek bestand";
 "Datei öffnen" = "Open bestand";
 "Dateien" = "Bestanden";
 "Dateien ein-/ausblenden" = "Toon/verberg bestanden";
 "Dateien oder Bilder anhängen" = "Voeg bestanden of afbeeldingen toe";
 "Dateien: {}" = "Bestanden: {}";
 "Dateiliste:" = "Bestandslijst:";
+"Debug-Adapter" = "Debugadapter";
 "Deine Nachricht: {}" = "Je bericht: {}";
 "Denkaufwand:" = "Inspanning:";
 "Denken" = "Denken";
@@ -314,6 +317,7 @@
 "Der Stash sieht nur, was auf der Platte steht. Sichere zuerst, damit deine Änderungen dabei sind." = "De stash ziet alleen wat op schijf staat. Bewaar eerst, zodat je wijzigingen worden meegenomen.";
 "Der Vorgang hat zu lange gedauert." = "De bewerking duurde te lang.";
 "Details …" = "Details…";
+"Dev-Server" = "Ontwikkelserver";
 "Diagramm" = "Diagram";
 "Die Adresse „{}“ ließ sich nicht auflösen." = "Het adres '{}' kon niet worden gevonden.";
 "Die Anmeldung beim Remote ist fehlgeschlagen." = "Inloggen bij de remote is mislukt.";
@@ -895,6 +899,8 @@
 "Projektplan" = "Projectplan";
 "Prompts und Lesezeichen" = "Prompts en bladwijzers";
 "Protokoll" = "Protocol";
+"Prozesse" = "Processen";
+"Prüfstation" = "Gate";
 "Pull" = "Pull";
 "Pull läuft …" = "Pullen…";
 "Push" = "Push";
@@ -947,6 +953,8 @@
 "Schlüssel für {} entfernen" = "Verwijder sleutel voor {}";
 "Schlüssel für {} ändern" = "Wijzig sleutel voor {}";
 "Schlüssel übernehmen …" = "Gebruik sleutel…";
+"Schnell öffnen" = "Open snel";
+"Schnell öffnen …" = "Open snel…";
 "Schnelles Terminal ausblenden" = "Verberg snelle terminal";
 "Schnelles Terminal ein-/ausblenden" = "Toon/verberg snelle terminal";
 "Schnelles Terminal einblenden" = "Toon snelle terminal";
@@ -1002,6 +1010,7 @@
 "Speicherdateien" = "Geheugenbestanden";
 "Sprache" = "Taal";
 "Sprache:" = "Taal:";
+"Sprachserver" = "Taalserver";
 "Stand im letzten Commit" = "Zoals in de laatste commit";
 "Standard" = "Standaard";
 "Standardmodell" = "Standaardmodel";
@@ -1052,6 +1061,7 @@
 "Terminal leeren" = "Wis terminal";
 "Terminal: {}" = "Terminal: {}";
 "Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "Terminals en agenten draaien op de computer die ssh zo bereikt; de bestandenlijst en Git zijn daar niet beschikbaar.";
+"Test" = "Test";
 "Text mit Steuerzeichen einsetzen?" = "Tekst met stuurtekens plakken?";
 "Text mit Zeilenumbruch einsetzen?" = "Tekst met een regeleinde plakken?";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "Tekst met {} regeleinden plakken?";
@@ -1184,6 +1194,7 @@
 "Weitersuchen" = "Zoek volgende";
 "Weniger zeigen" = "Toon minder";
 "Wer angemeldet ist, und abmelden" = "Wie is ingelogd, en uitloggen";
+"Werkzeug" = "Tool";
 "Werkzeug {}: {}, {}" = "Tool {}: {}, {}";
 "Werkzeugaufrufe" = "Toolaanroepen";
 "Werkzeugergebnisse" = "Toolresultaten";
@@ -1349,6 +1360,7 @@
 "{} erlaubt" = "{} toegestaan";
 "{} frühere Einträge ausgeblendet" = "{} eerdere items verborgen";
 "{} gehört jetzt zu „{}“ statt zu „{}“." = "{} hoort nu bij “{}” in plaats van bij “{}”.";
+"{} h" = "{} u";
 "{} h {} min" = "{} u {} min";
 "{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "{} heeft geen toegang tot de microfoon. Sta het toe in Systeeminstellingen > Privacy en beveiliging > Microfoon.";
 "{} installieren?" = "{} installeren?";
@@ -1361,6 +1373,7 @@
 "{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "{} leest de sleutel daarvoor één keer, en macOS vraagt eerst om toestemming. Kies daar 'Sta toe', niet 'Sta altijd toe': zo blijft het onderdeel van Lowspeak zoals het is. {} bewaart de sleutel in een eigen onderdeel.";
 "{} meldet keine Hintergrundprozesse" = "{} meldt geen achtergrondprocessen";
 "{} meldet keine Subagenten" = "{} meldt geen subagents";
+"{} min" = "{} min";
 "{} min {} s" = "{} min {} s";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet." = "{} wil dat je inlogt voordat het een sessie opent.";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet. Bei der Anmeldung im Terminal liegt der Befehl in der Zwischenablage." = "{} wil dat je inlogt voordat het een sessie opent. Voor inloggen in een terminal staat het commando op het klembord.";
@@ -1390,6 +1403,7 @@
 "{} wurde nicht installiert" = "{} is niet geïnstalleerd";
 "{} {} oder neuer wird gebraucht" = "{} {} of nieuwer is nodig";
 "{} · {}" = "{} · {}";
+"{} · {} · PID {}" = "{} · {} · PID {}";
 "{}, 1 Datei" = "{}, 1 bestand";
 "{}, 1 Eintrag" = "{}, 1 item";
 "{}, geänderte Dateien: {}" = "{}, gewijzigde bestanden: {}";

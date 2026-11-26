@@ -2,8 +2,8 @@
 //! whose menu offers the folders used last and a folder dialog. Over the content, from the trailing edge: one group of
 //! a button per kind of content a tab holds (terminals, agents with their menu, browsers); left of it a group of what
 //! acts on a terminal tab's panes, greyed in other tabs: the two splits as in Dango and the input field's switch,
-//! which acts on the pane in front (E7, F209) and shows in the accent colour while the field is on; left of that the branch
-//! pull-down of the Git panel with "Neuer Worktree …".
+//! which acts on the pane in front (E7, F209) and shows in the accent colour while the field is on; left of that the
+//! tab search, activity menu and branch pull-down.
 
 use std::cell::RefCell;
 use std::path::PathBuf;
@@ -26,8 +26,12 @@ use term_ui_panes::Side;
 
 use crate::state::try_app;
 
+mod activity;
+
 const NEW_WORKSPACE: &str = "term.new-workspace";
 const BRANCH: &str = term_ui_git::TOOLBAR_ID;
+const TAB_SEARCH: &str = "term.tab-search";
+const ACTIVITY: &str = "term.activity";
 const NEW_TERMINAL: &str = "term.new-terminal";
 const NEW_AGENT: &str = "term.new-agent";
 const NEW_BROWSER: &str = "term.new-browser";
@@ -90,9 +94,34 @@ define_class!(
         fn menu_needs_update(&self, menu: &NSMenu) {
             guarded((), || self.fill(menu));
         }
+
     }
 
     impl Toolbar {
+        #[unsafe(method(termSearchTabs:))]
+        fn search_tabs(&self, _sender: Option<&AnyObject>) {
+            guarded((), || {
+                self.on_window(|window| {
+                    if let Some(frame) = window.frame_of(self.ivars().tab) {
+                        crate::switcher::toggle_in(&frame.ns);
+                    }
+                });
+            });
+        }
+
+        #[unsafe(method(termShowActivity:))]
+        fn show_activity(&self, _sender: Option<&AnyObject>) {
+            guarded((), || {
+                self.on_window(|window| {
+                    if let Some(toolbar) = window.frame_of(self.ivars().tab).and_then(|frame| frame.ns.toolbar())
+                        && let Some(item) = toolbar.items().iter().find(|item| *item.itemIdentifier() == *ns(ACTIVITY))
+                    {
+                        activity::toggle(&item);
+                    }
+                });
+            });
+        }
+
         #[unsafe(method(termNewWorkspace:))]
         fn new_workspace(&self, _sender: Option<&AnyObject>) {
             guarded((), || self.on_window(|window| window.new_local_workspace()));
@@ -233,6 +262,8 @@ impl Toolbar {
             NEW_WORKSPACE,
             super::title::ID,
             BRANCH,
+            TAB_SEARCH,
+            ACTIVITY,
             NEW_TERMINAL,
             NEW_AGENT,
             NEW_BROWSER,
@@ -247,6 +278,8 @@ impl Toolbar {
             new_workspace,
             title,
             branch,
+            tab_search,
+            activity,
             terminal,
             agent,
             browser,
@@ -266,6 +299,9 @@ impl Toolbar {
             title,
             flexible,
             branch,
+            space,
+            tab_search,
+            activity,
             space,
             right,
             down,
@@ -312,6 +348,8 @@ impl Toolbar {
                     workspace,
                 )));
             }
+            TAB_SEARCH => button(t("Schnell öffnen …"), "magnifyingglass", Some(sel!(termSearchTabs:))),
+            ACTIVITY => button(t("Aktivität"), "list.bullet.rectangle", Some(sel!(termShowActivity:))),
             NEW_TERMINAL => button(t("Neue Terminal-Sitzung"), "apple.terminal", Some(sel!(termNewTab:))),
             NEW_AGENT => {
                 let (item, menu) = crate::agent::AgentMenu::item(mtm, identifier, self.ivars().window);

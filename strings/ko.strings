@@ -372,3 +372,16 @@
 "Verbindung zu {} getrennt" = "{}와의 연결이 끊김";
 "Wo arbeitet der neue Arbeitsbereich?" = "새로운 작업 공간은 어디에서 작업합니까?";
 "Vorschlagsliste beim Tippen öffnen" = "입력하는 동안 제안 목록 열기";
+"Sprachserver" = "언어 서버";
+"Dev-Server" = "개발 서버";
+"Debug-Adapter" = "디버그 어댑터";
+"Test" = "테스트";
+"Werkzeug" = "도구";
+"Agent-Befehl" = "에이전트 명령";
+"Prüfstation" = "게이트";
+"{} · {} · PID {}" = "{} · {} · PID {}";
+"{} min" = "{}분";
+"{} h" = "{}시간";
+"Schnell öffnen" = "빠르게 열기";
+"Schnell öffnen …" = "빠르게 열기…";
+"Datei suchen" = "파일 찾기";

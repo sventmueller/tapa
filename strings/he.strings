@@ -372,3 +372,16 @@
 "Verbindung zu {} getrennt" = "החיבור אל {} נותק";
 "Wo arbeitet der neue Arbeitsbereich?" = "היכן פועלת סביבת העבודה החדשה?";
 "Vorschlagsliste beim Tippen öffnen" = "פתיחת רשימת ההצעות בזמן ההקלדה";
+"Sprachserver" = "שרת שפה";
+"Dev-Server" = "שרת פיתוח";
+"Debug-Adapter" = "מתאם ניפוי באגים";
+"Test" = "בדיקה";
+"Werkzeug" = "כלי";
+"Agent-Befehl" = "פקודת סוכן";
+"Prüfstation" = "שער";
+"{} · {} · PID {}" = "{} · {} · PID {}";
+"{} min" = "{} דק׳";
+"{} h" = "{} שע׳";
+"Schnell öffnen" = "פתיחה מהירה";
+"Schnell öffnen …" = "פתיחה מהירה…";
+"Datei suchen" = "חיפוש קובץ";

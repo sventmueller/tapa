@@ -36,6 +36,7 @@
 "Adresse nach der Anmeldung" = "Dirección tras iniciar sesión";
 "Adresse nicht unterstützt" = "Dirección no compatible";
 "Agent" = "Agente";
+"Agent-Befehl" = "Comando del agente";
 "Agenten" = "Agentes";
 "Agenten in „{}“ laden dann die Hooks, MCP-Server und Einstellungen des Projekts." = "Entonces los agentes en «{}» cargarán los hooks, los servidores MCP y los ajustes del proyecto.";
 "Agenten werden gesucht …" = "Buscando agentes…";
@@ -262,12 +263,14 @@
 "Das lässt sich hier nicht umschalten." = "Esto no se puede cambiar aquí.";
 "Das nächste gedrückte Kürzel übernehmen; Escape bricht ab" = "Usar el siguiente atajo pulsado; Escape cancela";
 "Datei außerhalb des Projekts" = "Archivo fuera del proyecto";
+"Datei suchen" = "Buscar archivo";
 "Datei öffnen" = "Abrir archivo";
 "Dateien" = "Archivos";
 "Dateien ein-/ausblenden" = "Mostrar/ocultar archivos";
 "Dateien oder Bilder anhängen" = "Adjuntar archivos o imágenes";
 "Dateien: {}" = "Archivos: {}";
 "Dateiliste:" = "Lista de archivos:";
+"Debug-Adapter" = "Adaptador de depuración";
 "Deine Nachricht: {}" = "Tu mensaje: {}";
 "Denkaufwand:" = "Esfuerzo:";
 "Denken" = "Pensamiento";
@@ -314,6 +317,7 @@
 "Der Stash sieht nur, was auf der Platte steht. Sichere zuerst, damit deine Änderungen dabei sind." = "El stash solo ve lo que está en el disco. Guarda primero para que se incluyan tus cambios.";
 "Der Vorgang hat zu lange gedauert." = "La operación ha tardado demasiado.";
 "Details …" = "Detalles…";
+"Dev-Server" = "Servidor de desarrollo";
 "Diagramm" = "Diagrama";
 "Die Adresse „{}“ ließ sich nicht auflösen." = "No se ha podido resolver la dirección «{}».";
 "Die Anmeldung beim Remote ist fehlgeschlagen." = "No se ha podido iniciar sesión en el remoto.";
@@ -895,6 +899,8 @@
 "Projektplan" = "Plan del proyecto";
 "Prompts und Lesezeichen" = "Prompts y marcadores";
 "Protokoll" = "Protocolo";
+"Prozesse" = "Procesos";
+"Prüfstation" = "Control";
 "Pull" = "Pull";
 "Pull läuft …" = "Haciendo pull…";
 "Push" = "Push";
@@ -947,6 +953,8 @@
 "Schlüssel für {} entfernen" = "Eliminar clave de {}";
 "Schlüssel für {} ändern" = "Cambiar clave de {}";
 "Schlüssel übernehmen …" = "Usar clave…";
+"Schnell öffnen" = "Abrir rápidamente";
+"Schnell öffnen …" = "Apertura rápida…";
 "Schnelles Terminal ausblenden" = "Ocultar terminal rápido";
 "Schnelles Terminal ein-/ausblenden" = "Mostrar/ocultar terminal rápido";
 "Schnelles Terminal einblenden" = "Mostrar terminal rápido";
@@ -1002,6 +1010,7 @@
 "Speicherdateien" = "Archivos de memoria";
 "Sprache" = "Lenguaje";
 "Sprache:" = "Idioma:";
+"Sprachserver" = "Servidor de lenguaje";
 "Stand im letzten Commit" = "Estado en el último commit";
 "Standard" = "Por omisión";
 "Standardmodell" = "Modelo por omisión";
@@ -1052,6 +1061,7 @@
 "Terminal leeren" = "Borrar terminal";
 "Terminal: {}" = "Terminal: {}";
 "Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "Los terminales y los agentes se ejecutan en el ordenador al que ssh llega así; allí no hay lista de archivos ni Git.";
+"Test" = "Prueba";
 "Text mit Steuerzeichen einsetzen?" = "¿Pegar texto con caracteres de control?";
 "Text mit Zeilenumbruch einsetzen?" = "¿Pegar texto con un salto de línea?";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "¿Pegar texto con {} saltos de línea?";
@@ -1184,6 +1194,7 @@
 "Weitersuchen" = "Buscar siguiente";
 "Weniger zeigen" = "Mostrar menos";
 "Wer angemeldet ist, und abmelden" = "Quién ha iniciado sesión, y cerrar sesión";
+"Werkzeug" = "Herramienta";
 "Werkzeug {}: {}, {}" = "Herramienta {}: {}, {}";
 "Werkzeugaufrufe" = "Llamadas a herramientas";
 "Werkzeugergebnisse" = "Resultados de herramientas";
@@ -1349,6 +1360,7 @@
 "{} erlaubt" = "{} permitido";
 "{} frühere Einträge ausgeblendet" = "{} entradas anteriores ocultas";
 "{} gehört jetzt zu „{}“ statt zu „{}“." = "{} pertenece ahora a «{}» en lugar de a «{}».";
+"{} h" = "{} h";
 "{} h {} min" = "{} h {} min";
 "{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "{} no tiene acceso al micrófono. Permítelo en Ajustes del Sistema > Privacidad y seguridad > Micrófono.";
 "{} installieren?" = "¿Instalar {}?";
@@ -1361,6 +1373,7 @@
 "{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "Para ello, {} la lee una vez y macOS te pedirá confirmación. Elige «Permitir», no «Permitir siempre»: así el ítem de Lowspeak se queda como está. {} guarda la clave en un ítem propio.";
 "{} meldet keine Hintergrundprozesse" = "{} no informa de procesos en segundo plano";
 "{} meldet keine Subagenten" = "{} no informa de subagentes";
+"{} min" = "{} min";
 "{} min {} s" = "{} min {} s";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet." = "{} necesita que inicies sesión antes de abrir una sesión.";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet. Bei der Anmeldung im Terminal liegt der Befehl in der Zwischenablage." = "{} necesita que inicies sesión antes de abrir una sesión. Para iniciar sesión en un terminal, el comando está en el portapapeles.";
@@ -1390,6 +1403,7 @@
 "{} wurde nicht installiert" = "{} no se ha instalado";
 "{} {} oder neuer wird gebraucht" = "Se necesita {} {} o posterior";
 "{} · {}" = "{} · {}";
+"{} · {} · PID {}" = "{} · {} · PID {}";
 "{}, 1 Datei" = "{}, 1 archivo";
 "{}, 1 Eintrag" = "{}, 1 entrada";
 "{}, geänderte Dateien: {}" = "{}, archivos modificados: {}";

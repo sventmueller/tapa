@@ -36,6 +36,7 @@
 "Adresse nach der Anmeldung" = "ที่อยู่หลังจากลงชื่อเข้า";
 "Adresse nicht unterstützt" = "ไม่รองรับที่อยู่นี้";
 "Agent" = "เอเจนต์";
+"Agent-Befehl" = "คำสั่งของเอเจนต์";
 "Agenten" = "เอเจนต์";
 "Agenten in „{}“ laden dann die Hooks, MCP-Server und Einstellungen des Projekts." = "จากนั้นเอเจนต์ใน “{}” จะโหลดฮุก เซิร์ฟเวอร์ MCP และการตั้งค่าของโปรเจกต์";
 "Agenten werden gesucht …" = "กำลังค้นหาเอเจนต์…";
@@ -262,12 +263,14 @@
 "Das lässt sich hier nicht umschalten." = "สลับสิ่งนี้ที่นี่ไม่ได้";
 "Das nächste gedrückte Kürzel übernehmen; Escape bricht ab" = "ใช้ปุ่มลัดถัดไปที่กด กด Escape เพื่อยกเลิก";
 "Datei außerhalb des Projekts" = "ไฟล์อยู่นอกโปรเจ็กต์";
+"Datei suchen" = "ค้นหาไฟล์";
 "Datei öffnen" = "เปิดไฟล์";
 "Dateien" = "ไฟล์";
 "Dateien ein-/ausblenden" = "แสดง/ซ่อนไฟล์";
 "Dateien oder Bilder anhängen" = "แนบไฟล์หรือภาพ";
 "Dateien: {}" = "ไฟล์: {}";
 "Dateiliste:" = "รายการไฟล์:";
+"Debug-Adapter" = "อะแดปเตอร์ดีบัก";
 "Deine Nachricht: {}" = "ข้อความของคุณ: {}";
 "Denkaufwand:" = "ระดับความพยายาม:";
 "Denken" = "การคิด";
@@ -314,6 +317,7 @@
 "Der Stash sieht nur, was auf der Platte steht. Sichere zuerst, damit deine Änderungen dabei sind." = "Stash เห็นเฉพาะสิ่งที่อยู่บนดิสก์ บันทึกก่อนเพื่อให้รวมการเปลี่ยนแปลงของคุณด้วย";
 "Der Vorgang hat zu lange gedauert." = "การดำเนินการใช้เวลานานเกินไป";
 "Details …" = "รายละเอียด…";
+"Dev-Server" = "เซิร์ฟเวอร์ Dev";
 "Diagramm" = "แผนภาพ";
 "Die Adresse „{}“ ließ sich nicht auflösen." = "ไม่สามารถค้นหาที่อยู่ “{}” ได้";
 "Die Anmeldung beim Remote ist fehlgeschlagen." = "ลงชื่อเข้า Remote ไม่สำเร็จ";
@@ -895,6 +899,8 @@
 "Projektplan" = "แผนโครงการ";
 "Prompts und Lesezeichen" = "พรอมต์และบุ๊กมาร์ก";
 "Protokoll" = "โปรโตคอล";
+"Prozesse" = "กระบวนการ";
+"Prüfstation" = "ด่านตรวจ";
 "Pull" = "Pull";
 "Pull läuft …" = "กำลัง Pull…";
 "Push" = "Push";
@@ -947,6 +953,8 @@
 "Schlüssel für {} entfernen" = "เอาคีย์ {} ออก";
 "Schlüssel für {} ändern" = "เปลี่ยนคีย์ {}";
 "Schlüssel übernehmen …" = "ใช้คีย์นี้…";
+"Schnell öffnen" = "เปิดอย่างรวดเร็ว";
+"Schnell öffnen …" = "เปิดอย่างรวดเร็ว…";
 "Schnelles Terminal ausblenden" = "ซ่อนเทอร์มินัลด่วน";
 "Schnelles Terminal ein-/ausblenden" = "แสดง/ซ่อนเทอร์มินัลด่วน";
 "Schnelles Terminal einblenden" = "แสดงเทอร์มินัลด่วน";
@@ -1002,6 +1010,7 @@
 "Speicherdateien" = "ไฟล์หน่วยความจำ";
 "Sprache" = "ภาษา";
 "Sprache:" = "ภาษา:";
+"Sprachserver" = "เซิร์ฟเวอร์ภาษา";
 "Stand im letzten Commit" = "สถานะใน Commit ล่าสุด";
 "Standard" = "ค่าเริ่มต้น";
 "Standardmodell" = "โมเดลเริ่มต้น";
@@ -1052,6 +1061,7 @@
 "Terminal leeren" = "ล้างเทอร์มินัล";
 "Terminal: {}" = "เทอร์มินัล: {}";
 "Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "เทอร์มินัลและเอเจนต์ทำงานบนคอมพิวเตอร์ที่ ssh เข้าถึงด้วยข้อมูลนี้ ที่นั่นไม่มีรายการไฟล์และ Git";
+"Test" = "การทดสอบ";
 "Text mit Steuerzeichen einsetzen?" = "วางข้อความที่มีอักขระควบคุมหรือไม่";
 "Text mit Zeilenumbruch einsetzen?" = "วางข้อความที่มีการขึ้นบรรทัดใหม่หรือไม่";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "วางข้อความที่มีการขึ้นบรรทัดใหม่ {} ครั้งหรือไม่";
@@ -1184,6 +1194,7 @@
 "Weitersuchen" = "ค้นหาถัดไป";
 "Weniger zeigen" = "แสดงน้อยลง";
 "Wer angemeldet ist, und abmelden" = "ใครลงชื่อเข้าอยู่ และการลงชื่อออก";
+"Werkzeug" = "เครื่องมือ";
 "Werkzeug {}: {}, {}" = "เครื่องมือ {}: {}, {}";
 "Werkzeugaufrufe" = "การเรียกใช้เครื่องมือ";
 "Werkzeugergebnisse" = "ผลลัพธ์ของเครื่องมือ";
@@ -1349,6 +1360,7 @@
 "{} erlaubt" = "อนุญาต {} แล้ว";
 "{} frühere Einträge ausgeblendet" = "ซ่อนรายการก่อนหน้า {} รายการ";
 "{} gehört jetzt zu „{}“ statt zu „{}“." = "ตอนนี้ {} เป็นของ “{}” แทน “{}”";
+"{} h" = "{} ชม.";
 "{} h {} min" = "{} ชม. {} นาที";
 "{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "{} ไม่มีสิทธิ์เข้าถึงไมโครโฟน ให้อนุญาตในการตั้งค่าระบบ > ความเป็นส่วนตัวและความปลอดภัย > ไมโครโฟน";
 "{} installieren?" = "ติดตั้ง {} หรือไม่";
@@ -1361,6 +1373,7 @@
 "{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "{} จะอ่านคีย์นี้หนึ่งครั้ง และ macOS จะถามก่อน ให้เลือก “อนุญาต” ไม่ใช่ “อนุญาตเสมอ”: รายการของ Lowspeak จะยังคงเหมือนเดิม {} จะเก็บคีย์ไว้ในรายการของตัวเอง";
 "{} meldet keine Hintergrundprozesse" = "{} ไม่รายงานกระบวนการเบื้องหลัง";
 "{} meldet keine Subagenten" = "{} ไม่รายงานเอเจนต์ย่อย";
+"{} min" = "{} นาที";
 "{} min {} s" = "{} นาที {} วินาที";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet." = "{} ต้องการให้คุณลงชื่อเข้าก่อนเปิดเซสชัน";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet. Bei der Anmeldung im Terminal liegt der Befehl in der Zwischenablage." = "{} ต้องการให้คุณลงชื่อเข้าก่อนเปิดเซสชัน สำหรับการลงชื่อเข้าในเทอร์มินัล คำสั่งอยู่ในคลิปบอร์ดแล้ว";
@@ -1390,6 +1403,7 @@
 "{} wurde nicht installiert" = "ติดตั้ง {} ไม่สำเร็จ";
 "{} {} oder neuer wird gebraucht" = "ต้องใช้ {} {} ขึ้นไป";
 "{} · {}" = "{} · {}";
+"{} · {} · PID {}" = "{} · {} · PID {}";
 "{}, 1 Datei" = "{}, 1 ไฟล์";
 "{}, 1 Eintrag" = "{}, 1 รายการ";
 "{}, geänderte Dateien: {}" = "{}, ไฟล์ที่เปลี่ยน: {}";

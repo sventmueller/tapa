@@ -372,3 +372,16 @@
 "Verbindung zu {} getrennt" = "Yhteys kohteeseen {} katkesi";
 "Wo arbeitet der neue Arbeitsbereich?" = "Missä uusi työtila toimii?";
 "Vorschlagsliste beim Tippen öffnen" = "Avaa ehdotusluettelo kirjoitettaessa";
+"Sprachserver" = "Kielipalvelin";
+"Dev-Server" = "Kehityspalvelin";
+"Debug-Adapter" = "Virheenjäljityssovitin";
+"Test" = "Testi";
+"Werkzeug" = "Työkalu";
+"Agent-Befehl" = "Agentin komento";
+"Prüfstation" = "Laatuportti";
+"{} · {} · PID {}" = "{} · {} · PID {}";
+"{} min" = "{} min";
+"{} h" = "{} t";
+"Schnell öffnen" = "Avaa nopeasti";
+"Schnell öffnen …" = "Avaa nopeasti…";
+"Datei suchen" = "Etsi tiedosto";

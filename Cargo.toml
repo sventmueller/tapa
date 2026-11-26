@@ -151,6 +151,7 @@ term-process.workspace = true
 term-product.workspace = true
 term-render.workspace = true
 term-remote.workspace = true
+term-project.workspace = true
 term-seal.workspace = true
 term-session.workspace = true
 term-suggest.workspace = true

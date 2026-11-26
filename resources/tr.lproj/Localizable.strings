@@ -36,6 +36,7 @@
 "Adresse nach der Anmeldung" = "Girişten Sonraki Adres";
 "Adresse nicht unterstützt" = "Adres Desteklenmiyor";
 "Agent" = "Ajan";
+"Agent-Befehl" = "Ajan komutu";
 "Agenten" = "Ajanlar";
 "Agenten in „{}“ laden dann die Hooks, MCP-Server und Einstellungen des Projekts." = "Bu durumda “{}” içindeki ajanlar projenin kancalarını, MCP sunucularını ve ayarlarını yükler.";
 "Agenten werden gesucht …" = "Ajanlar aranıyor…";
@@ -262,12 +263,14 @@
 "Das lässt sich hier nicht umschalten." = "Bu, burada açılıp kapatılamaz.";
 "Das nächste gedrückte Kürzel übernehmen; Escape bricht ab" = "Basılan sonraki kısayolu al; Escape vazgeçer";
 "Datei außerhalb des Projekts" = "Proje Dışında Bir Dosya";
+"Datei suchen" = "Dosya Bul";
 "Datei öffnen" = "Dosyayı Aç";
 "Dateien" = "Dosyalar";
 "Dateien ein-/ausblenden" = "Dosyaları Göster/Gizle";
 "Dateien oder Bilder anhängen" = "Dosya veya Görüntü Ekle";
 "Dateien: {}" = "Dosyalar: {}";
 "Dateiliste:" = "Dosya listesi:";
+"Debug-Adapter" = "Hata ayıklama bağdaştırıcısı";
 "Deine Nachricht: {}" = "İletiniz: {}";
 "Denkaufwand:" = "Çaba:";
 "Denken" = "Düşünme";
@@ -314,6 +317,7 @@
 "Der Stash sieht nur, was auf der Platte steht. Sichere zuerst, damit deine Änderungen dabei sind." = "Stash yalnızca diskte olanı görür. Değişikliklerinizin dahil olması için önce kaydedin.";
 "Der Vorgang hat zu lange gedauert." = "İşlem çok uzun sürdü.";
 "Details …" = "Ayrıntılar…";
+"Dev-Server" = "Geliştirme Sunucusu";
 "Diagramm" = "Diyagram";
 "Die Adresse „{}“ ließ sich nicht auflösen." = "“{}” adresi çözümlenemedi.";
 "Die Anmeldung beim Remote ist fehlgeschlagen." = "Uzak depoda giriş başarısız oldu.";
@@ -895,6 +899,8 @@
 "Projektplan" = "Proje planı";
 "Prompts und Lesezeichen" = "İstemler ve Yer İşaretleri";
 "Protokoll" = "Protokol";
+"Prozesse" = "İşlemler";
+"Prüfstation" = "Geçit";
 "Pull" = "Pull";
 "Pull läuft …" = "Pull yapılıyor…";
 "Push" = "Push";
@@ -947,6 +953,8 @@
 "Schlüssel für {} entfernen" = "{} Anahtarını Kaldır";
 "Schlüssel für {} ändern" = "{} Anahtarını Değiştir";
 "Schlüssel übernehmen …" = "Anahtarı Kullan…";
+"Schnell öffnen" = "Hızlı Aç";
+"Schnell öffnen …" = "Hızlı Aç…";
 "Schnelles Terminal ausblenden" = "Hızlı Terminali Gizle";
 "Schnelles Terminal ein-/ausblenden" = "Hızlı Terminali Göster/Gizle";
 "Schnelles Terminal einblenden" = "Hızlı Terminali Göster";
@@ -1002,6 +1010,7 @@
 "Speicherdateien" = "Bellek dosyaları";
 "Sprache" = "Dil";
 "Sprache:" = "Dil:";
+"Sprachserver" = "Dil sunucusu";
 "Stand im letzten Commit" = "Son commit’teki hali";
 "Standard" = "Saptanmış";
 "Standardmodell" = "Saptanmış model";
@@ -1052,6 +1061,7 @@
 "Terminal leeren" = "Terminali Temizle";
 "Terminal: {}" = "Terminal: {}";
 "Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "Terminaller ve aracılar ssh’nin bu şekilde ulaştığı bilgisayarda çalışır; orada dosya listesi ve Git yoktur.";
+"Test" = "Test";
 "Text mit Steuerzeichen einsetzen?" = "Denetim karakterleri içeren metin yapıştırılsın mı?";
 "Text mit Zeilenumbruch einsetzen?" = "Satır sonu içeren metin yapıştırılsın mı?";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "{} satır sonu içeren metin yapıştırılsın mı?";
@@ -1184,6 +1194,7 @@
 "Weitersuchen" = "Sonrakini Bul";
 "Weniger zeigen" = "Daha Az Göster";
 "Wer angemeldet ist, und abmelden" = "Kimin giriş yaptığı ve çıkış";
+"Werkzeug" = "Araç";
 "Werkzeug {}: {}, {}" = "Araç {}: {}, {}";
 "Werkzeugaufrufe" = "Araç çağrıları";
 "Werkzeugergebnisse" = "Araç sonuçları";
@@ -1349,6 +1360,7 @@
 "{} erlaubt" = "İzin verildi: {}";
 "{} frühere Einträge ausgeblendet" = "{} önceki girdi gizlendi";
 "{} gehört jetzt zu „{}“ statt zu „{}“." = "{} artık “{}” eylemine ait; önceki: “{}”.";
+"{} h" = "{} sa";
 "{} h {} min" = "{} sa {} dk";
 "{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "{} mikrofona erişemiyor. Sistem Ayarları > Gizlilik ve Güvenlik > Mikrofon bölümünden izin verin.";
 "{} installieren?" = "{} yüklensin mi?";
@@ -1361,6 +1373,7 @@
 "{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "{} bunun için anahtarı bir kez okur ve macOS önce sorar. Orada “Her Zaman İzin Ver” yerine “İzin Ver” düğmesini seçin: Böylece Lowspeak’in öğesi olduğu gibi kalır. {} anahtarı kendi öğesinde saklar.";
 "{} meldet keine Hintergrundprozesse" = "{} arka plan işlemi bildirmiyor";
 "{} meldet keine Subagenten" = "{} alt ajan bildirmiyor";
+"{} min" = "{} dk";
 "{} min {} s" = "{} dk {} sn";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet." = "{}, bir oturum başlatmadan önce giriş yapmanızı istiyor.";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet. Bei der Anmeldung im Terminal liegt der Befehl in der Zwischenablage." = "{}, bir oturum başlatmadan önce giriş yapmanızı istiyor. Terminalde giriş yapmak için gereken komut panoda.";
@@ -1390,6 +1403,7 @@
 "{} wurde nicht installiert" = "{} yüklenmedi";
 "{} {} oder neuer wird gebraucht" = "{} {} veya daha yenisi gerekiyor";
 "{} · {}" = "{} · {}";
+"{} · {} · PID {}" = "{} · {} · PID {}";
 "{}, 1 Datei" = "{}, 1 dosya";
 "{}, 1 Eintrag" = "{}, 1 öge";
 "{}, geänderte Dateien: {}" = "{}, değişen dosyalar: {}";

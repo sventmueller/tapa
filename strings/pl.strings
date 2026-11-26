@@ -372,3 +372,16 @@
 "Verbindung zu {} getrennt" = "Utracono połączenie z {}";
 "Wo arbeitet der neue Arbeitsbereich?" = "Gdzie działa nowy obszar roboczy?";
 "Vorschlagsliste beim Tippen öffnen" = "Otwieraj listę podpowiedzi podczas pisania";
+"Sprachserver" = "Serwer języka";
+"Dev-Server" = "Serwer deweloperski";
+"Debug-Adapter" = "Adapter debugowania";
+"Test" = "Test";
+"Werkzeug" = "Narzędzie";
+"Agent-Befehl" = "Polecenie agenta";
+"Prüfstation" = "Bramka";
+"{} · {} · PID {}" = "{} · {} · PID {}";
+"{} min" = "{} min";
+"{} h" = "{} godz.";
+"Schnell öffnen" = "Szybko otwórz";
+"Schnell öffnen …" = "Szybko otwórz…";
+"Datei suchen" = "Znajdź plik";

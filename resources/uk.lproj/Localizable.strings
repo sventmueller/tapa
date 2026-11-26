@@ -36,6 +36,7 @@
 "Adresse nach der Anmeldung" = "Адреса після входу";
 "Adresse nicht unterstützt" = "Адреса не підтримується";
 "Agent" = "Агент";
+"Agent-Befehl" = "Команда агента";
 "Agenten" = "Агенти";
 "Agenten in „{}“ laden dann die Hooks, MCP-Server und Einstellungen des Projekts." = "Тоді агенти в «{}» завантажуватимуть хуки, сервери MCP і налаштування проєкту.";
 "Agenten werden gesucht …" = "Пошук агентів…";
@@ -262,12 +263,14 @@
 "Das lässt sich hier nicht umschalten." = "Це не можна перемкнути тут.";
 "Das nächste gedrückte Kürzel übernehmen; Escape bricht ab" = "Записати наступне натиснуте сполучення клавіш; Escape — скасувати";
 "Datei außerhalb des Projekts" = "Файл поза проєктом";
+"Datei suchen" = "Знайти файл";
 "Datei öffnen" = "Відкрити файл";
 "Dateien" = "Файли";
 "Dateien ein-/ausblenden" = "Показати/сховати файли";
 "Dateien oder Bilder anhängen" = "Прикріпити файли або зображення";
 "Dateien: {}" = "Файли: {}";
 "Dateiliste:" = "Список файлів:";
+"Debug-Adapter" = "Адаптер налагодження";
 "Deine Nachricht: {}" = "Ваше повідомлення: {}";
 "Denkaufwand:" = "Зусилля:";
 "Denken" = "Міркування";
@@ -314,6 +317,7 @@
 "Der Stash sieht nur, was auf der Platte steht. Sichere zuerst, damit deine Änderungen dabei sind." = "Stash бачить лише те, що є на диску. Спершу збережіть, щоб ваші зміни теж потрапили до нього.";
 "Der Vorgang hat zu lange gedauert." = "Операція тривала надто довго.";
 "Details …" = "Деталі…";
+"Dev-Server" = "Сервер розробки";
 "Diagramm" = "Діаграма";
 "Die Adresse „{}“ ließ sich nicht auflösen." = "Не вдалося визначити адресу «{}».";
 "Die Anmeldung beim Remote ist fehlgeschlagen." = "Не вдалося увійти у віддалений репозиторій.";
@@ -895,6 +899,8 @@
 "Projektplan" = "План проєкту";
 "Prompts und Lesezeichen" = "Запрошення й закладки";
 "Protokoll" = "Протокол";
+"Prozesse" = "Процеси";
+"Prüfstation" = "Шлюз";
 "Pull" = "Pull";
 "Pull läuft …" = "Виконується pull…";
 "Push" = "Push";
@@ -947,6 +953,8 @@
 "Schlüssel für {} entfernen" = "Вилучити ключ {}";
 "Schlüssel für {} ändern" = "Змінити ключ {}";
 "Schlüssel übernehmen …" = "Використати ключ…";
+"Schnell öffnen" = "Швидко відкрити";
+"Schnell öffnen …" = "Швидко відкрити…";
 "Schnelles Terminal ausblenden" = "Сховати швидкий термінал";
 "Schnelles Terminal ein-/ausblenden" = "Показати/сховати швидкий термінал";
 "Schnelles Terminal einblenden" = "Показати швидкий термінал";
@@ -1002,6 +1010,7 @@
 "Speicherdateien" = "Файли памʼяті";
 "Sprache" = "Мова";
 "Sprache:" = "Мова:";
+"Sprachserver" = "Мовний сервер";
 "Stand im letzten Commit" = "Стан в останньому коміті";
 "Standard" = "Типове";
 "Standardmodell" = "Типова модель";
@@ -1052,6 +1061,7 @@
 "Terminal leeren" = "Очистити термінал";
 "Terminal: {}" = "Термінал: {}";
 "Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "Термінали й агенти працюють на компʼютері, до якого так підʼєднується ssh; список файлів і Git там недоступні.";
+"Test" = "Тест";
 "Text mit Steuerzeichen einsetzen?" = "Вставити текст із керівними символами?";
 "Text mit Zeilenumbruch einsetzen?" = "Вставити текст із розривом рядка?";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "Вставити текст із розривами рядка ({})?";
@@ -1184,6 +1194,7 @@
 "Weitersuchen" = "Знайти наступне";
 "Weniger zeigen" = "Показати менше";
 "Wer angemeldet ist, und abmelden" = "Хто ввійшов, і вихід";
+"Werkzeug" = "Інструмент";
 "Werkzeug {}: {}, {}" = "Інструмент {}: {}, {}";
 "Werkzeugaufrufe" = "Виклики інструментів";
 "Werkzeugergebnisse" = "Результати інструментів";
@@ -1349,6 +1360,7 @@
 "{} erlaubt" = "{}: дозволено";
 "{} frühere Einträge ausgeblendet" = "Сховано попередніх записів: {}";
 "{} gehört jetzt zu „{}“ statt zu „{}“." = "{} тепер належить до «{}», а не до «{}».";
+"{} h" = "{} год";
 "{} h {} min" = "{} год {} хв";
 "{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "{} не має доступу до мікрофона. Надайте його в Системних параметрах: Приватність і безпека > Мікрофон.";
 "{} installieren?" = "Інсталювати {}?";
@@ -1361,6 +1373,7 @@
 "{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "Для цього {} прочитає його один раз, і macOS попросить підтвердження. Виберіть «Дозволити», а не «Завжди дозволяти»: так запис Lowspeak залишиться без змін. {} зберігає ключ в окремому записі.";
 "{} meldet keine Hintergrundprozesse" = "{} не повідомляє про фонові процеси";
 "{} meldet keine Subagenten" = "{} не повідомляє про субагентів";
+"{} min" = "{} хв";
 "{} min {} s" = "{} хв {} с";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet." = "{} просить увійти, перш ніж відкрити сеанс.";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet. Bei der Anmeldung im Terminal liegt der Befehl in der Zwischenablage." = "{} просить увійти, перш ніж відкрити сеанс. Для входу в терміналі команду скопійовано в буфер обміну.";
@@ -1390,6 +1403,7 @@
 "{} wurde nicht installiert" = "Не вдалося інсталювати {}";
 "{} {} oder neuer wird gebraucht" = "Потрібно {} {} або новіше";
 "{} · {}" = "{} · {}";
+"{} · {} · PID {}" = "{} · {} · PID {}";
 "{}, 1 Datei" = "{}, 1 файл";
 "{}, 1 Eintrag" = "{}, 1 запис";
 "{}, geänderte Dateien: {}" = "{}, змінені файли: {}";

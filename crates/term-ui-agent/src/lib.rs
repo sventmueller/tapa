@@ -88,6 +88,7 @@ pub use acp_install::{
     Availability, availability, cached_register, confirm_install, fetch_register, install_plan, installs,
     progress_text, refusal_text,
 };
+pub use activity::{ActivityProcess, toggle_toolbar_activity};
 pub use agent_panel::{is_bookmarked, past_session, wait_for_writes};
 pub use cards::request::scope_name;
 pub use dialogs::remove_claude_rule;

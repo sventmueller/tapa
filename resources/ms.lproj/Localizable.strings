@@ -36,6 +36,7 @@
 "Adresse nach der Anmeldung" = "Alamat selepas daftar masuk";
 "Adresse nicht unterstützt" = "Alamat Tidak Disokong";
 "Agent" = "Ejen";
+"Agent-Befehl" = "Perintah ejen";
 "Agenten" = "Ejen";
 "Agenten in „{}“ laden dann die Hooks, MCP-Server und Einstellungen des Projekts." = "Ejen dalam “{}” kemudian memuatkan hook, pelayan MCP dan tetapan projek.";
 "Agenten werden gesucht …" = "Mencari ejen…";
@@ -262,12 +263,14 @@
 "Das lässt sich hier nicht umschalten." = "Ini tidak dapat dihidupkan atau dimatikan di sini.";
 "Das nächste gedrückte Kürzel übernehmen; Escape bricht ab" = "Ambil pintasan seterusnya yang ditekan; Escape membatalkan";
 "Datei außerhalb des Projekts" = "Fail di Luar Projek";
+"Datei suchen" = "Cari Fail";
 "Datei öffnen" = "Buka Fail";
 "Dateien" = "Fail";
 "Dateien ein-/ausblenden" = "Tunjuk/Sembunyikan Fail";
 "Dateien oder Bilder anhängen" = "Lampirkan Fail atau Imej";
 "Dateien: {}" = "Fail: {}";
 "Dateiliste:" = "Senarai fail:";
+"Debug-Adapter" = "Penyesuai nyahpepijat";
 "Deine Nachricht: {}" = "Mesej anda: {}";
 "Denkaufwand:" = "Usaha:";
 "Denken" = "Berfikir";
@@ -314,6 +317,7 @@
 "Der Stash sieht nur, was auf der Platte steht. Sichere zuerst, damit deine Änderungen dabei sind." = "Stash hanya melihat apa yang ada pada cakera. Simpan dahulu supaya perubahan anda disertakan.";
 "Der Vorgang hat zu lange gedauert." = "Operasi mengambil masa terlalu lama.";
 "Details …" = "Butiran…";
+"Dev-Server" = "Pelayan Pembangunan";
 "Diagramm" = "Rajah";
 "Die Adresse „{}“ ließ sich nicht auflösen." = "Alamat “{}” tidak dapat diselesaikan.";
 "Die Anmeldung beim Remote ist fehlgeschlagen." = "Gagal mendaftar masuk ke remote.";
@@ -895,6 +899,8 @@
 "Projektplan" = "Pelan projek";
 "Prompts und Lesezeichen" = "Prompt dan Penanda Buku";
 "Protokoll" = "Protokol";
+"Prozesse" = "Proses";
+"Prüfstation" = "Gerbang";
 "Pull" = "Pull";
 "Pull läuft …" = "Membuat pull…";
 "Push" = "Push";
@@ -947,6 +953,8 @@
 "Schlüssel für {} entfernen" = "Buang Kunci {}";
 "Schlüssel für {} ändern" = "Tukar Kunci {}";
 "Schlüssel übernehmen …" = "Guna Kunci…";
+"Schnell öffnen" = "Buka Dengan Pantas";
+"Schnell öffnen …" = "Buka Dengan Pantas…";
 "Schnelles Terminal ausblenden" = "Sembunyikan Terminal Pantas";
 "Schnelles Terminal ein-/ausblenden" = "Tunjukkan/Sembunyikan Terminal Pantas";
 "Schnelles Terminal einblenden" = "Tunjukkan Terminal Pantas";
@@ -1002,6 +1010,7 @@
 "Speicherdateien" = "Fail memori";
 "Sprache" = "Bahasa";
 "Sprache:" = "Bahasa:";
+"Sprachserver" = "Pelayan bahasa";
 "Stand im letzten Commit" = "Seperti dalam commit terakhir";
 "Standard" = "Lalai";
 "Standardmodell" = "Model lalai";
@@ -1052,6 +1061,7 @@
 "Terminal leeren" = "Kosongkan Terminal";
 "Terminal: {}" = "Terminal: {}";
 "Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "Terminal dan ejen berjalan pada komputer yang dicapai ssh dengan cara ini; senarai fail dan Git tiada di sana.";
+"Test" = "Ujian";
 "Text mit Steuerzeichen einsetzen?" = "Tampal teks dengan aksara kawalan?";
 "Text mit Zeilenumbruch einsetzen?" = "Tampal teks dengan pemisah baris?";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "Tampal teks dengan {} pemisah baris?";
@@ -1184,6 +1194,7 @@
 "Weitersuchen" = "Cari Seterusnya";
 "Weniger zeigen" = "Tunjukkan Kurang";
 "Wer angemeldet ist, und abmelden" = "Siapa yang daftar masuk, dan daftar keluar";
+"Werkzeug" = "Alat";
 "Werkzeug {}: {}, {}" = "Alat {}: {}, {}";
 "Werkzeugaufrufe" = "Panggilan alat";
 "Werkzeugergebnisse" = "Hasil alat";
@@ -1349,6 +1360,7 @@
 "{} erlaubt" = "{} dibenarkan";
 "{} frühere Einträge ausgeblendet" = "{} entri terdahulu disembunyikan";
 "{} gehört jetzt zu „{}“ statt zu „{}“." = "{} kini milik “{}” dan bukannya “{}”.";
+"{} h" = "{} jam";
 "{} h {} min" = "{} jam {} min";
 "{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "{} tidak mempunyai akses kepada mikrofon. Benarkannya dalam Seting Sistem > Privasi & Keselamatan > Mikrofon.";
 "{} installieren?" = "Pasang {}?";
@@ -1361,6 +1373,7 @@
 "{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "{} membacanya sekali untuk tujuan itu, dan macOS bertanya dahulu. Pilih “Benarkan”, bukan “Sentiasa Benarkan”: dengan itu entri Lowspeak kekal seperti sedia ada. {} menyimpan kunci dalam entrinya sendiri.";
 "{} meldet keine Hintergrundprozesse" = "{} tidak melaporkan proses latar belakang";
 "{} meldet keine Subagenten" = "{} tidak melaporkan subejen";
+"{} min" = "{} min";
 "{} min {} s" = "{} min {} saat";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet." = "{} mahu anda mendaftar masuk sebelum membuka sesi.";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet. Bei der Anmeldung im Terminal liegt der Befehl in der Zwischenablage." = "{} mahu anda mendaftar masuk sebelum membuka sesi. Untuk mendaftar masuk dalam terminal, perintahnya ada dalam papan klip.";
@@ -1390,6 +1403,7 @@
 "{} wurde nicht installiert" = "{} tidak dipasang";
 "{} {} oder neuer wird gebraucht" = "{} {} atau lebih baharu diperlukan";
 "{} · {}" = "{} · {}";
+"{} · {} · PID {}" = "{} · {} · PID {}";
 "{}, 1 Datei" = "{}, 1 fail";
 "{}, 1 Eintrag" = "{}, 1 entri";
 "{}, geänderte Dateien: {}" = "{}, fail yang diubah: {}";

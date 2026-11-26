@@ -36,6 +36,7 @@
 "Adresse nach der Anmeldung" = "Indirizzo dopo l’accesso";
 "Adresse nicht unterstützt" = "Indirizzo non supportato";
 "Agent" = "Agente";
+"Agent-Befehl" = "Comando dell’agente";
 "Agenten" = "Agenti";
 "Agenten in „{}“ laden dann die Hooks, MCP-Server und Einstellungen des Projekts." = "Gli agenti in «{}» caricheranno quindi gli hook, i server MCP e le impostazioni del progetto.";
 "Agenten werden gesucht …" = "Ricerca degli agenti…";
@@ -262,12 +263,14 @@
 "Das lässt sich hier nicht umschalten." = "Qui non si può attivare o disattivare.";
 "Das nächste gedrückte Kürzel übernehmen; Escape bricht ab" = "Usa la prossima abbreviazione premuta; Escape annulla";
 "Datei außerhalb des Projekts" = "File esterno al progetto";
+"Datei suchen" = "Trova file";
 "Datei öffnen" = "Apri file";
 "Dateien" = "File";
 "Dateien ein-/ausblenden" = "Mostra/nascondi file";
 "Dateien oder Bilder anhängen" = "Allega file o immagini";
 "Dateien: {}" = "File: {}";
 "Dateiliste:" = "Elenco file:";
+"Debug-Adapter" = "Adattatore di debug";
 "Deine Nachricht: {}" = "Il tuo messaggio: {}";
 "Denkaufwand:" = "Impegno:";
 "Denken" = "Ragionamento";
@@ -314,6 +317,7 @@
 "Der Stash sieht nur, was auf der Platte steht. Sichere zuerst, damit deine Änderungen dabei sind." = "Lo stash vede solo ciò che è su disco. Salva prima, così le tue modifiche sono incluse.";
 "Der Vorgang hat zu lange gedauert." = "L’operazione ha richiesto troppo tempo.";
 "Details …" = "Dettagli…";
+"Dev-Server" = "Server di sviluppo";
 "Diagramm" = "Diagramma";
 "Die Adresse „{}“ ließ sich nicht auflösen." = "Impossibile risolvere l’indirizzo “{}”.";
 "Die Anmeldung beim Remote ist fehlgeschlagen." = "L’accesso al remote non è riuscito.";
@@ -895,6 +899,8 @@
 "Projektplan" = "Piano di progetto";
 "Prompts und Lesezeichen" = "Prompt e segnalibri";
 "Protokoll" = "Protocollo";
+"Prozesse" = "Processi";
+"Prüfstation" = "Gate";
 "Pull" = "Pull";
 "Pull läuft …" = "Pull in corso…";
 "Push" = "Push";
@@ -947,6 +953,8 @@
 "Schlüssel für {} entfernen" = "Rimuovi chiave di {}";
 "Schlüssel für {} ändern" = "Modifica chiave di {}";
 "Schlüssel übernehmen …" = "Usa chiave…";
+"Schnell öffnen" = "Apertura rapida";
+"Schnell öffnen …" = "Apertura rapida…";
 "Schnelles Terminal ausblenden" = "Nascondi terminale rapido";
 "Schnelles Terminal ein-/ausblenden" = "Mostra/nascondi terminale rapido";
 "Schnelles Terminal einblenden" = "Mostra terminale rapido";
@@ -1002,6 +1010,7 @@
 "Speicherdateien" = "File di memoria";
 "Sprache" = "Linguaggio";
 "Sprache:" = "Lingua:";
+"Sprachserver" = "Server di linguaggio";
 "Stand im letzten Commit" = "Come nell’ultimo commit";
 "Standard" = "Default";
 "Standardmodell" = "Modello predefinito";
@@ -1052,6 +1061,7 @@
 "Terminal leeren" = "Cancella terminale";
 "Terminal: {}" = "Terminale: {}";
 "Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "Terminali e agenti vengono eseguiti sul computer che ssh raggiunge così; l’elenco dei file e Git non sono disponibili lì.";
+"Test" = "Test";
 "Text mit Steuerzeichen einsetzen?" = "Incollare testo con caratteri di controllo?";
 "Text mit Zeilenumbruch einsetzen?" = "Incollare testo con un ritorno a capo?";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "Incollare testo con {} ritorni a capo?";
@@ -1184,6 +1194,7 @@
 "Weitersuchen" = "Trova successivo";
 "Weniger zeigen" = "Mostra meno";
 "Wer angemeldet ist, und abmelden" = "Chi ha eseguito l’accesso, e uscita";
+"Werkzeug" = "Strumento";
 "Werkzeug {}: {}, {}" = "Strumento {}: {}, {}";
 "Werkzeugaufrufe" = "Chiamate agli strumenti";
 "Werkzeugergebnisse" = "Risultati degli strumenti";
@@ -1349,6 +1360,7 @@
 "{} erlaubt" = "{} consentito";
 "{} frühere Einträge ausgeblendet" = "{} voci precedenti nascoste";
 "{} gehört jetzt zu „{}“ statt zu „{}“." = "{} ora appartiene a «{}» invece che a «{}».";
+"{} h" = "{} h";
 "{} h {} min" = "{} h {} min";
 "{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "{} non ha accesso al microfono. Consentilo in Impostazioni di Sistema > Privacy e sicurezza > Microfono.";
 "{} installieren?" = "Installare {}?";
@@ -1361,6 +1373,7 @@
 "{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "{} la legge una volta per questo, e macOS chiede prima conferma. Lì scegli “Consenti”, non “Consenti sempre”: così la voce di Lowspeak resta com’è. {} conserva la chiave in una voce propria.";
 "{} meldet keine Hintergrundprozesse" = "{} non segnala processi in background";
 "{} meldet keine Subagenten" = "{} non segnala subagenti";
+"{} min" = "{} min";
 "{} min {} s" = "{} min {} s";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet." = "{} richiede l’accesso prima di aprire una sessione.";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet. Bei der Anmeldung im Terminal liegt der Befehl in der Zwischenablage." = "{} richiede l’accesso prima di aprire una sessione. Per accedere nel terminale, il comando è negli appunti.";
@@ -1390,6 +1403,7 @@
 "{} wurde nicht installiert" = "{} non è stato installato";
 "{} {} oder neuer wird gebraucht" = "Serve {} {} o versione successiva";
 "{} · {}" = "{} · {}";
+"{} · {} · PID {}" = "{} · {} · PID {}";
 "{}, 1 Datei" = "{}, 1 file";
 "{}, 1 Eintrag" = "{}, 1 voce";
 "{}, geänderte Dateien: {}" = "{}, file modificati: {}";

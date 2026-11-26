@@ -36,6 +36,7 @@
 "Adresse nach der Anmeldung" = "Cím a bejelentkezés után";
 "Adresse nicht unterstützt" = "A cím nem támogatott";
 "Agent" = "Ügynök";
+"Agent-Befehl" = "Ügynökparancs";
 "Agenten" = "Ügynökök";
 "Agenten in „{}“ laden dann die Hooks, MCP-Server und Einstellungen des Projekts." = "Ekkor a(z) „{}” ügynökei betöltik a projekt hookjait, MCP-szervereit és beállításait.";
 "Agenten werden gesucht …" = "Ügynökök keresése…";
@@ -262,12 +263,14 @@
 "Das lässt sich hier nicht umschalten." = "Ez itt nem kapcsolható be vagy ki.";
 "Das nächste gedrückte Kürzel übernehmen; Escape bricht ab" = "A következő lenyomott billentyűparancs átvétele; az Escape megszakítja";
 "Datei außerhalb des Projekts" = "Fájl a projekten kívül";
+"Datei suchen" = "Fájl keresése";
 "Datei öffnen" = "Fájl megnyitása";
 "Dateien" = "Fájlok";
 "Dateien ein-/ausblenden" = "Fájlok megjelenítése/elrejtése";
 "Dateien oder Bilder anhängen" = "Fájlok vagy képek csatolása";
 "Dateien: {}" = "Fájlok: {}";
 "Dateiliste:" = "Fájllista:";
+"Debug-Adapter" = "Hibakereső adapter";
 "Deine Nachricht: {}" = "Az Ön üzenete: {}";
 "Denkaufwand:" = "Ráfordítás:";
 "Denken" = "Gondolkodás";
@@ -314,6 +317,7 @@
 "Der Stash sieht nur, was auf der Platte steht. Sichere zuerst, damit deine Änderungen dabei sind." = "A stash csak azt látja, ami a lemezen van. Előbb mentsen, hogy a módosításai is bekerüljenek.";
 "Der Vorgang hat zu lange gedauert." = "A művelet túl sokáig tartott.";
 "Details …" = "Részletek…";
+"Dev-Server" = "Fejlesztői szerver";
 "Diagramm" = "Diagram";
 "Die Adresse „{}“ ließ sich nicht auflösen." = "A(z) „{}” cím nem oldható fel.";
 "Die Anmeldung beim Remote ist fehlgeschlagen." = "A bejelentkezés a távoli tárolóba nem sikerült.";
@@ -895,6 +899,8 @@
 "Projektplan" = "Projektterv";
 "Prompts und Lesezeichen" = "Promptok és könyvjelzők";
 "Protokoll" = "Protokoll";
+"Prozesse" = "Folyamatok";
+"Prüfstation" = "Ellenőrzőpont";
 "Pull" = "Pull";
 "Pull läuft …" = "Pull folyamatban…";
 "Push" = "Push";
@@ -947,6 +953,8 @@
 "Schlüssel für {} entfernen" = "{}-kulcs eltávolítása";
 "Schlüssel für {} ändern" = "{}-kulcs módosítása";
 "Schlüssel übernehmen …" = "Kulcs használata…";
+"Schnell öffnen" = "Gyors megnyitás";
+"Schnell öffnen …" = "Gyors megnyitás…";
 "Schnelles Terminal ausblenden" = "Gyors terminál elrejtése";
 "Schnelles Terminal ein-/ausblenden" = "Gyors terminál megjelenítése/elrejtése";
 "Schnelles Terminal einblenden" = "Gyors terminál megjelenítése";
@@ -1002,6 +1010,7 @@
 "Speicherdateien" = "Memóriafájlok";
 "Sprache" = "Nyelv";
 "Sprache:" = "Nyelv:";
+"Sprachserver" = "Nyelvi szerver";
 "Stand im letzten Commit" = "Az utolsó commit szerinti állapot";
 "Standard" = "Alapértelmezett";
 "Standardmodell" = "Alapértelmezett modell";
@@ -1052,6 +1061,7 @@
 "Terminal leeren" = "Terminál kiürítése";
 "Terminal: {}" = "Terminál: {}";
 "Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "A terminálok és az ügynökök azon a számítógépen futnak, amelyet az ssh így ér el; a fájllista és a Git ott nem érhető el.";
+"Test" = "Teszt";
 "Text mit Steuerzeichen einsetzen?" = "Beilleszti a vezérlőkaraktereket tartalmazó szöveget?";
 "Text mit Zeilenumbruch einsetzen?" = "Beilleszti a sortörést tartalmazó szöveget?";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "Beilleszti a(z) {} sortörést tartalmazó szöveget?";
@@ -1184,6 +1194,7 @@
 "Weitersuchen" = "Következő keresése";
 "Weniger zeigen" = "Kevesebb";
 "Wer angemeldet ist, und abmelden" = "Ki van bejelentkezve, és kijelentkezés";
+"Werkzeug" = "Eszköz";
 "Werkzeug {}: {}, {}" = "{} eszköz: {}, {}";
 "Werkzeugaufrufe" = "Eszközhívások";
 "Werkzeugergebnisse" = "Eszközeredmények";
@@ -1349,6 +1360,7 @@
 "{} erlaubt" = "{} engedélyezve";
 "{} frühere Einträge ausgeblendet" = "{} korábbi bejegyzés elrejtve";
 "{} gehört jetzt zu „{}“ statt zu „{}“." = "{} most a(z) „{}” művelethez tartozik a(z) „{}” helyett.";
+"{} h" = "{} ó";
 "{} h {} min" = "{} ó {} perc";
 "{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "A(z) {} nem fér hozzá a mikrofonhoz. Engedélyezze a Rendszerbeállítások Adatvédelem és biztonság > Mikrofon részében.";
 "{} installieren?" = "Telepíti a következőt: {}?";
@@ -1361,6 +1373,7 @@
 "{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "A(z) {} ehhez egyszer beolvassa, és a macOS előtte rákérdez. Ott az „Engedélyezés” lehetőséget válassza, ne az „Engedélyezés mindig” lehetőséget: így a Lowspeak bejegyzése változatlan marad. A(z) {} egy saját bejegyzésben tárolja a kulcsot.";
 "{} meldet keine Hintergrundprozesse" = "A(z) {} nem jelent háttérfolyamatokat";
 "{} meldet keine Subagenten" = "A(z) {} nem jelent alügynököket";
+"{} min" = "{} perc";
 "{} min {} s" = "{} perc {} mp";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet." = "A(z) {} bejelentkezést kér, mielőtt munkamenetet nyit.";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet. Bei der Anmeldung im Terminal liegt der Befehl in der Zwischenablage." = "A(z) {} bejelentkezést kér, mielőtt munkamenetet nyit. A terminálban történő bejelentkezéshez a parancs a vágólapon van.";
@@ -1390,6 +1403,7 @@
 "{} wurde nicht installiert" = "A(z) {} nem lett telepítve";
 "{} {} oder neuer wird gebraucht" = "Szükséges: {} {} vagy újabb";
 "{} · {}" = "{} · {}";
+"{} · {} · PID {}" = "{} · {} · PID {}";
 "{}, 1 Datei" = "{}, 1 fájl";
 "{}, 1 Eintrag" = "{}, 1 bejegyzés";
 "{}, geänderte Dateien: {}" = "{}, módosított fájlok: {}";

@@ -372,3 +372,16 @@
 "Verbindung zu {} getrennt" = "Tilkoblingen til {} ble brutt";
 "Wo arbeitet der neue Arbeitsbereich?" = "Hvor jobber det nye arbeidsområdet?";
 "Vorschlagsliste beim Tippen öffnen" = "Åpne forslagslisten mens du skriver";
+"Sprachserver" = "Språktjener";
+"Dev-Server" = "Utviklingstjener";
+"Debug-Adapter" = "Feilsøkingsadapter";
+"Test" = "Test";
+"Werkzeug" = "Verktøy";
+"Agent-Befehl" = "Agentkommando";
+"Prüfstation" = "Kontrollpunkt";
+"{} · {} · PID {}" = "{} · {} · PID {}";
+"{} min" = "{} min";
+"{} h" = "{} t";
+"Schnell öffnen" = "Åpne raskt";
+"Schnell öffnen …" = "Åpne raskt…";
+"Datei suchen" = "Finn fil";

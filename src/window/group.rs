@@ -140,6 +140,7 @@ impl Window {
                 None => shown.ns.orderFront(None),
             }
             shown.ns.setTabbingMode(mode);
+            shown.show_tab_bar();
         });
         for (frame, animation) in hidden.iter().zip(animations) {
             frame.ns.setAnimationBehavior(animation);
@@ -214,6 +215,7 @@ impl Window {
             return;
         };
         if let Some(frame) = self.frame_of(tab) {
+            frame.show_tab_bar();
             self.sync_group_order(&frame);
         }
         self.workspaces.borrow_mut().select(WorkspaceId::new(workspace.id));

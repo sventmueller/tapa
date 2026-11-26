@@ -19,6 +19,42 @@ mod rules;
 pub use tree::{Entry, Kind, Tree, TreeOptions};
 pub use watch::{Changes, FileChange, RescanReason, WatchEvent, Watcher};
 
+/// Indexes the files below `root` using the project's ignore rules. Run on a worker thread.
+pub fn file_index(root: &std::path::Path, cancel: &term_base::Cancel) -> Vec<std::path::PathBuf> {
+    let mut files = Vec::new();
+    for entry in rules::walker(root, root, true).build() {
+        if cancel.is_cancelled() {
+            return Vec::new();
+        }
+        let Ok(entry) = entry else { continue };
+        let path = entry.path();
+        if entry.file_type().is_some_and(|kind| {
+            kind.is_file() || (kind.is_symlink() && std::fs::metadata(path).is_ok_and(|meta| meta.is_file()))
+        }) && entry.file_name() != ".DS_Store"
+        {
+            files.push(entry.into_path());
+        }
+    }
+    files.sort_unstable();
+    files
+}
+
+#[cfg(test)]
+#[test]
+fn the_file_index_walks_subfolders_and_applies_ignore_rules() {
+    let root = testing::scratch("file-index");
+    testing::write(root.path(), ".gitignore", "build/\n");
+    testing::write(root.path(), "src/main.rs", "");
+    testing::write(root.path(), "build/output.txt", "");
+    let cancel = term_base::Cancel::new();
+    assert_eq!(
+        file_index(root.path(), &cancel),
+        [root.path().join(".gitignore"), root.path().join("src/main.rs")]
+    );
+    cancel.cancel();
+    assert!(file_index(root.path(), &cancel).is_empty());
+}
+
 #[cfg(test)]
 pub(crate) mod testing {
     use std::path::Path;

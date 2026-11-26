@@ -36,6 +36,7 @@
 "Adresse nach der Anmeldung" = "Adresa po prihlásení";
 "Adresse nicht unterstützt" = "Adresa nie je podporovaná";
 "Agent" = "Agent";
+"Agent-Befehl" = "Príkaz agenta";
 "Agenten" = "Agenti";
 "Agenten in „{}“ laden dann die Hooks, MCP-Server und Einstellungen des Projekts." = "Agenti v „{}“ potom načítajú hooky, servery MCP a nastavenia projektu.";
 "Agenten werden gesucht …" = "Hľadajú sa agenti…";
@@ -262,12 +263,14 @@
 "Das lässt sich hier nicht umschalten." = "Toto sa tu nedá prepnúť.";
 "Das nächste gedrückte Kürzel übernehmen; Escape bricht ab" = "Prevziať ďalšiu stlačenú skratku; Escape zruší";
 "Datei außerhalb des Projekts" = "Súbor mimo projektu";
+"Datei suchen" = "Nájsť súbor";
 "Datei öffnen" = "Otvoriť súbor";
 "Dateien" = "Súbory";
 "Dateien ein-/ausblenden" = "Zobraziť/skryť súbory";
 "Dateien oder Bilder anhängen" = "Pripojiť súbory alebo obrázky";
 "Dateien: {}" = "Súbory: {}";
 "Dateiliste:" = "Zoznam súborov:";
+"Debug-Adapter" = "Ladiaci adaptér";
 "Deine Nachricht: {}" = "Vaša správa: {}";
 "Denkaufwand:" = "Úsilie:";
 "Denken" = "Uvažovanie";
@@ -314,6 +317,7 @@
 "Der Stash sieht nur, was auf der Platte steht. Sichere zuerst, damit deine Änderungen dabei sind." = "Stash vidí len to, čo je na disku. Najprv uložte, aby boli zahrnuté aj vaše zmeny.";
 "Der Vorgang hat zu lange gedauert." = "Operácia trvala príliš dlho.";
 "Details …" = "Podrobnosti…";
+"Dev-Server" = "Vývojový server";
 "Diagramm" = "Diagram";
 "Die Adresse „{}“ ließ sich nicht auflösen." = "Adresu „{}“ sa nepodarilo preložiť.";
 "Die Anmeldung beim Remote ist fehlgeschlagen." = "Prihlásenie do vzdialeného repozitára zlyhalo.";
@@ -895,6 +899,8 @@
 "Projektplan" = "Plán projektu";
 "Prompts und Lesezeichen" = "Výzvy a záložky";
 "Protokoll" = "Protokol";
+"Prozesse" = "Procesy";
+"Prüfstation" = "Brána";
 "Pull" = "Pull";
 "Pull läuft …" = "Prebieha pull…";
 "Push" = "Push";
@@ -947,6 +953,8 @@
 "Schlüssel für {} entfernen" = "Odstrániť kľúč pre {}";
 "Schlüssel für {} ändern" = "Zmeniť kľúč pre {}";
 "Schlüssel übernehmen …" = "Použiť kľúč…";
+"Schnell öffnen" = "Rýchlo otvoriť";
+"Schnell öffnen …" = "Rýchlo otvoriť…";
 "Schnelles Terminal ausblenden" = "Skryť rýchly terminál";
 "Schnelles Terminal ein-/ausblenden" = "Zobraziť/skryť rýchly terminál";
 "Schnelles Terminal einblenden" = "Zobraziť rýchly terminál";
@@ -1002,6 +1010,7 @@
 "Speicherdateien" = "Súbory pamäte";
 "Sprache" = "Jazyk";
 "Sprache:" = "Jazyk:";
+"Sprachserver" = "Jazykový server";
 "Stand im letzten Commit" = "Stav v poslednom commite";
 "Standard" = "Predvolené";
 "Standardmodell" = "Predvolený model";
@@ -1052,6 +1061,7 @@
 "Terminal leeren" = "Vyčistiť terminál";
 "Terminal: {}" = "Terminál: {}";
 "Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "Terminály a agenti bežia na počítači, ku ktorému sa ssh takto pripojí; zoznam súborov a Git tam nie sú.";
+"Test" = "Test";
 "Text mit Steuerzeichen einsetzen?" = "Vložiť text s riadiacimi znakmi?";
 "Text mit Zeilenumbruch einsetzen?" = "Vložiť text so zalomením riadka?";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "Vložiť text so zalomeniami riadka ({})?";
@@ -1184,6 +1194,7 @@
 "Weitersuchen" = "Hľadať ďalšie";
 "Weniger zeigen" = "Zobraziť menej";
 "Wer angemeldet ist, und abmelden" = "Kto je prihlásený a odhlásenie";
+"Werkzeug" = "Nástroj";
 "Werkzeug {}: {}, {}" = "Nástroj {}: {}, {}";
 "Werkzeugaufrufe" = "Volania nástrojov";
 "Werkzeugergebnisse" = "Výsledky nástrojov";
@@ -1349,6 +1360,7 @@
 "{} erlaubt" = "Povolené: {}";
 "{} frühere Einträge ausgeblendet" = "Skryté staršie záznamy: {}";
 "{} gehört jetzt zu „{}“ statt zu „{}“." = "{} teraz patrí k akcii „{}“ namiesto „{}“.";
+"{} h" = "{} h";
 "{} h {} min" = "{} h {} min";
 "{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "{} nemá prístup k mikrofónu. Povoľte ho v Systémových nastaveniach v časti Súkromie a bezpečnosť > Mikrofón.";
 "{} installieren?" = "Nainštalovať {}?";
@@ -1361,6 +1373,7 @@
 "{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "{} ho na to raz prečíta a macOS sa najprv opýta. Vyberte tam „Povoliť“, nie „Vždy povoliť“: položka aplikácie Lowspeak tak zostane bez zmeny. {} uloží kľúč do vlastnej položky.";
 "{} meldet keine Hintergrundprozesse" = "{} nehlási žiadne procesy na pozadí";
 "{} meldet keine Subagenten" = "{} nehlási žiadnych subagentov";
+"{} min" = "{} min";
 "{} min {} s" = "{} min {} s";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet." = "{} vyžaduje prihlásenie pred otvorením relácie.";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet. Bei der Anmeldung im Terminal liegt der Befehl in der Zwischenablage." = "{} vyžaduje prihlásenie pred otvorením relácie. Na prihlásenie v termináli je príkaz v schránke.";
@@ -1390,6 +1403,7 @@
 "{} wurde nicht installiert" = "{} nebol nainštalovaný";
 "{} {} oder neuer wird gebraucht" = "Vyžaduje sa {} {} alebo novší";
 "{} · {}" = "{} · {}";
+"{} · {} · PID {}" = "{} · {} · PID {}";
 "{}, 1 Datei" = "{}, 1 súbor";
 "{}, 1 Eintrag" = "{}, 1 záznam";
 "{}, geänderte Dateien: {}" = "{}, zmenené súbory: {}";

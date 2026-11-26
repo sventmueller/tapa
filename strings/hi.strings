@@ -372,3 +372,16 @@
 "Verbindung zu {} getrennt" = "{} से कनेक्शन टूट गया";
 "Wo arbeitet der neue Arbeitsbereich?" = "नया वर्कस्पेस कहाँ काम करेगा?";
 "Vorschlagsliste beim Tippen öffnen" = "टाइप करते समय सुझावों की सूची खोलें";
+"Sprachserver" = "लैंग्वेज सर्वर";
+"Dev-Server" = "डेव सर्वर";
+"Debug-Adapter" = "डीबग एडैप्टर";
+"Test" = "टेस्ट";
+"Werkzeug" = "टूल";
+"Agent-Befehl" = "एजेंट कमांड";
+"Prüfstation" = "गेट";
+"{} · {} · PID {}" = "{} · {} · PID {}";
+"{} min" = "{} मि॰";
+"{} h" = "{} घं॰";
+"Schnell öffnen" = "जल्दी खोलें";
+"Schnell öffnen …" = "तुरंत खोलें…";
+"Datei suchen" = "फ़ाइल ढूँढें";

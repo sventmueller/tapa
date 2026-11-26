@@ -36,6 +36,7 @@
 "Adresse nach der Anmeldung" = "Adres po zalogowaniu";
 "Adresse nicht unterstützt" = "Adres nieobsługiwany";
 "Agent" = "Agent";
+"Agent-Befehl" = "Polecenie agenta";
 "Agenten" = "Agenty";
 "Agenten in „{}“ laden dann die Hooks, MCP-Server und Einstellungen des Projekts." = "Agenty w „{}” wczytają wtedy hooki, serwery MCP i ustawienia projektu.";
 "Agenten werden gesucht …" = "Wyszukiwanie agentów…";
@@ -262,12 +263,14 @@
 "Das lässt sich hier nicht umschalten." = "Tego nie można tutaj włączyć ani wyłączyć.";
 "Das nächste gedrückte Kürzel übernehmen; Escape bricht ab" = "Przejmij następny naciśnięty skrót; Escape anuluje";
 "Datei außerhalb des Projekts" = "Plik poza projektem";
+"Datei suchen" = "Znajdź plik";
 "Datei öffnen" = "Otwórz plik";
 "Dateien" = "Pliki";
 "Dateien ein-/ausblenden" = "Pokaż/ukryj pliki";
 "Dateien oder Bilder anhängen" = "Załącz pliki lub obrazki";
 "Dateien: {}" = "Pliki: {}";
 "Dateiliste:" = "Lista plików:";
+"Debug-Adapter" = "Adapter debugowania";
 "Deine Nachricht: {}" = "Twoja wiadomość: {}";
 "Denkaufwand:" = "Wysiłek:";
 "Denken" = "Myślenie";
@@ -314,6 +317,7 @@
 "Der Stash sieht nur, was auf der Platte steht. Sichere zuerst, damit deine Änderungen dabei sind." = "Stash widzi tylko to, co jest na dysku. Najpierw zachowaj dokumenty, aby zmiany zostały uwzględnione.";
 "Der Vorgang hat zu lange gedauert." = "Operacja trwała zbyt długo.";
 "Details …" = "Szczegóły…";
+"Dev-Server" = "Serwer deweloperski";
 "Diagramm" = "Diagram";
 "Die Adresse „{}“ ließ sich nicht auflösen." = "Nie można ustalić adresu „{}”.";
 "Die Anmeldung beim Remote ist fehlgeschlagen." = "Logowanie do repozytorium zdalnego nie powiodło się.";
@@ -895,6 +899,8 @@
 "Projektplan" = "Plan projektu";
 "Prompts und Lesezeichen" = "Znaki zachęty i zakładki";
 "Protokoll" = "Protokół";
+"Prozesse" = "Procesy";
+"Prüfstation" = "Bramka";
 "Pull" = "Pull";
 "Pull läuft …" = "Wykonywanie pull…";
 "Push" = "Push";
@@ -947,6 +953,8 @@
 "Schlüssel für {} entfernen" = "Usuń klucz {}";
 "Schlüssel für {} ändern" = "Zmień klucz {}";
 "Schlüssel übernehmen …" = "Użyj klucza…";
+"Schnell öffnen" = "Szybko otwórz";
+"Schnell öffnen …" = "Szybko otwórz…";
 "Schnelles Terminal ausblenden" = "Ukryj szybki terminal";
 "Schnelles Terminal ein-/ausblenden" = "Pokaż/ukryj szybki terminal";
 "Schnelles Terminal einblenden" = "Pokaż szybki terminal";
@@ -1002,6 +1010,7 @@
 "Speicherdateien" = "Pliki pamięci";
 "Sprache" = "Język";
 "Sprache:" = "Język:";
+"Sprachserver" = "Serwer języka";
 "Stand im letzten Commit" = "Stan z ostatniego commitu";
 "Standard" = "Domyślne";
 "Standardmodell" = "Model domyślny";
@@ -1052,6 +1061,7 @@
 "Terminal leeren" = "Wyczyść terminal";
 "Terminal: {}" = "Terminal: {}";
 "Terminals und Agenten laufen auf dem Rechner, den ssh so erreicht; Dateiliste und Git gibt es dort nicht." = "Terminale i agenci działają na komputerze, do którego ssh tak dociera; lista plików i Git nie są tam dostępne.";
+"Test" = "Test";
 "Text mit Steuerzeichen einsetzen?" = "Wkleić tekst ze znakami sterującymi?";
 "Text mit Zeilenumbruch einsetzen?" = "Wkleić tekst z podziałem wiersza?";
 "Text mit {} Zeilenumbrüchen einsetzen?" = "Wkleić tekst z podziałami wiersza ({})?";
@@ -1184,6 +1194,7 @@
 "Weitersuchen" = "Znajdź następny";
 "Weniger zeigen" = "Pokaż mniej";
 "Wer angemeldet ist, und abmelden" = "Kto jest zalogowany i wylogowywanie";
+"Werkzeug" = "Narzędzie";
 "Werkzeug {}: {}, {}" = "Narzędzie {}: {}, {}";
 "Werkzeugaufrufe" = "Wywołania narzędzi";
 "Werkzeugergebnisse" = "Wyniki narzędzi";
@@ -1349,6 +1360,7 @@
 "{} erlaubt" = "{} – pozwolono";
 "{} frühere Einträge ausgeblendet" = "ukryte wcześniejsze wpisy: {}";
 "{} gehört jetzt zu „{}“ statt zu „{}“." = "{} jest teraz przypisany do akcji „{}” zamiast „{}”.";
+"{} h" = "{} godz.";
 "{} h {} min" = "{} godz. {} min";
 "{} hat keinen Zugriff auf das Mikrofon. Erlaube ihn in den Systemeinstellungen unter Datenschutz & Sicherheit > Mikrofon." = "{} nie ma dostępu do mikrofonu. Pozwól na to w Ustawieniach systemowych > Prywatność i ochrona > Mikrofon.";
 "{} installieren?" = "Zainstalować {}?";
@@ -1361,6 +1373,7 @@
 "{} liest ihn dafür einmal, und macOS fragt nach. Wähle dort „Erlauben“, nicht „Immer erlauben“: So bleibt Lowspeaks Eintrag, wie er ist. {} legt den Schlüssel in einem eigenen Eintrag ab." = "{} odczyta go w tym celu jeden raz, a macOS najpierw zapyta. Wybierz tam „Pozwól”, nie „Zawsze pozwalaj”: wtedy wpis Lowspeak pozostanie bez zmian. {} przechowuje klucz we własnym wpisie.";
 "{} meldet keine Hintergrundprozesse" = "{} nie zgłasza procesów w tle";
 "{} meldet keine Subagenten" = "{} nie zgłasza subagentów";
+"{} min" = "{} min";
 "{} min {} s" = "{} min {} s";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet." = "{} wymaga zalogowania przed otwarciem sesji.";
 "{} möchte eine Anmeldung, bevor es eine Sitzung öffnet. Bei der Anmeldung im Terminal liegt der Befehl in der Zwischenablage." = "{} wymaga zalogowania przed otwarciem sesji. Do logowania w terminalu polecenie jest w schowku.";
@@ -1390,6 +1403,7 @@
 "{} wurde nicht installiert" = "{} nie został zainstalowany";
 "{} {} oder neuer wird gebraucht" = "Potrzebne: {} {} lub nowszy";
 "{} · {}" = "{} · {}";
+"{} · {} · PID {}" = "{} · {} · PID {}";
 "{}, 1 Datei" = "{}, 1 plik";
 "{}, 1 Eintrag" = "{}, 1 wpis";
 "{}, geänderte Dateien: {}" = "{}, zmienione pliki: {}";
