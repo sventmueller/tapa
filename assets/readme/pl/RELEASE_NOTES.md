@@ -1,5 +1,5 @@
-Tapa 1.0.4 pokazuje w kartach agentów, kiedy obszar roboczy nie jest zaufany, i stosuje zmianę zaufania także do już działających agentów.
+Tapa 1.0.5 po ponownym uruchomieniu znów pokazuje rozmowę karty agenta w zdalnym obszarze roboczym.
 
-## Ulepszenia
-- W obszarze roboczym, któremu nie zaufano, karta agenta Claude, Codex i OpenCode pokazuje nad polem wprowadzania, że ustawienia, umiejętności, hooki i serwery MCP projektu nie są wczytane, z przyciskiem „Zaufaj obszarowi roboczemu”.
-- Po zaufaniu obszarowi roboczemu lub cofnięciu zaufania jego otwarte sesje agentów uruchamiają się ponownie z konfiguracją projektu lub bez niej. Kontynuują rozmowę, a trwająca tura najpierw się kończy.
+## Poprawki
+- Po ponownym uruchomieniu Tapy karta agenta w zdalnym obszarze roboczym znów pokazuje wcześniejszą rozmowę: Tapa odczytuje transkrypcję Claude z drugiego komputera przez połączenie obszaru roboczego. Karta uruchamia się, gdy połączenie jest otwarte, zamiast najpierw zgłosić błąd.
+- Karty Codex i OpenCode w zaufanym obszarze roboczym nie uruchamiają się już dwukrotnie przy otwieraniu Tapy.

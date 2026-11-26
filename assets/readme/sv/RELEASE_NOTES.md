@@ -1,5 +1,5 @@
-Tapa 1.0.4 visar i agentflikar när en arbetsyta inte är betrodd och tillämpar en ändrad tillit även på agenter som redan körs.
+Tapa 1.0.5 visar konversationen i en agentflik i en fjärrarbetsyta igen efter en omstart.
 
-## Förbättringar
-- I en arbetsyta som du inte har litat på visar agentfliken för Claude, Codex och OpenCode ovanför inmatningsfältet att projektets inställningar, skills, hooks och MCP-servrar inte är inlästa, med knappen ”Lita på arbetsytan”.
-- När du litar på en arbetsyta eller drar tillbaka tilliten startar dess öppna agentsessioner om med eller utan projektets konfiguration. De fortsätter samtalet, och en pågående tur avslutas först.
+## Åtgärdat
+- Efter att Tapa startats om visar en agentflik i en fjärrarbetsyta åter sin tidigare konversation: Tapa läser Claudes utskrift från den andra datorn via arbetsytans anslutning. Fliken startar när anslutningen är öppen i stället för att först misslyckas.
+- Codex- och OpenCode-flikar i en betrodd arbetsyta startar inte längre två gånger när Tapa öppnas.

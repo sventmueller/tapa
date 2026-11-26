@@ -1,5 +1,5 @@
-Tapa 1.0.4 indica en las pestañas de agente cuándo un espacio de trabajo no es fiable y aplica un cambio de confianza también a los agentes que ya se ejecutan.
+Tapa 1.0.5 vuelve a mostrar la conversación de una pestaña de agente en un espacio de trabajo remoto tras un reinicio.
 
-## Mejoras
-- En un espacio de trabajo en el que no has confiado, la pestaña de agente de Claude, Codex y OpenCode indica sobre el campo de entrada que no se han cargado los ajustes, skills, hooks ni servidores MCP del proyecto, con el botón «Confiar en el espacio de trabajo».
-- Al confiar en un espacio de trabajo o retirar la confianza, sus sesiones de agente abiertas se inician de nuevo con o sin la configuración del proyecto. Continúan su conversación, y un turno en curso termina primero.
+## Correcciones
+- Tras reiniciar Tapa, una pestaña de agente en un espacio de trabajo remoto vuelve a mostrar su conversación anterior: Tapa lee la transcripción de Claude del otro ordenador a través de la conexión del espacio de trabajo. La pestaña se inicia cuando la conexión está abierta, en lugar de fallar primero.
+- Las pestañas de Codex y OpenCode en un espacio de trabajo de confianza ya no se inician dos veces al abrir Tapa.

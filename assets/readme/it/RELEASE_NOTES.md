@@ -1,5 +1,5 @@
-Tapa 1.0.4 indica nelle schede agente quando uno spazio di lavoro non è attendibile e applica un cambio di fiducia anche agli agenti già in esecuzione.
+Tapa 1.0.5 mostra di nuovo la conversazione di una scheda agente in uno spazio di lavoro remoto dopo un riavvio.
 
-## Miglioramenti
-- In uno spazio di lavoro non attendibile, la scheda agente di Claude, Codex e OpenCode indica sopra il campo di input che impostazioni, skill, hook e server MCP del progetto non sono caricati, con il pulsante «Considera attendibile lo spazio di lavoro».
-- Quando consideri attendibile uno spazio di lavoro o revochi la fiducia, le sue sessioni agente aperte ripartono con o senza la configurazione del progetto. Continuano la conversazione, e un turno in corso termina prima.
+## Correzioni
+- Dopo il riavvio di Tapa, una scheda agente in uno spazio di lavoro remoto mostra di nuovo la conversazione precedente: Tapa legge la trascrizione di Claude dall'altro computer tramite la connessione dello spazio di lavoro. La scheda si avvia quando la connessione è aperta, invece di fallire prima.
+- Le schede Codex e OpenCode in uno spazio di lavoro attendibile non si avviano più due volte all'apertura di Tapa.

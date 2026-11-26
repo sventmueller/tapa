@@ -1,5 +1,5 @@
-Tapa 1.0.4 indique dans les onglets d'agent quand un espace de travail n'est pas approuvé et applique un changement de confiance aux agents déjà en cours d'exécution.
+Tapa 1.0.5 affiche de nouveau la conversation d'un onglet d'agent dans un espace de travail distant après un redémarrage.
 
-## Améliorations
-- Dans un espace de travail non approuvé, l'onglet d'agent de Claude, Codex et OpenCode indique au-dessus du champ de saisie que les réglages, skills, hooks et serveurs MCP du projet ne sont pas chargés, avec le bouton « Faire confiance à l’espace de travail ».
-- Lorsque vous faites confiance à un espace de travail ou retirez cette confiance, ses sessions d'agent ouvertes redémarrent avec ou sans la configuration du projet. Elles poursuivent leur conversation, et un tour en cours se termine d'abord.
+## Corrections
+- Après un redémarrage de Tapa, un onglet d'agent dans un espace de travail distant affiche de nouveau sa conversation précédente : Tapa lit la transcription de Claude sur l'autre ordinateur via la connexion de l'espace de travail. L'onglet démarre une fois la connexion ouverte au lieu d'échouer d'abord.
+- Les onglets Codex et OpenCode d'un espace de travail approuvé ne démarrent plus deux fois à l'ouverture de Tapa.

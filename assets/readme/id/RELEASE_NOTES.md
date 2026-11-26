@@ -1,5 +1,5 @@
-Tapa 1.0.4 menunjukkan di tab agen saat ruang kerja tidak dipercaya, dan menerapkan perubahan kepercayaan pada agen yang sudah berjalan.
+Tapa 1.0.5 kembali menampilkan percakapan tab agen di ruang kerja jarak jauh setelah dimulai ulang.
 
-## Peningkatan
-- Di ruang kerja yang belum Anda percayai, tab agen Claude, Codex, dan OpenCode menunjukkan di atas kolom input bahwa pengaturan, skill, hook, dan server MCP proyek tidak dimuat, dengan tombol "Percayai Ruang Kerja".
-- Saat Anda memercayai ruang kerja atau mencabut kepercayaan, sesi agen yang terbuka di dalamnya dimulai lagi dengan atau tanpa konfigurasi proyek. Sesi melanjutkan percakapannya, dan giliran yang sedang berjalan selesai lebih dulu.
+## Perbaikan
+- Setelah Tapa dimulai ulang, tab agen di ruang kerja jarak jauh kembali menampilkan percakapan sebelumnya: Tapa membaca transkrip Claude dari komputer lain melalui sambungan ruang kerja. Tab dimulai setelah sambungan terbuka, alih-alih gagal lebih dulu.
+- Tab Codex dan OpenCode di ruang kerja yang dipercaya tidak lagi dimulai dua kali saat Tapa dibuka.

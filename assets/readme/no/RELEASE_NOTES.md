@@ -1,5 +1,5 @@
-Tapa 1.0.4 viser i agentfaner når et arbeidsområde ikke er klarert, og bruker en endret klarering også på agenter som allerede kjører.
+Tapa 1.0.5 viser samtalen i en agentfane i et eksternt arbeidsområde igjen etter en omstart.
 
-## Forbedringer
-- I et arbeidsområde du ikke har klarert, viser agentfanen for Claude, Codex og OpenCode over inndatafeltet at prosjektets innstillinger, skills, hooks og MCP-servere ikke er lastet inn, med knappen «Stol på arbeidsområdet».
-- Når du stoler på et arbeidsområde eller trekker tilliten tilbake, starter de åpne agentøktene på nytt med eller uten prosjektets konfigurasjon. De fortsetter samtalen, og en tur som pågår, fullføres først.
+## Rettet
+- Etter at Tapa er startet på nytt, viser en agentfane i et eksternt arbeidsområde igjen den tidligere samtalen: Tapa leser Claudes utskrift fra den andre datamaskinen gjennom arbeidsområdets tilkobling. Fanen starter når tilkoblingen er åpen, i stedet for å mislykkes først.
+- Codex- og OpenCode-faner i et klarert arbeidsområde starter ikke lenger to ganger når Tapa åpnes.

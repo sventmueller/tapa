@@ -1,5 +1,5 @@
-Tapa 1.0.4 ukazuje na kartách agentů, když pracovní prostor není důvěryhodný, a změnu důvěry uplatní i na agenty, kteří už běží.
+Tapa 1.0.5 po restartu znovu zobrazí konverzaci karty agenta ve vzdáleném pracovním prostoru.
 
-## Vylepšení
-- V pracovním prostoru, kterému nedůvěřujete, ukazuje karta agenta Claude, Codex a OpenCode nad vstupním polem, že nastavení, dovednosti, hooky a servery MCP projektu nejsou načteny, s tlačítkem „Důvěřovat pracovnímu prostoru“.
-- Když pracovnímu prostoru začnete důvěřovat nebo důvěru odeberete, jeho otevřené relace agentů se znovu spustí s konfigurací projektu, nebo bez ní. Pokračují v konverzaci a probíhající odpověď nejprve doběhne.
+## Opravy
+- Po restartu Tapy karta agenta ve vzdáleném pracovním prostoru znovu ukazuje dosavadní konverzaci: Tapa čte přepis Claude z druhého počítače přes připojení pracovního prostoru. Karta se spustí, jakmile je připojení otevřené, místo aby nejdřív selhala.
+- Karty Codex a OpenCode v důvěryhodném pracovním prostoru se při otevření Tapy už nespouštějí dvakrát.

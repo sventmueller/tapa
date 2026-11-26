@@ -1,5 +1,5 @@
-Tapa 1.0.4 na zavihkih agentov pokaže, kdaj delovni prostor ni zaupanja vreden, in spremembo zaupanja uporabi tudi za agente, ki že tečejo.
+Tapa 1.0.5 po ponovnem zagonu znova prikaže pogovor zavihka agenta v oddaljenem delovnem prostoru.
 
-## Izboljšave
-- V delovnem prostoru, ki mu niste zaupali, zavihek agenta za Claude, Codex in OpenCode nad vnosnim poljem pokaže, da nastavitve, skills, hooki in strežniki MCP projekta niso naloženi, z gumbom »Zaupaj delovnemu prostoru«.
-- Ko delovnemu prostoru zaupate ali zaupanje prekličete, se njegove odprte seje agentov znova zaženejo s konfiguracijo projekta ali brez nje. Nadaljujejo pogovor, potek, ki teče, pa se najprej konča.
+## Popravki
+- Po ponovnem zagonu Tape zavihek agenta v oddaljenem delovnem prostoru znova prikaže dosedanji pogovor: Tapa prebere Claudov prepis z drugega računalnika prek povezave delovnega prostora. Zavihek se zažene, ko je povezava odprta, namesto da bi najprej spodletel.
+- Zavihka Codex in OpenCode v zaupanja vrednem delovnem prostoru se ob odprtju Tape ne zaženeta več dvakrat.
