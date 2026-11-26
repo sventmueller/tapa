@@ -32,6 +32,12 @@ const CHILD_KEY: usize = 1;
 
 /// How long the reader waits for the program's last output after it ended.
 const LAST_WORDS: std::time::Duration = std::time::Duration::from_millis(200);
+/// The longest it waits while output the gather stage has not read yet still lies in the PTY, as when the system did
+/// not run the stage for a while.
+const LAST_WORDS_AT_MOST: std::time::Duration = std::time::Duration::from_secs(2);
+/// How soon the reader asks again for the status of a program the kernel reported ended: macOS posts the exit to
+/// kqueue before the process can be waited for, and the one-shot filter does not fire a second time.
+const REAP_AGAIN: std::time::Duration = std::time::Duration::from_millis(1);
 
 /// The longest a synchronized update (mode 2026) holds the screen back.
 const SYNC_TIMEOUT: std::time::Duration = std::time::Duration::from_millis(150);
@@ -66,6 +72,8 @@ pub(crate) struct Reader {
     /// When parsed output that came amid a burst is shown at the latest.
     show_by: Option<Instant>,
     gather: Option<Gather>,
+    /// The gather stage reported the PTY closed, so no output follows.
+    closed: bool,
 }
 
 impl Reader {
@@ -81,6 +89,7 @@ impl Reader {
             quiet_since: None,
             show_by: None,
             gather: None,
+            closed: false,
         }
     }
 
@@ -110,6 +119,7 @@ impl Reader {
         self.gather.as_ref()?;
         let mut events = Events::with_capacity(NonZeroUsize::MIN.saturating_add(15));
         let mut registered = (interest.readable, interest.writable);
+        let mut ended = false;
         let status = loop {
             let deadline = self.sync_deadline();
             let packing = self.quiet_since.map(|since| since + IDLE);
@@ -117,6 +127,9 @@ impl Reader {
             let mut timeout = wake_at.map(|at| at.saturating_duration_since(Instant::now()));
             if self.gather.as_ref().is_some_and(|gather| !gather.may_sleep()) {
                 timeout = Some(std::time::Duration::ZERO);
+            }
+            if ended {
+                timeout = Some(timeout.map_or(REAP_AGAIN, |timeout| timeout.min(REAP_AGAIN)));
             }
             events.clear();
             let waited = self.poller.wait(&mut events, timeout);
@@ -149,7 +162,8 @@ impl Reader {
                 self.pending.push_back(bytes);
             }
             let mut exited = None;
-            if std::mem::take(&mut ended_early) || events.iter().any(|event| event.key == CHILD_KEY) {
+            ended |= std::mem::take(&mut ended_early) || events.iter().any(|event| event.key == CHILD_KEY);
+            if ended {
                 exited = self.pty.exit_status().map(Some);
             }
             self.take_batches();
@@ -193,22 +207,36 @@ impl Reader {
                         gather.give_back(bytes);
                     }
                 }
-                Batch::Closed => return,
+                Batch::Closed => {
+                    self.closed = true;
+                    return;
+                }
             }
         }
     }
 
     /// Parses what the gather stage still drains after the program ended, until the PTY closes or stays quiet.
     fn take_last_words(&mut self) {
-        while let Some(batch) = self.gather.as_ref().and_then(|gather| gather.next_within(LAST_WORDS)) {
+        let started = Instant::now();
+        while !self.closed {
+            // The terminal's side closes once the stage has read what lies in the PTY, so nothing is dropped and the
+            // stage sees the end unless a program the ended one left behind still holds it.
+            if !crate::sys::wait_readable(self.pty.file(), 0) || started.elapsed() >= LAST_WORDS_AT_MOST {
+                self.pty.release();
+            }
+            let Some(batch) = self.gather.as_ref().map(|gather| gather.next_within(LAST_WORDS)) else {
+                return;
+            };
             match batch {
-                Batch::Bytes { bytes, settled } => {
+                Some(Batch::Bytes { bytes, settled }) => {
                     self.consume(&bytes, settled);
                     if let Some(gather) = &self.gather {
                         gather.give_back(bytes);
                     }
                 }
-                Batch::Closed => return,
+                Some(Batch::Closed) => self.closed = true,
+                None if self.pty.holds_slave() => {}
+                None => return,
             }
         }
     }

@@ -29,11 +29,15 @@ pub(crate) struct Launch {
 pub(crate) struct Pty {
     child: Child,
     file: File,
+    /// The terminal's side, held until its output is read: macOS drops what the master has not read once the last
+    /// descriptor of that side closes, as when the program ends.
+    slave: Option<OwnedFd>,
 }
 
 /// Starts `launch` in a new PTY of `size`.
 pub(crate) fn spawn(launch: &Launch, size: &libc::winsize) -> io::Result<Pty> {
     let (master, slave) = open(size)?;
+    let held = slave.try_clone()?;
     let slave_fd = slave.as_raw_fd();
     let mut command = Command::new(&launch.program);
     command
@@ -77,7 +81,11 @@ pub(crate) fn spawn(launch: &Launch, size: &libc::winsize) -> io::Result<Pty> {
     })?;
     let file = File::from(master);
     set_nonblocking(file.as_raw_fd())?;
-    Ok(Pty { child, file })
+    Ok(Pty {
+        child,
+        file,
+        slave: Some(held),
+    })
 }
 
 /// A new PTY pair, both ends closed on exec, with UTF-8 input so the line editor erases whole characters.
@@ -131,6 +139,17 @@ impl Pty {
     /// The master side, which reads the program's output and takes its input.
     pub(crate) fn file(&self) -> &File {
         &self.file
+    }
+
+    /// Closes the held terminal's side once its output is read, so the master sees the end where nothing else holds
+    /// it; whether it held it.
+    pub(crate) fn release(&mut self) -> bool {
+        self.slave.take().is_some()
+    }
+
+    /// Whether it still holds the terminal's side.
+    pub(crate) fn holds_slave(&self) -> bool {
+        self.slave.is_some()
     }
 
     /// The program's process number.

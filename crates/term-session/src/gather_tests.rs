@@ -2,9 +2,13 @@ use std::fs::File;
 use std::io::Write;
 use std::os::fd::AsRawFd;
 use std::sync::Arc;
-use std::time::Duration;
+use std::time::{Duration, Instant};
 
-use super::{Batch, Gather};
+use super::{BRIDGE_WAIT_MS, Batch, Gather};
+
+/// The bytes of one piece and the pieces of one screen, as htop writes them.
+const PIECE: usize = 90;
+const PIECES: usize = 50;
 
 /// A pipe whose reading end does not block, as the PTY's does not.
 fn pipe() -> (File, std::io::PipeWriter) {
@@ -31,14 +35,16 @@ fn batches(gather: &Gather, total: usize) -> Vec<(usize, bool)> {
     seen
 }
 
-/// A screen written as htop writes one: dozens of small pieces a few microseconds apart.
-fn write_in_pieces(mut writer: std::io::PipeWriter) -> usize {
-    let piece = [b'x'; 90];
-    for _ in 0..50 {
+/// A screen written as htop writes one: dozens of small pieces a few microseconds apart; when each piece went out.
+fn write_in_pieces(mut writer: std::io::PipeWriter) -> Vec<Instant> {
+    let piece = [b'x'; PIECE];
+    let mut sent = Vec::with_capacity(PIECES);
+    for _ in 0..PIECES {
+        sent.push(Instant::now());
         writer.write_all(&piece).expect("the pipe takes the piece");
         std::thread::sleep(Duration::from_micros(20));
     }
-    50 * piece.len()
+    sent
 }
 
 #[test]
@@ -47,11 +53,24 @@ fn a_full_screen_program_writing_in_pieces_shows_only_once_it_paused() {
     let poller = Arc::new(polling::Poller::new().expect("a poller"));
     let gather = Gather::start(&reader, poller).expect("the stage starts");
     gather.set_full_screen(true);
-    let total = std::thread::scope(|scope| scope.spawn(|| write_in_pieces(writer)).join().expect("the writer ends"));
-    let seen = batches(&gather, total);
-    let early: Vec<_> = seen[..seen.len() - 1].iter().filter(|(_, settled)| *settled).collect();
-    assert!(early.is_empty(), "a piece in the middle counted as the end: {seen:?}");
-    assert_eq!(seen.last().map(|(_, settled)| *settled), Some(true), "{seen:?}");
+    let sent = std::thread::scope(|scope| scope.spawn(|| write_in_pieces(writer)).join().expect("the writer ends"));
+    let seen = batches(&gather, PIECES * PIECE);
+    // A writer the scheduler held back longer than the stage waits did pause, and its screen may show there; only a
+    // batch that ends amid pieces in quick succession must not count as the end.
+    let stall = Duration::from_millis(BRIDGE_WAIT_MS.unsigned_abs().into()) * 4 / 5;
+    let mut pieces = 0;
+    for (bytes, settled) in &seen[..seen.len() - 1] {
+        pieces += bytes / PIECE;
+        let paused = sent[pieces] - sent[pieces - 1];
+        assert!(
+            !settled || paused >= stall,
+            "a piece in the middle counted as the end after {paused:?}: {seen:?}"
+        );
+    }
+    // The last pieces may go out unsettled once the stage bridged as long as it may; the writer's end then says so.
+    let ended = seen.last().is_some_and(|(_, settled)| *settled)
+        || matches!(gather.next_within(Duration::from_secs(5)), Some(Batch::Closed));
+    assert!(ended, "the end of the screen was never announced: {seen:?}");
     gather.stop();
 }
 
