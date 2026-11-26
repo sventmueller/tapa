@@ -1,5 +1,8 @@
-Tapa 1.0.5 po ponownym uruchomieniu znów pokazuje rozmowę karty agenta w zdalnym obszarze roboczym.
+Tapa 1.0.6 chroni przed Markdownem przygotowanym, by wyczerpać pamięć, i zachowuje w terminalu ostatnie wyjście programu.
 
 ## Poprawki
-- Po ponownym uruchomieniu Tapy karta agenta w zdalnym obszarze roboczym znów pokazuje wcześniejszą rozmowę: Tapa odczytuje transkrypcję Claude z drugiego komputera przez połączenie obszaru roboczego. Karta uruchamia się, gdy połączenie jest otwarte, zamiast najpierw zgłosić błąd.
-- Karty Codex i OpenCode w zaufanym obszarze roboczym nie uruchamiają się już dwukrotnie przy otwieraniu Tapy.
+- Dokument Markdown z setkami tysięcy pustych komórek tabeli, w podglądzie lub w odpowiedzi agenta, nie zabiera już sekund i gigabajtów pamięci: powyżej 500 000 pustych komórek jego tabele są pokazywane jako tekst.
+- Terminal nie przegapia już końca swojego programu ani nie traci jego ostatniego wyjścia, gdy Mac jest obciążony.
+
+## Ulepszenia
+- Historia agenta pomija hooki, które zadziałały poprawnie lub nadal działają; hook, który się nie powiódł, jest nadal pokazywany.

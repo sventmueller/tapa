@@ -1,5 +1,8 @@
-Tapa 1.0.5 mostra di nuovo la conversazione di una scheda agente in uno spazio di lavoro remoto dopo un riavvio.
+Tapa 1.0.6 protegge dal Markdown costruito per esaurire la memoria e conserva l'ultimo output di un programma nel terminale.
 
 ## Correzioni
-- Dopo il riavvio di Tapa, una scheda agente in uno spazio di lavoro remoto mostra di nuovo la conversazione precedente: Tapa legge la trascrizione di Claude dall'altro computer tramite la connessione dello spazio di lavoro. La scheda si avvia quando la connessione è aperta, invece di fallire prima.
-- Le schede Codex e OpenCode in uno spazio di lavoro attendibile non si avviano più due volte all'apertura di Tapa.
+- Un documento Markdown con centinaia di migliaia di celle di tabella vuote, in un'anteprima o nella risposta di un agente, non richiede più secondi e gigabyte di memoria: oltre 500.000 celle vuote le sue tabelle vengono mostrate come testo.
+- Un terminale non perde più la fine del suo programma né il suo ultimo output quando il Mac è occupato.
+
+## Miglioramenti
+- La cronologia dell'agente tralascia gli hook eseguiti correttamente o ancora in corso; un hook non riuscito viene ancora mostrato.

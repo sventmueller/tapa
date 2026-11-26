@@ -1,5 +1,8 @@
-Tapa 1.0.5 affiche de nouveau la conversation d'un onglet d'agent dans un espace de travail distant après un redémarrage.
+Tapa 1.0.6 protège contre le Markdown conçu pour épuiser la mémoire et conserve la dernière sortie d'un programme dans le terminal.
 
 ## Corrections
-- Après un redémarrage de Tapa, un onglet d'agent dans un espace de travail distant affiche de nouveau sa conversation précédente : Tapa lit la transcription de Claude sur l'autre ordinateur via la connexion de l'espace de travail. L'onglet démarre une fois la connexion ouverte au lieu d'échouer d'abord.
-- Les onglets Codex et OpenCode d'un espace de travail approuvé ne démarrent plus deux fois à l'ouverture de Tapa.
+- Un document Markdown comportant des centaines de milliers de cellules de tableau vides, dans un aperçu ou dans la réponse d'un agent, ne coûte plus des secondes et des gigaoctets de mémoire : au-delà de 500 000 cellules vides, ses tableaux s'affichent en texte.
+- Un terminal ne manque plus la fin de son programme et ne perd plus sa dernière sortie lorsque le Mac est occupé.
+
+## Améliorations
+- L'historique de l'agent omet les hooks qui se sont bien déroulés ou qui sont encore en cours ; un hook qui a échoué reste affiché.

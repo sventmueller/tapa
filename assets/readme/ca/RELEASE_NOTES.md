@@ -1,5 +1,8 @@
-Tapa 1.0.5 torna a mostrar la conversa d'una pestanya d'agent en un espai de treball remot després d'un reinici.
+Tapa 1.0.6 protegeix contra Markdown pensat per esgotar la memòria i conserva l'última sortida d'un programa al terminal.
 
 ## Correccions
-- Després de reiniciar Tapa, una pestanya d'agent en un espai de treball remot torna a mostrar la conversa anterior: Tapa llegeix la transcripció de Claude de l'altre ordinador a través de la connexió de l'espai de treball. La pestanya s'inicia quan la connexió és oberta, en lloc de fallar primer.
-- Les pestanyes de Codex i OpenCode en un espai de treball de confiança ja no s'inicien dues vegades en obrir Tapa.
+- Un document Markdown amb centenars de milers de cel·les de taula buides, en una previsualització o en la resposta d'un agent, ja no costa segons i gigabytes de memòria: a partir de 500.000 cel·les buides, les taules es mostren com a text.
+- Un terminal ja no es perd el final del seu programa ni perd l'última sortida del programa quan el Mac està ocupat.
+
+## Millores
+- L'historial de l'agent omet els hooks que s'han executat bé o que encara s'executen; un hook que ha fallat encara es mostra.

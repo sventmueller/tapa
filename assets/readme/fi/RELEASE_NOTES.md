@@ -1,5 +1,8 @@
-Tapa 1.0.5 näyttää etätyötilan agenttivälilehden keskustelun taas uudelleenkäynnistyksen jälkeen.
+Tapa 1.0.6 suojaa muistia kuluttamaan tehdyltä Markdownilta ja säilyttää ohjelman viimeisen tulosteen päätteessä.
 
 ## Korjaukset
-- Kun Tapa käynnistetään uudelleen, etätyötilan agenttivälilehti näyttää taas aiemman keskustelunsa: Tapa lukee Clauden keskusteluhistorian toiselta tietokoneelta työtilan yhteyden kautta. Välilehti käynnistyy, kun yhteys on auki, eikä epäonnistu ensin.
-- Luotetun työtilan Codex- ja OpenCode-välilehdet eivät enää käynnisty kahdesti, kun Tapa avataan.
+- Markdown-asiakirja, jossa on satojatuhansia tyhjiä taulukon soluja, esikatselussa tai agentin vastauksessa, ei enää vie sekunteja ja gigatavuja muistia: yli 500 000 tyhjän solun jälkeen sen taulukot näkyvät tekstinä.
+- Pääte ei enää ohita ohjelmansa päättymistä eikä menetä ohjelman viimeistä tulostetta, kun Mac on kuormitettu.
+
+## Parannukset
+- Agentin historia jättää pois hookit, jotka toimivat moitteetta tai ovat yhä käynnissä; epäonnistunut hook näkyy edelleen.

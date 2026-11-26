@@ -1,5 +1,8 @@
-Tapa 1.0.5 menunjukkan semula perbualan tab ejen dalam ruang kerja jauh selepas dimulakan semula.
+Tapa 1.0.6 melindungi daripada Markdown yang dibina untuk menghabiskan memori dan mengekalkan output terakhir program dalam terminal.
 
 ## Pembetulan
-- Selepas Tapa dimulakan semula, tab ejen dalam ruang kerja jauh menunjukkan semula perbualan terdahulunya: Tapa membaca transkrip Claude dari komputer lain melalui sambungan ruang kerja. Tab bermula sebaik sahaja sambungan terbuka, bukannya gagal dahulu.
-- Tab Codex dan OpenCode dalam ruang kerja yang dipercayai tidak lagi bermula dua kali apabila Tapa dibuka.
+- Dokumen Markdown dengan ratusan ribu sel jadual kosong, dalam pratonton atau balasan ejen, tidak lagi mengambil masa beberapa saat dan gigabait memori: melebihi 500,000 sel kosong, jadualnya ditunjukkan sebagai teks.
+- Terminal tidak lagi terlepas penghujung programnya atau kehilangan output terakhir program apabila Mac sibuk.
+
+## Penambahbaikan
+- Sejarah ejen meninggalkan hook yang berjalan dengan baik atau masih berjalan; hook yang gagal masih ditunjukkan.

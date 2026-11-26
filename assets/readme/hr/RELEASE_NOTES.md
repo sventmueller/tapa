@@ -1,5 +1,8 @@
-Tapa 1.0.5 nakon ponovnog pokretanja ponovno prikazuje razgovor kartice agenta u udaljenom radnom prostoru.
+Tapa 1.0.6 štiti od Markdowna izrađenog da iscrpi memoriju i zadržava posljednji izlaz programa u terminalu.
 
 ## Ispravci
-- Nakon ponovnog pokretanja Tape kartica agenta u udaljenom radnom prostoru ponovno prikazuje svoj dosadašnji razgovor: Tapa čita Claudeov zapis s drugog računala preko veze radnog prostora. Kartica se pokreće čim je veza otvorena, umjesto da najprije ne uspije.
-- Kartice Codex i OpenCode u pouzdanom radnom prostoru više se ne pokreću dvaput pri otvaranju Tape.
+- Dokument Markdown sa stotinama tisuća praznih ćelija tablice, u pretpregledu ili u odgovoru agenta, više ne troši sekunde i gigabajte memorije: iznad 500.000 praznih ćelija njegove se tablice prikazuju kao tekst.
+- Terminal više ne propušta kraj svojeg programa niti gubi njegov posljednji izlaz kada je Mac opterećen.
+
+## Poboljšanja
+- Povijest agenta izostavlja hookove koji su prošli bez greške ili još rade; hook koji nije uspio i dalje se prikazuje.

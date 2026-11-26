@@ -1,5 +1,8 @@
-Tapa 1.0.5 viser samtalen i en agentfane i et eksternt arbeidsområde igjen etter en omstart.
+Tapa 1.0.6 beskytter mot Markdown laget for å bruke opp minnet, og beholder programmets siste utdata i terminalen.
 
 ## Rettet
-- Etter at Tapa er startet på nytt, viser en agentfane i et eksternt arbeidsområde igjen den tidligere samtalen: Tapa leser Claudes utskrift fra den andre datamaskinen gjennom arbeidsområdets tilkobling. Fanen starter når tilkoblingen er åpen, i stedet for å mislykkes først.
-- Codex- og OpenCode-faner i et klarert arbeidsområde starter ikke lenger to ganger når Tapa åpnes.
+- Et Markdown-dokument med hundretusener av tomme tabellceller, i en forhåndsvisning eller i et svar fra en agent, bruker ikke lenger sekunder og gigabyte med minne: over 500 000 tomme celler vises tabellene som tekst.
+- En terminal går ikke lenger glipp av slutten på programmet sitt eller mister programmets siste utdata når Macen er travel.
+
+## Forbedringer
+- Agentforløpet utelater hooks som kjørte feilfritt eller fortsatt kjører; en hook som mislyktes, vises fortsatt.

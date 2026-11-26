@@ -1,5 +1,8 @@
-Tapa 1.0.5 visar konversationen i en agentflik i en fjärrarbetsyta igen efter en omstart.
+Tapa 1.0.6 skyddar mot Markdown som är gjord för att tömma minnet och behåller ett programs sista utdata i terminalen.
 
 ## Åtgärdat
-- Efter att Tapa startats om visar en agentflik i en fjärrarbetsyta åter sin tidigare konversation: Tapa läser Claudes utskrift från den andra datorn via arbetsytans anslutning. Fliken startar när anslutningen är öppen i stället för att först misslyckas.
-- Codex- och OpenCode-flikar i en betrodd arbetsyta startar inte längre två gånger när Tapa öppnas.
+- Ett Markdown-dokument med hundratusentals tomma tabellceller, i en förhandsvisning eller i en agents svar, tar inte längre sekunder och gigabyte minne: över 500 000 tomma celler visas tabellerna som text.
+- En terminal missar inte längre slutet på sitt program och förlorar inte programmets sista utdata när Macen är upptagen.
+
+## Förbättringar
+- Agentens historik utelämnar hooks som körde utan fel eller fortfarande körs; en hook som misslyckades visas fortfarande.

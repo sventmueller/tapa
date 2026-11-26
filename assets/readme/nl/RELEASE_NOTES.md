@@ -1,5 +1,8 @@
-Tapa 1.0.5 toont het gesprek van een agenttabblad in een externe werkruimte weer na een herstart.
+Tapa 1.0.6 beschermt tegen Markdown die het geheugen moet uitputten en houdt de laatste uitvoer van een programma in de terminal.
 
 ## Opgelost
-- Na een herstart van Tapa toont een agenttabblad in een externe werkruimte weer het eerdere gesprek: Tapa leest het transcript van Claude van de andere computer via de verbinding van de werkruimte. Het tabblad start zodra de verbinding open is, in plaats van eerst te mislukken.
-- Codex- en OpenCode-tabbladen in een vertrouwde werkruimte starten niet meer twee keer wanneer Tapa opent.
+- Een Markdown-document met honderdduizenden lege tabelcellen, in een voorvertoning of in het antwoord van een agent, kost niet langer seconden en gigabytes geheugen: boven 500.000 lege cellen verschijnen de tabellen als tekst.
+- Een terminal mist niet langer het einde van zijn programma en verliest de laatste uitvoer niet meer wanneer de Mac druk is.
+
+## Verbeteringen
+- Het agentverloop laat hooks weg die goed zijn uitgevoerd of nog lopen; een mislukte hook blijft zichtbaar.
