@@ -95,7 +95,7 @@ toml_edit = "0.25"
 
 [workspace.package]
 # The product's one version, which only `cargo xtask deploy` raises.
-version = "1.0.5"
+version = "1.0.6"
 edition = "2024"
 license = "MIT OR Apache-2.0"
 publish = false
