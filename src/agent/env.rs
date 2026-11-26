@@ -33,6 +33,7 @@ pub(crate) fn start() {
         let (lock, ready) = shared();
         *lock.lock().unwrap_or_else(std::sync::PoisonError::into_inner) = Some(env);
         ready.notify_all();
+        term_base::main_soon(crate::window::follow_agent_buttons);
     });
 }
 

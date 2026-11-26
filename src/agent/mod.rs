@@ -39,6 +39,7 @@ pub(crate) fn config_changed() {
     let config = app().config();
     term_ui_agent::set_text_size(config.agent.font_size);
     term_ui_agent::set_offer(config.agent.offer.clone());
+    crate::window::follow_agent_buttons();
 }
 
 /// The window and the workspace whose id is `workspace`, while it is open.

@@ -407,8 +407,15 @@ pub(crate) fn follow_sidebar(ns_window: &NSWindow, collapsed: bool) {
     }
 }
 
+/// Has the agent button of `ns_window`'s toolbar open the only installed agent with a click, else its menu.
+pub(crate) fn follow_agents(ns_window: &NSWindow) {
+    let menu = delegate_of(ns_window).and_then(|delegate| delegate.ivars().agent_menu.borrow().clone());
+    if let Some(menu) = menu {
+        menu.follow();
+    }
+}
+
 /// The toolbar delegate of `ns_window`, one of the app's.
-#[cfg(feature = "selftest")]
 fn delegate_of(ns_window: &NSWindow) -> Option<Retained<Toolbar>> {
     let delegate = ns_window.toolbar()?.delegate()?;
     let object: Retained<AnyObject> = delegate.into();
@@ -489,6 +496,11 @@ pub(crate) fn state(ns_window: &NSWindow) -> String {
         .and_then(|delegate| delegate.ivars().new_menu.borrow().clone())
         .map(|menu| menu.itemArray().iter().map(|item| item.title().to_string()).collect())
         .unwrap_or_default();
+    // Read before the menu below fills, which would set the click itself.
+    let click = delegate_of(ns_window)
+        .and_then(|delegate| delegate.ivars().agent_menu.borrow().clone())
+        .and_then(|menu| menu.click_opens())
+        .unwrap_or_else(|| "menu".into());
     let agents: Vec<String> = toolbar
         .items()
         .iter()
@@ -503,7 +515,7 @@ pub(crate) fn state(ns_window: &NSWindow) -> String {
         })
         .unwrap_or_default();
     format!(
-        "{} | branch {branch:?} | new workspace {new_menu:?} | agents {agents:?}",
+        "{} | branch {branch:?} | new workspace {new_menu:?} | agents {agents:?} | agent click {click}",
         items.join(", ")
     )
 }

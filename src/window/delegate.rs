@@ -42,8 +42,16 @@ define_class!(
         }
 
         #[unsafe(method(windowDidBecomeKey:))]
-        fn did_become_key(&self, _notification: &NSNotification) {
-            guarded((), || self.became_key());
+        fn did_become_key(&self, notification: &NSNotification) {
+            guarded((), || {
+                self.became_key();
+                if let Some(ns_window) = notification
+                    .object()
+                    .and_then(|object| object.downcast::<NSWindow>().ok())
+                {
+                    super::toolbar::follow_agents(&ns_window);
+                }
+            });
         }
 
         #[unsafe(method(windowDidEndLiveResize:))]

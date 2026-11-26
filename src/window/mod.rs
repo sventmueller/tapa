@@ -486,6 +486,15 @@ pub(super) fn fill(body: &NSView, view: &NSView) {
     ]));
 }
 
+/// Has the agent button of every toolbar follow the agents installed now, which decide whether a click opens one
+/// directly.
+pub(crate) fn follow_agent_buttons() {
+    let Some(mtm) = MainThreadMarker::new() else { return };
+    for ns_window in objc2_app_kit::NSApplication::sharedApplication(mtm).windows().iter() {
+        toolbar::follow_agents(&ns_window);
+    }
+}
+
 /// The app came to the front: the editors look at their files, which may have changed while no watcher ran, and the
 /// Git panels read their repositories again.
 pub(crate) fn app_activated() {
