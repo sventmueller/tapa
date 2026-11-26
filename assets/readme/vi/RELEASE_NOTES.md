@@ -1,8 +1,8 @@
-Tapa 1.0.6 bảo vệ trước Markdown được tạo để làm cạn bộ nhớ và giữ lại đầu ra cuối cùng của chương trình trong terminal.
+Tapa 1.0.7 tô màu lệnh và hiển thị danh sách gợi ý khi bạn gõ, kể cả khi không có trường nhập.
 
-## Đã sửa
-- Tài liệu Markdown có hàng trăm nghìn ô bảng trống, trong bản xem trước hoặc trong câu trả lời của tác nhân, không còn tốn nhiều giây và nhiều gigabyte bộ nhớ: vượt quá 500.000 ô trống, các bảng của nó hiển thị dưới dạng văn bản.
-- Terminal không còn bỏ lỡ lúc chương trình kết thúc hay mất đầu ra cuối cùng của chương trình khi máy Mac đang bận.
+## Mới
+- Không có trường nhập, lệnh bạn gõ vẫn có cùng màu như trong trường: lệnh, lệnh con, tùy chọn, biến và toán tử, cùng gạch chân đứt nét màu đỏ dưới lệnh mà shell không chạy được. Màu do shell tự đặt được giữ nguyên.
+- Không có trường nhập, danh sách gợi ý tự mở khi bạn gõ một từ. Return chạy dòng, Tab hoặc → nhận gợi ý màu xám; sau khi dùng ↑ hoặc ↓, chúng nhận mục đã chọn. Esc đóng danh sách cho từ đó, và "Cài đặt › Nhập liệu" tắt nó.
 
 ## Cải tiến
-- Lịch sử tác nhân bỏ qua các hook đã chạy tốt hoặc vẫn đang chạy; hook bị lỗi vẫn được hiển thị.
+- Khi chỉ cài một tác nhân, nút tác nhân trên thanh công cụ mở nó bằng một lần bấm thay vì một menu.

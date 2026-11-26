@@ -1,8 +1,8 @@
-Tapa 1.0.6 ščiti pred Markdownom, izdelanim za izčrpanje pomnilnika, in v terminalu ohrani zadnji izpis programa.
+Tapa 1.0.7 med tipkanjem obarva ukaz in pokaže seznam predlogov, tudi brez vnosnega polja.
 
-## Popravki
-- Dokument Markdown s stotisoči praznih celic tabele, v predogledu ali v odgovoru agenta, ne porabi več sekund in gigabajtov pomnilnika: nad 500.000 praznih celic se njegove tabele prikažejo kot besedilo.
-- Terminal ne zamudi več konca svojega programa in ne izgubi njegovega zadnjega izpisa, ko je Mac obremenjen.
+## Novo
+- Brez vnosnega polja dobi ukaz, ki ga tipkate, enake barve kot v polju: ukaz, podukazi, možnosti, spremenljivke in operatorji ter rdeče črtkano podčrtavanje pod ukazom, ki ga lupina ne more zagnati. Barve, ki jih nastavi lupina sama, ostanejo.
+- Brez vnosnega polja se seznam predlogov med tipkanjem besede odpre sam. Return izvede vrstico, Tab ali → pa sprejmeta sivi predlog; po ↑ ali ↓ sprejmeta izbrani vnos. Esc zapre seznam za to besedo, »Nastavitve › Vnos« pa ga izklopi.
 
 ## Izboljšave
-- Zgodovina agenta izpusti hooke, ki so se izvedli brez napak ali še tečejo; hook, ki ni uspel, se še vedno prikaže.
+- Če je nameščen le en agent, ga gumb agenta v orodni vrstici odpre z enim klikom namesto menija.

@@ -1,8 +1,8 @@
-Tapa 1.0.6, belleği tüketmek için hazırlanmış Markdown'a karşı korur ve bir programın son çıktısını terminalde tutar.
+Tapa 1.0.7, giriş alanı olmadan da yazarken komutu renklendirir ve öneri listesini gösterir.
 
-## Düzeltmeler
-- Yüz binlerce boş tablo hücresi içeren bir Markdown belgesi, önizlemede ya da bir ajanın yanıtında, artık saniyeler ve gigabaytlarca bellek harcamaz: 500.000 boş hücrenin üzerinde tabloları metin olarak gösterilir.
-- Bir terminal, Mac meşgulken artık programının bitişini kaçırmaz ve programın son çıktısını kaybetmez.
+## Yenilikler
+- Giriş alanı olmadan da yazdığınız komut alandakiyle aynı renkleri alır: komut, alt komutlar, seçenekler, değişkenler ve operatörler; kabuğun çalıştıramadığı bir komutun altında ise kırmızı kesikli bir çizgi belirir. Kabuğun kendi koyduğu renkler korunur.
+- Giriş alanı olmadan, bir sözcük yazarken öneri listesi kendiliğinden açılır. Return satırı çalıştırır, Tab veya → gri öneriyi kabul eder; ↑ veya ↓ sonrasında seçili öğeyi kabul ederler. Esc listeyi o sözcük için kapatır, "Ayarlar › Giriş" ise kapatır.
 
 ## İyileştirmeler
-- Ajan geçmişi sorunsuz çalışan ya da hâlâ çalışan hook'ları göstermez; başarısız olan bir hook gösterilmeye devam eder.
+- Yalnızca bir ajan yüklüyse araç çubuğundaki ajan düğmesi onu menü yerine tek tıklamayla açar.

@@ -1,8 +1,8 @@
-Tapa 1.0.6 beskytter mod Markdown, der er lavet til at opbruge hukommelsen, og bevarer et programs sidste output i terminalen.
+Tapa 1.0.7 farver kommandoen og viser forslagslisten, mens du skriver, også uden inputfeltet.
 
-## Rettelser
-- Et Markdown-dokument med hundredtusinder af tomme tabelceller, i et eksempel eller i en agents svar, bruger ikke længere sekunder og gigabytes hukommelse: over 500.000 tomme celler vises tabellerne som tekst.
-- En terminal går ikke længere glip af sit programs afslutning og mister ikke programmets sidste output, når Mac'en er travl.
+## Nyt
+- Uden inputfeltet får den kommando, du skriver, de samme farver som i feltet: kommando, underkommandoer, indstillinger, variabler og operatorer samt en stiplet rød understregning under en kommando, som shellen ikke kan køre. Farver, som shellen selv sætter, bevares.
+- Uden inputfeltet åbner forslagslisten af sig selv, mens du skriver et ord. Retur kører linjen, og Tab eller → tager det grå forslag; efter ↑ eller ↓ tager de det markerede element. Esc lukker listen for det ord, og "Indstillinger › Input" slår den fra.
 
 ## Forbedringer
-- Agentens forløb udelader hooks, der kørte fejlfrit eller stadig kører; en hook, der mislykkedes, vises stadig.
+- Med kun én agent installeret åbner værktøjslinjens agentknap den med ét klik i stedet for en menu.

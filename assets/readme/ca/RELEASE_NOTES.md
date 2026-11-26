@@ -1,8 +1,8 @@
-Tapa 1.0.6 protegeix contra Markdown pensat per esgotar la memòria i conserva l'última sortida d'un programa al terminal.
+Tapa 1.0.7 acoloreix l'ordre i mostra la llista de suggeriments mentre escrius, també sense el camp d'entrada.
 
-## Correccions
-- Un document Markdown amb centenars de milers de cel·les de taula buides, en una previsualització o en la resposta d'un agent, ja no costa segons i gigabytes de memòria: a partir de 500.000 cel·les buides, les taules es mostren com a text.
-- Un terminal ja no es perd el final del seu programa ni perd l'última sortida del programa quan el Mac està ocupat.
+## Novetats
+- Sense el camp d'entrada, l'ordre que escrius rep els mateixos colors que al camp: ordre, subordres, opcions, variables i operadors, i un subratllat vermell discontinu sota una ordre que l'intèrpret no pot executar. Els colors que posa l'intèrpret es mantenen.
+- Sense el camp d'entrada, la llista de suggeriments s'obre sola mentre escrius una paraula. Retorn executa la línia i Tab o → accepten el suggeriment gris; després de ↑ o ↓, accepten l'element seleccionat. Esc tanca la llista per a aquesta paraula, i «Configuració › Entrada» la desactiva.
 
 ## Millores
-- L'historial de l'agent omet els hooks que s'han executat bé o que encara s'executen; un hook que ha fallat encara es mostra.
+- Amb un sol agent instal·lat, el botó d'agent de la barra d'eines l'obre amb un clic en lloc d'un menú.

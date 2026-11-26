@@ -1,8 +1,8 @@
-Tapa 1.0.6 schützt vor Markdown, das den Speicher erschöpfen soll, und behält die letzte Ausgabe eines Programms im Terminal.
+Tapa 1.0.7 färbt den Befehl und zeigt die Vorschlagsliste beim Tippen, auch ohne Eingabefeld.
 
-## Behoben
-- Ein Markdown-Dokument mit Hunderttausenden leeren Tabellenzellen, in einer Vorschau oder in der Antwort eines Agenten, kostet nicht mehr Sekunden und Gigabytes an Speicher: Ab 500.000 leeren Zellen erscheinen seine Tabellen als Text.
-- Ein Terminal verpasst das Ende seines Programms nicht mehr und verliert dessen letzte Ausgabe nicht, wenn der Mac ausgelastet ist.
+## Neu
+- Ohne Eingabefeld bekommt der getippte Befehl dieselben Farben wie im Feld: Befehl, Unterbefehle, Optionen, Variablen und Operatoren, dazu eine rot gestrichelte Unterstreichung unter einem Befehl, den die Shell nicht ausführen kann. Farben, die die Shell selbst setzt, bleiben.
+- Ohne Eingabefeld öffnet sich die Vorschlagsliste beim Tippen eines Wortes von selbst. Return führt die Zeile aus, Tab oder → übernehmen den grauen Vorschlag; nach ↑ oder ↓ übernehmen sie den markierten Eintrag. Esc schließt die Liste für dieses Wort, „Einstellungen › Eingabe“ schaltet sie ab.
 
 ## Verbesserungen
-- Der Agent-Verlauf lässt Hooks weg, die fehlerfrei liefen oder noch laufen; ein fehlgeschlagener Hook erscheint weiterhin.
+- Ist nur ein Agent installiert, öffnet die Agent-Schaltfläche der Toolbar ihn mit einem Klick statt mit einem Menü.

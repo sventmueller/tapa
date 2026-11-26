@@ -1,8 +1,8 @@
-O Tapa 1.0.6 protege contra Markdown criado para esgotar a memória e mantém a última saída de um programa no terminal.
+O Tapa 1.0.7 colore o comando e mostra a lista de sugestões enquanto escreve, também sem o campo de entrada.
 
-## Correções
-- Um documento Markdown com centenas de milhares de células de tabela vazias, numa pré-visualização ou na resposta de um agente, já não demora segundos nem ocupa gigabytes de memória: acima de 500 000 células vazias, as tabelas aparecem como texto.
-- Um terminal já não perde o fim do seu programa nem a última saída dele quando o Mac está ocupado.
+## Novidades
+- Sem o campo de entrada, o comando que escreve recebe as mesmas cores do campo: comando, subcomandos, opções, variáveis e operadores, e um sublinhado vermelho tracejado sob um comando que a shell não consegue executar. As cores que a própria shell define mantêm-se.
+- Sem o campo de entrada, a lista de sugestões abre sozinha enquanto escreve uma palavra. Return executa a linha e Tab ou → aceitam a sugestão cinzenta; depois de ↑ ou ↓, aceitam o item selecionado. Esc fecha a lista para essa palavra, e "Definições › Entrada" desativa-a.
 
 ## Melhorias
-- O histórico do agente omite hooks que correram sem erros ou que ainda estão a correr; um hook que falhou continua a aparecer.
+- Com apenas um agente instalado, o botão de agente da barra de ferramentas abre-o com um clique em vez de um menu.

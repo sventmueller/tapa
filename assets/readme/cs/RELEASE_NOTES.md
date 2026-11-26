@@ -1,8 +1,8 @@
-Tapa 1.0.6 chrání před Markdownem, který má vyčerpat paměť, a ponechá v terminálu poslední výstup programu.
+Tapa 1.0.7 obarvuje příkaz a při psaní ukazuje seznam návrhů, i bez vstupního pole.
 
-## Opravy
-- Dokument Markdown se stovkami tisíc prázdných buněk tabulky, v náhledu nebo v odpovědi agenta, už nezabere sekundy a gigabajty paměti: nad 500 000 prázdných buněk se jeho tabulky zobrazí jako text.
-- Terminál už nepropásne konec svého programu ani neztratí jeho poslední výstup, když je Mac vytížený.
+## Novinky
+- Bez vstupního pole dostane psaný příkaz stejné barvy jako v poli: příkaz, podpříkazy, volby, proměnné a operátory a červené přerušované podtržení pod příkazem, který shell nemůže spustit. Barvy, které nastaví sám shell, zůstanou.
+- Bez vstupního pole se seznam návrhů při psaní slova otevře sám. Return spustí řádek, Tab nebo → převezmou šedý návrh; po ↑ nebo ↓ převezmou označenou položku. Esc seznam pro toto slovo zavře a „Nastavení › Vstup“ ho vypne.
 
 ## Vylepšení
-- Průběh agenta vynechává hooky, které proběhly v pořádku nebo ještě běží; hook, který selhal, se zobrazuje dál.
+- Je-li nainstalován jen jeden agent, otevře ho tlačítko agenta na panelu nástrojů jedním kliknutím místo nabídky.

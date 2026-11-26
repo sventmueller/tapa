@@ -1,8 +1,8 @@
-Tapa 1.0.6 štiti od Markdowna izrađenog da iscrpi memoriju i zadržava posljednji izlaz programa u terminalu.
+Tapa 1.0.7 boji naredbu i prikazuje popis prijedloga dok tipkate, i bez polja za unos.
 
-## Ispravci
-- Dokument Markdown sa stotinama tisuća praznih ćelija tablice, u pretpregledu ili u odgovoru agenta, više ne troši sekunde i gigabajte memorije: iznad 500.000 praznih ćelija njegove se tablice prikazuju kao tekst.
-- Terminal više ne propušta kraj svojeg programa niti gubi njegov posljednji izlaz kada je Mac opterećen.
+## Novo
+- Bez polja za unos naredba koju tipkate dobiva iste boje kao u polju: naredba, podnaredbe, opcije, varijable i operatori te crveno isprekidano podcrtavanje ispod naredbe koju ljuska ne može pokrenuti. Boje koje ljuska sama postavi ostaju.
+- Bez polja za unos popis prijedloga otvara se sam dok tipkate riječ. Return pokreće redak, a Tab ili → prihvaćaju sivi prijedlog; nakon ↑ ili ↓ prihvaćaju označenu stavku. Esc zatvara popis za tu riječ, a „Postavke › Unos” ga isključuje.
 
 ## Poboljšanja
-- Povijest agenta izostavlja hookove koji su prošli bez greške ili još rade; hook koji nije uspio i dalje se prikazuje.
+- Kad je instaliran samo jedan agent, gumb agenta na alatnoj traci otvara ga jednim klikom umjesto izbornika.

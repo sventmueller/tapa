@@ -1,8 +1,8 @@
-Tapa 1.0.6 protegge dal Markdown costruito per esaurire la memoria e conserva l'ultimo output di un programma nel terminale.
+Tapa 1.0.7 colora il comando e mostra l'elenco dei suggerimenti mentre scrivi, anche senza il campo di input.
 
-## Correzioni
-- Un documento Markdown con centinaia di migliaia di celle di tabella vuote, in un'anteprima o nella risposta di un agente, non richiede più secondi e gigabyte di memoria: oltre 500.000 celle vuote le sue tabelle vengono mostrate come testo.
-- Un terminale non perde più la fine del suo programma né il suo ultimo output quando il Mac è occupato.
+## Novità
+- Senza il campo di input, il comando che scrivi riceve gli stessi colori del campo: comando, sottocomandi, opzioni, variabili e operatori, e una sottolineatura rossa tratteggiata sotto un comando che la shell non può eseguire. I colori impostati dalla shell stessa restano.
+- Senza il campo di input, l'elenco dei suggerimenti si apre da solo mentre scrivi una parola. A capo esegue la riga, Tab o → accettano il suggerimento grigio; dopo ↑ o ↓ accettano l'elemento selezionato. Esc chiude l'elenco per quella parola e «Impostazioni › Input» lo disattiva.
 
 ## Miglioramenti
-- La cronologia dell'agente tralascia gli hook eseguiti correttamente o ancora in corso; un hook non riuscito viene ancora mostrato.
+- Con un solo agente installato, il pulsante dell'agente nella barra degli strumenti lo apre con un clic invece di un menu.

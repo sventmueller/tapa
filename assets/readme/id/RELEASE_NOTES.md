@@ -1,8 +1,8 @@
-Tapa 1.0.6 melindungi dari Markdown yang dibuat untuk menghabiskan memori dan mempertahankan output terakhir program di terminal.
+Tapa 1.0.7 mewarnai perintah dan menampilkan daftar saran saat Anda mengetik, juga tanpa kolom input.
 
-## Perbaikan
-- Dokumen Markdown dengan ratusan ribu sel tabel kosong, di pratinjau atau di balasan agen, tidak lagi memakan waktu berdetik-detik dan memori bergigabyte: di atas 500.000 sel kosong tabelnya ditampilkan sebagai teks.
-- Terminal tidak lagi melewatkan akhir programnya atau kehilangan output terakhir program saat Mac sedang sibuk.
+## Baru
+- Tanpa kolom input, perintah yang Anda ketik mendapat warna yang sama seperti di kolom: perintah, subperintah, opsi, variabel, dan operator, serta garis bawah merah putus-putus di bawah perintah yang tidak dapat dijalankan shell. Warna yang diatur shell sendiri tetap dipertahankan.
+- Tanpa kolom input, daftar saran terbuka sendiri saat Anda mengetik sebuah kata. Return menjalankan baris, Tab atau → menerima saran abu-abu; setelah ↑ atau ↓, keduanya menerima entri yang dipilih. Esc menutup daftar untuk kata itu, dan "Pengaturan › Input" mematikannya.
 
 ## Peningkatan
-- Riwayat agen tidak menampilkan hook yang berjalan dengan baik atau masih berjalan; hook yang gagal tetap ditampilkan.
+- Jika hanya satu agen terpasang, tombol agen di bar alat membukanya dengan satu klik alih-alih menu.

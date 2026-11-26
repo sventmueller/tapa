@@ -1,8 +1,8 @@
-Tapa 1.0.6 melindungi daripada Markdown yang dibina untuk menghabiskan memori dan mengekalkan output terakhir program dalam terminal.
+Tapa 1.0.7 mewarnakan arahan dan menunjukkan senarai cadangan semasa anda menaip, juga tanpa medan input.
 
-## Pembetulan
-- Dokumen Markdown dengan ratusan ribu sel jadual kosong, dalam pratonton atau balasan ejen, tidak lagi mengambil masa beberapa saat dan gigabait memori: melebihi 500,000 sel kosong, jadualnya ditunjukkan sebagai teks.
-- Terminal tidak lagi terlepas penghujung programnya atau kehilangan output terakhir program apabila Mac sibuk.
+## Baharu
+- Tanpa medan input, arahan yang anda taip mendapat warna yang sama seperti dalam medan: arahan, subarahan, pilihan, pemboleh ubah dan operator, serta garis bawah merah putus-putus di bawah arahan yang tidak dapat dijalankan oleh shell. Warna yang ditetapkan oleh shell sendiri kekal.
+- Tanpa medan input, senarai cadangan terbuka sendiri semasa anda menaip sesuatu perkataan. Return menjalankan baris, Tab atau → menerima cadangan kelabu; selepas ↑ atau ↓, kedua-duanya menerima entri yang dipilih. Esc menutup senarai untuk perkataan itu, dan "Seting › Input" mematikannya.
 
 ## Penambahbaikan
-- Sejarah ejen meninggalkan hook yang berjalan dengan baik atau masih berjalan; hook yang gagal masih ditunjukkan.
+- Jika hanya satu ejen dipasang, butang ejen pada bar alat membukanya dengan satu klik dan bukannya menu.

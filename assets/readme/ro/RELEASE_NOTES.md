@@ -1,8 +1,8 @@
-Tapa 1.0.6 protejează împotriva Markdown-ului construit pentru a epuiza memoria și păstrează în terminal ultima ieșire a unui program.
+Tapa 1.0.7 colorează comanda și afișează lista de sugestii în timp ce tastați, și fără câmpul de introducere.
 
-## Remedieri
-- Un document Markdown cu sute de mii de celule de tabel goale, într-o previzualizare sau în răspunsul unui agent, nu mai consumă secunde și gigaocteți de memorie: peste 500.000 de celule goale, tabelele sale apar ca text.
-- Un terminal nu mai ratează sfârșitul programului său și nu mai pierde ultima ieșire a acestuia când Mac-ul este ocupat.
+## Noutăți
+- Fără câmpul de introducere, comanda tastată primește aceleași culori ca în câmp: comandă, subcomenzi, opțiuni, variabile și operatori, plus o subliniere roșie întreruptă sub o comandă pe care shell-ul nu o poate rula. Culorile setate chiar de shell rămân.
+- Fără câmpul de introducere, lista de sugestii se deschide singură când tastați un cuvânt. Return rulează linia, iar Tab sau → acceptă sugestia gri; după ↑ sau ↓, acceptă elementul selectat. Esc închide lista pentru acel cuvânt, iar „Configurări › Introducere” o dezactivează.
 
 ## Îmbunătățiri
-- Istoricul agentului omite hookurile care au rulat fără erori sau încă rulează; un hook care a eșuat apare în continuare.
+- Cu un singur agent instalat, butonul de agent din bara de instrumente îl deschide cu un clic în loc de un meniu.

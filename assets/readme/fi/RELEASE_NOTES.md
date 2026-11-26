@@ -1,8 +1,8 @@
-Tapa 1.0.6 suojaa muistia kuluttamaan tehdyltä Markdownilta ja säilyttää ohjelman viimeisen tulosteen päätteessä.
+Tapa 1.0.7 värittää komennon ja näyttää ehdotusluettelon kirjoittaessa myös ilman syötekenttää.
 
-## Korjaukset
-- Markdown-asiakirja, jossa on satojatuhansia tyhjiä taulukon soluja, esikatselussa tai agentin vastauksessa, ei enää vie sekunteja ja gigatavuja muistia: yli 500 000 tyhjän solun jälkeen sen taulukot näkyvät tekstinä.
-- Pääte ei enää ohita ohjelmansa päättymistä eikä menetä ohjelman viimeistä tulostetta, kun Mac on kuormitettu.
+## Uutta
+- Ilman syötekenttää kirjoittamasi komento saa samat värit kuin kentässä: komento, alikomennot, valitsimet, muuttujat ja operaattorit sekä punainen katkoviiva komennon alla, jota komentotulkki ei voi suorittaa. Komentotulkin itse asettamat värit säilyvät.
+- Ilman syötekenttää ehdotusluettelo avautuu itsestään, kun kirjoitat sanaa. Return suorittaa rivin ja Tab tai → hyväksyy harmaan ehdotuksen; ↑- tai ↓-näppäimen jälkeen ne hyväksyvät valitun kohteen. Esc sulkee luettelon tältä sanalta, ja ”Asetukset › Syöte” poistaa sen käytöstä.
 
 ## Parannukset
-- Agentin historia jättää pois hookit, jotka toimivat moitteetta tai ovat yhä käynnissä; epäonnistunut hook näkyy edelleen.
+- Kun vain yksi agentti on asennettu, työkalurivin agenttipainike avaa sen yhdellä osoituksella valikon sijaan.

@@ -1,8 +1,8 @@
-Tapa 1.0.6 protège contre le Markdown conçu pour épuiser la mémoire et conserve la dernière sortie d'un programme dans le terminal.
+Tapa 1.0.7 colore la commande et affiche la liste des suggestions pendant la saisie, même sans le champ de saisie.
 
-## Corrections
-- Un document Markdown comportant des centaines de milliers de cellules de tableau vides, dans un aperçu ou dans la réponse d'un agent, ne coûte plus des secondes et des gigaoctets de mémoire : au-delà de 500 000 cellules vides, ses tableaux s'affichent en texte.
-- Un terminal ne manque plus la fin de son programme et ne perd plus sa dernière sortie lorsque le Mac est occupé.
+## Nouveautés
+- Sans le champ de saisie, la commande que vous tapez prend les mêmes couleurs que dans le champ : commande, sous-commandes, options, variables et opérateurs, et un soulignement rouge en pointillés sous une commande que le shell ne peut pas exécuter. Les couleurs que le shell définit lui-même sont conservées.
+- Sans le champ de saisie, la liste des suggestions s'ouvre d'elle-même pendant la saisie d'un mot. Retour exécute la ligne, Tab ou → acceptent la suggestion grise ; après ↑ ou ↓, ils acceptent l'élément sélectionné. Échap ferme la liste pour ce mot, et « Réglages › Saisie » la désactive.
 
 ## Améliorations
-- L'historique de l'agent omet les hooks qui se sont bien déroulés ou qui sont encore en cours ; un hook qui a échoué reste affiché.
+- Avec un seul agent installé, le bouton d'agent de la barre d'outils l'ouvre en un clic au lieu d'un menu.

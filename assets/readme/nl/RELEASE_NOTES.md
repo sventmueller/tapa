@@ -1,8 +1,8 @@
-Tapa 1.0.6 beschermt tegen Markdown die het geheugen moet uitputten en houdt de laatste uitvoer van een programma in de terminal.
+Tapa 1.0.7 kleurt het commando en toont de suggestielijst terwijl je typt, ook zonder het invoerveld.
 
-## Opgelost
-- Een Markdown-document met honderdduizenden lege tabelcellen, in een voorvertoning of in het antwoord van een agent, kost niet langer seconden en gigabytes geheugen: boven 500.000 lege cellen verschijnen de tabellen als tekst.
-- Een terminal mist niet langer het einde van zijn programma en verliest de laatste uitvoer niet meer wanneer de Mac druk is.
+## Nieuw
+- Zonder het invoerveld krijgt het commando dat je typt dezelfde kleuren als in het veld: commando, subcommando's, opties, variabelen en operatoren, en een rode stippellijn onder een commando dat de shell niet kan uitvoeren. Kleuren die de shell zelf zet, blijven.
+- Zonder het invoerveld opent de suggestielijst vanzelf terwijl je een woord typt. Return voert de regel uit en Tab of → nemen de grijze suggestie over; na ↑ of ↓ nemen ze het gemarkeerde item over. Esc sluit de lijst voor dat woord, en "Instellingen › Invoer" schakelt hem uit.
 
 ## Verbeteringen
-- Het agentverloop laat hooks weg die goed zijn uitgevoerd of nog lopen; een mislukte hook blijft zichtbaar.
+- Met maar één geïnstalleerde agent opent de agentknop in de knoppenbalk hem met één klik in plaats van een menu.
