@@ -529,3 +529,8 @@
 "Zeigen" = "إظهار";
 "Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "مساحة العمل غير موثوق بها: لم يتم تحميل إعدادات المشروع ومهاراته وخطافاته وخوادم MCP الخاصة به.";
 "Prozesse" = "العمليات";
+"Codex hat keine Verbindung zu OpenAI" = "لا يوجد اتصال بين Codex وOpenAI";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "أدخل الرمز {} في Codex على هاتفك. يظل صالحًا حتى {}.";
+"Handy koppeln …" = "إقران الهاتف…";
+"Handy koppeln" = "إقران الهاتف";
+"Koppeln fehlgeschlagen" = "فشل الإقران";

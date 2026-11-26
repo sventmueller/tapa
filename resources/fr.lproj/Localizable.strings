@@ -219,6 +219,7 @@
 "Code" = "Code";
 "Codeblock" = "Bloc de code";
 "Codex braucht eine Anmeldung. Melde dich im Terminal mit „codex login“ an." = "Codex nécessite une connexion. Connectez-vous dans le terminal avec « codex login ».";
+"Codex hat keine Verbindung zu OpenAI" = "Codex n’a pas de connexion à OpenAI";
 "Codex schaltet und entfernt Server nur in seiner config.toml." = "Codex n’active, ne désactive et ne supprime des serveurs que dans son config.toml.";
 "Codex sendet an OpenAI: deine Beschreibung und die Protokolle dieser Sitzung, mit den Befehlen und Pfaden darin." = "Codex envoie à OpenAI : votre description et les journaux de cette session, avec les commandes et les chemins qu’ils contiennent.";
 "Codex:" = "Codex :";
@@ -546,6 +547,7 @@
 "Gestoppt in der Aktivität" = "Arrêté dans Activité";
 "Gestoppt mit Esc" = "Arrêté avec Échap";
 "Gestoppt mit dem Stopp-Knopf" = "Arrêté avec le bouton d’arrêt";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "Saisissez le code {} dans Codex sur votre téléphone. Il est valable jusqu’à {}.";
 "Gib oben eine Adresse oder Suchbegriffe ein." = "Saisissez une adresse ou des termes de recherche ci-dessus.";
 "Gibt Programmen wie Neovim jede Taste mit ihren Sondertasten weiter." = "Transmet chaque touche avec ses modificateurs aux programmes comme Neovim.";
 "Gilt ab dem nächsten Sitzungsstart" = "S’applique à partir du prochain démarrage de session";
@@ -575,6 +577,8 @@
 "Größe der neuen Tabelle festlegen." = "Définissez la taille du nouveau tableau.";
 "Größe:" = "Taille :";
 "Größer" = "Plus grand";
+"Handy koppeln" = "Jumeler le téléphone";
+"Handy koppeln …" = "Jumeler le téléphone…";
 "Header" = "En-têtes";
 "Hell" = "Clair";
 "Hell:" = "Clair :";
@@ -672,6 +676,7 @@
 "Kopiermodus: Zeilen" = "Mode copie : lignes";
 "Kopiert" = "Copié";
 "Kopiert oder sichert die Unterhaltung" = "Copie ou enregistre la conversation";
+"Koppeln fehlgeschlagen" = "Échec du jumelage";
 "Korrigiere sie oder lehne die Anfrage ab." = "Corrigez-la ou refusez la demande.";
 "Kursiv" = "Italique";
 "Kurz, worum es geht" = "En bref, de quoi il s’agit";

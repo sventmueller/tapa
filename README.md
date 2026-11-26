@@ -176,6 +176,8 @@ Tapa uses each agent's own sign-in and stores no agent credentials. An agent fou
 - **Settings › Agents** sets for new sessions the permission mode (Claude, Codex), the model (Claude, Codex, OpenCode) and the thinking effort (Claude, Codex), and which agents new tabs offer. It shows where each agent's program lies, with **Install…**, **Update to …** and **Back to …** for the version before, and **Load Registry** for the ACP registry. The rules Claude saved with "Always Allow" can be seen and removed there.
 - **Checked downloads.** Archives are checked against their SHA-256, npm packages against the integrity in their lock file, and packages without a fixed version are refused. A missing agent offers its installation in its own tab as well.
 
+**Codex Remote Control** uses the phone button in a native Codex tab in a trusted local workspace. Turn it on to continue the same session on the shared Codex daemon once the current turn finishes. The button offers phone pairing and can turn Remote Control off for that daemon.
+
 ## Editor, files and Git
 
 - **The file list** of a workspace shows its folder as a tree, updated as files change, with files Git ignores dimmed if you want them. A click opens a file as a preview tab, which the next click replaces until you edit it; a double click keeps it.

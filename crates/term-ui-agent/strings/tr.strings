@@ -529,3 +529,8 @@
 "Zeigen" = "Göster";
 "Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "Çalışma alanı güvenilir değil: projenin ayarları, becerileri, hook'ları ve MCP sunucuları yüklenmedi.";
 "Prozesse" = "İşlemler";
+"Codex hat keine Verbindung zu OpenAI" = "Codex’in OpenAI ile bağlantısı yok";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "{} kodunu telefonunuzdaki Codex’e girin. Kod {} saatine kadar geçerli.";
+"Handy koppeln …" = "Telefonu Eşle…";
+"Handy koppeln" = "Telefonu Eşle";
+"Koppeln fehlgeschlagen" = "Eşleme Başarısız";

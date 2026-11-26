@@ -17,12 +17,14 @@ pub enum AgentPath {
         /// before a prompt, guarded so that the CLI refuses rather than drops more than that prompt's turn (I6).
         rewind: Option<term_thread::Rewind>,
     },
-    /// Codex over its app server (`term-codex`), a server of its own.
+    /// Codex over its app server (`term-codex`).
     Codex {
         /// The `codex` executable.
         program: PathBuf,
         /// The release already read; the handshake reads it when `None`.
         version: Option<term_codex::Version>,
+        /// The app prepared the shared daemon for Remote Control.
+        shared: bool,
     },
     /// OpenCode over its HTTP API (`term-opencode`).
     OpenCode {

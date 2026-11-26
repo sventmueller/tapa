@@ -106,6 +106,54 @@ fn ready(scenario: &str, name: &str) -> Run {
     run
 }
 
+#[test]
+fn the_shared_daemon_resumes_the_thread_and_ignores_other_clients_approvals() {
+    use term_codex::{RemoteControl, remote};
+
+    let (mut launch, log) = launch("basic", "remote");
+    let home = launch.cwd.join("codex-home");
+    launch
+        .env
+        .push(("CODEX_HOME".into(), home.to_string_lossy().into_owned()));
+    let supervisor = Supervisor::new();
+    assert_eq!(
+        remote::start(&supervisor, &launch.program, &launch.env).unwrap(),
+        RemoteControl::Connected("test-mac".into())
+    );
+    assert_eq!(
+        remote::pair(&supervisor, &launch.program, &launch.env).unwrap().code,
+        "TEST-1234"
+    );
+    launch.shared = true;
+    assert_ne!(
+        launch.args(),
+        ["app-server", "proxy"],
+        "an untrusted launch keeps its private server"
+    );
+    launch.trusted = true;
+    launch.resume = Some(THREAD.into());
+    let run = start(launch, log);
+    wait("the shared thread and its Remote Control status", || {
+        run.session.is_ready() && matches!(run.session.remote_control(), RemoteControl::Connected(_))
+    });
+    assert_eq!(run.last("thread/resume")["params"]["threadId"], THREAD);
+    wait("the WebSocket pong", || {
+        run.sent().iter().any(|message| message["pong"] == "stand-in")
+    });
+    run.session
+        .request("test/foreign", serde_json::json!({}))
+        .wait()
+        .unwrap();
+    assert_eq!(run.session.snapshot().status(), Status::Idle);
+    assert!(run.sent().iter().all(|message| message["id"] != 994));
+    assert_eq!(
+        run.session.disable_remote_control().unwrap().wait().unwrap(),
+        RemoteControl::Off
+    );
+    assert!(!remote::wanted(&run.session.launch().env));
+    run.session.stop(Duration::from_millis(100));
+}
+
 fn message(text: &str) -> UserMessage {
     UserMessage {
         text: text.into(),

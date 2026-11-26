@@ -219,6 +219,7 @@
 "Code" = "コード";
 "Codeblock" = "コードブロック";
 "Codex braucht eine Anmeldung. Melde dich im Terminal mit „codex login“ an." = "Codexにはサインインが必要です。ターミナルで“codex login”を使ってサインインしてください。";
+"Codex hat keine Verbindung zu OpenAI" = "CodexはOpenAIに接続されていません";
 "Codex schaltet und entfernt Server nur in seiner config.toml." = "Codexがサーバのオン/オフと削除を行うのは、自身のconfig.toml内だけです。";
 "Codex sendet an OpenAI: deine Beschreibung und die Protokolle dieser Sitzung, mit den Befehlen und Pfaden darin." = "CodexはOpenAIに次の内容を送信します: 入力した説明と、このセッションのログ（そこに含まれるコマンドとパスを含む）。";
 "Codex:" = "Codex:";
@@ -546,6 +547,7 @@
 "Gestoppt in der Aktivität" = "アクティビティで停止しました";
 "Gestoppt mit Esc" = "Esc で停止しました";
 "Gestoppt mit dem Stopp-Knopf" = "停止ボタンで停止しました";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "電話のCodexにコード{}を入力してください。有効期限は{}です。";
 "Gib oben eine Adresse oder Suchbegriffe ein." = "上にアドレスまたは検索語を入力してください。";
 "Gibt Programmen wie Neovim jede Taste mit ihren Sondertasten weiter." = "すべてのキーを修飾キーとともに Neovim などのプログラムに渡します。";
 "Gilt ab dem nächsten Sitzungsstart" = "次回のセッション開始時から適用";
@@ -575,6 +577,8 @@
 "Größe der neuen Tabelle festlegen." = "新しい表のサイズを設定してください。";
 "Größe:" = "サイズ：";
 "Größer" = "大きく";
+"Handy koppeln" = "電話をペアリング";
+"Handy koppeln …" = "電話をペアリング…";
 "Header" = "ヘッダ";
 "Hell" = "ライト";
 "Hell:" = "ライト：";
@@ -672,6 +676,7 @@
 "Kopiermodus: Zeilen" = "コピーモード：行";
 "Kopiert" = "コピーしました";
 "Kopiert oder sichert die Unterhaltung" = "会話をコピーまたは保存";
+"Koppeln fehlgeschlagen" = "ペアリングできませんでした";
 "Korrigiere sie oder lehne die Anfrage ab." = "修正するか、要求を拒否してください。";
 "Kursiv" = "イタリック";
 "Kurz, worum es geht" = "内容の要約";

@@ -529,3 +529,8 @@
 "Zeigen" = "Zobraziť";
 "Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "Pracovný priestor nie je dôveryhodný: nastavenia, skills, hooky a servery MCP projektu nie sú načítané.";
 "Prozesse" = "Procesy";
+"Codex hat keine Verbindung zu OpenAI" = "Codex nemá spojenie s OpenAI";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "Zadajte kód {} v Codexe v telefóne. Platí do {}.";
+"Handy koppeln …" = "Spárovať telefón…";
+"Handy koppeln" = "Spárovať telefón";
+"Koppeln fehlgeschlagen" = "Spárovanie zlyhalo";

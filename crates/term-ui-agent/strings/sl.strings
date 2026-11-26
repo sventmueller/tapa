@@ -529,3 +529,8 @@
 "Zeigen" = "Prikaži";
 "Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "Delovni prostor ni zaupanja vreden: nastavitve, skills, hooki in strežniki MCP projekta niso naloženi.";
 "Prozesse" = "Procesi";
+"Codex hat keine Verbindung zu OpenAI" = "Codex nima povezave z OpenAI";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "Vnesite kodo {} v Codex v telefonu. Velja do {}.";
+"Handy koppeln …" = "Seznani telefon …";
+"Handy koppeln" = "Seznani telefon";
+"Koppeln fehlgeschlagen" = "Seznanjanje ni uspelo";

@@ -219,6 +219,7 @@
 "Code" = "Koodi";
 "Codeblock" = "Koodilohko";
 "Codex braucht eine Anmeldung. Melde dich im Terminal mit „codex login“ an." = "Codex vaatii kirjautumisen. Kirjaudu päätteessä komennolla ”codex login”.";
+"Codex hat keine Verbindung zu OpenAI" = "Codexilla ei ole yhteyttä OpenAI:hin";
 "Codex schaltet und entfernt Server nur in seiner config.toml." = "Codex kytkee ja poistaa palvelimia vain omassa config.toml-tiedostossaan.";
 "Codex sendet an OpenAI: deine Beschreibung und die Protokolle dieser Sitzung, mit den Befehlen und Pfaden darin." = "Codex lähettää OpenAI:lle: kuvauksesi ja tämän istunnon lokit niissä olevine komentoineen ja polkuineen.";
 "Codex:" = "Codex:";
@@ -546,6 +547,7 @@
 "Gestoppt in der Aktivität" = "Pysäytetty Toiminnassa";
 "Gestoppt mit Esc" = "Pysäytetty Esc-näppäimellä";
 "Gestoppt mit dem Stopp-Knopf" = "Pysäytetty pysäytyspainikkeella";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "Syötä koodi {} puhelimen Codexiin. Se on voimassa klo {} asti.";
 "Gib oben eine Adresse oder Suchbegriffe ein." = "Kirjoita yläreunaan osoite tai hakusanoja.";
 "Gibt Programmen wie Neovim jede Taste mit ihren Sondertasten weiter." = "Välittää jokaisen näppäimen muuntonäppäimineen ohjelmille, kuten Neovimille.";
 "Gilt ab dem nächsten Sitzungsstart" = "Voimassa seuraavasta istunnon käynnistyksestä";
@@ -575,6 +577,8 @@
 "Größe der neuen Tabelle festlegen." = "Määritä uuden taulukon koko.";
 "Größe:" = "Koko:";
 "Größer" = "Suurempi";
+"Handy koppeln" = "Muodosta pari puhelimeen";
+"Handy koppeln …" = "Muodosta pari puhelimeen…";
 "Header" = "Otsakkeet";
 "Hell" = "Vaalea";
 "Hell:" = "Vaalea:";
@@ -672,6 +676,7 @@
 "Kopiermodus: Zeilen" = "Kopiointitila: rivit";
 "Kopiert" = "Kopioitu";
 "Kopiert oder sichert die Unterhaltung" = "Kopioi tai tallentaa keskustelun";
+"Koppeln fehlgeschlagen" = "Parin muodostus epäonnistui";
 "Korrigiere sie oder lehne die Anfrage ab." = "Korjaa se tai hylkää pyyntö.";
 "Kursiv" = "Kursivoi";
 "Kurz, worum es geht" = "Lyhyesti, mistä on kyse";

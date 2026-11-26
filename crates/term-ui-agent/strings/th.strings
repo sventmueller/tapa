@@ -529,3 +529,8 @@
 "Zeigen" = "แสดง";
 "Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "พื้นที่ทำงานที่ไม่น่าเชื่อถือ: ยังไม่ได้โหลดการตั้งค่า Skills, hooks และเซิร์ฟเวอร์ MCP ของโปรเจกต์";
 "Prozesse" = "กระบวนการ";
+"Codex hat keine Verbindung zu OpenAI" = "Codex ไม่ได้เชื่อมต่อกับ OpenAI";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "ป้อนรหัส {} ใน Codex บนโทรศัพท์ รหัสนี้ใช้ได้ถึง {}";
+"Handy koppeln …" = "จับคู่โทรศัพท์…";
+"Handy koppeln" = "จับคู่โทรศัพท์";
+"Koppeln fehlgeschlagen" = "จับคู่ไม่สำเร็จ";

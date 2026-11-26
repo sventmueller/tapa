@@ -219,6 +219,7 @@
 "Code" = "代码";
 "Codeblock" = "代码块";
 "Codex braucht eine Anmeldung. Melde dich im Terminal mit „codex login“ an." = "Codex 需要登录。请在终端中使用“codex login”登录。";
+"Codex hat keine Verbindung zu OpenAI" = "Codex 未连接到 OpenAI";
 "Codex schaltet und entfernt Server nur in seiner config.toml." = "Codex 仅在其 config.toml 中切换和移除服务器。";
 "Codex sendet an OpenAI: deine Beschreibung und die Protokolle dieser Sitzung, mit den Befehlen und Pfaden darin." = "Codex 会向 OpenAI 发送：你的描述和此会话的日志，包括其中的命令和路径。";
 "Codex:" = "Codex：";
@@ -546,6 +547,7 @@
 "Gestoppt in der Aktivität" = "已在“活动”中停止";
 "Gestoppt mit Esc" = "已用 Esc 停止";
 "Gestoppt mit dem Stopp-Knopf" = "已用停止按钮停止";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "在手机上的 Codex 中输入代码 {}。有效期至 {}。";
 "Gib oben eine Adresse oder Suchbegriffe ein." = "请在上方输入地址或搜索词。";
 "Gibt Programmen wie Neovim jede Taste mit ihren Sondertasten weiter." = "将每个按键连同修饰键传给 Neovim 等程序。";
 "Gilt ab dem nächsten Sitzungsstart" = "从下次启动会话起生效";
@@ -575,6 +577,8 @@
 "Größe der neuen Tabelle festlegen." = "设定新表格的大小。";
 "Größe:" = "大小：";
 "Größer" = "更大";
+"Handy koppeln" = "配对手机";
+"Handy koppeln …" = "配对手机…";
 "Header" = "标头";
 "Hell" = "浅色";
 "Hell:" = "浅色：";
@@ -672,6 +676,7 @@
 "Kopiermodus: Zeilen" = "拷贝模式：行";
 "Kopiert" = "已拷贝";
 "Kopiert oder sichert die Unterhaltung" = "拷贝或保存对话内容";
+"Koppeln fehlgeschlagen" = "配对失败";
 "Korrigiere sie oder lehne die Anfrage ab." = "请更正它或拒绝该请求。";
 "Kursiv" = "斜体";
 "Kurz, worum es geht" = "简要说明是关于什么的";

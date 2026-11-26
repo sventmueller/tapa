@@ -7,6 +7,8 @@ use std::collections::BTreeMap;
 
 /// The method names this crate sends or handles, for the schema test to check against the server's.
 pub mod method {
+    /// Turns Remote Control off for all clients of the shared server.
+    pub const REMOTE_CONTROL_DISABLE: &str = "remoteControl/disable";
     /// The handshake request.
     pub const INITIALIZE: &str = "initialize";
     /// The notification that ends the handshake.

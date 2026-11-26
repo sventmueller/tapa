@@ -219,6 +219,7 @@
 "Code" = "Cod";
 "Codeblock" = "Bloc de cod";
 "Codex braucht eine Anmeldung. Melde dich im Terminal mit „codex login“ an." = "Codex necesită autentificare. Autentificați-vă în terminal cu „codex login”.";
+"Codex hat keine Verbindung zu OpenAI" = "Codex nu are conexiune la OpenAI";
 "Codex schaltet und entfernt Server nur in seiner config.toml." = "Codex comută și elimină servere doar în propriul config.toml.";
 "Codex sendet an OpenAI: deine Beschreibung und die Protokolle dieser Sitzung, mit den Befehlen und Pfaden darin." = "Codex trimite la OpenAI: descrierea dvs. și jurnalele acestei sesiuni, cu comenzile și căile din ele.";
 "Codex:" = "Codex:";
@@ -546,6 +547,7 @@
 "Gestoppt in der Aktivität" = "Oprit în Activitate";
 "Gestoppt mit Esc" = "Oprit cu Esc";
 "Gestoppt mit dem Stopp-Knopf" = "Oprit cu butonul de oprire";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "Introduceți codul {} în Codex pe telefon. Este valabil până la {}.";
 "Gib oben eine Adresse oder Suchbegriffe ein." = "Introduceți mai sus o adresă sau termeni de căutare.";
 "Gibt Programmen wie Neovim jede Taste mit ihren Sondertasten weiter." = "Transmite fiecare tastă cu modificatorii ei programelor precum Neovim.";
 "Gilt ab dem nächsten Sitzungsstart" = "Se aplică de la următoarea pornire a sesiunii";
@@ -575,6 +577,8 @@
 "Größe der neuen Tabelle festlegen." = "Stabiliți dimensiunea noului tabel.";
 "Größe:" = "Dimensiune:";
 "Größer" = "Mai mare";
+"Handy koppeln" = "Asociați telefonul";
+"Handy koppeln …" = "Asociați telefonul…";
 "Header" = "Antete";
 "Hell" = "Luminos";
 "Hell:" = "Luminos:";
@@ -672,6 +676,7 @@
 "Kopiermodus: Zeilen" = "Mod copiere: linii";
 "Kopiert" = "Copiat";
 "Kopiert oder sichert die Unterhaltung" = "Copiază sau salvează discuția";
+"Koppeln fehlgeschlagen" = "Asocierea a eșuat";
 "Korrigiere sie oder lehne die Anfrage ab." = "Corectați-le sau refuzați cererea.";
 "Kursiv" = "Cursiv";
 "Kurz, worum es geht" = "Pe scurt, despre ce este vorba";

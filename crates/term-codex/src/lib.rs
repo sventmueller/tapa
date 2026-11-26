@@ -16,12 +16,14 @@ pub mod manage;
 pub mod mapping;
 mod prompt;
 pub mod protocol;
+pub mod remote;
 mod requests;
 pub mod session;
 #[cfg(any(test, feature = "testing"))]
 pub mod test_server;
 pub mod version;
 pub mod wire;
+mod ws;
 
 pub use capabilities::{Account, Capabilities, Effort, MODES, Mode, Model};
 pub use launch::{ApprovalPolicy, Launch, SandboxMode};
@@ -30,6 +32,7 @@ pub use manage::{
     MergeStrategy, Skill, Skills, ThreadPage, ThreadQuery, ThreadSummary,
 };
 pub use mapping::Mapper;
+pub use remote::RemoteControl;
 pub use session::{Choice, Event, Reply, Session, SessionError};
 pub use version::{TESTED, Version};
 

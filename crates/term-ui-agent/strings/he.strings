@@ -529,3 +529,8 @@
 "Zeigen" = "הצגה";
 "Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "סביבת העבודה אינה מהימנה: ההגדרות, המיומנויות, ה-hooks ושרתי ה-MCP של הפרויקט לא נטענו.";
 "Prozesse" = "תהליכים";
+"Codex hat keine Verbindung zu OpenAI" = "ל‑Codex אין חיבור ל‑OpenAI";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "יש להזין את הקוד {} ב‑Codex בטלפון. הוא בתוקף עד {}.";
+"Handy koppeln …" = "צימוד טלפון…";
+"Handy koppeln" = "צימוד טלפון";
+"Koppeln fehlgeschlagen" = "הצימוד נכשל";

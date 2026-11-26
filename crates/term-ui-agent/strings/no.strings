@@ -529,3 +529,8 @@
 "Zeigen" = "Vis";
 "Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "Arbeidsområdet er ikke klarert: prosjektets innstillinger, skills, hooks og MCP-servere er ikke lastet inn.";
 "Prozesse" = "Prosesser";
+"Codex hat keine Verbindung zu OpenAI" = "Codex har ingen forbindelse til OpenAI";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "Skriv inn koden {} i Codex på telefonen. Den gjelder til {}.";
+"Handy koppeln …" = "Par telefon…";
+"Handy koppeln" = "Par telefon";
+"Koppeln fehlgeschlagen" = "Paring mislyktes";

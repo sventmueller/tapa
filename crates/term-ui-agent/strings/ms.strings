@@ -529,3 +529,8 @@
 "Zeigen" = "Tunjukkan";
 "Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "Ruang kerja tidak dipercayai: seting, skill, hook dan pelayan MCP projek tidak dimuatkan.";
 "Prozesse" = "Proses";
+"Codex hat keine Verbindung zu OpenAI" = "Codex tiada sambungan ke OpenAI";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "Masukkan kod {} dalam Codex pada telefon anda. Kod sah sehingga {}.";
+"Handy koppeln …" = "Pasangkan Telefon…";
+"Handy koppeln" = "Pasangkan Telefon";
+"Koppeln fehlgeschlagen" = "Gagal Memasangkan";

@@ -676,6 +676,10 @@ impl AgentTab {
 
     /// The phone in the head: connects the session to Remote Control, or offers its page and its end.
     pub fn remote_control(&self, view: &NSView) {
+        if let Some(session) = self.codex_session() {
+            self.codex_remote_click(&session, view);
+            return;
+        }
         let Some(session) = self.session() else { return };
         match session.remote_control() {
             RemoteControl::Off | RemoteControl::Failed(_) => self.set_remote_control(&session, true),
@@ -686,6 +690,9 @@ impl AgentTab {
 
     /// What the phone offers while the session is connected: its page and its end.
     pub(super) fn remote_items(&self) -> Retained<NSMenu> {
+        if self.codex_session().is_some() {
+            return self.codex_remote_items();
+        }
         let menu = NSMenu::new(self.mtm);
         menu.setAutoenablesItems(false);
         let action = sel!(ideAgentRemoteControlAction:);
@@ -698,6 +705,10 @@ impl AgentTab {
 
     /// An item of the Remote Control menu.
     pub(crate) fn remote_control_action(&self, action: isize) {
+        if let Some(session) = self.codex_session() {
+            self.codex_remote_action(&session, action);
+            return;
+        }
         let Some(session) = self.session() else { return };
         let RemoteControl::Connected(url) = session.remote_control() else {
             return;

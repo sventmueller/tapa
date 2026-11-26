@@ -219,6 +219,7 @@
 "Code" = "Κώδικας";
 "Codeblock" = "Μπλοκ κώδικα";
 "Codex braucht eine Anmeldung. Melde dich im Terminal mit „codex login“ an." = "Το Codex χρειάζεται σύνδεση. Συνδεθείτε στο τερματικό με «codex login».";
+"Codex hat keine Verbindung zu OpenAI" = "Το Codex δεν έχει σύνδεση με το OpenAI";
 "Codex schaltet und entfernt Server nur in seiner config.toml." = "Το Codex ενεργοποιεί, απενεργοποιεί και αφαιρεί διακομιστές μόνο στο config.toml του.";
 "Codex sendet an OpenAI: deine Beschreibung und die Protokolle dieser Sitzung, mit den Befehlen und Pfaden darin." = "Το Codex στέλνει στην OpenAI: την περιγραφή σας και τα αρχεία καταγραφής αυτής της συνεδρίας, με τις εντολές και τις διαδρομές που περιέχουν.";
 "Codex:" = "Codex:";
@@ -546,6 +547,7 @@
 "Gestoppt in der Aktivität" = "Διακόπηκε στη Δραστηριότητα";
 "Gestoppt mit Esc" = "Διακόπηκε με Esc";
 "Gestoppt mit dem Stopp-Knopf" = "Διακόπηκε με το κουμπί διακοπής";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "Εισαγάγετε τον κωδικό {} στο Codex στο τηλέφωνό σας. Ισχύει έως τις {}.";
 "Gib oben eine Adresse oder Suchbegriffe ein." = "Εισαγάγετε μια διεύθυνση ή όρους αναζήτησης παραπάνω.";
 "Gibt Programmen wie Neovim jede Taste mit ihren Sondertasten weiter." = "Μεταβιβάζει κάθε πλήκτρο με τους τροποποιητές του σε προγράμματα όπως το Neovim.";
 "Gilt ab dem nächsten Sitzungsstart" = "Ισχύει από την επόμενη έναρξη συνεδρίας";
@@ -575,6 +577,8 @@
 "Größe der neuen Tabelle festlegen." = "Ορίστε το μέγεθος του νέου πίνακα.";
 "Größe:" = "Μέγεθος:";
 "Größer" = "Μεγαλύτερο";
+"Handy koppeln" = "Σύζευξη τηλεφώνου";
+"Handy koppeln …" = "Σύζευξη τηλεφώνου…";
 "Header" = "Κεφαλίδες";
 "Hell" = "Ανοιχτόχρωμη";
 "Hell:" = "Φωτεινό:";
@@ -672,6 +676,7 @@
 "Kopiermodus: Zeilen" = "Λειτουργία αντιγραφής: γραμμές";
 "Kopiert" = "Αντιγράφηκε";
 "Kopiert oder sichert die Unterhaltung" = "Αντιγράφει ή αποθηκεύει τη συνομιλία";
+"Koppeln fehlgeschlagen" = "Η σύζευξη απέτυχε";
 "Korrigiere sie oder lehne die Anfrage ab." = "Διορθώστε την ή απορρίψτε το αίτημα.";
 "Kursiv" = "Πλάγια";
 "Kurz, worum es geht" = "Με λίγα λόγια, περί τίνος πρόκειται";

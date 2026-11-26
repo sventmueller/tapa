@@ -529,3 +529,8 @@
 "Zeigen" = "Visa";
 "Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "Arbetsytan är inte betrodd: projektets inställningar, skills, hooks och MCP-servrar är inte inlästa.";
 "Prozesse" = "Processer";
+"Codex hat keine Verbindung zu OpenAI" = "Codex har ingen anslutning till OpenAI";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "Ange koden {} i Codex på telefonen. Den gäller till {}.";
+"Handy koppeln …" = "Parkoppla telefon…";
+"Handy koppeln" = "Parkoppla telefon";
+"Koppeln fehlgeschlagen" = "Parkopplingen misslyckades";

@@ -219,6 +219,7 @@
 "Code" = "קוד";
 "Codeblock" = "בלוק קוד";
 "Codex braucht eine Anmeldung. Melde dich im Terminal mit „codex login“ an." = "‏Codex דורש התחברות. יש להתחבר במסוף עם ״codex login״.";
+"Codex hat keine Verbindung zu OpenAI" = "ל‑Codex אין חיבור ל‑OpenAI";
 "Codex schaltet und entfernt Server nur in seiner config.toml." = "‏Codex מפעיל, מכבה ומסיר שרתים רק בקובץ config.toml שלו.";
 "Codex sendet an OpenAI: deine Beschreibung und die Protokolle dieser Sitzung, mit den Befehlen und Pfaden darin." = "‏Codex שולח ל-OpenAI: את התיאור ואת היומנים של הסשן הזה, עם הפקודות והנתיבים שבהם.";
 "Codex:" = "Codex:";
@@ -546,6 +547,7 @@
 "Gestoppt in der Aktivität" = "נעצר בפעילות";
 "Gestoppt mit Esc" = "נעצר באמצעות Esc";
 "Gestoppt mit dem Stopp-Knopf" = "נעצר בכפתור העצירה";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "יש להזין את הקוד {} ב‑Codex בטלפון. הוא בתוקף עד {}.";
 "Gib oben eine Adresse oder Suchbegriffe ein." = "יש להזין למעלה כתובת או מילות חיפוש.";
 "Gibt Programmen wie Neovim jede Taste mit ihren Sondertasten weiter." = "מעביר כל מקש עם מקשי השינוי שלו לתוכניות כמו Neovim.";
 "Gilt ab dem nächsten Sitzungsstart" = "בתוקף מהפעלת הסשן הבאה";
@@ -575,6 +577,8 @@
 "Größe der neuen Tabelle festlegen." = "יש לקבוע את גודל הטבלה החדשה.";
 "Größe:" = "גודל:";
 "Größer" = "גדול יותר";
+"Handy koppeln" = "צימוד טלפון";
+"Handy koppeln …" = "צימוד טלפון…";
 "Header" = "כותרות";
 "Hell" = "בהיר";
 "Hell:" = "בהיר:";
@@ -672,6 +676,7 @@
 "Kopiermodus: Zeilen" = "מצב העתקה: שורות";
 "Kopiert" = "הועתק";
 "Kopiert oder sichert die Unterhaltung" = "העתקה או שמירה של השיחה";
+"Koppeln fehlgeschlagen" = "הצימוד נכשל";
 "Korrigiere sie oder lehne die Anfrage ab." = "יש לתקן אותו או לסרב לבקשה.";
 "Kursiv" = "נטוי";
 "Kurz, worum es geht" = "בקצרה, במה מדובר";

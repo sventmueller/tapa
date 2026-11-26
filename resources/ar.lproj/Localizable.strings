@@ -219,6 +219,7 @@
 "Code" = "رمز برمجي";
 "Codeblock" = "كتلة رمز برمجي";
 "Codex braucht eine Anmeldung. Melde dich im Terminal mit „codex login“ an." = "يحتاج Codex إلى تسجيل الدخول. سجّل الدخول في الطرفية باستخدام “codex login”.";
+"Codex hat keine Verbindung zu OpenAI" = "لا يوجد اتصال بين Codex وOpenAI";
 "Codex schaltet und entfernt Server nur in seiner config.toml." = "لا يشغّل Codex الخوادم ولا يوقفها ولا يزيلها إلا في ملف config.toml الخاص به.";
 "Codex sendet an OpenAI: deine Beschreibung und die Protokolle dieser Sitzung, mit den Befehlen und Pfaden darin." = "يرسل Codex إلى OpenAI: وصفك وسجلات هذه الجلسة، مع الأوامر والمسارات الواردة فيها.";
 "Codex:" = "Codex:";
@@ -546,6 +547,7 @@
 "Gestoppt in der Aktivität" = "أُوقف في النشاط";
 "Gestoppt mit Esc" = "أُوقف باستخدام Esc";
 "Gestoppt mit dem Stopp-Knopf" = "أُوقف بزر الإيقاف";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "أدخل الرمز {} في Codex على هاتفك. يظل صالحًا حتى {}.";
 "Gib oben eine Adresse oder Suchbegriffe ein." = "أدخل عنوانًا أو كلمات بحث في الأعلى.";
 "Gibt Programmen wie Neovim jede Taste mit ihren Sondertasten weiter." = "يمرّر كل مفتاح مع مفاتيح التعديل الخاصة به إلى برامج مثل Neovim.";
 "Gilt ab dem nächsten Sitzungsstart" = "يسري بدءًا من بدء الجلسة التالية";
@@ -575,6 +577,8 @@
 "Größe der neuen Tabelle festlegen." = "حدد حجم الجدول الجديد.";
 "Größe:" = "الحجم:";
 "Größer" = "أكبر";
+"Handy koppeln" = "إقران الهاتف";
+"Handy koppeln …" = "إقران الهاتف…";
 "Header" = "الترويسات";
 "Hell" = "فاتح";
 "Hell:" = "فاتح:";
@@ -672,6 +676,7 @@
 "Kopiermodus: Zeilen" = "وضع النسخ: أسطر";
 "Kopiert" = "تم النسخ";
 "Kopiert oder sichert die Unterhaltung" = "ينسخ المحادثة أو يحفظها";
+"Koppeln fehlgeschlagen" = "فشل الإقران";
 "Korrigiere sie oder lehne die Anfrage ab." = "صحّح المدخلات أو ارفض الطلب.";
 "Kursiv" = "مائل";
 "Kurz, worum es geht" = "باختصار، عمّ يدور الأمر";

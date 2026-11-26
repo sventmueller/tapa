@@ -529,3 +529,8 @@
 "Zeigen" = "Afișați";
 "Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "Spațiu de lucru neconsiderat de încredere: configurările, skillurile, hookurile și serverele MCP ale proiectului nu sunt încărcate.";
 "Prozesse" = "Procese";
+"Codex hat keine Verbindung zu OpenAI" = "Codex nu are conexiune la OpenAI";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "Introduceți codul {} în Codex pe telefon. Este valabil până la {}.";
+"Handy koppeln …" = "Asociați telefonul…";
+"Handy koppeln" = "Asociați telefonul";
+"Koppeln fehlgeschlagen" = "Asocierea a eșuat";

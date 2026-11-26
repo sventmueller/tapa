@@ -529,3 +529,8 @@
 "Zeigen" = "Pokaż";
 "Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "Obszar roboczy niezaufany: ustawienia, umiejętności, hooki i serwery MCP projektu nie są wczytane.";
 "Prozesse" = "Procesy";
+"Codex hat keine Verbindung zu OpenAI" = "Codex nie ma połączenia z OpenAI";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "Wprowadź kod {} w Codex na telefonie. Jest ważny do {}.";
+"Handy koppeln …" = "Paruj telefon…";
+"Handy koppeln" = "Paruj telefon";
+"Koppeln fehlgeschlagen" = "Nie udało się sparować";

@@ -529,3 +529,8 @@
 "Zeigen" = "表示";
 "Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "信頼されていないワークスペース：プロジェクトの設定、スキル、フック、MCP サーバは読み込まれていません。";
 "Prozesse" = "プロセス";
+"Codex hat keine Verbindung zu OpenAI" = "CodexはOpenAIに接続されていません";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "電話のCodexにコード{}を入力してください。有効期限は{}です。";
+"Handy koppeln …" = "電話をペアリング…";
+"Handy koppeln" = "電話をペアリング";
+"Koppeln fehlgeschlagen" = "ペアリングできませんでした";

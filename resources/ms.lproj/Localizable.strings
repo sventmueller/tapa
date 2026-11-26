@@ -219,6 +219,7 @@
 "Code" = "Kod";
 "Codeblock" = "Blok Kod";
 "Codex braucht eine Anmeldung. Melde dich im Terminal mit „codex login“ an." = "Codex memerlukan daftar masuk. Daftar masuk dalam terminal dengan “codex login”.";
+"Codex hat keine Verbindung zu OpenAI" = "Codex tiada sambungan ke OpenAI";
 "Codex schaltet und entfernt Server nur in seiner config.toml." = "Codex menghidupkan, mematikan dan mengeluarkan pelayan hanya dalam config.toml miliknya.";
 "Codex sendet an OpenAI: deine Beschreibung und die Protokolle dieser Sitzung, mit den Befehlen und Pfaden darin." = "Codex menghantar kepada OpenAI: penerangan anda dan log sesi ini, dengan perintah dan laluan di dalamnya.";
 "Codex:" = "Codex:";
@@ -546,6 +547,7 @@
 "Gestoppt in der Aktivität" = "Dihentikan dalam Aktiviti";
 "Gestoppt mit Esc" = "Dihentikan dengan Esc";
 "Gestoppt mit dem Stopp-Knopf" = "Dihentikan dengan butang henti";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "Masukkan kod {} dalam Codex pada telefon anda. Kod sah sehingga {}.";
 "Gib oben eine Adresse oder Suchbegriffe ein." = "Masukkan alamat atau perkataan carian di atas.";
 "Gibt Programmen wie Neovim jede Taste mit ihren Sondertasten weiter." = "Menghantar setiap kekunci bersama pengubah suainya kepada program seperti Neovim.";
 "Gilt ab dem nächsten Sitzungsstart" = "Berkuat kuasa apabila sesi seterusnya bermula";
@@ -575,6 +577,8 @@
 "Größe der neuen Tabelle festlegen." = "Tetapkan saiz jadual baharu.";
 "Größe:" = "Saiz:";
 "Größer" = "Lebih Besar";
+"Handy koppeln" = "Pasangkan Telefon";
+"Handy koppeln …" = "Pasangkan Telefon…";
 "Header" = "Pengepala";
 "Hell" = "Cerah";
 "Hell:" = "Cerah:";
@@ -672,6 +676,7 @@
 "Kopiermodus: Zeilen" = "Mod Salin: Baris";
 "Kopiert" = "Disalin";
 "Kopiert oder sichert die Unterhaltung" = "Menyalin atau menyimpan perbualan";
+"Koppeln fehlgeschlagen" = "Gagal Memasangkan";
 "Korrigiere sie oder lehne die Anfrage ab." = "Betulkannya atau tolak permintaan.";
 "Kursiv" = "Italik";
 "Kurz, worum es geht" = "Ringkasnya, tentang apa";

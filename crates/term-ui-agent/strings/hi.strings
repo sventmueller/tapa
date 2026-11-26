@@ -529,3 +529,8 @@
 "Zeigen" = "दिखाएँ";
 "Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "वर्कस्पेस विश्वसनीय नहीं है: प्रोजेक्ट की सेटिंग्ज़, स्किल, हुक और MCP सर्वर लोड नहीं हुए हैं।";
 "Prozesse" = "प्रक्रियाएँ";
+"Codex hat keine Verbindung zu OpenAI" = "Codex का OpenAI से कनेक्शन नहीं है";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "अपने फ़ोन पर Codex में कोड {} डालें। यह {} तक मान्य है।";
+"Handy koppeln …" = "फ़ोन पेयर करें…";
+"Handy koppeln" = "फ़ोन पेयर करें";
+"Koppeln fehlgeschlagen" = "पेयर नहीं हो सका";

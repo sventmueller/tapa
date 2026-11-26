@@ -219,6 +219,7 @@
 "Code" = "Kód";
 "Codeblock" = "Blok kódu";
 "Codex braucht eine Anmeldung. Melde dich im Terminal mit „codex login“ an." = "Codex vyžaduje přihlášení. Přihlaste se v terminálu příkazem „codex login“.";
+"Codex hat keine Verbindung zu OpenAI" = "Codex nemá spojení s OpenAI";
 "Codex schaltet und entfernt Server nur in seiner config.toml." = "Codex zapíná, vypíná a odstraňuje servery jen ve svém config.toml.";
 "Codex sendet an OpenAI: deine Beschreibung und die Protokolle dieser Sitzung, mit den Befehlen und Pfaden darin." = "Codex odešle společnosti OpenAI: váš popis a logy této relace včetně příkazů a cest v nich.";
 "Codex:" = "Codex:";
@@ -546,6 +547,7 @@
 "Gestoppt in der Aktivität" = "Zastaveno v Aktivitě";
 "Gestoppt mit Esc" = "Zastaveno klávesou Esc";
 "Gestoppt mit dem Stopp-Knopf" = "Zastaveno tlačítkem Zastavit";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "Zadejte kód {} v Codexu v telefonu. Platí do {}.";
 "Gib oben eine Adresse oder Suchbegriffe ein." = "Nahoře zadejte adresu nebo hledaný výraz.";
 "Gibt Programmen wie Neovim jede Taste mit ihren Sondertasten weiter." = "Předává programům jako Neovim každou klávesu i s modifikátory.";
 "Gilt ab dem nächsten Sitzungsstart" = "Platí od příštího spuštění relace";
@@ -575,6 +577,8 @@
 "Größe der neuen Tabelle festlegen." = "Nastavte velikost nové tabulky.";
 "Größe:" = "Velikost:";
 "Größer" = "Větší";
+"Handy koppeln" = "Spárovat telefon";
+"Handy koppeln …" = "Spárovat telefon…";
 "Header" = "Hlavičky";
 "Hell" = "Světlý";
 "Hell:" = "Světlý:";
@@ -672,6 +676,7 @@
 "Kopiermodus: Zeilen" = "Režim kopírování: řádky";
 "Kopiert" = "Zkopírováno";
 "Kopiert oder sichert die Unterhaltung" = "Zkopíruje nebo uloží konverzaci";
+"Koppeln fehlgeschlagen" = "Spárování se nezdařilo";
 "Korrigiere sie oder lehne die Anfrage ab." = "Opravte ho nebo žádost zamítněte.";
 "Kursiv" = "Kurzíva";
 "Kurz, worum es geht" = "Stručně, o co jde";

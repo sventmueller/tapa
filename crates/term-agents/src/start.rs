@@ -61,7 +61,11 @@ pub(crate) fn start(launch: Launch, supervisor: &Supervisor, inbox: &Arc<Inbox>)
             remote_control,
             rewind,
         } => claude(program, (remote_control, rewind), common, supervisor, inbox),
-        AgentPath::Codex { program, version } => codex(program, version, common, supervisor, inbox),
+        AgentPath::Codex {
+            program,
+            version,
+            shared,
+        } => codex(program, version, shared, common, supervisor, inbox),
         AgentPath::OpenCode { program, version } => opencode(program, version, common, supervisor, inbox),
         AgentPath::Acp(launch) => acp(*launch, common, supervisor, inbox),
         #[cfg(any(test, feature = "selftest"))]
@@ -145,6 +149,7 @@ fn claude(
 fn codex(
     program: std::path::PathBuf,
     version: Option<term_codex::Version>,
+    shared: bool,
     common: Common,
     supervisor: &Supervisor,
     inbox: &Arc<Inbox>,
@@ -155,6 +160,7 @@ fn codex(
     launch.effort = common.effort;
     launch.resume = common.resume;
     launch.trusted = common.trusted;
+    launch.shared = shared;
     if let Some(mode) = term_codex::MODES
         .iter()
         .find(|m| Some(m.id) == common.choices.mode.as_deref())

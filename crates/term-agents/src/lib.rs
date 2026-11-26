@@ -48,7 +48,7 @@
 //! [`Signal::Delivered`] says that a prompt went out, with the agent's id of the message, which rewinding names.
 //! No checkpoints are taken: [`Checkpoint`] has no value. [`Signal::ClaudeFailed`], [`Signal::CodexFailed`],
 //! [`Signal::OpenCodeFailed`] and [`Signal::AcpFailed`] follow each `Failed` of their path with the typed error;
-//! [`Signal::RemoteControl`] tells that Claude's Remote Control changed.
+//! [`Signal::RemoteControl`] tells that the agent's Remote Control status changed.
 //!
 //! Every turn ends with [`Signal::TurnEnded`]: its [`TurnId`], an [`Outcome`] (succeeded, failed with the path's
 //! words, cancelled, connection lost) and how much work still runs. Every path ends a turn in `Idle`, failed ones

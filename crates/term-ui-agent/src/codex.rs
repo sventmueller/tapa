@@ -18,6 +18,8 @@ use crate::driven::Driven;
 use crate::source::Problem;
 use crate::tab::AgentTab;
 
+pub(super) mod remote;
+
 #[cfg(feature = "selftest")]
 mod selftest_probe;
 #[cfg(feature = "selftest")]
@@ -227,6 +229,7 @@ impl AgentTab {
         let path = AgentPath::Codex {
             program: launch.program,
             version: launch.version,
+            shared: launch.shared,
         };
         let mut start = Launch::new(path, launch.cwd, launch.env, UserChoices::default());
         start.resume = resume;

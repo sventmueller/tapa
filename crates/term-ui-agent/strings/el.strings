@@ -529,3 +529,8 @@
 "Zeigen" = "Εμφάνιση";
 "Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "Μη αξιόπιστος χώρος εργασίας: οι ρυθμίσεις, οι δεξιότητες, τα hooks και οι διακομιστές MCP του έργου δεν έχουν φορτωθεί.";
 "Prozesse" = "Διεργασίες";
+"Codex hat keine Verbindung zu OpenAI" = "Το Codex δεν έχει σύνδεση με το OpenAI";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "Εισαγάγετε τον κωδικό {} στο Codex στο τηλέφωνό σας. Ισχύει έως τις {}.";
+"Handy koppeln …" = "Σύζευξη τηλεφώνου…";
+"Handy koppeln" = "Σύζευξη τηλεφώνου";
+"Koppeln fehlgeschlagen" = "Η σύζευξη απέτυχε";

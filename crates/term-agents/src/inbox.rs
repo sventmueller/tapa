@@ -165,6 +165,7 @@ impl Inbox {
                 inbox.push(Inbound::CodexFailed(error));
             }
             term_codex::Event::Ended { stderr } => inbox.push(Inbound::Ended { stderr }),
+            term_codex::Event::RemoteControl => inbox.push(Inbound::RemoteControl),
             _ => inbox.push(Inbound::Other),
         }
     }

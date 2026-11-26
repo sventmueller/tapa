@@ -219,6 +219,7 @@
 "Code" = "कोड";
 "Codeblock" = "कोड ब्लॉक";
 "Codex braucht eine Anmeldung. Melde dich im Terminal mit „codex login“ an." = "Codex को साइन इन चाहिए। टर्मिनल में “codex login” से साइन इन करें।";
+"Codex hat keine Verbindung zu OpenAI" = "Codex का OpenAI से कनेक्शन नहीं है";
 "Codex schaltet und entfernt Server nur in seiner config.toml." = "Codex सर्वर को सिर्फ़ अपनी config.toml में चालू, बंद और हटाता है।";
 "Codex sendet an OpenAI: deine Beschreibung und die Protokolle dieser Sitzung, mit den Befehlen und Pfaden darin." = "Codex, OpenAI को भेजता है : आपका विवरण और इस सेशन के लॉग, उनमें मौजूद कमांड और पाथ के साथ।";
 "Codex:" = "Codex:";
@@ -546,6 +547,7 @@
 "Gestoppt in der Aktivität" = "ऐक्टिविटी में रोका गया";
 "Gestoppt mit Esc" = "Esc से रोका गया";
 "Gestoppt mit dem Stopp-Knopf" = "रोकें बटन से रोका गया";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "अपने फ़ोन पर Codex में कोड {} डालें। यह {} तक मान्य है।";
 "Gib oben eine Adresse oder Suchbegriffe ein." = "ऊपर कोई पता या खोज शब्द दर्ज करें।";
 "Gibt Programmen wie Neovim jede Taste mit ihren Sondertasten weiter." = "हर कुंजी को उसकी मॉडिफ़ायर कुंजियों के साथ Neovim जैसे प्रोग्राम तक पहुँचाता है।";
 "Gilt ab dem nächsten Sitzungsstart" = "अगली बार सेशन शुरू होने से लागू";
@@ -575,6 +577,8 @@
 "Größe der neuen Tabelle festlegen." = "नई टेबल का आकार सेट करें।";
 "Größe:" = "आकार:";
 "Größer" = "बड़ा";
+"Handy koppeln" = "फ़ोन पेयर करें";
+"Handy koppeln …" = "फ़ोन पेयर करें…";
 "Header" = "हेडर";
 "Hell" = "हल्का";
 "Hell:" = "लाइट:";
@@ -672,6 +676,7 @@
 "Kopiermodus: Zeilen" = "कॉपी मोड: पंक्तियाँ";
 "Kopiert" = "कॉपी किया गया";
 "Kopiert oder sichert die Unterhaltung" = "बातचीत को कॉपी करता है या सहेजता है";
+"Koppeln fehlgeschlagen" = "पेयर नहीं हो सका";
 "Korrigiere sie oder lehne die Anfrage ab." = "इसे ठीक करें या अनुरोध अस्वीकार करें।";
 "Kursiv" = "इटैलिक";
 "Kurz, worum es geht" = "संक्षेप में, बात क्या है";

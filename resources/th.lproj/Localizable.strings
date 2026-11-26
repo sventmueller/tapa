@@ -219,6 +219,7 @@
 "Code" = "โค้ด";
 "Codeblock" = "บล็อกโค้ด";
 "Codex braucht eine Anmeldung. Melde dich im Terminal mit „codex login“ an." = "Codex ต้องลงชื่อเข้า ลงชื่อเข้าในเทอร์มินัลด้วย “codex login”";
+"Codex hat keine Verbindung zu OpenAI" = "Codex ไม่ได้เชื่อมต่อกับ OpenAI";
 "Codex schaltet und entfernt Server nur in seiner config.toml." = "Codex สลับและเอาเซิร์ฟเวอร์ออกได้เฉพาะใน config.toml ของตัวเองเท่านั้น";
 "Codex sendet an OpenAI: deine Beschreibung und die Protokolle dieser Sitzung, mit den Befehlen und Pfaden darin." = "Codex จะส่งสิ่งต่อไปนี้ให้ OpenAI: คำอธิบายของคุณและล็อกของเซสชันนี้ พร้อมคำสั่งและพาธในนั้น";
 "Codex:" = "Codex:";
@@ -546,6 +547,7 @@
 "Gestoppt in der Aktivität" = "หยุดในกิจกรรม";
 "Gestoppt mit Esc" = "หยุดด้วย Esc";
 "Gestoppt mit dem Stopp-Knopf" = "หยุดด้วยปุ่มหยุด";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "ป้อนรหัส {} ใน Codex บนโทรศัพท์ รหัสนี้ใช้ได้ถึง {}";
 "Gib oben eine Adresse oder Suchbegriffe ein." = "ป้อนที่อยู่หรือคำค้นหาด้านบน";
 "Gibt Programmen wie Neovim jede Taste mit ihren Sondertasten weiter." = "ส่งทุกปุ่มพร้อมปุ่มปรับแต่งไปยังโปรแกรมอย่าง Neovim";
 "Gilt ab dem nächsten Sitzungsstart" = "มีผลตั้งแต่การเริ่มเซสชันครั้งถัดไป";
@@ -575,6 +577,8 @@
 "Größe der neuen Tabelle festlegen." = "กำหนดขนาดของตารางใหม่";
 "Größe:" = "ขนาด:";
 "Größer" = "ใหญ่ขึ้น";
+"Handy koppeln" = "จับคู่โทรศัพท์";
+"Handy koppeln …" = "จับคู่โทรศัพท์…";
 "Header" = "เฮดเดอร์";
 "Hell" = "สว่าง";
 "Hell:" = "สว่าง:";
@@ -672,6 +676,7 @@
 "Kopiermodus: Zeilen" = "โหมดคัดลอก: บรรทัด";
 "Kopiert" = "คัดลอกแล้ว";
 "Kopiert oder sichert die Unterhaltung" = "คัดลอกหรือบันทึกบทสนทนา";
+"Koppeln fehlgeschlagen" = "จับคู่ไม่สำเร็จ";
 "Korrigiere sie oder lehne die Anfrage ab." = "แก้ไขให้ถูกต้องหรือปฏิเสธคำขอ";
 "Kursiv" = "ตัวเอียง";
 "Kurz, worum es geht" = "สรุปสั้นๆ ว่าเกี่ยวกับอะไร";

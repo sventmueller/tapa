@@ -7,16 +7,17 @@
 mod answer;
 mod manage;
 mod open;
+mod remote;
 mod reply;
 mod tasks;
 mod transport;
 
-use std::collections::HashMap;
+use std::collections::{HashMap, HashSet};
 use std::io::{BufReader, Write};
 use std::path::PathBuf;
 use std::process::{ChildStdin, ChildStdout};
 use std::sync::atomic::{AtomicBool, AtomicI64, AtomicU64, Ordering};
-use std::sync::mpsc::{Receiver, SyncSender, sync_channel};
+use std::sync::mpsc::{Receiver, Sender, SyncSender, channel, sync_channel};
 use std::sync::{Arc, Mutex, MutexGuard};
 use std::time::{Duration, SystemTime, UNIX_EPOCH};
 
@@ -26,6 +27,7 @@ use term_process::tail::{self, Tail};
 use term_process::{Kind, ProcessId, Supervisor};
 use term_thread::{Change, ErrorKind, RequestState, Status, Thread, Update, UserMessage};
 
+use crate::RemoteControl;
 use crate::capabilities::Capabilities;
 use crate::launch::{ApprovalPolicy, Launch, SandboxMode};
 use crate::mapping::Mapper;
@@ -54,6 +56,8 @@ const MAX_MESSAGE: usize = 256 * 1024 * 1024;
 /// What a session tells the UI, on one of the session's threads.
 #[derive(Debug, Clone, PartialEq)]
 pub enum Event {
+    /// The shared server's Remote Control status changed.
+    RemoteControl,
     /// The thread changed; read it with `Session::with_thread`.
     Changed(Vec<Change>),
     /// What the server, the account or the thread offers changed.
@@ -209,6 +213,8 @@ struct State {
     starting: bool,
     /// The user stopped a turn that had no id yet.
     interrupt: bool,
+    remote: RemoteControl,
+    shared_children: HashSet<String>,
     early_requests: Vec<tasks::EarlyRequest>,
 }
 
@@ -267,8 +273,13 @@ impl Shared {
     }
 
     /// Reads the server's output until it ends.
-    fn read(self: Arc<Self>, stdout: ChildStdout) {
+    fn read(self: Arc<Self>, stdout: ChildStdout, upgraded: Sender<()>) {
         let mut reader = BufReader::with_capacity(READ_BUFFER, stdout);
+        if self.launch.shared {
+            self.read_websocket(&mut reader, upgraded);
+            self.finish();
+            return;
+        }
         let mut line = Vec::new();
         loop {
             match framing::read_line(&mut reader, &mut line, MAX_MESSAGE) {
@@ -304,6 +315,9 @@ impl Shared {
     }
 
     fn on_notification(self: &Arc<Self>, method: &str, params: &Value) {
+        if self.launch.shared && !self.shared_notification(method, params) {
+            return;
+        }
         match method {
             "account/login/completed" => {
                 self.emit(Event::Login {
@@ -358,6 +372,9 @@ impl Shared {
 
     fn on_request(self: &Arc<Self>, id: Id, method: &str, params: &Value) {
         if self.defer_task_request(&id, method, params) {
+            return;
+        }
+        if self.launch.shared && !text(params, "threadId").is_some_and(|thread| self.owns_thread(thread)) {
             return;
         }
         let ask = format!("p{}", self.next_ask.fetch_add(1, Ordering::SeqCst) + 1);
@@ -494,7 +511,15 @@ impl Shared {
 }
 
 /// Writes what `rx` queues to the server's input.
-fn write_lines(mut stdin: ChildStdin, rx: &Receiver<Vec<u8>>) {
+fn write_lines(mut stdin: ChildStdin, rx: &Receiver<Vec<u8>>, upgrade: Option<Receiver<()>>) {
+    if let Some(upgraded) = upgrade {
+        let asked = stdin
+            .write_all(&crate::ws::upgrade_request())
+            .and_then(|()| stdin.flush());
+        if asked.is_err() || upgraded.recv().is_err() {
+            return;
+        }
+    }
     while let Ok(bytes) = rx.recv() {
         let written = stdin.write_all(&bytes).and_then(|()| stdin.flush());
         if written.is_err() {
@@ -528,13 +553,14 @@ impl Session {
     /// ```
     pub fn start(
         supervisor: &Supervisor,
-        launch: Launch,
+        mut launch: Launch,
         thread: Thread,
         sink: impl Fn(Event) + Send + Sync + 'static,
     ) -> Result<Session, SessionError> {
         if !launch.program.is_file() {
             return Err(SessionError::NotFound(launch.program.clone()));
         }
+        launch.shared = launch.joins_shared();
         let spawned = supervisor
             .spawn(launch.command(), Kind::Agent, launch.name.clone())
             .map_err(|e| SessionError::Start(e.to_string()))?;
@@ -544,6 +570,8 @@ impl Session {
         };
         let origin = u64::try_from(now().duration_since(UNIX_EPOCH).unwrap_or_default().as_nanos()).unwrap_or_default();
         let (tx, rx) = sync_channel(WRITE_QUEUE);
+        let (upgraded, upgrade) = channel();
+        let upgrade = launch.shared.then_some(upgrade);
         let stderr_tail = Arc::new(Mutex::new(Tail::new(STDERR_LIMIT)));
         let shared = Arc::new(Shared {
             supervisor: supervisor.clone(),
@@ -559,6 +587,8 @@ impl Session {
                 overrides: Overrides::default(),
                 starting: false,
                 interrupt: false,
+                remote: RemoteControl::Off,
+                shared_children: HashSet::new(),
                 early_requests: Vec::new(),
             }),
             pending: Mutex::new(HashMap::new()),
@@ -579,12 +609,12 @@ impl Session {
         });
         let started = std::thread::Builder::new()
             .name("codex-writer".into())
-            .spawn(move || write_lines(stdin, &rx))
+            .spawn(move || write_lines(stdin, &rx, upgrade))
             .and_then(|_| {
                 let reader = shared.clone();
                 std::thread::Builder::new()
                     .name("codex-reader".into())
-                    .spawn(move || reader.read(stdout))
+                    .spawn(move || reader.read(stdout, upgraded))
             })
             .and_then(|_| {
                 let opener = shared.clone();

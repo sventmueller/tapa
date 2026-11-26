@@ -529,3 +529,8 @@
 "Zeigen" = "보기";
 "Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "신뢰하지 않는 작업 공간: 프로젝트의 설정, 스킬, 훅, MCP 서버를 불러오지 않았습니다.";
 "Prozesse" = "프로세스";
+"Codex hat keine Verbindung zu OpenAI" = "Codex가 OpenAI에 연결되어 있지 않습니다";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "휴대폰의 Codex에 코드 {}을(를) 입력하세요. {}까지 유효합니다.";
+"Handy koppeln …" = "휴대폰 페어링…";
+"Handy koppeln" = "휴대폰 페어링";
+"Koppeln fehlgeschlagen" = "페어링하지 못했습니다";

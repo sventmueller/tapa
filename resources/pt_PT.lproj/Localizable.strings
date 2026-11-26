@@ -219,6 +219,7 @@
 "Code" = "Código";
 "Codeblock" = "Bloco de código";
 "Codex braucht eine Anmeldung. Melde dich im Terminal mit „codex login“ an." = "O Codex precisa de um início de sessão. Inicie sessão no terminal com “codex login”.";
+"Codex hat keine Verbindung zu OpenAI" = "O Codex não tem ligação à OpenAI";
 "Codex schaltet und entfernt Server nur in seiner config.toml." = "O Codex só ativa, desativa e remove servidores no config.toml dele.";
 "Codex sendet an OpenAI: deine Beschreibung und die Protokolle dieser Sitzung, mit den Befehlen und Pfaden darin." = "O Codex envia à OpenAI: a sua descrição e os logs desta sessão, com os comandos e caminhos neles contidos.";
 "Codex:" = "Codex:";
@@ -546,6 +547,7 @@
 "Gestoppt in der Aktivität" = "Interrompido em Atividade";
 "Gestoppt mit Esc" = "Interrompido com Esc";
 "Gestoppt mit dem Stopp-Knopf" = "Interrompido com o botão de parar";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "Introduza o código {} no Codex do telemóvel. É válido até às {}.";
 "Gib oben eine Adresse oder Suchbegriffe ein." = "Introduza acima um endereço ou termos de pesquisa.";
 "Gibt Programmen wie Neovim jede Taste mit ihren Sondertasten weiter." = "Passa cada tecla com os seus modificadores para programas como o Neovim.";
 "Gilt ab dem nächsten Sitzungsstart" = "Aplica-se a partir do próximo início da sessão";
@@ -575,6 +577,8 @@
 "Größe der neuen Tabelle festlegen." = "Defina o tamanho da nova tabela.";
 "Größe:" = "Tamanho:";
 "Größer" = "Maior";
+"Handy koppeln" = "Emparelhar telemóvel";
+"Handy koppeln …" = "Emparelhar telemóvel…";
 "Header" = "Cabeçalhos";
 "Hell" = "Claro";
 "Hell:" = "Claro:";
@@ -672,6 +676,7 @@
 "Kopiermodus: Zeilen" = "Modo de cópia: linhas";
 "Kopiert" = "Copiado";
 "Kopiert oder sichert die Unterhaltung" = "Copia ou guarda a conversa";
+"Koppeln fehlgeschlagen" = "Falha ao emparelhar";
 "Korrigiere sie oder lehne die Anfrage ab." = "Corrija-a ou recuse o pedido.";
 "Kursiv" = "Itálico";
 "Kurz, worum es geht" = "Em poucas palavras, do que se trata";

@@ -219,6 +219,7 @@
 "Code" = "Codice";
 "Codeblock" = "Blocco di codice";
 "Codex braucht eine Anmeldung. Melde dich im Terminal mit „codex login“ an." = "Codex richiede l’accesso. Accedi nel terminale con “codex login”.";
+"Codex hat keine Verbindung zu OpenAI" = "Codex non è connesso a OpenAI";
 "Codex schaltet und entfernt Server nur in seiner config.toml." = "Codex attiva, disattiva e rimuove i server solo nel suo config.toml.";
 "Codex sendet an OpenAI: deine Beschreibung und die Protokolle dieser Sitzung, mit den Befehlen und Pfaden darin." = "Codex invia a OpenAI: la tua descrizione e i log di questa sessione, con i comandi e i percorsi che contengono.";
 "Codex:" = "Codex:";
@@ -546,6 +547,7 @@
 "Gestoppt in der Aktivität" = "Interrotto in Attività";
 "Gestoppt mit Esc" = "Interrotto con Esc";
 "Gestoppt mit dem Stopp-Knopf" = "Interrotto con il pulsante di stop";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "Inserisci il codice {} in Codex sul telefono. È valido fino alle {}.";
 "Gib oben eine Adresse oder Suchbegriffe ein." = "Inserisci sopra un indirizzo o dei termini di ricerca.";
 "Gibt Programmen wie Neovim jede Taste mit ihren Sondertasten weiter." = "Passa ogni tasto con i suoi modificatori a programmi come Neovim.";
 "Gilt ab dem nächsten Sitzungsstart" = "Vale dal prossimo avvio della sessione";
@@ -575,6 +577,8 @@
 "Größe der neuen Tabelle festlegen." = "Imposta le dimensioni della nuova tabella.";
 "Größe:" = "Dimensione:";
 "Größer" = "Più grande";
+"Handy koppeln" = "Abbina telefono";
+"Handy koppeln …" = "Abbina telefono…";
 "Header" = "Intestazioni";
 "Hell" = "Chiaro";
 "Hell:" = "Chiaro:";
@@ -672,6 +676,7 @@
 "Kopiermodus: Zeilen" = "Modalità copia: righe";
 "Kopiert" = "Copiato";
 "Kopiert oder sichert die Unterhaltung" = "Copia o salva la conversazione";
+"Koppeln fehlgeschlagen" = "Abbinamento non riuscito";
 "Korrigiere sie oder lehne die Anfrage ab." = "Correggilo o rifiuta la richiesta.";
 "Kursiv" = "Corsivo";
 "Kurz, worum es geht" = "In breve, di cosa si tratta";

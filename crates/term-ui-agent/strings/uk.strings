@@ -529,3 +529,8 @@
 "Zeigen" = "Показати";
 "Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "Робочий простір не довірений: налаштування, навички, хуки та сервери MCP проєкту не завантажено.";
 "Prozesse" = "Процеси";
+"Codex hat keine Verbindung zu OpenAI" = "Codex не має з’єднання з OpenAI";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "Введіть код {} у Codex на телефоні. Він дійсний до {}.";
+"Handy koppeln …" = "Створити пару з телефоном…";
+"Handy koppeln" = "Створити пару з телефоном";
+"Koppeln fehlgeschlagen" = "Не вдалося створити пару";

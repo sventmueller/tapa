@@ -529,3 +529,8 @@
 "Zeigen" = "Hiển thị";
 "Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "Không gian làm việc chưa được tin cậy: cài đặt, skill, hook và máy chủ MCP của dự án chưa được tải.";
 "Prozesse" = "Tiến trình";
+"Codex hat keine Verbindung zu OpenAI" = "Codex không có kết nối với OpenAI";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "Nhập mã {} trong Codex trên điện thoại. Mã có hiệu lực đến {}.";
+"Handy koppeln …" = "Ghép đôi điện thoại…";
+"Handy koppeln" = "Ghép đôi điện thoại";
+"Koppeln fehlgeschlagen" = "Không ghép đôi được";

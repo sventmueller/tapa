@@ -118,6 +118,8 @@ pub struct Launch {
     /// Whether the workspace is trusted (E16); the project folder's trust level is passed either way, so only a
     /// trusted one loads its `.codex/` configuration, hooks and MCP servers.
     pub trusted: bool,
+    /// Join the shared daemon through its local proxy when the workspace is trusted.
+    pub shared: bool,
 }
 
 impl Launch {
@@ -136,7 +138,13 @@ impl Launch {
             version: None,
             config: Vec::new(),
             trusted: false,
+            shared: false,
         }
+    }
+
+    /// The shared daemon uses its own configuration, so it cannot enforce this launch's trust override.
+    pub(crate) fn joins_shared(&self) -> bool {
+        self.shared && self.trusted
     }
 
     /// The `-c` override of the project folder's trust level, an inline table since a dotted `-c` path is split at
@@ -153,6 +161,9 @@ impl Launch {
     /// The arguments: the app-server on stdio, which is its default transport, and the overrides, the trust level
     /// last so that `config` cannot change it.
     pub fn args(&self) -> Vec<String> {
+        if self.joins_shared() {
+            return vec!["app-server".into(), "proxy".into()];
+        }
         let mut args = vec!["app-server".to_string()];
         for (key, value) in self.config.iter().chain([&self.trust()]) {
             args.push("-c".into());

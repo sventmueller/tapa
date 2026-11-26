@@ -529,3 +529,8 @@
 "Zeigen" = "Toon";
 "Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "Werkruimte niet vertrouwd: de instellingen, skills, hooks en MCP-servers van het project zijn niet geladen.";
 "Prozesse" = "Processen";
+"Codex hat keine Verbindung zu OpenAI" = "Codex heeft geen verbinding met OpenAI";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "Voer de code {} in Codex op je telefoon in. Hij is geldig tot {}.";
+"Handy koppeln …" = "Koppel telefoon…";
+"Handy koppeln" = "Koppel telefoon";
+"Koppeln fehlgeschlagen" = "Koppelen mislukt";

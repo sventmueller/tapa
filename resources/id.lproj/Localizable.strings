@@ -219,6 +219,7 @@
 "Code" = "Kode";
 "Codeblock" = "Blok Kode";
 "Codex braucht eine Anmeldung. Melde dich im Terminal mit „codex login“ an." = "Codex memerlukan proses masuk. Masuk di terminal dengan “codex login”.";
+"Codex hat keine Verbindung zu OpenAI" = "Codex tidak terhubung ke OpenAI";
 "Codex schaltet und entfernt Server nur in seiner config.toml." = "Codex mengaktifkan, menonaktifkan, dan menghapus server hanya di config.toml miliknya.";
 "Codex sendet an OpenAI: deine Beschreibung und die Protokolle dieser Sitzung, mit den Befehlen und Pfaden darin." = "Codex mengirim ke OpenAI: deskripsi Anda dan log sesi ini, beserta perintah dan jalur di dalamnya.";
 "Codex:" = "Codex:";
@@ -546,6 +547,7 @@
 "Gestoppt in der Aktivität" = "Dihentikan di Aktivitas";
 "Gestoppt mit Esc" = "Dihentikan dengan Esc";
 "Gestoppt mit dem Stopp-Knopf" = "Dihentikan dengan tombol hentikan";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "Masukkan kode {} di Codex pada ponsel. Kode berlaku hingga {}.";
 "Gib oben eine Adresse oder Suchbegriffe ein." = "Masukkan alamat atau kata pencarian di atas.";
 "Gibt Programmen wie Neovim jede Taste mit ihren Sondertasten weiter." = "Meneruskan setiap tombol beserta pengubahnya ke program seperti Neovim.";
 "Gilt ab dem nächsten Sitzungsstart" = "Berlaku saat sesi berikutnya dimulai";
@@ -575,6 +577,8 @@
 "Größe der neuen Tabelle festlegen." = "Atur ukuran tabel baru.";
 "Größe:" = "Ukuran:";
 "Größer" = "Lebih Besar";
+"Handy koppeln" = "Pasangkan Ponsel";
+"Handy koppeln …" = "Pasangkan Ponsel…";
 "Header" = "Header";
 "Hell" = "Terang";
 "Hell:" = "Terang:";
@@ -672,6 +676,7 @@
 "Kopiermodus: Zeilen" = "Mode Salin: Baris";
 "Kopiert" = "Disalin";
 "Kopiert oder sichert die Unterhaltung" = "Menyalin atau menyimpan percakapan";
+"Koppeln fehlgeschlagen" = "Gagal Memasangkan";
 "Korrigiere sie oder lehne die Anfrage ab." = "Perbaiki atau tolak permintaan.";
 "Kursiv" = "Cetak Miring";
 "Kurz, worum es geht" = "Singkatnya, tentang apa";

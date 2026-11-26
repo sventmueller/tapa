@@ -219,6 +219,7 @@
 "Code" = "Kód";
 "Codeblock" = "Kódblokk";
 "Codex braucht eine Anmeldung. Melde dich im Terminal mit „codex login“ an." = "A Codexnek bejelentkezés kell. Jelentkezzen be a terminálban a „codex login” paranccsal.";
+"Codex hat keine Verbindung zu OpenAI" = "A Codexnek nincs kapcsolata az OpenAI-jal";
 "Codex schaltet und entfernt Server nur in seiner config.toml." = "A Codex csak a saját config.toml fájljában kapcsol be/ki és távolít el szervereket.";
 "Codex sendet an OpenAI: deine Beschreibung und die Protokolle dieser Sitzung, mit den Befehlen und Pfaden darin." = "A Codex elküldi az OpenAI-nak: az Ön leírását és a munkamenet naplóit, a bennük szereplő parancsokkal és útvonalakkal.";
 "Codex:" = "Codex:";
@@ -546,6 +547,7 @@
 "Gestoppt in der Aktivität" = "Leállítva a Tevékenységben";
 "Gestoppt mit Esc" = "Leállítva az Esc billentyűvel";
 "Gestoppt mit dem Stopp-Knopf" = "Leállítva a leállítás gombbal";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "Adja meg a(z) {} kódot a telefonon a Codexben. Eddig érvényes: {}.";
 "Gib oben eine Adresse oder Suchbegriffe ein." = "Írjon be fent egy címet vagy keresőszavakat.";
 "Gibt Programmen wie Neovim jede Taste mit ihren Sondertasten weiter." = "Minden billentyűt a módosítóival együtt továbbad az olyan programoknak, mint a Neovim.";
 "Gilt ab dem nächsten Sitzungsstart" = "A munkamenet következő indításától érvényes";
@@ -575,6 +577,8 @@
 "Größe der neuen Tabelle festlegen." = "Adja meg az új táblázat méretét.";
 "Größe:" = "Méret:";
 "Größer" = "Nagyobb";
+"Handy koppeln" = "Telefon párosítása";
+"Handy koppeln …" = "Telefon párosítása…";
 "Header" = "Fejlécek";
 "Hell" = "Világos";
 "Hell:" = "Világos:";
@@ -672,6 +676,7 @@
 "Kopiermodus: Zeilen" = "Másolási mód: sorok";
 "Kopiert" = "Másolva";
 "Kopiert oder sichert die Unterhaltung" = "Kimásolja vagy menti a beszélgetést";
+"Koppeln fehlgeschlagen" = "A párosítás sikertelen";
 "Korrigiere sie oder lehne die Anfrage ab." = "Javítsa ki, vagy utasítsa el a kérést.";
 "Kursiv" = "Dőlt";
 "Kurz, worum es geht" = "Röviden, miről van szó";

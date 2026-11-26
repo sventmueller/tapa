@@ -529,3 +529,8 @@
 "Zeigen" = "Megjelenítés";
 "Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "A munkaterület nem megbízható: a projekt beállításai, skilljei, hookjai és MCP-kiszolgálói nincsenek betöltve.";
 "Prozesse" = "Folyamatok";
+"Codex hat keine Verbindung zu OpenAI" = "A Codexnek nincs kapcsolata az OpenAI-jal";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "Adja meg a(z) {} kódot a telefonon a Codexben. Eddig érvényes: {}.";
+"Handy koppeln …" = "Telefon párosítása…";
+"Handy koppeln" = "Telefon párosítása";
+"Koppeln fehlgeschlagen" = "A párosítás sikertelen";

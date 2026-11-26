@@ -219,6 +219,7 @@
 "Code" = "Koda";
 "Codeblock" = "Blok kode";
 "Codex braucht eine Anmeldung. Melde dich im Terminal mit „codex login“ an." = "Codex potrebuje vpis. Vpišite se v terminalu z ukazom »codex login«.";
+"Codex hat keine Verbindung zu OpenAI" = "Codex nima povezave z OpenAI";
 "Codex schaltet und entfernt Server nur in seiner config.toml." = "Codex preklaplja in odstranjuje strežnike samo v svoji datoteki config.toml.";
 "Codex sendet an OpenAI: deine Beschreibung und die Protokolle dieser Sitzung, mit den Befehlen und Pfaden darin." = "Codex pošlje podjetju OpenAI: vaš opis in dnevnike te seje z ukazi in potmi v njih.";
 "Codex:" = "Codex:";
@@ -546,6 +547,7 @@
 "Gestoppt in der Aktivität" = "Ustavljeno v Aktivnosti";
 "Gestoppt mit Esc" = "Ustavljeno s tipko Esc";
 "Gestoppt mit dem Stopp-Knopf" = "Ustavljeno z gumbom za ustavitev";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "Vnesite kodo {} v Codex v telefonu. Velja do {}.";
 "Gib oben eine Adresse oder Suchbegriffe ein." = "Zgoraj vnesite naslov ali iskalne izraze.";
 "Gibt Programmen wie Neovim jede Taste mit ihren Sondertasten weiter." = "Vsako tipko z njenimi spremenilkami posreduje programom, kot je Neovim.";
 "Gilt ab dem nächsten Sitzungsstart" = "Velja od naslednjega zagona seje";
@@ -575,6 +577,8 @@
 "Größe der neuen Tabelle festlegen." = "Določite velikost nove tabele.";
 "Größe:" = "Velikost:";
 "Größer" = "Večje";
+"Handy koppeln" = "Seznani telefon";
+"Handy koppeln …" = "Seznani telefon …";
 "Header" = "Glave";
 "Hell" = "Svetel";
 "Hell:" = "Svetlo:";
@@ -672,6 +676,7 @@
 "Kopiermodus: Zeilen" = "Način kopiranja: vrstice";
 "Kopiert" = "Kopirano";
 "Kopiert oder sichert die Unterhaltung" = "Kopira ali shrani pogovor";
+"Koppeln fehlgeschlagen" = "Seznanjanje ni uspelo";
 "Korrigiere sie oder lehne die Anfrage ab." = "Popravite jih ali zavrnite zahtevo.";
 "Kursiv" = "Ležeče";
 "Kurz, worum es geht" = "Na kratko, za kaj gre";

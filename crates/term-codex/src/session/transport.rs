@@ -34,10 +34,17 @@ impl Pending {
 impl Shared {
     pub(super) fn write(&self, message: &Message) -> Result<(), SessionError> {
         let mut line = message.encode().into_bytes();
+        if self.launch.shared {
+            return self.send_bytes(crate::ws::frame(crate::ws::TEXT, &line, true));
+        }
         line.push(b'\n');
+        self.send_bytes(line)
+    }
+
+    pub(super) fn send_bytes(&self, bytes: Vec<u8>) -> Result<(), SessionError> {
         let writer = self.writer.lock().unwrap_or_else(|e| e.into_inner());
         let writer = writer.as_ref().ok_or(SessionError::Closed)?;
-        writer.try_send(line).map_err(|error| match error {
+        writer.try_send(bytes).map_err(|error| match error {
             TrySendError::Full(_) => SessionError::Congested,
             TrySendError::Disconnected(_) => SessionError::Closed,
         })

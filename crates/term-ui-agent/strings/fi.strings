@@ -529,3 +529,8 @@
 "Zeigen" = "Näytä";
 "Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "Työtilaan ei luoteta: projektin asetuksia, taitoja, hookeja ja MCP-palvelimia ei ole ladattu.";
 "Prozesse" = "Prosessit";
+"Codex hat keine Verbindung zu OpenAI" = "Codexilla ei ole yhteyttä OpenAI:hin";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "Syötä koodi {} puhelimen Codexiin. Se on voimassa klo {} asti.";
+"Handy koppeln …" = "Muodosta pari puhelimeen…";
+"Handy koppeln" = "Muodosta pari puhelimeen";
+"Koppeln fehlgeschlagen" = "Parin muodostus epäonnistui";

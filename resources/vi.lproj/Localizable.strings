@@ -219,6 +219,7 @@
 "Code" = "Mã";
 "Codeblock" = "Khối mã";
 "Codex braucht eine Anmeldung. Melde dich im Terminal mit „codex login“ an." = "Codex cần đăng nhập. Hãy đăng nhập trong terminal bằng “codex login”.";
+"Codex hat keine Verbindung zu OpenAI" = "Codex không có kết nối với OpenAI";
 "Codex schaltet und entfernt Server nur in seiner config.toml." = "Codex chỉ bật/tắt và xóa máy chủ trong config.toml của nó.";
 "Codex sendet an OpenAI: deine Beschreibung und die Protokolle dieser Sitzung, mit den Befehlen und Pfaden darin." = "Codex gửi đến OpenAI: mô tả của bạn và nhật ký của phiên này, cùng các lệnh và đường dẫn trong đó.";
 "Codex:" = "Codex:";
@@ -546,6 +547,7 @@
 "Gestoppt in der Aktivität" = "Đã dừng trong Hoạt động";
 "Gestoppt mit Esc" = "Đã dừng bằng Esc";
 "Gestoppt mit dem Stopp-Knopf" = "Đã dừng bằng nút dừng";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "Nhập mã {} trong Codex trên điện thoại. Mã có hiệu lực đến {}.";
 "Gib oben eine Adresse oder Suchbegriffe ein." = "Hãy nhập địa chỉ hoặc từ khóa tìm kiếm ở trên.";
 "Gibt Programmen wie Neovim jede Taste mit ihren Sondertasten weiter." = "Chuyển mọi phím cùng phím bổ trợ đến các chương trình như Neovim.";
 "Gilt ab dem nächsten Sitzungsstart" = "Áp dụng từ lần khởi động phiên tiếp theo";
@@ -575,6 +577,8 @@
 "Größe der neuen Tabelle festlegen." = "Đặt kích thước cho bảng mới.";
 "Größe:" = "Kích thước:";
 "Größer" = "Lớn hơn";
+"Handy koppeln" = "Ghép đôi điện thoại";
+"Handy koppeln …" = "Ghép đôi điện thoại…";
 "Header" = "Header";
 "Hell" = "Sáng";
 "Hell:" = "Sáng:";
@@ -672,6 +676,7 @@
 "Kopiermodus: Zeilen" = "Chế độ sao chép: Dòng";
 "Kopiert" = "Đã sao chép";
 "Kopiert oder sichert die Unterhaltung" = "Sao chép hoặc lưu cuộc hội thoại";
+"Koppeln fehlgeschlagen" = "Không ghép đôi được";
 "Korrigiere sie oder lehne die Anfrage ab." = "Hãy sửa lại hoặc từ chối yêu cầu.";
 "Kursiv" = "Nghiêng";
 "Kurz, worum es geht" = "Tóm tắt nội dung";

@@ -130,6 +130,7 @@ fn an_untrusted_workspace_starts_claude_and_codex_without_the_projects_configura
     let path = AgentPath::Codex {
         program: stand_in(),
         version: None,
+        shared: false,
     };
     let mut harness = Harness::new();
     let (session, watcher) = start(&mut harness, Launch::new(path, &*scratch, env, user()));
@@ -238,6 +239,7 @@ fn a_users_codex_session_takes_any_option_offered_no_rule_and_messages_into_its_
     let path = AgentPath::Codex {
         program: stand_in(),
         version: None,
+        shared: false,
     };
     let mut harness = Harness::new();
     let launch = Launch::new(path, &*scratch, stand_in_env("codex", &log), user());
@@ -299,6 +301,7 @@ fn every_path_follows_its_failure_in_words_with_the_typed_error() {
     let codex = AgentPath::Codex {
         program: stand_in(),
         version: None,
+        shared: false,
     };
     let signals = heard_until(Launch::new(codex, &*scratch, env, user()), |s| {
         matches!(s, Signal::CodexFailed(_))

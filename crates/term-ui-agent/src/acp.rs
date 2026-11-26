@@ -355,9 +355,15 @@ impl AgentTab {
         let trusted = self.controller.is_trusted();
         if let Err(why) = crate::common::util::spawn("acp-start", move || {
             let env = term_ui::workspace_host::environment_for(&cwd, Duration::from_secs(15));
-            let codex = matches!(agent, Agent::Codex)
+            let mut codex = matches!(agent, Agent::Codex)
                 .then(|| crate::codex::launch_for(&env, &cwd))
                 .flatten();
+            if let Some(launch) = &mut codex
+                && trusted
+                && !crate::remote_transcript::is_remote(&cwd)
+            {
+                crate::codex::remote::share(launch);
+            }
             let opencode = matches!(agent, Agent::OpenCode)
                 .then(|| crate::opencode::launch_for(&env, &cwd))
                 .flatten();

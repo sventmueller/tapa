@@ -76,6 +76,7 @@ fn codex_ends_each_kind_of_turn_and_the_user_answers_its_requests() {
     let path = AgentPath::Codex {
         program: stand_in(),
         version: None,
+        shared: false,
     };
     let mut harness = Harness::new();
     let session = start(
@@ -107,6 +108,7 @@ fn a_codex_prompt_carries_the_schema_of_its_answer() {
     let path = AgentPath::Codex {
         program: stand_in(),
         version: None,
+        shared: false,
     };
     let mut harness = Harness::new();
     let session = start(

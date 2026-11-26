@@ -529,3 +529,8 @@
 "Zeigen" = "Mostra";
 "Arbeitsbereich nicht vertraut: Einstellungen, Skills, Hooks und MCP-Server des Projekts sind nicht geladen." = "Spazio di lavoro non attendibile: impostazioni, skill, hook e server MCP del progetto non sono caricati.";
 "Prozesse" = "Processi";
+"Codex hat keine Verbindung zu OpenAI" = "Codex non è connesso a OpenAI";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "Inserisci il codice {} in Codex sul telefono. È valido fino alle {}.";
+"Handy koppeln …" = "Abbina telefono…";
+"Handy koppeln" = "Abbina telefono";
+"Koppeln fehlgeschlagen" = "Abbinamento non riuscito";

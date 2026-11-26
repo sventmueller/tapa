@@ -219,6 +219,7 @@
 "Code" = "Código";
 "Codeblock" = "Bloque de código";
 "Codex braucht eine Anmeldung. Melde dich im Terminal mit „codex login“ an." = "Codex necesita que inicies sesión. Inicia sesión en el terminal con «codex login».";
+"Codex hat keine Verbindung zu OpenAI" = "Codex no tiene conexión con OpenAI";
 "Codex schaltet und entfernt Server nur in seiner config.toml." = "Codex solo activa, desactiva y elimina servidores en su config.toml.";
 "Codex sendet an OpenAI: deine Beschreibung und die Protokolle dieser Sitzung, mit den Befehlen und Pfaden darin." = "Codex envía a OpenAI: tu descripción y los logs de esta sesión, con los comandos y las rutas que contienen.";
 "Codex:" = "Codex:";
@@ -546,6 +547,7 @@
 "Gestoppt in der Aktivität" = "Detenido en Actividad";
 "Gestoppt mit Esc" = "Detenido con Esc";
 "Gestoppt mit dem Stopp-Knopf" = "Detenido con el botón de detener";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "Introduce el código {} en Codex en el teléfono. Es válido hasta las {}.";
 "Gib oben eine Adresse oder Suchbegriffe ein." = "Introduce arriba una dirección o términos de búsqueda.";
 "Gibt Programmen wie Neovim jede Taste mit ihren Sondertasten weiter." = "Pasa cada tecla con sus modificadores a programas como Neovim.";
 "Gilt ab dem nächsten Sitzungsstart" = "Se aplica cuando arranque la próxima sesión";
@@ -575,6 +577,8 @@
 "Größe der neuen Tabelle festlegen." = "Define el tamaño de la nueva tabla.";
 "Größe:" = "Tamaño:";
 "Größer" = "Más grande";
+"Handy koppeln" = "Vincular teléfono";
+"Handy koppeln …" = "Vincular teléfono…";
 "Header" = "Cabeceras";
 "Hell" = "Claro";
 "Hell:" = "Claro:";
@@ -672,6 +676,7 @@
 "Kopiermodus: Zeilen" = "Modo de copia: líneas";
 "Kopiert" = "Copiado";
 "Kopiert oder sichert die Unterhaltung" = "Copia o guarda la conversación";
+"Koppeln fehlgeschlagen" = "No se ha podido vincular";
 "Korrigiere sie oder lehne die Anfrage ab." = "Corrígela o deniega la solicitud.";
 "Kursiv" = "Cursiva";
 "Kurz, worum es geht" = "En pocas palabras, de qué se trata";

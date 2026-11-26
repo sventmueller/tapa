@@ -219,6 +219,7 @@
 "Code" = "Код";
 "Codeblock" = "Блок коду";
 "Codex braucht eine Anmeldung. Melde dich im Terminal mit „codex login“ an." = "Codex потребує входу. Увійдіть у терміналі командою «codex login».";
+"Codex hat keine Verbindung zu OpenAI" = "Codex не має з’єднання з OpenAI";
 "Codex schaltet und entfernt Server nur in seiner config.toml." = "Codex перемикає і вилучає сервери лише у своєму config.toml.";
 "Codex sendet an OpenAI: deine Beschreibung und die Protokolle dieser Sitzung, mit den Befehlen und Pfaden darin." = "Codex надсилає в OpenAI: ваш опис і журнали цього сеансу з командами та шляхами в них.";
 "Codex:" = "Codex:";
@@ -546,6 +547,7 @@
 "Gestoppt in der Aktivität" = "Зупинено в розділі «Активність»";
 "Gestoppt mit Esc" = "Зупинено клавішею Esc";
 "Gestoppt mit dem Stopp-Knopf" = "Зупинено кнопкою зупинки";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "Введіть код {} у Codex на телефоні. Він дійсний до {}.";
 "Gib oben eine Adresse oder Suchbegriffe ein." = "Введіть угорі адресу або пошуковий запит.";
 "Gibt Programmen wie Neovim jede Taste mit ihren Sondertasten weiter." = "Передає кожну клавішу з модифікаторами програмам на кшталт Neovim.";
 "Gilt ab dem nächsten Sitzungsstart" = "Діє з наступного запуску сеансу";
@@ -575,6 +577,8 @@
 "Größe der neuen Tabelle festlegen." = "Укажіть розмір нової таблиці.";
 "Größe:" = "Розмір:";
 "Größer" = "Збільшити";
+"Handy koppeln" = "Створити пару з телефоном";
+"Handy koppeln …" = "Створити пару з телефоном…";
 "Header" = "Заголовки";
 "Hell" = "Світлий";
 "Hell:" = "Світла:";
@@ -672,6 +676,7 @@
 "Kopiermodus: Zeilen" = "Режим копіювання: рядки";
 "Kopiert" = "Скопійовано";
 "Kopiert oder sichert die Unterhaltung" = "Копіює або зберігає діалог";
+"Koppeln fehlgeschlagen" = "Не вдалося створити пару";
 "Korrigiere sie oder lehne die Anfrage ab." = "Виправте їх або відхиліть запит.";
 "Kursiv" = "Курсив";
 "Kurz, worum es geht" = "Коротко, про що йдеться";

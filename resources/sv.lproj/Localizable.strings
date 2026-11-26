@@ -219,6 +219,7 @@
 "Code" = "Kod";
 "Codeblock" = "Kodblock";
 "Codex braucht eine Anmeldung. Melde dich im Terminal mit „codex login“ an." = "Codex kräver inloggning. Logga in i terminalen med ”codex login”.";
+"Codex hat keine Verbindung zu OpenAI" = "Codex har ingen anslutning till OpenAI";
 "Codex schaltet und entfernt Server nur in seiner config.toml." = "Codex slår på, slår av och tar bort servrar endast i sin config.toml.";
 "Codex sendet an OpenAI: deine Beschreibung und die Protokolle dieser Sitzung, mit den Befehlen und Pfaden darin." = "Codex skickar till OpenAI: din beskrivning och den här sessionens loggar, med kommandona och sökvägarna i dem.";
 "Codex:" = "Codex:";
@@ -546,6 +547,7 @@
 "Gestoppt in der Aktivität" = "Stoppad i Aktivitet";
 "Gestoppt mit Esc" = "Stoppad med Esc";
 "Gestoppt mit dem Stopp-Knopf" = "Stoppad med stoppknappen";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "Ange koden {} i Codex på telefonen. Den gäller till {}.";
 "Gib oben eine Adresse oder Suchbegriffe ein." = "Ange en adress eller sökord ovan.";
 "Gibt Programmen wie Neovim jede Taste mit ihren Sondertasten weiter." = "Skickar varje tangent med dess kombinationstangenter vidare till program som Neovim.";
 "Gilt ab dem nächsten Sitzungsstart" = "Gäller från nästa sessionsstart";
@@ -575,6 +577,8 @@
 "Größe der neuen Tabelle festlegen." = "Ange storleken på den nya tabellen.";
 "Größe:" = "Storlek:";
 "Größer" = "Större";
+"Handy koppeln" = "Parkoppla telefon";
+"Handy koppeln …" = "Parkoppla telefon…";
 "Header" = "Huvuden";
 "Hell" = "Ljust";
 "Hell:" = "Ljust:";
@@ -672,6 +676,7 @@
 "Kopiermodus: Zeilen" = "Kopieringsläge: rader";
 "Kopiert" = "Kopierat";
 "Kopiert oder sichert die Unterhaltung" = "Kopierar eller sparar konversationen";
+"Koppeln fehlgeschlagen" = "Parkopplingen misslyckades";
 "Korrigiere sie oder lehne die Anfrage ab." = "Rätta den eller neka förfrågan.";
 "Kursiv" = "Kursiv";
 "Kurz, worum es geht" = "Kort, vad det gäller";

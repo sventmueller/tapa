@@ -162,6 +162,8 @@ pub struct AgentTab {
     pub(super) outputs: RefCell<std::collections::HashMap<String, Weak<super::output_tab::OutputTab>>>,
     /// The registry the tab runs its session in.
     pub(super) sessions: Option<Rc<dyn crate::Sessions>>,
+    /// The action in progress while Codex Remote Control starts or moves its thread.
+    pub(super) codex_remote: RefCell<Option<super::codex::remote::Turning>>,
     /// Lays the tab out anew when the user changes the text size.
     text_size: RefCell<Option<Retained<ProtocolObject<dyn NSObjectProtocol>>>>,
 }
@@ -277,6 +279,7 @@ impl AgentTab {
             me: RefCell::new(std::rc::Weak::new()),
             outputs: RefCell::default(),
             sessions,
+            codex_remote: RefCell::new(None),
             text_size: RefCell::new(None),
         };
         tab.lay_out();
@@ -621,8 +624,14 @@ impl AgentTab {
     }
 
     pub(super) fn refresh_remote(&self) {
+        use super::header::{Reach, Remote};
+
+        if let Some(session) = self.codex_session() {
+            self.header.set_remote(&self.codex_remote_shown(&session), Reach::Codex);
+            return;
+        }
         let remote = self.session().map(|s| s.remote_control()).unwrap_or_default();
-        self.header.set_remote(&super::header::Remote::of_claude(&remote));
+        self.header.set_remote(&Remote::of_claude(&remote), Reach::Claude);
     }
 
     pub(super) fn refresh_tab_mark(&self) {

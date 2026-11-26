@@ -219,6 +219,7 @@
 "Code" = "Code";
 "Codeblock" = "Codeblok";
 "Codex braucht eine Anmeldung. Melde dich im Terminal mit „codex login“ an." = "Codex vereist een inlog. Log in de terminal in met 'codex login'.";
+"Codex hat keine Verbindung zu OpenAI" = "Codex heeft geen verbinding met OpenAI";
 "Codex schaltet und entfernt Server nur in seiner config.toml." = "Codex schakelt servers alleen in zijn config.toml in of uit en verwijdert ze alleen daar.";
 "Codex sendet an OpenAI: deine Beschreibung und die Protokolle dieser Sitzung, mit den Befehlen und Pfaden darin." = "Codex stuurt naar OpenAI: je beschrijving en de logs van deze sessie, met de commando's en paden erin.";
 "Codex:" = "Codex:";
@@ -546,6 +547,7 @@
 "Gestoppt in der Aktivität" = "Gestopt in Activiteit";
 "Gestoppt mit Esc" = "Gestopt met Esc";
 "Gestoppt mit dem Stopp-Knopf" = "Gestopt met de stopknop";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "Voer de code {} in Codex op je telefoon in. Hij is geldig tot {}.";
 "Gib oben eine Adresse oder Suchbegriffe ein." = "Voer hierboven een adres of zoektermen in.";
 "Gibt Programmen wie Neovim jede Taste mit ihren Sondertasten weiter." = "Geeft elke toets met zijn speciale toetsen door aan programma’s zoals Neovim.";
 "Gilt ab dem nächsten Sitzungsstart" = "Geldt vanaf de volgende sessiestart";
@@ -575,6 +577,8 @@
 "Größe der neuen Tabelle festlegen." = "Stel de grootte van de nieuwe tabel in.";
 "Größe:" = "Grootte:";
 "Größer" = "Groter";
+"Handy koppeln" = "Koppel telefoon";
+"Handy koppeln …" = "Koppel telefoon…";
 "Header" = "Headers";
 "Hell" = "Licht";
 "Hell:" = "Licht:";
@@ -672,6 +676,7 @@
 "Kopiermodus: Zeilen" = "Kopieermodus: regels";
 "Kopiert" = "Gekopieerd";
 "Kopiert oder sichert die Unterhaltung" = "Kopieert of bewaart het gesprek";
+"Koppeln fehlgeschlagen" = "Koppelen mislukt";
 "Korrigiere sie oder lehne die Anfrage ab." = "Corrigeer het of weiger het verzoek.";
 "Kursiv" = "Cursief";
 "Kurz, worum es geht" = "In het kort, waar het om gaat";

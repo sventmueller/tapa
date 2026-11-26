@@ -13,6 +13,7 @@ use std::io::{BufRead, Write};
 
 use serde_json::{Value, json};
 
+mod remote;
 mod tasks;
 
 /// The id of the thread the server opens.
@@ -54,6 +55,8 @@ struct Server<W: Write> {
     /// Whether the client asked for the experimental API.
     experimental: bool,
     work: tasks::Work,
+    shared: bool,
+    home: Option<std::path::PathBuf>,
 }
 
 fn thread(turns: Value, name: Option<&str>) -> Value {
@@ -64,7 +67,15 @@ fn thread(turns: Value, name: Option<&str>) -> Value {
 
 impl<W: Write> Server<W> {
     fn send(&mut self, message: &Value) {
-        let _ = writeln!(self.out, "{message}");
+        if self.shared {
+            let _ = self.out.write_all(&crate::ws::frame(
+                crate::ws::TEXT,
+                message.to_string().as_bytes(),
+                false,
+            ));
+        } else {
+            let _ = writeln!(self.out, "{message}");
+        }
         let _ = self.out.flush();
     }
 
@@ -292,6 +303,8 @@ impl<W: Write> Server<W> {
             return;
         }
         match method {
+            "remoteControl/disable" if self.shared => self.disable_remote(id),
+            "test/foreign" if self.shared => self.foreign(id),
             "thread/start" => self.opened(id, params, false),
             "thread/resume" => self.opened(id, params, true),
             "turn/start" => self.turn_start(id, params),
@@ -321,7 +334,12 @@ impl<W: Write> Server<W> {
         match (message.get("id"), message["method"].as_str()) {
             (Some(_), Some("test/no-reply")) => {}
             (Some(id), Some(method)) => self.request(&id.clone(), method, &message["params"]),
-            (None, Some("initialized")) => self.ready = self.initialized,
+            (None, Some("initialized")) => {
+                self.ready = self.initialized;
+                if self.shared {
+                    self.note("remoteControl/status/changed", self.remote_status());
+                }
+            }
             (Some(id), None) => {
                 if let Some(id) = id.as_u64() {
                     self.answered(id, message);
@@ -515,6 +533,9 @@ pub fn main(args: &[String]) -> i32 {
         let _ = file.write_all(format!("{}\n", serde_json::json!(args)).as_bytes());
     }
     let words: Vec<&str> = args.iter().map(String::as_str).collect();
+    if let Some(code) = remote::command(&words, &scenario) {
+        return code;
+    }
     match words.as_slice() {
         [.., "--version"] => {
             println!(
@@ -568,6 +589,8 @@ impl<W: Write> Server<W> {
             exit: false,
             experimental: false,
             work: tasks::Work::default(),
+            shared: false,
+            home: None,
         }
     }
 }

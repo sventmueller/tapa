@@ -61,7 +61,10 @@ impl AgentTab {
     fn hear(&self, signal: Signal, heard: &mut Heard) {
         match signal {
             Signal::Capabilities => heard.learned = true,
-            Signal::RemoteControl => heard.remote = true,
+            Signal::RemoteControl => {
+                heard.remote = true;
+                self.codex_remote_heard();
+            }
             Signal::ClaudeFailed(error) => heard.problem = source::problem_of(&error),
             Signal::CodexFailed(error) => heard.problem = Some(Problem::Start(crate::codex::explained(&error))),
             Signal::OpenCodeFailed(error) => heard.problem = Some(Problem::Start(crate::opencode::explained(&error))),
@@ -124,6 +127,7 @@ impl AgentTab {
         if let Some(stderr) = heard.ended {
             self.acp_ended(&stderr);
         }
+        self.codex_move_if_idle();
     }
 
     /// The message the driver took for `turn` went out, or did not: the agent refused it, or the turn or the session

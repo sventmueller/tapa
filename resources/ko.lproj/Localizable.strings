@@ -219,6 +219,7 @@
 "Code" = "코드";
 "Codeblock" = "코드 블록";
 "Codex braucht eine Anmeldung. Melde dich im Terminal mit „codex login“ an." = "Codex에 로그인이 필요합니다. 터미널에서 ‘codex login’으로 로그인하십시오.";
+"Codex hat keine Verbindung zu OpenAI" = "Codex가 OpenAI에 연결되어 있지 않습니다";
 "Codex schaltet und entfernt Server nur in seiner config.toml." = "Codex는 자체 config.toml에서만 서버를 켜고 끄거나 제거합니다.";
 "Codex sendet an OpenAI: deine Beschreibung und die Protokolle dieser Sitzung, mit den Befehlen und Pfaden darin." = "Codex가 OpenAI에 다음을 보냅니다: 사용자의 설명과 이 세션의 로그, 그리고 그 안의 명령과 경로.";
 "Codex:" = "Codex:";
@@ -546,6 +547,7 @@
 "Gestoppt in der Aktivität" = "활동에서 중지됨";
 "Gestoppt mit Esc" = "Esc로 중지됨";
 "Gestoppt mit dem Stopp-Knopf" = "중지 버튼으로 중지됨";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "휴대폰의 Codex에 코드 {}을(를) 입력하세요. {}까지 유효합니다.";
 "Gib oben eine Adresse oder Suchbegriffe ein." = "위에 주소나 검색어를 입력하십시오.";
 "Gibt Programmen wie Neovim jede Taste mit ihren Sondertasten weiter." = "모든 키를 보조 키와 함께 Neovim 같은 프로그램에 전달합니다.";
 "Gilt ab dem nächsten Sitzungsstart" = "다음 세션 시작부터 적용";
@@ -575,6 +577,8 @@
 "Größe der neuen Tabelle festlegen." = "새로운 표의 크기를 설정하십시오.";
 "Größe:" = "크기:";
 "Größer" = "크게";
+"Handy koppeln" = "휴대폰 페어링";
+"Handy koppeln …" = "휴대폰 페어링…";
 "Header" = "헤더";
 "Hell" = "라이트";
 "Hell:" = "라이트:";
@@ -672,6 +676,7 @@
 "Kopiermodus: Zeilen" = "복사 모드: 줄";
 "Kopiert" = "복사됨";
 "Kopiert oder sichert die Unterhaltung" = "대화를 복사하거나 저장";
+"Koppeln fehlgeschlagen" = "페어링하지 못했습니다";
 "Korrigiere sie oder lehne die Anfrage ab." = "수정하거나 요청을 거부하십시오.";
 "Kursiv" = "이탤릭체";
 "Kurz, worum es geht" = "무엇에 관한 것인지 간단히";

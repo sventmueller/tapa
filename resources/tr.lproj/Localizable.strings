@@ -219,6 +219,7 @@
 "Code" = "Kod";
 "Codeblock" = "Kod Bloku";
 "Codex braucht eine Anmeldung. Melde dich im Terminal mit „codex login“ an." = "Codex’in giriş yapması gerekiyor. Terminalde “codex login” ile giriş yapın.";
+"Codex hat keine Verbindung zu OpenAI" = "Codex’in OpenAI ile bağlantısı yok";
 "Codex schaltet und entfernt Server nur in seiner config.toml." = "Codex sunucuları yalnızca kendi config.toml dosyasında açıp kapatır ve kaldırır.";
 "Codex sendet an OpenAI: deine Beschreibung und die Protokolle dieser Sitzung, mit den Befehlen und Pfaden darin." = "Codex, OpenAI’ye şunları gönderir: açıklamanız ve bu oturumun içindeki komutlar ve yollarla birlikte günlükleri.";
 "Codex:" = "Codex:";
@@ -546,6 +547,7 @@
 "Gestoppt in der Aktivität" = "Etkinlik’te durduruldu";
 "Gestoppt mit Esc" = "Esc ile durduruldu";
 "Gestoppt mit dem Stopp-Knopf" = "Durdur düğmesiyle durduruldu";
+"Gib den Code {} in Codex auf dem Handy ein. Er gilt bis {}." = "{} kodunu telefonunuzdaki Codex’e girin. Kod {} saatine kadar geçerli.";
 "Gib oben eine Adresse oder Suchbegriffe ein." = "Yukarıya bir adres veya arama sözcükleri girin.";
 "Gibt Programmen wie Neovim jede Taste mit ihren Sondertasten weiter." = "Her tuşu değiştirici tuşlarıyla birlikte Neovim gibi programlara iletir.";
 "Gilt ab dem nächsten Sitzungsstart" = "Sonraki oturum başlangıcından itibaren geçerli";
@@ -575,6 +577,8 @@
 "Größe der neuen Tabelle festlegen." = "Yeni tablonun boyutunu belirleyin.";
 "Größe:" = "Boyut:";
 "Größer" = "Daha Büyük";
+"Handy koppeln" = "Telefonu Eşle";
+"Handy koppeln …" = "Telefonu Eşle…";
 "Header" = "Üstbilgiler";
 "Hell" = "Açık";
 "Hell:" = "Açık:";
@@ -672,6 +676,7 @@
 "Kopiermodus: Zeilen" = "Kopyalama Modu: Satırlar";
 "Kopiert" = "Kopyalandı";
 "Kopiert oder sichert die Unterhaltung" = "Konuşmayı kopyalar veya kaydeder";
+"Koppeln fehlgeschlagen" = "Eşleme Başarısız";
 "Korrigiere sie oder lehne die Anfrage ab." = "Düzeltin veya isteği reddedin.";
 "Kursiv" = "İtalik";
 "Kurz, worum es geht" = "Kısaca, konu nedir";

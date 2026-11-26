@@ -76,6 +76,8 @@ pub(crate) enum Remote {
     Off,
     /// It connects.
     Connecting,
+    /// The current turn must finish before the session moves to the daemon.
+    Moving,
     /// The phone reaches the session.
     Connected,
     /// It lost its connection or did not start, for this reason.
@@ -93,6 +95,15 @@ impl Remote {
             term_claude::RemoteControl::Failed(why) => Remote::Failed(why.clone()),
         }
     }
+}
+
+/// Whose Remote Control the button shows, which says where the session continues.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub(crate) enum Reach {
+    /// Claude's, for this session, on the phone and on claude.ai.
+    Claude,
+    /// Codex's, for every Codex session of the Mac, in Codex on the phone.
+    Codex,
 }
 
 /// Puts the title's text on the left edge of the window's tab bar, which AppKit insets 8 points from the content.
@@ -233,8 +244,8 @@ impl Header {
         self.height.setConstant(style::chat(HEIGHT));
     }
 
-    /// Shows where the session stands with Claude's Remote Control; hidden where the agent does not offer it.
-    pub(crate) fn set_remote(&self, remote: &Remote) {
+    /// Shows where the session stands with `reach`'s Remote Control; hidden where the agent does not offer it.
+    pub(crate) fn set_remote(&self, remote: &Remote, reach: Reach) {
         let interrupted;
         let (name, color, tip) = match remote {
             Remote::Hidden => {
@@ -244,17 +255,32 @@ impl Header {
             Remote::Off => (
                 "iphone",
                 NSColor::secondaryLabelColor(),
-                t("Remote Control: auf dem Handy oder auf claude.ai weiterarbeiten"),
+                match reach {
+                    Reach::Claude => t("Remote Control: auf dem Handy oder auf claude.ai weiterarbeiten"),
+                    Reach::Codex => t("Remote Control: auf dem Handy in Codex weiterarbeiten"),
+                },
             ),
             Remote::Connecting => (
                 "iphone.radiowaves.left.and.right",
                 NSColor::secondaryLabelColor(),
                 t("Remote Control verbindet …"),
             ),
+            Remote::Moving => (
+                "iphone.radiowaves.left.and.right",
+                NSColor::secondaryLabelColor(),
+                t("Remote Control übernimmt die Sitzung, sobald der Agent fertig ist"),
+            ),
             Remote::Connected => (
                 "iphone.radiowaves.left.and.right",
                 NSColor::controlAccentColor(),
-                t("Remote Control ist an: diese Sitzung läuft auch auf dem Handy und auf claude.ai"),
+                match reach {
+                    Reach::Claude => {
+                        t("Remote Control ist an: diese Sitzung läuft auch auf dem Handy und auf claude.ai")
+                    }
+                    Reach::Codex => {
+                        t("Remote Control ist an: die Codex-Sitzungen dieses Macs laufen auch in Codex auf dem Handy")
+                    }
+                },
             ),
             Remote::Failed(why) => {
                 interrupted = tf("Remote Control ist unterbrochen: {}", &[why]);
