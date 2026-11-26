@@ -14,6 +14,7 @@ pub(crate) mod model;
 pub(crate) mod raw;
 pub(crate) mod shell;
 mod suggest;
+mod tint;
 pub(crate) mod toggle;
 pub(crate) mod vim;
 mod vim_glue;

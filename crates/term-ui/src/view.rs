@@ -79,6 +79,10 @@ pub struct Ivars {
     pub(super) menu: RefCell<Option<crate::field::menu::Menu>>,
     /// The suggestion drawn from the cursor on without the field.
     pub(super) ghost: RefCell<Option<crate::field::raw::Ghost>>,
+    /// The colours of the command typed at the prompt without the field.
+    pub(super) tint: RefCell<Option<term_render::tint::Tint>>,
+    /// The line before the word whose menu the user closed, which does not open by itself again for that word.
+    pub(super) menu_closed: RefCell<Option<String>>,
     /// What the shell integration reported about the shell.
     pub(super) shell: RefCell<crate::field::shell::Shell>,
     /// Copy mode (F111), while it is on.
@@ -550,6 +554,8 @@ impl TerminalView {
             suggestion_sure: Cell::new(false),
             menu: RefCell::new(None),
             ghost: RefCell::new(None),
+            tint: RefCell::new(None),
+            menu_closed: RefCell::new(None),
             shell: RefCell::new(crate::field::shell::Shell::default()),
             copy: RefCell::new(None),
         };

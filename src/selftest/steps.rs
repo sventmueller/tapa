@@ -151,6 +151,10 @@ fn suggestions(step: &str) -> bool {
         if let Some(view) = app().front().and_then(|window| window.focused_view()) {
             println!("fieldparts {name}: {}", view.field_parts().join(" "));
         }
+    } else if let Some(name) = step.strip_prefix("rawtint:") {
+        if let Some(view) = app().front().and_then(|window| window.focused_view()) {
+            println!("rawtint {name}: {}", view.raw_tint_parts().join(" "));
+        }
     } else if let Some(name) = step.strip_prefix("rawghost:") {
         if let Some(view) = app().front().and_then(|window| window.focused_view()) {
             println!("rawghost {name}: {}", view.raw_suggestion());

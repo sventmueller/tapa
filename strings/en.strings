@@ -371,3 +371,4 @@
 "Verbindung zu {} fehlgeschlagen" = "Connection to {} failed";
 "Verbindung zu {} getrennt" = "Connection to {} lost";
 "Wo arbeitet der neue Arbeitsbereich?" = "Where does the new workspace work?";
+"Vorschlagsliste beim Tippen öffnen" = "Open the suggestion list while typing";

@@ -46,19 +46,84 @@ impl TerminalView {
             }
         }
         let ghost = self.raw_ghost();
-        if *self.ivars().ghost.borrow() == ghost {
+        let ghost_moved = *self.ivars().ghost.borrow() != ghost;
+        if ghost_moved {
+            *self.ivars().ghost.borrow_mut() = ghost;
+        }
+        if self.raw_tint() || ghost_moved {
+            self.repaint();
+        }
+        self.raw_menu_as_you_type();
+    }
+
+    /// Opens the menu by itself while a word is typed at the prompt, as the settings ask, unless the user closed it
+    /// for this word.
+    fn raw_menu_as_you_type(&self) {
+        if !crate::host().config().input.menu_as_you_type || self.raw_menu_is_open() {
             return;
         }
-        *self.ivars().ghost.borrow_mut() = ghost;
-        self.repaint();
+        let text = self.raw_line().unwrap_or_default();
+        let closed = self.ivars().menu_closed.borrow().clone();
+        // A word deleted back to where the menu was closed, or a new prompt, lets it open again.
+        if closed.as_ref().is_some_and(|closed| text.len() <= closed.len()) {
+            self.ivars().menu_closed.borrow_mut().take();
+        }
+        let word_start = text.rfind(char::is_whitespace).map_or(0, |at| at + 1);
+        if !super::suggest::typed_enough(&text) || word_start == text.len() {
+            return;
+        }
+        if self.ivars().menu_closed.borrow().as_deref() == text.get(..word_start) {
+            return;
+        }
+        self.menu_open(true, &text, true);
+    }
+
+    /// A key while the menu that opened by itself shows: Return runs the line until the selection moved and takes the
+    /// selected candidate after, Escape closes the menu for this word, Tab and → take the suggestion until the
+    /// selection moved and the selected candidate after; whether the key did.
+    fn raw_menu_key(&self, event: &NSEvent, moved: bool) -> bool {
+        let flags = event.modifierFlags();
+        let shift = flags.contains(NSEventModifierFlags::Shift);
+        if flags.contains(NSEventModifierFlags::Control) {
+            return false;
+        }
+        match event.keyCode() {
+            36 | 76 if moved => {
+                self.menu_take_selected();
+                true
+            }
+            36 | 76 => {
+                self.menu_close_quietly();
+                false
+            }
+            53 => {
+                let line = self.raw_line().unwrap_or_default();
+                let word_start = line.rfind(char::is_whitespace).map_or(0, |at| at + 1);
+                *self.ivars().menu_closed.borrow_mut() = line.get(..word_start).map(str::to_string);
+                self.menu_close();
+                true
+            }
+            48 | 124 if !shift && !moved && self.raw_accept(event) => {
+                self.menu_close_quietly();
+                true
+            }
+            48 if !shift => {
+                self.menu_take_selected();
+                true
+            }
+            code => self.menu_key(code, shift, true).unwrap_or(false),
+        }
     }
 
     /// Whether the terminal suggests and completes at the shell's prompt now: the shell waits for input, without the
     /// field, and draws no suggestions of its own.
     fn raw_mode_suggests(&self) -> bool {
-        crate::host().config().input.suggestions
-            && !self.ivars().shell.borrow().own_suggestions
-            && !self.field_view().is_some_and(|field| field.is_visible())
+        crate::host().config().input.suggestions && !self.ivars().shell.borrow().own_suggestions && self.at_raw_prompt()
+    }
+
+    /// Whether the shell waits for input at its prompt without the field, outside copy mode and composing.
+    pub(super) fn at_raw_prompt(&self) -> bool {
+        !self.field_view().is_some_and(|field| field.is_visible())
             && !self.in_copy_mode()
             && !self.has_marked()
             && self
@@ -78,7 +143,8 @@ impl TerminalView {
     }
 
     fn raw_ghost(&self) -> Option<Ghost> {
-        if !self.raw_mode_suggests() || self.raw_menu_is_open() {
+        let explicit_menu = self.raw_menu_is_open() && self.raw_menu_auto().is_none_or(|(auto, _)| !auto);
+        if !self.raw_mode_suggests() || explicit_menu {
             return None;
         }
         let (typed, point) = self.with_session(|session| session.typed_line()).flatten()?;
@@ -132,6 +198,9 @@ impl TerminalView {
         }
         let shift = flags.contains(NSEventModifierFlags::Shift);
         let control = flags.contains(NSEventModifierFlags::Control);
+        if let Some((true, moved)) = self.raw_menu_auto() {
+            return self.raw_menu_key(event, moved);
+        }
         if self.raw_menu_is_open() {
             return !control && self.menu_key(event.keyCode(), shift, true).unwrap_or(false);
         }

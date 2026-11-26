@@ -94,6 +94,10 @@ pub(crate) struct Menu {
     completion: Completion,
     selected: usize,
     first: usize,
+    /// It opened by itself while typing at the shell's prompt, so Return runs the line rather than choosing.
+    auto: bool,
+    /// The user moved the selection, so Tab takes the selected candidate rather than the suggestion.
+    moved: bool,
 }
 
 fn row(mtm: MainThreadMarker, view: u64, index: usize, font: &NSFont) -> Row {
@@ -311,7 +315,7 @@ impl TerminalView {
                     };
                     self.menu_put(raw, &text, &shown, completion.start);
                 }
-                self.menu_open(raw, &shown);
+                self.menu_open(raw, &shown, false);
             }
         }
         true
@@ -324,9 +328,9 @@ impl TerminalView {
         }
     }
 
-    /// Opens the menu for `text`, the field's or with `raw` the line at the prompt; nothing with fewer than two
-    /// candidates.
-    fn menu_open(&self, raw: bool, text: &str) {
+    /// Opens the menu for `text`, the field's or with `raw` the line at the prompt, with `auto` as one that opened by
+    /// itself while typing; nothing with fewer than two candidates.
+    pub(super) fn menu_open(&self, raw: bool, text: &str, auto: bool) {
         let Some(font) = self.field_view().map(|field| field.font()) else {
             return;
         };
@@ -381,8 +385,23 @@ impl TerminalView {
             completion,
             selected: 0,
             first: 0,
+            auto,
+            moved: false,
         });
         self.menu_show(text);
+    }
+
+    /// Whether the menu at the shell's prompt opened by itself while typing, and whether the user moved its selection.
+    pub(super) fn raw_menu_auto(&self) -> Option<(bool, bool)> {
+        let menu = self.ivars().menu.try_borrow().ok()?;
+        menu.as_ref()
+            .filter(|menu| menu.raw)
+            .map(|menu| (menu.auto, menu.moved))
+    }
+
+    /// Takes the selected candidate into the line and closes the menu.
+    pub(super) fn menu_take_selected(&self) {
+        self.menu_choose(None);
     }
 
     /// Whether the menu is open.
@@ -469,6 +488,7 @@ impl TerminalView {
             _ => return None,
         };
         let raw = self.ivars().menu.borrow_mut().as_mut().map(|menu| {
+            menu.moved = true;
             let count = menu.found.len().max(1);
             menu.selected = if step > 0 {
                 (menu.selected + 1) % count

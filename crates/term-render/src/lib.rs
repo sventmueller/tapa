@@ -21,6 +21,7 @@ pub mod render;
 pub mod shape;
 pub mod sprites;
 pub mod thread;
+pub mod tint;
 
 use objc2::rc::Retained;
 use objc2_foundation::NSString;

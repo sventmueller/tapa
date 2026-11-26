@@ -62,6 +62,8 @@ pub struct OverlayState {
     pub marked: String,
     /// A suggestion for the rest of the line being typed and the cursor position it was made for.
     pub ghost: Option<(term_session::Point, String)>,
+    /// The colours of the command typed at the prompt.
+    pub tint: Option<crate::tint::Tint>,
     /// A line drawn after the program ended, and where.
     pub final_line: Option<(usize, String)>,
     /// The bell's flash.
@@ -536,6 +538,7 @@ impl Surface {
             hide_cursor: overlay.hide_cursor,
             marked: &overlay.marked,
             ghost: overlay.ghost.as_ref().map(|(point, text)| (*point, text.as_str())),
+            tint: overlay.tint.as_ref(),
             final_line,
             flash: overlay.flash,
         };

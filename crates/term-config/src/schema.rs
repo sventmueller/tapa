@@ -376,6 +376,8 @@ pub struct Input {
     pub vim: bool,
     /// Suggestions while typing and the next command without input.
     pub suggestions: bool,
+    /// The completion menu opens by itself while typing at the shell's prompt without the field.
+    pub menu_as_you_type: bool,
     /// The parts of a command in the input field in colours of their own (F92).
     pub highlighting: bool,
     /// A command the shell cannot run underlined in red in the input field.
@@ -388,6 +390,7 @@ impl Default for Input {
             field: false,
             vim: false,
             suggestions: true,
+            menu_as_you_type: true,
             highlighting: true,
             underline_errors: true,
         }

@@ -46,18 +46,19 @@ pub(crate) fn ns_colour(colour: Rgb) -> Retained<NSColor> {
 impl Colours {
     /// The colours of `theme`, kept readable on its background as the terminal keeps its text.
     pub(crate) fn of(theme: &Theme) -> Colours {
+        use term_render::tint::{Kind, colour};
         let palette = &theme.palette;
         let ground = palette.background;
-        let ansi = |index: usize| ns_colour(theme.readable(palette.ansi[index], ground));
+        let of = |kind: Kind| ns_colour(colour(theme, kind));
         Colours {
             text: ns_colour(palette.foreground),
             ghost: ns_colour(palette.foreground.mix(ground, term_render::ghost::SHARE)),
-            command: ansi(2),
-            subcommand: ansi(6),
-            option: ansi(4),
-            variable: ansi(5),
-            operator: ansi(3),
-            error: ansi(1),
+            command: of(Kind::Command),
+            subcommand: of(Kind::Subcommand),
+            option: of(Kind::Option),
+            variable: of(Kind::Variable),
+            operator: of(Kind::Operator),
+            error: ns_colour(term_render::tint::error(theme)),
         }
     }
 
@@ -153,16 +154,7 @@ impl TerminalView {
             field.paint(text, None, false, false);
             return;
         }
-        let folder = self.cwd();
-        let home = term_base::home();
-        let shell = &self.ivars().shell;
-        let known = |word: &str| shell.borrow_mut().knows(word, &folder, &home);
-        let mut highlight = term_suggest::highlight(text, &known);
-        for span in &mut highlight.spans {
-            if span.part == Part::Unknown && span.range.end == text.len() {
-                span.part = Part::Argument;
-            }
-        }
+        let highlight = self.command_parts(text);
         field.paint(text, Some(&highlight), input.highlighting, input.underline_errors);
         if let Some(missing) = highlight.missing_spec {
             term_suggest::warm_spec(&missing);
@@ -181,6 +173,22 @@ impl TerminalView {
 }
 
 impl TerminalView {
+    /// The parts of the command `text` with what each is; a command still being typed at the end of the text is not
+    /// marked unknown yet.
+    pub(super) fn command_parts(&self, text: &str) -> Highlight {
+        let folder = self.cwd();
+        let home = term_base::home();
+        let shell = &self.ivars().shell;
+        let known = |word: &str| shell.borrow_mut().knows(word, &folder, &home);
+        let mut highlight = term_suggest::highlight(text, &known);
+        for span in &mut highlight.spans {
+            if span.part == Part::Unknown && span.range.end == text.len() {
+                span.part = Part::Argument;
+            }
+        }
+        highlight
+    }
+
     /// The words of the field's command with the parts its colours show, as `word:Part`, for the self-test.
     #[cfg(feature = "selftest")]
     pub fn field_parts(&self) -> Vec<String> {

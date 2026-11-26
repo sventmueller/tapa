@@ -529,6 +529,7 @@ mod tests {
             hide_cursor: false,
             marked: "",
             ghost: None,
+            tint: None,
             final_line: None,
             flash: false,
         };
@@ -565,6 +566,7 @@ mod tests {
             hide_cursor: false,
             marked: "",
             ghost: None,
+            tint: None,
             final_line: None,
             flash: false,
         };
@@ -607,6 +609,7 @@ mod tests {
                 hide_cursor: false,
                 marked: "",
                 ghost: None,
+                tint: None,
                 final_line: None,
                 flash: false,
             };

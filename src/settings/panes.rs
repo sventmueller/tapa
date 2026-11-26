@@ -650,6 +650,13 @@ pub(super) fn input(fields: &Fields) -> Retained<NSView> {
         fields,
         &mut form,
         "",
+        t("Vorschlagsliste beim Tippen öffnen"),
+        flag(|c| c.input.menu_as_you_type, &["input", "menu_as_you_type"]),
+    );
+    check_row(
+        fields,
+        &mut form,
+        "",
         t("Befehle einfärben"),
         flag(|c| c.input.highlighting, &["input", "highlighting"]),
     );

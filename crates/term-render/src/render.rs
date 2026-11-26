@@ -71,7 +71,7 @@ pub struct Metrics {
     /// The baseline below the top of a cell.
     pub baseline: f64,
     /// The top of an underline below the baseline.
-    underline: f64,
+    pub(crate) underline: f64,
     /// The width of underlines, strike lines and light frame lines.
     pub stroke: f64,
     /// The middle of a strike line above the baseline.
@@ -419,6 +419,9 @@ pub struct Overlay<'a> {
     /// A suggestion for the rest of the line being typed and the cursor position it was made for; it shows faint
     /// from the cursor on, and only while the cursor is still there.
     pub ghost: Option<(Point, &'a str)>,
+    /// The colours of the command typed at the prompt, over the shell's own text, while the cursor is where they were
+    /// found for.
+    pub tint: Option<&'a crate::tint::Tint>,
     /// A line drawn after the program ended, and where.
     pub final_line: Option<(usize, &'a str)>,
     /// The bell's flash.
@@ -593,6 +596,7 @@ pub fn paint_overlay(
         let baseline = INSET_Y + line as f64 * m.cell_height + m.baseline;
         canvas.line(words, Face::Regular, x, baseline, theme.palette.foreground.dim());
     } else if overlay.marked.is_empty() {
+        crate::tint::paint(canvas, fonts, theme, screen, overlay);
         cursor(canvas, fonts, theme, screen, overlay);
         crate::ghost::paint(canvas, fonts, theme, screen, overlay);
     }

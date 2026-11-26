@@ -232,6 +232,7 @@ impl TerminalView {
                 hide_cursor: overlay.hide_cursor,
                 marked: overlay.marked.to_string(),
                 ghost: overlay.ghost.map(|(point, text)| (point, text.to_string())),
+                tint: overlay.tint.cloned(),
                 final_line: overlay.final_line.map(|(line, text)| (line, text.to_string())),
                 flash: overlay.flash,
             };
@@ -318,6 +319,7 @@ impl TerminalView {
         let state = &self.ivars().state;
         let marked = self.ivars().keys.marked.borrow();
         let ghost = self.ivars().ghost.borrow();
+        let tint = self.ivars().tint.borrow();
         let final_line = screen.and_then(|screen| {
             (state.exited.get() && screen.display_offset == 0)
                 .then(|| (model::final_line(screen), t("[Prozess beendet]")))
@@ -328,6 +330,7 @@ impl TerminalView {
             hide_cursor: self.in_copy_mode(),
             marked: &marked,
             ghost: ghost.as_ref().map(|ghost| (ghost.point, ghost.shown.as_str())),
+            tint: tint.as_ref(),
             final_line,
             flash: state.flashing(Instant::now()),
         };

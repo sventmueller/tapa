@@ -260,6 +260,8 @@ impl Terminal {
             text,
             room,
             open: room == after.len(),
+            start_column: mark.column,
+            rows_up: cursor - first,
         })
     }
 }
@@ -273,6 +275,10 @@ pub struct TypedLine {
     pub room: usize,
     /// Nothing is written after the cursor on its line, such as a right prompt.
     pub open: bool,
+    /// The column the text starts at, on the line `rows_up` lines above the cursor's.
+    pub start_column: usize,
+    /// How many lines above the cursor's the text starts, where it wrapped.
+    pub rows_up: usize,
 }
 
 fn percent_decode(text: &str) -> String {
