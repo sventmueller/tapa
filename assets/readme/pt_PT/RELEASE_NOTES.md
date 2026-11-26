@@ -1,8 +1,8 @@
-O Tapa 1.0.7 colore o comando e mostra a lista de sugestões enquanto escreve, também sem o campo de entrada.
+O Tapa 1.0.8 abre rapidamente ficheiros de todas as áreas de trabalho e mostra na barra de ferramentas o que está em execução.
 
 ## Novidades
-- Sem o campo de entrada, o comando que escreve recebe as mesmas cores do campo: comando, subcomandos, opções, variáveis e operadores, e um sublinhado vermelho tracejado sob um comando que a shell não consegue executar. As cores que a própria shell define mantêm-se.
-- Sem o campo de entrada, a lista de sugestões abre sozinha enquanto escreve uma palavra. Return executa a linha e Tab ou → aceitam a sugestão cinzenta; depois de ↑ ou ↓, aceitam o item selecionado. Esc fecha a lista para essa palavra, e "Definições › Entrada" desativa-a.
+- **Abrir rapidamente…** (⌘P), também atrás da lupa da barra de ferramentas, encontra ficheiros em todas as áreas de trabalho locais, bem como separadores e sessões abertos. Os ficheiros encontrados são agrupados por área de trabalho.
+- O botão **Atividade** da barra de ferramentas abre uma lista em tempo real das sessões de agente abertas, dos comandos de terminal em primeiro plano e dos processos geridos. **Mostrar** salta para o separador ou divisão, **Parar** termina a vez de um agente ou um processo gerido.
 
 ## Melhorias
-- Com apenas um agente instalado, o botão de agente da barra de ferramentas abre-o com um clique em vez de um menu.
+- A barra de separadores e o seu **+** continuam visíveis com um único separador.

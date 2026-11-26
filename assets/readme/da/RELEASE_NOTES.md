@@ -1,8 +1,8 @@
-Tapa 1.0.7 farver kommandoen og viser forslagslisten, mens du skriver, også uden inputfeltet.
+Tapa 1.0.8 åbner hurtigt filer på tværs af arbejdsområder og viser i værktøjslinjen, hvad der kører.
 
 ## Nyt
-- Uden inputfeltet får den kommando, du skriver, de samme farver som i feltet: kommando, underkommandoer, indstillinger, variabler og operatorer samt en stiplet rød understregning under en kommando, som shellen ikke kan køre. Farver, som shellen selv sætter, bevares.
-- Uden inputfeltet åbner forslagslisten af sig selv, mens du skriver et ord. Retur kører linjen, og Tab eller → tager det grå forslag; efter ↑ eller ↓ tager de det markerede element. Esc lukker listen for det ord, og "Indstillinger › Input" slår den fra.
+- **Åbn hurtigt…** (⌘P), også bag værktøjslinjens forstørrelsesglas, finder filer i alle lokale arbejdsområder samt åbne faner og sessioner. Fundne filer grupperes efter arbejdsområde.
+- Værktøjslinjens knap **Aktivitet** åbner en løbende opdateret liste over åbne agentsessioner, terminalkommandoer i forgrunden og administrerede processer. **Vis** springer til fanen eller opdelingen, **Stop** afslutter en agents tur eller en administreret proces.
 
 ## Forbedringer
-- Med kun én agent installeret åbner værktøjslinjens agentknap den med ét klik i stedet for en menu.
+- Fanelinjen og dens **+** forbliver synlige med én fane.

@@ -1,8 +1,8 @@
-Tapa 1.0.7 mewarnakan arahan dan menunjukkan senarai cadangan semasa anda menaip, juga tanpa medan input.
+Tapa 1.0.8 membuka fail daripada semua ruang kerja dengan pantas dan menunjukkan dalam bar alat apa yang sedang berjalan.
 
 ## Baharu
-- Tanpa medan input, arahan yang anda taip mendapat warna yang sama seperti dalam medan: arahan, subarahan, pilihan, pemboleh ubah dan operator, serta garis bawah merah putus-putus di bawah arahan yang tidak dapat dijalankan oleh shell. Warna yang ditetapkan oleh shell sendiri kekal.
-- Tanpa medan input, senarai cadangan terbuka sendiri semasa anda menaip sesuatu perkataan. Return menjalankan baris, Tab atau → menerima cadangan kelabu; selepas ↑ atau ↓, kedua-duanya menerima entri yang dipilih. Esc menutup senarai untuk perkataan itu, dan "Seting › Input" mematikannya.
+- **Buka Dengan Pantas…** (⌘P), juga melalui kanta pembesar dalam bar alat, menemui fail dalam semua ruang kerja setempat serta tab dan sesi yang terbuka. Fail yang ditemui dikumpulkan mengikut ruang kerja.
+- Butang **Aktiviti** dalam bar alat membuka senarai langsung sesi ejen yang terbuka, arahan terminal di latar depan dan proses yang diurus. **Tunjukkan** melompat ke tab atau belahan, **Henti** menamatkan giliran ejen atau proses yang diurus.
 
 ## Penambahbaikan
-- Jika hanya satu ejen dipasang, butang ejen pada bar alat membukanya dengan satu klik dan bukannya menu.
+- Bar tab dan **+** nya kekal kelihatan walaupun dengan satu tab.

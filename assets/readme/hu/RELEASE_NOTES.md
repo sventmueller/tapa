@@ -1,8 +1,8 @@
-A Tapa 1.0.7 gépelés közben kiszínezi a parancsot és megmutatja a javaslatlistát, beviteli mező nélkül is.
+A Tapa 1.0.8 gyorsan megnyitja a fájlokat az összes munkaterületről, és az eszközsoron megmutatja, mi fut éppen.
 
 ## Újdonságok
-- Beviteli mező nélkül a begépelt parancs ugyanazokat a színeket kapja, mint a mezőben: parancs, alparancsok, opciók, változók és operátorok, a shell által nem futtatható parancs alatt pedig piros szaggatott aláhúzás jelenik meg. A shell saját színei megmaradnak.
-- Beviteli mező nélkül a javaslatlista magától megnyílik egy szó gépelése közben. A Return futtatja a sort, a Tab vagy a → elfogadja a szürke javaslatot; ↑ vagy ↓ után a kijelölt elemet fogadják el. Az Esc bezárja a listát erre a szóra, a „Beállítások › Bevitel” kikapcsolja.
+- A **Gyors megnyitás…** (⌘P), az eszközsor nagyítója mögött is, megtalálja a fájlokat az összes helyi munkaterületen, valamint a nyitott lapokat és munkameneteket. A talált fájlok munkaterület szerint csoportosítva jelennek meg.
+- Az eszközsor **Tevékenység** gombja élő listát nyit a nyitott ügynök-munkamenetekről, az előtérben futó terminálparancsokról és a felügyelt folyamatokról. A **Megjelenítés** a laphoz vagy felosztáshoz ugrik, a **Leállítás** befejezi egy ügynök körét vagy egy felügyelt folyamatot.
 
 ## Fejlesztések
-- Ha csak egy ügynök van telepítve, az eszközsor ügynökgombja egy kattintással megnyitja menü helyett.
+- A lapsáv és a **+** gombja egyetlen lap esetén is látható marad.

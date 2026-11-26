@@ -1,8 +1,8 @@
-Tapa 1.0.7 boji naredbu i prikazuje popis prijedloga dok tipkate, i bez polja za unos.
+Tapa 1.0.8 brzo otvara datoteke iz svih radnih prostora i u alatnoj traci prikazuje što je pokrenuto.
 
 ## Novo
-- Bez polja za unos naredba koju tipkate dobiva iste boje kao u polju: naredba, podnaredbe, opcije, varijable i operatori te crveno isprekidano podcrtavanje ispod naredbe koju ljuska ne može pokrenuti. Boje koje ljuska sama postavi ostaju.
-- Bez polja za unos popis prijedloga otvara se sam dok tipkate riječ. Return pokreće redak, a Tab ili → prihvaćaju sivi prijedlog; nakon ↑ ili ↓ prihvaćaju označenu stavku. Esc zatvara popis za tu riječ, a „Postavke › Unos” ga isključuje.
+- **Brzo otvori…** (⌘P), i iza povećala u alatnoj traci, pronalazi datoteke u svim lokalnim radnim prostorima te otvorene kartice i sesije. Pronađene datoteke grupirane su po radnom prostoru.
+- Tipka **Aktivnost** u alatnoj traci otvara popis otvorenih sesija agenata, naredbi terminala u prvom planu i upravljanih procesa koji se ažurira uživo. **Prikaži** skače na karticu ili podjelu, **Zaustavi** završava potez agenta ili upravljani proces.
 
 ## Poboljšanja
-- Kad je instaliran samo jedan agent, gumb agenta na alatnoj traci otvara ga jednim klikom umjesto izbornika.
+- Traka kartica i njezin **+** ostaju vidljivi i s jednom karticom.

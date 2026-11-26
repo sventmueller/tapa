@@ -1,8 +1,8 @@
-Tapa 1.0.7 colorea el comando y muestra la lista de sugerencias mientras escribes, también sin el campo de entrada.
+Tapa 1.0.8 abre rápidamente archivos de todos los espacios de trabajo y muestra en la barra de herramientas lo que se está ejecutando.
 
 ## Novedades
-- Sin el campo de entrada, el comando que escribes recibe los mismos colores que en el campo: comando, subcomandos, opciones, variables y operadores, y un subrayado rojo discontinuo bajo un comando que la shell no puede ejecutar. Los colores que pone la propia shell se mantienen.
-- Sin el campo de entrada, la lista de sugerencias se abre sola al escribir una palabra. Retorno ejecuta la línea y Tab o → aceptan la sugerencia gris; tras ↑ o ↓, aceptan el elemento seleccionado. Esc cierra la lista para esa palabra y «Ajustes › Entrada» la desactiva.
+- **Apertura rápida…** (⌘P), también tras la lupa de la barra de herramientas, encuentra archivos en todos los espacios de trabajo locales, además de pestañas y sesiones abiertas. Los archivos encontrados se agrupan por espacio de trabajo.
+- El botón **Actividad** de la barra de herramientas abre una lista en directo de las sesiones de agente abiertas, los comandos de terminal en primer plano y los procesos gestionados. **Mostrar** salta a la pestaña o división, **Detener** termina el turno de un agente o un proceso gestionado.
 
 ## Mejoras
-- Con un solo agente instalado, el botón de agente de la barra de herramientas lo abre con un clic en lugar de un menú.
+- La barra de pestañas y su **+** siguen visibles con una sola pestaña.

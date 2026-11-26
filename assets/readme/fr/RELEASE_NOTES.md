@@ -1,8 +1,8 @@
-Tapa 1.0.7 colore la commande et affiche la liste des suggestions pendant la saisie, même sans le champ de saisie.
+Tapa 1.0.8 ouvre rapidement les fichiers de tous les espaces de travail et montre dans la barre d’outils ce qui est en cours.
 
 ## Nouveautés
-- Sans le champ de saisie, la commande que vous tapez prend les mêmes couleurs que dans le champ : commande, sous-commandes, options, variables et opérateurs, et un soulignement rouge en pointillés sous une commande que le shell ne peut pas exécuter. Les couleurs que le shell définit lui-même sont conservées.
-- Sans le champ de saisie, la liste des suggestions s'ouvre d'elle-même pendant la saisie d'un mot. Retour exécute la ligne, Tab ou → acceptent la suggestion grise ; après ↑ ou ↓, ils acceptent l'élément sélectionné. Échap ferme la liste pour ce mot, et « Réglages › Saisie » la désactive.
+- **Ouvrir rapidement…** (⌘P), aussi derrière la loupe de la barre d’outils, trouve les fichiers de tous les espaces de travail locaux ainsi que les onglets et sessions ouverts. Les fichiers trouvés sont regroupés par espace de travail.
+- Le bouton **Activité** de la barre d’outils ouvre une liste en direct des sessions d’agent ouvertes, des commandes de terminal au premier plan et des processus gérés. **Afficher** mène à l’onglet ou à la division, **Arrêter** termine le tour d’un agent ou un processus géré.
 
 ## Améliorations
-- Avec un seul agent installé, le bouton d'agent de la barre d'outils l'ouvre en un clic au lieu d'un menu.
+- La barre d’onglets et son **+** restent visibles avec un seul onglet.

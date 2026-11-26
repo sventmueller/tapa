@@ -1,8 +1,8 @@
-Tapa 1.0.7 acoloreix l'ordre i mostra la llista de suggeriments mentre escrius, també sense el camp d'entrada.
+Tapa 1.0.8 obre ràpidament fitxers de tots els espais de treball i mostra a la barra d’eines el que s’està executant.
 
 ## Novetats
-- Sense el camp d'entrada, l'ordre que escrius rep els mateixos colors que al camp: ordre, subordres, opcions, variables i operadors, i un subratllat vermell discontinu sota una ordre que l'intèrpret no pot executar. Els colors que posa l'intèrpret es mantenen.
-- Sense el camp d'entrada, la llista de suggeriments s'obre sola mentre escrius una paraula. Retorn executa la línia i Tab o → accepten el suggeriment gris; després de ↑ o ↓, accepten l'element seleccionat. Esc tanca la llista per a aquesta paraula, i «Configuració › Entrada» la desactiva.
+- **Obre ràpidament…** (⌘P), també darrere la lupa de la barra d’eines, troba fitxers a tots els espais de treball locals i també pestanyes i sessions obertes. Els fitxers trobats s’agrupen per espai de treball.
+- El botó **Activitat** de la barra d’eines obre una llista en directe de les sessions d’agent obertes, les ordres de terminal en primer pla i els processos gestionats. **Mostra** salta a la pestanya o divisió, **Atura** acaba el torn d’un agent o un procés gestionat.
 
 ## Millores
-- Amb un sol agent instal·lat, el botó d'agent de la barra d'eines l'obre amb un clic en lloc d'un menú.
+- La barra de pestanyes i el seu **+** continuen visibles amb una sola pestanya.

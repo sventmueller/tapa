@@ -1,8 +1,8 @@
-Tapa 1.0.7 värittää komennon ja näyttää ehdotusluettelon kirjoittaessa myös ilman syötekenttää.
+Tapa 1.0.8 avaa nopeasti tiedostoja kaikista työtiloista ja näyttää työkalupalkissa, mitä on käynnissä.
 
 ## Uutta
-- Ilman syötekenttää kirjoittamasi komento saa samat värit kuin kentässä: komento, alikomennot, valitsimet, muuttujat ja operaattorit sekä punainen katkoviiva komennon alla, jota komentotulkki ei voi suorittaa. Komentotulkin itse asettamat värit säilyvät.
-- Ilman syötekenttää ehdotusluettelo avautuu itsestään, kun kirjoitat sanaa. Return suorittaa rivin ja Tab tai → hyväksyy harmaan ehdotuksen; ↑- tai ↓-näppäimen jälkeen ne hyväksyvät valitun kohteen. Esc sulkee luettelon tältä sanalta, ja ”Asetukset › Syöte” poistaa sen käytöstä.
+- **Avaa nopeasti…** (⌘P), myös työkalupalkin suurennuslasin takana, löytää tiedostot kaikista paikallisista työtiloista sekä avoimet välilehdet ja istunnot. Löydetyt tiedostot ryhmitellään työtilan mukaan.
+- Työkalupalkin **Toiminta**-painike avaa reaaliaikaisen luettelon avoimista agentti-istunnoista, etualalla ajettavista päätekomennoista ja hallituista prosesseista. **Näytä** siirtyy välilehteen tai jakoon, **Pysäytä** lopettaa agentin vuoron tai hallitun prosessin.
 
-## Parannukset
-- Kun vain yksi agentti on asennettu, työkalurivin agenttipainike avaa sen yhdellä osoituksella valikon sijaan.
+## Parannuksia
+- Välilehtipalkki ja sen **+** pysyvät näkyvissä myös yhdellä välilehdellä.
