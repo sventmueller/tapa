@@ -589,7 +589,6 @@
 "Hook {} ({}) · {}" = "フック{}（{}） · {}";
 "Hook „{}“ entfernen?" = "フック“{}”を削除しますか?";
 "Hooks" = "フック";
-"Hooks: {} erfolgreich" = "フック: {}件成功";
 "Host oder Benutzer ungültig" = "ホストまたはユーザが無効です";
 "Host, aus ~/.ssh/config oder eine Adresse" = "~/.ssh/config のホストまたはアドレス";
 "Höre zu …" = "聞き取り中…";

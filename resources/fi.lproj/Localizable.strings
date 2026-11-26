@@ -589,7 +589,6 @@
 "Hook {} ({}) · {}" = "Hook {} ({}) · {}";
 "Hook „{}“ entfernen?" = "Poistetaanko hook ”{}”?";
 "Hooks" = "Hookit";
-"Hooks: {} erfolgreich" = "Onnistuneet hookit: {}";
 "Host oder Benutzer ungültig" = "Virheellinen palvelin tai käyttäjä";
 "Host, aus ~/.ssh/config oder eine Adresse" = "Palvelin tiedostosta ~/.ssh/config tai osoite";
 "Höre zu …" = "Kuunnellaan…";

@@ -196,7 +196,6 @@
 "Hook {} ({}) · {}" = "Hook {} ({}) · {}";
 "Hook „{}“ entfernen?" = "Αφαίρεση του hook «{}»;";
 "Hooks" = "Hook";
-"Hooks: {} erfolgreich" = "Επιτυχή hook: {}";
 "Idee" = "Ιδέα";
 "Im Browser öffnen" = "Άνοιγμα στο πρόγραμμα περιήγησης";
 "Im Editor öffnen" = "Άνοιγμα στον επεξεργαστή";

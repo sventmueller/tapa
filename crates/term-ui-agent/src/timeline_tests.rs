@@ -27,27 +27,27 @@ fn prompt(thread: &mut Thread) {
 }
 
 #[test]
-fn hooks_that_ran_fine_before_the_first_prompt_get_no_row() {
+fn hooks_that_ran_fine_get_no_row_before_or_after_a_prompt() {
     let mut thread = Thread::new(ThreadId::from("t"), "test", "/tmp");
     hook(&mut thread, "start", HookOutcome::Success);
     hook(&mut thread, "failed", HookOutcome::Error);
     assert_eq!(shown(&thread, false).len(), 1, "only the failed hook shows");
     prompt(&mut thread);
     hook(&mut thread, "a", HookOutcome::Success);
-    assert_eq!(shown(&thread, false).len(), 3);
+    hook(&mut thread, "b", HookOutcome::Success);
+    assert_eq!(shown(&thread, false).len(), 2, "the failed hook and the prompt");
 }
 
 #[test]
 fn running_hooks_get_no_row_until_they_fail() {
     let mut thread = Thread::new(ThreadId::from("t"), "test", "/tmp");
     prompt(&mut thread);
-    hook(&mut thread, "a", HookOutcome::Success);
     hook(&mut thread, "b", HookOutcome::Running);
-    assert_eq!(shown(&thread, false).len(), 2);
+    assert_eq!(shown(&thread, false).len(), 1);
     hook(&mut thread, "b", HookOutcome::Success);
-    assert_eq!(shown(&thread, false).len(), 2);
+    assert_eq!(shown(&thread, false).len(), 1);
     hook(&mut thread, "c", HookOutcome::Running);
-    assert_eq!(shown(&thread, false).len(), 2);
+    assert_eq!(shown(&thread, false).len(), 1);
     hook(&mut thread, "c", HookOutcome::Error);
-    assert_eq!(shown(&thread, false).len(), 3);
+    assert_eq!(shown(&thread, false).len(), 2);
 }

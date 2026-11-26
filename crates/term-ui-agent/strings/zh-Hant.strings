@@ -196,7 +196,6 @@
 "Hook {} ({}) · {}" = "掛鉤 {}（{}） · {}";
 "Hook „{}“ entfernen?" = "要移除掛鉤「{}」嗎？";
 "Hooks" = "掛鉤";
-"Hooks: {} erfolgreich" = "掛鉤：{} 個成功";
 "Idee" = "想法";
 "Im Browser öffnen" = "在瀏覽器中打開";
 "Im Editor öffnen" = "在編輯器中打開";

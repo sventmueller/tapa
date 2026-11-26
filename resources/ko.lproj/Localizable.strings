@@ -589,7 +589,6 @@
 "Hook {} ({}) · {}" = "훅 {}({}) · {}";
 "Hook „{}“ entfernen?" = "‘{}’ 훅을 제거하겠습니까?";
 "Hooks" = "훅";
-"Hooks: {} erfolgreich" = "훅: {}개 성공";
 "Host oder Benutzer ungültig" = "호스트 또는 사용자가 잘못됨";
 "Host, aus ~/.ssh/config oder eine Adresse" = "~/.ssh/config의 호스트 또는 주소";
 "Höre zu …" = "듣는 중…";

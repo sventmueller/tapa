@@ -196,7 +196,6 @@
 "Hook {} ({}) · {}" = "Hook {} ({}) · {}";
 "Hook „{}“ entfernen?" = "เอา Hook “{}” ออกหรือไม่";
 "Hooks" = "Hook";
-"Hooks: {} erfolgreich" = "Hook: สำเร็จ {} รายการ";
 "Idee" = "แนวคิด";
 "Im Browser öffnen" = "เปิดในเบราว์เซอร์";
 "Im Editor öffnen" = "เปิดในตัวแก้ไข";

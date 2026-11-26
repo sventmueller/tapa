@@ -97,7 +97,12 @@ pub(super) fn card(ctx: &Ctx<'_>, id: EntryId, call: &ToolCall) -> Retained<NSVi
         }
     }
     let lane = Lane::Subagent(call.call_id.clone());
-    let count = ctx.thread.entries(&lane).len();
+    let count = ctx
+        .thread
+        .entries(&lane)
+        .iter()
+        .filter(|entry| !crate::timeline::is_hidden_hook(entry))
+        .count();
     if count > 0 {
         let open = ctx.is_open(id, Part::Subagent);
         let chevron = disclosure(ctx, id, Part::Subagent);
@@ -178,7 +183,13 @@ fn nested(ctx: &Ctx<'_>, lane: &Lane) -> Retained<NSView> {
         nested: true,
         ..ctx.narrower(INDENT + 2.0)
     };
-    let entries = ctx.thread.entries(lane);
+    let entries: Vec<_> = ctx
+        .thread
+        .entries(lane)
+        .iter()
+        .filter(|entry| !crate::timeline::is_hidden_hook(entry))
+        .cloned()
+        .collect();
     let skipped = entries.len().saturating_sub(SHOWN_ENTRIES);
     let mut cards: Vec<Retained<NSView>> = Vec::new();
     if skipped > 0 {

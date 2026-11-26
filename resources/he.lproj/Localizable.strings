@@ -589,7 +589,6 @@
 "Hook {} ({}) · {}" = "Hook {} ({}) · {}";
 "Hook „{}“ entfernen?" = "להסיר את ה-Hook ״{}״?";
 "Hooks" = "‏Hooks";
-"Hooks: {} erfolgreich" = "מספר ה-Hooks שהצליחו: {}";
 "Host oder Benutzer ungültig" = "מארח או משתמש לא חוקיים";
 "Host, aus ~/.ssh/config oder eine Adresse" = "מארח מ‑~/.ssh/config או כתובת";
 "Höre zu …" = "מאזין…";

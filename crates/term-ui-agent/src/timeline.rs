@@ -376,7 +376,7 @@ impl Timeline {
     }
 }
 
-/// Whether `entry` is a hook that ran fine, which shows only in its turn's count of such hooks.
+/// Whether `entry` is a hook that ran fine, which the timeline does not show.
 pub(crate) fn is_quiet_hook(entry: &Entry) -> bool {
     matches!(
         &entry.kind,
@@ -399,6 +399,11 @@ fn is_running_hook(entry: &Entry) -> bool {
     )
 }
 
+/// Whether the timeline leaves `entry` out as a hook that ran fine or still runs; a failed one shows.
+pub(crate) fn is_hidden_hook(entry: &Entry) -> bool {
+    is_quiet_hook(entry) || is_running_hook(entry)
+}
+
 /// Whether the focus view leaves `entry` out: tools, thinking, to-dos, settled requests and status lines but errors.
 fn hidden_in_focus(entry: &Entry) -> bool {
     match &entry.kind {
@@ -410,27 +415,15 @@ fn hidden_in_focus(entry: &Entry) -> bool {
     }
 }
 
-/// The entries of the main lane that get a row: hooks of a turn that ran fine share the row of the first, those
-/// before the first prompt and running hooks get none, and the focus view leaves out what is not conversation.
+/// The entries of the main lane that get a row: no hook that ran fine or still runs, and in the focus view nothing that
+/// is not conversation.
 fn shown(thread: &Thread, focus: bool) -> Vec<std::sync::Arc<Entry>> {
-    let mut hook_row = true;
-    let mut out = Vec::new();
-    for entry in thread.entries(&Lane::Main) {
-        if matches!(entry.kind, EntryKind::UserMessage(_)) {
-            hook_row = false;
-        }
-        if is_running_hook(entry) || (focus && hidden_in_focus(entry)) {
-            continue;
-        }
-        if is_quiet_hook(entry) {
-            if hook_row {
-                continue;
-            }
-            hook_row = true;
-        }
-        out.push(entry.clone());
-    }
-    out
+    thread
+        .entries(&Lane::Main)
+        .iter()
+        .filter(|entry| !is_hidden_hook(entry) && !(focus && hidden_in_focus(entry)))
+        .cloned()
+        .collect()
 }
 
 /// The row of the main lane whose card shows the subagent or tool call `key`.

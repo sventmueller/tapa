@@ -589,7 +589,6 @@
 "Hook {} ({}) · {}" = "Hook {} ({}) · {}";
 "Hook „{}“ entfernen?" = "Hapus hook “{}”?";
 "Hooks" = "Hook";
-"Hooks: {} erfolgreich" = "Hook: {} berhasil";
 "Host oder Benutzer ungültig" = "Host atau pengguna tidak valid";
 "Host, aus ~/.ssh/config oder eine Adresse" = "Host dari ~/.ssh/config atau alamat";
 "Höre zu …" = "Mendengarkan…";

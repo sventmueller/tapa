@@ -589,7 +589,6 @@
 "Hook {} ({}) · {}" = "हुक {} ({}) · {}";
 "Hook „{}“ entfernen?" = "हुक “{}” हटाएँ?";
 "Hooks" = "हुक";
-"Hooks: {} erfolgreich" = "हुक : {} सफल";
 "Host oder Benutzer ungültig" = "होस्ट या उपयोगकर्ता अमान्य";
 "Host, aus ~/.ssh/config oder eine Adresse" = "~/.ssh/config से होस्ट या कोई पता";
 "Höre zu …" = "सुन रहा है…";

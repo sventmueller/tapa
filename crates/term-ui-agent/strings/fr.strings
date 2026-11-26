@@ -196,7 +196,6 @@
 "Hook {} ({}) · {}" = "Hook {} ({}) · {}";
 "Hook „{}“ entfernen?" = "Supprimer le hook « {} » ?";
 "Hooks" = "Hooks";
-"Hooks: {} erfolgreich" = "Hooks : {} réussis";
 "Idee" = "Idée";
 "Im Browser öffnen" = "Ouvrir dans le navigateur";
 "Im Editor öffnen" = "Ouvrir dans l’éditeur";

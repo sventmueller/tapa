@@ -589,7 +589,6 @@
 "Hook {} ({}) · {}" = "钩子 {}（{}）· {}";
 "Hook „{}“ entfernen?" = "要移除钩子“{}”吗？";
 "Hooks" = "钩子";
-"Hooks: {} erfolgreich" = "钩子：{} 个成功";
 "Host oder Benutzer ungültig" = "主机或用户无效";
 "Host, aus ~/.ssh/config oder eine Adresse" = "~/.ssh/config 中的主机或地址";
 "Höre zu …" = "正在聆听…";

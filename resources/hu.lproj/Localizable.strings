@@ -589,7 +589,6 @@
 "Hook {} ({}) · {}" = "Hook: {} ({}) · {}";
 "Hook „{}“ entfernen?" = "Eltávolítja a(z) „{}” hookot?";
 "Hooks" = "Hookok";
-"Hooks: {} erfolgreich" = "Hookok: {} sikeres";
 "Host oder Benutzer ungültig" = "Érvénytelen gazdagép vagy felhasználó";
 "Host, aus ~/.ssh/config oder eine Adresse" = "Gazdagép a ~/.ssh/config fájlból vagy cím";
 "Höre zu …" = "Figyel…";

@@ -589,7 +589,6 @@
 "Hook {} ({}) · {}" = "Hook {} ({}) · {}";
 "Hook „{}“ entfernen?" = "Vols eliminar el hook “{}”?";
 "Hooks" = "Hooks";
-"Hooks: {} erfolgreich" = "Hooks correctes: {}";
 "Host oder Benutzer ungültig" = "Amfitrió o usuari no vàlid";
 "Host, aus ~/.ssh/config oder eine Adresse" = "Amfitrió, de ~/.ssh/config o una adreça";
 "Höre zu …" = "Escoltant…";

@@ -589,7 +589,6 @@
 "Hook {} ({}) · {}" = "Hook {} ({}) · {}";
 "Hook „{}“ entfernen?" = "Ukloniti hook “{}”?";
 "Hooks" = "Hookovi";
-"Hooks: {} erfolgreich" = "Uspješni hookovi: {}";
 "Host oder Benutzer ungültig" = "Neispravan host ili korisnik";
 "Host, aus ~/.ssh/config oder eine Adresse" = "Host iz ~/.ssh/config ili adresa";
 "Höre zu …" = "Slušanje…";

@@ -589,7 +589,6 @@
 "Hook {} ({}) · {}" = "Hook {} ({}) · {}";
 "Hook „{}“ entfernen?" = "เอา Hook “{}” ออกหรือไม่";
 "Hooks" = "Hook";
-"Hooks: {} erfolgreich" = "Hook: สำเร็จ {} รายการ";
 "Host oder Benutzer ungültig" = "โฮสต์หรือผู้ใช้ไม่ถูกต้อง";
 "Host, aus ~/.ssh/config oder eine Adresse" = "โฮสต์จาก ~/.ssh/config หรือที่อยู่";
 "Höre zu …" = "กำลังฟัง…";

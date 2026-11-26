@@ -589,7 +589,6 @@
 "Hook {} ({}) · {}" = "Hook {} ({}) · {}";
 "Hook „{}“ entfernen?" = "Αφαίρεση του hook «{}»;";
 "Hooks" = "Hook";
-"Hooks: {} erfolgreich" = "Επιτυχή hook: {}";
 "Host oder Benutzer ungültig" = "Μη έγκυρος κεντρικός υπολογιστής ή χρήστης";
 "Host, aus ~/.ssh/config oder eine Adresse" = "Κεντρικός υπολογιστής από το ~/.ssh/config ή διεύθυνση";
 "Höre zu …" = "Ακρόαση…";

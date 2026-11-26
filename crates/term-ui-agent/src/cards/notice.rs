@@ -6,7 +6,7 @@ use objc2::rc::Retained;
 use objc2::sel;
 use objc2_app_kit::{NSColor, NSView};
 use splat_i18n::{t, tf};
-use term_thread::{Entry, EntryId, EntryKind, HookOutcome, Lane, LimitStatus, Notice, RateLimit, Thread};
+use term_thread::{EntryId, HookOutcome, LimitStatus, Notice, RateLimit};
 
 use super::super::format;
 use super::super::style;
@@ -125,78 +125,6 @@ fn symbol(notice: &Notice) -> &'static str {
         Notice::RewindRejected { .. } => "arrow.uturn.backward.circle",
         Notice::Info { .. } => "info.circle",
     }
-}
-
-/// The hooks that ran fine in the turn of `entry`.
-pub(super) fn turn_hooks<'a>(thread: &'a Thread, entry: &Entry) -> Vec<&'a Notice> {
-    let main = thread.entries(&Lane::Main);
-    let at = main.iter().position(|e| e.id == entry.id).unwrap_or(0);
-    let start = main[..at]
-        .iter()
-        .rposition(|e| matches!(e.kind, EntryKind::UserMessage(_)))
-        .map_or(0, |n| n + 1);
-    let end = main[at..]
-        .iter()
-        .position(|e| matches!(e.kind, EntryKind::UserMessage(_)))
-        .map_or(main.len(), |n| at + n);
-    let runs: Vec<&'a Notice> = main[start..end]
-        .iter()
-        .filter_map(|e| match &e.kind {
-            EntryKind::Notice(
-                notice @ Notice::Hook {
-                    outcome: HookOutcome::Success,
-                    ..
-                },
-            ) => Some(notice),
-            _ => None,
-        })
-        .collect();
-    runs
-}
-
-/// The line that counts the hooks of a turn that ran fine.
-pub(super) fn hook_group_text(thread: &Thread, entry: &Entry) -> String {
-    tf("Hooks: {} erfolgreich", &[&turn_hooks(thread, entry).len().to_string()])
-}
-
-/// The hooks of `entry`'s turn that ran fine, as one quiet line that opens to each run.
-pub(super) fn hook_group(ctx: &Ctx<'_>, entry: &Entry) -> Retained<NSView> {
-    let mtm = ctx.mtm;
-    let runs = turn_hooks(ctx.thread, entry);
-    let title = hook_group_text(ctx.thread, entry);
-    let icon = ui::icon(mtm, "link", &title, style::chat(10.0), &NSColor::tertiaryLabelColor());
-    let label = ui::label(mtm, &title, &style::chat_small(), &NSColor::tertiaryLabelColor());
-    let chevron = disclosure(ctx, entry.id, Part::Detail);
-    let spacer = ui::spacer(mtm);
-    let line = ui::row(mtm, 5.0, &[&icon, &label, &chevron, &spacer]);
-    if !ctx.is_open(entry.id, Part::Detail) {
-        return ui::view(&line);
-    }
-    let mut parts: Vec<Retained<NSView>> = vec![ui::view(&line)];
-    for run in runs {
-        let Notice::Hook {
-            name, event, output, ..
-        } = run
-        else {
-            continue;
-        };
-        parts.push(ui::view(&ui::label(
-            mtm,
-            &format!("{name} ({event})"),
-            &style::chat_small(),
-            &NSColor::secondaryLabelColor(),
-        )));
-        if !output.trim().is_empty() {
-            parts.push(ui::view(&mono_text(
-                ctx,
-                output.trim_end(),
-                ctx.width - 16.0,
-                &NSColor::tertiaryLabelColor(),
-            )));
-        }
-    }
-    let refs: Vec<&NSView> = parts.iter().map(|v| &**v).collect();
-    ui::view(&ui::column(mtm, 3.0, &refs))
 }
 
 pub(super) fn card(ctx: &Ctx<'_>, id: EntryId, notice: &Notice) -> Retained<NSView> {

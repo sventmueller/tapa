@@ -26,8 +26,8 @@ use objc2::{MainThreadMarker, sel};
 use objc2_app_kit::{NSButton, NSColor, NSFont, NSScrollView, NSStackView, NSTextField, NSTextView, NSView};
 use splat_i18n::{t, tf};
 use term_thread::{
-    Decision, Entry, EntryId, EntryKind, ErrorKind, HookOutcome, InfoLevel, LimitStatus, Notice, RequestState, Thread,
-    TodoStatus, ToolOutput, ToolStatus, ToolView,
+    Decision, Entry, EntryId, EntryKind, ErrorKind, InfoLevel, LimitStatus, Notice, RequestState, Thread, TodoStatus,
+    ToolOutput, ToolStatus, ToolView,
 };
 
 use super::format;
@@ -208,10 +208,6 @@ pub(crate) fn build(ctx: &Ctx<'_>, entry: &Entry) -> Retained<NSView> {
         EntryKind::PermissionRequest(request) => request::permission(ctx, entry.id, request),
         EntryKind::Question(question) => request::question(ctx, entry.id, question),
         EntryKind::PlanApproval(plan) => request::plan(ctx, entry.id, plan),
-        EntryKind::Notice(Notice::Hook {
-            outcome: HookOutcome::Success,
-            ..
-        }) if !ctx.nested => notice::hook_group(ctx, entry),
         EntryKind::Notice(notice) => notice::card(ctx, entry.id, notice),
     };
     ui::group(&view, &summary(ctx.thread, entry));
@@ -392,10 +388,6 @@ pub(crate) fn summary(thread: &Thread, entry: &Entry) -> String {
         ),
         EntryKind::PlanApproval(p) if p.state == RequestState::Pending => t("Plan zur Freigabe").to_string(),
         EntryKind::PlanApproval(p) => request::plan_outcome(p).2.to_string(),
-        EntryKind::Notice(Notice::Hook {
-            outcome: HookOutcome::Success,
-            ..
-        }) => notice::hook_group_text(thread, entry),
         EntryKind::Notice(n) => notice::text(n),
     }
 }

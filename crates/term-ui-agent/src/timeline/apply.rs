@@ -166,24 +166,6 @@ impl Timeline {
                 _ => {}
             }
         }
-        // Successful hooks share one row per turn.
-        if changes.iter().any(|c| match c {
-            Change::Inserted {
-                lane: Lane::Main, id, ..
-            }
-            | Change::Updated { lane: Lane::Main, id } => {
-                !positions.contains_key(id) && thread.entry(*id).is_some_and(is_quiet_hook)
-            }
-            Change::Removed { lane: Lane::Main, .. } => true,
-            _ => false,
-        }) {
-            reload.extend(
-                list.iter()
-                    .enumerate()
-                    .filter(|(_, e)| is_quiet_hook(e))
-                    .map(|(i, _)| i),
-            );
-        }
         reload
     }
 

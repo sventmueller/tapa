@@ -589,7 +589,6 @@
 "Hook {} ({}) · {}" = "Hook {} ({}) · {}";
 "Hook „{}“ entfernen?" = "Hook '{}' verwijderen?";
 "Hooks" = "Hooks";
-"Hooks: {} erfolgreich" = "Hooks: {} geslaagd";
 "Host oder Benutzer ungültig" = "Ongeldige host of gebruiker";
 "Host, aus ~/.ssh/config oder eine Adresse" = "Host uit ~/.ssh/config of een adres";
 "Höre zu …" = "Luisteren…";

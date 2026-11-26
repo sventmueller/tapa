@@ -589,7 +589,6 @@
 "Hook {} ({}) · {}" = "Hook {} ({}) · {}";
 "Hook „{}“ entfernen?" = "Vil du fjerne hooken «{}»?";
 "Hooks" = "Hooks";
-"Hooks: {} erfolgreich" = "Hooks: {} vellykket";
 "Host oder Benutzer ungültig" = "Ugyldig vert eller bruker";
 "Host, aus ~/.ssh/config oder eine Adresse" = "Vert fra ~/.ssh/config eller en adresse";
 "Höre zu …" = "Lytter…";

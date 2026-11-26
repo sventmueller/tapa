@@ -196,7 +196,6 @@
 "Hook {} ({}) · {}" = "Hook {} ({}) · {}";
 "Hook „{}“ entfernen?" = "Poistetaanko hook ”{}”?";
 "Hooks" = "Hookit";
-"Hooks: {} erfolgreich" = "Onnistuneet hookit: {}";
 "Idee" = "Idea";
 "Im Browser öffnen" = "Avaa selaimessa";
 "Im Editor öffnen" = "Avaa editorissa";

@@ -589,7 +589,6 @@
 "Hook {} ({}) · {}" = "الخطاف {} ({}) · {}";
 "Hook „{}“ entfernen?" = "هل تريد إزالة الخطاف “{}”؟";
 "Hooks" = "الخطافات";
-"Hooks: {} erfolgreich" = "الخطافات الناجحة: {}";
 "Host oder Benutzer ungültig" = "المضيف أو المستخدم غير صالح";
 "Host, aus ~/.ssh/config oder eine Adresse" = "المضيف، من ~/.ssh/config أو عنوان";
 "Höre zu …" = "جارٍ الاستماع…";

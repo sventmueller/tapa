@@ -589,7 +589,6 @@
 "Hook {} ({}) · {}" = "Hook {} ({}) · {}";
 "Hook „{}“ entfernen?" = "Xóa hook “{}”?";
 "Hooks" = "Hook";
-"Hooks: {} erfolgreich" = "Hook: {} thành công";
 "Host oder Benutzer ungültig" = "Máy chủ hoặc người dùng không hợp lệ";
 "Host, aus ~/.ssh/config oder eine Adresse" = "Máy chủ từ ~/.ssh/config hoặc một địa chỉ";
 "Höre zu …" = "Đang nghe…";

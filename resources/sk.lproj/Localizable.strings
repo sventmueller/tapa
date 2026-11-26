@@ -589,7 +589,6 @@
 "Hook {} ({}) · {}" = "Hook {} ({}) · {}";
 "Hook „{}“ entfernen?" = "Odstrániť hook „{}“?";
 "Hooks" = "Hooky";
-"Hooks: {} erfolgreich" = "Úspešné hooky: {}";
 "Host oder Benutzer ungültig" = "Neplatný hostiteľ alebo používateľ";
 "Host, aus ~/.ssh/config oder eine Adresse" = "Hostiteľ z ~/.ssh/config alebo adresa";
 "Höre zu …" = "Počúva sa…";

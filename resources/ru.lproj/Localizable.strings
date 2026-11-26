@@ -589,7 +589,6 @@
 "Hook {} ({}) · {}" = "Хук {} ({}) · {}";
 "Hook „{}“ entfernen?" = "Удалить хук «{}»?";
 "Hooks" = "Хуки";
-"Hooks: {} erfolgreich" = "Успешных хуков: {}";
 "Host oder Benutzer ungültig" = "Недопустимый хост или пользователь";
 "Host, aus ~/.ssh/config oder eine Adresse" = "Хост из ~/.ssh/config или адрес";
 "Höre zu …" = "Слушаю…";

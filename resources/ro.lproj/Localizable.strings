@@ -589,7 +589,6 @@
 "Hook {} ({}) · {}" = "Hook {} ({}) · {}";
 "Hook „{}“ entfernen?" = "Eliminați hookul „{}”?";
 "Hooks" = "Hookuri";
-"Hooks: {} erfolgreich" = "Hookuri reușite: {}";
 "Host oder Benutzer ungültig" = "Gazdă sau utilizator nevalid";
 "Host, aus ~/.ssh/config oder eine Adresse" = "Gazdă din ~/.ssh/config sau o adresă";
 "Höre zu …" = "Se ascultă…";

@@ -196,7 +196,6 @@
 "Hook {} ({}) · {}" = "훅 {}({}) · {}";
 "Hook „{}“ entfernen?" = "‘{}’ 훅을 제거하겠습니까?";
 "Hooks" = "훅";
-"Hooks: {} erfolgreich" = "훅: {}개 성공";
 "Idee" = "아이디어";
 "Im Browser öffnen" = "브라우저에서 열기";
 "Im Editor öffnen" = "편집기에서 열기";
