@@ -32,6 +32,10 @@ use crate::sprites::{QuadCanvas, Sprites};
 /// How many display frames a surface waits with nothing new before it pauses its link.
 const IDLE_FRAMES: u32 = 3;
 
+/// How long a display link may stay silent before a woken surface draws by itself, as where a display's link never fires
+/// (a virtual display, the self-tests' among them).
+const LINK_SILENT: std::time::Duration = std::time::Duration::from_millis(100);
+
 /// How many latencies a surface keeps for the bench.
 const KEPT_LATENCIES: usize = 4096;
 
@@ -321,6 +325,8 @@ struct Surface {
     shown: Option<Arc<Snapshot>>,
     needs_draw: bool,
     idle: u32,
+    /// When the display link last fired.
+    last_beat: Option<Instant>,
     lines: crate::lines::Lines,
     ring: crate::gpu::Ring,
 }
@@ -357,6 +363,7 @@ fn serve_wakes() {
                     shown: None,
                     needs_draw: false,
                     idle: 0,
+                    last_beat: None,
                     lines: crate::lines::Lines::default(),
                     ring: crate::gpu::Ring::default(),
                 },
@@ -398,7 +405,8 @@ impl Surface {
             }
         }
         self.shared.awake.store(true, Ordering::Release);
-        let resting = self.link.isPaused() || self.idle > 0;
+        let silent = self.last_beat.is_none_or(|at| at.elapsed() > LINK_SILENT);
+        let resting = self.link.isPaused() || self.idle > 0 || silent;
         if self.link.isPaused() {
             self.link.setPaused(false);
         }
@@ -568,7 +576,10 @@ impl Surface {
 fn beat(id: u64) {
     let keep = SURFACES.with(|surfaces| {
         let mut surfaces = surfaces.borrow_mut();
-        surfaces.get_mut(&id).map(Surface::tick)
+        surfaces.get_mut(&id).map(|surface| {
+            surface.last_beat = Some(Instant::now());
+            surface.tick()
+        })
     });
     if keep == Some(false) {
         SURFACES.with(|surfaces| {

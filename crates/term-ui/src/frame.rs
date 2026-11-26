@@ -66,11 +66,18 @@ impl TerminalView {
         if self.has_renderer() {
             return self.frame_published();
         }
-        self.raw_suggest();
         if self.ivars().metal.supported {
+            // A view created in a window not yet on screen hears of no notification once it shows, as in a native tab
+            // the app selects itself; it looks again when its program writes.
+            self.update_surface_visibility();
+            if self.has_renderer() {
+                return self.frame_published();
+            }
+            self.raw_suggest();
             self.ivars().state.stale.set(true);
             return;
         }
+        self.raw_suggest();
         let state = &self.ivars().state;
         let hidden = self.isHiddenOrHasHiddenAncestor() || !self.on_display();
         match state.frame(Instant::now(), hidden) {
@@ -137,6 +144,12 @@ impl TerminalView {
     /// Takes a new snapshot and draws it, after the app scrolled the session.
     pub fn refresh_now(&self) {
         self.refresh(true);
+    }
+
+    /// The app brought the view's window or tab to the front in a way AppKit tells no observer of, as selecting one of
+    /// its own native tabs does: the view draws again if it is in front now.
+    pub fn shown(&self) {
+        self.occlusion_changed();
     }
 
     /// Publishes mouse-driven viewport changes without building a snapshot in the event handler.
